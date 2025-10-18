@@ -201,7 +201,17 @@ Sponsorship Tiers:
 
 **Tools:** Feature Cards (3-col) → Comparison Table → Secondary CTA
 
-**Courses:** Course Cards (2-3 col) with level badges → All-Access CTA
+**Courses:** Hero → Course Cards (3-col grid) with images, level badges, ratings → All-Access CTA
+
+Available Courses:
+1. Create Your Own Company App with Jotform - $97 (Intermediate)
+2. DIY ServiceTitan Dashboards - $97 (Intermediate, 5.0★, 1 review)
+3. Integrate ServiceTitan with Make.com - $69 (Intermediate)
+4. Connect ServiceTitan to Zapier - Free (Beginner)
+5. Fix Ugly Forms: Auto-Clean Job Notes with AI - $49 (Advanced)
+6. Automate Job Summaries with AI in ServiceTitan - $39 (Advanced)
+
+All courses available at: https://www.servicetitanhacks.com/collections/courses
 
 **All-Access:** Key icon hero → Benefits list (2-col) → Pricing Panel → FAQ Accordion
 
