@@ -1,179 +1,184 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import PillarCard from "@/components/PillarCard";
-import TestimonialCard from "@/components/TestimonialCard";
-import EmailCapture from "@/components/EmailCapture";
-import PodcastCard from "@/components/PodcastCard";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import aiIcon from "@assets/generated_images/AI_Integrations_pillar_icon_e73a9edc.png";
-import customIcon from "@assets/generated_images/ServiceTitan_Customizations_icon_0ec02fbb.png";
-import autoIcon from "@assets/generated_images/Done-For-You_Automations_icon_07a6c92b.png";
-import testimonial1 from "@assets/generated_images/Testimonial_contractor_photo_1_f4717a9d.png";
-import testimonial2 from "@assets/generated_images/Testimonial_contractor_photo_2_b71aa2dc.png";
-import testimonial3 from "@assets/generated_images/Testimonial_contractor_photo_3_e849387f.png";
-import podcastThumb from "@assets/generated_images/Podcast_episode_thumbnail_f52b3465.png";
+import EmailCapture from "@/components/EmailCapture";
+import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight } from "lucide-react";
 
 export default function Home() {
+  const mainSections = [
+    {
+      title: "Courses",
+      description: "Learn to automate, optimize, and scale your home service business with practical, hands-on courses.",
+      icon: BookOpen,
+      link: "/courses",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FnjPnLHZRIeoS1YalKP4j_31639205-3.jpg",
+    },
+    {
+      title: "Tools & Products",
+      description: "Discover AI-powered tools and automation solutions designed specifically for ServiceTitan contractors.",
+      icon: Wrench,
+      link: "/tools",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FwPQ226FHSzWW8kg7Kz2o_31639583-3.jpg",
+    },
+    {
+      title: "Partners",
+      description: "Trusted technology partners helping contractors automate, optimize, and grow their businesses.",
+      icon: Users,
+      link: "/partners",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2F2byukiuSKa7LxxzyPZna_Partners.png",
+    },
+    {
+      title: "Free Resources",
+      description: "Access free templates, calculators, and guides to help you get more out of ServiceTitan.",
+      icon: Gift,
+      link: "/resources",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FI8AAxp7ERumPFmkyYVug_31639896-1.jpg",
+    },
+  ];
+
+  const partners = [
+    { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
+    { name: "Free-2-Grow", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png", url: "https://go.st-hacks.cc/free-2-grow" },
+    { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
+    { name: "SmartAC", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/79f/cd4/78b/smartac_%281%29.png", url: "https://go.st-hacks.cc/smart-ac" },
+    { name: "Contractor Commerce", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png", url: "https://go.st-hacks.cc/contractor-commerce" },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <Hero
-          title="AI and automations for ServiceTitan contractors"
-          subtitle="Grow smarter, automate faster, win more jobs."
-          primaryCta={{
-            label: "Join the Facebook Group",
-            href: "https://www.facebook.com/groups/servicetitanhacks",
-            external: true,
-          }}
-          secondaryCta={{
-            label: "All-Access Pass",
-            href: "/all-access",
-          }}
-        />
+    <div className="min-h-screen">
+      <Hero
+        title="AI and automations for ServiceTitan contractors"
+        subtitle="Grow smarter, automate faster, win more jobs."
+        primaryCta={{
+          label: "Join the Facebook Group",
+          href: "https://go.st-hacks.cc/servicetitanhacks",
+          external: true,
+        }}
+        secondaryCta={{
+          label: "All-Access Pass",
+          href: "/all-access",
+        }}
+      />
 
-        {/* Trust Strip */}
-        <section className="bg-muted py-12">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="flex flex-wrap items-center justify-center gap-12">
-              {["Partner A", "Partner B", "Partner C", "Partner D"].map((partner) => (
-                <div key={partner} className="text-2xl font-bold text-muted-foreground grayscale hover:grayscale-0 hover:text-primary transition-all">
-                  {partner}
+      {/* Main Navigation Cards */}
+      <section className="py-16 bg-background">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {mainSections.map((section, index) => (
+              <Card key={index} className="hover-elevate overflow-hidden">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-              ))}
-            </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <section.icon className="h-6 w-6 text-primary" />
+                    <h3 className="text-2xl font-semibold font-heading">{section.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground mb-4">{section.description}</p>
+                  <a href={section.link} data-testid={`link-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <Button className="gap-2 w-full sm:w-auto">
+                      View {section.title} <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </section>
 
-        {/* Three Pillars */}
-        <section className="py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-16">
-              Three ways we help you win
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <PillarCard
-                title="AI Integrations"
-                description="Connect powerful AI tools directly to ServiceTitan for instant ROI."
-                icon={aiIcon}
-                link="/tools"
-              />
-              <PillarCard
-                title="ServiceTitan Customizations"
-                description="Optimize workflows, custom fields, and reporting to fit your business."
-                icon={customIcon}
-                link="/tools"
-              />
-              <PillarCard
-                title="Done-For-You Automations"
-                description="We build, test, and deploy custom automations tailored to your operation."
-                icon={autoIcon}
-                link="/contact"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Content */}
-        <section className="bg-muted py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12">Latest from the community</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Latest Podcast</h3>
-                <PodcastCard
-                  title="Scaling HVAC Operations with AI"
-                  guest="Sarah Mitchell, CEO of CoolTech HVAC"
-                  date="Jan 15, 2025"
-                  duration="42 min"
-                  takeaways={[
-                    "How AI reduced dispatch time by 40%",
-                    "Automated follow-ups that convert",
-                    "ROI metrics you should track",
-                  ]}
-                  thumbnail={podcastThumb}
+          {/* All-Access Pass CTA */}
+          <Card className="bg-primary/5 border-primary/20 overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="aspect-video md:aspect-auto">
+                <img
+                  src="https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg"
+                  alt="All-Access Pass"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Featured Video</h3>
-                <div className="aspect-video bg-card rounded-lg flex items-center justify-center border border-border">
-                  <p className="text-muted-foreground">[YouTube embed placeholder]</p>
+              <CardContent className="p-8 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-3">
+                  <Key className="h-8 w-8 text-primary" />
+                  <h3 className="text-3xl font-semibold font-heading">All-Access Pass</h3>
                 </div>
-              </div>
+                <p className="text-muted-foreground mb-6">
+                  Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls—one simple subscription.
+                </p>
+                <a href="/all-access" data-testid="link-all-access">
+                  <Button size="lg" className="gap-2">
+                    Get Full Access <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </a>
+              </CardContent>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Recent Resources</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[
-                  "ServiceTitan Setup Checklist",
-                  "ROI Calculator Spreadsheet",
-                  "Pricebook Templates",
-                ].map((resource) => (
-                  <div key={resource} className="bg-background rounded-lg p-6 border border-border">
-                    <h4 className="font-semibold mb-2">{resource}</h4>
-                    <Button variant="outline" size="sm">Download</Button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+          </Card>
+        </div>
+      </section>
 
-        {/* Email Capture */}
-        <section className="py-24">
-          <div className="mx-auto max-w-3xl px-6">
-            <EmailCapture />
+      {/* Partner Logos */}
+      <section className="py-12 bg-muted">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners</h2>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {partners.map((partner, index) => (
+              <a
+                key={index}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+                data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-12 md:h-16 w-auto object-contain"
+                  loading="lazy"
+                />
+              </a>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Testimonials */}
-        <section className="bg-muted py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-16">
-              Trusted by contractors like you
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <TestimonialCard
-                quote="Cut our follow-up time in half with automated call summaries. Game changer."
-                name="Mike Reynolds"
-                company="Reynolds HVAC"
-                photo={testimonial1}
-              />
-              <TestimonialCard
-                quote="The pricebook optimizer made our estimates sound professional and clear. Conversions up 22%."
-                name="Jennifer Cruz"
-                company="Cruz Plumbing Co."
-                photo={testimonial2}
-              />
-              <TestimonialCard
-                quote="Best investment we made this year. ROI in the first month."
-                name="David Park"
-                company="Park Electric Services"
-                photo={testimonial3}
-              />
-            </div>
-          </div>
-        </section>
+      {/* Email Capture */}
+      <section className="py-16 bg-background">
+        <div className="mx-auto max-w-3xl px-6">
+          <EmailCapture />
+        </div>
+      </section>
 
-        {/* CTA Band */}
-        <section className="bg-primary text-primary-foreground py-16">
-          <div className="mx-auto max-w-7xl px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              Ready to see what's possible?
-            </h2>
-            <p className="text-lg mb-8 opacity-90">
-              Book a demo with one of our partner sponsors and discover tools built for your business.
-            </p>
-            <a href="/partners#book">
-              <Button size="lg" variant="secondary" data-testid="button-cta-sponsor-demo">
-                Book a Sponsor Demo
+      {/* Community CTA */}
+      <section className="py-16 bg-primary/5">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+            Join 9,500+ ServiceTitan Contractors
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Connect with fellow contractors, access exclusive resources, and stay ahead with the latest AI and automation strategies for home service businesses.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://go.st-hacks.cc/servicetitanhacks"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-facebook-group-cta"
+            >
+              <Button size="lg" className="gap-2">
+                Join the Facebook Group <ExternalLink className="h-4 w-4" />
               </Button>
             </a>
+            <a href="/podcast" data-testid="link-podcast-cta">
+              <Button size="lg" variant="outline">Listen to the Podcast</Button>
+            </a>
           </div>
-        </section>
-      </main>
-      <Footer />
+        </div>
+      </section>
     </div>
   );
 }
