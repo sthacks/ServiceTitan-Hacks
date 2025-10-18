@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/IMG_0276_1760803648299.png";
 
 export default function Header() {
   const [location] = useLocation();
@@ -22,12 +23,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex h-16 md:h-18 items-center justify-between gap-4">
+        <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home-logo">
-            <span className="flex items-center gap-2 cursor-pointer">
-              <span className="text-xl md:text-2xl font-bold font-heading tracking-tight">
-                ServiceTitan <span className="text-primary">Hacks</span>
-              </span>
+            <span className="flex items-center cursor-pointer">
+              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-10 md:h-12" />
             </span>
           </Link>
 

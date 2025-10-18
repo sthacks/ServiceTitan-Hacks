@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
+import logoImage from "@assets/IMG_0276_1760803648299.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,9 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="mb-6">
-              <span className="text-2xl font-bold font-heading">
-                ServiceTitan <span className="text-primary">Hacks</span>
-              </span>
+              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-12" />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               AI and automations for ServiceTitan contractors. Grow smarter, automate faster, win more jobs.
