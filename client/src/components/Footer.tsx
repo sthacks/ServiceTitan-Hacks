@@ -40,9 +40,9 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link href={link.path}>
-                    <a className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid={`link-footer-${link.label.toLowerCase()}`}>
+                    <span className="text-sm text-gray-400 hover:text-primary transition-colors cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase()}`}>
                       {link.label}
-                    </a>
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -55,9 +55,9 @@ export default function Footer() {
               {resourceLinks.map((link) => (
                 <li key={link.path}>
                   <Link href={link.path}>
-                    <a className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid={`link-footer-${link.label.toLowerCase()}`}>
+                    <span className="text-sm text-gray-400 hover:text-primary transition-colors cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase()}`}>
                       {link.label}
-                    </a>
+                    </span>
                   </Link>
                 </li>
               ))}

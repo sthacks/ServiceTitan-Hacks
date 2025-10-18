@@ -23,19 +23,19 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-16 md:h-18 items-center justify-between gap-4">
-          <Link href="/">
-            <a className="flex items-center gap-2" data-testid="link-home-logo">
+          <Link href="/" data-testid="link-home-logo">
+            <span className="flex items-center gap-2 cursor-pointer">
               <span className="text-xl md:text-2xl font-bold font-heading tracking-tight">
                 ServiceTitan <span className="text-primary">Hacks</span>
               </span>
-            </a>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link key={link.path} href={link.path}>
-                <a
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                <span
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
                     location === link.path
                       ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
@@ -43,7 +43,7 @@ export default function Header() {
                   data-testid={`link-nav-${link.label.toLowerCase()}`}
                 >
                   {link.label}
-                </a>
+                </span>
               </Link>
             ))}
           </nav>
@@ -64,8 +64,8 @@ export default function Header() {
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link key={link.path} href={link.path}>
-                  <a
-                    className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                  <span
+                    className={`block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer ${
                       location === link.path
                         ? "text-primary bg-accent"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -74,7 +74,7 @@ export default function Header() {
                     data-testid={`link-mobile-${link.label.toLowerCase()}`}
                   >
                     {link.label}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </div>

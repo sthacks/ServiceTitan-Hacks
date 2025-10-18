@@ -6,6 +6,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -17,8 +19,37 @@ export default function ContactForm() {
     consent: false,
   });
   const [honeypot, setHoneypot] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+
+  const contactMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      return apiRequest("POST", "/api/contact", {
+        ...data,
+        consent: data.consent ? "true" : "false",
+      });
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        role: "",
+        message: "",
+        consent: false,
+      });
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Failed to send message",
+        description: error.message || "Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,26 +85,7 @@ export default function ContactForm() {
       return;
     }
 
-    setIsLoading(true);
-
-    // TODO: Connect to real API endpoint
-    console.log("Contact form submission:", formData);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        role: "",
-        message: "",
-        consent: false,
-      });
-      setIsLoading(false);
-    }, 1000);
+    contactMutation.mutate(formData);
   };
 
   return (
@@ -154,8 +166,8 @@ export default function ContactForm() {
               I agree to be contacted about my inquiry *
             </Label>
           </div>
-          <Button type="submit" disabled={isLoading} className="w-full" data-testid="button-contact-submit">
-            {isLoading ? "Sending..." : "Send Message"}
+          <Button type="submit" disabled={contactMutation.isPending} className="w-full" data-testid="button-contact-submit">
+            {contactMutation.isPending ? "Sending..." : "Send Message"}
           </Button>
         </form>
         <p className="text-sm text-muted-foreground mt-4">

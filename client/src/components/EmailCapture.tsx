@@ -2,12 +2,33 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+
+  const subscribeMutation = useMutation({
+    mutationFn: async (email: string) => {
+      return apiRequest("POST", "/api/subscribe", { email });
+    },
+    onSuccess: () => {
+      toast({
+        title: "Success!",
+        description: "You've been added to our mailing list.",
+      });
+      setEmail("");
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Subscription failed",
+        description: error.message || "Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,19 +46,7 @@ export default function EmailCapture() {
       return;
     }
 
-    setIsLoading(true);
-    
-    // TODO: Connect to real API endpoint
-    console.log("Email subscription:", email);
-    
-    setTimeout(() => {
-      toast({
-        title: "Success!",
-        description: "You've been added to our mailing list.",
-      });
-      setEmail("");
-      setIsLoading(false);
-    }, 1000);
+    subscribeMutation.mutate(email);
   };
 
   return (
@@ -64,8 +73,8 @@ export default function EmailCapture() {
           tabIndex={-1}
           autoComplete="off"
         />
-        <Button type="submit" disabled={isLoading} data-testid="button-subscribe">
-          {isLoading ? "Subscribing..." : "Subscribe"}
+        <Button type="submit" disabled={subscribeMutation.isPending} data-testid="button-subscribe">
+          {subscribeMutation.isPending ? "Subscribing..." : "Subscribe"}
         </Button>
       </form>
       <p className="text-xs text-muted-foreground mt-3">
