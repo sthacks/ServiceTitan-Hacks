@@ -27,24 +27,24 @@ export default function PricebookOptimizer() {
 
   const howItWorksItems = [
     {
-      title: "Removes jargon",
-      description: "while preserving a professional tone that communicates precision and expertise.",
+      title: "Removes confusing words",
+      description: "and keeps a professional tone that shows you know what you're doing.",
     },
     {
-      title: "Highlights real homeowner benefits",
-      description: "such as improved comfort, performance, and peace of mind.",
+      title: "Shows real benefits",
+      description: "like better comfort, performance, and peace of mind for homeowners.",
     },
     {
-      title: "Creates relatable examples",
-      description: "that show the importance of doing the job right the first time.",
+      title: "Uses examples homeowners understand",
+      description: "that explain why doing the job right matters.",
     },
     {
-      title: "Focuses on craftsmanship and care",
-      description: "instead of \"quick\" or \"easy\" fixes.",
+      title: "Highlights your quality work",
+      description: "instead of talking about quick or easy shortcuts.",
     },
     {
-      title: "Emphasizes differentiators",
-      description: "like superior materials, technology, and long-term reliability.",
+      title: "Shows what makes you different",
+      description: "like better materials, newer technology, and work that lasts.",
     },
   ];
 
@@ -133,10 +133,10 @@ export default function PricebookOptimizer() {
           <div className="mx-auto max-w-4xl px-6">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-                Clear, Confident Communication for Homeowners
+                Talk to Homeowners in Plain English
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                This AI-powered writing assistant helps contractors transform technical product and service descriptions into language homeowners instantly understand and trust. Instead of jargon or over-simplified phrases, it delivers copy that reflects true craftsmanship, quality, and care.
+                This AI tool helps you turn technical service descriptions into simple language homeowners can easily understand. No confusing jargon. Just clear words that show your quality work and care.
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export default function PricebookOptimizer() {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold font-heading mb-6">What It Does</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  It rewrites complex technical details into confident, value-driven explanations that show expertise without overwhelming the homeowner. Each description focuses on comfort, safety, reliability, and efficiency—helping homeowners appreciate the skill behind the work.
+                  It changes technical details into simple explanations homeowners can understand. Each description talks about comfort, safety, and how your work helps them—so homeowners see the real value in what you do.
                 </p>
               </CardContent>
             </Card>
@@ -170,7 +170,7 @@ export default function PricebookOptimizer() {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold font-heading mb-6">Why It Matters</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  When technicians speak with confidence and clarity, homeowners feel informed—not sold. This builds trust, reinforces professionalism, and helps every contractor stand out as an expert who delivers lasting quality and comfort.
+                  When you speak clearly and confidently, homeowners feel informed instead of pressured. This builds trust and shows you're a true professional who delivers quality work that lasts.
                 </p>
               </CardContent>
             </Card>
@@ -183,16 +183,16 @@ export default function PricebookOptimizer() {
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold font-heading mb-4">
-                    Turn One of Your Pricebook Items Into a Homeowner-Friendly Description
+                    Make Your Pricebook Easy for Homeowners to Understand
                   </h2>
                   <p className="text-muted-foreground mb-2">
-                    We'll take your technical explanation and rewrite it in plain, engaging language that helps your techs connect with homeowners and build value—fast.
+                    We'll take your technical description and rewrite it in simple, clear language that helps your techs connect with homeowners and show value—fast.
                   </p>
                   <p className="text-sm text-muted-foreground italic">
-                    <strong>The more detail you provide in your description, the better the results.</strong>
+                    <strong>The more details you give us, the better your results will be.</strong>
                   </p>
                   <p className="text-sm text-muted-foreground italic">
-                    <strong>Also, these descriptions can be 100% customized to your company.</strong>
+                    <strong>We can customize these descriptions to match your company style.</strong>
                   </p>
                 </div>
 
