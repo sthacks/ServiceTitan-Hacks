@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -130,8 +132,10 @@ export default function Resources() {
   };
 
   return (
-    <div className="min-h-screen">
-      <Hero
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Hero
         title="Free Resources"
         subtitle="Access free templates, guides, and tools to help you get more out of ServiceTitan and grow your home service business."
         dark={false}
@@ -249,6 +253,8 @@ export default function Resources() {
           </form>
         </DialogContent>
       </Dialog>
+      </main>
+      <Footer />
     </div>
   );
 }

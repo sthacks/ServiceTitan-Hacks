@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -77,8 +79,10 @@ export default function Courses() {
   };
 
   return (
-    <div className="min-h-screen">
-      <Hero
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Hero
         title="ServiceTitan Hacks Courses"
         subtitle="Learn to automate, optimize, and scale your home service business with practical, hands-on courses. From beginner-friendly integrations to advanced AI automation."
         primaryCta={{
@@ -170,6 +174,8 @@ export default function Courses() {
           </div>
         </div>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 }

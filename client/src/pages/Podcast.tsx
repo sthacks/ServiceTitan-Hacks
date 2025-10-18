@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -39,8 +41,10 @@ export default function Podcast() {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Hero
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Hero
         title="ServiceTitan Hacks Podcast"
         subtitle="Where innovation meets the home service industry. Join host Bill Brown for candid conversations with forward-thinking contractors and software founders who are revolutionizing the trades with AI, automation, and smart solutions."
         primaryCta={{
@@ -155,6 +159,8 @@ export default function Podcast() {
           </div>
         </div>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 }
