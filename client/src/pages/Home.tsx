@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
 import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight } from "lucide-react";
+import heroImage from "@assets/Untitled design_1760804581569.png";
 
 export default function Home() {
   const mainSections = [
@@ -58,6 +59,7 @@ export default function Home() {
           label: "All-Access Pass",
           href: "/all-access",
         }}
+        backgroundImage={heroImage}
       />
 
       {/* Main Navigation Cards */}
