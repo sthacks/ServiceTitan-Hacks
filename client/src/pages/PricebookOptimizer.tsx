@@ -133,9 +133,12 @@ export default function PricebookOptimizer() {
           <div className="mx-auto max-w-4xl px-6">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-                Talk to Homeowners in Plain English
+                Is your ServiceTitan Pricebook always a work-in-progress?
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-2xl text-muted-foreground mb-4">
+                We solved that with this simple tool
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 This AI tool helps you turn technical service descriptions into simple language homeowners can easily understand. No confusing jargon. Just clear words that show your quality work and care.
               </p>
             </div>
