@@ -55,7 +55,7 @@ export default function Partners() {
         <Hero
         title="ServiceTitan Hacks Partners"
         subtitle="Trusted tools and technology partners helping contractors automate, optimize, and grow their home service businesses."
-        dark={false}
+        dark={true}
       />
 
       <section className="py-16 bg-background">

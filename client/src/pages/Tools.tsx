@@ -35,17 +35,21 @@ export default function Tools() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-3xl mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
                 Tools & Products
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-gray-300">
                 Purpose-built solutions that integrate seamlessly with ServiceTitan. Boost efficiency, close more jobs, and deliver better service.
               </p>
             </div>
+          </div>
+        </section>
 
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
               {tools.map((tool) => (
                 <ToolCard key={tool.name} {...tool} />

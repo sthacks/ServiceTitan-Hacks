@@ -52,6 +52,7 @@ export default function Podcast() {
           href: "https://go.st-hacks.cc/be-a-guest",
           external: true,
         }}
+        dark={true}
       />
 
       <section className="py-16 bg-background">

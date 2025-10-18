@@ -18,7 +18,7 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark = true, backgroundImage }: HeroProps) {
   return (
-    <section className={`relative ${dark ? "bg-[#333333] text-white" : "bg-background text-foreground"} py-24 md:py-32 overflow-hidden`}>
+    <section className={`relative ${dark ? "bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a] text-white" : "bg-background text-foreground"} py-24 md:py-32 overflow-hidden`}>
       {backgroundImage && (
         <>
           <div 

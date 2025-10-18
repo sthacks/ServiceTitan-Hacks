@@ -8,12 +8,19 @@ export default function About() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-12 text-center">
+              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-12 text-center text-white">
                 About ServiceTitan Hacks
               </h1>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="max-w-4xl mx-auto">
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 <div>

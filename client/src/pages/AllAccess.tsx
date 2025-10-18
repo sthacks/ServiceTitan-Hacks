@@ -41,19 +41,24 @@ export default function AllAccess() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="py-24 bg-gradient-to-b from-muted to-background">
+        <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="mb-8 flex justify-center">
                 <img src={keyIcon} alt="All-Access Pass" className="w-32 h-32 object-contain" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6 text-white">
                 All-Access Pass
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-gray-300">
                 Stop piecing together scattered resources. Get every course, automation template, and tool we've built—plus all future updates—so you can save time, cut errors, and grow your business faster.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6">
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
               <div>
@@ -104,7 +109,7 @@ export default function AllAccess() {
               </Card>
             </div>
 
-            <div className="mb-24">
+            <div className="mb-24 mt-24">
               <h2 className="text-3xl font-bold font-heading mb-8 text-center">Frequently Asked Questions</h2>
               <div className="max-w-3xl mx-auto">
                 <FAQAccordion items={faqs} />

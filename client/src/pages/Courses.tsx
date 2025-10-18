@@ -89,7 +89,7 @@ export default function Courses() {
           label: "View All-Access Pass",
           href: "/all-access",
         }}
-        dark={false}
+        dark={true}
       />
 
       <section className="py-16 bg-background">

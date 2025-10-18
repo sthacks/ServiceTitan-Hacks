@@ -7,17 +7,24 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
                   Contact Us
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-xl text-gray-300">
                   Have a question, partnership inquiry, or custom project in mind? We're here to help.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="max-w-3xl mx-auto">
 
               <ContactForm />
             </div>

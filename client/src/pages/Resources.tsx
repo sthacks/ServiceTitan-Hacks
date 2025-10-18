@@ -138,7 +138,7 @@ export default function Resources() {
         <Hero
         title="Free Resources"
         subtitle="Access free templates, guides, and tools to help you get more out of ServiceTitan and grow your home service business."
-        dark={false}
+        dark={true}
       />
 
       <section className="py-16 bg-background">
