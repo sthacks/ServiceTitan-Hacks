@@ -66,7 +66,7 @@ export default function Partners() {
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
                   <CardContent className="p-6 text-center">
-                    <div className="mb-6 flex items-center justify-center h-21">
+                    <div className="mb-6 flex items-center justify-center h-18">
                       <img
                         src={partner.logo}
                         alt={`${partner.name} logo`}
