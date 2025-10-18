@@ -30,11 +30,11 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark =
       )}
       <div className={`mx-auto max-w-7xl px-6 ${backgroundImage ? 'relative z-10' : ''}`}>
         <div className={`max-w-4xl ${backgroundImage ? 'text-left' : 'mx-auto text-center'}`}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold font-heading leading-tight mb-6">
             {title}
           </h1>
           {subtitle && (
-            <p className={`text-lg md:text-xl mb-10 ${dark ? "text-gray-300" : "text-muted-foreground"}`}>
+            <p className={`text-xl mb-10 ${dark ? "text-gray-300" : "text-muted-foreground"}`}>
               {subtitle}
             </p>
           )}

@@ -47,7 +47,7 @@ export default function AllAccess() {
               <div className="mb-8 flex justify-center">
                 <img src={keyIcon} alt="All-Access Pass" className="w-32 h-32 object-contain" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6 text-white">
+              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
                 All-Access Pass
               </h1>
               <p className="text-xl text-gray-300">
