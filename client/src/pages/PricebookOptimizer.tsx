@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -13,7 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Copy, Check } from "lucide-react";
 import { z } from "zod";
 import { useState } from "react";
 
@@ -21,9 +22,17 @@ const formSchema = insertPricebookOptimizationSchema.extend({
   honeypot: z.string().max(0),
 });
 
+interface OptimizationResult {
+  optimizedDescription: string;
+  originalDescription: string;
+  category: string;
+}
+
 export default function PricebookOptimizer() {
   const { toast } = useToast();
   const [showOtherCategory, setShowOtherCategory] = useState(false);
+  const [result, setResult] = useState<OptimizationResult | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const howItWorksItems = [
     {
@@ -109,12 +118,28 @@ export default function PricebookOptimizer() {
       const { honeypot, ...submitData } = data;
       return apiRequest("POST", "/api/pricebook-optimization", submitData);
     },
-    onSuccess: () => {
+    onSuccess: (data: any) => {
+      if (data.optimization) {
+        setResult({
+          optimizedDescription: data.optimization.optimizedDescription,
+          originalDescription: data.optimization.originalDescription,
+          category: data.optimization.category,
+        });
+        setCopied(false);
+        
+        // Scroll to results
+        setTimeout(() => {
+          document.getElementById('results-section')?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+      
       toast({
         title: "Success!",
-        description: "Your optimized description will be sent to your email shortly.",
+        description: "Your optimized description is ready below.",
       });
-      form.reset();
     },
     onError: (error: any) => {
       toast({
@@ -124,6 +149,18 @@ export default function PricebookOptimizer() {
       });
     },
   });
+
+  const handleCopy = async () => {
+    if (result?.optimizedDescription) {
+      await navigator.clipboard.writeText(result.optimizedDescription);
+      setCopied(true);
+      toast({
+        title: "Copied!",
+        description: "Optimized description copied to clipboard.",
+      });
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -392,6 +429,84 @@ export default function PricebookOptimizer() {
             </Card>
           </div>
         </section>
+
+        {result && (
+          <section id="results-section" className="py-16 bg-background">
+            <div className="mx-auto max-w-4xl px-6">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold font-heading mb-2">Your Optimized Description</h2>
+                <p className="text-muted-foreground">Here's your homeowner-friendly pricebook description</p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2 mb-8">
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-semibold text-lg">Original Description</h3>
+                      <Badge variant="outline">Before</Badge>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{result.originalDescription}</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-primary/50">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-semibold text-lg text-primary">Optimized Description</h3>
+                      <Badge>After</Badge>
+                    </div>
+                    <p className="leading-relaxed">{result.optimizedDescription}</p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Card className="bg-primary/5 border-primary/20">
+                <CardContent className="p-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                      <h3 className="font-semibold mb-1">Ready to use in ServiceTitan</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Copy this optimized description and paste it into your ServiceTitan pricebook.
+                      </p>
+                    </div>
+                    <Button 
+                      onClick={handleCopy} 
+                      size="lg"
+                      className="whitespace-nowrap"
+                      data-testid="button-copy-description"
+                    >
+                      {copied ? (
+                        <>
+                          <Check className="mr-2 h-4 w-4" />
+                          Copied!
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="mr-2 h-4 w-4" />
+                          Copy Description
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="text-center mt-8">
+                <Button 
+                  variant="outline" 
+                  onClick={() => {
+                    setResult(null);
+                    form.reset();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  data-testid="button-optimize-another"
+                >
+                  Optimize Another Description
+                </Button>
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </div>
