@@ -152,7 +152,12 @@ export default function PricebookOptimizer() {
 
   const handleCopy = async () => {
     if (result?.optimizedDescription) {
-      await navigator.clipboard.writeText(result.optimizedDescription);
+      // Strip HTML tags for clean clipboard text
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = result.optimizedDescription;
+      const plainText = tempDiv.textContent || tempDiv.innerText || '';
+      
+      await navigator.clipboard.writeText(plainText);
       setCopied(true);
       toast({
         title: "Copied!",
@@ -455,7 +460,10 @@ export default function PricebookOptimizer() {
                       <h3 className="font-semibold text-lg text-primary">Optimized Description</h3>
                       <Badge>After</Badge>
                     </div>
-                    <p className="leading-relaxed">{result.optimizedDescription}</p>
+                    <div 
+                      className="leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: result.optimizedDescription }}
+                    />
                   </CardContent>
                 </Card>
               </div>
