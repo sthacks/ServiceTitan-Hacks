@@ -17,7 +17,7 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark = true }: HeroProps) {
   return (
-    <section className={`relative ${dark ? "bg-[#1F1F1F] text-white" : "bg-background text-foreground"} py-24 md:py-32`}>
+    <section className={`relative ${dark ? "bg-[#333333] text-white" : "bg-background text-foreground"} py-24 md:py-32`}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6">

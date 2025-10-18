@@ -7,14 +7,14 @@
 
 ### Color Palette
 **Primary Colors:**
-- Primary Red: `#ED254E` (0 75% 56%) - CTAs, headings, interactive elements
-- Deep Red: `#C1124F` (334 81% 42%) - Hover states, accents
+- Bright Red: `#ED254E` (344 84% 54%) - CTAs, headings, interactive elements, primary brand color
+- Deep Red: `#C1124F` (339 83% 41%) - Hover states, accents, darker red emphasis
 - Black: `#000000` (0 0% 0%) - Primary text, high-contrast areas
 - White: `#FFFFFF` (0 0% 100%) - Backgrounds, cards, negative space
 
 **Secondary Colors:**
-- Dark Gray: `#1F1F1F` (0 0% 12%) - Section backgrounds, footer
-- Mid Gray: `#6B7280` (220 9% 46%) - Secondary text, borders
+- Dark Gray: `#333333` (0 0% 20%) - Section backgrounds, footer, containers
+- Medium Gray: `#808080` (0 0% 50%) - Secondary text, muted foreground, borders
 
 ### Typography
 **Font Families:**
