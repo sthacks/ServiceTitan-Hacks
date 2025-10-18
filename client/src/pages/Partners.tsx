@@ -66,15 +66,22 @@ export default function Partners() {
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
                   <CardContent className="p-6 text-center">
-                    <div className="mb-6 flex items-center justify-center h-16">
-                      <img
-                        src={partner.logo}
-                        alt={`${partner.name} logo`}
-                        className="max-h-full max-w-full object-contain"
-                        loading="lazy"
-                        data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      />
-                    </div>
+                    <a
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block mb-6"
+                    >
+                      <div className="flex items-center justify-center h-16">
+                        <img
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          className="max-h-full max-w-full object-contain"
+                          loading="lazy"
+                          data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        />
+                      </div>
+                    </a>
                     <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
                     <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
                     <a
