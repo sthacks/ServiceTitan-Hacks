@@ -45,6 +45,7 @@ Preferred communication style: Simple, everyday language.
 - `/` - Home page with hero, pillars, testimonials, email capture
 - `/partners` - Sponsor/partner showcase
 - `/tools` - AI tools and product catalog
+- `/pricebook-optimizer` - AI-powered pricebook description optimizer with live ChatGPT integration
 - `/courses` - Educational course offerings
 - `/all-access` - Subscription membership page
 - `/podcast` - Podcast episode library
@@ -70,8 +71,19 @@ Preferred communication style: Simple, everyday language.
 **API Endpoints:**
 - `POST /api/subscribe` - Email newsletter subscription
 - `POST /api/contact` - Contact form submission
+- `POST /api/pricebook-optimization` - AI-powered pricebook description optimization using ChatGPT
+- `POST /api/resource-leads` - Resource download lead capture
 - Form validation using Zod schemas with friendly error messages
 - Duplicate email checking for subscriptions
+
+**AI Integration:**
+- **Pricebook Optimizer**: Live ChatGPT integration for transforming technical service descriptions into homeowner-friendly language
+- Uses Replit AI Integrations (no API key management required, billed to Replit credits)
+- Model: GPT-4o with temperature 0.7, max 500 tokens
+- Custom prompt system that emphasizes quality, reliability, and value without describing work as "simple" or "easy"
+- HTML-formatted output with <b> tags for headings, <ul>/<li> for lists, <br> for spacing
+- Results displayed inline on the website with before/after comparison
+- Copy-to-clipboard functionality strips HTML for clean ServiceTitan pasting
 
 **Data Storage Strategy:**
 - In-memory storage implementation (MemStorage class) for development
