@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import founderPhoto from "@assets/generated_images/Founder_bio_headshot_photo_9225ae53.png";
-import titleBg from "@assets/Title (33)_1760814859255.png";
+import titleBg from "@assets/Title (33)_1760815029937.png";
 
 export default function About() {
   return (

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import titleBg from "@assets/Title (33)_1760814859255.png";
+import titleBg from "@assets/Title (33)_1760815029937.png";
 
 interface HeroProps {
   title: string;
