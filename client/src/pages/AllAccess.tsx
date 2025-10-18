@@ -8,18 +8,18 @@ import { Check } from "lucide-react";
 
 export default function AllAccess() {
   const benefits = [
-    "Unlimited access to all courses",
-    "Download every resource, template, and calculator",
+    "Access every current and future ST Hacks course in one membership",
+    "Continuous updates and new releases at no extra cost",
+    "Ready-to-use automation templates that eliminate manual data entry",
+    "Exclusive dashboards and reporting tools for real-time insights",
     "Monthly live Q&A calls with industry experts",
-    "Private community forum",
-    "Early access to new tools and features",
     "Priority email support",
   ];
 
   const faqs = [
     {
       question: "What's included in the All-Access Pass?",
-      answer: "You get unlimited access to all courses, downloadable resources, calculators, monthly live Q&A calls with industry experts, and priority support.",
+      answer: "You get access to every current and future ST Hacks course, ready-to-use automation templates, exclusive dashboards and reporting tools, monthly live Q&A calls with industry experts, and priority support. All updates and new releases are included at no extra cost.",
     },
     {
       question: "Can I cancel anytime?",
@@ -53,7 +53,7 @@ export default function AllAccess() {
                 All-Access Pass
               </h1>
               <p className="text-xl text-muted-foreground">
-                Everything you need to master ServiceTitan, automate your workflows, and grow your business—all in one place.
+                Stop piecing together scattered resources. Get every course, automation template, and tool we've built—plus all future updates—so you can save time, cut errors, and grow your business faster.
               </p>
             </div>
 
@@ -73,7 +73,7 @@ export default function AllAccess() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-center mb-6">
-                    <div className="text-5xl font-bold font-heading mb-2">$[PRICE]</div>
+                    <div className="text-5xl font-bold font-heading mb-2">$89</div>
                     <p className="text-muted-foreground">per month, billed monthly</p>
                   </div>
                   <ul className="space-y-2 mb-6 text-sm">
@@ -90,9 +90,15 @@ export default function AllAccess() {
                       <span>Instant access upon signup</span>
                     </li>
                   </ul>
-                  <Button className="w-full" size="lg" data-testid="button-purchase-pass">
-                    Get Started Now
-                  </Button>
+                  <a 
+                    href="https://www.servicetitanhacks.com/enroll/3344701"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full" size="lg" data-testid="button-purchase-pass">
+                      Get Started Now
+                    </Button>
+                  </a>
                   <p className="text-xs text-center text-muted-foreground mt-4">
                     Secure checkout powered by Stripe
                   </p>
