@@ -72,7 +72,7 @@ export default function Partners() {
                       rel="noopener noreferrer"
                       className="block mb-6"
                     >
-                      <div className="flex items-center justify-center h-16">
+                      <div className="flex items-center justify-center h-20">
                         <img
                           src={partner.logo}
                           alt={`${partner.name} logo`}
