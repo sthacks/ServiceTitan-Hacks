@@ -71,28 +71,33 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {mainSections.map((section, index) => (
-                <Card key={index} className="hover-elevate overflow-hidden">
-                  <div className="aspect-video overflow-hidden">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <section.icon className="h-6 w-6 text-primary" />
-                      <h3 className="text-2xl font-semibold font-heading">{section.title}</h3>
+                <a 
+                  key={index}
+                  href={section.link}
+                  className="block"
+                  data-testid={`link-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <Card className="hover-elevate overflow-hidden h-full">
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                    <p className="text-muted-foreground mb-4">{section.description}</p>
-                    <a href={section.link} data-testid={`link-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <section.icon className="h-6 w-6 text-primary" />
+                        <h3 className="text-2xl font-semibold font-heading">{section.title}</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">{section.description}</p>
                       <Button className="gap-2 w-full sm:w-auto">
                         View {section.title} <ArrowRight className="h-4 w-4" />
                       </Button>
-                    </a>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
 
