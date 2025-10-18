@@ -116,7 +116,8 @@ export default function PricebookOptimizer() {
       }
 
       const { honeypot, ...submitData } = data;
-      return apiRequest("POST", "/api/pricebook-optimization", submitData);
+      const response = await apiRequest("POST", "/api/pricebook-optimization", submitData);
+      return response.json();
     },
     onSuccess: (data: any) => {
       if (data.optimization) {
