@@ -65,8 +65,8 @@ export default function Partners() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
-                  <CardContent className="p-6">
-                    <div className="mb-6 flex items-center justify-center h-16">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-6 flex items-center justify-center h-21">
                       <img
                         src={partner.logo}
                         alt={`${partner.name} logo`}
