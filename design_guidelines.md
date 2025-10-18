@@ -176,7 +176,16 @@ All images: `loading="lazy"`, proper `width` and `height` attributes, descriptiv
 
 **Home:** Hero → Trust Strip → Three Pillar Cards (3-col) → Featured Content (mixed 2-col/1-col) → Email Capture → Testimonials (3-col) → CTA Band
 
-**Partners:** Short intro → Sponsor Grid (3-4 col) → Explainer bullets → Contact CTA
+**Partners:** Hero intro → Benefits list → Partner cards (3-col grid) → Become a Partner CTA
+
+Current Partners:
+1. Volca.AI - https://go.st-hacks.cc/volca
+2. Wink Toolbox - https://go.st-hacks.cc/wink
+3. Free-2-Grow - https://go.st-hacks.cc/free-2-grow
+4. SmartAC - https://go.st-hacks.cc/smart-ac
+5. Contractor Commerce - https://go.st-hacks.cc/contractor-commerce
+
+Sponsorship Info: https://www.servicetitanhacks.com/pages/sponsorships
 
 **Tools:** Feature Cards (3-col) → Comparison Table → Secondary CTA
 
