@@ -37,7 +37,7 @@ export default function Tools() {
       <main className="flex-1">
         <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="max-w-3xl mx-auto mb-16 text-center">
+            <div className="max-w-3xl mx-auto mb-8 text-center">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
                 Tools & Products
               </h1>
