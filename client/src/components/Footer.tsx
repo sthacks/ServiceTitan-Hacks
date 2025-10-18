@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
-import logoImage from "@assets/IMG_0276_1760803648299.png";
+import logoImage from "@assets/Secondary Logo - 1_1760805018619.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
