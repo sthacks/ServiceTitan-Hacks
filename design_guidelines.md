@@ -184,6 +184,12 @@ All images: `loading="lazy"`, proper `width` and `height` attributes, descriptiv
 
 **All-Access:** Key icon hero → Benefits list (2-col) → Pricing Panel → FAQ Accordion
 
-**Podcast:** Latest Episode Hero (left content, right audio embed) → Episode List (cards)
+**Podcast:** Hero with podcast description → Platform links (Apple Podcasts, Spotify, Podbean) → About the Host → Recent Episodes list → Community CTA
+
+Host: Bill Brown - Former Inc. 5000 HVAC company owner with 25 years of industry experience and background in computer programming
+
+Podcast URL: https://servicetitanhacks.podbean.com
+Apple Podcasts: https://podcasts.apple.com/us/podcast/home-service-hacks/id1815551474
+Spotify: https://open.spotify.com/show/1EUnvMTaJnKnUO65Teq6gW
 
 **Contact:** Form (centered, max-width 600px) with inline validation states
