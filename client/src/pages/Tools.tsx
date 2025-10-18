@@ -27,6 +27,7 @@ export default function Tools() {
         "Searchable call history",
       ],
       tag: "New",
+      link: "https://phonecallrecap.ai/",
     },
   ];
 

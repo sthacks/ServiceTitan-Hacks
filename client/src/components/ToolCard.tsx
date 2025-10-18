@@ -28,7 +28,11 @@ export default function ToolCard({ name, description, benefits, tag, link }: Too
           ))}
         </ul>
         {link ? (
-          <a href={link}>
+          <a 
+            href={link}
+            target={link.startsWith('http') ? '_blank' : undefined}
+            rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
             <Button variant="outline" className="w-full" data-testid={`button-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}>
               See details
             </Button>
