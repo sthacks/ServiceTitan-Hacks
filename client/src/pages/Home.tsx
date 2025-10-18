@@ -4,9 +4,10 @@ import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
-import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight } from "lucide-react";
+import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
+import podcastImage from "@assets/podcast_1760814740328.png";
 
 export default function Home() {
   const mainSections = [
@@ -37,6 +38,13 @@ export default function Home() {
       icon: Gift,
       link: "/resources",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FI8AAxp7ERumPFmkyYVug_31639896-1.jpg",
+    },
+    {
+      title: "Podcast",
+      description: "Join host Bill Brown for candid conversations with contractors and software founders revolutionizing the trades.",
+      icon: Headphones,
+      link: "/podcast",
+      image: podcastImage,
     },
   ];
 
