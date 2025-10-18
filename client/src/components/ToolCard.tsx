@@ -11,15 +11,15 @@ interface ToolCardProps {
 }
 
 export default function ToolCard({ name, description, benefits, tag, link }: ToolCardProps) {
-  return (
-    <Card className="h-full flex flex-col">
+  const cardContent = (
+    <Card className="h-full flex flex-col hover-elevate active-elevate-2">
       <CardHeader>
         {tag && <Badge className="w-fit mb-3">{tag}</Badge>}
         <h3 className="text-2xl font-semibold font-heading">{name}</h3>
         <p className="text-muted-foreground mt-2">{description}</p>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col">
-        <ul className="space-y-2 mb-6 flex-1">
+        <ul className="space-y-2 flex-1">
           {benefits.map((benefit, idx) => (
             <li key={idx} className="flex items-start gap-2">
               <span className="text-primary mt-1">✓</span>
@@ -27,22 +27,23 @@ export default function ToolCard({ name, description, benefits, tag, link }: Too
             </li>
           ))}
         </ul>
-        {link ? (
-          <a 
-            href={link}
-            target={link.startsWith('http') ? '_blank' : undefined}
-            rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
-          >
-            <Button variant="outline" className="w-full" data-testid={`button-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}>
-              See details
-            </Button>
-          </a>
-        ) : (
-          <Button variant="outline" className="w-full" data-testid={`button-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}>
-            See details
-          </Button>
-        )}
       </CardContent>
     </Card>
   );
+
+  if (link) {
+    return (
+      <a 
+        href={link}
+        target={link.startsWith('http') ? '_blank' : undefined}
+        rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+        className="block h-full"
+        data-testid={`link-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return cardContent;
 }
