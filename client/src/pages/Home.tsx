@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
 import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
+import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 
 export default function Home() {
   const mainSections = [
@@ -43,7 +44,7 @@ export default function Home() {
     { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
     { name: "Free-2-Grow", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png", url: "https://go.st-hacks.cc/free-2-grow" },
     { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
-    { name: "SmartAC", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/79f/cd4/78b/smartac_%281%29.png", url: "https://go.st-hacks.cc/smart-ac" },
+    { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png", url: "https://go.st-hacks.cc/contractor-commerce" },
   ];
 
