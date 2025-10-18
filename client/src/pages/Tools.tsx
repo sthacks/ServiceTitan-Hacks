@@ -28,16 +28,6 @@ export default function Tools() {
       ],
       tag: "New",
     },
-    {
-      name: "SmartVoice Lite",
-      description: "AI-powered call summaries sent directly to ServiceTitan after every call.",
-      benefits: [
-        "No manual note-taking",
-        "Capture customer concerns",
-        "Track upsell opportunities",
-        "Integrate with existing workflow",
-      ],
-    },
   ];
 
   return (
@@ -55,47 +45,10 @@ export default function Tools() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
               {tools.map((tool) => (
                 <ToolCard key={tool.name} {...tool} />
               ))}
-            </div>
-
-            <div className="mb-24">
-              <h2 className="text-3xl font-bold font-heading mb-8">Compare our tools</h2>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="bg-primary text-primary-foreground">
-                      <th className="p-4 text-left">Feature</th>
-                      <th className="p-4 text-center">Pricebook Optimizer</th>
-                      <th className="p-4 text-center">PhoneCallRecap.ai</th>
-                      <th className="p-4 text-center">SmartVoice Lite</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      { feature: "ServiceTitan Integration", values: ["✓", "✓", "✓"] },
-                      { feature: "AI-Powered", values: ["✓", "✓", "✓"] },
-                      { feature: "Real-time Processing", values: ["—", "✓", "✓"] },
-                      { feature: "Batch Operations", values: ["✓", "—", "—"] },
-                      { feature: "Call Recording", values: ["—", "✓", "—"] },
-                      { feature: "Export Capability", values: ["✓", "✓", "—"] },
-                    ].map((row, idx) => (
-                      <tr key={idx} className={idx % 2 === 0 ? "bg-background" : "bg-muted"}>
-                        <td className="p-4 font-medium">{row.feature}</td>
-                        {row.values.map((value, i) => (
-                          <td key={i} className="p-4 text-center">
-                            <span className={value === "✓" ? "text-primary font-bold" : "text-muted-foreground"}>
-                              {value}
-                            </span>
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
             </div>
 
             <div className="bg-muted rounded-lg p-12 text-center">
