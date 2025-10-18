@@ -1,0 +1,122 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FAQAccordion from "@/components/FAQAccordion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import keyIcon from "@assets/generated_images/All-Access_Pass_key_icon_359df7ba.png";
+import { Check } from "lucide-react";
+
+export default function AllAccess() {
+  const benefits = [
+    "Unlimited access to all courses",
+    "Download every resource, template, and calculator",
+    "Monthly live Q&A calls with industry experts",
+    "Private community forum",
+    "Early access to new tools and features",
+    "Priority email support",
+  ];
+
+  const faqs = [
+    {
+      question: "What's included in the All-Access Pass?",
+      answer: "You get unlimited access to all courses, downloadable resources, calculators, monthly live Q&A calls with industry experts, and priority support.",
+    },
+    {
+      question: "Can I cancel anytime?",
+      answer: "Yes, you can cancel your subscription at any time. No questions asked, no long-term commitments.",
+    },
+    {
+      question: "Do you offer refunds?",
+      answer: "We offer a 30-day money-back guarantee. If you're not satisfied for any reason, we'll refund your purchase in full.",
+    },
+    {
+      question: "How often is new content added?",
+      answer: "We add new courses, resources, and tools every month based on community feedback and industry trends.",
+    },
+    {
+      question: "Is this suitable for small teams?",
+      answer: "Absolutely. Whether you're a solo operator or managing a 50-person team, the All-Access Pass scales with your needs.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <section className="py-24 bg-gradient-to-b from-muted to-background">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <div className="mb-8 flex justify-center">
+                <img src={keyIcon} alt="All-Access Pass" className="w-32 h-32 object-contain" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
+                All-Access Pass
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Everything you need to master ServiceTitan, automate your workflows, and grow your business—all in one place.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+              <div>
+                <h2 className="text-3xl font-bold font-heading mb-8">What you get</h2>
+                <div className="space-y-4">
+                  {benefits.map((benefit) => (
+                    <div key={benefit} className="flex items-start gap-3">
+                      <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <span className="text-lg">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="text-center mb-6">
+                    <div className="text-5xl font-bold font-heading mb-2">$[PRICE]</div>
+                    <p className="text-muted-foreground">per month, billed monthly</p>
+                  </div>
+                  <ul className="space-y-2 mb-6 text-sm">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      <span>Cancel anytime</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      <span>30-day money-back guarantee</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      <span>Instant access upon signup</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full" size="lg" data-testid="button-purchase-pass">
+                    Get Started Now
+                  </Button>
+                  <p className="text-xs text-center text-muted-foreground mt-4">
+                    Secure checkout powered by Stripe
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mb-24">
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center">Frequently Asked Questions</h2>
+              <div className="max-w-3xl mx-auto">
+                <FAQAccordion items={faqs} />
+              </div>
+            </div>
+
+            <div className="bg-muted rounded-lg p-12 text-center">
+              <h2 className="text-2xl font-bold font-heading mb-4">Risk-free guarantee</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Try the All-Access Pass for 30 days. If it doesn't deliver value, we'll refund every penny. No hard feelings, no questions asked.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

@@ -1,0 +1,30 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
+
+export default function Contact() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <section className="py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-12">
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
+                  Contact Us
+                </h1>
+                <p className="text-xl text-muted-foreground">
+                  Have a question, partnership inquiry, or custom project in mind? We're here to help.
+                </p>
+              </div>
+
+              <ContactForm />
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
