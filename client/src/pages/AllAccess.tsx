@@ -12,8 +12,6 @@ export default function AllAccess() {
     "Continuous updates and new releases at no extra cost",
     "Ready-to-use automation templates that eliminate manual data entry",
     "Exclusive dashboards and reporting tools for real-time insights",
-    "Monthly live Q&A calls with industry experts",
-    "Priority email support",
   ];
 
   const faqs = [

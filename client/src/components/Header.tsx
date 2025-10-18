@@ -2,31 +2,29 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/IMG_0276_1760803648299.png";
+import logoImage from "@assets/Secondary Logo - 1 (1)_1760814076849.png";
 
 export default function Header() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/partners", label: "Partners" },
-    { path: "/tools", label: "Tools" },
     { path: "/courses", label: "Courses" },
+    { path: "/tools", label: "Tools" },
+    { path: "/partners", label: "Partners" },
+    { path: "/resources", label: "Free Stuff" },
     { path: "/podcast", label: "Podcast" },
-    { path: "/resources", label: "Resources" },
+    { path: "/all-access", label: "All-Access Pass" },
     { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
-    { path: "/all-access", label: "All-Access" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 bg-black border-b border-gray-800 shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home-logo">
             <span className="flex items-center cursor-pointer">
-              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-12 md:h-14" />
+              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-8 md:h-10" />
             </span>
           </Link>
 
@@ -37,7 +35,7 @@ export default function Header() {
                   className={`px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
                     location === link.path
                       ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-white hover:text-gray-300"
                   }`}
                   data-testid={`link-nav-${link.label.toLowerCase()}`}
                 >
@@ -50,7 +48,7 @@ export default function Header() {
           <Button
             size="icon"
             variant="ghost"
-            className="lg:hidden"
+            className="lg:hidden text-white hover:text-gray-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-testid="button-mobile-menu-toggle"
           >
@@ -59,15 +57,15 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border">
+          <nav className="lg:hidden py-4 border-t border-gray-800">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link key={link.path} href={link.path}>
                   <span
                     className={`block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer ${
                       location === link.path
-                        ? "text-primary bg-accent"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        ? "text-primary bg-gray-800"
+                        : "text-white hover:text-gray-300 hover:bg-gray-800"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                     data-testid={`link-mobile-${link.label.toLowerCase()}`}
