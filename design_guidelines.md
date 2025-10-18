@@ -186,6 +186,18 @@ Current Partners:
 5. Contractor Commerce - https://go.st-hacks.cc/contractor-commerce
 
 Sponsorship Info: https://www.servicetitanhacks.com/pages/sponsorships
+Schedule Call: https://calendly.com/st-hacks/partners
+
+Audience Stats:
+- 9,500+ verified ServiceTitan users
+- Active channels: Facebook, Email, YouTube, Podcast
+- High engagement and measurable ROI
+
+Sponsorship Tiers:
+1. 💎 Diamond Partner - Full omnichannel exposure with retargeting, lead tracking, and exclusive access per category
+2. 🥇 Elite Partner - Weekly visibility across all channels with strong community integration
+3. 🥈 Featured Partner - Regular cross-channel features, email exposure, and event participation
+4. 🥉 Community Partner - Entry-level presence with group visibility and shoutout opportunities
 
 **Tools:** Feature Cards (3-col) → Comparison Table → Secondary CTA
 
