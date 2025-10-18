@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -46,141 +48,140 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Hero
-        title="AI and automations for ServiceTitan contractors"
-        subtitle="Grow smarter, automate faster, win more jobs."
-        primaryCta={{
-          label: "Join the Facebook Group",
-          href: "https://go.st-hacks.cc/servicetitanhacks",
-          external: true,
-        }}
-        secondaryCta={{
-          label: "All-Access Pass",
-          href: "/all-access",
-        }}
-        backgroundImage={heroImage}
-      />
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Hero
+          title="AI and automations for ServiceTitan contractors"
+          subtitle="Grow smarter, automate faster, win more jobs."
+          primaryCta={{
+            label: "Join the Facebook Group",
+            href: "https://go.st-hacks.cc/servicetitanhacks",
+            external: true,
+          }}
+          secondaryCta={{
+            label: "All-Access Pass",
+            href: "/all-access",
+          }}
+          backgroundImage={heroImage}
+        />
 
-      {/* Main Navigation Cards */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {mainSections.map((section, index) => (
-              <Card key={index} className="hover-elevate overflow-hidden">
-                <div className="aspect-video overflow-hidden">
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {mainSections.map((section, index) => (
+                <Card key={index} className="hover-elevate overflow-hidden">
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <section.icon className="h-6 w-6 text-primary" />
+                      <h3 className="text-2xl font-semibold font-heading">{section.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{section.description}</p>
+                    <a href={section.link} data-testid={`link-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <Button className="gap-2 w-full sm:w-auto">
+                        View {section.title} <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <Card className="bg-primary/5 border-primary/20 overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="aspect-video md:aspect-auto">
                   <img
-                    src={section.image}
-                    alt={section.title}
+                    src="https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg"
+                    alt="All-Access Pass"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-3">
-                    <section.icon className="h-6 w-6 text-primary" />
-                    <h3 className="text-2xl font-semibold font-heading">{section.title}</h3>
+                    <Key className="h-8 w-8 text-primary" />
+                    <h3 className="text-3xl font-semibold font-heading">All-Access Pass</h3>
                   </div>
-                  <p className="text-muted-foreground mb-4">{section.description}</p>
-                  <a href={section.link} data-testid={`link-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <Button className="gap-2 w-full sm:w-auto">
-                      View {section.title} <ArrowRight className="h-4 w-4" />
+                  <p className="text-muted-foreground mb-6">
+                    Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls—one simple subscription.
+                  </p>
+                  <a href="/all-access" data-testid="link-all-access">
+                    <Button size="lg" className="gap-2">
+                      Get Full Access <ArrowRight className="h-4 w-4" />
                     </Button>
                   </a>
                 </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* All-Access Pass CTA */}
-          <Card className="bg-primary/5 border-primary/20 overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="aspect-video md:aspect-auto">
-                <img
-                  src="https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg"
-                  alt="All-Access Pass"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
               </div>
-              <CardContent className="p-8 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-3">
-                  <Key className="h-8 w-8 text-primary" />
-                  <h3 className="text-3xl font-semibold font-heading">All-Access Pass</h3>
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls—one simple subscription.
-                </p>
-                <a href="/all-access" data-testid="link-all-access">
-                  <Button size="lg" className="gap-2">
-                    Get Full Access <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </a>
-              </CardContent>
-            </div>
-          </Card>
-        </div>
-      </section>
+            </Card>
+          </div>
+        </section>
 
-      {/* Partner Logos */}
-      <section className="py-12 bg-muted">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners</h2>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {partners.map((partner, index) => (
+        <section className="py-12 bg-muted">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners</h2>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {partners.map((partner, index) => (
+                <a
+                  key={index}
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+                  data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-12 md:h-16 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-3xl px-6">
+            <EmailCapture />
+          </div>
+        </section>
+
+        <section className="py-16 bg-primary/5">
+          <div className="mx-auto max-w-4xl px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Join 9,500+ ServiceTitan Contractors
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Connect with fellow contractors, access exclusive resources, and stay ahead with the latest AI and automation strategies for home service businesses.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                key={index}
-                href={partner.url}
+                href="https://go.st-hacks.cc/servicetitanhacks"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-                data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                data-testid="link-facebook-group-cta"
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-12 md:h-16 w-auto object-contain"
-                  loading="lazy"
-                />
+                <Button size="lg" className="gap-2">
+                  Join the Facebook Group <ExternalLink className="h-4 w-4" />
+                </Button>
               </a>
-            ))}
+              <a href="/podcast" data-testid="link-podcast-cta">
+                <Button size="lg" variant="outline">Listen to the Podcast</Button>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Email Capture */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-3xl px-6">
-          <EmailCapture />
-        </div>
-      </section>
-
-      {/* Community CTA */}
-      <section className="py-16 bg-primary/5">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-            Join 9,500+ ServiceTitan Contractors
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Connect with fellow contractors, access exclusive resources, and stay ahead with the latest AI and automation strategies for home service businesses.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://go.st-hacks.cc/servicetitanhacks"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-facebook-group-cta"
-            >
-              <Button size="lg" className="gap-2">
-                Join the Facebook Group <ExternalLink className="h-4 w-4" />
-              </Button>
-            </a>
-            <a href="/podcast" data-testid="link-podcast-cta">
-              <Button size="lg" variant="outline">Listen to the Podcast</Button>
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }
