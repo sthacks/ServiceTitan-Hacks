@@ -140,20 +140,12 @@ export default function Partners() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
-                    href="https://www.servicetitanhacks.com/pages/sponsorships"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="link-sponsorship-details"
-                  >
-                    <Button size="lg">View Sponsorship Details</Button>
-                  </a>
-                  <a
                     href="https://calendly.com/st-hacks/partners"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="link-schedule-call"
                   >
-                    <Button size="lg" variant="outline">Schedule a Call</Button>
+                    <Button size="lg">Schedule a Call</Button>
                   </a>
                 </div>
               </CardContent>
