@@ -42,7 +42,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold font-heading mb-8 text-center">Community Impact</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                   <div>
-                    <div className="text-4xl font-bold text-primary mb-2">5,200+</div>
+                    <div className="text-4xl font-bold text-primary mb-2">9,500+</div>
                     <p className="text-muted-foreground">Community Members</p>
                   </div>
                   <div>
