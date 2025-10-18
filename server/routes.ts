@@ -5,6 +5,7 @@ import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResou
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
+import OpenAI from "openai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Email subscription endpoint
@@ -153,9 +154,55 @@ ${JSON.stringify(jsonData, null, 2)}
     try {
       const data = insertPricebookOptimizationSchema.parse(req.body);
       
+      // Initialize OpenAI client with Replit AI Integrations
+      const openai = new OpenAI({
+        baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+        apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+      });
+
+      // Prepare the category for the prompt
+      const category = data.category === "OTHER" && data.otherCategory 
+        ? data.otherCategory 
+        : data.category;
+
+      // Create prompt for ChatGPT
+      const systemPrompt = `You are an expert at translating technical service descriptions into clear, homeowner-friendly language. Your goal is to help HVAC, plumbing, and electrical contractors communicate their services in a way that builds trust and shows value.
+
+Key principles:
+- Remove confusing technical jargon and industry acronyms
+- Focus on real benefits: comfort, safety, peace of mind, long-term savings
+- Use relatable examples and analogies homeowners understand
+- Maintain a professional, confident tone that shows expertise
+- Highlight quality work, better materials, and proper craftsmanship
+- Avoid pressure tactics or urgency-based language
+- Show what makes this service valuable and worth investing in
+
+The optimized description should be 2-4 sentences long, clear, and focused on what matters to homeowners.`;
+
+      const userPrompt = `Service Category: ${category}
+
+Current Technical Description:
+${data.currentDescription}
+
+Please rewrite this service description in clear, homeowner-friendly language that builds trust and shows value.`;
+
+      // Call ChatGPT
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ],
+        temperature: 0.7,
+        max_tokens: 500,
+      });
+
+      const optimizedDescription = completion.choices[0]?.message?.content || "";
+
+      // Store the optimization request with the result
       const optimization = await storage.createPricebookOptimization(data);
       
-      // Send email notification to bill@st-hacks.com with JSON data
+      // Send email notification to bill@st-hacks.com with JSON data including the AI result
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
@@ -164,6 +211,7 @@ ${JSON.stringify(jsonData, null, 2)}
           category: optimization.category,
           otherCategory: optimization.otherCategory,
           currentDescription: optimization.currentDescription,
+          optimizedDescription: optimizedDescription,
           firstName: optimization.firstName,
           lastName: optimization.lastName,
           email: optimization.email,
@@ -188,8 +236,13 @@ ${JSON.stringify(jsonData, null, 2)}
       }
       
       res.status(201).json({ 
-        message: "Success! Your optimized description will be sent to your email shortly.",
-        optimization: { id: optimization.id }
+        message: "Success! Here's your optimized description:",
+        optimization: { 
+          id: optimization.id,
+          optimizedDescription: optimizedDescription,
+          originalDescription: data.currentDescription,
+          category: category
+        }
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
