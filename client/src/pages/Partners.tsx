@@ -4,31 +4,37 @@ import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink } from "lucide-react";
+import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 
 export default function Partners() {
   const partners = [
     {
       name: "Volca.AI",
+      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png",
       description: "AI-powered solutions for home service contractors to automate workflows and enhance customer engagement.",
       url: "https://go.st-hacks.cc/volca",
     },
     {
       name: "Wink Toolbox",
+      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png",
       description: "Comprehensive tools and resources designed to optimize ServiceTitan operations and drive business growth.",
       url: "https://go.st-hacks.cc/wink",
     },
     {
       name: "Free-2-Grow",
+      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png",
       description: "AI voice solutions for home service businesses to answer every call, boost booking rates, and capture revenue 24/7.",
       url: "https://go.st-hacks.cc/free-2-grow",
     },
     {
       name: "SmartAC",
+      logo: smartACLogo,
       description: "Smart automation and customer communication tools that help contractors deliver exceptional service experiences.",
       url: "https://go.st-hacks.cc/smart-ac",
     },
     {
       name: "Contractor Commerce",
+      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png",
       description: "E-commerce and online sales solutions tailored specifically for home service contractors and ServiceTitan users.",
       url: "https://go.st-hacks.cc/contractor-commerce",
     },
@@ -60,6 +66,15 @@ export default function Partners() {
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
                   <CardContent className="p-6">
+                    <div className="mb-6 flex items-center justify-center h-16">
+                      <img
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                        data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      />
+                    </div>
                     <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
                     <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
                     <a
