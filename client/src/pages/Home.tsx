@@ -46,6 +46,13 @@ export default function Home() {
       link: "/podcast",
       image: podcastImage,
     },
+    {
+      title: "All-Access Pass",
+      description: "Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls.",
+      icon: Key,
+      link: "/all-access",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
+    },
   ];
 
   const partners = [
@@ -108,33 +115,6 @@ export default function Home() {
                 </a>
               ))}
             </div>
-
-            <Card className="bg-primary/5 border-primary/20 overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="aspect-video md:aspect-auto">
-                  <img
-                    src="https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg"
-                    alt="All-Access Pass"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <CardContent className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Key className="h-8 w-8 text-primary" />
-                    <h3 className="text-3xl font-semibold font-heading">All-Access Pass</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-6">
-                    Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls—one simple subscription.
-                  </p>
-                  <a href="/all-access" data-testid="link-all-access">
-                    <Button size="lg" className="gap-2">
-                      Get Full Access <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </a>
-                </CardContent>
-              </div>
-            </Card>
           </div>
         </section>
 
