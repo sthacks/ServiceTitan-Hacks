@@ -13,6 +13,7 @@ import Resources from "@/pages/Resources";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import PricebookOptimizer from "@/pages/PricebookOptimizer";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/pricebook-optimizer" component={PricebookOptimizer} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
   );

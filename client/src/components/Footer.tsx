@@ -103,9 +103,11 @@ export default function Footer() {
               <a href="#" className="text-sm text-gray-500 hover:text-primary transition-colors">
                 Terms
               </a>
-              <a href="#" className="text-sm text-gray-500 hover:text-primary transition-colors">
-                Privacy
-              </a>
+              <Link href="/privacy-policy">
+                <span className="text-sm text-gray-500 hover:text-primary transition-colors cursor-pointer" data-testid="link-footer-privacy">
+                  Privacy
+                </span>
+              </Link>
             </div>
           </div>
         </div>
