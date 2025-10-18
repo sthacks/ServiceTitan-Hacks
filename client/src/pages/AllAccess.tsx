@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import keyIcon from "@assets/generated_images/All-Access_Pass_key_icon_359df7ba.png";
 import { Check } from "lucide-react";
+import titleBg from "@assets/Title (33)_1760814859255.png";
 
 export default function AllAccess() {
   const benefits = [
@@ -41,8 +42,12 @@ export default function AllAccess() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="relative py-24 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${titleBg})` }}
+          />
+          <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="mb-8 flex justify-center">
                 <img src={keyIcon} alt="All-Access Pass" className="w-32 h-32 object-contain" />

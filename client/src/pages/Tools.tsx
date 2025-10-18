@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ToolCard from "@/components/ToolCard";
 import { Button } from "@/components/ui/button";
+import titleBg from "@assets/Title (33)_1760814859255.png";
 
 export default function Tools() {
   const tools = [
@@ -35,8 +36,12 @@ export default function Tools() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="py-24 bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a]">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="relative py-24 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${titleBg})` }}
+          />
+          <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="max-w-3xl mx-auto mb-8 text-center">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
                 Tools & Products

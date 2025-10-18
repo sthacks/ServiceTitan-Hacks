@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import titleBg from "@assets/Title (33)_1760814859255.png";
 
 interface HeroProps {
   title: string;
@@ -17,16 +18,18 @@ interface HeroProps {
 }
 
 export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark = true, backgroundImage }: HeroProps) {
+  const bgImage = backgroundImage || (dark ? titleBg : undefined);
+  
   return (
-    <section className={`relative ${dark ? "bg-gradient-to-b from-[#2a2d3a] to-[#1a1d2a] text-white" : "bg-background text-foreground"} py-24 md:py-32 overflow-hidden`}>
+    <section className={`relative ${dark ? "text-white" : "bg-background text-foreground"} py-24 md:py-32 overflow-hidden`}>
+      {bgImage && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bgImage})` }}
+        />
+      )}
       {backgroundImage && (
-        <>
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50" />
-        </>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50" />
       )}
       <div className={`mx-auto max-w-7xl px-6 ${backgroundImage ? 'relative z-10' : ''}`}>
         <div className={`max-w-4xl ${backgroundImage ? 'text-left' : 'mx-auto text-center'}`}>
