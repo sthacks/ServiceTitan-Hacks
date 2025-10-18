@@ -7,9 +7,10 @@ interface ToolCardProps {
   description: string;
   benefits: string[];
   tag?: string;
+  link?: string;
 }
 
-export default function ToolCard({ name, description, benefits, tag }: ToolCardProps) {
+export default function ToolCard({ name, description, benefits, tag, link }: ToolCardProps) {
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
@@ -26,9 +27,17 @@ export default function ToolCard({ name, description, benefits, tag }: ToolCardP
             </li>
           ))}
         </ul>
-        <Button variant="outline" className="w-full" data-testid={`button-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}>
-          See details
-        </Button>
+        {link ? (
+          <a href={link}>
+            <Button variant="outline" className="w-full" data-testid={`button-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}>
+              See details
+            </Button>
+          </a>
+        ) : (
+          <Button variant="outline" className="w-full" data-testid={`button-tool-${name.toLowerCase().replace(/\s+/g, "-")}`}>
+            See details
+          </Button>
+        )}
       </CardContent>
     </Card>
   );

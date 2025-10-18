@@ -15,6 +15,7 @@ export default function Tools() {
         "Increase close rates with clarity",
       ],
       tag: "Popular",
+      link: "/pricebook-optimizer",
     },
     {
       name: "PhoneCallRecap.ai",
