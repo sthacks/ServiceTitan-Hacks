@@ -170,12 +170,6 @@ export default function ContactForm() {
             {contactMutation.isPending ? "Sending..." : "Send Message"}
           </Button>
         </form>
-        <p className="text-sm text-muted-foreground mt-4">
-          Or email us directly at{" "}
-          <a href="mailto:hello@servicetitanhacks.com" className="text-primary hover:underline">
-            hello@servicetitanhacks.com
-          </a>
-        </p>
       </CardContent>
     </Card>
   );
