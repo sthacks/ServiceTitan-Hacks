@@ -1,0 +1,119 @@
+You are rebuilding **ServiceTitan Hacks** as a fast, accessible, mobile-first marketing site for home-service contractors. Produce production-ready HTML, CSS, and minimal JS with clean, semantic structure. No frameworks. No external CDNs except Google Fonts. Ship a complete, multi-page site with navigation, footer, and shared styles.
+
+## Brand
+- Name: ServiceTitan Hacks
+- Voice: direct, contractor-focused, zero fluff
+- Colors:
+  - Primary Red: #ED254E
+  - Deep Red: #C1124F
+  - Dark Gray: #1F1F1F
+  - Mid Gray: #6B7280
+  - Black: #000000
+  - White: #FFFFFF
+- Typography: "Oxygen" for headings, "Inter" for body (load from Google Fonts). Tight, high-contrast type scale.
+
+## Global requirements
+- Fully responsive, mobile-first, CLS-safe layout
+- WCAG 2.1 AA contrast
+- Prefetch fonts, use font-display:swap
+- Meta + OpenGraph + Twitter cards per page
+- JSON-LD schema where relevant (Organization, Website, Article, PodcastEpisode, Product)
+- Image `<img>` with `width/height` and `loading="lazy"`
+- Accessible nav with keyboard focus states
+- Reusable components in a `/assets/` folder: buttons, cards, badges, grid, section wrappers
+- Simple, dependency-free JS for mobile menu, accordions, tabbed content, and form validation
+
+## Information architecture (generate these pages)
+1) **Home** (`/index.html`)
+   - Hero: H1 “AI and automations for ServiceTitan contractors”
+     - Subhead: “Grow smarter, automate faster, win more jobs.”
+     - Primary CTA: “Join the Facebook Group” -> https://www.facebook.com/groups/servicetitanhacks
+     - Secondary CTA: “All-Access Pass” -> /all-access.html
+   - Trust strip: sponsor logos (use neutral placeholders with alt text)
+   - Three pillars (cards):
+     - AI Integrations
+     - ServiceTitan Customizations
+     - Done-For-You Automations
+   - Featured: latest podcast episode (embed placeholder), top YouTube video (embed), and 3 newest posts/resources
+   - Lead capture: email form block with privacy note
+   - Social proof: 3 short contractor testimonials
+   - CTA band: “Book a Sponsor Demo” -> /partners.html#book
+
+2) **Partners / Sponsors** (`/partners.html`)
+   - Short intro: we partner with a few high-fit vendors
+   - Sponsor grid: logo, 1-sentence value prop, CTA “Learn more”
+   - Explainer: how sponsorship works (bulleted), guardrails for community quality
+   - Contact CTA: “Request partnership info” -> /contact.html
+   - Add JSON-LD Organization for each sponsor card (placeholder data)
+
+3) **Tools & Products** (`/tools.html`)
+   - Feature cards for:
+     - Pricebook Optimizer (rewrite ServiceTitan pricebook descriptions for homeowners)
+     - PhoneCallRecap.ai
+     - SmartVoice Lite (AI call summaries to ST)
+   - Each card: short benefit copy, sample HTML output snippet area, CTA “See details”
+   - Comparison table row for the three tools
+   - Secondary CTA: “Ask about a custom build” -> /contact.html
+
+4) **Courses** (`/courses.html`)
+   - Course cards with level tags, outcomes, what’s included, time to complete
+   - CTA: “All-Access Pass” -> /all-access.html
+   - JSON-LD Course schema for each
+
+5) **All-Access Pass** (`/all-access.html`)
+   - Hero with key icon motif
+   - Benefits list: access to all courses, downloads, calculators, and private Q&A calls
+   - Pricing panel (no $ values, just placeholders), FAQs in accordion
+   - Risk-reversal note and CTA to purchase (placeholder link)
+   - JSON-LD Product schema
+
+6) **Podcast** (`/podcast.html`)
+   - Latest episode hero with audio embed placeholder
+   - Episode list as cards with date, guest, key takeaways, and “Listen”
+   - JSON-LD Podcast + PodcastEpisode
+
+7) **Resources** (`/resources.html`)
+   - Free downloads, calculators, and templates grid
+   - Email gate on select items (inline form)
+
+8) **About** (`/about.html`)
+   - Short founder bio, mission, community stats
+   - Photo placeholder with proper alt
+   - CTA: “Join the Facebook Group”
+
+9) **Contact** (`/contact.html`)
+   - Form: name, email, company, role, message, consent checkbox
+   - Success and error states
+   - Mailto fallback link
+
+## Header & Footer
+- Sticky header with logo (text lockup ok) and nav links: Home, Partners, Tools, Courses, Podcast, Resources, About, Contact, All-Access
+- Footer with:
+  - Quick links
+  - Social links: YouTube, Facebook Group, LinkedIn (placeholders)
+  - Copyright, terms, privacy
+
+## Sections: content and copy
+- Keep copy concise. Aim at residential HVAC/Plumbing/Electrical owners and ops leaders.
+- Avoid “simple” or “quick fix” language. Emphasize outcomes, reliability, and ROI.
+- Use short bullets, specific verbs, and concrete benefits.
+
+## Forms and integrations
+- Create vanilla POST endpoints as placeholders (`/api/subscribe`, `/api/contact`) and show how to hook them
+- Basic honeypot anti-spam
+- Validate required fields and email format with JS
+
+## Performance
+- CSS under 40KB minified, scoped utility classes for spacing and layout
+- Inline critical CSS for above-the-fold on Home
+- Defer non-critical JS
+
+## Deliverables
+- `/index.html` and pages listed above
+- `/assets/styles.css` (well-commented, utility classes + components)
+- `/assets/main.js` (menu, tabs, accordion, form validation)
+- `/assets/img/` placeholders
+- `sitemap.xml` and `robots.txt`
+- `favicon.svg` matching brand red
+
+Populate with realistic placeholder text and images. Keep everything consistent with the brand colors and tone above.
