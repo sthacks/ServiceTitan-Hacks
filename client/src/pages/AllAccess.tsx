@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import keyIcon from "@assets/generated_images/All-Access_Pass_key_icon_359df7ba.png";
 import { Check } from "lucide-react";
-import titleBg from "@assets/Title (33)_1760815029937.png";
+import titleBg from "@assets/Title (33)_1760815147781.png";
 
 export default function AllAccess() {
   const benefits = [

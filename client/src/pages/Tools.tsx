@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ToolCard from "@/components/ToolCard";
 import { Button } from "@/components/ui/button";
-import titleBg from "@assets/Title (33)_1760815029937.png";
+import titleBg from "@assets/Title (33)_1760815147781.png";
 
 export default function Tools() {
   const tools = [

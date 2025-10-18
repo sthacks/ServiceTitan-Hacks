@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import titleBg from "@assets/Title (33)_1760815029937.png";
+import titleBg from "@assets/Title (33)_1760815147781.png";
 
 export default function Contact() {
   return (
