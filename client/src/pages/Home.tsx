@@ -134,13 +134,13 @@ export default function Home() {
                   href={partner.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+                  className="transition-all opacity-90 hover:opacity-100"
                   data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-12 md:h-16 w-auto object-contain"
+                    className="h-16 md:h-20 w-auto object-contain"
                     loading="lazy"
                   />
                 </a>
