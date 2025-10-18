@@ -55,21 +55,6 @@ export default function Partners() {
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16">
-            <h2 className="text-3xl font-bold font-heading mb-4 text-center">Why Partner with ServiceTitan Hacks?</h2>
-            <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-8">
-              Our partners are carefully selected based on real-world results from contractors in the ServiceTitan Hacks community. Each partner offers proven solutions that integrate seamlessly with ServiceTitan and deliver measurable ROI.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-16">
             <h2 className="text-3xl font-bold font-heading mb-8 text-center">Our Partners</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {partners.map((partner, index) => (
@@ -89,6 +74,21 @@ export default function Partners() {
                     </a>
                   </CardContent>
                 </Card>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold font-heading mb-4 text-center">Why Partner with ServiceTitan Hacks?</h2>
+            <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-8">
+              Our partners are carefully selected based on real-world results from contractors in the ServiceTitan Hacks community. Each partner offers proven solutions that integrate seamlessly with ServiceTitan and deliver measurable ROI.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-muted-foreground">{benefit}</p>
+                </div>
               ))}
             </div>
           </div>
