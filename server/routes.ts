@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 
@@ -111,6 +111,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error fetching resource leads:", error);
       res.status(500).json({ 
         message: "Failed to fetch leads." 
+      });
+    }
+  });
+
+  // Pricebook optimization request endpoint
+  app.post("/api/pricebook-optimization", async (req, res) => {
+    try {
+      const data = insertPricebookOptimizationSchema.parse(req.body);
+      
+      const optimization = await storage.createPricebookOptimization(data);
+      
+      res.status(201).json({ 
+        message: "Success! Your optimized description will be sent to your email shortly.",
+        optimization: { id: optimization.id }
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("Pricebook optimization error:", error);
+      res.status(500).json({ 
+        message: "Failed to process request. Please try again." 
+      });
+    }
+  });
+
+  // Get all pricebook optimizations (for admin purposes)
+  app.get("/api/pricebook-optimization", async (req, res) => {
+    try {
+      const optimizations = await storage.getAllPricebookOptimizations();
+      res.json(optimizations);
+    } catch (error) {
+      console.error("Error fetching pricebook optimizations:", error);
+      res.status(500).json({ 
+        message: "Failed to fetch optimizations." 
       });
     }
   });

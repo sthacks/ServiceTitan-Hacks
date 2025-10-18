@@ -6,7 +6,9 @@ import {
   type ContactSubmission,
   type InsertContactSubmission,
   type ResourceLead,
-  type InsertResourceLead
+  type InsertResourceLead,
+  type PricebookOptimization,
+  type InsertPricebookOptimization
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
@@ -23,6 +25,9 @@ export interface IStorage {
   
   createResourceLead(lead: InsertResourceLead): Promise<ResourceLead>;
   getAllResourceLeads(): Promise<ResourceLead[]>;
+  
+  createPricebookOptimization(optimization: InsertPricebookOptimization): Promise<PricebookOptimization>;
+  getAllPricebookOptimizations(): Promise<PricebookOptimization[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -30,12 +35,14 @@ export class MemStorage implements IStorage {
   private emailSubscribers: Map<string, EmailSubscriber>;
   private contactSubmissions: Map<string, ContactSubmission>;
   private resourceLeads: Map<string, ResourceLead>;
+  private pricebookOptimizations: Map<string, PricebookOptimization>;
 
   constructor() {
     this.users = new Map();
     this.emailSubscribers = new Map();
     this.contactSubmissions = new Map();
     this.resourceLeads = new Map();
+    this.pricebookOptimizations = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -102,6 +109,22 @@ export class MemStorage implements IStorage {
 
   async getAllResourceLeads(): Promise<ResourceLead[]> {
     return Array.from(this.resourceLeads.values());
+  }
+
+  async createPricebookOptimization(insertOptimization: InsertPricebookOptimization): Promise<PricebookOptimization> {
+    const id = randomUUID();
+    const optimization: PricebookOptimization = { 
+      ...insertOptimization,
+      otherCategory: insertOptimization.otherCategory || null,
+      id, 
+      submittedAt: new Date() 
+    };
+    this.pricebookOptimizations.set(id, optimization);
+    return optimization;
+  }
+
+  async getAllPricebookOptimizations(): Promise<PricebookOptimization[]> {
+    return Array.from(this.pricebookOptimizations.values());
   }
 }
 

@@ -34,6 +34,17 @@ export const resourceLeads = pgTable("resource_leads", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const pricebookOptimizations = pgTable("pricebook_optimizations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  category: text("category").notNull(),
+  otherCategory: text("other_category"),
+  currentDescription: text("current_description").notNull(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  email: text("email").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -61,6 +72,14 @@ export const insertResourceLeadSchema = createInsertSchema(resourceLeads).omit({
   email: z.string().email("Please enter a valid email address"),
 });
 
+export const insertPricebookOptimizationSchema = createInsertSchema(pricebookOptimizations).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  currentDescription: z.string().min(10, "Please provide more details in your description"),
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type EmailSubscriber = typeof emailSubscribers.$inferSelect;
@@ -69,3 +88,5 @@ export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type ResourceLead = typeof resourceLeads.$inferSelect;
 export type InsertResourceLead = z.infer<typeof insertResourceLeadSchema>;
+export type PricebookOptimization = typeof pricebookOptimizations.$inferSelect;
+export type InsertPricebookOptimization = z.infer<typeof insertPricebookOptimizationSchema>;
