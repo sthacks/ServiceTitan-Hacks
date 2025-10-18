@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
+import { getUncachableResendClient } from "./resend-client";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Email subscription endpoint
@@ -121,6 +122,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const data = insertPricebookOptimizationSchema.parse(req.body);
       
       const optimization = await storage.createPricebookOptimization(data);
+      
+      // Send email notification to bill@st-hacks.com with JSON data
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          id: optimization.id,
+          category: optimization.category,
+          otherCategory: optimization.otherCategory,
+          currentDescription: optimization.currentDescription,
+          firstName: optimization.firstName,
+          lastName: optimization.lastName,
+          email: optimization.email,
+          submittedAt: optimization.submittedAt
+        };
+
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Pricebook Optimization Request',
+          html: `
+            <h2>New Pricebook Optimization Request</h2>
+            <p>A new pricebook optimization request has been submitted:</p>
+            <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">
+${JSON.stringify(jsonData, null, 2)}
+            </pre>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        // Don't fail the request if email fails
+      }
       
       res.status(201).json({ 
         message: "Success! Your optimized description will be sent to your email shortly.",
