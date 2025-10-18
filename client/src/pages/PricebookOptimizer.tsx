@@ -145,16 +145,64 @@ export default function PricebookOptimizer() {
 
             <Card className="mb-12">
               <CardContent className="p-8">
-                <h2 className="text-3xl font-bold font-heading mb-6">What It Does</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  It changes technical details into simple explanations homeowners can understand. Each description talks about comfort, safety, and how your work helps them—so homeowners see the real value in what you do.
-                </p>
+                <h2 className="text-3xl font-bold font-heading mb-6">How It Works</h2>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                      1
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Download your pricebook from ServiceTitan</h3>
+                      <p className="text-muted-foreground">Export your current pricebook file from your ServiceTitan account.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                      2
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Upload it to our tool</h3>
+                      <p className="text-muted-foreground">Simply upload your pricebook file and let our AI get to work.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                      3
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Our AI rewrites your descriptions</h3>
+                      <p className="text-muted-foreground">The AI changes technical details into simple explanations homeowners can understand—talking about comfort, safety, and real value.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                      4
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">We send the file back to you</h3>
+                      <p className="text-muted-foreground">Get your updated pricebook file with all the new descriptions ready to go.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                      5
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Review and upload to ServiceTitan</h3>
+                      <p className="text-muted-foreground">Look over the changes, make any tweaks you want, then upload it back to ServiceTitan.</p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             <Card className="mb-12">
               <CardContent className="p-8">
-                <h2 className="text-3xl font-bold font-heading mb-6">How It Works</h2>
+                <h2 className="text-3xl font-bold font-heading mb-6">What You Get</h2>
                 <ul className="space-y-4">
                   {howItWorksItems.map((item, index) => (
                     <li key={index} className="flex gap-4">
