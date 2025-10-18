@@ -47,6 +47,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const submission = await storage.createContactSubmission(data);
       
+      // Send email notification to bill@st-hacks.com with form data
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          id: submission.id,
+          name: submission.name,
+          email: submission.email,
+          company: submission.company,
+          role: submission.role,
+          message: submission.message,
+          consent: submission.consent,
+          submittedAt: submission.submittedAt
+        };
+
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Contact Form Submission',
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p>A new contact form has been submitted:</p>
+            <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">
+${JSON.stringify(jsonData, null, 2)}
+            </pre>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        // Don't fail the request if email fails
+      }
+      
       res.status(201).json({ 
         message: "Message sent successfully! We'll get back to you within 24 hours.",
         submission: { id: submission.id }
