@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 
@@ -73,6 +73,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error fetching contact submissions:", error);
       res.status(500).json({ 
         message: "Failed to fetch submissions." 
+      });
+    }
+  });
+
+  // Resource lead capture endpoint
+  app.post("/api/resource-leads", async (req, res) => {
+    try {
+      const data = insertResourceLeadSchema.parse(req.body);
+      
+      const lead = await storage.createResourceLead(data);
+      
+      res.status(201).json({ 
+        message: "Success! You can now download the resource.",
+        lead: { id: lead.id }
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("Resource lead error:", error);
+      res.status(500).json({ 
+        message: "Failed to process request. Please try again." 
+      });
+    }
+  });
+
+  // Get all resource leads (for admin purposes)
+  app.get("/api/resource-leads", async (req, res) => {
+    try {
+      const leads = await storage.getAllResourceLeads();
+      res.json(leads);
+    } catch (error) {
+      console.error("Error fetching resource leads:", error);
+      res.status(500).json({ 
+        message: "Failed to fetch leads." 
       });
     }
   });

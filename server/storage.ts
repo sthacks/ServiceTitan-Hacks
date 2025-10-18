@@ -4,7 +4,9 @@ import {
   type EmailSubscriber, 
   type InsertEmailSubscriber,
   type ContactSubmission,
-  type InsertContactSubmission
+  type InsertContactSubmission,
+  type ResourceLead,
+  type InsertResourceLead
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
@@ -18,17 +20,22 @@ export interface IStorage {
   
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
   getAllContactSubmissions(): Promise<ContactSubmission[]>;
+  
+  createResourceLead(lead: InsertResourceLead): Promise<ResourceLead>;
+  getAllResourceLeads(): Promise<ResourceLead[]>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private emailSubscribers: Map<string, EmailSubscriber>;
   private contactSubmissions: Map<string, ContactSubmission>;
+  private resourceLeads: Map<string, ResourceLead>;
 
   constructor() {
     this.users = new Map();
     this.emailSubscribers = new Map();
     this.contactSubmissions = new Map();
+    this.resourceLeads = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -80,6 +87,21 @@ export class MemStorage implements IStorage {
 
   async getAllContactSubmissions(): Promise<ContactSubmission[]> {
     return Array.from(this.contactSubmissions.values());
+  }
+
+  async createResourceLead(insertLead: InsertResourceLead): Promise<ResourceLead> {
+    const id = randomUUID();
+    const lead: ResourceLead = { 
+      ...insertLead, 
+      id, 
+      submittedAt: new Date() 
+    };
+    this.resourceLeads.set(id, lead);
+    return lead;
+  }
+
+  async getAllResourceLeads(): Promise<ResourceLead[]> {
+    return Array.from(this.resourceLeads.values());
   }
 }
 
