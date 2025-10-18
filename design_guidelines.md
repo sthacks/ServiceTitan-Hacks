@@ -18,8 +18,8 @@
 
 ### Typography
 **Font Families:**
-- Headings: "Oxygen" - tight, high-contrast type scale
-- Body: "Inter" - clean, readable, modern sans-serif
+- All Text: "Oxygen" - clean, modern sans-serif with excellent readability
+- Applied uniformly across headings, body text, and UI elements
 - Load via Google Fonts with `font-display: swap`
 
 **Type Scale:**
