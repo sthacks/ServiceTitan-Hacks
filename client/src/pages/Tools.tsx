@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ToolCard from "@/components/ToolCard";
 import { Button } from "@/components/ui/button";
 import titleBg from "@assets/title-background.png";
+import phoneCallRecapImage from "@assets/Copy of Phone Call Recap Infographic (1)_1760903764548.png";
 
 export default function Tools() {
   const tools = [
@@ -29,6 +30,7 @@ export default function Tools() {
       ],
       tag: "New",
       link: "https://phonecallrecap.ai/",
+      image: phoneCallRecapImage,
     },
   ];
 

@@ -8,11 +8,21 @@ interface ToolCardProps {
   benefits: string[];
   tag?: string;
   link?: string;
+  image?: string;
 }
 
-export default function ToolCard({ name, description, benefits, tag, link }: ToolCardProps) {
+export default function ToolCard({ name, description, benefits, tag, link, image }: ToolCardProps) {
   const cardContent = (
     <Card className="h-full flex flex-col hover-elevate active-elevate-2">
+      {image && (
+        <div className="w-full overflow-hidden rounded-t-xl">
+          <img 
+            src={image} 
+            alt={name} 
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      )}
       <CardHeader>
         {tag && <Badge className="w-fit mb-3">{tag}</Badge>}
         <h3 className="text-2xl font-semibold font-heading">{name}</h3>
