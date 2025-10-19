@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 
 export default function Partners() {
@@ -40,13 +40,6 @@ export default function Partners() {
     },
   ];
 
-  const benefits = [
-    "Exclusive discounts and special offers for community members",
-    "Early access to new features and product updates",
-    "Direct support from partner teams who understand ServiceTitan",
-    "Integration guides and implementation assistance",
-    "Community-vetted tools that contractors actually use",
-  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -96,21 +89,6 @@ export default function Partners() {
                     </a>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold font-heading mb-4 text-center">Why Partner with ServiceTitan Hacks?</h2>
-            <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-8">
-              Our partners are carefully selected based on real-world results from contractors in the ServiceTitan Hacks community. Each partner offers proven solutions that integrate seamlessly with ServiceTitan and deliver measurable ROI.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">{benefit}</p>
-                </div>
               ))}
             </div>
           </div>
