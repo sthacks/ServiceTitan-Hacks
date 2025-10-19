@@ -18,6 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import hvacMarketingImage from "@assets/IMG_4342_1760897351059.jpeg";
+import pricingObjectionsImage from "@assets/Untitled design_1760897689409.png";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -46,7 +47,7 @@ export default function Resources() {
       title: "Master Your Pricing Objections",
       description: "Transform tension into trust with my proven strategy for handling pricing objections. Download the 'Why It Costs What It Costs' graphic to confidently communicate your value without sounding defensive.",
       type: "Digital Download",
-      image: "https://import.cdn.thinkific.com/1072722/ligxf2UyTB6c448xDSnm_IMG_3358.jpeg",
+      image: pricingObjectionsImage,
       url: "/downloads/Pricing-Objections-Guide.pdf",
       isLocalFile: true,
     },
