@@ -65,6 +65,13 @@ export default function Resources() {
       url: "/downloads/112-ServiceTitan-Metrics.xlsx",
       isLocalFile: true,
     },
+    {
+      title: "HVAC Marketing Calculator",
+      description: "Calculate your marketing ROI and discover how much revenue you need to generate to justify your marketing spend. Get instant insights to make smarter marketing decisions.",
+      type: "Tool",
+      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      url: "https://hvac-marketing-calculator.lovable.app?skip=true",
+    },
   ];
 
   const leadMutation = useMutation({
