@@ -72,6 +72,13 @@ export default function Resources() {
       image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
       url: "https://hvac-marketing-calculator.lovable.app?skip=true",
     },
+    {
+      title: "Referral Wizard Calculator",
+      description: "Discover how powerful referrals can be for your business. Calculate the lifetime value of a single referral and see how word-of-mouth marketing drives sustainable growth.",
+      type: "Tool",
+      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      url: "https://referralwizard.lovable.app",
+    },
   ];
 
   const leadMutation = useMutation({
