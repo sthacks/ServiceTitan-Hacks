@@ -221,25 +221,40 @@ Your goal is to help contractors communicate expertise and build trust by focusi
 
 ---
 
-### **Formatting Rules (HTML Output)**
+### **Formatting Rules (HTML Output) - MANDATORY**
 
-* Use <b> for headings and key terms.
-* Use <br> for spacing between paragraphs.
-* Use <ul> and <li> for features and benefits.
-* Do **not** include <head> or <body> tags.
-* Do **not** include prices in the output.
+**REQUIRED STRUCTURE:**
+1. Start with a brief introductory sentence (1-2 sentences max) using <b> tags for emphasis on key terms
+2. Follow with a bulleted list of benefits, features, or key points using <ul> and <li> tags
+3. Each bullet point should be concise (1-2 sentences)
+4. Use <strong> or <b> tags within bullet points to emphasize important words
+
+**HTML Tags to Use:**
+* Use <b> or <strong> for emphasis on headings and key terms
+* MUST use <ul> and <li> to create bulleted lists for all main points
+* Use <br><br> only for spacing between the intro and the bullet list (if needed)
+* Do **not** include <head>, <body>, or <p> tags
+* Do **not** include prices in the output
+
+**Example Structure:**
+<b>Service Name</b> ensures your home stays comfortable and efficient year-round.<br><br>
+<ul>
+<li><strong>Benefit 1:</strong> Description of benefit that homeowners care about</li>
+<li><strong>Benefit 2:</strong> Another key advantage explained clearly</li>
+<li><strong>Benefit 3:</strong> Final important point about quality or value</li>
+</ul>
 
 ---
 
 ### **Length Rules**
 
-* **Installations / major projects** (e.g., furnace, water heater, A/C, bathtub): ≤ **200 words**
-* **Small repairs / upgrades** (e.g., component replacement, maintenance): ≤ **75 words**
+* **Installations / major projects** (e.g., furnace, water heater, A/C, bathtub): ≤ **200 words**, 3-5 bullet points
+* **Small repairs / upgrades** (e.g., component replacement, maintenance): ≤ **75 words**, 2-3 bullet points
 
 ---
 
 **Goal:**
-Produce a professional, confident, and homeowner-friendly explanation that demonstrates expertise, justifies value, and builds trust in the quality of the work.`;
+Produce a professional, confident, and homeowner-friendly explanation in BULLET POINT FORMAT that demonstrates expertise, justifies value, and builds trust in the quality of the work.`;
 
       const userPrompt = `Service Category: ${category}
 

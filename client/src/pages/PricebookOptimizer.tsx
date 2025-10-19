@@ -462,7 +462,11 @@ export default function PricebookOptimizer() {
                       <Badge>After</Badge>
                     </div>
                     <div 
-                      className="leading-relaxed"
+                      className="leading-relaxed prose prose-slate max-w-none
+                        prose-ul:my-2 prose-ul:list-disc prose-ul:pl-5
+                        prose-li:my-1 prose-li:text-foreground
+                        prose-strong:text-foreground prose-strong:font-semibold
+                        prose-b:text-foreground prose-b:font-semibold"
                       dangerouslySetInnerHTML={{ __html: result.optimizedDescription }}
                     />
                   </CardContent>
