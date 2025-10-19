@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Secondary Logo - 1 (1)_1760814076849.png";
+import logoImage from "@assets/secondary logo_1760895642629.png";
 
 export default function Header() {
   const [location] = useLocation();
