@@ -19,6 +19,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import swimlanePdf from "@assets/Tech-Turnover-Swimlane_1760895931795.pdf";
 import pricingPdf from "@assets/Pricing Hi Res_1760895997041.pdf";
+import metricsXlsx from "@assets/112 ServiceTitan Hacks Metrics_1760896208246.xlsx";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -63,7 +64,8 @@ export default function Resources() {
       description: "Eliminate confusion around ServiceTitan metrics! This free guide clarifies key KPIs in simple terms, ensuring your team aligns, makes confident decisions, and seizes revenue opportunities.",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/sYVl32TrSPuxL4jpF0m0_112%20ServiceTitan%20Metrics%20(2).png",
-      url: "https://www.servicetitanhacks.com/products/digital_downloads/service-titan-metrics-guide",
+      url: metricsXlsx,
+      isLocalFile: true,
     },
   ];
 
@@ -90,6 +92,8 @@ export default function Resources() {
               ? 'Tech-Turnover-Swimlane.pdf' 
               : resource.title.includes('Pricing') 
               ? 'Pricing-Objections-Guide.pdf'
+              : resource.title.includes('Metric') 
+              ? '112-ServiceTitan-Metrics.xlsx'
               : 'download.pdf';
             link.download = filename;
             document.body.appendChild(link);
