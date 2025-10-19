@@ -19,6 +19,8 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import hvacMarketingImage from "@assets/IMG_4342_1760897351059.jpeg";
 import pricingObjectionsImage from "@assets/Untitled design_1760897689409.png";
+import referralWizardImage from "@assets/generated_images/Referral_marketing_business_illustration_4a956926.png";
+import winkROIImage from "@assets/generated_images/ROI_automation_savings_illustration_d00c9d33.png";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -78,14 +80,14 @@ export default function Resources() {
       title: "Referral Wizard Calculator",
       description: "Discover how powerful referrals can be for your business. Calculate the lifetime value of a single referral and see how word-of-mouth marketing drives sustainable growth.",
       type: "Tool",
-      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      image: referralWizardImage,
       url: "https://referralwizard.lovable.app",
     },
     {
       title: "Wink ROI Saver Calculator",
       description: "Calculate your potential savings and ROI with Wink's automation tools. See exactly how much time and money you can save by streamlining your ServiceTitan operations.",
       type: "Tool",
-      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      image: winkROIImage,
       url: "https://wink-roi-saver.lovable.app?skip=true",
     },
   ];
