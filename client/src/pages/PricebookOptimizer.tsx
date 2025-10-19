@@ -299,6 +299,33 @@ export default function PricebookOptimizer() {
 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
+                    {/* Before/After Example */}
+                    <div className="bg-muted/50 rounded-lg p-6 mb-6">
+                      <h3 className="font-semibold text-lg mb-4">See the Difference</h3>
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <Badge variant="outline">Before</Badge>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            replace outdoor ac fan motor and fan blade
+                          </p>
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <Badge>After</Badge>
+                          </div>
+                          <div className="text-sm whitespace-pre-line">
+                            {`We replace the failing fan motor and blade with properly matched, weather-rated parts, then set rotation, balance, and clearances to factory specs. This restores airflow, protects the compressor from overheating, and improves cooling efficiency and noise levels—especially during heat waves.
+•Correct motor, blade, and capacitor pairing
+•Precision balancing to reduce vibration
+•Sealed bearings for durability
+•Airflow and amp-draw verification`}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <FormField
                       control={form.control}
                       name="category"
