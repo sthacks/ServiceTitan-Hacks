@@ -27,6 +27,11 @@ export default function ToolCard({ name, description, benefits, tag, link }: Too
             </li>
           ))}
         </ul>
+        {link && (
+          <Button className="w-full mt-4" data-testid={`button-learn-more-${name.toLowerCase().replace(/\s+/g, "-")}`}>
+            Learn More
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
