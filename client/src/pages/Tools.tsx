@@ -4,6 +4,7 @@ import ToolCard from "@/components/ToolCard";
 import { Button } from "@/components/ui/button";
 import titleBg from "@assets/title-background.png";
 import phoneCallRecapImage from "@assets/Copy of Phone Call Recap Infographic (1)_1760903764548.png";
+import pricebookOptimizerImage from "@assets/generated_images/Pricebook_optimization_before_after_transformation_28e42589.png";
 
 export default function Tools() {
   const tools = [
@@ -18,6 +19,7 @@ export default function Tools() {
       ],
       tag: "Popular",
       link: "/pricebook-optimizer",
+      image: pricebookOptimizerImage,
     },
     {
       name: "PhoneCallRecap.ai",
