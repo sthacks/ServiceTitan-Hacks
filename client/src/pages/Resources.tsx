@@ -21,6 +21,10 @@ import hvacMarketingImage from "@assets/IMG_4342_1760897351059.jpeg";
 import pricingObjectionsImage from "@assets/Untitled design_1760897689409.png";
 import referralWizardImage from "@assets/generated_images/Referral_marketing_business_illustration_4a956926.png";
 import winkROIImage from "@assets/generated_images/ROI_automation_savings_illustration_d00c9d33.png";
+import ltvAnalysisImage from "@assets/generated_images/Customer_lifetime_value_analysis_04f8592e.png";
+import zapierIntegrationImage from "@assets/generated_images/ServiceTitan_Zapier_integration_visual_c40d4316.png";
+import swimlaneChartImage from "@assets/generated_images/Business_process_swimlane_workflow_e4e79b67.png";
+import metricsGuideImage from "@assets/generated_images/Business_metrics_KPI_dashboard_b247c6c8.png";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -34,7 +38,7 @@ export default function Resources() {
       title: "Customer Lifetime Value Analysis Prompt",
       description: "Unlock the power of ServiceTitan reports with this easy-to-use prompt for ChatGPT. Perfect for business owners and marketers, enhance your understanding of customer lifetime value today!",
       type: "Digital Download",
-      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      image: ltvAnalysisImage,
       url: "/downloads/LTV-Analysis-Prompt.docx",
       isLocalFile: true,
     },
@@ -42,7 +46,7 @@ export default function Resources() {
       title: "Connect ServiceTitan to Zapier",
       description: "Master the integration of ServiceTitan and Zapier to streamline operations and automate workflows. Enhance your productivity and efficiency with powerful, automated connections.",
       type: "Course",
-      image: "https://import.cdn.thinkific.com/1072722/OdZwdguBTtyLCkKTWeFf_connect%20to%20zapier.png",
+      image: zapierIntegrationImage,
       url: "https://www.servicetitanhacks.com/products/courses/servicetitan-to-zapier",
     },
     {
@@ -57,7 +61,7 @@ export default function Resources() {
       title: "Streamline Your Business with Swimlane Charts",
       description: "Unlock your team's potential! Download my free Swimlane Chart template to establish clear processes, enhance collaboration, and adapt workflows for a more scalable business model.",
       type: "Digital Download",
-      image: "https://import.cdn.thinkific.com/1072722/YE349y0ISMyGMhGo57f0_IMG_3356.jpeg",
+      image: swimlaneChartImage,
       url: "/downloads/Tech-Turnover-Swimlane.pdf",
       isLocalFile: true,
     },
@@ -65,7 +69,7 @@ export default function Resources() {
       title: "ServiceTitan Metric Definitions: The Plain English Guide",
       description: "Eliminate confusion around ServiceTitan metrics! This free guide clarifies key KPIs in simple terms, ensuring your team aligns, makes confident decisions, and seizes revenue opportunities.",
       type: "Digital Download",
-      image: "https://import.cdn.thinkific.com/1072722/sYVl32TrSPuxL4jpF0m0_112%20ServiceTitan%20Metrics%20(2).png",
+      image: metricsGuideImage,
       url: "/downloads/112-ServiceTitan-Metrics.xlsx",
       isLocalFile: true,
     },
