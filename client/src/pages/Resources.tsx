@@ -17,6 +17,7 @@ import { Download, FileText, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import hvacMarketingImage from "@assets/IMG_4342_1760897351059.jpeg";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -69,7 +70,7 @@ export default function Resources() {
       title: "HVAC Marketing Calculator",
       description: "Calculate your marketing ROI and discover how much revenue you need to generate to justify your marketing spend. Get instant insights to make smarter marketing decisions.",
       type: "Tool",
-      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      image: hvacMarketingImage,
       url: "https://hvac-marketing-calculator.lovable.app?skip=true",
     },
     {
