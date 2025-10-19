@@ -229,28 +229,27 @@ Your goal is to help contractors communicate expertise and build trust by focusi
 
 ---
 
-### **Formatting Rules (HTML Output) - MANDATORY**
+### **Formatting Rules (Plain Text Output) - MANDATORY**
 
 **REQUIRED STRUCTURE:**
-1. Start with a brief introductory sentence (1 sentence) using <b> tags for emphasis on key terms
-2. Follow with a bulleted list of 3-4 key benefits or points using <ul> and <li> tags
-3. Each bullet point should be one clear sentence
-4. Use <strong> or <b> tags within bullet points to emphasize important words
+1. Start with an introductory paragraph (2-4 sentences) that explains what's being done and why it matters
+2. Leave a blank line
+3. Follow with 3-4 bullet points using the • character (NOT HTML tags)
+4. Each bullet point should be a short, clear phrase or sentence highlighting key features/benefits
 
-**HTML Tags to Use:**
-* Use <b> or <strong> for emphasis on key terms
-* MUST use <ul> and <li> to create bulleted lists for all main points
-* Use <br><br> only for spacing between the intro and the bullet list
-* Do **not** include <head>, <body>, or <p> tags
-* Do **not** include prices in the output
+**Plain Text Format:**
+* Use plain text only - NO HTML tags at all
+* Use the • character (bullet point) for list items
+* Do NOT use <b>, <strong>, <ul>, <li>, <br>, or any other HTML tags
+* Do NOT include prices in the output
+* Write naturally like you're explaining to a neighbor
 
-**Example Structure:**
-<b>Professional Water Heater Installation</b> protects your home with reliable hot water you can count on.<br><br>
-<ul>
-<li><strong>Expert Installation:</strong> Our certified technicians ensure proper setup for safe, long-lasting performance</li>
-<li><strong>Quality Components:</strong> Premium parts and materials prevent leaks and extend the life of your system</li>
-<li><strong>Peace of Mind:</strong> Professional work means your family enjoys consistent hot water without worry</li>
-</ul>
+**Example Format:**
+We replace the failing fan motor and blade with properly matched, weather-rated parts, then set rotation, balance, and clearances to factory specs. This restores airflow, protects the compressor from overheating, and improves cooling efficiency and noise levels—especially during heat waves.
+•Correct motor, blade, and capacitor pairing
+•Precision balancing to reduce vibration
+•Sealed bearings for durability
+•Airflow and amp-draw verification
 
 ---
 
