@@ -60,7 +60,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark =
               )}
               {secondaryCta && (
                 <a href={secondaryCta.href}>
-                  <Button size="lg" variant="outline" className={dark ? "text-white border-2 border-primary hover:bg-white/10" : "border-2 border-primary"} data-testid="button-hero-secondary">
+                  <Button size="lg" variant="outline" className={dark ? "text-white border-2 !border-primary hover:bg-white/10" : "border-2 !border-primary"} data-testid="button-hero-secondary">
                     {secondaryCta.label}
                   </Button>
                 </a>
