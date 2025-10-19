@@ -118,6 +118,26 @@ ${JSON.stringify(jsonData, null, 2)}
       
       const lead = await storage.createResourceLead(data);
       
+      // Send email notification to bill@st-hacks.com with resource download info
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: data.resourceName,
+          html: `
+            <h2>New Resource Download</h2>
+            <p><strong>Resource:</strong> ${data.resourceName}</p>
+            <p><strong>Name:</strong> ${data.firstName}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        // Don't fail the request if email fails
+      }
+      
       res.status(201).json({ 
         message: "Success! You can now download the resource.",
         lead: { id: lead.id }

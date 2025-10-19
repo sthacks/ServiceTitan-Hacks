@@ -70,9 +70,9 @@ Preferred communication style: Simple, everyday language.
 
 **API Endpoints:**
 - `POST /api/subscribe` - Email newsletter subscription
-- `POST /api/contact` - Contact form submission
+- `POST /api/contact` - Contact form submission with email notification to bill@st-hacks.com
 - `POST /api/pricebook-optimization` - AI-powered pricebook description optimization using ChatGPT
-- `POST /api/resource-leads` - Resource download lead capture
+- `POST /api/resource-leads` - Resource download lead capture with email notification to bill@st-hacks.com (subject: resource name, body: user name and email)
 - Form validation using Zod schemas with friendly error messages
 - Duplicate email checking for subscriptions
 
@@ -205,6 +205,10 @@ contact_submissions:
 - Infrastructure in place for future authentication features
 
 ### External Services Integration
+- **Resend** - Transactional email service for sending notifications to bill@st-hacks.com
+  - Contact form submissions sent via email
+  - Resource download leads sent via email (subject: resource name, body: user details)
+  - Uses Replit Connectors for secure API key management
 - **Facebook Groups** - Primary CTA links to Facebook community
 - **YouTube** - Video content embedding (planned)
 - **Podcast platforms** - Episode distribution (planned)
