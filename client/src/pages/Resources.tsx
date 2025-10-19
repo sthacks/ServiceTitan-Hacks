@@ -79,6 +79,13 @@ export default function Resources() {
       image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
       url: "https://referralwizard.lovable.app",
     },
+    {
+      title: "Wink ROI Saver Calculator",
+      description: "Calculate your potential savings and ROI with Wink's automation tools. See exactly how much time and money you can save by streamlining your ServiceTitan operations.",
+      type: "Tool",
+      image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
+      url: "https://wink-roi-saver.lovable.app?skip=true",
+    },
   ];
 
   const leadMutation = useMutation({
