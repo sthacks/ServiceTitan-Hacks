@@ -17,6 +17,8 @@ import { Download, FileText, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import swimlanePdf from "@assets/Tech-Turnover-Swimlane_1760895931795.pdf";
+import pricingPdf from "@assets/Pricing Hi Res_1760895997041.pdf";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -45,14 +47,16 @@ export default function Resources() {
       description: "Transform tension into trust with my proven strategy for handling pricing objections. Download the 'Why It Costs What It Costs' graphic to confidently communicate your value without sounding defensive.",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/ligxf2UyTB6c448xDSnm_IMG_3358.jpeg",
-      url: "https://www.servicetitanhacks.com/products/digital_downloads/transform-your-pricing-strategy",
+      url: pricingPdf,
+      isLocalFile: true,
     },
     {
       title: "Streamline Your Business with Swimlane Charts",
       description: "Unlock your team's potential! Download my free Swimlane Chart template to establish clear processes, enhance collaboration, and adapt workflows for a more scalable business model.",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/YE349y0ISMyGMhGo57f0_IMG_3356.jpeg",
-      url: "https://www.servicetitanhacks.com/products/digital_downloads/swimlane-charts",
+      url: swimlanePdf,
+      isLocalFile: true,
     },
     {
       title: "ServiceTitan Metric Definitions: The Plain English Guide",
@@ -65,18 +69,36 @@ export default function Resources() {
 
   const leadMutation = useMutation({
     mutationFn: async (data: { firstName: string; email: string; resourceName: string }) => {
-      return apiRequest("POST", "/api/resource-leads", data);
+      const response = await apiRequest("POST", "/api/resource-leads", data);
+      return response.json();
     },
     onSuccess: (_, variables) => {
       toast({
         title: "Success!",
-        description: "Redirecting you to the resource...",
+        description: "Downloading your resource...",
       });
       
       const resource = resources.find(r => r.title === variables.resourceName);
       if (resource) {
         setTimeout(() => {
-          window.open(resource.url, '_blank');
+          if (resource.isLocalFile) {
+            // For local files, trigger download
+            const link = document.createElement('a');
+            link.href = resource.url;
+            // Set download filename based on resource
+            const filename = resource.title.includes('Swimlane') 
+              ? 'Tech-Turnover-Swimlane.pdf' 
+              : resource.title.includes('Pricing') 
+              ? 'Pricing-Objections-Guide.pdf'
+              : 'download.pdf';
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          } else {
+            // For external URLs, open in new tab
+            window.open(resource.url, '_blank');
+          }
           handleCloseDialog();
         }, 1000);
       }
