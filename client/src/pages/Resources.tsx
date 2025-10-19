@@ -17,9 +17,6 @@ import { Download, FileText, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import swimlanePdf from "@assets/Tech-Turnover-Swimlane_1760895931795.pdf";
-import pricingPdf from "@assets/Pricing Hi Res_1760895997041.pdf";
-import metricsXlsx from "@assets/112 ServiceTitan Hacks Metrics_1760896208246.xlsx";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -34,7 +31,8 @@ export default function Resources() {
       description: "Unlock the power of ServiceTitan reports with this easy-to-use prompt for ChatGPT. Perfect for business owners and marketers, enhance your understanding of customer lifetime value today!",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/bj43DcJVTeerV9M2FCWm_ServiceTitan%20Customer%20Lifetime%20Value%20Analysis.png",
-      url: "https://www.servicetitanhacks.com/products/digital_downloads/ltv-analysis",
+      url: "/downloads/LTV-Analysis-Prompt.docx",
+      isLocalFile: true,
     },
     {
       title: "Connect ServiceTitan to Zapier",
@@ -48,7 +46,7 @@ export default function Resources() {
       description: "Transform tension into trust with my proven strategy for handling pricing objections. Download the 'Why It Costs What It Costs' graphic to confidently communicate your value without sounding defensive.",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/ligxf2UyTB6c448xDSnm_IMG_3358.jpeg",
-      url: pricingPdf,
+      url: "/downloads/Pricing-Objections-Guide.pdf",
       isLocalFile: true,
     },
     {
@@ -56,7 +54,7 @@ export default function Resources() {
       description: "Unlock your team's potential! Download my free Swimlane Chart template to establish clear processes, enhance collaboration, and adapt workflows for a more scalable business model.",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/YE349y0ISMyGMhGo57f0_IMG_3356.jpeg",
-      url: swimlanePdf,
+      url: "/downloads/Tech-Turnover-Swimlane.pdf",
       isLocalFile: true,
     },
     {
@@ -64,7 +62,7 @@ export default function Resources() {
       description: "Eliminate confusion around ServiceTitan metrics! This free guide clarifies key KPIs in simple terms, ensuring your team aligns, makes confident decisions, and seizes revenue opportunities.",
       type: "Digital Download",
       image: "https://import.cdn.thinkific.com/1072722/sYVl32TrSPuxL4jpF0m0_112%20ServiceTitan%20Metrics%20(2).png",
-      url: metricsXlsx,
+      url: "/downloads/112-ServiceTitan-Metrics.xlsx",
       isLocalFile: true,
     },
   ];
@@ -87,14 +85,8 @@ export default function Resources() {
             // For local files, trigger download
             const link = document.createElement('a');
             link.href = resource.url;
-            // Set download filename based on resource
-            const filename = resource.title.includes('Swimlane') 
-              ? 'Tech-Turnover-Swimlane.pdf' 
-              : resource.title.includes('Pricing') 
-              ? 'Pricing-Objections-Guide.pdf'
-              : resource.title.includes('Metric') 
-              ? '112-ServiceTitan-Metrics.xlsx'
-              : 'download.pdf';
+            // Extract filename from URL
+            const filename = resource.url.split('/').pop() || 'download';
             link.download = filename;
             document.body.appendChild(link);
             link.click();
