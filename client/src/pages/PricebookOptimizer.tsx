@@ -176,9 +176,21 @@ export default function PricebookOptimizer() {
               <p className="text-2xl text-muted-foreground mb-4">
                 We solved that with this simple tool
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 This AI tool helps you turn technical service descriptions into simple language homeowners can easily understand. No confusing jargon. Just clear words that show your quality work and care.
               </p>
+              <Button 
+                size="lg"
+                onClick={() => {
+                  document.getElementById('try-it-form')?.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}
+                data-testid="button-try-it"
+              >
+                Try it - no sign up, no credit card needed
+              </Button>
             </div>
 
             <Card className="mb-12">
@@ -266,7 +278,7 @@ export default function PricebookOptimizer() {
           </div>
         </section>
 
-        <section className="py-16 bg-muted">
+        <section id="try-it-form" className="py-16 bg-muted">
           <div className="mx-auto max-w-3xl px-6">
             <Card>
               <CardContent className="p-8">
