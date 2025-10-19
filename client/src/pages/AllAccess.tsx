@@ -52,9 +52,20 @@ export default function AllAccess() {
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
                 All-Access Pass
               </h1>
-              <p className="text-xl text-gray-300">
+              <p className="text-xl text-gray-300 mb-8">
                 Stop piecing together scattered resources. Get every course, automation template, and tool we've built—plus all future updates—so you can save time, cut errors, and grow your business faster.
               </p>
+              <div className="flex justify-center">
+                <a 
+                  href="https://www.servicetitanhacks.com/enroll/3344701"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" data-testid="button-purchase-hero">
+                    Get Started Now
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
