@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, LogIn, LogOut } from "lucide-react";
+import { Menu, X, LogIn, LogOut, Shield } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/secondary logo_1760895642629.png";
@@ -48,6 +48,19 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
+            {isAuthenticated && user?.isAdmin && (
+              <Link href="/admin">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-primary hover:text-primary/80"
+                  data-testid="button-admin"
+                >
+                  <Shield className="h-4 w-4 mr-2" />
+                  Admin
+                </Button>
+              </Link>
+            )}
             {isAuthenticated ? (
               <Button
                 variant="ghost"
@@ -104,6 +117,19 @@ export default function Header() {
               ))}
               
               <div className="mt-2 pt-2 border-t border-gray-800">
+                {isAuthenticated && user?.isAdmin && (
+                  <Link href="/admin">
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start text-primary hover:text-primary/80 hover:bg-gray-800"
+                      onClick={() => setMobileMenuOpen(false)}
+                      data-testid="button-mobile-admin"
+                    >
+                      <Shield className="h-4 w-4 mr-2" />
+                      Admin
+                    </Button>
+                  </Link>
+                )}
                 {isAuthenticated ? (
                   <Button
                     variant="ghost"
