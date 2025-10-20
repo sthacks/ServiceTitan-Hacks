@@ -1,12 +1,38 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, jsonb, index, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+// Session storage table for Replit Auth
+export const sessions = pgTable(
+  "sessions",
+  {
+    sid: varchar("sid").primaryKey(),
+    sess: jsonb("sess").notNull(),
+    expire: timestamp("expire").notNull(),
+  },
+  (table) => [index("IDX_session_expire").on(table.expire)],
+);
+
+// User storage table - updated for Replit Auth
 export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+  email: varchar("email").unique(),
+  firstName: varchar("first_name"),
+  lastName: varchar("last_name"),
+  profileImageUrl: varchar("profile_image_url"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+// Course purchases table to track who has access to which courses
+export const coursePurchases = pgTable("course_purchases", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").notNull().references(() => users.id),
+  courseId: varchar("course_id").notNull(), // e.g., "dashboard-course"
+  amount: integer("amount").notNull(), // Amount paid in cents
+  stripePaymentIntentId: varchar("stripe_payment_intent_id").unique(),
+  purchasedAt: timestamp("purchased_at").notNull().defaultNow(),
 });
 
 export const emailSubscribers = pgTable("email_subscribers", {
@@ -45,9 +71,16 @@ export const pricebookOptimizations = pgTable("pricebook_optimizations", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+// User upsert schema for Replit Auth
+export const upsertUserSchema = createInsertSchema(users).omit({
+  createdAt: true,
+  updatedAt: true,
+});
+
+// Course purchase schema
+export const insertCoursePurchaseSchema = createInsertSchema(coursePurchases).omit({
+  id: true,
+  purchasedAt: true,
 });
 
 export const insertEmailSubscriberSchema = createInsertSchema(emailSubscribers).omit({
@@ -80,8 +113,10 @@ export const insertPricebookOptimizationSchema = createInsertSchema(pricebookOpt
   currentDescription: z.string().min(10, "Please provide more details in your description"),
 });
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
+export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
+export type CoursePurchase = typeof coursePurchases.$inferSelect;
+export type InsertCoursePurchase = z.infer<typeof insertCoursePurchaseSchema>;
 export type EmailSubscriber = typeof emailSubscribers.$inferSelect;
 export type InsertEmailSubscriber = z.infer<typeof insertEmailSubscriberSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;

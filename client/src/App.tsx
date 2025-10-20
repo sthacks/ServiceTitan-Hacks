@@ -14,6 +14,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import PricebookOptimizer from "@/pages/PricebookOptimizer";
 import DashboardCourse from "@/pages/DashboardCourse";
+import FixUglyFormsCourse from "@/pages/FixUglyFormsCourse";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/not-found";
 
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/pricebook-optimizer" component={PricebookOptimizer} />
       <Route path="/dashboard-course" component={DashboardCourse} />
+      <Route path="/fix-ugly-forms-course" component={FixUglyFormsCourse} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
