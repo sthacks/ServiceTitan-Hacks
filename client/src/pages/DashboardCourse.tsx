@@ -3,10 +3,40 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, MonitorPlay, Zap, BarChart3, Mail, FileSpreadsheet } from "lucide-react";
+import { CheckCircle2, MonitorPlay, Zap, BarChart3, Mail, FileSpreadsheet, Lock, ShoppingCart } from "lucide-react";
 import titleBg from "@assets/title-background.png";
+import { useAuth } from "@/hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
+import { useLocation } from "wouter";
+import { useToast } from "@/hooks/use-toast";
+import { useEffect } from "react";
 
 export default function DashboardCourse() {
+  const { user, isAuthenticated, isLoading: authLoading } = useAuth();
+  const [, setLocation] = useLocation();
+  const { toast } = useToast();
+
+  // Check if user just completed purchase
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('purchased') === 'true') {
+      toast({
+        title: "Purchase Successful!",
+        description: "Welcome to the Dashboard Course. Let's get started!",
+      });
+      // Clear the query parameter
+      window.history.replaceState({}, '', '/dashboard-course');
+    }
+  }, [toast]);
+
+  // Check course access if authenticated
+  const { data: accessData, isLoading: accessLoading } = useQuery({
+    queryKey: ['/api/course-access/dashboard-course'],
+    enabled: isAuthenticated,
+  });
+
+  const hasAccess = accessData?.hasAccess || false;
+  const isLoading = authLoading || accessLoading;
   const prerequisites = [
     "A ServiceTitan account with access to Reports",
     "A Gmail account (preferably connected to Zapier)",
@@ -158,7 +188,64 @@ export default function DashboardCourse() {
           </div>
         </section>
 
-        {/* Step 1: Create & Schedule Report */}
+        {/* Access Gate - Show if not purchased */}
+        {!isLoading && !hasAccess && (
+          <section className="py-16 bg-primary/5">
+            <div className="mx-auto max-w-3xl px-6">
+              <Card className="border-primary">
+                <CardContent className="py-12 text-center space-y-6">
+                  <div className="mx-auto w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Lock className="h-10 w-10 text-primary" />
+                  </div>
+                  <h3 className="text-3xl font-bold font-heading">Ready to Get Started?</h3>
+                  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    Get instant access to the complete step-by-step course with video walkthroughs, templates, and lifetime updates.
+                  </p>
+                  <div className="pt-4">
+                    <div className="text-4xl font-bold text-primary mb-2">$97</div>
+                    <div className="text-sm text-muted-foreground mb-6">One-time payment • Lifetime access</div>
+                    {!isAuthenticated ? (
+                      <div className="space-y-3">
+                        <Button 
+                          size="lg" 
+                          onClick={() => window.location.href = '/api/login'}
+                          className="gap-2"
+                          data-testid="button-login-purchase"
+                        >
+                          <ShoppingCart className="h-5 w-5" />
+                          Log In to Purchase
+                        </Button>
+                        <p className="text-sm text-muted-foreground">
+                          New here? Click above to create an account and purchase
+                        </p>
+                      </div>
+                    ) : (
+                      <Button 
+                        size="lg" 
+                        onClick={() => setLocation('/dashboard-course/checkout')}
+                        className="gap-2"
+                        data-testid="button-purchase-course"
+                      >
+                        <ShoppingCart className="h-5 w-5" />
+                        Purchase Course - $97
+                      </Button>
+                    )}
+                  </div>
+                  <div className="pt-4 border-t">
+                    <p className="text-sm text-muted-foreground">
+                      ✓ Instant access • ✓ Lifetime updates • ✓ Email support
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        )}
+
+        {/* Course Content - Only show if purchased */}
+        {(isLoading || hasAccess) && (
+          <div>
+            {/* Step 1: Create & Schedule Report */}
         <section className="py-16 bg-muted">
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-3xl font-bold font-heading mb-4 text-center">🗓️ Create & Schedule your ServiceTitan Report</h2>
@@ -370,6 +457,8 @@ export default function DashboardCourse() {
             </a>
           </div>
         </section>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
