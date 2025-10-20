@@ -1,6 +1,6 @@
 import { 
   type User, 
-  type InsertUser, 
+  type UpsertUser,
   type EmailSubscriber, 
   type InsertEmailSubscriber,
   type ContactSubmission,
@@ -8,14 +8,21 @@ import {
   type ResourceLead,
   type InsertResourceLead,
   type PricebookOptimization,
-  type InsertPricebookOptimization
+  type InsertPricebookOptimization,
+  type CoursePurchase,
+  type InsertCoursePurchase
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
+  // User operations for Replit Auth
   getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  upsertUser(user: UpsertUser): Promise<User>;
+  
+  // Course purchase operations
+  createCoursePurchase(purchase: InsertCoursePurchase): Promise<CoursePurchase>;
+  getUserCoursePurchases(userId: string): Promise<CoursePurchase[]>;
+  hasUserPurchasedCourse(userId: string, courseId: string): Promise<boolean>;
   
   createEmailSubscriber(subscriber: InsertEmailSubscriber): Promise<EmailSubscriber>;
   getEmailSubscriberByEmail(email: string): Promise<EmailSubscriber | undefined>;
@@ -32,6 +39,7 @@ export interface IStorage {
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
+  private coursePurchases: Map<string, CoursePurchase>;
   private emailSubscribers: Map<string, EmailSubscriber>;
   private contactSubmissions: Map<string, ContactSubmission>;
   private resourceLeads: Map<string, ResourceLead>;
@@ -39,6 +47,7 @@ export class MemStorage implements IStorage {
 
   constructor() {
     this.users = new Map();
+    this.coursePurchases = new Map();
     this.emailSubscribers = new Map();
     this.contactSubmissions = new Map();
     this.resourceLeads = new Map();
@@ -49,17 +58,38 @@ export class MemStorage implements IStorage {
     return this.users.get(id);
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
+  async upsertUser(userData: UpsertUser): Promise<User> {
+    const existingUser = this.users.get(userData.id);
+    const user: User = {
+      ...userData,
+      createdAt: existingUser?.createdAt || new Date(),
+      updatedAt: new Date(),
+    };
+    this.users.set(userData.id, user);
+    return user;
+  }
+
+  async createCoursePurchase(insertPurchase: InsertCoursePurchase): Promise<CoursePurchase> {
+    const id = randomUUID();
+    const purchase: CoursePurchase = {
+      ...insertPurchase,
+      id,
+      purchasedAt: new Date(),
+    };
+    this.coursePurchases.set(id, purchase);
+    return purchase;
+  }
+
+  async getUserCoursePurchases(userId: string): Promise<CoursePurchase[]> {
+    return Array.from(this.coursePurchases.values()).filter(
+      (purchase) => purchase.userId === userId
     );
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async hasUserPurchasedCourse(userId: string, courseId: string): Promise<boolean> {
+    return Array.from(this.coursePurchases.values()).some(
+      (purchase) => purchase.userId === userId && purchase.courseId === courseId
+    );
   }
 
   async createEmailSubscriber(insertSubscriber: InsertEmailSubscriber): Promise<EmailSubscriber> {
