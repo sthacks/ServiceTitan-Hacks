@@ -47,6 +47,9 @@ Preferred communication style: Simple, everyday language.
 - `/tools` - AI tools and product catalog
 - `/pricebook-optimizer` - AI-powered pricebook description optimizer with live ChatGPT integration
 - `/courses` - Educational course offerings
+- `/dashboard-course` - DIY Dashboard Course (protected, requires $97 payment)
+- `/dashboard-course/checkout` - Stripe checkout page for Dashboard Course
+- `/fix-ugly-forms-course` - Fix Ugly Forms course (free, public access)
 - `/all-access` - Subscription membership page
 - `/podcast` - Podcast episode library
 - `/resources` - Downloadable resources and templates
@@ -69,12 +72,30 @@ Preferred communication style: Simple, everyday language.
 - Request logging middleware for development debugging
 
 **API Endpoints:**
+
+*Public Endpoints:*
 - `POST /api/subscribe` - Email newsletter subscription
 - `POST /api/contact` - Contact form submission with email notification to bill@st-hacks.com
 - `POST /api/pricebook-optimization` - AI-powered pricebook description optimization using ChatGPT
 - `POST /api/resource-leads` - Resource download lead capture with email notification to bill@st-hacks.com (subject: resource name, body: user name and email)
+
+*Authentication Endpoints:*
+- `GET /api/login` - Initiates Replit Auth login flow (redirects to Replit OAuth)
+- `GET /api/callback` - OAuth callback handler for Replit Auth
+- `GET /api/logout` - Logs out user and clears session
+- `GET /api/auth/user` - Returns authenticated user profile (protected)
+
+*Payment Endpoints:*
+- `POST /api/create-payment-intent` - Creates Stripe payment intent for course purchase (protected, $97)
+- `POST /api/stripe-webhook` - Webhook for Stripe payment confirmation
+- `GET /api/course-access/:courseId` - Checks if user has purchased a course (protected)
+- `GET /api/my-courses` - Returns user's purchased courses (protected)
+
+*Validation & Security:*
 - Form validation using Zod schemas with friendly error messages
 - Duplicate email checking for subscriptions
+- Protected routes require Replit Auth authentication
+- Payment intents prevent duplicate purchases
 
 **AI Integration:**
 - **Pricebook Optimizer**: Live ChatGPT integration for transforming technical service descriptions into homeowner-friendly language
@@ -89,12 +110,16 @@ Preferred communication style: Simple, everyday language.
 - In-memory storage implementation (MemStorage class) for development
 - Storage abstraction layer (IStorage interface) allows easy swapping to database implementation
 - Database schema defined using Drizzle ORM with PostgreSQL dialect
-- Three main data entities: users, email_subscribers, contact_submissions
+- Main data entities: users, email_subscribers, contact_submissions, resource_leads, pricebook_optimizations, course_purchases
 
-**Session Management:**
-- Session infrastructure present (connect-pg-simple package)
-- User authentication schema defined but not actively implemented in routes
-- Ready for future authentication features
+**Authentication & Session Management:**
+- **Replit Auth** integration using OpenID Connect (OIDC)
+- Passport.js for authentication middleware
+- PostgreSQL session store using connect-pg-simple
+- Session TTL: 7 days
+- Automatic token refresh for expired access tokens
+- User profiles stored with: id (from Replit sub), email, firstName, lastName, profileImageUrl
+- Protected routes use `isAuthenticated` middleware
 
 ### Data Storage Solutions
 
@@ -107,9 +132,18 @@ Preferred communication style: Simple, everyday language.
 **Schema Design:**
 ```
 users:
-  - id (UUID primary key)
-  - username (unique text)
-  - password (text)
+  - id (text primary key, from Replit Auth sub)
+  - email (unique text)
+  - firstName (text, nullable)
+  - lastName (text, nullable)
+  - profileImageUrl (text, nullable)
+  - createdAt, updatedAt (timestamps)
+
+sessions:
+  - sid (text primary key)
+  - sess (json)
+  - expire (timestamp)
+  - Used by connect-pg-simple for session storage
 
 email_subscribers:
   - id (UUID primary key)
@@ -121,6 +155,25 @@ contact_submissions:
   - name, email, company, role, message (text)
   - consent (text)
   - submittedAt (timestamp)
+
+resource_leads:
+  - id (UUID primary key)
+  - firstName, email, resourceName (text)
+  - submittedAt (timestamp)
+
+pricebook_optimizations:
+  - id (UUID primary key)
+  - category, otherCategory, currentDescription (text)
+  - firstName, lastName, email (text)
+  - submittedAt (timestamp)
+
+course_purchases:
+  - id (UUID primary key)
+  - userId (text, references users)
+  - courseId (text, e.g., "dashboard-course")
+  - amount (integer, in cents)
+  - stripePaymentIntentId (text)
+  - purchasedAt (timestamp)
 ```
 
 **Data Validation:**
@@ -199,16 +252,31 @@ contact_submissions:
 - Preconnect optimization for font loading performance
 - Font display swap for faster perceived loading
 
-### Session Management (Ready but Not Active)
-- **express-session** - Session middleware
-- **connect-pg-simple** - PostgreSQL session store
-- Infrastructure in place for future authentication features
+### Authentication & Payment
+- **Replit Auth** - OAuth-based authentication using OpenID Connect
+  - Supports Google, GitHub, and email/password login
+  - Uses Passport.js strategy for integration
+  - Auto-creates user profiles on first login
+  - Token refresh mechanism for long-lived sessions
+- **Stripe** - Payment processing for course purchases
+  - Payment Intents API for secure card processing
+  - Stripe Elements for PCI-compliant checkout form
+  - Webhook integration for payment confirmations
+  - Environment variables: STRIPE_SECRET_KEY, VITE_STRIPE_PUBLIC_KEY
+  - Dashboard Course: $97 one-time payment
+- **express-session** - Session middleware with PostgreSQL backing
+- **connect-pg-simple** - PostgreSQL session store for persistence
 
 ### External Services Integration
 - **Resend** - Transactional email service for sending notifications to bill@st-hacks.com
   - Contact form submissions sent via email
   - Resource download leads sent via email (subject: resource name, body: user details)
+  - Pricebook optimization requests sent via email with AI results
   - Uses Replit Connectors for secure API key management
+- **OpenAI** - AI-powered content transformation via Replit AI Integrations
+  - GPT-4o model for pricebook description optimization
+  - No API key management needed (billed to Replit credits)
+  - Custom prompts emphasize value and quality
 - **Facebook Groups** - Primary CTA links to Facebook community
 - **YouTube** - Video content embedding (planned)
 - **Podcast platforms** - Episode distribution (planned)
