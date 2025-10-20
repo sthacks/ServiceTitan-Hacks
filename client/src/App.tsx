@@ -17,6 +17,7 @@ import DashboardCourse from "@/pages/DashboardCourse";
 import DashboardCourseCheckout from "@/pages/DashboardCourseCheckout";
 import FixUglyFormsCourse from "@/pages/FixUglyFormsCourse";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/dashboard-course/checkout" component={DashboardCourseCheckout} />
       <Route path="/fix-ugly-forms-course" component={FixUglyFormsCourse} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   );
