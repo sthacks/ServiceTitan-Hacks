@@ -18,12 +18,12 @@ export default function Courses() {
       rating: null,
     },
     {
-      title: "DIY ServiceTitan Dashboards",
-      description: "Create and customize dashboards in ServiceTitan to visualize key metrics and improve your business insights. Transform data into actionable strategies with ease.",
-      price: "$97",
+      title: "DIY ServiceTitan TV Dashboard",
+      description: "Build an automated TV dashboard that updates multiple times per day using live job data from ServiceTitan — with zero manual effort once it's set up.",
+      price: "Free",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/oG04g0LZQsiIf0jePvPc_Dashboard%20Example%20(1).png",
-      url: "https://www.servicetitanhacks.com/products/courses/diy-servicetitan-dashboards",
+      url: "/dashboard-course",
       rating: "5.0",
       reviews: 1,
     },
@@ -142,12 +142,16 @@ export default function Courses() {
                     </div>
                     <a
                       href={course.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={course.url.startsWith('http') ? "_blank" : undefined}
+                      rel={course.url.startsWith('http') ? "noopener noreferrer" : undefined}
                       data-testid={`link-course-${index}`}
                     >
                       <Button className="gap-2">
-                        Enroll Now <ExternalLink className="h-4 w-4" />
+                        {course.url.startsWith('http') ? (
+                          <>Enroll Now <ExternalLink className="h-4 w-4" /></>
+                        ) : (
+                          'View Course'
+                        )}
                       </Button>
                     </a>
                   </div>
