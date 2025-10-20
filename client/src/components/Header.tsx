@@ -1,12 +1,14 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn, LogOut } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/secondary logo_1760895642629.png";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Header() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isAuthenticated, user } = useAuth();
 
   const navLinks = [
     { path: "/courses", label: "Courses" },
@@ -45,6 +47,32 @@ export default function Header() {
             ))}
           </nav>
 
+          <div className="hidden lg:flex items-center gap-2">
+            {isAuthenticated ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white hover:text-gray-300"
+                onClick={() => window.location.href = "/api/logout"}
+                data-testid="button-logout"
+              >
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
+              </Button>
+            ) : (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white hover:text-gray-300"
+                onClick={() => window.location.href = "/api/login"}
+                data-testid="button-login"
+              >
+                <LogIn className="h-4 w-4 mr-2" />
+                Login
+              </Button>
+            )}
+          </div>
+
           <Button
             size="icon"
             variant="ghost"
@@ -74,6 +102,30 @@ export default function Header() {
                   </span>
                 </Link>
               ))}
+              
+              <div className="mt-2 pt-2 border-t border-gray-800">
+                {isAuthenticated ? (
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-white hover:text-gray-300 hover:bg-gray-800"
+                    onClick={() => window.location.href = "/api/logout"}
+                    data-testid="button-mobile-logout"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Logout
+                  </Button>
+                ) : (
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-white hover:text-gray-300 hover:bg-gray-800"
+                    onClick={() => window.location.href = "/api/login"}
+                    data-testid="button-mobile-login"
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    Login
+                  </Button>
+                )}
+              </div>
             </div>
           </nav>
         )}
