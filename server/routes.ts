@@ -45,12 +45,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "You have already purchased this course" });
       }
 
+      // Map course IDs to Stripe product IDs
+      const courseProductMap: { [key: string]: string } = {
+        "dashboard-course": "prod_S3xE9uvAR1cqPN",
+      };
+
       const paymentIntent = await stripe.paymentIntents.create({
         amount: Math.round(amount * 100), // Convert to cents
         currency: "usd",
         metadata: {
           userId,
           courseId,
+          productId: courseProductMap[courseId] || "",
         },
       });
 

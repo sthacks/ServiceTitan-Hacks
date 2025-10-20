@@ -263,7 +263,7 @@ course_purchases:
   - Stripe Elements for PCI-compliant checkout form
   - Webhook integration for payment confirmations
   - Environment variables: STRIPE_SECRET_KEY, VITE_STRIPE_PUBLIC_KEY
-  - Dashboard Course: $97 one-time payment
+  - Dashboard Course: $97 one-time payment (Product ID: prod_S3xE9uvAR1cqPN)
 - **express-session** - Session middleware with PostgreSQL backing
 - **connect-pg-simple** - PostgreSQL session store for persistence
 

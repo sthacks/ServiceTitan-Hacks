@@ -30,7 +30,7 @@ export default function DashboardCourse() {
   }, [toast]);
 
   // Check course access if authenticated
-  const { data: accessData, isLoading: accessLoading } = useQuery({
+  const { data: accessData, isLoading: accessLoading } = useQuery<{ hasAccess: boolean }>({
     queryKey: ['/api/course-access/dashboard-course'],
     enabled: isAuthenticated,
   });
