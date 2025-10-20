@@ -20,7 +20,7 @@ export default function Courses() {
     {
       title: "DIY ServiceTitan TV Dashboard",
       description: "Build an automated TV dashboard that updates multiple times per day using live job data from ServiceTitan — with zero manual effort once it's set up.",
-      price: "Free",
+      price: "$97",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/oG04g0LZQsiIf0jePvPc_Dashboard%20Example%20(1).png",
       url: "/dashboard-course",
