@@ -50,11 +50,19 @@ export default function Admin() {
 
   const toggleAdminMutation = useMutation({
     mutationFn: async ({ userId, isAdmin }: { userId: string; isAdmin: boolean }) => {
-      return apiRequest(`/api/admin/users/${userId}/admin`, {
+      const response = await fetch(`/api/admin/users/${userId}/admin`, {
         method: "PATCH",
         body: JSON.stringify({ isAdmin }),
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
       });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "Failed to update admin status");
+      }
+      
+      return response.json();
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/admin/users"] });

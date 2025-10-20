@@ -74,8 +74,11 @@ export const pricebookOptimizations = pgTable("pricebook_optimizations", {
 
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
+  isAdmin: true,
   createdAt: true,
   updatedAt: true,
+}).required({
+  id: true,
 });
 
 // Course purchase schema
