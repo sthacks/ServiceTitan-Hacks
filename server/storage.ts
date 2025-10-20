@@ -19,6 +19,10 @@ export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   upsertUser(user: UpsertUser): Promise<User>;
   
+  // Admin operations
+  getAllUsersWithPurchases(): Promise<Array<User & { purchases: CoursePurchase[] }>>;
+  updateUserAdminStatus(userId: string, isAdmin: boolean): Promise<void>;
+  
   // Course purchase operations
   createCoursePurchase(purchase: InsertCoursePurchase): Promise<CoursePurchase>;
   getUserCoursePurchases(userId: string): Promise<CoursePurchase[]>;
@@ -62,11 +66,34 @@ export class MemStorage implements IStorage {
     const existingUser = this.users.get(userData.id);
     const user: User = {
       ...userData,
+      isAdmin: existingUser?.isAdmin ?? false,
       createdAt: existingUser?.createdAt || new Date(),
       updatedAt: new Date(),
     };
     this.users.set(userData.id, user);
     return user;
+  }
+
+  async getAllUsersWithPurchases(): Promise<Array<User & { purchases: CoursePurchase[] }>> {
+    const allUsers = Array.from(this.users.values());
+    return allUsers.map(user => ({
+      ...user,
+      purchases: Array.from(this.coursePurchases.values()).filter(
+        purchase => purchase.userId === user.id
+      )
+    }));
+  }
+
+  async updateUserAdminStatus(userId: string, isAdmin: boolean): Promise<void> {
+    const user = this.users.get(userId);
+    if (user) {
+      const updatedUser: User = {
+        ...user,
+        isAdmin,
+        updatedAt: new Date(),
+      };
+      this.users.set(userId, updatedUser);
+    }
   }
 
   async createCoursePurchase(insertPurchase: InsertCoursePurchase): Promise<CoursePurchase> {
