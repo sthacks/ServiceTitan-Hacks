@@ -94,8 +94,26 @@ export const dashboardCourseData: Chapter[] = [
         id: "why-two-sheets",
         title: "🧠 Why Do We Use Two Google Sheets?",
         description: "Understanding the two-sheet architecture for reliable dashboard updates.",
-        videoUrl: "https://www.youtube.com/embed/example8",
-        content: "Learn the reasoning behind using two separate Google Sheets and how it ensures data integrity."
+        content: `<p>Learn the reasoning behind using two separate Google Sheets and how it ensures data integrity.</p>
+
+<p>To keep this system reliable and flexible, we use a <strong>two-sheet setup</strong>:</p>
+
+<ol>
+        <li><strong>Sheet 1:</strong> This is the file that gets <em>automatically replaced every 15 minutes</em> by Zapier. It's the raw data dump from ServiceTitan.</li>
+        <li><strong>Sheet 2:</strong> This is our <em>"TV Dashboard Feed"</em> — the one we connect to Looker Studio. It references the first sheet but doesn't get overwritten.</li>
+</ol>
+
+<p><strong>Why it matters:</strong></p>
+
+<ul>
+        <li>✅ We only need <em>one stable connection</em> to Looker Studio (which makes it fast and less error-prone)</li>
+        <li>✅ We can build custom formulas, filters, or formatting in our feed sheet — and those changes won't get erased</li>
+        <li>✅ This setup makes it super easy to scale: you can reference <em>multiple raw data files</em> if needed</li>
+</ul>
+
+<p>It might sound a little technical now — but once you see it in action, it'll click.</p>
+
+<p>Let's keep moving!</p>`
       },
       {
         id: "loom-two-sheets",
