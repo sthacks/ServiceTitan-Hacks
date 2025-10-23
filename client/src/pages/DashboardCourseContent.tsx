@@ -264,7 +264,7 @@ export default function DashboardCourseContent() {
 
             {/* Lesson Content */}
             {lesson.content && (
-              <Card className="mb-8">
+              <Card className="mb-8 bg-white dark:bg-white">
                 <CardContent className="p-8 prose prose-sm max-w-none">
                   <div 
                     className="text-base leading-relaxed"
