@@ -21,7 +21,7 @@ import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { cn } from "@/lib/utils";
 
 export default function DashboardCourseContent() {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   // Parse URL to get current chapter and lesson
@@ -37,9 +37,10 @@ export default function DashboardCourseContent() {
     getCompletionPercentage
   } = useCourseProgress();
 
-  // Helper function to navigate to a lesson
+  // Helper function to navigate to a lesson without page reload
   const navigateToLesson = (newChapterId: string, newLessonId: string) => {
-    window.location.href = `/dashboard-course/content?chapter=${newChapterId}&lesson=${newLessonId}`;
+    setLocation(`/dashboard-course/content?chapter=${newChapterId}&lesson=${newLessonId}`);
+    setIsSidebarOpen(false); // Close mobile sidebar after navigation
   };
 
   const currentLesson = getLesson(chapterId, lessonId);
