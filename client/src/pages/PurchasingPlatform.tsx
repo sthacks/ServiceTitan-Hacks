@@ -90,53 +90,61 @@ export default function PurchasingPlatform() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Card data-testid="card-benefit-pricing">
-              <CardHeader>
-                <DollarSign className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Hundreds in Savings</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Save hundreds of dollars per order with pricing that's sharper than distributor rates.
-                </p>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-benefit-pricing" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <DollarSign className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Hundreds in Savings</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Save hundreds of dollars per order with pricing that's sharper than distributor rates.
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card data-testid="card-benefit-access">
-              <CardHeader>
-                <Package className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Fair Access</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  2-truck shops get the same pricing as invitation homes and national accounts.
-                </p>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-benefit-access" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <Package className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Fair Access</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    2-truck shops get the same pricing as invitation homes and national accounts.
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card data-testid="card-benefit-convenience">
-              <CardHeader>
-                <Clock className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Order Anytime</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  80% of orders happen before 8am or after 7pm. No more waiting at the branch.
-                </p>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-benefit-convenience" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <Clock className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Order Anytime</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    80% of orders happen before 8am or after 7pm. No more waiting at the branch.
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card data-testid="card-benefit-pickup">
-              <CardHeader>
-                <Truck className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Local Pickup</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Pick up at 1,200+ locations including Johnstone, Ferguson, and East Coast Metals.
-                </p>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-benefit-pickup" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <Truck className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Local Pickup</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Pick up at 1,200+ locations including Johnstone, Ferguson, and East Coast Metals.
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
@@ -218,86 +226,92 @@ export default function PurchasingPlatform() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card data-testid="card-product-hvac">
-              <CardHeader>
-                <Home className="h-10 w-10 text-primary mb-3" />
-                <CardTitle>HVAC Equipment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Goodman, Daikin, and major brands</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>AC units, heat pumps, furnaces</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Dual fuel and package units</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Avoided all tariff increases</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-product-hvac" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <Home className="h-10 w-10 text-primary mb-3" />
+                  <CardTitle>HVAC Equipment</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Goodman, Daikin, and major brands</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>AC units, heat pumps, furnaces</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Dual fuel and package units</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Avoided all tariff increases</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card data-testid="card-product-water">
-              <CardHeader>
-                <Package className="h-10 w-10 text-primary mb-3" />
-                <CardTitle>Water Heaters</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Exclusive Lowe's partnership</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Locked pricing for 12 months</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Tank and tankless options</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Delivery available</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-product-water" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <Package className="h-10 w-10 text-primary mb-3" />
+                  <CardTitle>Water Heaters</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Exclusive Lowe's partnership</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Locked pricing for 12 months</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Tank and tankless options</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Delivery available</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card data-testid="card-product-tools">
-              <CardHeader>
-                <Wrench className="h-10 w-10 text-primary mb-3" />
-                <CardTitle>Tools & Materials</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Milwaukee, DeWalt, and more</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Power tools and hand tools</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Parts and supplies</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Volume pricing available</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <a href="#get-started" className="block">
+              <Card data-testid="card-product-tools" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <Wrench className="h-10 w-10 text-primary mb-3" />
+                  <CardTitle>Tools & Materials</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Milwaukee, DeWalt, and more</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Power tools and hand tools</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Parts and supplies</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Volume pricing available</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
