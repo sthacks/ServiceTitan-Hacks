@@ -16,7 +16,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle2, Copy, Check } from "lucide-react";
 import { z } from "zod";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const formSchema = insertPricebookOptimizationSchema.extend({
   honeypot: z.string().max(0),
@@ -33,6 +33,25 @@ export default function PricebookOptimizer() {
   const [showOtherCategory, setShowOtherCategory] = useState(false);
   const [result, setResult] = useState<OptimizationResult | null>(null);
   const [copied, setCopied] = useState(false);
+
+  // Load JotForm script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://form.jotform.com/jsform/252955602550154';
+    script.type = 'text/javascript';
+    script.async = true;
+    
+    const formContainer = document.getElementById('jotform-container');
+    if (formContainer) {
+      formContainer.appendChild(script);
+    }
+
+    return () => {
+      if (formContainer && formContainer.contains(script)) {
+        formContainer.removeChild(script);
+      }
+    };
+  }, []);
 
   const howItWorksItems = [
     {
@@ -282,189 +301,7 @@ export default function PricebookOptimizer() {
           <div className="mx-auto max-w-3xl px-6">
             <Card>
               <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold font-heading mb-4">
-                    Make Your Pricebook Easy for Homeowners to Understand
-                  </h2>
-                  <p className="text-muted-foreground mb-2">
-                    We'll take your technical description and rewrite it in simple, clear language that helps your techs connect with homeowners and show value—fast.
-                  </p>
-                  <p className="text-sm text-muted-foreground italic">
-                    <strong>The more details you give us, the better your results will be.</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground italic">
-                    <strong>We can customize these descriptions to match your company style.</strong>
-                  </p>
-                </div>
-
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
-                    {/* Before/After Example */}
-                    <div className="bg-muted/50 rounded-lg p-6 mb-6">
-                      <h3 className="font-semibold text-lg mb-4">See the Difference</h3>
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <Badge variant="outline">Before</Badge>
-                          </div>
-                          <p className="text-sm text-muted-foreground">
-                            replace outdoor ac fan motor and fan blade
-                          </p>
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <Badge>After</Badge>
-                          </div>
-                          <div className="text-sm whitespace-pre-line">
-                            {`We replace the failing fan motor and blade with properly matched, weather-rated parts, then set rotation, balance, and clearances to factory specs. This restores airflow, protects the compressor from overheating, and improves cooling efficiency and noise levels—especially during heat waves.
-•Correct motor, blade, and capacitor pairing
-•Precision balancing to reduce vibration
-•Sealed bearings for durability
-•Airflow and amp-draw verification`}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="category"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Choose a category *</FormLabel>
-                          <Select 
-                            onValueChange={(value) => {
-                              field.onChange(value);
-                              setShowOtherCategory(value === "OTHER");
-                            }} 
-                            value={field.value}
-                          >
-                            <FormControl>
-                              <SelectTrigger data-testid="select-category">
-                                <SelectValue placeholder="Please Select" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {categories.map((cat) => (
-                                <SelectItem key={cat.value} value={cat.value}>
-                                  {cat.label}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    {showOtherCategory && (
-                      <FormField
-                        control={form.control}
-                        name="otherCategory"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Other Category</FormLabel>
-                            <FormControl>
-                              <Input 
-                                placeholder="Examples: ac repair, water heater replacement, electrical" 
-                                {...field}
-                                value={field.value || ""}
-                                data-testid="input-other-category"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    )}
-
-                    <FormField
-                      control={form.control}
-                      name="currentDescription"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Current description from ServiceTitan Pricebook *</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="The more detail, the better the result from the AI." 
-                              className="min-h-32"
-                              {...field} 
-                              data-testid="textarea-current-description"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>First Name *</FormLabel>
-                            <FormControl>
-                              <Input {...field} data-testid="input-first-name" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Last Name *</FormLabel>
-                            <FormControl>
-                              <Input {...field} data-testid="input-last-name" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email *</FormLabel>
-                          <FormControl>
-                            <Input type="email" {...field} data-testid="input-email" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    {/* Honeypot field */}
-                    <FormField
-                      control={form.control}
-                      name="honeypot"
-                      render={({ field }) => (
-                        <FormItem className="hidden">
-                          <FormControl>
-                            <Input {...field} tabIndex={-1} autoComplete="off" />
-                          </FormControl>
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      className="w-full"
-                      disabled={mutation.isPending}
-                      data-testid="button-optimize-it"
-                    >
-                      {mutation.isPending ? "Submitting..." : "OPTIMIZE IT"}
-                    </Button>
-                  </form>
-                </Form>
+                <div id="jotform-container" />
               </CardContent>
             </Card>
           </div>
