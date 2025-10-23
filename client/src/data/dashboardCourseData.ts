@@ -165,8 +165,9 @@ export const dashboardCourseData: Chapter[] = [
         id: "questions-help",
         title: "💬 Questions or Need Help?",
         description: "How to get support and connect with the community.",
-        videoUrl: "https://www.youtube.com/embed/example14",
-        content: "Learn how to get help, ask questions, and connect with other students in the community."
+        content: `<p style="text-align: center;">Feel free to contact me directly!</p>
+
+<p style="text-align: center;"><strong>Bill@st-hacks.com</strong></p>`
       }
     ]
   },
