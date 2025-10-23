@@ -49,16 +49,23 @@ export default function DashboardCourse() {
                   <div className="text-muted-foreground">One-time payment</div>
                 </div>
 
-                <a 
-                  href={enrollmentUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  data-testid="button-enroll-hero"
-                >
-                  <Button size="lg" className="text-lg px-8">
-                    Enroll Now
-                  </Button>
-                </a>
+                <div className="flex flex-wrap items-center gap-4">
+                  <a href="/dashboard-course/content" data-testid="link-start-course">
+                    <Button size="lg" className="text-lg px-8">
+                      Start Course Free
+                    </Button>
+                  </a>
+                  <a 
+                    href={enrollmentUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    data-testid="button-enroll-hero"
+                  >
+                    <Button size="lg" variant="outline" className="text-lg px-8">
+                      Enroll on Thinkific
+                    </Button>
+                  </a>
+                </div>
               </div>
 
               <div className="relative">
@@ -180,18 +187,24 @@ export default function DashboardCourse() {
             <p className="text-lg text-muted-foreground mb-8">
               Take the first step towards mastering ServiceTitan dashboards and revolutionizing your data analysis skills
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="text-4xl font-bold text-primary">$97.00</div>
-              <a 
-                href={enrollmentUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                data-testid="button-enroll-footer"
-              >
-                <Button size="lg" className="text-lg px-8">
-                  Enroll Now
-                </Button>
-              </a>
+            <div className="flex flex-col items-center justify-center gap-4">
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a href="/dashboard-course/content" data-testid="link-start-course-footer">
+                  <Button size="lg" className="text-lg px-8">
+                    Start Course Free
+                  </Button>
+                </a>
+                <a 
+                  href={enrollmentUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  data-testid="button-enroll-footer"
+                >
+                  <Button size="lg" variant="outline" className="text-lg px-8">
+                    Enroll on Thinkific ($97)
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
