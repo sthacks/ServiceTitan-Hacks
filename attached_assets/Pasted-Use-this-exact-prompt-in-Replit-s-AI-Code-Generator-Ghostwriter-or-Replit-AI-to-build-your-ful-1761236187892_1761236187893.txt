@@ -1,0 +1,119 @@
+Use this exact prompt in Replit’s **AI Code Generator** (Ghostwriter or Replit AI) to build your full course website.
+It’s tailored for your *DIY ServiceTitan Dashboards* course structure.
+
+---
+
+### 🔧 **Prompt for Replit AI**
+
+```
+You are building a course website in Replit using HTML, CSS, and JavaScript.  
+Recreate the course titled “DIY ServiceTitan Dashboards” from ServiceTitanHacks.com.
+
+**Overall Requirements**
+- Use a clean, modern layout with a dark header and light background.
+- Include navigation for chapters and lessons.
+- Include embedded videos (YouTube or MP4), text content, and downloadable resources.
+- Store user progress in localStorage (e.g., which lessons they’ve completed).
+- Include a responsive layout that works on desktop and mobile.
+- Include a sidebar with chapter navigation and a main area for lesson content.
+- Use Tailwind CSS (via CDN) for styling.
+
+---
+
+**Course Structure**
+
+1. Introduction to ServiceTitan Dashboards  
+   - 👋 Welcome to the TV Dashboard Automation Course  
+   - 📊 Before You Begin: A Quick Note About Dashboarding with ServiceTitan  
+   - ➡️ Workflow Overview  
+   - 🗓️ Create & Schedule your ServiceTitan Report  
+   - 🗳️ Import the ServiceTitan Report to Google Sheets  
+   - 📧 Creating a Filter/Label in Gmail  
+   - ⚡️ Creating the Zap  
+   - 🧠 Why Do We Use Two Google Sheets?  
+   - 🎥 Loom Video on the 2 Google Sheets  
+   - 📺 Creating the TV Dashboard Feed - the 2nd Google Sheet  
+   - 📊 Dashboard Template  
+   - 📁 Creating the Report and the First Metric  
+   - 🎨 Customizing Google Data Studio Dashboards  
+   - 💬 Questions or Need Help?
+
+2. Common Questions with Answers  
+   - 🔧 Fixing the Totals Row Issue in ServiceTitan Reports  
+
+---
+
+**Functional Requirements**
+- Each lesson page should show:
+  - Lesson title
+  - Short description paragraph (placeholder for now)
+  - Embedded video player (`<video>` or `<iframe>` from YouTube)
+  - A “Mark Complete” button that toggles lesson completion in localStorage
+  - A “Back to Course” button
+- The main index.html should list all chapters and lessons with completion status.
+- Create a progress bar at the top that fills based on lessons completed.
+- Include a simple JSON file (course.json) that stores lesson structure and video URLs for easy updates.
+
+---
+
+**Example Technical Structure**
+
+```
+
+/course/
+index.html
+lesson.html
+assets/
+style.css
+script.js
+course.json
+
+````
+
+---
+
+**Technical Details**
+- Use Tailwind via CDN for styles.
+- Use plain JavaScript (no frameworks) for logic.
+- When lesson.html loads, use URL parameters (e.g., ?lesson=welcome) to load lesson data dynamically from course.json.
+- Progress should be recalculated on each load.
+- Use semantic HTML5 and accessible design.
+
+---
+
+**Starter Data (example for course.json)**
+```json
+{
+  "chapters": [
+    {
+      "title": "Introduction to ServiceTitan Dashboards",
+      "lessons": [
+        {"id": "welcome", "title": "👋 Welcome to the TV Dashboard Automation Course", "video": "https://youtu.be/example1", "description": "Overview of the course and setup."},
+        {"id": "before-you-begin", "title": "📊 Before You Begin: A Quick Note About Dashboarding", "video": "https://youtu.be/example2", "description": "Key concepts before building your dashboard."}
+      ]
+    },
+    {
+      "title": "Common Questions with Answers",
+      "lessons": [
+        {"id": "fix-totals-row", "title": "🔧 Fixing the Totals Row Issue in ServiceTitan Reports", "video": "https://youtu.be/example3", "description": "How to fix the totals row display in reports."}
+      ]
+    }
+  ]
+}
+````
+
+---
+
+**Final Deliverable**
+
+* A working, responsive course site with navigation and progress tracking.
+* Ready for you to paste in actual YouTube links and lesson text later.
+
+Generate all necessary files and ensure it runs on Replit’s static web server.
+
+```
+
+---
+
+Would you like me to modify this for a **React** version (with routing and reusable components) or keep it as a **static HTML/JS site**?
+```
