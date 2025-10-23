@@ -234,13 +234,24 @@ export default function DashboardCourseContent() {
               <Card className="mb-8">
                 <CardContent className="p-0">
                   <div className="aspect-video bg-black rounded-lg overflow-hidden">
-                    <iframe
-                      src={lesson.videoUrl}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      data-testid="video-player"
-                    />
+                    {lesson.videoUrl.endsWith('.mp4') || lesson.videoUrl.includes('/attached_assets/') ? (
+                      <video
+                        src={lesson.videoUrl}
+                        controls
+                        className="w-full h-full"
+                        data-testid="video-player"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <iframe
+                        src={lesson.videoUrl}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        data-testid="video-player"
+                      />
+                    )}
                   </div>
                 </CardContent>
               </Card>

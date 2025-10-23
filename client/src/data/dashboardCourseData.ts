@@ -22,7 +22,7 @@ export const dashboardCourseData: Chapter[] = [
         id: "welcome",
         title: "👋 Welcome to the TV Dashboard Automation Course",
         description: "Overview of the course and what you'll learn about automating ServiceTitan dashboards.",
-        videoUrl: "https://www.youtube.com/embed/example1",
+        videoUrl: "/attached_assets/Dashboard Course_1761236537264.mp4",
         content: "Welcome to the DIY ServiceTitan Dashboards course! In this comprehensive course, you'll learn how to create automated TV dashboards that display your ServiceTitan data in real-time."
       },
       {
