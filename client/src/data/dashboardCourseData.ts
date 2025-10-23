@@ -165,9 +165,74 @@ export const dashboardCourseData: Chapter[] = [
         id: "questions-help",
         title: "💬 Questions or Need Help?",
         description: "How to get support and connect with the community.",
-        content: `<p style="text-align: center;">Feel free to contact me directly!</p>
+        content: `<p style="text-align: center; margin-bottom: 2rem;">Feel free to reach out with any questions about the course!</p>
 
-<p style="text-align: center;"><strong>Bill@st-hacks.com</strong></p>`
+<form id="course-help-form" style="max-width: 600px; margin: 0 auto;">
+  <div style="margin-bottom: 1rem;">
+    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Name</label>
+    <input type="text" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem;" />
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Email</label>
+    <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem;" />
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Question</label>
+    <textarea name="message" required rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem;"></textarea>
+  </div>
+  
+  <button type="submit" style="width: 100%; background-color: #ED254E; color: white; padding: 0.75rem; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">
+    Send Message
+  </button>
+  
+  <div id="form-message" style="margin-top: 1rem; text-align: center; display: none;"></div>
+</form>
+
+<script>
+(function() {
+  const form = document.getElementById('course-help-form');
+  const messageDiv = document.getElementById('form-message');
+  
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: 'Dashboard Course Student',
+        role: 'Student',
+        message: formData.get('message'),
+        consent: 'Course Help Form'
+      };
+      
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+          messageDiv.style.display = 'block';
+          messageDiv.style.color = '#22c55e';
+          messageDiv.textContent = 'Message sent! I\'ll get back to you soon.';
+          form.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (error) {
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = '#ef4444';
+        messageDiv.textContent = 'Failed to send message. Please email bill@st-hacks.com directly.';
+      }
+    });
+  }
+})();
+</script>`
       }
     ]
   },
