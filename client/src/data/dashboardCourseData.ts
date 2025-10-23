@@ -46,7 +46,7 @@ export const dashboardCourseData: Chapter[] = [
         title: "➡️ Workflow Overview",
         description: "Understanding the complete workflow from ServiceTitan to your TV dashboard.",
         content: `<p>This lesson provides a high-level overview of how data flows from ServiceTitan through various tools to your final TV dashboard.</p>
-<img src="/attached_assets/ServiceTitan_Report_1761237313582.png" alt="Workflow Overview Diagram" class="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-lg" />`
+<img src="attached_assets/ServiceTitan_Report_1761237313582.png" alt="Workflow Overview Diagram" class="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-lg" />`
       },
       {
         id: "create-schedule-report",
