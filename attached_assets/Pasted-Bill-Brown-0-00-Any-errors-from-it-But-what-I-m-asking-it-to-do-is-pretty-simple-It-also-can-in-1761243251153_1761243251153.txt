@@ -1,0 +1,169 @@
+Bill Brown  0:00  
+Any errors from it. But what I'm asking it to do is pretty simple. It also can integrate chat GPT with it. So I've done I have this tool that I created that rewrites a price book description. Because everyone's price, price book descriptions are really bad. It was a problem I had. So you just take the price limited you could just put replace AC capacitor. And I gave it a prompt to say, hey, this, this price book description is going to be shown to a homeowner assume they know nothing about about the the task. So write it at a very, you know, basic level. Frame it to what makes sense for them, and use language that's no higher than eighth grade reading level. It does a great job. Fantastic descriptions. Yeah. And so what's nice about it is the person in the website just puts in their info and it spits out that description right there in line in the website, rather than it happened to be emailed and everything. So awesome, cool. Yeah, I haven't figured out this is Jack yet, but Hey, Jack, how's it going?
+
+Jack Suba  1:22  
+Good. How are you doing?
+
+Bill Brown  1:24  
+Man, I'm doing all right.
+
+Jack Suba  1:26  
+Sorry, I was just listening there, and I know Norris, I just introduced in my VP of technology, she would have been like, adding her note taker, just nodding in approval. That's That all sounds awesome and well done. It's one need to see it. It sounds just exactly what everyone needs. Way to go,
+
+Bill Brown  1:46  
+yeah, just, you know, solving problems that I had in my own company over the years and now with with AI that opens up a whole new ability to solve these problems that just weren't possible before.
+
+Jack Suba  2:04  
+Totally agree, doing a whole lot more, not, not even less, just it's way more efficient. So
+
+Bill Brown  2:10  
+it's, it's wild, but I'm not, you know, I'm not 100% sure how these companies are going to get paid back for all the products they have. But I saw that I'm using open AI's new browser Atlas, and it's okay. I'm not sure use it great yet, because I've been using it for like, 45 minutes, but once they add ads into it, is when, when they can make real money, because that's what's going to I can't think of another way to really monetize, AI, rather than than ads, because businesses, you know, they're the ones that spend the big bucks.
+
+Jack Suba  2:50  
+Yeah, what you what you need before you even know about it, which is, yeah,
+
+Bill Brown  2:55  
+it'll be wild. Be wild. So cool. You guys have this. You've created this purchasing platform that gets contractors a great rate on equipment and other things, and that's pretty important for contractors, especially today, with the fact that costs are going up so much. You know,
+
+Jack Suba  3:18  
+absolutely and Bill. Thank you very much for your time. I mean, based on kind of what we started with, you got it, you got a million things going on, you know, purchasing platform at the highest level, how we got connected to Norris, and what kind of what we're doing with service crucible. But I also, you know, kind of want to, you know, give you a couple ideas, or plant some, you know, seeds, as far as what we could potentially do with Norris's referral to you, you know, again, my job, so I'll just kind of start from the top. So VP of Operations at purchasing platform. We are a B to B marketplace startup. I don't know if you can still call us a startup based out of Chicago. We've been around for 12 years. I've been free. We grew up in manufactured housing, so basically we were the B to B marketplace for the style crest, Blevins, all those guys over the years. And I would say, as interest rates and things changed over the last three years, pretty much right when I started, we completely changed our mode and kind of what we're focused on. We went from people spending hundreds of dollars a year to close on a doorknob, right, or locks and crazy things like that, right? So I was very curious about the direct manufacturer relationships that kicked off a conversation with a local branch in Chicago, Goodman branch, and then us being a technology partner, they were on their way of basically terminating, terminating a relationship with CB, who is now exclusive with carrier for a number of reasons. So timing for me, honestly, it was lucky that we basically got in with dyke and Goodman. Dyke and Goodman, over the last call it two years, we have become, kind of, like their top account, surpassing a lot of the big REITs that they, you know, serve. And I was telling Norris on one of our calls earlier today, you know, Daikin is just not very eye like agile, right? They're a 30 plus billion dollar company. Modal is like the red headed stepchild. They're the ARM based out of Denver. So we have built, you know, and I don't know if you've seen it or not, but we have built a direct integration, and modally, we are the front end marketplace for them, right? So they had a very like our kick, you know, kind of go in
+
+Bill Brown  5:43  
+click, what is that? Modally? What is that
+
+Jack Suba  5:45  
+totally, M, o, t, I, L, I is those. It's been acquired, sold and acquired again by Daikin,
+
+Bill Brown  5:54  
+okay, yeah. It's like,
+
+Jack Suba  5:57  
+yeah, offshoot of national accounts. And transparently, when I kind of got into this whole thing, I couldn't piece it together. We have since purchasing platform has since been invited to Houston a couple times we're working, you know, basically our tech side is working with modally, but dyke and is really leaning on us to basically help them, you know, simplify their distribution model, and, you know, basically just sell units from the factory. Because right now, you know, we're in the pecking order with like the Johnstone supply.
+
+Jack Suba  6:36  
+You know, their longer term ambition is, is, Why do these guys all exist? Why are they getting fat off of Daikin product, when we can basically build a website and, you know, distribute, yeah, and make it
+
+Bill Brown  6:47  
+it's old school,
+
+Jack Suba  6:49  
+yeah, but make it a level playing field, right? Where, you know, if you know, I'm a, you know, two van truck shop, right? And I'm doing $2 million a year in purchases, I should be getting the same amount of benefits that an invitation homes are a first key who had, can't drive any compliance to their own programs. They're going to rebate on it. It's just, you know, you know the whole game, right?
+
+Bill Brown  7:09  
+Yeah, oh, yeah.
+
+Jack Suba  7:11  
+So I, again, we got this contract going. We built a bunch of integrations with them. I am treated as kind of like a distributor within their total ecosystem, and that is why I'm able to get super sharp on pricing, and that's how I got introduced to Norris. So Norris, basically, I was, you know, contact of a contact introduced me. We got talking. I'm like, yeah, if, like, I tend to be an HVAC guy, like, I don't know anything about it, other than it works, it doesn't, and if it doesn't, I'm probably going to text Norris and ask him what I do first. So, like, all I'm trying to do is basically facilitate a market of consumers being contractors and eventually homeowners. We'll see to the product that I, you know, move, and at the end of the day, like, you know, looking at your website. I know you've got, like, kind of a free section. You've got 9500 plus, you know, customers in there. What I would love to do, Bill is, basically, you know, determine, you know, if you want to offer us as a free thing, we would offer it to you as free. We would, you know, white label it, put your logo on it, and you can give it to your network as the benefit of being part of your, you know ecosystem. If you wanted to turn this into a revenue opportunity for yourself, of like, adding a point or two into the pricing, I have flexibility to do that. All I need to do is really move boxes and
+
+Jack Suba  8:39  
+contractors through guys like you, who know the ins and outs, you're adding a ton of value to help these people run and build their businesses. If I can be kind of like that, that final piece to get them access to a price point that they deserve but they can't get because they're not some big name that's been around for 30 years. That's what I want to do, and that is where, you know, Norris and I just, like, absolutely connected, I don't know, a handful of months back, and it's kind of been, you know, Lightning in a Bottle
+
+Bill Brown  9:07  
+since, yeah, that's awesome. That's great. As far as, like, the way that the purchasing platform works, if you're a contractor, kind of, like, for the user experience, when you need to buy equipment, do you go on that platform, you add it to cart. There you check out. And then do you get the equipment from like, from like Goodman's local branch at that point, because they have their, their local distributors that get shipped to you. How's that
+
+Jack Suba  9:33  
+work? Yeah, so, so at high school, uh,
+
+Jack Suba  9:47  
+facilities throughout the country, right? So John, so basically, modally and myself are like the central hub for ordering. So they would come into purchasing platform, username, password, load a payment method, set their home address, and that's typically where they're going to set, you know, their pickup location. But within my I have a live integration feed to Johnstone, East Coast metals, Ferguson company owned distribution, which is the 1200 ish stores throughout the country, when they set their location in my system, basically, they select the unit that they want. They can search by model number. And I heard you were normalizing product. Excuse it like perfect. You know, Norris has gone as far as you know, kind of the desktop cheat sheet, but they're basically plugging stuff into the search bar that's coming up. They add to cart. It's going to have my pricing reflected in there, our pricing and your white label. They select I want to go pick up at the Johnstone, you know, eight tenths of a mile from my home for nice job, and that pickup confirmation within about 30 minutes.
+
+Bill Brown  10:49  
+Okay, nice, yeah, I'm just trying to think of how I explain to the users how it works. You know what I mean? And if you're gonna be purchasing through, you know, the same purchasing through this online system, but then you can pick it up at your local distributor. That's great, you know, because Yeah, makes sense,
+
+Jack Suba  11:11  
+yeah. And ultimately, right? So, like I, I've had, and how I got into this, right, was we had a partner that had a contractor network, like yourself. I've already learned a lot about kind of the contractor's schedule, what they like, what they don't like, they don't talk to Jack Suba, they don't want to call the branch. They don't want to go sit at the branch, right? So a lot of our folks, I would say, 80% of our orders are going to happen before 8am and after like 7pm so everyone dinner, kids down whatever I'm looking at my schedule for the next day, they don't need to talk to access to quote, unquote national pricing through us, because, again, I'm cutting out like, four layers of sales people that are taking bonuses on the same piece of equipment, and that's how we're able to get more aggressive on pricing, and then ultimately, they're going to the same pickup location that they would every day. They're just pulling and it's going to say, via purchasing platform, modally, on the ticket, no pricing exposed anything like that. You just say it's for national account. I'm on my way. And, you know, just transparently, like we are flipping, you know, with what we're doing, you know, John Stone and everyone's business model on their head, so that plenty of folks get fired up at the branches of like, oh my god, I'm losing this account. Well, you know, you've been kind of riding pretty nice for a long time, like this. Like, we're going to run into that left and right, but right, it's the nature of the beast, right?
+
+Bill Brown  12:41  
+Now, this is just, yeah, I mean, if you want to, I mean, you have a choice as a contract
+
+Bill Brown  12:59  
+for the same quality product that's your responsibility as a contractor, is to lower your expenses so you can spend more in marketing, or your people, or what have you. But yeah, that sounds great. So just thinking about, you know, the marketing side, side, behind it, I know there's things that you can say, things you can't say. Just talking about, you know, purchasing, I don't know, can't say a percentage of what they're going to say. Just like, purchasing on it, like, like, as if you were a national account, something like that, right?
+
+Jack Suba  13:36  
+Yeah. So, yeah, we can. Norris has, and I have kind of iterated on talk track, so you can share all that with you, but you know, again, we're seeing discounts that are hundreds of dollars less, and just like I have avoided all of the tariff increases that they were trying to propose. Even though most of this stuff is being manufactured in Houston, there's whatever that are being shipped in, I've avoided, like I would say that again, pricing is already sharp. I just want to be very clear that whatever we roll out, you know, there may be increases that come in January, that again, I have offset, you know, for over a year, because we are just way more nimble than Daikin can even handle, which is good for all of us, but I guarantee you, wherever we land on price, your contractors, I would say, would be blown away. The only kind of thing I want to catch or call out, or, you know, potential hiccup or feedback you're going to get is I had a line of credit. We're not in a position as a little startup to be a bank like the mothership. So, like you a lot of folks, like, once you explain, you know, the fact that our pricing so aggressive, like the three and a half percent credit card fee, or ACH dollar per transaction, it's like, just explaining that to some folks goes a long, long right, where they're like, Oh, well, getting away.
+
+Jack Suba  15:09  
+Just is, I'm on my way the other two in my my environment that, you know, I would propose for you, and I'll send you a follow up email bill, because I know you're on to, you know, 20 other things this afternoon. You know, I've got a great relationship with Lowe's. So if people are doing correct, they're probably doing water heaters, if you're selling into other trades. Basically, I've got lock pricing for usually 12 months at a time on, you know, big things, you know, big items like water heaters, if they're doing home flips, whatever appliances, things like that, with access to the whatever the 1300 stores they've got. We've got things that help them with small business. We got Wayfair for outfitting offices. We've got Amazon, you know, waive all the Amazon fees, give them deeper discounts, stuff like that. So again, we would throw all that in this ecosystem. We pretty much would need a logo from you. And then it's another follow up call to say, how do you want to market? And you just want to, like, put it in your free section. I think it's called or free stuff we could start there. And you just put us on a couple blasts, and, you know, again, we stay away from X percent off list. Yeah, it'll spread like,
+
+Bill Brown  16:26  
+you guys have, like, I think Norris was showing me something you guys have, like, a, you know, like a marketing guide or something for it that you build out that I can reference.
+
+Jack Suba  16:36  
+Yeah. I mean, we've got collateral around some of our key programs.
+
+Service Crucible  16:39  
+I created a custom chat GPT, and I've loaded all the documents.
+
+Jack Suba  16:44  
+I mean, I'm just going to give you my version of that So, but, yeah, Bill, I can give you anything. And again, I think the real question around the HVAC equipment is, you know, I have the ability with the way in which I ingest the information for modally, if you're so inclined we could add, you know, point on there, whatever, to make a revenue stream for you and incentivize you to go push this.
+
+Bill Brown  17:07  
+Yeah, I mean that that'd be great.
+
+Bill Brown  17:15  
+I think Norris and I were talking about that, where Norris has this included in his you include it in your service crucible membership, right? Your your monthly membership. And I know that he was, I don't know you were changing those memberships up. I'm not sure how they were. Yeah,
+
+Service Crucible  17:34  
+I ended up. And so all tiers have access to the purchasing platform, yeah. And so what I've what I've built, is playbooks, courses, content, service, site and assets and price books all around it. I have done every single ahi matchup that's a flush fit, from straight AC heat pump, dual fuel package units, and it's, it's already mapped into a price book. So we, we, we're already taken into the next level. So and the all the you know how much of a pain in the ass the estimate templates and the proposal templates are, every single one of those have been created as well. So when somebody signs up, they're given that and it's been modified in such a way where they get zero bugs on the Upload log, and they they hit the ground running. It's I've optimized it for same day ROI, so I have a pay wall behind it. But ultimately, long term is I bring as many people in from my network, and I drastically reduce to just float the ecosystem of the tech stack and take advantage of the revenue stream of the contractors that we bring in. So you can funnel through me at a vastly discounted rate, where they get all of that on the entry tier, or you can just blast anywhere you want, completely up to you. Man, I just want to so much and knock Johnston, I think
+
+Bill Brown  19:06  
+that. I think that the value that you're adding to it makes it easier for them.
+
+Bill Brown  19:20  
+It's great, and I can see that value prop, and I always like to have somebody do a little no risk starter kind of thing. So I'm wondering, and this is just me thinking out loud, you start with the platform, and then the upsell is kind of more of a done for you, built into service Titan thing, where all that stuff that you've built, right? So if somebody is, you know, wants to get on the platform, start purchasing things at a better cost, but also has time and energy or whatever to do all the stuff that you've done, then they can maybe go down that path, or there has to be something to let them know if you want to make this even easier, here's what Norris is offering, and then we get them into Your your, you know, all that support and everything, because
+
+Bill Brown  20:24  
+really, that somebody could get for no cost, like as we bring them through that. And then can, you know, implement it 100% themselves, very easily. I don't know it depends on the skill of the contractor, but I would say most of them would like a done for you solution, especially once they start seeing the savings. If they see the savings, they're like, oh, I can make this even faster and easier based upon the fact that I'm saving money. You know what? I mean?
+
+Service Crucible  20:53  
+Yeah. And When things reach critical mass, it's just going to be a one time fee for me, because I'm just going to make money off of their spend, I just have to
+
+Bill Brown  21:02  
+get Is it your goal to move to making more money off the spend, rather than surface? Service crucible, you know, because I mean the spend of this could, I mean, has a higher potential. It does anything that I'm doing,
+
+Jack Suba  21:17  
+purchasing platform or moving away, we used to do membership fees, signing big breeds, manufactured houses, family, multi family, whatever. Every year that we were in economic downturn or interest rates were, you know, not in our favor, right? And they were spending millions of dollars on paving and all that other stuff we do. We were just a line item, right? The whole leadership team got ripped out. Consultants went in. I've been consultants. I've done it right? You just descending. It's like, Who is this? What do they do? We basically just started giving it away for free, and that actually unlocked a lot more consumption. You know, once people weren't, like, forced, like, we actually, you know, really had to focus on the value of the discounts. And, you know, what are they getting? And I'm telling you right now, like most again, these contractors don't want to talk to me, like, if we can get this in front of them, some generic like, hey, try it for free. Plus you get all these big logos. You can't go, you know, get a national account on your own. They're going to click in. Once they click in, that kicks off our sales automation of like, Hey, how you doing? You know, that experience as well under your hacks. And then, you know, once, once they're in too Norris is also, you know, he's not going to tell you, but, like, he's going direct with my VP of technology, who I was referring to earlier, of like, getting kind of the work order, quoting to work order stuff going directly with service Titan. So we talking to their head of partnerships. I sent him a note the other week. Norris, I don't even think I mentioned that to you, so we're back on his radar. Dan, I think it's like Eigner, Eigner, whatever. We're moving that along. And I think that's
+
+Bill Brown  22:59  
+dealing with service Titan. Yeah, that take a minute,
+
+Jack Suba  23:01  
+yeah, but we're on one of our investors at purchasing platform is also an investor or has been in service Titan.
+
+Bill Brown  23:10  
+That's helpful,
+
+Jack Suba  23:12  
+yeah, so that we're on their radar. But all the that's all this stuff, like, you know, basically product releases. I would love to have all this tied together, and we can figure it out as we go, but once we start offering this benefit again, Daikin doesn't know what they don't know, and Norris and I have seen time and time again like they are. It's wild wild west. So let's add some value to your ecosystem. And if you you know, if I can give this to you for free, you can turn it on to them, you know, we chat GPT some, you know, smart marketing. Give you a couple points like, we can figure this all out fairly quickly.
+
+Bill Brown  23:51  
+Okay, yeah, that sounds great. And I'm just thinking kind of like a a free version, and then a done for you solution that Norris handles, right? And I'll just think about the marketing piece from there, as far as, like, how we communicate that to the contractor on an eighth grade reading level, where they you can tell them what it is within two sentences, right? Because that you just don't have people's attention anymore. But I love the idea of the purchasing platform. Showed it to me in the in your marketing material, there you talked about, there's other, what's it called, vendors that are in there. But maybe just to simplify it, it's just more towards the equipment. Have you seen that being more successful just talking about the equipment side of it, or mentioning that you buy things from Lowe's, there's buy things from Amazon, stuff like that. Do you like to go comprehensive or just talk about the
+
+Jack Suba  24:54  
+equipment, very direct equipment. Okay, it's a big, big ticket purchase for me. Yeah, there's a cash flow benefit to that. I want everything else as well. We lead with that, and then once we kind of hook them on that, like we become part of their, you know, morning routine for their coffee, yeah, orders out the door. That's where we want to start. And then that's when we start piling on. Hey, what else you doing? Water heaters, you know, side projects, things like and that's when it all starts, blowing
+
+Jack Suba  25:38  
+through a link real quick you can go and log into versus set up a quick profile, but I will send you a kind of a comprehensive email. The other thing too is, if you know, just to wrap up here, one of my programs with Lowe's is I can basically with Lowe's and your approval, if you gave me, like, if we sign an NDA or, you know, a letter of intent or authorization, I can basically take all of your contractors accounts and add them to what we call my Lowe's affiliate program, so we can give them discounts up to 20% online in store before they even go into my system, where I have deeper discounts. And we, since you kind of like, own the ecosystem, in Lowe's eyes, I could say you're my partner, this is all of your customers, and we could basically have Lowe's just go through that entire list and say they're on a program. It's not as good. Move them over. They're not on a program at all. Move them over. We're on this program. We can't touch it and we just face it. And if I have that list, I could also add that as part of this instant rev share for you, and that's like an in your thing for you.
+
+Bill Brown  26:43  
+Okay, yeah, it sounds
+
+Jack Suba  26:45  
+great email for you to react to as well, but I do see that as a that's like the easiest out of all these things.
+
+Bill Brown  26:52  
+Great. I like it to be easy, easier to communicate. You know what? I mean? Awesome.
+
+Jack Suba  26:58  
+Awesome. Bill, thank you very much for your time. Very excited about this. Norris, thanks for another great introduction, and I will send a comprehensive note the next 24 hours to keep things moving.
+
+Bill Brown  27:10  
+Awesome guys. Anything else? Man,
+
+Service Crucible  27:12  
+no, I'm good to go. Any questions you got? Yeah? Let me know. Happy to work with you on anything.
+
+Bill Brown  27:19  
+Yeah, man, you got it. Have a good one. See you guys. Bye.
+
+Transcribed by https://otter.ai
