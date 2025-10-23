@@ -127,8 +127,9 @@ export const dashboardCourseData: Chapter[] = [
         id: "tv-dashboard-feed",
         title: "📺 Creating the TV Dashboard Feed - the 2nd Google Sheet",
         description: "Setting up the second Google Sheet that feeds your TV dashboard.",
-        videoUrl: "https://www.youtube.com/embed/example10",
-        content: "Create the second Google Sheet that will serve as the data source for your visual dashboard."
+        content: `<p>
+        <iframe src="https://app.tango.us/app/embed/3674234a-5b5b-4161-8329-7363e5fd1f08" style="width: 100%; height: 640px; border: none;" sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-same-origin" title="5) Creating the TV Dashboard Feed" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
+</p>`
       },
       {
         id: "dashboard-template",
