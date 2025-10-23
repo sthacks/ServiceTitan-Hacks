@@ -23,6 +23,16 @@ import { cn } from "@/lib/utils";
 export default function DashboardCourseContent() {
   const [location, setLocation] = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  // Parse URL to get current chapter and lesson
+  const params = new URLSearchParams(location.split('?')[1]);
+  const currentChapterId = params.get('chapter') || dashboardCourseData[0].id;
+  const currentLessonId = params.get('lesson') || dashboardCourseData[0].lessons[0].id;
+  
+  // Store in state to ensure component updates when URL changes
+  const [chapterId, setChapterId] = useState(currentChapterId);
+  const [lessonId, setLessonId] = useState(currentLessonId);
+  
   const {
     isLessonComplete,
     markLessonComplete,
@@ -31,10 +41,11 @@ export default function DashboardCourseContent() {
     getCompletionPercentage
   } = useCourseProgress();
 
-  // Parse URL to get current chapter and lesson
-  const params = new URLSearchParams(location.split('?')[1]);
-  const chapterId = params.get('chapter') || dashboardCourseData[0].id;
-  const lessonId = params.get('lesson') || dashboardCourseData[0].lessons[0].id;
+  // Update state when URL changes
+  useEffect(() => {
+    setChapterId(currentChapterId);
+    setLessonId(currentLessonId);
+  }, [currentChapterId, currentLessonId]);
 
   const currentLesson = getLesson(chapterId, lessonId);
   const totalLessons = getTotalLessons();
