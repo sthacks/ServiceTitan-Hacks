@@ -119,7 +119,9 @@ export const dashboardCourseData: Chapter[] = [
         id: "loom-two-sheets",
         title: "🎥 Loom Video on the 2 Google Sheets",
         description: "Visual demonstration of the two-sheet system in action.",
-        content: "Watch a detailed walkthrough showing how the two-sheet system works in practice."
+        content: `<div style="position: relative; padding-bottom: 59.8669623059867%; height: 0;">
+        <iframe src="https://www.loom.com/embed/b31b7d6ab50c4b2f882b8d00de499ab6?sid=66a7fdd9-3de4-4e5b-8aee-956dea2c21e0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>`
       },
       {
         id: "tv-dashboard-feed",
