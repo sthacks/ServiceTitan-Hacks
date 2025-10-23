@@ -29,7 +29,6 @@ export const dashboardCourseData: Chapter[] = [
         id: "before-you-begin",
         title: "📊 Before You Begin: A Quick Note About Dashboarding with ServiceTitan",
         description: "Important concepts and prerequisites before starting your dashboard journey.",
-        videoUrl: "https://www.youtube.com/embed/example2",
         content: `<p>There are <strong>many ways to connect to ServiceTitan data</strong> and build dashboards &mdash; some involve APIs, middleware, or advanced reporting tools.</p>
 
 <p>What you're about to learn is the <strong>lowest-code, most DIY-friendly</strong> method available.&nbsp;</p>
@@ -46,8 +45,8 @@ export const dashboardCourseData: Chapter[] = [
         id: "workflow-overview",
         title: "➡️ Workflow Overview",
         description: "Understanding the complete workflow from ServiceTitan to your TV dashboard.",
-        videoUrl: "https://www.youtube.com/embed/example3",
-        content: "This lesson provides a high-level overview of how data flows from ServiceTitan through various tools to your final TV dashboard."
+        content: `<p>This lesson provides a high-level overview of how data flows from ServiceTitan through various tools to your final TV dashboard.</p>
+<img src="/attached_assets/ServiceTitan_Report_1761237313582.png" alt="Workflow Overview Diagram" class="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-lg" />`
       },
       {
         id: "create-schedule-report",
