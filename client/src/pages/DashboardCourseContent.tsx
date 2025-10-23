@@ -242,34 +242,6 @@ export default function DashboardCourseContent() {
               </div>
             </div>
 
-            {/* Video Player */}
-            {lesson.videoUrl && (
-              <Card className="mb-8">
-                <CardContent className="p-0">
-                  <div className="aspect-video bg-black rounded-lg overflow-hidden">
-                    {lesson.videoUrl.endsWith('.mp4') || lesson.videoUrl.includes('/attached_assets/') ? (
-                      <video
-                        src={lesson.videoUrl}
-                        controls
-                        className="w-full h-full"
-                        data-testid="video-player"
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : (
-                      <iframe
-                        src={lesson.videoUrl}
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        data-testid="video-player"
-                      />
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
             {/* Lesson Content */}
             {lesson.content && (
               <Card className="mb-8 !bg-white dark:!bg-white !text-black dark:!text-black">
@@ -281,6 +253,18 @@ export default function DashboardCourseContent() {
                 </CardContent>
               </Card>
             )}
+
+            {/* Loom Video */}
+            <Card className="mb-8">
+              <CardContent className="p-0">
+                <div 
+                  style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}
+                  dangerouslySetInnerHTML={{ 
+                    __html: '<iframe src="https://www.loom.com/embed/ef11fd994b4045e6a928530cb38fa786?sid=e6bf1f54-fb4d-4ebd-8287-e6d751075584" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>' 
+                  }}
+                />
+              </CardContent>
+            </Card>
 
             {/* Navigation Buttons */}
             <div className="flex items-center justify-between gap-4 pt-8 border-t">
