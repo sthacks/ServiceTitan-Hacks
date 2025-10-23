@@ -24,10 +24,14 @@ export default function DashboardCourseContent() {
   const [location, setLocation] = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
-  // Parse URL to get current chapter and lesson
+  // Parse URL to get initial chapter and lesson
   const params = new URLSearchParams(window.location.search);
-  const chapterId = params.get('chapter') || dashboardCourseData[0].id;
-  const lessonId = params.get('lesson') || dashboardCourseData[0].lessons[0].id;
+  const initialChapterId = params.get('chapter') || dashboardCourseData[0].id;
+  const initialLessonId = params.get('lesson') || dashboardCourseData[0].lessons[0].id;
+  
+  // Use state to track current lesson
+  const [chapterId, setChapterId] = useState(initialChapterId);
+  const [lessonId, setLessonId] = useState(initialLessonId);
   
   const {
     isLessonComplete,
@@ -39,8 +43,11 @@ export default function DashboardCourseContent() {
 
   // Helper function to navigate to a lesson without page reload
   const navigateToLesson = (newChapterId: string, newLessonId: string) => {
+    setChapterId(newChapterId);
+    setLessonId(newLessonId);
     setLocation(`/dashboard-course/content?chapter=${newChapterId}&lesson=${newLessonId}`);
     setIsSidebarOpen(false); // Close mobile sidebar after navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of content
   };
 
   const currentLesson = getLesson(chapterId, lessonId);
