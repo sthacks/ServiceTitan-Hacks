@@ -52,8 +52,13 @@ export const dashboardCourseData: Chapter[] = [
         id: "create-schedule-report",
         title: "🗓️ Create & Schedule your ServiceTitan Report",
         description: "Step-by-step guide to creating and scheduling automated reports in ServiceTitan.",
-        videoUrl: "https://www.youtube.com/embed/example4",
-        content: "Learn how to set up automated reports in ServiceTitan that will feed data to your dashboard automatically."
+        content: `<p>Learn how to set up automated reports in ServiceTitan that will feed data to your dashboard automatically.</p>
+
+<p style="text-align: center;"><strong>This walkthrough guide allows you to see each individual click💥</strong></p>
+
+<p>
+        <iframe src="https://app.tango.us/app/embed/5de81e74-ffd1-4685-a4c5-39339d609df2" style="width: 100%; height: 640px; border: none;" sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-same-origin" title="1) Create and Schedule the ServiceTitan Report" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
+</p>`
       },
       {
         id: "import-to-sheets",
