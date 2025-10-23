@@ -179,8 +179,23 @@ export const dashboardCourseData: Chapter[] = [
         id: "fix-totals-row",
         title: "🔧 Fixing the Totals Row Issue in ServiceTitan Reports",
         description: "Troubleshooting guide for fixing the totals row display in ServiceTitan reports.",
-        videoUrl: "https://www.youtube.com/embed/example15",
-        content: "Learn how to resolve common issues with the totals row in ServiceTitan reports that can affect your dashboard accuracy."
+        content: `<p>A common issue when building your dashboard is that <strong>ServiceTitan reports automatically include a totals row at the bottom</strong>, which can skew your data in Google Sheets and Google Looker Studio (formerly Data Studio). This totals row often causes <strong>duplicate counts</strong> or <strong>inflated sums</strong> in your charts.</p>
+
+<p>If you've run into this—don't worry. Here's a quick fix using a formula that <strong>filters out blank or non-data rows</strong>, like the totals row.</p>
+
+<h4>✅ Use this formula instead of a plain <code>IMPORTRANGE</code>:</h4><pre><code>=FILTER(IMPORTRANGE("https://docs.google.com/spreadsheets/d/your-spreadsheet-id", "sheet1!A:Q"),
+  INDEX(IMPORTRANGE("https://docs.google.com/spreadsheets/d/your-spreadsheet-id", "sheet1!B:B"), 0) &lt;&gt; "")
+</code></pre>
+
+<h4>🔍 What this does:</h4>
+
+<ul>
+        <li>Imports only rows where <strong>Column B is not blank</strong>.</li>
+        <li>Totals rows usually leave Column B (or another consistent column) empty, so this cleanly excludes them.</li>
+        <li>You can modify the column used in the condition depending on where your key data typically lives.</li>
+</ul>
+
+<p>💡 <strong>Tip:</strong> You can also manually delete the totals row in ServiceTitan's report each time, but automating the filter like this keeps everything clean and low-maintenance.</p>`
       }
     ]
   }
