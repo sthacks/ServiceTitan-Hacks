@@ -64,8 +64,11 @@ export const dashboardCourseData: Chapter[] = [
         id: "import-to-sheets",
         title: "🗳️ Import the ServiceTitan Report to Google Sheets",
         description: "How to automatically import your ServiceTitan reports into Google Sheets.",
-        videoUrl: "https://www.youtube.com/embed/example5",
-        content: "Set up the integration between ServiceTitan reports and Google Sheets for seamless data flow."
+        content: `<p>Set up the integration between ServiceTitan reports and Google Sheets for seamless data flow.</p>
+
+<p>
+        <iframe src="https://app.tango.us/app/embed/ee01e776-ca12-4b98-ab34-401b82b78246" style="width: 100%; height: 640px; border: none;" sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-same-origin" title="2) Import the ServiceTitan Report to Google Sheets" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
+</p>`
       },
       {
         id: "gmail-filter",
