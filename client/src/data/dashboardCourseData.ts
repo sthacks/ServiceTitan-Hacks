@@ -74,15 +74,21 @@ export const dashboardCourseData: Chapter[] = [
         id: "gmail-filter",
         title: "📧 Creating a Filter/Label in Gmail",
         description: "Configure Gmail filters to organize your ServiceTitan report emails.",
-        videoUrl: "https://www.youtube.com/embed/example6",
-        content: "Learn how to create Gmail filters and labels to automatically organize incoming ServiceTitan reports."
+        content: `<p>Learn how to create Gmail filters and labels to automatically organize incoming ServiceTitan reports.</p>
+
+<p>
+        <iframe src="https://app.tango.us/app/embed/b57aa3bf-df61-4ea7-bd4b-747dc417ac83" style="width: 100%; height: 640px; border: none;" sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-same-origin" title="3) Creating a Filter/Label in Gmail" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
+</p>`
       },
       {
         id: "creating-zap",
         title: "⚡️ Creating the Zap",
         description: "Build your Zapier automation to connect ServiceTitan, Gmail, and Google Sheets.",
-        videoUrl: "https://www.youtube.com/embed/example7",
-        content: "Step-by-step walkthrough of creating the Zapier automation that powers your dashboard data flow."
+        content: `<p>Step-by-step walkthrough of creating the Zapier automation that powers your dashboard data flow.</p>
+
+<p>
+        <iframe src="https://app.tango.us/app/embed/b707444d-939f-40e2-b8a8-f24f21741bfa" style="width: 100%; height: 640px; border: none;" sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-same-origin" title="4) Creating the Zap" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
+</p>`
       },
       {
         id: "why-two-sheets",
