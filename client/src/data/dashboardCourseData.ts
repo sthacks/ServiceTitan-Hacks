@@ -135,9 +135,15 @@ export const dashboardCourseData: Chapter[] = [
         id: "dashboard-template",
         title: "📊 Dashboard Template",
         description: "Access and customize the pre-built dashboard template.",
-        videoUrl: "https://www.youtube.com/embed/example11",
-        content: "Get started quickly with our pre-built dashboard template designed for ServiceTitan data.",
-        resourceUrl: "#"
+        content: `<p style="text-align: center;"><span style="font-size: 36px;">Dashboard Template</span></p>
+
+<p style="text-align: center;">👉 <a href="https://lookerstudio.google.com/reporting/69e01907-bc29-420f-9d0b-12accfd503a6/page/3s4FF/copy" rel="noopener noreferrer" target="_blank">https://lookerstudio.google.com/reporting/69e01907-bc29-420f-9d0b-12accfd503a6/page/3s4FF/copy</a></p>
+
+<p>
+        <a href="https://lookerstudio.google.com/reporting/69e01907-bc29-420f-9d0b-12accfd503a6/page/3s4FF/copy" rel="noopener noreferrer" target="_blank"><img src="https://files.cdn.thinkific.com/file_uploads/1072722/images/09d/c1f/d8d/Untitled_design_%2832%29.png" style="width: 817px;" class="fr-fic fr-dib" srcset="https://files.cdn.thinkific.com/file_uploads/1072722/images/09d/c1f/d8d/Untitled_design_%2832%29.png?width=1920 1x, https://files.cdn.thinkific.com/file_uploads/1072722/images/09d/c1f/d8d/Untitled_design_%2832%29.png?width=1920&dpr=2 2x, https://files.cdn.thinkific.com/file_uploads/1072722/images/09d/c1f/d8d/Untitled_design_%2832%29.png?width=1920&dpr=3 3x"></a>
+        <br>
+</p>`,
+        resourceUrl: "https://lookerstudio.google.com/reporting/69e01907-bc29-420f-9d0b-12accfd503a6/page/3s4FF/copy"
       },
       {
         id: "first-metric",
