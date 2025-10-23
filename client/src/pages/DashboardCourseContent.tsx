@@ -254,17 +254,19 @@ export default function DashboardCourseContent() {
               </Card>
             )}
 
-            {/* Loom Video */}
-            <Card className="mb-8">
-              <CardContent className="p-0">
-                <div 
-                  style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}
-                  dangerouslySetInnerHTML={{ 
-                    __html: '<iframe src="https://www.loom.com/embed/ef11fd994b4045e6a928530cb38fa786?sid=e6bf1f54-fb4d-4ebd-8287-e6d751075584" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>' 
-                  }}
-                />
-              </CardContent>
-            </Card>
+            {/* Loom Video - Only on first lesson */}
+            {chapterId === 'introduction' && lessonId === 'welcome' && (
+              <Card className="mb-8">
+                <CardContent className="p-0">
+                  <div 
+                    style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}
+                    dangerouslySetInnerHTML={{ 
+                      __html: '<iframe src="https://www.loom.com/embed/ef11fd994b4045e6a928530cb38fa786?sid=e6bf1f54-fb4d-4ebd-8287-e6d751075584" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>' 
+                    }}
+                  />
+                </CardContent>
+              </Card>
+            )}
 
             {/* Navigation Buttons */}
             <div className="flex items-center justify-between gap-4 pt-8 border-t">
