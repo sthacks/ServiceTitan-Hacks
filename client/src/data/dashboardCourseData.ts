@@ -149,15 +149,17 @@ export const dashboardCourseData: Chapter[] = [
         id: "first-metric",
         title: "📁 Creating the Report and the First Metric",
         description: "Build your first dashboard metric in Google Data Studio (Looker Studio).",
-        videoUrl: "https://www.youtube.com/embed/example12",
-        content: "Create your first dashboard metric and learn the fundamentals of Google Data Studio visualization."
+        content: `<p>
+        <iframe src="https://app.tango.us/app/embed/14e40fc6-1fea-4a5b-9e48-7ba26c711da5" style="width: 100%; height: 640px; border: none;" sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-same-origin" title="6) Creating the Report and the first metric" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
+</p>`
       },
       {
         id: "customizing-dashboard",
         title: "🎨 Customizing Google Data Studio Dashboards",
         description: "Advanced customization techniques for professional-looking dashboards.",
-        videoUrl: "https://www.youtube.com/embed/example13",
-        content: "Make your dashboard look professional with custom colors, layouts, and branding."
+        content: `<div style="position: relative; padding-bottom: 62.93706293706294%; height: 0;">
+        <iframe src="https://www.loom.com/embed/44d14b4c99db4332900b1e8e1c7a4a8b?sid=c8373163-e273-4300-b91a-6abc7ec5fa24" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>`
       },
       {
         id: "questions-help",
