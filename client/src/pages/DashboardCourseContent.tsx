@@ -266,7 +266,10 @@ export default function DashboardCourseContent() {
             {lesson.content && (
               <Card className="mb-8">
                 <CardContent className="p-8 prose prose-sm max-w-none">
-                  <p className="text-base leading-relaxed">{lesson.content}</p>
+                  <div 
+                    className="text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: lesson.content }}
+                  />
                 </CardContent>
               </Card>
             )}

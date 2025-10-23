@@ -30,7 +30,17 @@ export const dashboardCourseData: Chapter[] = [
         title: "📊 Before You Begin: A Quick Note About Dashboarding with ServiceTitan",
         description: "Important concepts and prerequisites before starting your dashboard journey.",
         videoUrl: "https://www.youtube.com/embed/example2",
-        content: "There are many ways to connect to ServiceTitan data and build dashboards — some involve APIs, middleware, or advanced reporting tools.\n\nWhat you're about to learn is the lowest-code, most DIY-friendly method available.\n\nIt uses tools you likely already have — Gmail, Google Sheets, Zapier, and Looker Studio.\n\n💡 Don't get discouraged if it feels like a lot at first. Once you get this initial setup dialed in, adding new reports and dashboards becomes fast and easy.\n\nYou've got this — and I'll walk you through every step.\n\nLet's get started!"
+        content: `<p>There are <strong>many ways to connect to ServiceTitan data</strong> and build dashboards &mdash; some involve APIs, middleware, or advanced reporting tools.</p>
+
+<p>What you're about to learn is the <strong>lowest-code, most DIY-friendly</strong> method available.&nbsp;</p>
+
+<p>It uses tools you likely already have &mdash; Gmail, Google Sheets, Zapier, and Looker Studio.</p>
+
+<p>💡 <em>Don't get discouraged if it feels like a lot at first.</em> Once you get this initial setup dialed in, <strong>adding new reports and dashboards becomes fast and easy</strong>.</p>
+
+<p>You've got this &mdash; and I'll walk you through every step.&nbsp;</p>
+
+<p>Let's get started!</p>`
       },
       {
         id: "workflow-overview",
