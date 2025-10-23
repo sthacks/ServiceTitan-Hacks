@@ -21,17 +21,13 @@ import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { cn } from "@/lib/utils";
 
 export default function DashboardCourseContent() {
-  const [location, setLocation] = useLocation();
+  const [location] = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   // Parse URL to get current chapter and lesson
-  const params = new URLSearchParams(location.split('?')[1]);
-  const currentChapterId = params.get('chapter') || dashboardCourseData[0].id;
-  const currentLessonId = params.get('lesson') || dashboardCourseData[0].lessons[0].id;
-  
-  // Store in state to ensure component updates when URL changes
-  const [chapterId, setChapterId] = useState(currentChapterId);
-  const [lessonId, setLessonId] = useState(currentLessonId);
+  const params = new URLSearchParams(window.location.search);
+  const chapterId = params.get('chapter') || dashboardCourseData[0].id;
+  const lessonId = params.get('lesson') || dashboardCourseData[0].lessons[0].id;
   
   const {
     isLessonComplete,
@@ -41,11 +37,10 @@ export default function DashboardCourseContent() {
     getCompletionPercentage
   } = useCourseProgress();
 
-  // Update state when URL changes
-  useEffect(() => {
-    setChapterId(currentChapterId);
-    setLessonId(currentLessonId);
-  }, [currentChapterId, currentLessonId]);
+  // Helper function to navigate to a lesson
+  const navigateToLesson = (newChapterId: string, newLessonId: string) => {
+    window.location.href = `/dashboard-course/content?chapter=${newChapterId}&lesson=${newLessonId}`;
+  };
 
   const currentLesson = getLesson(chapterId, lessonId);
   const totalLessons = getTotalLessons();
@@ -154,9 +149,8 @@ export default function DashboardCourseContent() {
                       <button
                         key={les.id}
                         onClick={() => {
-                          setLocation(`/dashboard-course/content?chapter=${ch.id}&lesson=${les.id}`);
+                          navigateToLesson(ch.id, les.id);
                           setIsSidebarOpen(false);
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                         className={cn(
                           "w-full text-left p-3 rounded-md hover-elevate flex items-start gap-3 transition-colors",
@@ -283,10 +277,7 @@ export default function DashboardCourseContent() {
                 <Button 
                   variant="outline" 
                   className="gap-2" 
-                  onClick={() => {
-                    setLocation(`/dashboard-course/content?chapter=${prevLesson.chapterId}&lesson=${prevLesson.lessonId}`);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToLesson(prevLesson.chapterId, prevLesson.lessonId)}
                   data-testid="button-prev-lesson"
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -299,10 +290,7 @@ export default function DashboardCourseContent() {
               {nextLesson ? (
                 <Button 
                   className="gap-2" 
-                  onClick={() => {
-                    setLocation(`/dashboard-course/content?chapter=${nextLesson.chapterId}&lesson=${nextLesson.lessonId}`);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToLesson(nextLesson.chapterId, nextLesson.lessonId)}
                   data-testid="button-next-lesson"
                 >
                   Next Lesson
