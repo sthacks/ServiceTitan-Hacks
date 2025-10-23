@@ -21,7 +21,7 @@ import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { cn } from "@/lib/utils";
 
 export default function DashboardCourseContent() {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const {
     isLessonComplete,
@@ -140,33 +140,33 @@ export default function DashboardCourseContent() {
                     const isCurrent = ch.id === chapterId && les.id === lessonId;
 
                     return (
-                      <Link
+                      <button
                         key={les.id}
-                        href={`/dashboard-course/content?chapter=${ch.id}&lesson=${les.id}`}
-                        onClick={() => setIsSidebarOpen(false)}
+                        onClick={() => {
+                          setLocation(`/dashboard-course/content?chapter=${ch.id}&lesson=${les.id}`);
+                          setIsSidebarOpen(false);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className={cn(
+                          "w-full text-left p-3 rounded-md hover-elevate flex items-start gap-3 transition-colors",
+                          isCurrent && "bg-primary/10 border border-primary/20"
+                        )}
+                        data-testid={`lesson-nav-${les.id}`}
                       >
-                        <button
-                          className={cn(
-                            "w-full text-left p-3 rounded-md hover-elevate flex items-start gap-3 transition-colors",
-                            isCurrent && "bg-primary/10 border border-primary/20"
+                        {completed ? (
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        ) : (
+                          <Circle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm font-medium line-clamp-2">{les.title}</div>
+                          {isCurrent && (
+                            <Badge variant="secondary" className="mt-1 text-xs">
+                              Current
+                            </Badge>
                           )}
-                          data-testid={`lesson-nav-${les.id}`}
-                        >
-                          {completed ? (
-                            <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          ) : (
-                            <Circle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                          )}
-                          <div className="flex-1 min-w-0">
-                            <div className="text-sm font-medium line-clamp-2">{les.title}</div>
-                            {isCurrent && (
-                              <Badge variant="secondary" className="mt-1 text-xs">
-                                Current
-                              </Badge>
-                            )}
-                          </div>
-                        </button>
-                      </Link>
+                        </div>
+                      </button>
                     );
                   })}
                 </div>
@@ -269,23 +269,34 @@ export default function DashboardCourseContent() {
             {/* Navigation Buttons */}
             <div className="flex items-center justify-between gap-4 pt-8 border-t">
               {prevLesson ? (
-                <Link href={`/dashboard-course/content?chapter=${prevLesson.chapterId}&lesson=${prevLesson.lessonId}`}>
-                  <Button variant="outline" className="gap-2" data-testid="button-prev-lesson">
-                    <ChevronLeft className="h-4 w-4" />
-                    Previous Lesson
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="gap-2" 
+                  onClick={() => {
+                    setLocation(`/dashboard-course/content?chapter=${prevLesson.chapterId}&lesson=${prevLesson.lessonId}`);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  data-testid="button-prev-lesson"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                  Previous Lesson
+                </Button>
               ) : (
                 <div />
               )}
 
               {nextLesson ? (
-                <Link href={`/dashboard-course/content?chapter=${nextLesson.chapterId}&lesson=${nextLesson.lessonId}`}>
-                  <Button className="gap-2" data-testid="button-next-lesson">
-                    Next Lesson
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </Link>
+                <Button 
+                  className="gap-2" 
+                  onClick={() => {
+                    setLocation(`/dashboard-course/content?chapter=${nextLesson.chapterId}&lesson=${nextLesson.lessonId}`);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  data-testid="button-next-lesson"
+                >
+                  Next Lesson
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
               ) : (
                 <Link href="/dashboard-course">
                   <Button className="gap-2" data-testid="button-finish-course">
