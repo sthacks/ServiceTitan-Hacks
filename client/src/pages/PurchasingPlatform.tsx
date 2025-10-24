@@ -336,12 +336,12 @@ export default function PurchasingPlatform() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-center text-muted-foreground">
-                  Our platform is built on partnerships with Daikin/Modally and integrated with over 1,200 distributor locations nationwide.
+                  Our platform is built on partnerships with Goodman/Daikin and integrated with over 1,200 distributor locations nationwide.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4 mt-8">
                   <div className="text-center p-4">
                     <Package className="h-12 w-12 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold mb-2">Daikin/Modally</h3>
+                    <h3 className="font-semibold mb-2">Goodman/Daikin</h3>
                     <p className="text-sm text-muted-foreground">Direct factory pricing</p>
                   </div>
                   <div className="text-center p-4">
