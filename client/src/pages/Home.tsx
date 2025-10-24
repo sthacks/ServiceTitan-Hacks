@@ -20,6 +20,13 @@ export default function Home() {
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FnjPnLHZRIeoS1YalKP4j_31639205-3.jpg",
     },
     {
+      title: "Equipment Buying Group",
+      description: "100% free for Facebook Group members. Get access to pricing that the big guys get on HVAC equipment, water heaters, and tools.",
+      icon: ShoppingCart,
+      link: "/purchasing-platform",
+      image: buyingGroupImage,
+    },
+    {
       title: "Tools & Products",
       description: "Discover AI-powered tools and automation solutions designed specifically for ServiceTitan contractors.",
       icon: Wrench,
@@ -46,13 +53,6 @@ export default function Home() {
       icon: Headphones,
       link: "/podcast",
       image: podcastImage,
-    },
-    {
-      title: "Equipment Buying Group",
-      description: "100% free for Facebook Group members. Get access to pricing that the big guys get on HVAC equipment, water heaters, and tools.",
-      icon: ShoppingCart,
-      link: "/purchasing-platform",
-      image: buyingGroupImage,
     },
     {
       title: "All-Access Pass",
