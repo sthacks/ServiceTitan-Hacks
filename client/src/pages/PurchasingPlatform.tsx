@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import titleBg from "@assets/title-background.png";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -52,34 +53,37 @@ export default function PurchasingPlatform() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#ED254E] via-[#C1124F] to-[#8B0E38] text-white py-20 md:py-32">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Purchasing Platform
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Get the pricing you deserve. Save hundreds on HVAC equipment, water heaters, and tools.
-            </p>
-            <p className="text-lg mb-10 text-white/80">
-              Level the playing field. Small contractors get the same benefits as the big guys.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href="#get-started">
-                <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm" data-testid="button-get-started">
-                  Get Started
-                </Button>
-              </a>
-              <a href="#how-it-works">
-                <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm" data-testid="button-learn-more">
-                  Learn More
-                </Button>
-              </a>
+        <section className="relative py-24 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${titleBg})` }}
+          />
+          <div className="mx-auto max-w-7xl px-6 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
+                Purchasing Platform
+              </h1>
+              <p className="text-xl text-gray-300 mb-4">
+                Get the pricing you deserve. Save hundreds on HVAC equipment, water heaters, and tools.
+              </p>
+              <p className="text-lg text-gray-400 mb-8">
+                Level the playing field. Small contractors get the same benefits as the big guys.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="#get-started">
+                  <Button size="lg" data-testid="button-get-started">
+                    Get Started
+                  </Button>
+                </a>
+                <a href="#how-it-works">
+                  <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm" data-testid="button-learn-more">
+                    Learn More
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Key Benefits Section */}
         <section className="py-16 md:py-24">
