@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ShoppingCart, Truck, Clock, DollarSign, Package, Wrench, Home, Tag } from "lucide-react";
+import { CheckCircle2, ShoppingCart, Truck, Clock, DollarSign, Package, Wrench, Home } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -147,20 +147,6 @@ export default function PurchasingPlatform() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     2-truck shops get the same pricing as invitation homes and national accounts.
-                  </p>
-                </CardContent>
-              </Card>
-            </a>
-
-            <a href="#get-started" className="block">
-              <Card data-testid="card-benefit-rebates" className="h-full hover-elevate active-elevate-2 cursor-pointer">
-                <CardHeader>
-                  <Tag className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>No Rebates</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Get your savings on each purchase.
                   </p>
                 </CardContent>
               </Card>
