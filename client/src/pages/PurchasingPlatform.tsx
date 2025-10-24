@@ -14,6 +14,7 @@ import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 import equipmentImage from "@assets/equipment_1761310475748.png";
 import waterHeatersImage from "@assets/water heaters_1761310497282.png";
 import toolsImage from "@assets/tools_1761310506283.png";
+import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -25,10 +26,11 @@ export default function PurchasingPlatform() {
     productInterest: "HVAC"
   });
 
-  // SEO Meta Tags
+  // SEO & Open Graph Meta Tags
   useEffect(() => {
     document.title = "Equipment Buying Group | Get Pricing the Big Guys Get – ServiceTitan Hacks";
     
+    // Standard meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute("content", "Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.");
@@ -38,6 +40,40 @@ export default function PurchasingPlatform() {
       meta.content = "Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.";
       document.head.appendChild(meta);
     }
+
+    // Open Graph meta tags for social sharing
+    const ogTags = [
+      { property: 'og:title', content: 'Buy Like Private Equity' },
+      { property: 'og:description', content: 'Get the pricing that the big guys get on HVAC, water heaters, and tools—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
+      { property: 'og:image', content: `${window.location.origin}${buyingGroupImage}` },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: window.location.href },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Buy Like Private Equity' },
+      { name: 'twitter:description', content: 'Get the pricing that the big guys get on HVAC, water heaters, and tools—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
+      { name: 'twitter:image', content: `${window.location.origin}${buyingGroupImage}` },
+    ];
+
+    ogTags.forEach(tag => {
+      const property = tag.property || '';
+      const name = tag.name || '';
+      const selector = property ? `meta[property="${property}"]` : `meta[name="${name}"]`;
+      
+      let metaTag = document.querySelector(selector);
+      if (metaTag) {
+        metaTag.setAttribute('content', tag.content);
+      } else {
+        metaTag = document.createElement('meta');
+        if (property) {
+          metaTag.setAttribute('property', property);
+        }
+        if (name) {
+          metaTag.setAttribute('name', name);
+        }
+        metaTag.setAttribute('content', tag.content);
+        document.head.appendChild(metaTag);
+      }
+    });
 
     return () => {
       document.title = "ServiceTitan Hacks";
