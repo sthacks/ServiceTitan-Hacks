@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ShoppingCart, Truck, Clock, DollarSign, Package, Wrench, Home } from "lucide-react";
+import { CheckCircle2, ShoppingCart, Truck, Clock, DollarSign, Package, Wrench, Home, Users } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -91,6 +91,29 @@ export default function PurchasingPlatform() {
                   </Button>
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Free Membership Callout */}
+        <section className="py-8 bg-primary/10 border-y border-primary/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <Card className="border-primary/30 bg-primary/5">
+                <CardContent className="py-6">
+                  <div className="flex items-center justify-center gap-4 flex-wrap">
+                    <Users className="h-8 w-8 text-primary flex-shrink-0" />
+                    <div className="text-center md:text-left">
+                      <p className="text-lg md:text-xl font-semibold mb-1">
+                        100% Free for ServiceTitan Hacks Facebook Group Members
+                      </p>
+                      <p className="text-muted-foreground">
+                        Join our community to unlock instant access to bulk-rate pricing
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
