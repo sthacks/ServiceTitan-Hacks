@@ -174,7 +174,7 @@ export default function PurchasingPlatform() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    80% of orders happen before 8am or after 7pm. No more waiting at the branch.
+                    Order online. No more waiting at the branch.
                   </p>
                 </CardContent>
               </Card>
