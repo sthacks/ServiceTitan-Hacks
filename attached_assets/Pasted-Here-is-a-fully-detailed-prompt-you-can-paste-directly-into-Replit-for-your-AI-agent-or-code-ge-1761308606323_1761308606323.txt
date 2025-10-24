@@ -1,0 +1,145 @@
+Here is a **fully detailed prompt** you can paste directly into Replit (for your AI agent or code generation workspace).
+It contains layout, content, brand colors, and section structure instructions.
+
+---
+
+**Prompt for Replit Agent:**
+
+Build a responsive **landing page** in **HTML, CSS, and JavaScript** for:
+**ServiceTitan Hacks Purchasing Platform**
+
+---
+
+### **Purpose**
+
+Create a public webpage that explains how **ServiceTitan Hacks members** can access **exclusive Goodman and Daikin HVAC equipment pricing** through a **free purchasing platform**.
+The tone should be clear, professional, and trustworthy — focused on contractor savings, brand credibility, and simplicity.
+
+---
+
+### **Brand & Style Guide**
+
+* **Brand name:** ServiceTitan Hacks
+* **Primary color:** Bright Red `#ED254E`
+* **Accent color:** Deep Red `#C1124F`
+* **Text colors:** Black `#000000`, Medium Gray `#555555`, White `#FFFFFF`
+* **Font:** Inter, Oxygen, or Open Sans (Google Fonts)
+* **Layout:** Full-width hero banner, alternating light/dark sections, centered text blocks, and card-based benefit layout
+* **Visual style:** Minimalist, contractor-focused, clean typography, subtle shadows on cards and buttons
+
+---
+
+### **Page Sections**
+
+#### 1. **Header**
+
+* Logo area (placeholder for ServiceTitan Hacks logo)
+* Navigation links (anchor links): *How It Works*, *Benefits*, *Join Free*
+* Sticky header with transparent background on load, solid after scroll
+
+---
+
+#### 2. **Hero Section**
+
+* **Headline:**
+  “Exclusive Goodman & Daikin Pricing for ServiceTitan Hacks Members”
+* **Subheadline:**
+  “Save thousands per year with direct-from-manufacturer pricing—no middlemen, no fees.”
+* **CTA Button:**
+  “Get Free Access” → scrolls to signup section
+* Background image suggestion: warehouse or HVAC technicians with equipment pallets
+* Overlay gradient for readability
+
+---
+
+#### 3. **How It Works (3-Step Section)**
+
+Use three equal-width cards or columns.
+Each step should have an icon, short headline, and description.
+
+1. **Join for Free**
+   *ServiceTitan Hacks members get instant access to the purchasing platform at no cost.*
+
+2. **Shop Trusted Brands**
+   *Browse discounted Goodman and Daikin equipment through our secure ordering portal.*
+
+3. **Pickup or Deliver**
+   *Choose your nearest distributor or factory pickup location—same quality, better price.*
+
+---
+
+#### 4. **Key Benefits (Card Grid or Icon List)**
+
+6 cards or bullets with icons:
+
+* Direct manufacturer relationships with **Daikin** and **Goodman**
+* Avoid markups from traditional distributors
+* **Up to 20% savings** on equipment
+* Simplified online ordering with national account pricing
+* Optional **Lowe’s affiliate program** for additional contractor discounts
+* Fully compatible with **ServiceTitan workflows**
+
+Style each card with a white background, light drop shadow, and red accent icon.
+
+---
+
+#### 5. **Testimonial Section**
+
+Add placeholder testimonial in a centered quote box:
+
+> “We saved over $1,000 on our first equipment order. The process was quick, transparent, and simple.”
+> — *ST Hacks Member*
+
+---
+
+#### 6. **Call to Action (Bottom Section)**
+
+* **Headline:** “Start Saving on Every HVAC System You Install”
+* **Subheadline:** “Join 9,500+ contractors in the ServiceTitan Hacks community and access the purchasing platform for free.”
+* **CTA Button:** “Get Free Access”
+
+  * Scrolls to a simple signup form
+  * Form fields: Name, Email, Company (non-functional placeholder ok)
+
+---
+
+#### 7. **Footer**
+
+Include:
+
+* ServiceTitan Hacks © [Current Year]
+* Links: Privacy Policy | Terms | Contact
+* Small note: “Partnerships include Daikin, Goodman, and Lowe’s.”
+
+---
+
+### **Technical Requirements**
+
+* Use semantic HTML5
+* Include meta tags for SEO:
+
+  * `<title>ServiceTitan Hacks Purchasing Platform | Exclusive Goodman & Daikin Pricing</title>`
+  * `<meta name="description" content="Get direct manufacturer pricing on Goodman and Daikin HVAC equipment through the free ServiceTitan Hacks Purchasing Platform. Join today.">`
+* Fully responsive layout (mobile-first)
+* Smooth scroll behavior for navigation
+* Add hover transitions for buttons and cards
+* Include favicon placeholder
+
+---
+
+### **Optional (Stretch Features)**
+
+* Animated fade-in for each section on scroll (using simple JS or CSS animation)
+* Lazy-load background image
+* Modal popup for “Get Free Access” button
+* Analytics placeholder script tag (commented)
+
+---
+
+**Deliverable:**
+A single deployable HTML/CSS/JS webpage (no backend) with clean, semantic code that can be hosted on Replit or Netlify.
+All text and structure should match the outline above, ready for brand integration and future linking to a registration portal.
+
+---
+
+Would you like me to extend this prompt to **include a Mailchimp signup embed form** in the CTA section for collecting leads?
