@@ -15,6 +15,7 @@ import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 import equipmentImage from "@assets/equipment_1761310475748.png";
 import waterHeatersImage from "@assets/water heaters_1761310497282.png";
+import toolsImage from "@assets/tools_1761310506283.png";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -320,7 +321,7 @@ export default function PurchasingPlatform() {
             <a href="#get-started" className="block">
               <Card data-testid="card-product-tools" className="h-full hover-elevate active-elevate-2 cursor-pointer">
                 <CardHeader>
-                  <Wrench className="h-10 w-10 text-primary mb-3" />
+                  <img src={toolsImage} alt="Tools & Materials" className="h-24 w-auto object-contain mb-3" />
                   <CardTitle>Tools & Materials</CardTitle>
                 </CardHeader>
                 <CardContent>
