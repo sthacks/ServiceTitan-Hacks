@@ -51,7 +51,7 @@ export default function Home() {
       title: "Equipment Buying Group",
       description: "100% free for Facebook Group members. Get bulk-rate pricing on HVAC equipment, water heaters, and tools — just like the big guys.",
       icon: ShoppingCart,
-      link: "/equipment-buying-group",
+      link: "/purchasing-platform",
       image: buyingGroupImage,
     },
     {
