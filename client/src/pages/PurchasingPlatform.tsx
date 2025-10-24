@@ -9,6 +9,11 @@ import { apiRequest } from "@/lib/queryClient";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import titleBg from "@assets/title-background.png";
+import wayfairLogo from "@assets/Wayfair-Emblem-700x394_1761309482724.png";
+import amazonLogo from "@assets/wvraewolitgsdkza1v6p_1761309482724.jpg";
+import lowesProLogo from "@assets/u9goc2ghhu7kyfy58uso_1761309482724.png";
+import daikinLogo from "@assets/bnjbxvtoqvwk61mmzvfz_1761309482725.jpg";
+import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -81,6 +86,23 @@ export default function PurchasingPlatform() {
                   </Button>
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Vendor Logos Section */}
+        <section className="py-12 bg-muted/30 border-b">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-semibold mb-2">Shop From Leading Brands</h2>
+              <p className="text-muted-foreground">Access inventory from Goodman, Daikin, Lowe's, Amazon, Wayfair, and more</p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto">
+              <img src={goodmanLogo} alt="Goodman" className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+              <img src={daikinLogo} alt="Daikin" className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+              <img src={lowesProLogo} alt="Lowe's Pro" className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+              <img src={amazonLogo} alt="Amazon" className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+              <img src={wayfairLogo} alt="Wayfair" className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
             </div>
           </div>
         </section>
