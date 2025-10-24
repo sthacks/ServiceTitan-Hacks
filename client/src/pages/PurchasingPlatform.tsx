@@ -99,7 +99,7 @@ export default function PurchasingPlatform() {
         <section className="py-12 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-semibold mb-2">Shop From Leading Brands</h2>
+              <h2 className="text-2xl font-semibold mb-2">Buy from Leading Brands</h2>
               <p className="text-muted-foreground">Access inventory from Goodman, Daikin, Lowe's, Amazon, and more</p>
             </div>
             <div className="flex items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto overflow-x-auto">
