@@ -189,7 +189,7 @@ export default function PurchasingPlatform() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Browse & Order</h3>
                 <p className="text-muted-foreground">
-                  Search our live inventory feed from Daikin/Modally. Order equipment, water heaters, tools, and materials at contractor-only pricing.
+                  Search our live inventory feed from Goodman, Daikin, Lowes, Amazon, Wayfair, and more. Order equipment, water heaters, tools, and materials at the same pricing that national accounts get.
                 </p>
               </div>
             </div>
