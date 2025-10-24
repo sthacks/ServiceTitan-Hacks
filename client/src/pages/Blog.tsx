@@ -20,6 +20,17 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: "1",
+    title: "Stop Putting Out Fires: How DMAIC Permanently Fixes Broken Processes",
+    excerpt: "Most business coaches sell you their systems. But what happens when it doesn't fit your team? Learn the proven framework that helped GE and Motorola—and how to use it in your home service business.",
+    author: "Bill Brown",
+    date: "January 20, 2025",
+    readTime: "4 min read",
+    category: "Process Improvement",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
+    slug: "dmaic-process-improvement-framework"
+  },
+  {
+    id: "2",
     title: "5 AI Tools Every ServiceTitan Contractor Should Use in 2025",
     excerpt: "Discover the top AI-powered tools that are transforming how home service contractors work, from automated scheduling to smart pricing optimization.",
     author: "Bill Brown",
@@ -30,7 +41,7 @@ const blogPosts: BlogPost[] = [
     slug: "5-ai-tools-servicetitan-contractors-2025"
   },
   {
-    id: "2",
+    id: "3",
     title: "How to Double Your Booking Rate with Better Forms",
     excerpt: "Learn the exact strategies top contractors use to convert more website visitors into booked jobs with optimized online forms.",
     author: "Bill Brown",
@@ -41,7 +52,7 @@ const blogPosts: BlogPost[] = [
     slug: "double-booking-rate-better-forms"
   },
   {
-    id: "3",
+    id: "4",
     title: "ServiceTitan Dashboard Hacks: 10 Metrics You Should Track Daily",
     excerpt: "Stop drowning in data. Here are the 10 essential metrics that actually move the needle in your HVAC, plumbing, or electrical business.",
     author: "Bill Brown",
@@ -52,7 +63,7 @@ const blogPosts: BlogPost[] = [
     slug: "servicetitan-dashboard-metrics"
   },
   {
-    id: "4",
+    id: "5",
     title: "The Ultimate Guide to Automating Follow-Up Calls",
     excerpt: "Automate your follow-up process without losing the personal touch. Save hours every week while improving customer satisfaction.",
     author: "Bill Brown",
@@ -63,7 +74,7 @@ const blogPosts: BlogPost[] = [
     slug: "automate-follow-up-calls"
   },
   {
-    id: "5",
+    id: "6",
     title: "Why Your Pricebook Descriptions Are Costing You Money",
     excerpt: "Technical jargon kills conversions. Learn how to write pricebook descriptions that homeowners actually understand and buy from.",
     author: "Bill Brown",
@@ -74,7 +85,7 @@ const blogPosts: BlogPost[] = [
     slug: "pricebook-descriptions-costing-money"
   },
   {
-    id: "6",
+    id: "7",
     title: "Equipment Buying 101: How to Get the Pricing Big Companies Get",
     excerpt: "Small contractors can access the same pricing as large national chains. Here's exactly how to do it without complicated processes.",
     author: "Bill Brown",
