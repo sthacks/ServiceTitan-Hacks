@@ -155,7 +155,7 @@ export default function PurchasingPlatform() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Save tens of thousands per year with pricing that's sharper than distributor rates.
+                    Save tens of thousands per year with pricing only the big guys get.
                   </p>
                 </CardContent>
               </Card>
