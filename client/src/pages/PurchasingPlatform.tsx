@@ -30,8 +30,8 @@ export default function PurchasingPlatform() {
     mutationFn: async (data: typeof formData) => {
       return apiRequest("POST", "/api/contact", {
         ...data,
-        role: "Purchasing Platform Inquiry",
-        consent: "Purchasing Platform Contact Form"
+        role: "Equipment Buying Group Inquiry",
+        consent: "Equipment Buying Group Contact Form"
       });
     },
     onSuccess: () => {
@@ -396,7 +396,7 @@ export default function PurchasingPlatform() {
                 Ready to Start Saving?
               </h2>
               <p className="text-lg text-muted-foreground">
-                Get in touch to learn more about pricing and how to get started with the Purchasing Platform.
+                Get in touch to learn more about pricing and how to get started with the Equipment Buying Group.
               </p>
             </div>
 
