@@ -6,6 +6,8 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -46,9 +48,11 @@ export default function PurchasingPlatform() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#ED254E] via-[#C1124F] to-[#8B0E38] text-white py-20 md:py-32">
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-[#ED254E] via-[#C1124F] to-[#8B0E38] text-white py-20 md:py-32">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -77,8 +81,8 @@ export default function PurchasingPlatform() {
         </div>
       </section>
 
-      {/* Key Benefits Section */}
-      <section className="py-16 md:py-24">
+        {/* Key Benefits Section */}
+        <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
@@ -149,8 +153,8 @@ export default function PurchasingPlatform() {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-16 md:py-24 bg-muted/30">
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
@@ -213,8 +217,8 @@ export default function PurchasingPlatform() {
         </div>
       </section>
 
-      {/* What You Can Buy Section */}
-      <section className="py-16 md:py-24">
+        {/* What You Can Buy Section */}
+        <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
@@ -316,8 +320,8 @@ export default function PurchasingPlatform() {
         </div>
       </section>
 
-      {/* Partnership Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+        {/* Partnership Section */}
+        <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card>
@@ -353,8 +357,8 @@ export default function PurchasingPlatform() {
         </div>
       </section>
 
-      {/* Get Started Section */}
-      <section id="get-started" className="py-16 md:py-24">
+        {/* Get Started Section */}
+        <section id="get-started" className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
@@ -446,8 +450,8 @@ export default function PurchasingPlatform() {
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="py-16 bg-gradient-to-br from-[#ED254E] via-[#C1124F] to-[#8B0E38] text-white">
+        {/* CTA Footer */}
+        <section className="py-16 bg-gradient-to-br from-[#ED254E] via-[#C1124F] to-[#8B0E38] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
             Join Hundreds of Contractors Saving Money
@@ -469,6 +473,8 @@ export default function PurchasingPlatform() {
           </div>
         </div>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 }
