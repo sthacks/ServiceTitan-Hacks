@@ -124,11 +124,11 @@ export default function PurchasingPlatform() {
               <Card data-testid="card-benefit-pricing" className="h-full hover-elevate active-elevate-2 cursor-pointer">
                 <CardHeader>
                   <DollarSign className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>Hundreds in Savings</CardTitle>
+                  <CardTitle>Tens of Thousands in Savings</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Save hundreds of dollars per order with pricing that's sharper than distributor rates.
+                    Save tens of thousands per year with pricing that's sharper than distributor rates.
                   </p>
                 </CardContent>
               </Card>
