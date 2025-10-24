@@ -13,6 +13,7 @@ import amazonLogo from "@assets/amazon-logo-transparent_1761309654831.png";
 import lowesProLogo from "@assets/lowes_pro_logo_RGB_horz_1761309909176.png";
 import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
+import equipmentImage from "@assets/equipment_1761310475748.png";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -260,7 +261,7 @@ export default function PurchasingPlatform() {
             <a href="#get-started" className="block">
               <Card data-testid="card-product-hvac" className="h-full hover-elevate active-elevate-2 cursor-pointer">
                 <CardHeader>
-                  <Home className="h-10 w-10 text-primary mb-3" />
+                  <img src={equipmentImage} alt="HVAC Equipment" className="h-24 w-auto object-contain mb-3" />
                   <CardTitle>HVAC Equipment</CardTitle>
                 </CardHeader>
                 <CardContent>
