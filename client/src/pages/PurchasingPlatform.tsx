@@ -14,6 +14,7 @@ import lowesProLogo from "@assets/lowes_pro_logo_RGB_horz_1761309909176.png";
 import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 import equipmentImage from "@assets/equipment_1761310475748.png";
+import waterHeatersImage from "@assets/water heaters_1761310497282.png";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -290,7 +291,7 @@ export default function PurchasingPlatform() {
             <a href="#get-started" className="block">
               <Card data-testid="card-product-water" className="h-full hover-elevate active-elevate-2 cursor-pointer">
                 <CardHeader>
-                  <Package className="h-10 w-10 text-primary mb-3" />
+                  <img src={waterHeatersImage} alt="Water Heaters" className="h-24 w-auto object-contain mb-3" />
                   <CardTitle>Water Heaters</CardTitle>
                 </CardHeader>
                 <CardContent>
