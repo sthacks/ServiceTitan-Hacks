@@ -97,12 +97,12 @@ export default function PurchasingPlatform() {
               <h2 className="text-2xl font-semibold mb-2">Shop From Leading Brands</h2>
               <p className="text-muted-foreground">Access inventory from Goodman, Daikin, Lowe's, Amazon, Wayfair, and more</p>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto">
-              <img src={goodmanLogo} alt="Goodman" className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-              <img src={daikinLogo} alt="Daikin" className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-              <img src={lowesProLogo} alt="Lowe's Pro" className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-              <img src={amazonLogo} alt="Amazon" className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-              <img src={wayfairLogo} alt="Wayfair" className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+            <div className="flex items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto overflow-x-auto">
+              <img src={goodmanLogo} alt="Goodman" className="h-12 md:h-16 object-contain transition-all opacity-90 hover:opacity-100" />
+              <img src={daikinLogo} alt="Daikin" className="h-12 md:h-16 object-contain transition-all opacity-90 hover:opacity-100" />
+              <img src={lowesProLogo} alt="Lowe's Pro" className="h-12 md:h-16 object-contain transition-all opacity-90 hover:opacity-100" />
+              <img src={amazonLogo} alt="Amazon" className="h-10 md:h-12 object-contain transition-all opacity-90 hover:opacity-100" />
+              <img src={wayfairLogo} alt="Wayfair" className="h-10 md:h-12 object-contain transition-all opacity-90 hover:opacity-100" />
             </div>
           </div>
         </section>
