@@ -27,7 +27,7 @@ export default function PurchasingPlatform() {
 
   // SEO Meta Tags
   useEffect(() => {
-    document.title = "Equipment Buying Group | Bulk HVAC, Water Heater & Tool Pricing – ServiceTitan Hacks";
+    document.title = "Equipment Buying Group | Get Pricing the Big Guys Get – ServiceTitan Hacks";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -87,14 +87,14 @@ export default function PurchasingPlatform() {
               Buy Like Private Equity
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-gray-200">
-              Get bulk-rate HVAC, water heater, and tool pricing—no minimums, no contracts, no catch.
+              Get the pricing that the big guys get on HVAC, water heaters, and tools—no minimums, no contracts, no catch.
             </p>
             <p className="text-lg md:text-xl text-gray-300 mb-8">
               100% Free for ServiceTitan Hacks Facebook Group Members
             </p>
             <a href="#form">
               <Button size="lg" className="text-lg px-8 py-6 h-auto" data-testid="button-hero-cta">
-                Get Access to Bulk Pricing
+                Get Access
               </Button>
             </a>
           </div>
@@ -407,7 +407,7 @@ export default function PurchasingPlatform() {
             <div className="max-w-xl mx-auto">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Get Access to Bulk Pricing</CardTitle>
+                  <CardTitle className="text-2xl">Get Access</CardTitle>
                   <CardDescription>
                     Fill out the form below and we'll get back to you within 24 hours with access details.
                   </CardDescription>
