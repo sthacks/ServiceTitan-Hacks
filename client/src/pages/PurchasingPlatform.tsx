@@ -1,14 +1,12 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ShoppingCart, Truck, Clock, DollarSign, Package, Wrench, Home, Users } from "lucide-react";
-import { Link } from "wouter";
-import { useState } from "react";
+import { CheckCircle2, DollarSign, Package, Clock, Truck, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import titleBg from "@assets/title-background.png";
 import amazonLogo from "@assets/amazon-logo-transparent_1761309654831.png";
 import lowesProLogo from "@assets/lowes_pro_logo_RGB_horz_1761309909176.png";
 import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
@@ -23,23 +21,46 @@ export default function PurchasingPlatform() {
     name: "",
     email: "",
     company: "",
-    message: ""
+    zipCode: "",
+    productInterest: "HVAC"
   });
+
+  // SEO Meta Tags
+  useEffect(() => {
+    document.title = "Equipment Buying Group | Bulk HVAC, Water Heater & Tool Pricing – ServiceTitan Hacks";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.";
+      document.head.appendChild(meta);
+    }
+
+    return () => {
+      document.title = "ServiceTitan Hacks";
+    };
+  }, []);
 
   const contactMutation = useMutation({
     mutationFn: async (data: typeof formData) => {
       return apiRequest("POST", "/api/contact", {
-        ...data,
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        message: `Zip Code: ${data.zipCode}\nProduct Interest: ${data.productInterest}`,
         role: "Equipment Buying Group Inquiry",
         consent: "Equipment Buying Group Contact Form"
       });
     },
     onSuccess: () => {
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
+        title: "Access Request Received!",
+        description: "We'll get back to you within 24 hours with access details.",
       });
-      setFormData({ name: "", email: "", company: "", message: "" });
+      setFormData({ name: "", email: "", company: "", zipCode: "", productInterest: "HVAC" });
     },
     onError: () => {
       toast({
@@ -60,237 +81,186 @@ export default function PurchasingPlatform() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-24 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${titleBg})` }}
-          />
-          <div className="mx-auto max-w-7xl px-6 relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
-                Buy Like Private Equity
-              </h1>
-              <p className="text-xl text-gray-300 mb-4">
-                Big firms get rock-bottom pricing. Now you can too.
-              </p>
-              <p className="text-lg text-gray-300 mb-4">
-                Access bulk-rate savings on HVAC equipment, water heaters, and tools — no buyout, no contracts, no catch.
-              </p>
-              <p className="text-lg text-gray-400 mb-8">
-                Stop overpaying. Start buying like the pros.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a href="#get-started">
-                  <Button size="lg" data-testid="button-get-started">
-                    Get Started
-                  </Button>
-                </a>
-                <a href="#how-it-works">
-                  <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm" data-testid="button-learn-more">
-                    Learn More
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Free Membership Callout */}
-        <section className="py-8 bg-primary/10 border-y border-primary/20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <Card className="border-primary/30 bg-primary/5">
-                <CardContent className="py-6">
-                  <div className="flex items-center justify-center gap-4 flex-wrap">
-                    <Users className="h-8 w-8 text-primary flex-shrink-0" />
-                    <div className="text-center md:text-left">
-                      <p className="text-lg md:text-xl font-semibold mb-1">
-                        100% Free for ServiceTitan Hacks Facebook Group Members
-                      </p>
-                      <p className="text-muted-foreground">
-                        Join our community to unlock instant access to bulk-rate pricing
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Vendor Logos Section */}
-        <section className="py-12 bg-muted/30 border-b">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-semibold mb-2">Buy from Leading Brands</h2>
-              <p className="text-muted-foreground">Access inventory from Goodman, Daikin, Lowe's, Amazon, and more</p>
-            </div>
-            <div className="flex items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto overflow-x-auto">
-              <img src={goodmanLogo} alt="Goodman" className="h-12 md:h-16 object-contain transition-all opacity-90 hover:opacity-100" />
-              <img src={daikinLogo} alt="Daikin" className="h-12 md:h-16 object-contain transition-all opacity-90 hover:opacity-100" />
-              <img src={lowesProLogo} alt="Lowe's Pro" className="h-12 md:h-16 object-contain transition-all opacity-90 hover:opacity-100" />
-              <img src={amazonLogo} alt="Amazon" className="h-10 md:h-12 object-contain transition-all opacity-90 hover:opacity-100" />
-            </div>
-          </div>
-        </section>
-
-        {/* Key Benefits Section */}
-        <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Why Contractors Choose Our Platform
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Access pricing and benefits that were previously only available to large national companies.
+        <section className="py-20 md:py-24 text-center bg-[#1F1F1F] text-white">
+          <div className="container mx-auto px-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              Buy Like Private Equity
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-gray-200">
+              Get bulk-rate HVAC, water heater, and tool pricing—no minimums, no contracts, no catch.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <a href="#get-started" className="block">
-              <Card data-testid="card-benefit-pricing" className="h-full hover-elevate active-elevate-2 cursor-pointer">
-                <CardHeader>
-                  <DollarSign className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>Tens of Thousands in Savings</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Save tens of thousands per year with pricing only the big guys get.
-                  </p>
-                </CardContent>
-              </Card>
-            </a>
-
-            <a href="#get-started" className="block">
-              <Card data-testid="card-benefit-access" className="h-full hover-elevate active-elevate-2 cursor-pointer">
-                <CardHeader>
-                  <Package className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>No Minimums</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    2-truck shops get the same pricing as invitation homes and national accounts.
-                  </p>
-                </CardContent>
-              </Card>
-            </a>
-
-            <a href="#get-started" className="block">
-              <Card data-testid="card-benefit-convenience" className="h-full hover-elevate active-elevate-2 cursor-pointer">
-                <CardHeader>
-                  <Clock className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>Order Anytime</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Order online. No more waiting at the branch.
-                  </p>
-                </CardContent>
-              </Card>
-            </a>
-
-            <a href="#get-started" className="block">
-              <Card data-testid="card-benefit-pickup" className="h-full hover-elevate active-elevate-2 cursor-pointer">
-                <CardHeader>
-                  <Truck className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>Local Pickup</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Pick up at 1,200+ locations including Johnstone, Ferguson, and East Coast Metals.
-                  </p>
-                </CardContent>
-              </Card>
+            <p className="text-lg md:text-xl text-gray-300 mb-8">
+              100% Free for ServiceTitan Hacks Facebook Group Members
+            </p>
+            <a href="#form">
+              <Button size="lg" className="text-lg px-8 py-6 h-auto" data-testid="button-hero-cta">
+                Get Access to Bulk Pricing
+              </Button>
             </a>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Brand Logos Section */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              Buy from Leading Brands
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <Card className="hover-elevate">
+                <CardContent className="p-6 flex items-center justify-center">
+                  <img src={goodmanLogo} alt="Goodman" className="h-16 w-auto object-contain" />
+                </CardContent>
+              </Card>
+              <Card className="hover-elevate">
+                <CardContent className="p-6 flex items-center justify-center">
+                  <img src={daikinLogo} alt="Daikin" className="h-16 w-auto object-contain" />
+                </CardContent>
+              </Card>
+              <Card className="hover-elevate">
+                <CardContent className="p-6 flex items-center justify-center">
+                  <img src={lowesProLogo} alt="Lowe's Pro" className="h-16 w-auto object-contain" />
+                </CardContent>
+              </Card>
+              <Card className="hover-elevate">
+                <CardContent className="p-6 flex items-center justify-center">
+                  <img src={amazonLogo} alt="Amazon" className="h-12 w-auto object-contain" />
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Contractors Choose Us */}
+        <section className="py-16 md:py-20">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              WHY CONTRACTORS CHOOSE US
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <Card className="text-center" data-testid="card-benefit-savings">
+                <CardHeader>
+                  <DollarSign className="h-12 w-12 text-primary mx-auto mb-3" />
+                  <CardTitle className="text-lg">Tens of Thousands in Savings</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Save thousands each year with pricing previously reserved for national accounts.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center" data-testid="card-benefit-minimums">
+                <CardHeader>
+                  <Package className="h-12 w-12 text-primary mx-auto mb-3" />
+                  <CardTitle className="text-lg">No Minimums</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">2-truck shops get the same pricing as invitation homes and national accounts.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center" data-testid="card-benefit-anytime">
+                <CardHeader>
+                  <Clock className="h-12 w-12 text-primary mx-auto mb-3" />
+                  <CardTitle className="text-lg">Order Anytime</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Order online 24/7. No more waiting at the branch.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center" data-testid="card-benefit-pickup">
+                <CardHeader>
+                  <Truck className="h-12 w-12 text-primary mx-auto mb-3" />
+                  <CardTitle className="text-lg">Local Pickup</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Pick up at 1,200+ locations nationwide or get delivery to your jobsite.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-16 md:py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              How It Works
+        <section id="how-it-works" className="py-16 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              HOW IT WORKS
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Simple, fast, and designed for contractors who don't have time to waste.
+            <p className="text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Simple 4-step process for contractors who don't have time to waste.
             </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <Card className="relative" data-testid="card-step-1">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+                    1
+                  </div>
+                  <CardTitle className="text-center text-lg">Create Your Account</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">Sign up with your email and set your preferred pickup location.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="relative" data-testid="card-step-2">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+                    2
+                  </div>
+                  <CardTitle className="text-center text-lg">Browse & Order</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">Search live inventory from Goodman, Daikin, Lowe's, Amazon, and more.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="relative" data-testid="card-step-3">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+                    3
+                  </div>
+                  <CardTitle className="text-center text-lg">Pick Up or Get Delivery</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">Choose local pickup or delivery to your jobsite.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="relative" data-testid="card-step-4">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+                    4
+                  </div>
+                  <CardTitle className="text-center text-lg">Save & Reinvest</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">Use your savings to invest in marketing, training, or better equipment.</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl">
-                1
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Create Your Account</h3>
-                <p className="text-muted-foreground">
-                  Sign up with your email, add a payment method, and set your home address or preferred pickup location.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl">
-                2
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Browse & Order</h3>
-                <p className="text-muted-foreground">
-                  Search our live inventory feed from Goodman, Daikin, Lowes, Amazon, and more. Order equipment, water heaters, tools, and materials at the same pricing that national accounts get.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl">
-                3
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Pick Up or Get Delivery</h3>
-                <p className="text-muted-foreground">
-                  Choose pickup at your local distributor (Goodman/Daikin, Johnstone, Ferguson, East Coast Metals and more) or request delivery to your jobsite.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl">
-                4
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Save & Reinvest</h3>
-                <p className="text-muted-foreground">
-                  Use your savings to invest in marketing, training, or better equipment. Lower expenses mean higher profits.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
         {/* What You Can Buy Section */}
-        <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              What You Can Buy
+        <section className="py-16 md:py-20">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              WHAT YOU CAN BUY
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               Everything you need to run your business, all in one place.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <a href="#get-started" className="block">
-              <Card data-testid="card-product-hvac" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="overflow-hidden hover-elevate" data-testid="card-product-hvac">
+                <div className="aspect-video bg-muted flex items-center justify-center p-6">
+                  <img src={equipmentImage} alt="HVAC Equipment" className="max-h-full w-auto object-contain" />
+                </div>
                 <CardHeader>
-                  <img src={equipmentImage} alt="HVAC Equipment" className="h-24 w-auto object-contain mb-3" />
                   <CardTitle>HVAC Equipment</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span>Goodman, Daikin, and major brands</span>
@@ -308,18 +278,23 @@ export default function PurchasingPlatform() {
                       <span>Avoided all tariff increases</span>
                     </li>
                   </ul>
+                  <a href="#form">
+                    <Button variant="outline" className="w-full gap-2" data-testid="button-hvac-cta">
+                      See Available Products <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
-            </a>
 
-            <a href="#get-started" className="block">
-              <Card data-testid="card-product-water" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+              <Card className="overflow-hidden hover-elevate" data-testid="card-product-water">
+                <div className="aspect-video bg-muted flex items-center justify-center p-6">
+                  <img src={waterHeatersImage} alt="Water Heaters" className="max-h-full w-auto object-contain" />
+                </div>
                 <CardHeader>
-                  <img src={waterHeatersImage} alt="Water Heaters" className="h-24 w-auto object-contain mb-3" />
                   <CardTitle>Water Heaters</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span>Exclusive Lowe's partnership</span>
@@ -337,18 +312,23 @@ export default function PurchasingPlatform() {
                       <span>Delivery available</span>
                     </li>
                   </ul>
+                  <a href="#form">
+                    <Button variant="outline" className="w-full gap-2" data-testid="button-water-cta">
+                      See Available Products <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
-            </a>
 
-            <a href="#get-started" className="block">
-              <Card data-testid="card-product-tools" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+              <Card className="overflow-hidden hover-elevate" data-testid="card-product-tools">
+                <div className="aspect-video bg-muted flex items-center justify-center p-6">
+                  <img src={toolsImage} alt="Tools & Materials" className="max-h-full w-auto object-contain" />
+                </div>
                 <CardHeader>
-                  <img src={toolsImage} alt="Tools & Materials" className="h-24 w-auto object-contain mb-3" />
                   <CardTitle>Tools & Materials</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span>Milwaukee, DeWalt, and more</span>
@@ -366,166 +346,163 @@ export default function PurchasingPlatform() {
                       <span>Volume pricing available</span>
                     </li>
                   </ul>
+                  <a href="#form">
+                    <Button variant="outline" className="w-full gap-2" data-testid="button-tools-cta">
+                      See Available Products <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
-            </a>
-          </div>
-        </div>
-      </section>
-
-        {/* Partnership Section */}
-        <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl md:text-3xl text-center">
-                  Powered by Industry Leaders
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-center text-muted-foreground">
-                  Our platform is built on partnerships with Goodman/Daikin and integrated with over 1,200 distributor locations nationwide.
-                </p>
-                <div className="grid md:grid-cols-3 gap-4 mt-8">
-                  <div className="text-center p-4">
-                    <Package className="h-12 w-12 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold mb-2">Goodman/Daikin</h3>
-                    <p className="text-sm text-muted-foreground">Direct factory pricing</p>
-                  </div>
-                  <div className="text-center p-4">
-                    <Truck className="h-12 w-12 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold mb-2">1,200+ Locations</h3>
-                    <p className="text-sm text-muted-foreground">Goodman/Daikin, Johnstone, Ferguson, East Coast Metals, and more</p>
-                  </div>
-                  <div className="text-center p-4">
-                    <Home className="h-12 w-12 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold mb-2">Lowe's Partner</h3>
-                    <p className="text-sm text-muted-foreground">Exclusive water heater pricing</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-        {/* Get Started Section */}
-        <section id="get-started" className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-                Ready to Start Saving?
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Get in touch to learn more about pricing and how to get started with the Equipment Buying Group.
-              </p>
             </div>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Contact Us</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      data-testid="input-name"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      data-testid="input-email"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Company Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      data-testid="input-company"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="Tell us about your business and what you're interested in..."
-                      data-testid="input-message"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full"
-                    disabled={contactMutation.isPending}
-                    data-testid="button-submit-contact"
-                  >
-                    {contactMutation.isPending ? "Sending..." : "Get Started"}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
-        </div>
-      </section>
+        </section>
 
-        {/* CTA Footer */}
-        <section className="py-16 bg-gradient-to-br from-[#ED254E] via-[#C1124F] to-[#8B0E38] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-            Join Hundreds of Contractors Saving Money
-          </h2>
-          <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
-            Stop overpaying for equipment. Get the pricing you deserve and reinvest those savings into growing your business.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#get-started">
-              <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm" data-testid="button-footer-cta">
-                Contact Us Today
+        {/* Powered by Industry Leaders */}
+        <section className="py-16 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-3" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              POWERED BY INDUSTRY LEADERS
+            </h2>
+            <p className="text-center text-sm text-muted-foreground mb-8">Verified Partnerships. Authorized Pricing.</p>
+            <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
+              <div className="text-center">
+                <img src={goodmanLogo} alt="Goodman" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
+                <p className="text-sm text-muted-foreground">Direct Factory Pricing</p>
+              </div>
+              <div className="text-center">
+                <img src={daikinLogo} alt="Daikin" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
+                <p className="text-sm text-muted-foreground">Authorized Distributor</p>
+              </div>
+              <div className="text-center">
+                <img src={lowesProLogo} alt="Lowe's Pro" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
+                <p className="text-sm text-muted-foreground">Exclusive Partnership</p>
+              </div>
+            </div>
+            <p className="text-center text-muted-foreground mt-8 max-w-3xl mx-auto">
+              Our platform is built on partnerships with Goodman/Daikin and integrated with over 1,200 distributor locations nationwide.
+            </p>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-primary text-white text-center">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+              Ready to Start Saving?
+            </h2>
+            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              Join hundreds of contractors already buying smarter through our Equipment Buying Group.
+            </p>
+            <a href="#form">
+              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100 border-white px-8 py-6 h-auto text-lg" data-testid="button-cta-section">
+                Get Access
               </Button>
             </a>
-            <Link href="/">
-              <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm" data-testid="button-back-home">
-                Back to Home
-              </Button>
-            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Form Section */}
+        <section id="form" className="py-16 md:py-20">
+          <div className="container mx-auto px-6">
+            <div className="max-w-xl mx-auto">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl">Get Access to Bulk Pricing</CardTitle>
+                  <CardDescription>
+                    Fill out the form below and we'll get back to you within 24 hours with access details.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        data-testid="input-name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        data-testid="input-email"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        data-testid="input-company"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Zip Code *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.zipCode}
+                        onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="12345"
+                        data-testid="input-zipcode"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Product Interest *
+                      </label>
+                      <select
+                        required
+                        value={formData.productInterest}
+                        onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        data-testid="select-product-interest"
+                      >
+                        <option value="HVAC">HVAC Equipment</option>
+                        <option value="Water Heaters">Water Heaters</option>
+                        <option value="Tools">Tools & Materials</option>
+                        <option value="All">All Products</option>
+                      </select>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={contactMutation.isPending}
+                      data-testid="button-submit-form"
+                    >
+                      {contactMutation.isPending ? "Sending..." : "Get Access"}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
