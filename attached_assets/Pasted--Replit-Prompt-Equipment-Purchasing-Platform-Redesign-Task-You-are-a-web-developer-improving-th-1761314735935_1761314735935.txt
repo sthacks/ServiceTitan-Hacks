@@ -1,0 +1,175 @@
+🔧 Replit Prompt: Equipment Purchasing Platform Redesign
+
+Task:
+You are a web developer improving the purchasing-platform page at https://service-titan-hacks.replit.app/purchasing-platform.
+Your goal is to improve the page’s clarity, conversion, structure, SEO, and design consistency while preserving its content and style language.
+
+🎯 Objectives
+
+Improve clarity of messaging and visual hierarchy.
+
+Reduce redundant CTAs and unify conversion flow.
+
+Add structure (cards, sections, and spacing) for readability.
+
+Optimize hero and meta data for SEO.
+
+Modernize layout with consistent typography and color.
+
+Optimize mobile layout and image performance.
+
+🧱 Required Changes (Step-by-Step)
+1. Hero Section
+
+Replace headline block with:
+
+<section class="hero text-center py-16 bg-gray-900 text-white">
+  <h1 class="text-5xl font-bold mb-4">Buy Like Private Equity</h1>
+  <p class="text-xl max-w-3xl mx-auto mb-6">
+    Get bulk-rate HVAC, water heater, and tool pricing—no minimums, no contracts, no catch.
+  </p>
+  <p class="text-md text-gray-300 mb-8">
+    100% Free for ServiceTitan Hacks Facebook Group Members
+  </p>
+  <a href="#form" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl text-lg font-semibold">
+    Get Access to Bulk Pricing
+  </a>
+</section>
+
+2. Brand Logos Section
+
+Display logos in a responsive grid (4 columns desktop, 2 on mobile).
+
+Each logo gets a subtle gray background and hover opacity.
+
+Add <h2>Buy From Leading Brands</h2> centered above grid.
+
+3. Why Contractors Choose Us
+
+Convert bullet-style text into a 4-card grid using consistent icons or simple cards:
+
+“Tens of Thousands in Savings”
+
+“No Minimums”
+
+“Order Anytime”
+
+“Local Pickup”
+
+Each card:
+
+<div class="card bg-white shadow-md p-6 rounded-xl text-center">
+  <h3 class="font-semibold text-lg mb-2">Tens of Thousands in Savings</h3>
+  <p>Save thousands each year with pricing previously reserved for national accounts.</p>
+</div>
+
+4. “How It Works” Section
+
+Convert numbered list into horizontal step cards with icons.
+
+Use Tailwind grid (grid grid-cols-1 md:grid-cols-4 gap-6).
+
+Add a faint gray line connecting steps visually.
+
+Add short summary headline:
+“Simple 4-Step Process for Contractors Who Don’t Have Time to Waste.”
+
+5. “What You Can Buy” Section
+
+Replace inline images and text with 3 clean product cards:
+
+HVAC Equipment
+
+Water Heaters
+
+Tools & Materials
+Each card includes a 300px image, bullet points, and CTA “See Available Products.”
+
+6. “Powered by Industry Leaders”
+
+Present Goodman/Daikin/Lowe’s as horizontal partner logos with text below.
+
+Add microcopy: “Verified Partnerships. Authorized Pricing.”
+
+7. CTA and Form Section
+
+Add a highlighted CTA block before the form:
+
+<section class="bg-red-600 text-white text-center py-12">
+  <h2 class="text-3xl font-bold mb-2">Ready to Start Saving?</h2>
+  <p class="text-lg mb-6">Join hundreds of contractors already buying smarter through our Equipment Buying Group.</p>
+  <a href="#form" class="bg-white text-red-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100">Get Access</a>
+</section>
+
+
+Simplify form fields:
+
+Name
+Email
+Company Name
+Zip Code
+Product Interest (dropdown: HVAC / Water Heaters / Tools)
+Submit button: “Get Access”
+
+
+Redirect form submission to a thank-you page or display inline confirmation message.
+
+8. Footer Optimization
+
+Retain existing footer but ensure consistent spacing and gray background.
+
+Add copyright:
+
+© 2025 ServiceTitan Hacks. All Rights Reserved.
+
+🧠 SEO Enhancements
+
+Update <title> to:
+
+Equipment Buying Group | Bulk HVAC, Water Heater & Tool Pricing – ServiceTitan Hacks
+
+
+Add <meta name="description" content="Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.">
+
+Use structured data (JSON-LD FAQPage) for top questions:
+
+“Is there a minimum order size?”
+
+“How do I join the group?”
+
+“Can I pick up locally?”
+
+⚙️ Technical Adjustments
+
+Compress all logos to .webp.
+
+Ensure mobile layout uses vertical stacking with adequate spacing.
+
+Add sticky bottom bar on mobile:
+“Get Bulk Pricing” → scrolls to form.
+
+🎨 Design System
+
+Font: Oxygen or Inter.
+
+Colors:
+
+Red: #ED254E
+
+Gray: #1F1F1F / #2E2E2E
+
+Accent White: #FFFFFF
+
+Buttons: Rounded-xl, bold font, hover state darker by 10%.
+
+Headings: Uppercase H2s for main sections.
+
+🧩 Deliverables
+
+When done, output:
+
+Updated HTML section code blocks (cleanly formatted).
+
+Any new CSS (prefer Tailwind utility classes, not custom CSS unless necessary).
+
+Confirmation that form submission works with existing backend or placeholder action.

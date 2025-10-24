@@ -4,10 +4,11 @@ import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
-import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones } from "lucide-react";
+import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
+import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 
 export default function Home() {
   const mainSections = [
@@ -45,6 +46,13 @@ export default function Home() {
       icon: Headphones,
       link: "/podcast",
       image: podcastImage,
+    },
+    {
+      title: "Equipment Buying Group",
+      description: "100% free for Facebook Group members. Get bulk-rate pricing on HVAC equipment, water heaters, and tools — just like the big guys.",
+      icon: ShoppingCart,
+      link: "/equipment-buying-group",
+      image: buyingGroupImage,
     },
     {
       title: "All-Access Pass",
