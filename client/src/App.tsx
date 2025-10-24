@@ -12,6 +12,7 @@ import Podcast from "@/pages/Podcast";
 import Resources from "@/pages/Resources";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import Blog from "@/pages/Blog";
 import PricebookOptimizer from "@/pages/PricebookOptimizer";
 import DashboardCourse from "@/pages/DashboardCourse";
 import DashboardCourseContent from "@/pages/DashboardCourseContent";
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/all-access" component={AllAccess} />
       <Route path="/podcast" component={Podcast} />
       <Route path="/resources" component={Resources} />
+      <Route path="/blog" component={Blog} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/pricebook-optimizer" component={PricebookOptimizer} />

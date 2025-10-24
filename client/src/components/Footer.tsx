@@ -14,6 +14,7 @@ export default function Footer() {
   ];
 
   const resourceLinks = [
+    { path: "/blog", label: "Blog" },
     { path: "/podcast", label: "Podcast" },
     { path: "/resources", label: "Resources" },
     { path: "/about", label: "About" },
