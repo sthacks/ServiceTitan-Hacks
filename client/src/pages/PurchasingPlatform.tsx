@@ -65,13 +65,16 @@ export default function PurchasingPlatform() {
           <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
-                Purchasing Platform
+                Buy Like Private Equity
               </h1>
               <p className="text-xl text-gray-300 mb-4">
-                Get the pricing you deserve. Save hundreds on HVAC equipment, water heaters, and tools.
+                Big firms get rock-bottom pricing. Now you can too.
+              </p>
+              <p className="text-lg text-gray-300 mb-4">
+                Access bulk-rate savings on HVAC equipment, water heaters, and tools — no buyout, no contracts, no catch.
               </p>
               <p className="text-lg text-gray-400 mb-8">
-                Level the playing field. Small contractors get the same benefits as the big guys.
+                Stop overpaying. Start buying like the pros.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a href="#get-started">
