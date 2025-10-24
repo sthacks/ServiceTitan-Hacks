@@ -224,7 +224,7 @@ export default function PurchasingPlatform() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Pick Up or Get Delivery</h3>
                 <p className="text-muted-foreground">
-                  Choose pickup at your local distributor (Johnstone, Ferguson, East Coast Metals) or request delivery to your jobsite.
+                  Choose pickup at your local distributor (Goodman/Daikin, Johnstone, Ferguson, East Coast Metals and more) or request delivery to your jobsite.
                 </p>
               </div>
             </div>
