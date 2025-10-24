@@ -373,7 +373,7 @@ export default function PurchasingPlatform() {
                   <div className="text-center p-4">
                     <Truck className="h-12 w-12 text-primary mx-auto mb-3" />
                     <h3 className="font-semibold mb-2">1,200+ Locations</h3>
-                    <p className="text-sm text-muted-foreground">Johnstone, Ferguson, East Coast Metals</p>
+                    <p className="text-sm text-muted-foreground">Goodman/Daikin, Johnstone, Ferguson, East Coast Metals, and more</p>
                   </div>
                   <div className="text-center p-4">
                     <Home className="h-12 w-12 text-primary mx-auto mb-3" />
