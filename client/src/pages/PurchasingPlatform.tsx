@@ -16,6 +16,7 @@ import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 import equipmentImage from "@assets/equipment_1761310475748.png";
 import waterHeatersImage from "@assets/water heaters_1761310497282.png";
 import toolsImage from "@assets/tools_1761310506283.png";
+import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 
 export default function PurchasingPlatform() {
   const { toast } = useToast();
@@ -282,7 +283,7 @@ export default function PurchasingPlatform() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <a href="#get-started" className="block">
               <Card data-testid="card-product-hvac" className="h-full hover-elevate active-elevate-2 cursor-pointer">
                 <CardHeader>
@@ -364,6 +365,35 @@ export default function PurchasingPlatform() {
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span>Volume pricing available</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a href="#get-started" className="block">
+              <Card data-testid="card-product-buyinggroup" className="h-full hover-elevate active-elevate-2 cursor-pointer">
+                <CardHeader>
+                  <img src={buyingGroupImage} alt="Equipment Buying Group" className="h-24 w-auto object-contain mb-3" />
+                  <CardTitle>Equipment Buying Group</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>100% free for Facebook Group members</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Bulk-rate pricing on all products</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>No contracts or commitments</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Save like the big guys</span>
                     </li>
                   </ul>
                 </CardContent>
