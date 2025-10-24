@@ -10,7 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import titleBg from "@assets/title-background.png";
 import amazonLogo from "@assets/amazon-logo-transparent_1761309654831.png";
-import lowesProLogo from "@assets/u9goc2ghhu7kyfy58uso_1761309482724.png";
+import lowesProLogo from "@assets/lowes_pro_logo_RGB_horz_1761309909176.png";
 import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 
