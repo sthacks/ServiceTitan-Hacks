@@ -142,7 +142,7 @@ export default function PurchasingPlatform() {
               <Card data-testid="card-benefit-access" className="h-full hover-elevate active-elevate-2 cursor-pointer">
                 <CardHeader>
                   <Package className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>Fair Access</CardTitle>
+                  <CardTitle>No Minimums</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
