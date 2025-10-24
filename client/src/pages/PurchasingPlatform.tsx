@@ -10,7 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import titleBg from "@assets/title-background.png";
 import wayfairLogo from "@assets/Wayfair-Emblem-700x394_1761309482724.png";
-import amazonLogo from "@assets/wvraewolitgsdkza1v6p_1761309482724.jpg";
+import amazonLogo from "@assets/amazon-logo-transparent_1761309654831.png";
 import lowesProLogo from "@assets/u9goc2ghhu7kyfy58uso_1761309482724.png";
 import daikinLogo from "@assets/bnjbxvtoqvwk61mmzvfz_1761309482725.jpg";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
