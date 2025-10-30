@@ -54,14 +54,14 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "4",
-    title: "5 AI Tools Every ServiceTitan Contractor Should Use in 2025",
-    excerpt: "Discover the top AI-powered tools that are transforming how home service contractors work, from automated scheduling to smart pricing optimization.",
+    title: "AI and Automation for Contractors: Where to Start (and What to Avoid)",
+    excerpt: "Tried ChatGPT but don't know how to use AI in your business? Learn the right way to start with automation and AI—plus what mistakes to avoid. A practical guide from an experienced contractor.",
     author: "Bill Brown",
     date: "January 15, 2025",
-    readTime: "5 min read",
+    readTime: "7 min read",
     category: "AI & Automation",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-    slug: "5-ai-tools-servicetitan-contractors-2025"
+    slug: "ai-automation-contractors-where-to-start"
   },
   {
     id: "5",

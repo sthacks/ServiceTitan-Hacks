@@ -397,6 +397,281 @@ const blogPostContent: Record<string, JSX.Element> = {
         The process didn't live in a binder. It lived where everyone could see it, follow it, and make it better over time.
       </p>
     </div>
+  ),
+  "ai-automation-contractors-where-to-start": (
+    <div className="prose prose-lg max-w-none">
+      <p className="lead">
+        Everyone's talking about AI. Every podcast, every conference, every sales pitch.
+      </p>
+
+      <p>
+        You've probably tried ChatGPT. Maybe you asked it to write an email or come up with a slogan. It worked. Sort of.
+      </p>
+
+      <p>
+        But when you think about using AI or automation in your actual business—the one with technicians, customers, and chaos—it feels overwhelming. Where do you even start?
+      </p>
+
+      <p>
+        Let me break it down the way I wish someone had explained it to me.
+      </p>
+
+      <h2>Automation vs AI: What's the Difference?</h2>
+
+      <p>
+        Let's get clear on what we're talking about. These terms get thrown around like they mean the same thing. They don't.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Automation</th>
+            <th>AI (Artificial Intelligence)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>What it does</strong></td>
+            <td>Follows rules you set</td>
+            <td>Makes decisions based on patterns</td>
+          </tr>
+          <tr>
+            <td><strong>Example</strong></td>
+            <td>Send a text confirmation 24 hours before every job</td>
+            <td>Summarize a 15-minute service call into 3 bullet points</td>
+          </tr>
+          <tr>
+            <td><strong>When to use it</strong></td>
+            <td>Repetitive tasks you do the same way every time</td>
+            <td>Tasks that require reading, writing, or understanding context</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <strong>Bottom line:</strong> Automation handles the boring stuff. AI handles the thinking stuff.
+      </p>
+
+      <h2>You Can't Automate Chaos</h2>
+
+      <p>
+        Here's the mistake I see contractors make over and over: they try to automate before they have a process.
+      </p>
+
+      <p>
+        If your team doesn't follow the same steps twice, automation won't fix that. It'll just scale the chaos faster.
+      </p>
+
+      <p>
+        Before you automate anything, ask yourself:
+      </p>
+
+      <ul>
+        <li>Do we have a clear process for this?</li>
+        <li>Does everyone on the team follow it the same way?</li>
+        <li>Can I write down the steps in order?</li>
+      </ul>
+
+      <p>
+        If the answer is no, fix your process first. Then automate it.
+      </p>
+
+      <h2>Map Before You Automate</h2>
+
+      <p>
+        The best way to find what's worth automating? Map your workflow using a Swim Lane Chart.
+      </p>
+
+      <p>
+        A swim lane chart shows every step in a process—and who's responsible for it.
+      </p>
+
+      <p>
+        In my HVAC company, I mapped our install process. Sales. Dispatch. Warehouse. Install crew. Quality check.
+      </p>
+
+      <p>
+        I printed it poster-size and hung it in the warehouse. Anytime something went wrong on a job, we marked it with a red pen.
+      </p>
+
+      <p>
+        After a month, the red marks showed us exactly where the bottlenecks were. Those were the areas we automated first.
+      </p>
+
+      <p>
+        Once you can see the whole workflow, you'll notice patterns:
+      </p>
+
+      <ul>
+        <li>Handoffs between people that always cause delays</li>
+        <li>Repetitive tasks that waste time</li>
+        <li>Steps that get skipped because no one owns them</li>
+      </ul>
+
+      <p>
+        Those are your automation targets.
+      </p>
+
+      <h2>Simple Automation Wins</h2>
+
+      <p>
+        Start with the stuff that doesn't require AI. Just automate the repetitive tasks your team already does.
+      </p>
+
+      <h3>1. Appointment Confirmations</h3>
+      <p>
+        Set up automated text confirmations 24 hours before every job. Include the tech's name, arrival window, and a link to reschedule.
+      </p>
+      <p>
+        <strong>Why it works:</strong> Reduces no-shows. Saves your CSRs from making confirmation calls.
+      </p>
+
+      <h3>2. Task Creation After a Sale</h3>
+      <p>
+        When a job is sold, automatically create tasks in ServiceTitan: order permits, schedule install date, assign warehouse prep.
+      </p>
+      <p>
+        <strong>Why it works:</strong> Nothing falls through the cracks. No one forgets to pull permits.
+      </p>
+
+      <h3>3. Follow-Up Sequences</h3>
+      <p>
+        After an install, trigger an automated sequence: send a satisfaction survey on day 3, request a review on day 7, offer a maintenance plan on day 30.
+      </p>
+      <p>
+        <strong>Why it works:</strong> Keeps you top of mind. Turns one-time customers into repeat buyers.
+      </p>
+
+      <h3>4. Internal Notifications</h3>
+      <p>
+        Set up alerts when something needs attention: a high-priority lead comes in, a job goes over budget, or a tech clocks more than 10 hours.
+      </p>
+      <p>
+        <strong>Why it works:</strong> You catch problems before they blow up.
+      </p>
+
+      <h2>Add AI Smartly</h2>
+
+      <p>
+        Once you've automated the repetitive stuff, AI can handle the tasks that require thinking.
+      </p>
+
+      <h3>Use Case 1: Summarize Service Calls</h3>
+      <p>
+        Record your CSR calls and use AI to summarize them into bullet points. Customer name. Issue. Next steps.
+      </p>
+      <p>
+        <strong>Why it works:</strong> Faster handoffs to techs. Easier to review later. No more "wait, what did they say?"
+      </p>
+
+      <h3>Use Case 2: Rewrite Pricebook Descriptions</h3>
+      <p>
+        Your techs write pricebook items in technical language: "Replace capacitor, clean condenser coil."
+      </p>
+      <p>
+        AI can rewrite them in homeowner language: "Keep your AC running smoothly all summer with a thorough cleaning and part replacement."
+      </p>
+      <p>
+        <strong>Why it works:</strong> Customers understand what they're buying. Conversion rates go up.
+      </p>
+
+      <h3>Use Case 3: Employee Handbook Chatbot</h3>
+      <p>
+        Upload your employee handbook to an AI tool and let your team ask it questions.
+      </p>
+      <p>
+        "How many vacation days do I get?" "What's the uniform policy?" "How do I request time off?"
+      </p>
+      <p>
+        <strong>Why it works:</strong> Employees get instant answers. You stop answering the same questions over and over.
+      </p>
+
+      <h3>Use Case 4: Generate Marketing Content</h3>
+      <p>
+        Use AI to draft social media posts, email campaigns, or blog articles based on your voice and past content.
+      </p>
+      <p>
+        <strong>Why it works:</strong> Consistent content. Less time writing. More time running your business.
+      </p>
+
+      <h2>The Crawl → Walk → Run Framework</h2>
+
+      <p>
+        Don't try to do everything at once. Here's the order I recommend:
+      </p>
+
+      <h3>Crawl: Fix Your Process</h3>
+      <ul>
+        <li>Map your workflows using swim lane charts</li>
+        <li>Document your processes</li>
+        <li>Train your team to follow them consistently</li>
+      </ul>
+
+      <h3>Walk: Automate the Repetitive Stuff</h3>
+      <ul>
+        <li>Start with appointment confirmations</li>
+        <li>Add task automation for post-sale workflows</li>
+        <li>Set up follow-up sequences</li>
+      </ul>
+
+      <h3>Run: Layer in AI</h3>
+      <ul>
+        <li>Summarize calls and notes</li>
+        <li>Rewrite pricebook descriptions</li>
+        <li>Build internal knowledge bots</li>
+      </ul>
+
+      <p>
+        Most contractors try to run before they crawl. Don't be that guy.
+      </p>
+
+      <h2>Action Steps: 3 Quick Wins to Start Today</h2>
+
+      <ol>
+        <li>
+          <strong>Turn on automated appointment confirmations.</strong> If you're using ServiceTitan, this takes 10 minutes. Set it up and forget it.
+        </li>
+        <li>
+          <strong>Pick one repetitive task and automate it.</strong> Could be creating tasks after a sale, sending follow-up emails, or notifying your team when a lead comes in.
+        </li>
+        <li>
+          <strong>Try AI for one thing this week.</strong> Summarize a service call. Rewrite a pricebook description. Ask ChatGPT to draft a social media post. Just try it.
+        </li>
+      </ol>
+
+      <h2>Final Thought</h2>
+
+      <p>
+        AI and automation aren't magic. They multiply what you already have.
+      </p>
+
+      <p>
+        If your process is broken, automation will make it break faster.<br />
+        If your process is solid, automation will make you unstoppable.
+      </p>
+
+      <p className="font-bold text-lg">
+        Fix your process first. Then let AI and automation do the heavy lifting.
+      </p>
+
+      <div className="bg-primary/5 p-8 rounded-lg my-8 not-prose">
+        <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+          Ready to Learn More?
+        </h3>
+        <p className="text-base mb-4">
+          Join 5,000+ contractors in the ServiceTitan Hacks Facebook Group where we share automation workflows, AI tips, and real-world examples every week.
+        </p>
+        <a 
+          href="https://www.facebook.com/groups/servicetitanhacks" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          Join the Facebook Group
+        </a>
+      </div>
+    </div>
   )
 };
 
