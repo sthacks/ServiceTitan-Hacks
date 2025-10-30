@@ -315,6 +315,88 @@ const blogPostContent: Record<string, JSX.Element> = {
         ServiceTitan becomes the backbone of a data-driven company when paired with mature systems and outside expertise. For contractors ready to scale, it delivers clarity, control, and growth. For those still building foundations, it's better to wait and prepare.
       </p>
     </div>
+  ),
+  "dmaic-process-improvement-framework": (
+    <div className="prose prose-lg max-w-none">
+      <p className="lead">
+        Most business coaches talk about systems and processes—and they're not wrong.
+        You can't scale chaos. You need structure.
+      </p>
+
+      <p>
+        A lot of them will sell you their own systems, and that's totally fine.
+        Starting with a pre-built process gives you a solid foundation.
+      </p>
+
+      <p>
+        But let me ask you this:<br />
+        What happens when that process doesn't fully fit your team?<br />
+        What do you do when something keeps breaking, and you're tired of putting out fires?<br />
+        How do you improve it without rebuilding everything from scratch?
+      </p>
+
+      <p>
+        That's where DMAIC comes in.<br />
+        It's a structured process improvement framework that's been around for decades.
+      </p>
+
+      <p>
+        DMAIC was developed as part of the Six Sigma movement in the 1980s.
+      </p>
+
+      <p>
+        Companies like Motorola and GE used it on the manufacturing floor to eliminate waste, reduce defects, and drive consistency.
+        It gave them a way to fix broken processes—permanently—and measure the impact over time.
+      </p>
+
+      <h2>The DMAIC Framework</h2>
+
+      <p>It stands for:</p>
+
+      <ul>
+        <li><strong>Define</strong></li>
+        <li><strong>Measure</strong></li>
+        <li><strong>Analyze</strong></li>
+        <li><strong>Improve</strong></li>
+        <li><strong>Control</strong></li>
+      </ul>
+
+      <p>
+        I learned DMAIC while working at Vertiv, where we manufactured precision A/C systems for data centers.
+        I was a field quality engineer helping contractors across the country improve installation and service processes.
+        When something went wrong, we didn't guess.
+        We followed DMAIC to identify what broke and why—then built in controls to make sure it didn't happen again.
+      </p>
+
+      <h2>When to Use DMAIC in Your Business</h2>
+
+      <p>It works the same way in a home service business. Use it when:</p>
+
+      <ul>
+        <li>Your CSRs are inconsistent</li>
+        <li>Your installs are sloppy or unpredictable</li>
+        <li>You're getting callbacks</li>
+        <li>Or things feel inefficient but no one's sure where the bottleneck is</li>
+      </ul>
+
+      <h2>How I Used It in My Own Company</h2>
+
+      <p>
+        In my own HVAC company, I mapped out our entire install process using a swim lane chart.
+        Every role. Every step. Sales. Warehouse. Install crew. Quality control.
+      </p>
+
+      <p>
+        I printed it out and hung it in the warehouse so the whole team could see it.
+        We used it for training. And anytime something went wrong on a job, we marked it directly on the chart with a red pen.
+        Once enough marks showed up in one area, we revised that section of the process, reprinted the chart, and improved it.
+      </p>
+
+      <p className="font-bold text-lg">
+        That wall became our feedback loop.<br />
+        The process didn't live in a binder. It lived where everyone could see it, follow it, and make it better over time.
+      </p>
+    </div>
   )
 };
 
