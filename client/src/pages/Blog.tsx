@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -210,9 +211,11 @@ export default function Blog() {
                         <span>{post.readTime}</span>
                       </div>
                     </div>
-                    <Button variant="outline" className="w-full gap-2" data-testid={`button-read-${post.id}`}>
-                      Read Article <ArrowRight className="h-4 w-4" />
-                    </Button>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button variant="outline" className="w-full gap-2" data-testid={`button-read-${post.id}`}>
+                        Read Article <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
