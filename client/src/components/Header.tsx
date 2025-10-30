@@ -16,10 +16,7 @@ export default function Header() {
     { path: "/purchasing-platform", label: "Equipment Buying Group" },
     { path: "/partners", label: "Partners" },
     { path: "/resources", label: "Free Stuff" },
-    { path: "/blog", label: "Blog" },
-    { path: "/podcast", label: "Podcast" },
     { path: "/all-access", label: "All-Access Pass" },
-    { path: "/about", label: "About" },
   ];
 
   return (
