@@ -25,6 +25,7 @@ import ltvAnalysisImage from "@assets/generated_images/Customer_lifetime_value_a
 import zapierIntegrationImage from "@assets/generated_images/ServiceTitan_Zapier_integration_visual_c40d4316.png";
 import swimlaneChartImage from "@assets/generated_images/Business_process_swimlane_workflow_e4e79b67.png";
 import metricsGuideImage from "@assets/generated_images/Business_metrics_KPI_dashboard_b247c6c8.png";
+import freeResourcesHero from "@assets/switchy images (21)_1761919068554.png";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -183,8 +184,9 @@ export default function Resources() {
       <Header />
       <main className="flex-1">
         <Hero
-        title="Free Resources"
-        subtitle="Access free templates, guides, and tools to help you get more out of ServiceTitan and grow your home service business."
+        title="Free ServiceTitan Resources: Tools, Templates & Guides for Contractors"
+        subtitle="Access a curated collection of free resources tailored for ServiceTitan users, including downloadable templates, automation guides, and practical tools. Whether you're aiming to enhance efficiency, streamline operations, or deepen your understanding of ServiceTitan, these resources are designed to support contractors at every level."
+        backgroundImage={freeResourcesHero}
         dark={true}
       />
 
