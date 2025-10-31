@@ -16,7 +16,7 @@ export default function Header() {
     { path: "/purchasing-platform", label: "Buying Group" },
     { path: "/partners", label: "Partners" },
     { path: "/resources", label: "Free Stuff" },
-    { path: "https://servicetitanhacks.thinkific.com/memberships/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
+    { path: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
   ];
 
   return (
