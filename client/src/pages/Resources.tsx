@@ -25,7 +25,6 @@ import ltvAnalysisImage from "@assets/generated_images/Customer_lifetime_value_a
 import zapierIntegrationImage from "@assets/generated_images/ServiceTitan_Zapier_integration_visual_c40d4316.png";
 import swimlaneChartImage from "@assets/generated_images/Business_process_swimlane_workflow_e4e79b67.png";
 import metricsGuideImage from "@assets/generated_images/Business_metrics_KPI_dashboard_b247c6c8.png";
-import ltvAnalysisFile from "@assets/LTV Analysis Prompt_1761917880987.docx";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -40,7 +39,7 @@ export default function Resources() {
       description: "Unlock the power of ServiceTitan reports with this easy-to-use prompt for ChatGPT. Perfect for business owners and marketers, enhance your understanding of customer lifetime value today!",
       type: "Digital Download",
       image: ltvAnalysisImage,
-      url: ltvAnalysisFile,
+      url: "/downloads/LTV-Analysis-Prompt.docx",
       isLocalFile: true,
     },
     {
@@ -48,7 +47,7 @@ export default function Resources() {
       description: "Master the integration of ServiceTitan and Zapier to streamline operations and automate workflows. Enhance your productivity and efficiency with powerful, automated connections.",
       type: "Course",
       image: zapierIntegrationImage,
-      url: "https://www.servicetitanhacks.com/products/courses/servicetitan-to-zapier",
+      url: "https://servicetitanhacks.thinkific.com/courses/servicetitan-to-zapier",
     },
     {
       title: "Master Your Pricing Objections",

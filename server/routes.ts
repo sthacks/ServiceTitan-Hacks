@@ -8,6 +8,7 @@ import { getUncachableResendClient } from "./resend-client";
 import OpenAI from "openai";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import Stripe from "stripe";
+import path from "path";
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
@@ -549,6 +550,17 @@ ${JSON.stringify(jsonData, null, 2)}
         message: "Failed to fetch optimizations." 
       });
     }
+  });
+
+  // Download routes for resources
+  app.get('/downloads/LTV-Analysis-Prompt.docx', (req, res) => {
+    const filePath = path.join(import.meta.dirname, '..', 'attached_assets', 'LTV Analysis Prompt_1761917880987.docx');
+    res.download(filePath, 'LTV-Analysis-Prompt.docx', (err) => {
+      if (err) {
+        console.error('Error downloading file:', err);
+        res.status(500).json({ message: 'Error downloading file' });
+      }
+    });
   });
 
   // Sitemap XML for SEO
