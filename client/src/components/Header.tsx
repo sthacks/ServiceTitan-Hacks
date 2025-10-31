@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home-logo">
             <span className="flex items-center cursor-pointer">
-              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-16 md:h-20" />
+              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-16 md:h-20 py-[5px]" />
             </span>
           </Link>
 
