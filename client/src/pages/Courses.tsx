@@ -87,7 +87,7 @@ export default function Courses() {
         subtitle="Learn to automate, optimize, and scale your home service business with practical, hands-on courses. From beginner-friendly integrations to advanced AI automation."
         primaryCta={{
           label: "View All-Access Pass",
-          href: "/all-access",
+          href: "https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass",
         }}
         dark={true}
       />
