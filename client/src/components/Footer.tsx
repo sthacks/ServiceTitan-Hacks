@@ -10,7 +10,7 @@ export default function Footer() {
     { path: "/partners", label: "Partners" },
     { path: "/tools", label: "Tools" },
     { path: "/courses", label: "Courses" },
-    { path: "/all-access", label: "All-Access Pass" },
+    { path: "https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
   ];
 
   const resourceLinks = [
@@ -39,11 +39,19 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link href={link.path}>
-                    <span className="text-sm text-gray-400 hover:text-primary transition-colors cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase()}`}>
-                      {link.label}
-                    </span>
-                  </Link>
+                  {link.external ? (
+                    <a href={link.path} target="_blank" rel="noopener noreferrer">
+                      <span className="text-sm text-gray-400 hover:text-primary transition-colors cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase()}`}>
+                        {link.label}
+                      </span>
+                    </a>
+                  ) : (
+                    <Link href={link.path}>
+                      <span className="text-sm text-gray-400 hover:text-primary transition-colors cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase()}`}>
+                        {link.label}
+                      </span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

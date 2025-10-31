@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home-logo">
             <span className="flex items-center cursor-pointer">
-              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-16 md:h-20 py-[25px]" />
+              <img src={logoImage} alt="ServiceTitan Hacks Logo" className="h-16 md:h-20 py-2" />
             </span>
           </Link>
 
@@ -111,19 +111,31 @@ export default function Header() {
           <nav className="lg:hidden py-4 border-t border-gray-800">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <Link key={link.path} href={link.path}>
-                  <span
-                    className={`block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer ${
-                      location === link.path
-                        ? "text-primary bg-gray-800"
-                        : "text-white hover:text-gray-300 hover:bg-gray-800"
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                    data-testid={`link-mobile-${link.label.toLowerCase()}`}
-                  >
-                    {link.label}
-                  </span>
-                </Link>
+                link.external ? (
+                  <a key={link.path} href={link.path} target="_blank" rel="noopener noreferrer">
+                    <span
+                      className="block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer text-white hover:text-gray-300 hover:bg-gray-800"
+                      onClick={() => setMobileMenuOpen(false)}
+                      data-testid={`link-mobile-${link.label.toLowerCase()}`}
+                    >
+                      {link.label}
+                    </span>
+                  </a>
+                ) : (
+                  <Link key={link.path} href={link.path}>
+                    <span
+                      className={`block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer ${
+                        location === link.path
+                          ? "text-primary bg-gray-800"
+                          : "text-white hover:text-gray-300 hover:bg-gray-800"
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      data-testid={`link-mobile-${link.label.toLowerCase()}`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                )
               ))}
               
               <div className="mt-2 pt-2 border-t border-gray-800">
