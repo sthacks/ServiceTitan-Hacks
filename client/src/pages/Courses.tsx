@@ -48,10 +48,10 @@ export default function Courses() {
     {
       title: "Fix Ugly Forms: Auto-Clean Job Notes with AI",
       description: "Transform messy form submissions into polished job notes using ChatGPT and Zapier. Streamline your documentation process and save time with this practical course.",
-      price: "Free",
+      price: "$49",
       level: "Advanced",
       image: "https://import.cdn.thinkific.com/1072722/vp96w1ygTK6JTLA7t5w7_9%402iMiZSD1I.png",
-      url: "/fix-ugly-forms-course",
+      url: "https://servicetitanhacks.thinkific.com/products/courses/ai-automated-servicetitan-forms",
       rating: null,
     },
     {
