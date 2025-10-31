@@ -551,6 +551,60 @@ ${JSON.stringify(jsonData, null, 2)}
     }
   });
 
+  // Sitemap XML for SEO
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = "https://servicetitanhacks.com";
+    const currentDate = new Date().toISOString().split('T')[0];
+    
+    const staticPages = [
+      { url: "/", priority: "1.0", changefreq: "daily" },
+      { url: "/about", priority: "0.7", changefreq: "monthly" },
+      { url: "/contact", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners", priority: "0.8", changefreq: "weekly" },
+      { url: "/all-access", priority: "0.9", changefreq: "weekly" },
+      { url: "/tools", priority: "0.8", changefreq: "weekly" },
+      { url: "/pricebook-optimizer", priority: "0.8", changefreq: "weekly" },
+      { url: "/resources", priority: "0.7", changefreq: "weekly" },
+      { url: "/purchasing-platform", priority: "0.8", changefreq: "weekly" },
+      { url: "/blog", priority: "0.9", changefreq: "daily" },
+      { url: "/podcast", priority: "0.7", changefreq: "weekly" },
+      { url: "/courses", priority: "0.9", changefreq: "weekly" },
+      { url: "/dashboard-course", priority: "0.8", changefreq: "monthly" },
+      { url: "/fix-ugly-forms-course", priority: "0.8", changefreq: "monthly" },
+    ];
+
+    const blogPosts = [
+      { slug: "stop-selling-other-peoples-equipment-build-your-brand", date: "2025-01-22" },
+      { slug: "dmaic-process-improvement-framework", date: "2025-01-20" },
+      { slug: "should-i-switch-to-servicetitan", date: "2025-01-18" },
+      { slug: "ai-automation-contractors-where-to-start", date: "2025-01-15" },
+      { slug: "double-booking-rate-better-forms", date: "2025-01-10" },
+      { slug: "servicetitan-dashboard-metrics", date: "2025-01-05" },
+      { slug: "ultimate-guide-automating-follow-up-calls", date: "2024-12-28" },
+      { slug: "top-servicetitan-integrations-2025", date: "2024-12-20" },
+      { slug: "convert-more-leads-better-website", date: "2024-12-15" },
+    ];
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${staticPages.map(page => `  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`).join('\n')}
+${blogPosts.map(post => `  <url>
+    <loc>${baseUrl}/blog/${post.slug}</loc>
+    <lastmod>${post.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+    res.header('Content-Type', 'application/xml');
+    res.send(sitemap);
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
