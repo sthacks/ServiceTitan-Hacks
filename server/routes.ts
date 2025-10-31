@@ -42,6 +42,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
 
+  // 301 Redirects for old Thinkific URL patterns
+  // This preserves SEO when migrating from servicetitanhacks.com (Thinkific) to new site
+  app.use((req, res, next) => {
+    const redirectMap: { [key: string]: string } = {
+      '/pages/servicetitan-hacks-partners': '/partners',
+      '/pages/servicetitan-hacks-products': '/tools',
+      '/collections/free-resources': '/resources',
+      '/bundles/servicetitan-hacks-all-access-pass': '/all-access',
+    };
+
+    // Redirect old partner/products pages to new URLs
+    if (redirectMap[req.path]) {
+      return res.redirect(301, redirectMap[req.path]);
+    }
+
+    // Redirect course collections to Thinkific subdomain
+    if (req.path === '/collections/courses') {
+      return res.redirect(301, 'https://servicetitanhacks.thinkific.com/collections/courses');
+    }
+
+    // Redirect individual course product pages to Thinkific
+    if (req.path.startsWith('/products/courses/')) {
+      const coursePath = req.path.replace('/products/courses/', '');
+      return res.redirect(301, `https://servicetitanhacks.thinkific.com/products/courses/${coursePath}`);
+    }
+
+    next();
+  });
+
   // Auth routes
   app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
     try {
