@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
 import logoImage from "@assets/secondary logo_1760895642629.png";
+import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,6 +20,14 @@ export default function Footer() {
     { path: "/resources", label: "Resources" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
+  ];
+
+  const partners = [
+    { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
+    { name: "Free-2-Grow", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png", url: "https://go.st-hacks.cc/free-2-grow" },
+    { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
+    { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
+    { name: "Contractor Commerce", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png", url: "https://go.st-hacks.cc/contractor-commerce" },
   ];
 
   return (
@@ -104,6 +113,29 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
+          <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Partners</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center mb-8">
+            {partners.map((partner, index) => (
+              <a
+                key={index}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-elevate transition-all"
+                data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
               &copy; {currentYear} ServiceTitan Hacks. All rights reserved.
