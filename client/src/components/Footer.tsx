@@ -121,13 +121,13 @@ export default function Footer() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover-elevate transition-all"
+                className="hover-elevate transition-all bg-white rounded-md p-4"
                 data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  className="h-12 w-auto object-contain"
                   loading="lazy"
                 />
               </a>
