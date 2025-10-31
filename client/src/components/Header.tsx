@@ -16,7 +16,7 @@ export default function Header() {
     { path: "/purchasing-platform", label: "Buying Group" },
     { path: "/partners", label: "Partners" },
     { path: "/resources", label: "Free Stuff" },
-    { path: "/all-access", label: "All-Access Pass" },
+    { path: "https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
   ];
 
   return (
@@ -31,18 +31,29 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link key={link.path} href={link.path}>
-                <span
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
-                    location === link.path
-                      ? "text-primary"
-                      : "text-white hover:text-gray-300"
-                  }`}
-                  data-testid={`link-nav-${link.label.toLowerCase()}`}
-                >
-                  {link.label}
-                </span>
-              </Link>
+              link.external ? (
+                <a key={link.path} href={link.path} target="_blank" rel="noopener noreferrer">
+                  <span
+                    className="px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer text-white hover:text-gray-300"
+                    data-testid={`link-nav-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </span>
+                </a>
+              ) : (
+                <Link key={link.path} href={link.path}>
+                  <span
+                    className={`px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
+                      location === link.path
+                        ? "text-primary"
+                        : "text-white hover:text-gray-300"
+                    }`}
+                    data-testid={`link-nav-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              )
             ))}
           </nav>
 

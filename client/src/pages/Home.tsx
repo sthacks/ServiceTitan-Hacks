@@ -58,7 +58,7 @@ export default function Home() {
       title: "All-Access Pass",
       description: "Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls.",
       icon: Key,
-      link: "/all-access",
+      link: "https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
     },
   ];
@@ -85,7 +85,7 @@ export default function Home() {
           }}
           secondaryCta={{
             label: "All-Access Pass",
-            href: "/all-access",
+            href: "https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass",
           }}
           backgroundImage={heroImage}
         />

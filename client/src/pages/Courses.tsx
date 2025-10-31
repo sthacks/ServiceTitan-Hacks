@@ -170,7 +170,7 @@ export default function Courses() {
                 <p className="text-muted-foreground mb-6">
                   Save with the All-Access Pass! Get unlimited access to all courses, exclusive tools, and premium community resources for one low monthly price.
                 </p>
-                <a href="/all-access" data-testid="link-all-access-cta">
+                <a href="https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass" target="_blank" rel="noopener noreferrer" data-testid="link-all-access-cta">
                   <Button size="lg">Explore All-Access Pass</Button>
                 </a>
               </CardContent>
