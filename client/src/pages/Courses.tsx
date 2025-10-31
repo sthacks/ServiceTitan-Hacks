@@ -14,7 +14,7 @@ export default function Courses() {
       price: "$97",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/XLiLdFatSAOA2Bky38ef_DIY%20Branded%20Company%20App%20(760%20x%20420%20px).png",
-      url: "https://www.servicetitanhacks.com/products/courses/company-app-jotform",
+      url: "https://servicetitanhacks.thinkific.com/products/courses/company-app-jotform",
       rating: null,
     },
     {
@@ -33,7 +33,7 @@ export default function Courses() {
       price: "$69",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/elvItVdyT3yGOrkpX7AH_connect%20to%20make.com.png",
-      url: "https://www.servicetitanhacks.com/products/courses/servicetitan-to-make",
+      url: "https://servicetitanhacks.thinkific.com/products/courses/servicetitan-to-make",
       rating: null,
     },
     {
@@ -42,7 +42,7 @@ export default function Courses() {
       price: "Free",
       level: "Beginner",
       image: "https://import.cdn.thinkific.com/1072722/OdZwdguBTtyLCkKTWeFf_connect%20to%20zapier.png",
-      url: "https://www.servicetitanhacks.com/products/courses/servicetitan-to-zapier",
+      url: "https://servicetitanhacks.thinkific.com/products/courses/servicetitan-to-zapier",
       rating: null,
     },
     {
@@ -60,7 +60,7 @@ export default function Courses() {
       price: "$39",
       level: "Advanced",
       image: "https://import.cdn.thinkific.com/1072722/hAIZq6A8RcuOOzWNdgsc_job%20summary%20cleaner.png",
-      url: "https://www.servicetitanhacks.com/products/courses/servicetitan-ai-job-summary",
+      url: "https://servicetitanhacks.thinkific.com/products/courses/servicetitan-ai-job-summary",
       rating: null,
     },
   ];
