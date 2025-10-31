@@ -87,7 +87,7 @@ export default function Courses() {
         subtitle="Learn to automate, optimize, and scale your home service business with practical, hands-on courses. From beginner-friendly integrations to advanced AI automation."
         primaryCta={{
           label: "View All-Access Pass",
-          href: "https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass",
+          href: "https://servicetitanhacks.thinkific.com/memberships/servicetitan-hacks-all-access-pass",
         }}
         dark={true}
       />
@@ -170,7 +170,7 @@ export default function Courses() {
                 <p className="text-muted-foreground mb-6">
                   Save with the All-Access Pass! Get unlimited access to all courses, exclusive tools, and premium community resources for one low monthly price.
                 </p>
-                <a href="https://www.servicetitanhacks.com/bundles/servicetitan-hacks-all-access-pass" target="_blank" rel="noopener noreferrer" data-testid="link-all-access-cta">
+                <a href="https://servicetitanhacks.thinkific.com/memberships/servicetitan-hacks-all-access-pass" target="_blank" rel="noopener noreferrer" data-testid="link-all-access-cta">
                   <Button size="lg">Explore All-Access Pass</Button>
                 </a>
               </CardContent>
