@@ -89,7 +89,7 @@ export default function Resources() {
       description: "Calculate your marketing ROI and discover how much revenue you need to generate to justify your marketing spend. Get instant insights to make smarter marketing decisions.",
       type: "Tool",
       image: hvacMarketingImage,
-      url: "https://hvac-marketing-calculator.lovable.app?skip=true",
+      url: "https://hvac-marketing-calculator.lovable.app/",
     },
     {
       title: "Referral Wizard Calculator",
