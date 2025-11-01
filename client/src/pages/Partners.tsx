@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import smartACLogo from "@assets/smartac_1762011451319.png";
 import liveswitchLogo from "@assets/liveswitch_1762011674199.png";
-import polycamLogo from "@assets/polycam_1762011653489.png";
+import polycamLogo from "@assets/polycam_1762011698574.png";
 import contractorCommerceLogo from "@assets/contractor commerce_1762011468358.png";
 
 export default function Partners() {
