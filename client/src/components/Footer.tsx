@@ -148,10 +148,12 @@ export default function Footer() {
             <p className="text-sm text-gray-500">
               &copy; {currentYear} ServiceTitan Hacks. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-sm text-gray-500 hover:text-primary transition-colors">
-                Terms
-              </a>
+            <div className="flex items-center gap-6">
+              <Link href="/terms">
+                <span className="text-sm text-gray-500 hover:text-primary transition-colors cursor-pointer" data-testid="link-footer-terms">
+                  Terms
+                </span>
+              </Link>
               <Link href="/privacy-policy">
                 <span className="text-sm text-gray-500 hover:text-primary transition-colors cursor-pointer" data-testid="link-footer-privacy">
                   Privacy
