@@ -90,6 +90,7 @@ export default function Resources() {
       type: "Tool",
       image: hvacMarketingImage,
       url: "https://hvac-marketing-calculator.lovable.app/",
+      isExternalTool: true,
     },
     {
       title: "Referral Wizard Calculator",
