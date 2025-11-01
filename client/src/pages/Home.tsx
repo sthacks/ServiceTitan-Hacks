@@ -11,6 +11,7 @@ import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
 import polycamLogo from "@assets/polycam_1762011143447.png";
+import contractorCommerceLogo from "@assets/contractor commerce_1762011468358.png";
 
 export default function Home() {
   const mainSections = [
@@ -70,7 +71,7 @@ export default function Home() {
     { name: "Free-2-Grow", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png", url: "https://go.st-hacks.cc/free-2-grow" },
     { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
-    { name: "Contractor Commerce", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png", url: "https://go.st-hacks.cc/contractor-commerce" },
+    { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
     { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
     { name: "Polycam", logo: polycamLogo, url: "https://go.st-hacks.cc/polycam" },
   ];

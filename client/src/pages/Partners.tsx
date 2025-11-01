@@ -7,6 +7,7 @@ import { ExternalLink } from "lucide-react";
 import smartACLogo from "@assets/smartac_1762011451319.png";
 import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
 import polycamLogo from "@assets/polycam_1762011143447.png";
+import contractorCommerceLogo from "@assets/contractor commerce_1762011468358.png";
 
 export default function Partners() {
   const partners = [
@@ -36,7 +37,7 @@ export default function Partners() {
     },
     {
       name: "Contractor Commerce",
-      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png",
+      logo: contractorCommerceLogo,
       description: "E-commerce and online sales solutions tailored specifically for home service contractors and ServiceTitan users.",
       url: "https://go.st-hacks.cc/contractor-commerce",
     },
