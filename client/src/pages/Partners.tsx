@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
+import polycamLogo from "@assets/polycam logo_1762011091125.png";
 
 export default function Partners() {
   const partners = [
@@ -44,6 +45,12 @@ export default function Partners() {
       logo: liveswitchLogo,
       description: "Professional virtual phone solutions designed to streamline communication and enhance customer service for home service businesses.",
       url: "https://go.st-hacks.cc/liveswitch",
+    },
+    {
+      name: "Polycam",
+      logo: polycamLogo,
+      description: "Advanced 3D scanning and modeling solutions for home service contractors to capture accurate property measurements and documentation.",
+      url: "https://go.st-hacks.cc/polycam",
     },
   ];
 
