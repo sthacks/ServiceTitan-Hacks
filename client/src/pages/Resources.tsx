@@ -86,7 +86,8 @@ export default function Resources() {
       description: "Discover how powerful referrals can be for your business. Calculate the lifetime value of a single referral and see how word-of-mouth marketing drives sustainable growth.",
       type: "Tool",
       image: referralWizardImage,
-      url: "https://referralwizard.lovable.app",
+      url: "https://go.st-hacks.cc/referral-calculator",
+      isExternalTool: true,
     },
     {
       title: "Wink ROI Saver Calculator",
