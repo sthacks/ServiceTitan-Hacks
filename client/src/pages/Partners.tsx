@@ -4,10 +4,11 @@ import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import smartACLogo from "@assets/smartac_1762011451319.png";
-import liveswitchLogo from "@assets/liveswitch_1762011674199.png";
-import polycamLogo from "@assets/polycam_1762011698574.png";
-import contractorCommerceLogo from "@assets/contractor commerce_1762011468358.png";
+import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
+import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
+import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
+import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
+import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 
 export default function Partners() {
   const partners = [
@@ -19,7 +20,7 @@ export default function Partners() {
     },
     {
       name: "Wink Toolbox",
-      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png",
+      logo: winkLogo,
       description: "Comprehensive tools and resources designed to optimize ServiceTitan operations and drive business growth.",
       url: "https://go.st-hacks.cc/wink",
     },

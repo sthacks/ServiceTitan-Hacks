@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
 import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
-import smartACLogo from "@assets/smartac_1762011451319.png";
+import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
-import liveswitchLogo from "@assets/liveswitch_1762011674199.png";
-import polycamLogo from "@assets/polycam_1762011698574.png";
-import contractorCommerceLogo from "@assets/contractor commerce_1762011468358.png";
+import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
+import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
+import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
+import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 
 export default function Home() {
   const mainSections = [
@@ -69,7 +70,7 @@ export default function Home() {
   const partners = [
     { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
     { name: "Free-2-Grow", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png", url: "https://go.st-hacks.cc/free-2-grow" },
-    { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
+    { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
     { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
