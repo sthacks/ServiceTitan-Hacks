@@ -129,7 +129,7 @@ export default function Footer() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover-elevate transition-all bg-white rounded-md p-4"
+                className="hover-elevate transition-all bg-white rounded-md p-4 w-32 h-20 flex items-center justify-center"
                 data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <img
