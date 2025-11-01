@@ -8,6 +8,7 @@ import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762
 import winkLogo from "@assets/logos.zip - 6_1762022633613.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
 import free2GrowLogo from "@assets/logos.zip - 7_1762022633613.png";
+import volcaLogo from "@assets/logos.zip - 8_1762023121150.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,7 +30,7 @@ export default function Footer() {
   ];
 
   const partners = [
-    { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
+    { name: "Volca.AI", logo: volcaLogo, url: "https://go.st-hacks.cc/volca" },
     { name: "Free-2-Grow", logo: free2GrowLogo, url: "https://go.st-hacks.cc/free-2-grow" },
     { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
