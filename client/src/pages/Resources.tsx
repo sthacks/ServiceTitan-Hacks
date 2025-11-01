@@ -93,7 +93,8 @@ export default function Resources() {
       description: "Calculate your potential savings and ROI with Wink's automation tools. See exactly how much time and money you can save by streamlining your ServiceTitan operations.",
       type: "Tool",
       image: winkROIImage,
-      url: "https://wink-roi-saver.lovable.app?skip=true",
+      url: "https://go.st-hacks.cc/roi-calc",
+      isExternalTool: true,
     },
   ];
 
@@ -217,14 +218,28 @@ export default function Resources() {
                     {resource.description}
                   </p>
                   
-                  <Button
-                    onClick={() => handleDownloadClick(resource.title)}
-                    className="w-full gap-2"
-                    data-testid={`button-download-${index}`}
-                  >
-                    <Download className="h-4 w-4" />
-                    Get Free Resource
-                  </Button>
+                  {resource.isExternalTool ? (
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                      data-testid={`link-tool-${index}`}
+                    >
+                      <Button className="w-full gap-2">
+                        View Calculator <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button
+                      onClick={() => handleDownloadClick(resource.title)}
+                      className="w-full gap-2"
+                      data-testid={`button-download-${index}`}
+                    >
+                      <Download className="h-4 w-4" />
+                      Get Free Resource
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
