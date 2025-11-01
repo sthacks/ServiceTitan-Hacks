@@ -48,7 +48,8 @@ export default function Resources() {
       description: "Master the integration of ServiceTitan and Zapier to streamline operations and automate workflows. Enhance your productivity and efficiency with powerful, automated connections.",
       type: "Course",
       image: zapierIntegrationImage,
-      url: "https://servicetitanhacks.thinkific.com/courses/servicetitan-to-zapier",
+      url: "https://go.st-hacks.cc/st-zapier",
+      isExternalCourse: true,
     },
     {
       title: "Master Your Pricing Objections",
@@ -229,6 +230,18 @@ export default function Resources() {
                     >
                       <Button className="w-full gap-2">
                         View Calculator <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  ) : resource.isExternalCourse ? (
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                      data-testid={`link-course-${index}`}
+                    >
+                      <Button className="w-full gap-2">
+                        View Course <ExternalLink className="h-4 w-4" />
                       </Button>
                     </a>
                   ) : (
