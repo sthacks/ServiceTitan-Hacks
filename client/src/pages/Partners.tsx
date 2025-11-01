@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
+import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
 
 export default function Partners() {
   const partners = [
@@ -37,6 +38,12 @@ export default function Partners() {
       logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png",
       description: "E-commerce and online sales solutions tailored specifically for home service contractors and ServiceTitan users.",
       url: "https://go.st-hacks.cc/contractor-commerce",
+    },
+    {
+      name: "LiveSwitch",
+      logo: liveswitchLogo,
+      description: "Professional virtual phone solutions designed to streamline communication and enhance customer service for home service businesses.",
+      url: "https://go.st-hacks.cc/liveswitch",
     },
   ];
 
