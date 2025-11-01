@@ -1,9 +1,9 @@
 import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
 import logoImage from "@assets/secondary logo_1760895642629.png";
-import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
+import smartACLogo from "@assets/logos.zip - smartac_1762023015702.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762022633613.png";
-import polycamLogo from "@assets/logos.zip - polycam_1762022633613.png";
+import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
 import winkLogo from "@assets/logos.zip - 6_1762022633613.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
