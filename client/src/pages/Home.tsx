@@ -9,7 +9,7 @@ import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/smartac_1762011451319.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
-import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
+import liveswitchLogo from "@assets/liveswitch_1762011674199.png";
 import polycamLogo from "@assets/polycam_1762011653489.png";
 import contractorCommerceLogo from "@assets/contractor commerce_1762011468358.png";
 
