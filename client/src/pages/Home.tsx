@@ -147,7 +147,7 @@ export default function Home() {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-16 md:h-20 w-auto object-contain"
+                    className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
                     loading="lazy"
                   />
                 </a>
