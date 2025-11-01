@@ -72,8 +72,8 @@ export default function Resources() {
       description: "Eliminate confusion around ServiceTitan metrics! This free guide clarifies key KPIs in simple terms, ensuring your team aligns, makes confident decisions, and seizes revenue opportunities.",
       type: "Digital Download",
       image: metricsGuideImage,
-      url: "/downloads/112-ServiceTitan-Metrics.xlsx",
-      isLocalFile: true,
+      url: "https://go.st-hacks.cc/servicetitan-metrics",
+      isExternalTool: true,
     },
     {
       title: "HVAC Marketing Calculator",
@@ -220,28 +220,16 @@ export default function Resources() {
                     {resource.description}
                   </p>
                   
-                  {resource.isExternalTool ? (
+                  {resource.isExternalTool || resource.isExternalCourse ? (
                     <a
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full"
-                      data-testid={`link-tool-${index}`}
+                      data-testid={`link-${resource.type === 'Course' ? 'course' : resource.type === 'Tool' ? 'tool' : 'resource'}-${index}`}
                     >
                       <Button className="w-full gap-2">
-                        View Calculator <ExternalLink className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  ) : resource.isExternalCourse ? (
-                    <a
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full"
-                      data-testid={`link-course-${index}`}
-                    >
-                      <Button className="w-full gap-2">
-                        View Course <ExternalLink className="h-4 w-4" />
+                        {resource.type === 'Course' ? 'View Course' : resource.type === 'Tool' ? 'View Calculator' : 'Get Free Resource'} <ExternalLink className="h-4 w-4" />
                       </Button>
                     </a>
                   ) : (
