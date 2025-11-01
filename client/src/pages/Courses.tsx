@@ -60,7 +60,7 @@ export default function Courses() {
       price: "$39",
       level: "Advanced",
       image: "https://import.cdn.thinkific.com/1072722/hAIZq6A8RcuOOzWNdgsc_job%20summary%20cleaner.png",
-      url: "https://servicetitanhacks.thinkific.com/products/courses/servicetitan-ai-job-summary",
+      url: "https://go.st-hacks.cc/ai-job-summary",
       rating: null,
     },
   ];
