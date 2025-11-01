@@ -9,6 +9,8 @@ import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
+import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
+import polycamLogo from "@assets/polycam_1762011143447.png";
 
 export default function Home() {
   const mainSections = [
@@ -69,6 +71,8 @@ export default function Home() {
     { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png", url: "https://go.st-hacks.cc/contractor-commerce" },
+    { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
+    { name: "Polycam", logo: polycamLogo, url: "https://go.st-hacks.cc/polycam" },
   ];
 
   return (
