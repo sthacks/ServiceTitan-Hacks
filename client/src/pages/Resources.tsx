@@ -38,10 +38,10 @@ export default function Resources() {
     {
       title: "Customer Lifetime Value Analysis Prompt",
       description: "Unlock the power of ServiceTitan reports with this easy-to-use prompt for ChatGPT. Perfect for business owners and marketers, enhance your understanding of customer lifetime value today!",
-      type: "Digital Download",
+      type: "Tool",
       image: ltvAnalysisImage,
-      url: "/downloads/LTV-Analysis-Prompt.docx",
-      isLocalFile: true,
+      url: "https://go.st-hacks.cc/ltv-analysis",
+      isExternalTool: true,
     },
     {
       title: "Connect ServiceTitan to Zapier",
