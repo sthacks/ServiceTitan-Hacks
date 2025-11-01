@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import smartACLogo from "@assets/Partners (1)_1760812144267.png";
+import smartACLogo from "@assets/smartac_1762011451319.png";
 import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
 import polycamLogo from "@assets/polycam_1762011143447.png";
 

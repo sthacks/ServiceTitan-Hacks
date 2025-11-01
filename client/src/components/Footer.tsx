@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
 import logoImage from "@assets/secondary logo_1760895642629.png";
-import smartACLogo from "@assets/Partners (1)_1760812144267.png";
+import smartACLogo from "@assets/smartac_1762011451319.png";
 import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
 import polycamLogo from "@assets/polycam_1762011143447.png";
 
