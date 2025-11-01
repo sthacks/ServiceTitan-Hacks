@@ -23,7 +23,7 @@ export default function Courses() {
       price: "$97",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/oG04g0LZQsiIf0jePvPc_Dashboard%20Example%20(1).png",
-      url: "https://servicetitanhacks.thinkific.com/products/courses/diy-servicetitan-dashboards",
+      url: "https://go.st-hacks.cc/dashboard-course",
       rating: "5.0",
       reviews: 1,
     },
