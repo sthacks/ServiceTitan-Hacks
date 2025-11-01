@@ -2,6 +2,8 @@ import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
 import logoImage from "@assets/secondary logo_1760895642629.png";
 import smartACLogo from "@assets/Partners (1)_1760812144267.png";
+import liveswitchLogo from "@assets/liveswitch logo_1762010571776.webp";
+import polycamLogo from "@assets/polycam_1762011143447.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,6 +30,8 @@ export default function Footer() {
     { name: "Wink Toolbox", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ebb/c0e/9fe/wink_logo.png", url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/3a4/5e2/7c3/1.png", url: "https://go.st-hacks.cc/contractor-commerce" },
+    { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
+    { name: "Polycam", logo: polycamLogo, url: "https://go.st-hacks.cc/polycam" },
   ];
 
   return (
@@ -114,7 +118,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Partners</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center mb-8">
             {partners.map((partner, index) => (
               <a
                 key={index}
