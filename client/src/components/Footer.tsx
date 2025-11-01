@@ -6,6 +6,7 @@ import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
+import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -34,6 +35,7 @@ export default function Footer() {
     { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
     { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
     { name: "Polycam", logo: polycamLogo, url: "https://go.st-hacks.cc/polycam" },
+    { name: "Service Crucible", logo: serviceCrucibleLogo, url: "https://go.st-hacks.cc/Service-crucible" },
   ];
 
   return (

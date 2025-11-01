@@ -9,6 +9,7 @@ import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
+import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 
 export default function Partners() {
   const partners = [
@@ -53,6 +54,12 @@ export default function Partners() {
       logo: polycamLogo,
       description: "Advanced 3D scanning and modeling solutions for home service contractors to capture accurate property measurements and documentation.",
       url: "https://go.st-hacks.cc/polycam",
+    },
+    {
+      name: "Service Crucible",
+      logo: serviceCrucibleLogo,
+      description: "Essential tools and resources for home service contractors to optimize operations and drive business growth.",
+      url: "https://go.st-hacks.cc/Service-crucible",
     },
   ];
 
