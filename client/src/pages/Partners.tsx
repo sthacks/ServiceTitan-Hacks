@@ -88,7 +88,7 @@ export default function Partners() {
                       rel="noopener noreferrer"
                       className="block mb-6"
                     >
-                      <div className={`flex items-center justify-center ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-32' : 'h-20'}`}>
+                      <div className={`flex items-center justify-center ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' || partner.name === 'Free-2-Grow' ? 'h-32' : 'h-20'}`}>
                         <img
                           src={partner.logo}
                           alt={`${partner.name} logo`}

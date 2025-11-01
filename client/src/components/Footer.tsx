@@ -135,7 +135,7 @@ export default function Footer() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-12 w-auto object-contain"
+                  className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' || partner.name === 'Free-2-Grow' ? 'h-16' : 'h-12'}`}
                   loading="lazy"
                 />
               </a>
