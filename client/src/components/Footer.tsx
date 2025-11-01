@@ -2,11 +2,12 @@ import { Link } from "wouter";
 import { SiYoutube, SiFacebook, SiLinkedin } from "react-icons/si";
 import logoImage from "@assets/secondary logo_1760895642629.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
-import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
-import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
-import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
-import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
-import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
+import liveswitchLogo from "@assets/logos.zip - liveswitch_1762022633613.png";
+import polycamLogo from "@assets/logos.zip - polycam_1762022633613.png";
+import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
+import winkLogo from "@assets/logos.zip - 6_1762022633613.png";
+import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
+import free2GrowLogo from "@assets/logos.zip - 7_1762022633613.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,7 +30,7 @@ export default function Footer() {
 
   const partners = [
     { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
-    { name: "Free-2-Grow", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png", url: "https://go.st-hacks.cc/free-2-grow" },
+    { name: "Free-2-Grow", logo: free2GrowLogo, url: "https://go.st-hacks.cc/free-2-grow" },
     { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
@@ -122,14 +123,14 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Partners</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center mb-8">
             {partners.map((partner, index) => (
               <a
                 key={index}
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover-elevate transition-all bg-white rounded-md p-4 w-32 h-20 flex items-center justify-center"
+                className="hover-elevate transition-all flex items-center justify-center"
                 data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <img
