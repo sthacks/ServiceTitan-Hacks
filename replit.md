@@ -72,9 +72,11 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Created internal landing page for ServiceTitan to Zapier Integration Course at `/zapier-integration-course` (FREE course, 1 chapter, 3 lessons)
 - Created internal landing page for Fix Ugly Forms Course at `/fix-ugly-forms-course-landing` (6 chapters, 19 lessons, $49)
 - Created internal landing page for Automate Job Summaries Course at `/job-summary-course` (1 chapter, 7 lessons, $39)
-- Added AI Call Recording Analysis (SmartVoice) to Courses page ($249/mo subscription service)
 - Updated Courses.tsx to link all six course cards to internal landing pages instead of direct external enrollment URLs
-- Moved AI Call Recording Analysis from Resources page to Courses page
 - Established consistent design pattern: black backgrounds for feature/instructor sections, red background for "About" section
 - Feature cards use black backgrounds (`bg-black`), no borders (`border-0`), and centered text (`text-center`) for clean, modern appearance
 - Navigation flow: Courses page → Internal landing page → External Thinkific enrollment
+
+### Design Consistency Updates (November 2025)
+- Fixed Resources page hero background to match consistent styling across all pages
+- Removed AI Call Recording Analysis from Courses page (user preference)
