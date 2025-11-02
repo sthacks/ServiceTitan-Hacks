@@ -91,11 +91,11 @@ export default function CompanyAppCourse() {
           </div>
         </section>
 
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-black text-white">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {features.slice(0, 3).map((feature, index) => (
-                <Card key={index} className="bg-card border-card-border overflow-hidden">
+                <Card key={index} className="bg-zinc-900 border-zinc-800 overflow-hidden">
                   <div className="aspect-[4/3] bg-black flex items-center justify-center">
                     <img
                       src={feature.image}
@@ -105,8 +105,8 @@ export default function CompanyAppCourse() {
                     />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold font-heading mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-xl font-semibold font-heading mb-3 text-white">{feature.title}</h3>
+                    <p className="text-zinc-300">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -114,7 +114,7 @@ export default function CompanyAppCourse() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {features.slice(3, 6).map((feature, index) => (
-                <Card key={index + 3} className="bg-card border-card-border overflow-hidden">
+                <Card key={index + 3} className="bg-zinc-900 border-zinc-800 overflow-hidden">
                   <div className="aspect-[4/3] bg-black flex items-center justify-center">
                     <img
                       src={feature.image}
@@ -124,8 +124,8 @@ export default function CompanyAppCourse() {
                     />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold font-heading mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-xl font-semibold font-heading mb-3 text-white">{feature.title}</h3>
+                    <p className="text-zinc-300">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -142,7 +142,7 @@ export default function CompanyAppCourse() {
           </div>
         </section>
 
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-black text-white">
           <div className="mx-auto max-w-5xl px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-shrink-0">
@@ -155,7 +155,7 @@ export default function CompanyAppCourse() {
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Meet Your Instructor</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-zinc-300 leading-relaxed">
                   With over 25 years in the trades and a proven track record of building, scaling, and optimizing home service businesses, Bill brings real-world experience and actionable strategies to every lesson. Whether you're looking to streamline operations, boost revenue, or implement cutting-edge tools like AI, Bill's hands-on guidance will help you get there faster—with confidence.
                 </p>
               </div>
