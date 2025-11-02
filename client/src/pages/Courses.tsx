@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Star, ExternalLink } from "lucide-react";
+import aiCallSummaryImage from "@assets/generated_images/AI_call_recording_analysis_3ca819bb.png";
 
 export default function Courses() {
   const courses = [
@@ -61,6 +62,15 @@ export default function Courses() {
       level: "Advanced",
       image: "https://import.cdn.thinkific.com/1072722/hAIZq6A8RcuOOzWNdgsc_job%20summary%20cleaner.png",
       url: "/job-summary-course",
+      rating: null,
+    },
+    {
+      title: "AI Call Recording Analysis",
+      description: "Stop listening to every call manually. Automatically pull, transcribe, and analyze call recordings using AI and Make.com, then push insights straight into ServiceTitan job records or customer notes.",
+      price: "$249/mo",
+      level: "Advanced",
+      image: aiCallSummaryImage,
+      url: "https://go.st-hacks.cc/ai-call-summary",
       rating: null,
     },
   ];

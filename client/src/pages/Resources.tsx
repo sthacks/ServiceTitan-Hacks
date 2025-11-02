@@ -26,7 +26,6 @@ import zapierIntegrationImage from "@assets/generated_images/ServiceTitan_Zapier
 import swimlaneChartImage from "@assets/generated_images/Business_process_swimlane_workflow_e4e79b67.png";
 import metricsGuideImage from "@assets/generated_images/Business_metrics_KPI_dashboard_b247c6c8.png";
 import freeResourcesHero from "@assets/switchy images (21)_1761919068554.png";
-import aiCallSummaryImage from "@assets/generated_images/AI_call_recording_analysis_3ca819bb.png";
 
 export default function Resources() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
@@ -50,14 +49,6 @@ export default function Resources() {
       type: "Course",
       image: zapierIntegrationImage,
       url: "https://go.st-hacks.cc/st-zapier",
-      isExternalCourse: true,
-    },
-    {
-      title: "AI Call Recording Analysis",
-      description: "Stop listening to every call manually. Automatically pull, transcribe, and analyze call recordings using AI and Make.com, then push insights straight into ServiceTitan job records or customer notes.",
-      type: "Course",
-      image: aiCallSummaryImage,
-      url: "https://go.st-hacks.cc/ai-call-summary",
       isExternalCourse: true,
     },
     {
