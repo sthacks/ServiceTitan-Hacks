@@ -14,7 +14,7 @@ export default function Courses() {
       price: "$97",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/XLiLdFatSAOA2Bky38ef_DIY%20Branded%20Company%20App%20(760%20x%20420%20px).png",
-      url: "https://servicetitanhacks.thinkific.com/products/courses/company-app-jotform",
+      url: "/company-app-course",
       rating: null,
     },
     {
