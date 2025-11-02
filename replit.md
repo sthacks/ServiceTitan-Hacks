@@ -50,6 +50,7 @@ Preferred communication style: Simple, everyday language.
 - `/dashboard-course` - DIY Dashboard Course (protected, requires $97 payment)
 - `/dashboard-course/checkout` - Stripe checkout page for Dashboard Course
 - `/fix-ugly-forms-course` - Fix Ugly Forms course (free, public access)
+- `/company-app-course` - Company App with Jotform course landing page ($97, external enrollment)
 - `/all-access` - Subscription membership page
 - `/podcast` - Podcast episode library
 - `/resources` - Downloadable resources and templates

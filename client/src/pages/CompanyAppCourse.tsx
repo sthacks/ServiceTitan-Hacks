@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles } from "lucide-react";
 import heroImage from "@assets/Screenshot 2025-11-02 at 12.58.32 PM_1762106368018.png";
-import instructorImage from "@assets/Headshot Circle_1760804585020.png";
 
 export default function CompanyAppCourse() {
   const features = [
@@ -149,7 +148,7 @@ export default function CompanyAppCourse() {
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-shrink-0">
                 <img
-                  src={instructorImage}
+                  src="https://s3.amazonaws.com/thinkific-import/1072722/TZI7fi85RWmx6RdKN13O_Headshot%20Circle.png"
                   alt="Bill Brown - ServiceTitan Hacks founder and course instructor"
                   className="w-64 h-64 rounded-full object-cover shadow-xl"
                   loading="lazy"
