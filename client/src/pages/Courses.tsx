@@ -51,7 +51,7 @@ export default function Courses() {
       price: "$49",
       level: "Advanced",
       image: "https://import.cdn.thinkific.com/1072722/vp96w1ygTK6JTLA7t5w7_9%402iMiZSD1I.png",
-      url: "https://servicetitanhacks.thinkific.com/products/courses/ai-automated-servicetitan-forms",
+      url: "/fix-ugly-forms-course-landing",
       rating: null,
     },
     {
@@ -60,7 +60,7 @@ export default function Courses() {
       price: "$39",
       level: "Advanced",
       image: "https://import.cdn.thinkific.com/1072722/hAIZq6A8RcuOOzWNdgsc_job%20summary%20cleaner.png",
-      url: "https://go.st-hacks.cc/ai-job-summary",
+      url: "/job-summary-course",
       rating: null,
     },
   ];

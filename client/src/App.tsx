@@ -23,6 +23,8 @@ import DashboardCourseLanding from "@/pages/DashboardCourseLanding";
 import DashboardCourseContent from "@/pages/DashboardCourseContent";
 import DashboardCourseCheckout from "@/pages/DashboardCourseCheckout";
 import FixUglyFormsCourse from "@/pages/FixUglyFormsCourse";
+import FixUglyFormsCourseDetails from "@/pages/FixUglyFormsCourseDetails";
+import JobSummaryCourse from "@/pages/JobSummaryCourse";
 import CompanyAppCourse from "@/pages/CompanyAppCourse";
 import MakeIntegrationCourse from "@/pages/MakeIntegrationCourse";
 import ZapierIntegrationCourse from "@/pages/ZapierIntegrationCourse";
@@ -53,6 +55,8 @@ function Router() {
       <Route path="/dashboard-course/content" component={DashboardCourseContent} />
       <Route path="/dashboard-course/checkout" component={DashboardCourseCheckout} />
       <Route path="/fix-ugly-forms-course" component={FixUglyFormsCourse} />
+      <Route path="/fix-ugly-forms-course-landing" component={FixUglyFormsCourseDetails} />
+      <Route path="/job-summary-course" component={JobSummaryCourse} />
       <Route path="/company-app-course" component={CompanyAppCourse} />
       <Route path="/make-integration-course" component={MakeIntegrationCourse} />
       <Route path="/zapier-integration-course" component={ZapierIntegrationCourse} />

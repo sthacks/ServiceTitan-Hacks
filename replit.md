@@ -60,11 +60,13 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Set up VITE_GA_MEASUREMENT_ID environment variable for analytics configuration
 
 ### Course Landing Pages (November 2025)
-- Created internal landing page for Company App Course at `/company-app-course` with complete feature showcase, instructor bio, and dual CTAs
-- Created internal landing page for DIY Dashboard Course at `/dashboard-course-landing` with matching design and structure
-- Created internal landing page for ServiceTitan to Make Integration Course at `/make-integration-course` with same consistent format
+- Created internal landing page for Company App Course at `/company-app-course` with complete feature showcase, instructor bio, and dual CTAs (3 chapters, 13 lessons, $97)
+- Created internal landing page for DIY Dashboard Course at `/dashboard-course-landing` with matching design and structure (2 chapters, 15 lessons, $97)
+- Created internal landing page for ServiceTitan to Make Integration Course at `/make-integration-course` with same consistent format (4 chapters, 10 lessons, $69)
 - Created internal landing page for ServiceTitan to Zapier Integration Course at `/zapier-integration-course` (FREE course, 1 chapter, 3 lessons)
-- Updated Courses.tsx to link all four course cards to internal landing pages instead of direct external enrollment URLs
+- Created internal landing page for Fix Ugly Forms Course at `/fix-ugly-forms-course-landing` (6 chapters, 19 lessons, $49)
+- Created internal landing page for Automate Job Summaries Course at `/job-summary-course` (1 chapter, 7 lessons, $39)
+- Updated Courses.tsx to link all six course cards to internal landing pages instead of direct external enrollment URLs
 - Established consistent design pattern: black backgrounds for feature/instructor sections, red background for "About" section
 - Feature cards use black backgrounds (`bg-black`), no borders (`border-0`), and centered text (`text-center`) for clean, modern appearance
 - Navigation flow: Courses page → Internal landing page → External Thinkific enrollment
