@@ -42,7 +42,7 @@ Preferred communication style: Simple, everyday language.
 - Component examples for development reference in `/client/src/components/examples`
 
 **Routing Structure:**
-- `/` - Home page with hero, pillars, testimonials, email capture
+- `/` - Home page with hero, pillars, testimonials, email capture (fully SEO optimized)
 - `/partners` - Sponsor/partner showcase
 - `/tools` - AI tools and product catalog
 - `/pricebook-optimizer` - AI-powered pricebook description optimizer with live ChatGPT integration
@@ -55,6 +55,20 @@ Preferred communication style: Simple, everyday language.
 - `/resources` - Downloadable resources and templates
 - `/about` - Company mission and founder bio
 - `/contact` - Contact form
+
+**SEO Optimization:**
+- Meta descriptions with keywords and CTAs (under 160 chars)
+- Open Graph and Twitter Card tags for social sharing
+- Canonical tags on all pages
+- Structured data (Organization, NewsletterService schemas)
+- Descriptive alt text for all images with keyword context
+- Semantic HTML with proper H1/H2/H3 hierarchy
+- Internal linking strategy across key pages
+- Secondary keywords integrated: AI tools for contractors, ServiceTitan automation, HVAC AI, plumbing automation
+- Nofollow on outbound sponsor/partner links
+- XML sitemap at /sitemap.xml with priority weighting
+- Robots.txt with crawler directives
+- Favicon and apple-touch-icon support
 
 ### Backend Architecture
 
@@ -284,6 +298,12 @@ course_purchases:
   - GPT-4o model for pricebook description optimization
   - No API key management needed (billed to Replit credits)
   - Custom prompts emphasize value and quality
+- **Google Analytics 4** - Web analytics and conversion tracking
+  - Automatic page view tracking for SPA navigation
+  - Custom event tracking capability via trackEvent()
+  - Configured via VITE_GA_MEASUREMENT_ID environment variable
+  - Integration files: lib/analytics.ts, hooks/use-analytics.tsx
+  - Gracefully degrades if GA key not provided
 - **Facebook Groups** - Primary CTA links to Facebook community
 - **YouTube** - Video content embedding (planned)
 - **Podcast platforms** - Episode distribution (planned)
