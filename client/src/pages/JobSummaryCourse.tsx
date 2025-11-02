@@ -1,10 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function JobSummaryCourse() {
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Job Summary Automation Course",
+    "description": "Automate job summaries with AI for HVAC, plumbing, and electrical companies. Professional bullet-point lists. 7 lessons, 1 chapter.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "39",
+      "priceCurrency": "USD"
+    }
+  };
   const features = [
     {
       title: "Understand the Cost of Confusing Job Summaries",
@@ -47,6 +63,13 @@ export default function JobSummaryCourse() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Job Summary Automation Course | AI-Powered ServiceTitan Summaries"
+        description="Automate job summaries with AI for HVAC, plumbing, and electrical companies. Professional bullet-point lists. 7 lessons, 1 chapter. $39 course."
+        keywords="job summary automation, AI job notes, ServiceTitan automation, ChatGPT integration, automated summaries"
+        canonicalUrl="https://servicetitanhacks.com/job-summary-course"
+        schemaData={courseSchema}
+      />
       <Header />
       <main className="flex-1">
         <section className="py-16 lg:py-24 bg-background">

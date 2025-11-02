@@ -1,10 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles } from "lucide-react";
 
 export default function CompanyAppCourse() {
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Company App Course",
+    "description": "Build a professional company app for your HVAC, plumbing, or electrical business using Jotform. 13 lessons, 3 chapters.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "97",
+      "priceCurrency": "USD"
+    }
+  };
   const features = [
     {
       title: "Branded to Your Company",
@@ -40,6 +56,13 @@ export default function CompanyAppCourse() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Company App Course | Build Custom Apps for Home Service Teams"
+        description="Build a professional company app for your HVAC, plumbing, or electrical business using Jotform. 13 lessons, 3 chapters. $97 course."
+        keywords="company app course, Jotform training, employee app, ServiceTitan app, mobile forms"
+        canonicalUrl="https://servicetitanhacks.com/company-app-course"
+        schemaData={courseSchema}
+      />
       <Header />
       <main className="flex-1">
         <section className="py-16 lg:py-24 bg-background">

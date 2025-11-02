@@ -1,10 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function FixUglyFormsCourseDetails() {
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Fix Ugly Forms Course",
+    "description": "Transform messy form submissions into polished job notes using ChatGPT and Zapier. 19 lessons, 6 chapters.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "49",
+      "priceCurrency": "USD"
+    }
+  };
   const features = [
     {
       title: "Turn Messy Forms into Clear Job Notes",
@@ -47,6 +63,13 @@ export default function FixUglyFormsCourseDetails() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Fix Ugly Forms Course | AI-Powered Job Notes Cleanup"
+        description="Transform messy form submissions into polished job notes using ChatGPT and Zapier. 19 lessons, 6 chapters. $49 course."
+        keywords="AI forms course, ChatGPT automation, job notes cleanup, form automation, ServiceTitan forms"
+        canonicalUrl="https://servicetitanhacks.com/fix-ugly-forms-course-landing"
+        schemaData={courseSchema}
+      />
       <Header />
       <main className="flex-1">
         <section className="py-16 lg:py-24 bg-background">

@@ -1,10 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function MakeIntegrationCourse() {
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Make.com Integration Course",
+    "description": "Master ServiceTitan integration with Make.com. Build cost-effective automations and workflows. 10 lessons, 4 chapters.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "69",
+      "priceCurrency": "USD"
+    }
+  };
   const features = [
     {
       title: "Connect Make.com & ServiceTitan",
@@ -47,6 +63,13 @@ export default function MakeIntegrationCourse() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Make.com Integration Course | Connect ServiceTitan with 1000+ Apps"
+        description="Master ServiceTitan integration with Make.com. Build cost-effective automations and workflows. 10 lessons, 4 chapters. $69 course."
+        keywords="Make.com course, ServiceTitan integration, automation training, workflow automation, API integration"
+        canonicalUrl="https://servicetitanhacks.com/make-integration-course"
+        schemaData={courseSchema}
+      />
       <Header />
       <main className="flex-1">
         <section className="py-16 lg:py-24 bg-background">

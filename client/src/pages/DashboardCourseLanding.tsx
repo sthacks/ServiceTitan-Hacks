@@ -1,10 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles, CheckCircle } from "lucide-react";
 
 export default function DashboardCourseLanding() {
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "DIY TV Dashboard Course",
+    "description": "Build an automated TV dashboard with live ServiceTitan data. 15 lessons, 2 chapters. Perfect for HVAC, plumbing, electrical shops.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "97",
+      "priceCurrency": "USD"
+    }
+  };
   const features = [
     {
       title: "Send Data to Google Sheets",
@@ -32,6 +48,13 @@ export default function DashboardCourseLanding() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="DIY TV Dashboard Course | Automated ServiceTitan Data Display"
+        description="Build an automated TV dashboard with live ServiceTitan data. 15 lessons, 2 chapters. Perfect for HVAC, plumbing, electrical shops. $97 course."
+        keywords="TV dashboard course, ServiceTitan dashboard, automated reporting, data visualization, KPI dashboard"
+        canonicalUrl="https://servicetitanhacks.com/dashboard-course-landing"
+        schemaData={courseSchema}
+      />
       <Header />
       <main className="flex-1">
         <section className="relative py-20 bg-gradient-to-br from-background via-background to-muted overflow-hidden">

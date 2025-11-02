@@ -1,10 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function ZapierIntegrationCourse() {
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Free Zapier Course",
+    "description": "Free course: Connect ServiceTitan to Zapier and automate workflows. 3 lessons, 1 chapter. Perfect for beginners.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
   const features = [
     {
       title: "Course Overview",
@@ -32,6 +48,13 @@ export default function ZapierIntegrationCourse() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Free Zapier Course | Connect ServiceTitan with Zapier Integration"
+        description="Free course: Connect ServiceTitan to Zapier and automate workflows. 3 lessons, 1 chapter. Perfect for beginners."
+        keywords="Zapier course, ServiceTitan Zapier, free automation course, workflow integration, beginner automation"
+        canonicalUrl="https://servicetitanhacks.com/zapier-integration-course"
+        schemaData={courseSchema}
+      />
       <Header />
       <main className="flex-1">
         <section className="py-16 lg:py-24 bg-background">
