@@ -1,312 +1,50 @@
 # ServiceTitan Hacks - Replit Configuration
 
 ## Overview
-
-ServiceTitan Hacks is a mobile-first marketing website for home service contractors focused on AI integrations, automations, and ServiceTitan customizations. The platform provides educational resources, courses, tools, and community access through a modern, conversion-optimized web experience.
-
-**Core Purpose:** Help contractors leverage AI and automation to grow their businesses by providing vetted tools, educational content, and a supportive community.
-
-**Target Audience:** Home service contractors (HVAC, plumbing, electrical) using ServiceTitan who want to automate workflows and integrate AI solutions.
+ServiceTitan Hacks is a mobile-first marketing website for home service contractors, focusing on AI integrations, automations, and ServiceTitan customizations. The platform aims to help contractors leverage AI and automation to grow their businesses by providing vetted tools, educational content, and a supportive community. Key capabilities include AI-powered tools like a pricebook optimizer, educational courses, and a resource library, all delivered through a modern, conversion-optimized web experience.
 
 ## User Preferences
-
 Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
 ### Frontend Architecture
-
-**Framework & Build System:**
-- React 18+ with TypeScript for type safety and modern component development
-- Vite as the build tool for fast development and optimized production builds
-- Single Page Application (SPA) with client-side routing using Wouter (lightweight routing library)
-- Server-side rendering is NOT used - pure client-side rendering approach
-
-**Design System:**
-- Shadcn/ui component library built on Radix UI primitives for accessible, composable components
-- Tailwind CSS for utility-first styling with custom design tokens
-- CSS variables-based theming system supporting light/dark modes
-- Custom color palette: Primary Red (#ED254E), Deep Red (#C1124F), Dark Gray (#1F1F1F)
-- Typography: "Oxygen" for headings, "Inter" for body text via Google Fonts
-- Mobile-first responsive design with WCAG 2.1 AA accessibility compliance
-
-**State Management:**
-- TanStack Query (React Query) for server state management and data fetching
-- Local component state using React hooks for UI-specific state
-- Custom query client configuration with disabled refetching and infinite stale time
-
-**Component Architecture:**
-- Atomic design pattern with reusable components in `/client/src/components`
-- Page-level components in `/client/src/pages`
-- Shared UI components from Shadcn in `/client/src/components/ui`
-- Component examples for development reference in `/client/src/components/examples`
-
-**Routing Structure:**
-- `/` - Home page with hero, pillars, testimonials, email capture (fully SEO optimized)
-- `/partners` - Sponsor/partner showcase
-- `/tools` - AI tools and product catalog
-- `/pricebook-optimizer` - AI-powered pricebook description optimizer with live ChatGPT integration
-- `/courses` - Educational course offerings
-- `/dashboard-course` - DIY Dashboard Course (protected, requires $97 payment)
-- `/dashboard-course-landing` - DIY Dashboard Course landing page ($97, external enrollment to Thinkific)
-- `/dashboard-course/checkout` - Stripe checkout page for Dashboard Course
-- `/fix-ugly-forms-course` - Fix Ugly Forms course (free, public access)
-- `/company-app-course` - Company App with Jotform course landing page ($97, external enrollment)
-- `/all-access` - Subscription membership page
-- `/podcast` - Podcast episode library
-- `/resources` - Downloadable resources and templates
-- `/about` - Company mission and founder bio
-- `/contact` - Contact form
-
-**SEO Optimization:**
-- Meta descriptions with keywords and CTAs (under 160 chars)
-- Open Graph and Twitter Card tags for social sharing
-- Canonical tags on all pages
-- Structured data (Organization, NewsletterService schemas)
-- Descriptive alt text for all images with keyword context
-- Semantic HTML with proper H1/H2/H3 hierarchy
-- Internal linking strategy across key pages
-- Secondary keywords integrated: AI tools for contractors, ServiceTitan automation, HVAC AI, plumbing automation
-- Nofollow on outbound sponsor/partner links
-- XML sitemap at /sitemap.xml with priority weighting
-- Robots.txt with crawler directives
-- Favicon and apple-touch-icon support
+The frontend is a React 18+ TypeScript Single Page Application (SPA) utilizing Vite for builds and Wouter for client-side routing. It features a mobile-first, accessible design system built with Shadcn/ui (Radix UI primitives) and Tailwind CSS, supporting light/dark modes with a custom color palette (Primary Red, Deep Red, Dark Gray) and specific typography (Oxygen, Inter). State management is handled by TanStack Query for server state and React hooks for local component state. The component architecture follows an Atomic design pattern. SEO is optimized with meta tags, structured data, semantic HTML, and an internal linking strategy.
 
 ### Backend Architecture
+The backend is an Express.js server on Node.js with TypeScript. It provides a RESTful API with JSON request/response formats, including public endpoints for subscriptions, contact forms, AI pricebook optimization, and resource lead capture. Authentication is managed via Replit Auth (OpenID Connect) with Passport.js and a PostgreSQL session store. Payment processing uses Stripe, with protected endpoints for creating payment intents and handling webhooks. Data validation is implemented using Zod schemas.
 
-**Server Framework:**
-- Express.js as the HTTP server framework
-- Node.js runtime with ES Modules (type: "module")
-- TypeScript for type-safe server code
-- Development mode uses `tsx` for TypeScript execution
-- Production mode uses esbuild-bundled server code
-
-**API Design:**
-- RESTful API endpoints under `/api` prefix
-- JSON request/response format
-- Error handling middleware for consistent error responses
-- Request logging middleware for development debugging
-
-**API Endpoints:**
-
-*Public Endpoints:*
-- `POST /api/subscribe` - Email newsletter subscription
-- `POST /api/contact` - Contact form submission with email notification to bill@st-hacks.com
-- `POST /api/pricebook-optimization` - AI-powered pricebook description optimization using ChatGPT
-- `POST /api/resource-leads` - Resource download lead capture with email notification to bill@st-hacks.com (subject: resource name, body: user name and email)
-
-*Authentication Endpoints:*
-- `GET /api/login` - Initiates Replit Auth login flow (redirects to Replit OAuth)
-- `GET /api/callback` - OAuth callback handler for Replit Auth
-- `GET /api/logout` - Logs out user and clears session
-- `GET /api/auth/user` - Returns authenticated user profile (protected)
-
-*Payment Endpoints:*
-- `POST /api/create-payment-intent` - Creates Stripe payment intent for course purchase (protected, $97)
-- `POST /api/stripe-webhook` - Webhook for Stripe payment confirmation
-- `GET /api/course-access/:courseId` - Checks if user has purchased a course (protected)
-- `GET /api/my-courses` - Returns user's purchased courses (protected)
-
-*Validation & Security:*
-- Form validation using Zod schemas with friendly error messages
-- Duplicate email checking for subscriptions
-- Protected routes require Replit Auth authentication
-- Payment intents prevent duplicate purchases
-
-*SEO & Discovery:*
-- `GET /sitemap.xml` - XML sitemap with all public pages and blog posts
-- `GET /robots.txt` - Robots.txt file with sitemap reference and crawler directives
-- Sitemap includes 14 static pages + 9 blog posts with proper priority and change frequency
-- Robots.txt allows all crawlers, blocks /api/ and /admin/ routes
-- Sitemap link included in website footer
-
-**AI Integration:**
-- **Pricebook Optimizer**: Live ChatGPT integration for transforming technical service descriptions into homeowner-friendly language
-- Uses Replit AI Integrations (no API key management required, billed to Replit credits)
-- Model: GPT-4o with temperature 0.7, max 500 tokens
-- Custom prompt system that emphasizes quality, reliability, and value without describing work as "simple" or "easy"
-- HTML-formatted output with <b> tags for headings, <ul>/<li> for lists, <br> for spacing
-- Results displayed inline on the website with before/after comparison
-- Copy-to-clipboard functionality strips HTML for clean ServiceTitan pasting
-
-**Data Storage Strategy:**
-- In-memory storage implementation (MemStorage class) for development
-- Storage abstraction layer (IStorage interface) allows easy swapping to database implementation
-- Database schema defined using Drizzle ORM with PostgreSQL dialect
-- Main data entities: users, email_subscribers, contact_submissions, resource_leads, pricebook_optimizations, course_purchases
-
-**Authentication & Session Management:**
-- **Replit Auth** integration using OpenID Connect (OIDC)
-- Passport.js for authentication middleware
-- PostgreSQL session store using connect-pg-simple
-- Session TTL: 7 days
-- Automatic token refresh for expired access tokens
-- User profiles stored with: id (from Replit sub), email, firstName, lastName, profileImageUrl
-- Protected routes use `isAuthenticated` middleware
+### AI Integration
+The platform integrates live ChatGPT (GPT-4o model) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage Solutions
-
-**Database Configuration:**
-- Drizzle ORM as the database toolkit and query builder
-- PostgreSQL as the target database (via @neondatabase/serverless)
-- Schema-first approach with TypeScript types generated from schema
-- Migration system configured with Drizzle Kit
-
-**Schema Design:**
-```
-users:
-  - id (text primary key, from Replit Auth sub)
-  - email (unique text)
-  - firstName (text, nullable)
-  - lastName (text, nullable)
-  - profileImageUrl (text, nullable)
-  - createdAt, updatedAt (timestamps)
-
-sessions:
-  - sid (text primary key)
-  - sess (json)
-  - expire (timestamp)
-  - Used by connect-pg-simple for session storage
-
-email_subscribers:
-  - id (UUID primary key)
-  - email (unique text)
-  - subscribedAt (timestamp)
-
-contact_submissions:
-  - id (UUID primary key)
-  - name, email, company, role, message (text)
-  - consent (text)
-  - submittedAt (timestamp)
-
-resource_leads:
-  - id (UUID primary key)
-  - firstName, email, resourceName (text)
-  - submittedAt (timestamp)
-
-pricebook_optimizations:
-  - id (UUID primary key)
-  - category, otherCategory, currentDescription (text)
-  - firstName, lastName, email (text)
-  - submittedAt (timestamp)
-
-course_purchases:
-  - id (UUID primary key)
-  - userId (text, references users)
-  - courseId (text, e.g., "dashboard-course")
-  - amount (integer, in cents)
-  - stripePaymentIntentId (text)
-  - purchasedAt (timestamp)
-```
-
-**Data Validation:**
-- Zod schemas for runtime validation
-- Drizzle-zod integration for generating schemas from database tables
-- Custom validation rules (email format, required fields)
-- Type-safe insert/select operations
-
-### Development Workflow
-
-**Build & Development:**
-- `npm run dev` - Development server with hot module reload
-- `npm run build` - Production build (client + server bundling)
-- `npm run start` - Production server
-- `npm run check` - TypeScript type checking
-- `npm run db:push` - Push schema changes to database
-
-**Module Resolution:**
-- Path aliases configured: `@/` for client, `@shared/` for shared code, `@assets/` for assets
-- Shared schema between client and server via `/shared` directory
-- Bundler module resolution for modern import patterns
-
-**Development Environment:**
-- Replit-specific plugins for error overlay, cartographer, dev banner
-- Vite dev server with middleware mode for API integration
-- HMR (Hot Module Replacement) over WebSocket connection
-- Source maps enabled for debugging
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database management. The schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, and course purchases, with Zod schemas for validation and Drizzle Kit for migrations.
 
 ## External Dependencies
 
-### Third-Party UI Libraries
-- **Radix UI Primitives** - Comprehensive suite of unstyled, accessible component primitives (accordion, dialog, dropdown, select, toast, tooltip, etc.)
-- **Shadcn/ui** - Pre-built component library built on Radix UI with Tailwind styling
-- **Lucide React** - Icon library for consistent iconography
-- **React Icons** - Additional icons (specifically SiYoutube, SiFacebook, SiLinkedin for social media)
+### UI & Styling
+- **Radix UI Primitives**: Accessible component primitives.
+- **Shadcn/ui**: Pre-built components based on Radix UI and Tailwind CSS.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Lucide React & React Icons**: Icon libraries.
 
-### Form Management
-- **React Hook Form** - Form state management and validation
-- **@hookform/resolvers** - Validation resolver for Zod integration
-- **Zod** - Schema validation for forms and API data
-- **zod-validation-error** - User-friendly error message formatting
+### Forms & Data
+- **React Hook Form**: Form state management and validation.
+- **Zod**: Schema validation.
+- **TanStack Query**: Server state management and data fetching.
 
-### Data Fetching & State
-- **TanStack Query** (React Query) - Server state management, caching, and data fetching
-- Custom fetch wrapper with credential support and error handling
+### Database
+- **Drizzle ORM**: Type-safe ORM for PostgreSQL.
+- **@neondatabase/serverless**: Serverless PostgreSQL driver.
 
-### Database & ORM
-- **Drizzle ORM** - Type-safe ORM for PostgreSQL
-- **@neondatabase/serverless** - Serverless PostgreSQL driver
-- **Drizzle Kit** - Schema migrations and management tools
-- **Drizzle Zod** - Generate Zod schemas from Drizzle tables
-
-### Styling & UI Utilities
-- **Tailwind CSS** - Utility-first CSS framework
-- **class-variance-authority** - CSS class variance management for component variants
-- **clsx** & **tailwind-merge** - Conditional class name utilities
-- **PostCSS** & **Autoprefixer** - CSS processing
-
-### Date & Time
-- **date-fns** - Modern date utility library
-
-### Additional UI Components
-- **cmdk** - Command palette component
-- **embla-carousel-react** - Carousel/slider component
-- **vaul** - Drawer component library
-
-### Development Tools
-- **Vite** - Fast build tool and dev server
-- **@vitejs/plugin-react** - React support for Vite
-- **esbuild** - Fast JavaScript bundler for production server
-- **tsx** - TypeScript execution for development
-- **TypeScript** - Type safety and developer experience
-
-### Fonts & Assets
-- **Google Fonts** - Oxygen (headings) and Inter (body) font families
-- Preconnect optimization for font loading performance
-- Font display swap for faster perceived loading
-
-### Authentication & Payment
-- **Replit Auth** - OAuth-based authentication using OpenID Connect
-  - Supports Google, GitHub, and email/password login
-  - Uses Passport.js strategy for integration
-  - Auto-creates user profiles on first login
-  - Token refresh mechanism for long-lived sessions
-- **Stripe** - Payment processing for course purchases
-  - Payment Intents API for secure card processing
-  - Stripe Elements for PCI-compliant checkout form
-  - Webhook integration for payment confirmations
-  - Environment variables: STRIPE_SECRET_KEY, VITE_STRIPE_PUBLIC_KEY
-  - Dashboard Course: $97 one-time payment (Product ID: prod_S3xE9uvAR1cqPN)
-- **express-session** - Session middleware with PostgreSQL backing
-- **connect-pg-simple** - PostgreSQL session store for persistence
+### Authentication & Payments
+- **Replit Auth**: OAuth-based authentication (Google, GitHub, email/password).
+- **Stripe**: Payment processing for course purchases (Payment Intents API, Elements, webhooks).
+- **express-session & connect-pg-simple**: Session management with PostgreSQL store.
 
 ### External Services Integration
-- **Resend** - Transactional email service for sending notifications to bill@st-hacks.com
-  - Contact form submissions sent via email
-  - Resource download leads sent via email (subject: resource name, body: user details)
-  - Pricebook optimization requests sent via email with AI results
-  - Uses Replit Connectors for secure API key management
-- **OpenAI** - AI-powered content transformation via Replit AI Integrations
-  - GPT-4o model for pricebook description optimization
-  - No API key management needed (billed to Replit credits)
-  - Custom prompts emphasize value and quality
-- **Google Analytics 4** - Web analytics and conversion tracking
-  - Automatic page view tracking for SPA navigation
-  - Custom event tracking capability via trackEvent()
-  - Configured via VITE_GA_MEASUREMENT_ID environment variable
-  - Integration files: lib/analytics.ts, hooks/use-analytics.tsx
-  - Gracefully degrades if GA key not provided
-- **Facebook Groups** - Primary CTA links to Facebook community
-- **YouTube** - Video content embedding (planned)
-- **Podcast platforms** - Episode distribution (planned)
-- Design prepared for sponsor logo integrations
+- **Resend**: Transactional email service for notifications.
+- **OpenAI**: AI-powered content transformation via Replit AI Integrations (GPT-4o).
+- **Google Analytics 4**: Web analytics and conversion tracking.
+- **Google Fonts**: "Oxygen" and "Inter" font families.
+- **Facebook Groups, YouTube, Podcast platforms**: Community and content distribution channels.
