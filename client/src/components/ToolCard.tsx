@@ -20,6 +20,8 @@ export default function ToolCard({ name, description, benefits, tag, link, image
             src={image} 
             alt={name} 
             className="w-full h-auto object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       )}
