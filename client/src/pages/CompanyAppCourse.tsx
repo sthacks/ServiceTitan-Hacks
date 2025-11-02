@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, BookOpen, Sparkles } from "lucide-react";
-import heroImage from "@assets/Screenshot 2025-11-02 at 12.58.32 PM_1762106368018.png";
 
 export default function CompanyAppCourse() {
   const features = [
@@ -82,7 +81,7 @@ export default function CompanyAppCourse() {
               </div>
               <div className="relative">
                 <img
-                  src={heroImage}
+                  src="https://s3.amazonaws.com/thinkific-import/1072722/qk3ErSEBRUupFg9QD2ex_DIY%20Branded%20Company%20App%20(9).png"
                   alt="DIY branded company app on mobile phone - ServiceTitan Hacks Jotform course"
                   className="w-full h-auto rounded-lg shadow-2xl"
                   loading="eager"
