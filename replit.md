@@ -97,6 +97,13 @@ Preferred communication style: Simple, everyday language.
 - Protected routes require Replit Auth authentication
 - Payment intents prevent duplicate purchases
 
+*SEO & Discovery:*
+- `GET /sitemap.xml` - XML sitemap with all public pages and blog posts
+- `GET /robots.txt` - Robots.txt file with sitemap reference and crawler directives
+- Sitemap includes 14 static pages + 9 blog posts with proper priority and change frequency
+- Robots.txt allows all crawlers, blocks /api/ and /admin/ routes
+- Sitemap link included in website footer
+
 **AI Integration:**
 - **Pricebook Optimizer**: Live ChatGPT integration for transforming technical service descriptions into homeowner-friendly language
 - Uses Replit AI Integrations (no API key management required, billed to Replit credits)
