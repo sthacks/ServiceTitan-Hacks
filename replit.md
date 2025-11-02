@@ -48,6 +48,7 @@ Preferred communication style: Simple, everyday language.
 - `/pricebook-optimizer` - AI-powered pricebook description optimizer with live ChatGPT integration
 - `/courses` - Educational course offerings
 - `/dashboard-course` - DIY Dashboard Course (protected, requires $97 payment)
+- `/dashboard-course-landing` - DIY Dashboard Course landing page ($97, external enrollment to Thinkific)
 - `/dashboard-course/checkout` - Stripe checkout page for Dashboard Course
 - `/fix-ugly-forms-course` - Fix Ugly Forms course (free, public access)
 - `/company-app-course` - Company App with Jotform course landing page ($97, external enrollment)
