@@ -104,7 +104,7 @@ export default function CompanyAppCourse() {
                       loading="lazy"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 text-center">
                     <h3 className="text-xl font-semibold font-heading mb-3 text-white">{feature.title}</h3>
                     <p className="text-zinc-300">{feature.description}</p>
                   </CardContent>
@@ -123,7 +123,7 @@ export default function CompanyAppCourse() {
                       loading="lazy"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 text-center">
                     <h3 className="text-xl font-semibold font-heading mb-3 text-white">{feature.title}</h3>
                     <p className="text-zinc-300">{feature.description}</p>
                   </CardContent>
