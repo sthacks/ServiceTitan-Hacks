@@ -197,7 +197,6 @@ export default function Resources() {
         <Hero
         title="Free ServiceTitan Resources: Tools, Templates & Guides for Contractors"
         subtitle="Access a curated collection of free resources tailored for ServiceTitan users, including downloadable templates, automation guides, and practical tools. Whether you're aiming to enhance efficiency, streamline operations, or deepen your understanding of ServiceTitan, these resources are designed to support contractors at every level."
-        backgroundImage={freeResourcesHero}
         dark={true}
       />
 
