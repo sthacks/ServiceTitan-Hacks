@@ -42,7 +42,7 @@ export default function Courses() {
       price: "Free",
       level: "Beginner",
       image: "https://import.cdn.thinkific.com/1072722/OdZwdguBTtyLCkKTWeFf_connect%20to%20zapier.png",
-      url: "https://servicetitanhacks.thinkific.com/products/courses/servicetitan-to-zapier",
+      url: "/zapier-integration-course",
       rating: null,
     },
     {

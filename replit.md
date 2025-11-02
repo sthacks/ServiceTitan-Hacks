@@ -63,7 +63,8 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Created internal landing page for Company App Course at `/company-app-course` with complete feature showcase, instructor bio, and dual CTAs
 - Created internal landing page for DIY Dashboard Course at `/dashboard-course-landing` with matching design and structure
 - Created internal landing page for ServiceTitan to Make Integration Course at `/make-integration-course` with same consistent format
-- Updated Courses.tsx to link all three course cards to internal landing pages instead of direct external enrollment URLs
+- Created internal landing page for ServiceTitan to Zapier Integration Course at `/zapier-integration-course` (FREE course, 1 chapter, 3 lessons)
+- Updated Courses.tsx to link all four course cards to internal landing pages instead of direct external enrollment URLs
 - Established consistent design pattern: black backgrounds for feature/instructor sections, red background for "About" section
 - Feature cards use black backgrounds (`bg-black`), no borders (`border-0`), and centered text (`text-center`) for clean, modern appearance
 - Navigation flow: Courses page → Internal landing page → External Thinkific enrollment
