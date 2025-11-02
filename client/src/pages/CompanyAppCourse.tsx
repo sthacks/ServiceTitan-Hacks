@@ -95,7 +95,7 @@ export default function CompanyAppCourse() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {features.slice(0, 3).map((feature, index) => (
-                <Card key={index} className="bg-zinc-900 border-zinc-800 overflow-hidden">
+                <Card key={index} className="bg-black border-0 overflow-hidden">
                   <div className="aspect-[4/3] bg-black flex items-center justify-center">
                     <img
                       src={feature.image}
@@ -114,7 +114,7 @@ export default function CompanyAppCourse() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {features.slice(3, 6).map((feature, index) => (
-                <Card key={index + 3} className="bg-zinc-900 border-zinc-800 overflow-hidden">
+                <Card key={index + 3} className="bg-black border-0 overflow-hidden">
                   <div className="aspect-[4/3] bg-black flex items-center justify-center">
                     <img
                       src={feature.image}

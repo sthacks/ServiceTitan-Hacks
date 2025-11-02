@@ -84,7 +84,7 @@ export default function DashboardCourseLanding() {
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {features.map((feature, index) => (
-                <Card key={index} className="bg-zinc-900 border-zinc-800 overflow-hidden">
+                <Card key={index} className="bg-black border-0 overflow-hidden">
                   <div className="aspect-[4/3] bg-black flex items-center justify-center">
                     <img
                       src={feature.image}
