@@ -33,7 +33,7 @@ export default function Courses() {
       price: "$69",
       level: "Intermediate",
       image: "https://import.cdn.thinkific.com/1072722/elvItVdyT3yGOrkpX7AH_connect%20to%20make.com.png",
-      url: "https://go.st-hacks.cc/servicetitan-make",
+      url: "/make-integration-course",
       rating: null,
     },
     {

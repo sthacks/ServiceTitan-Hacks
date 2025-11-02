@@ -1,7 +1,7 @@
 # ServiceTitan Hacks - Replit Configuration
 
 ## Overview
-ServiceTitan Hacks is a mobile-first marketing website for home service contractors, focusing on AI integrations, automations, and ServiceTitan customizations. The platform aims to help contractors leverage AI and automation to grow their businesses by providing vetted tools, educational content, and a supportive community. Key capabilities include AI-powered tools like a pricebook optimizer, educational courses, and a resource library, all delivered through a modern, conversion-optimized web experience.
+ServiceTitan Hacks is a mobile-first marketing website for home service contractors, focusing on AI integrations, automations, and ServiceTitan customizations. The platform aims to help contractors leverage AI and automation to grow their businesses by providing vetted tools, educational content, and a supportive community. Key capabilities include AI-powered tools like a pricebook optimizer, educational courses with internal landing pages, and a resource library, all delivered through a modern, conversion-optimized web experience.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
@@ -48,3 +48,22 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - **Google Analytics 4**: Web analytics and conversion tracking.
 - **Google Fonts**: "Oxygen" and "Inter" font families.
 - **Facebook Groups, YouTube, Podcast platforms**: Community and content distribution channels.
+
+## Recent Changes
+
+### Homepage SEO Optimization (November 2025)
+- Added comprehensive meta tags including title, description, keywords, author, and viewport settings
+- Implemented Open Graph tags for social media sharing (og:title, og:description, og:type, og:url, og:image)
+- Added Twitter Card meta tags for enhanced Twitter previews
+- Integrated structured data (JSON-LD) for Organization schema to improve search engine understanding
+- Configured Google Analytics 4 tracking with pageview events
+- Set up VITE_GA_MEASUREMENT_ID environment variable for analytics configuration
+
+### Course Landing Pages (November 2025)
+- Created internal landing page for Company App Course at `/company-app-course` with complete feature showcase, instructor bio, and dual CTAs
+- Created internal landing page for DIY Dashboard Course at `/dashboard-course-landing` with matching design and structure
+- Created internal landing page for ServiceTitan to Make Integration Course at `/make-integration-course` with same consistent format
+- Updated Courses.tsx to link all three course cards to internal landing pages instead of direct external enrollment URLs
+- Established consistent design pattern: black backgrounds for feature/instructor sections, red background for "About" section
+- Feature cards use black backgrounds (`bg-black`), no borders (`border-0`), and centered text (`text-center`) for clean, modern appearance
+- Navigation flow: Courses page → Internal landing page → External Thinkific enrollment

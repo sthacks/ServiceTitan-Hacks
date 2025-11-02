@@ -24,6 +24,7 @@ import DashboardCourseContent from "@/pages/DashboardCourseContent";
 import DashboardCourseCheckout from "@/pages/DashboardCourseCheckout";
 import FixUglyFormsCourse from "@/pages/FixUglyFormsCourse";
 import CompanyAppCourse from "@/pages/CompanyAppCourse";
+import MakeIntegrationCourse from "@/pages/MakeIntegrationCourse";
 import PurchasingPlatform from "@/pages/PurchasingPlatform";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Admin from "@/pages/Admin";
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/dashboard-course/checkout" component={DashboardCourseCheckout} />
       <Route path="/fix-ugly-forms-course" component={FixUglyFormsCourse} />
       <Route path="/company-app-course" component={CompanyAppCourse} />
+      <Route path="/make-integration-course" component={MakeIntegrationCourse} />
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/admin" component={Admin} />
