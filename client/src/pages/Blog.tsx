@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
@@ -121,28 +121,16 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default function Blog() {
-  useEffect(() => {
-    document.title = "Blog | ServiceTitan Hacks – AI, Automation & Growth Tips for Contractors";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Expert insights on AI, automation, and growth strategies for ServiceTitan contractors. Learn how to work smarter, automate faster, and win more jobs.");
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = "description";
-      meta.content = "Expert insights on AI, automation, and growth strategies for ServiceTitan contractors. Learn how to work smarter, automate faster, and win more jobs.";
-      document.head.appendChild(meta);
-    }
-
-    return () => {
-      document.title = "ServiceTitan Hacks";
-    };
-  }, []);
-
   const categories = Array.from(new Set(blogPosts.map(post => post.category)));
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title="ServiceTitan Blog | AI, Automation & Growth Strategies"
+        description="Expert insights on ServiceTitan optimization, AI automation, and business growth strategies for HVAC, plumbing, and electrical contractors."
+        keywords="ServiceTitan blog, HVAC marketing, automation strategies, contractor tips"
+        canonicalUrl="https://servicetitanhacks.com/blog"
+      />
       <Header />
       <main className="flex-1">
         {/* Hero Section */}

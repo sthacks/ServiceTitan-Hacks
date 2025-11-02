@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Headphones, ExternalLink } from "lucide-react";
@@ -42,6 +43,12 @@ export default function Podcast() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="ServiceTitan Podcast | Contractor Success Stories & Strategies"
+        description="Listen to the ServiceTitan Hacks podcast featuring contractor success stories, expert interviews, and proven business growth strategies."
+        keywords="ServiceTitan podcast, HVAC podcast, contractor podcast, business growth"
+        canonicalUrl="https://servicetitanhacks.com/podcast"
+      />
       <Header />
       <main className="flex-1">
         <Hero

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -90,6 +91,12 @@ export default function Courses() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="ServiceTitan Courses | AI Automation & Integration Training"
+        description="Learn ServiceTitan automation, AI integration, and optimization with hands-on courses. From beginner Zapier integrations to advanced AI call analysis."
+        keywords="ServiceTitan courses, HVAC training, AI automation, ServiceTitan integration, Make.com, Zapier"
+        canonicalUrl="https://servicetitanhacks.com/courses"
+      />
       <Header />
       <main className="flex-1">
         <Hero

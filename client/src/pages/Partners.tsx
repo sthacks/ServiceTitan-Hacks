@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -66,6 +67,12 @@ export default function Partners() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="ServiceTitan Partners | Trusted Tools & Integrations"
+        description="Discover trusted ServiceTitan partners and integrations. Vetted tools to enhance your operations, from AI automation to business analytics."
+        keywords="ServiceTitan partners, integrations, HVAC tools, contractor software"
+        canonicalUrl="https://servicetitanhacks.com/partners"
+      />
       <Header />
       <main className="flex-1">
         <Hero

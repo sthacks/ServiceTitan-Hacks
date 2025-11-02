@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import founderPhoto from "@assets/generated_images/Founder_bio_headshot_photo_9225ae53.png";
 import titleBg from "@assets/title-background.png";
@@ -7,6 +8,12 @@ import titleBg from "@assets/title-background.png";
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="About ServiceTitan Hacks | AI Tools for Home Service Contractors"
+        description="ServiceTitan Hacks helps home service contractors leverage AI and automation to grow smarter. Join 9,500+ contractors learning proven strategies."
+        keywords="ServiceTitan experts, HVAC automation, home service AI, contractor tools"
+        canonicalUrl="https://servicetitanhacks.com/about"
+      />
       <Header />
       <main className="flex-1">
         <section className="relative py-24 overflow-hidden">

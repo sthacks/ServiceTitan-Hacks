@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -184,6 +185,12 @@ export default function PricebookOptimizer() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Pricebook Optimizer | Transform Technical Service Descriptions with AI"
+        description="Free AI-powered tool to transform technical pricebook descriptions into homeowner-friendly language. Improve customer understanding and boost conversions."
+        keywords="pricebook optimizer, AI pricebook, ServiceTitan pricebook, service descriptions, ChatGPT"
+        canonicalUrl="https://servicetitanhacks.com/pricebook-optimizer"
+      />
       <Header />
       <main className="flex-1">
         <section className="py-24 bg-background">

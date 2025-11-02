@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQAccordion from "@/components/FAQAccordion";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import keyIcon from "@assets/generated_images/All-Access_Pass_key_icon_359df7ba.png";
@@ -40,6 +41,12 @@ export default function AllAccess() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="All-Access Pass | Unlimited ServiceTitan Training & Resources"
+        description="Get unlimited access to all ServiceTitan Hacks courses, tools, and resources. Learn AI automation, integrations, and optimization at your own pace."
+        keywords="ServiceTitan all access, course bundle, unlimited training, contractor education"
+        canonicalUrl="https://servicetitanhacks.com/all-access"
+      />
       <Header />
       <main className="flex-1">
         <section className="relative py-24 overflow-hidden">

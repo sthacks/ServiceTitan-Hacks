@@ -1,11 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import SEO from "@/components/SEO";
 import titleBg from "@assets/title-background.png";
 
 export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Contact ServiceTitan Hacks | Get Help with AI & Automation"
+        description="Contact ServiceTitan Hacks for questions about courses, tools, or AI automation solutions for your home service business."
+        keywords="contact ServiceTitan Hacks, support, help"
+        canonicalUrl="https://servicetitanhacks.com/contact"
+      />
       <Header />
       <main className="flex-1">
         <section className="relative py-24 overflow-hidden">

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ToolCard from "@/components/ToolCard";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import titleBg from "@assets/title-background.png";
 import phoneCallRecapImage from "@assets/Copy of Phone Call Recap Infographic (1)_1760903764548.png";
@@ -38,6 +39,12 @@ export default function Tools() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="ServiceTitan Tools | AI-Powered Business Automation"
+        description="Powerful tools to optimize your ServiceTitan operations. Pricebook optimizer, automation platforms, and AI-powered business solutions."
+        keywords="ServiceTitan tools, pricebook optimizer, AI tools, HVAC software, automation"
+        canonicalUrl="https://servicetitanhacks.com/tools"
+      />
       <Header />
       <main className="flex-1">
         <section className="relative py-24 overflow-hidden">

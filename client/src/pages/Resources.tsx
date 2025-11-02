@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -185,6 +186,12 @@ export default function Resources() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Free ServiceTitan Resources | Tools, Calculators & Downloads"
+        description="Free ServiceTitan tools, calculators, and guides for HVAC, plumbing, and electrical contractors. ROI calculators, metrics guides, and automation templates."
+        keywords="ServiceTitan resources, HVAC calculators, marketing ROI, business tools, free downloads"
+        canonicalUrl="https://servicetitanhacks.com/resources"
+      />
       <Header />
       <main className="flex-1">
         <Hero
