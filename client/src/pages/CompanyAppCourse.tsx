@@ -163,12 +163,12 @@ export default function CompanyAppCourse() {
           </div>
         </section>
 
-        <section className="py-16 bg-muted">
+        <section className="py-16 bg-black text-white">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-zinc-300 mb-8 max-w-2xl mx-auto">
               Join now and take the first step towards creating a professional app for your contracting business. Experience the benefits of seamless communication and enhanced productivity.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
