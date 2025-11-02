@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
@@ -16,6 +17,23 @@ import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ServiceTitan Hacks",
+    "url": "https://servicetitanhacks.com",
+    "logo": "https://servicetitanhacks.com/logo.png",
+    "description": "AI and automation tools for ServiceTitan contractors in HVAC, plumbing, and electrical trades",
+    "sameAs": [
+      "https://www.facebook.com/groups/servicetitanhacks",
+      "https://www.youtube.com/@ServiceTitanHacks"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "url": "https://servicetitanhacks.com/contact"
+    }
+  };
   const mainSections = [
     {
       title: "Courses",
@@ -88,6 +106,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="ServiceTitan Hacks | AI Tools for Contractors & HVAC Automation"
+        description="AI tools for contractors. Learn ServiceTitan automation for HVAC, plumbing businesses. Free courses, tools & community. Join 9,500+ contractors."
+        keywords="AI tools for contractors, ServiceTitan automation, HVAC AI, plumbing automation, home service automation"
+        canonicalUrl="https://servicetitanhacks.com/"
+        schemaData={organizationSchema}
+      />
       <Header />
       <main className="flex-1">
         <Hero
