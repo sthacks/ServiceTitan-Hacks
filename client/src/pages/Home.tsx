@@ -19,52 +19,59 @@ export default function Home() {
   const mainSections = [
     {
       title: "Courses",
-      description: "Learn to automate, optimize, and scale your home service business with practical, hands-on courses.",
+      description: "Learn to automate, optimize, and scale your home service business with practical, hands-on courses on ServiceTitan automation and HVAC AI.",
       icon: BookOpen,
       link: "/courses",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FnjPnLHZRIeoS1YalKP4j_31639205-3.jpg",
+      alt: "ServiceTitan Hacks automation courses for contractors - AI tools training",
     },
     {
       title: "Equipment Buying Group",
-      description: "100% free for Facebook Group members. Get access to pricing that the big guys get on HVAC equipment, water heaters, and tools.",
+      description: "100% free for Facebook Group members. Get access to pricing that the big guys get on HVAC equipment, water heaters, and tools with plumbing automation.",
       icon: ShoppingCart,
       link: "/purchasing-platform",
       image: buyingGroupImage,
+      alt: "Equipment buying group for HVAC contractors - ServiceTitan Hacks partnership",
     },
     {
       title: "Tools & Products",
-      description: "Discover AI-powered tools and automation solutions designed specifically for ServiceTitan contractors.",
+      description: "Discover AI tools for contractors and automation solutions designed specifically for ServiceTitan users in HVAC and plumbing businesses.",
       icon: Wrench,
       link: "/tools",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FwPQ226FHSzWW8kg7Kz2o_31639583-3.jpg",
+      alt: "AI tools for contractors - ServiceTitan automation products and software",
     },
     {
       title: "Partners",
-      description: "Trusted technology partners helping contractors automate, optimize, and grow their businesses.",
+      description: "Trusted technology partners helping contractors automate, optimize, and grow their businesses with AI tools and HVAC automation.",
       icon: Users,
       link: "/partners",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2F2byukiuSKa7LxxzyPZna_Partners.png",
+      alt: "ServiceTitan Hacks technology partners - HVAC AI and plumbing automation solutions",
     },
     {
       title: "Free Resources",
-      description: "Access free templates, calculators, and guides to help you get more out of ServiceTitan.",
+      description: "Access free templates, calculators, and guides to help you get more out of ServiceTitan with automation tools for contractors.",
       icon: Gift,
       link: "/resources",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FI8AAxp7ERumPFmkyYVug_31639896-1.jpg",
+      alt: "Free ServiceTitan resources - contractor templates and automation guides",
     },
     {
       title: "Podcast",
-      description: "Join host Bill Brown for candid conversations with contractors and software founders revolutionizing the trades.",
+      description: "Join host Bill Brown for candid conversations with contractors and software founders revolutionizing the trades with AI and automation.",
       icon: Headphones,
       link: "/podcast",
       image: podcastImage,
+      alt: "ServiceTitan Hacks podcast - contractor conversations on AI tools and automation",
     },
     {
       title: "All-Access Pass",
-      description: "Get unlimited access to all courses, exclusive tools, premium resources, and monthly live Q&A calls.",
+      description: "Get unlimited access to all ServiceTitan automation courses, exclusive AI tools, premium resources, and monthly live Q&A calls.",
       icon: Key,
       link: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
+      alt: "ServiceTitan Hacks All-Access Pass - unlimited contractor courses and AI tools",
     },
   ];
 
@@ -100,6 +107,9 @@ export default function Home() {
 
         <section className="py-16 bg-background">
           <div className="mx-auto max-w-7xl px-6">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-12">
+              AI Tools & ServiceTitan Automation for Contractors
+            </h2>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {mainSections.map((section, index) => (
                 <a 
@@ -112,9 +122,10 @@ export default function Home() {
                     <div className="aspect-video overflow-hidden">
                       <img
                         src={section.image}
-                        alt={section.title}
+                        alt={section.alt}
                         className="w-full h-full object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <CardContent className="p-6">
@@ -124,7 +135,7 @@ export default function Home() {
                       </div>
                       <p className="text-muted-foreground mb-4">{section.description}</p>
                       <Button className="gap-2 w-full sm:w-auto">
-                        View {section.title} <ArrowRight className="h-4 w-4" />
+                        Explore {section.title} <ArrowRight className="h-4 w-4" />
                       </Button>
                     </CardContent>
                   </Card>
@@ -136,22 +147,23 @@ export default function Home() {
 
         <section className="py-12 bg-muted">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners</h2>
+            <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners in HVAC AI & Plumbing Automation</h2>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {partners.map((partner, index) => (
                 <a
                   key={index}
                   href={partner.url}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="transition-all opacity-90 hover:opacity-100"
                   data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   <img
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={`${partner.name} - ServiceTitan contractor automation partner logo`}
                     className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' || partner.name === 'Free-2-Grow' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
                     loading="lazy"
+                    decoding="async"
                   />
                 </a>
               ))}
