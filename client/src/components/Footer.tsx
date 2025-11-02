@@ -161,6 +161,11 @@ export default function Footer() {
                   Privacy
                 </span>
               </Link>
+              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
+                <span className="text-sm text-gray-500 hover:text-primary transition-colors cursor-pointer" data-testid="link-footer-sitemap">
+                  Sitemap
+                </span>
+              </a>
             </div>
           </div>
         </div>
