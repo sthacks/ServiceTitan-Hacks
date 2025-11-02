@@ -617,6 +617,34 @@ ${blogPosts.map(post => `  <url>
     res.send(sitemap);
   });
 
+  // Robots.txt for SEO
+  app.get("/robots.txt", (req, res) => {
+    const baseUrl = "https://servicetitanhacks.com";
+    
+    const robotsTxt = `# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: ${baseUrl}/sitemap.xml
+
+# Directories
+Allow: /courses
+Allow: /tools
+Allow: /resources
+Allow: /partners
+Allow: /blog
+Allow: /podcast
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+`;
+
+    res.header('Content-Type', 'text/plain');
+    res.send(robotsTxt);
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
