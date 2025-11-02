@@ -3,6 +3,9 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useEffect } from "react";
+import { initGA } from "@/lib/analytics";
+import { useAnalytics } from "@/hooks/use-analytics";
 import Home from "@/pages/Home";
 import Partners from "@/pages/Partners";
 import Tools from "@/pages/Tools";
@@ -25,6 +28,8 @@ import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
 function Router() {
+  useAnalytics();
+  
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -52,6 +57,14 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
+      console.warn('Google Analytics not configured. Add VITE_GA_MEASUREMENT_ID to enable tracking.');
+    } else {
+      initGA();
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
