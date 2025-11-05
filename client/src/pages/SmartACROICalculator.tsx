@@ -558,9 +558,9 @@ export default function SmartACROICalculator() {
                     These numbers are just the beginning. Schedule a personalized ROI review with SmartAC's team to model your specific scenarios and see how SmartAC can scale your membership program.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/contact" data-testid="link-schedule-demo">
+                    <a href="https://go.st-hacks.cc/smart-ac" target="_blank" rel="noopener noreferrer" data-testid="link-schedule-demo">
                       <Button size="lg" className="bg-[#1b5eec] hover:bg-[#1b5eec]/90 text-white">
-                        Book a 5-Year ROI Review
+                        Schedule a SmartAC Demo
                       </Button>
                     </a>
                     <a href="/resources" data-testid="link-learn-more">
