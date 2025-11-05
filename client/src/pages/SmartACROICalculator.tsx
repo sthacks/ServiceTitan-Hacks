@@ -14,28 +14,22 @@ import smartacLogo from "@assets/smartac_1762359582715.png";
 
 export default function SmartACROICalculator() {
   const [inputs, setInputs] = useState({
-    activeMembers: 5000,
-    annualCost: 240,
+    activeMembers: 500,
+    retentionRate: 75,
+    newVisitsPerYear: 1000,
     closeRate: 20,
-    retentionRate: 70,
-    truckRolls: 2,
-    rollCost: 400,
-    revenuePerMember: 1000,
-    grossMargin: 50,
+    revenuePerMember: 850,
   });
 
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState<any>(null);
 
+  // SmartAC improvements based on their actual data
   const smartACImprovements = {
-    conversionBefore: 20,
-    conversionAfter: 40,
-    retentionBefore: 70,
-    retentionAfter: 90,
-    truckRollsBefore: 2,
-    truckRollsAfter: 1,
-    virtualSavings: 300,
-    platformCost: 12000,
+    retentionImprovement: 15, // 75% → 90% (15 point increase)
+    closeRateMultiplier: 2, // 20% → 40% (2x improvement)
+    platformCostMonthly: 1000,
+    platformCostAnnual: 12000,
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -55,61 +49,96 @@ export default function SmartACROICalculator() {
   const calculateROI = () => {
     const {
       activeMembers,
-      annualCost,
-      closeRate,
       retentionRate,
-      truckRolls,
-      rollCost,
+      newVisitsPerYear,
+      closeRate,
       revenuePerMember,
-      grossMargin,
     } = inputs;
 
-    // Before SmartAC
-    const beforeRevenue = activeMembers * revenuePerMember;
-    const beforeProfit = beforeRevenue * (grossMargin / 100);
-    const beforeTruckRollCost = truckRolls * rollCost * activeMembers;
+    // Calculate member growth year by year - BEFORE SmartAC (current approach)
+    const beforeRetention = retentionRate / 100;
+    const beforeCloseRate = closeRate / 100;
+    
+    let beforeMembers = [activeMembers];
+    for (let year = 1; year <= 5; year++) {
+      const retained = beforeMembers[year - 1] * beforeRetention;
+      const newMembers = newVisitsPerYear * beforeCloseRate;
+      beforeMembers.push(retained + newMembers);
+    }
 
-    // After SmartAC (with improvements)
-    const conversionMultiplier = smartACImprovements.conversionAfter / smartACImprovements.conversionBefore;
-    const afterRevenue = activeMembers * conversionMultiplier * revenuePerMember;
-    const afterProfit = afterRevenue * (grossMargin / 100);
-    const afterTruckRollCost = smartACImprovements.truckRollsAfter * rollCost * activeMembers;
+    // Calculate member growth year by year - AFTER SmartAC (with improvements)
+    const afterRetention = Math.min(100, retentionRate + smartACImprovements.retentionImprovement) / 100;
+    const afterCloseRate = (closeRate * smartACImprovements.closeRateMultiplier) / 100;
+    
+    let afterMembers = [activeMembers];
+    for (let year = 1; year <= 5; year++) {
+      const retained = afterMembers[year - 1] * afterRetention;
+      const newMembers = newVisitsPerYear * afterCloseRate;
+      afterMembers.push(retained + newMembers);
+    }
 
-    // Savings calculations
-    const truckRollSavings = beforeTruckRollCost - afterTruckRollCost;
-    const virtualSavings = smartACImprovements.virtualSavings * activeMembers;
-    const profitIncrease = afterProfit - beforeProfit;
-    const annualSavings = truckRollSavings + virtualSavings + profitIncrease;
-    const netSavings = annualSavings - smartACImprovements.platformCost;
-    const roi = ((netSavings) / smartACImprovements.platformCost) * 100;
+    // Calculate revenue for each year
+    const fiveYearData = [];
+    let totalRevenueBefore = 0;
+    let totalRevenueAfter = 0;
+    
+    for (let year = 0; year <= 5; year++) {
+      const beforeRevenue = beforeMembers[year] * revenuePerMember;
+      const afterRevenue = afterMembers[year] * revenuePerMember;
+      
+      if (year > 0) {
+        totalRevenueBefore += beforeRevenue;
+        totalRevenueAfter += afterRevenue;
+        fiveYearData.push({
+          year: `Year ${year}`,
+          before: beforeRevenue,
+          after: afterRevenue,
+          beforeMembers: Math.round(beforeMembers[year]),
+          afterMembers: Math.round(afterMembers[year]),
+        });
+      }
+    }
 
-    // 5-Year projections
-    const beforeGrowth = 1.279; // 27.9% over 5 years
-    const afterGrowth = 2.79; // 179% over 5 years with SmartAC
-
-    const fiveYearData = [
-      { year: 'Year 1', before: beforeRevenue, after: afterRevenue },
-      { year: 'Year 2', before: beforeRevenue * 1.055, after: afterRevenue * 1.30 },
-      { year: 'Year 3', before: beforeRevenue * 1.115, after: afterRevenue * 1.70 },
-      { year: 'Year 4', before: beforeRevenue * 1.195, after: afterRevenue * 2.20 },
-      { year: 'Year 5', before: beforeRevenue * beforeGrowth, after: afterRevenue * afterGrowth },
-    ];
+    // Calculate Year 5 metrics
+    const year5BeforeMembers = Math.round(beforeMembers[5]);
+    const year5AfterMembers = Math.round(afterMembers[5]);
+    const year5BeforeRevenue = beforeMembers[5] * revenuePerMember;
+    const year5AfterRevenue = afterMembers[5] * revenuePerMember;
+    
+    // Member growth percentage
+    const memberGrowthPercent = ((year5AfterMembers - year5BeforeMembers) / year5BeforeMembers) * 100;
+    
+    // Calculate 5-year totals
+    const totalPlatformCost = smartACImprovements.platformCostAnnual * 5;
+    const incrementalRevenue = totalRevenueAfter - totalRevenueBefore;
+    const netGain = incrementalRevenue - totalPlatformCost;
+    const roi = (netGain / totalPlatformCost) * 100;
 
     setResults({
-      beforeRevenue,
-      afterRevenue,
-      beforeProfit,
-      afterProfit,
-      beforeTruckRollCost,
-      afterTruckRollCost,
-      truckRollSavings,
-      virtualSavings,
-      annualSavings,
-      netSavings,
+      // Year 5 snapshots
+      year5BeforeMembers,
+      year5AfterMembers,
+      year5BeforeRevenue,
+      year5AfterRevenue,
+      memberGrowthPercent,
+      
+      // 5-year cumulative
+      totalRevenueBefore,
+      totalRevenueAfter,
+      incrementalRevenue,
+      totalPlatformCost,
+      netGain,
       roi,
+      
+      // Year by year data
       fiveYearData,
-      fiveYearGrowthBefore: beforeRevenue * beforeGrowth,
-      fiveYearGrowthAfter: afterRevenue * afterGrowth,
+      
+      // Starting metrics
+      startingMembers: activeMembers,
+      currentRetention: retentionRate,
+      improvedRetention: Math.min(100, retentionRate + smartACImprovements.retentionImprovement),
+      currentCloseRate: closeRate,
+      improvedCloseRate: closeRate * smartACImprovements.closeRateMultiplier,
     });
 
     setShowResults(true);
@@ -117,14 +146,11 @@ export default function SmartACROICalculator() {
 
   const handleReset = () => {
     setInputs({
-      activeMembers: 5000,
-      annualCost: 240,
+      activeMembers: 500,
+      retentionRate: 75,
+      newVisitsPerYear: 1000,
       closeRate: 20,
-      retentionRate: 70,
-      truckRolls: 2,
-      rollCost: 400,
-      revenuePerMember: 1000,
-      grossMargin: 50,
+      revenuePerMember: 850,
     });
     setShowResults(false);
     setResults(null);
@@ -189,13 +215,13 @@ export default function SmartACROICalculator() {
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Label htmlFor="activeMembers">Active Memberships</Label>
+                          <Label htmlFor="activeMembers">Members Today</Label>
                           <Tooltip>
                             <TooltipTrigger>
                               <Info className="h-4 w-4 text-muted-foreground" />
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>Total number of active service plan members</p>
+                              <p>Current number of active membership plan members</p>
                             </TooltipContent>
                           </Tooltip>
                         </div>
@@ -203,86 +229,24 @@ export default function SmartACROICalculator() {
                       </div>
                       <Slider
                         id="activeMembers"
-                        min={100}
-                        max={20000}
-                        step={100}
+                        min={50}
+                        max={10000}
+                        step={50}
                         value={[inputs.activeMembers]}
                         onValueChange={(value) => handleSliderChange('activeMembers', value)}
                         className="mb-2"
                         data-testid="slider-active-members"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>100</span>
-                        <span>20,000</span>
+                        <span>50</span>
+                        <span>10,000</span>
                       </div>
                     </div>
 
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Label htmlFor="annualCost">Annual Membership Cost ($)</Label>
-                          <Tooltip>
-                            <TooltipTrigger>
-                              <Info className="h-4 w-4 text-muted-foreground" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>Average yearly cost per membership plan</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </div>
-                        <span className="text-sm font-semibold text-[#1b5eec]">${inputs.annualCost}</span>
-                      </div>
-                      <Slider
-                        id="annualCost"
-                        min={50}
-                        max={1000}
-                        step={10}
-                        value={[inputs.annualCost]}
-                        onValueChange={(value) => handleSliderChange('annualCost', value)}
-                        className="mb-2"
-                        data-testid="slider-annual-cost"
-                      />
-                      <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>$50</span>
-                        <span>$1,000</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <Label htmlFor="closeRate">Membership Close Rate (%)</Label>
-                          <Tooltip>
-                            <TooltipTrigger>
-                              <Info className="h-4 w-4 text-muted-foreground" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>Percentage of leads that become members</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </div>
-                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.closeRate}%</span>
-                      </div>
-                      <Slider
-                        id="closeRate"
-                        min={1}
-                        max={100}
-                        step={1}
-                        value={[inputs.closeRate]}
-                        onValueChange={(value) => handleSliderChange('closeRate', value)}
-                        className="mb-2"
-                        data-testid="slider-close-rate"
-                      />
-                      <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>1%</span>
-                        <span>100%</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <Label htmlFor="retentionRate">Annual Retention Rate (%)</Label>
+                          <Label htmlFor="retentionRate">Annual Retention (%)</Label>
                           <Tooltip>
                             <TooltipTrigger>
                               <Info className="h-4 w-4 text-muted-foreground" />
@@ -296,7 +260,7 @@ export default function SmartACROICalculator() {
                       </div>
                       <Slider
                         id="retentionRate"
-                        min={1}
+                        min={25}
                         max={100}
                         step={1}
                         value={[inputs.retentionRate]}
@@ -305,7 +269,7 @@ export default function SmartACROICalculator() {
                         data-testid="slider-retention-rate"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>1%</span>
+                        <span>25%</span>
                         <span>100%</span>
                       </div>
                     </div>
@@ -313,69 +277,69 @@ export default function SmartACROICalculator() {
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Label htmlFor="truckRolls">Avg Truck Rolls per Member/Year</Label>
+                          <Label htmlFor="newVisitsPerYear">New Customer Visits per Year</Label>
                           <Tooltip>
                             <TooltipTrigger>
                               <Info className="h-4 w-4 text-muted-foreground" />
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>Average service visits per member annually</p>
+                              <p>Number of new customer visits you get annually where you can offer memberships</p>
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.truckRolls}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.newVisitsPerYear.toLocaleString()}</span>
                       </div>
                       <Slider
-                        id="truckRolls"
-                        min={0.5}
-                        max={10}
-                        step={0.5}
-                        value={[inputs.truckRolls]}
-                        onValueChange={(value) => handleSliderChange('truckRolls', value)}
+                        id="newVisitsPerYear"
+                        min={100}
+                        max={10000}
+                        step={100}
+                        value={[inputs.newVisitsPerYear]}
+                        onValueChange={(value) => handleSliderChange('newVisitsPerYear', value)}
                         className="mb-2"
-                        data-testid="slider-truck-rolls"
+                        data-testid="slider-new-visits"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>0.5</span>
-                        <span>10</span>
+                        <span>100</span>
+                        <span>10,000</span>
                       </div>
                     </div>
 
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Label htmlFor="rollCost">Average Truck Roll Cost ($)</Label>
+                          <Label htmlFor="closeRate">Membership Close Rate (%)</Label>
                           <Tooltip>
                             <TooltipTrigger>
                               <Info className="h-4 w-4 text-muted-foreground" />
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>Cost per service visit including labor and overhead</p>
+                              <p>Percentage of new customer visits that become members</p>
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-[#1b5eec]">${inputs.rollCost}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.closeRate}%</span>
                       </div>
                       <Slider
-                        id="rollCost"
-                        min={25}
-                        max={500}
-                        step={5}
-                        value={[inputs.rollCost]}
-                        onValueChange={(value) => handleSliderChange('rollCost', value)}
+                        id="closeRate"
+                        min={5}
+                        max={75}
+                        step={1}
+                        value={[inputs.closeRate]}
+                        onValueChange={(value) => handleSliderChange('closeRate', value)}
                         className="mb-2"
-                        data-testid="slider-roll-cost"
+                        data-testid="slider-close-rate"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>$25</span>
-                        <span>$500</span>
+                        <span>5%</span>
+                        <span>75%</span>
                       </div>
                     </div>
 
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Label htmlFor="revenuePerMember">Avg Revenue per Member/Year ($)</Label>
+                          <Label htmlFor="revenuePerMember">Annual Revenue per Member ($)</Label>
                           <Tooltip>
                             <TooltipTrigger>
                               <Info className="h-4 w-4 text-muted-foreground" />
@@ -389,8 +353,8 @@ export default function SmartACROICalculator() {
                       </div>
                       <Slider
                         id="revenuePerMember"
-                        min={100}
-                        max={5000}
+                        min={200}
+                        max={3000}
                         step={50}
                         value={[inputs.revenuePerMember]}
                         onValueChange={(value) => handleSliderChange('revenuePerMember', value)}
@@ -398,39 +362,8 @@ export default function SmartACROICalculator() {
                         data-testid="slider-revenue-per-member"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>$100</span>
-                        <span>$5,000</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <Label htmlFor="grossMargin">Gross Margin (%)</Label>
-                          <Tooltip>
-                            <TooltipTrigger>
-                              <Info className="h-4 w-4 text-muted-foreground" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>Your profit margin after direct costs</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </div>
-                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.grossMargin}%</span>
-                      </div>
-                      <Slider
-                        id="grossMargin"
-                        min={1}
-                        max={100}
-                        step={1}
-                        value={[inputs.grossMargin]}
-                        onValueChange={(value) => handleSliderChange('grossMargin', value)}
-                        className="mb-2"
-                        data-testid="slider-gross-margin"
-                      />
-                      <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>1%</span>
-                        <span>100%</span>
+                        <span>$200</span>
+                        <span>$3,000</span>
                       </div>
                     </div>
                   </div>
@@ -469,33 +402,18 @@ export default function SmartACROICalculator() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-4 bg-background rounded-lg">
-                    <span className="text-sm font-medium">Conversion Rate</span>
+                    <span className="text-sm font-medium">Membership Close Rate</span>
                     <div className="text-right">
-                      <div className="text-xs text-muted-foreground">20% → 40%</div>
-                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">+100% increase</div>
+                      <div className="text-xs text-muted-foreground">Your rate → 2x with SmartAC</div>
+                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">+100% improvement</div>
                     </div>
                   </div>
 
                   <div className="flex justify-between items-center p-4 bg-background rounded-lg">
-                    <span className="text-sm font-medium">Retention Rate</span>
+                    <span className="text-sm font-medium">Annual Retention Rate</span>
                     <div className="text-right">
-                      <div className="text-xs text-muted-foreground">70% → 90%</div>
-                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">+29% increase</div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-center p-4 bg-background rounded-lg">
-                    <span className="text-sm font-medium">Truck Rolls per Member</span>
-                    <div className="text-right">
-                      <div className="text-xs text-muted-foreground">2 → 1</div>
-                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">50% reduction</div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-center p-4 bg-background rounded-lg">
-                    <span className="text-sm font-medium">Virtual Visit Savings</span>
-                    <div className="text-right">
-                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">$300/home/year</div>
+                      <div className="text-xs text-muted-foreground">+15 percentage points</div>
+                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">Up to 90% retention</div>
                     </div>
                   </div>
 
@@ -509,12 +427,12 @@ export default function SmartACROICalculator() {
                 </div>
 
                 <div className="mt-6 p-4 bg-background rounded-lg border-2 border-[#1b5eec]/30">
-                  <h4 className="font-semibold mb-2 text-sm">How SmartAC Works:</h4>
+                  <h4 className="font-semibold mb-2 text-sm">How SmartAC Drives Growth:</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• AI-powered diagnostics reduce unnecessary visits</li>
-                    <li>• Virtual inspections via mobile app</li>
-                    <li>• Automated customer engagement & retention</li>
-                    <li>• Predictive maintenance alerts</li>
+                    <li>• Smart sensors make memberships more valuable</li>
+                    <li>• Virtual inspections reduce truck rolls</li>
+                    <li>• Automated engagement boosts retention</li>
+                    <li>• Mobile app increases close rates</li>
                   </ul>
                 </div>
               </CardContent>
@@ -525,21 +443,43 @@ export default function SmartACROICalculator() {
           {showResults && results && (
             <div className="space-y-8 animate-in fade-in duration-500">
               <div className="text-center">
-                <h2 className="text-3xl font-bold font-heading mb-2">Your ROI Analysis</h2>
-                <p className="text-muted-foreground">Based on your inputs, here's your potential with SmartAC</p>
+                <h2 className="text-3xl font-bold font-heading mb-2">What's Your SmartAC Upside?</h2>
+                <p className="text-muted-foreground">Here's your 5-year member growth projection with SmartAC</p>
               </div>
 
+              {/* Year 5 Snapshot */}
+              <Card className="bg-gradient-to-br from-[#1b5eec]/10 to-[#1b5eec]/5 border-[#1b5eec]/20">
+                <CardContent className="p-8">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="text-center">
+                      <div className="text-sm text-muted-foreground mb-2">Current Approach in Year 5</div>
+                      <div className="text-4xl font-bold mb-1">{results.year5BeforeMembers.toLocaleString()}</div>
+                      <div className="text-sm text-muted-foreground">members</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm text-muted-foreground mb-2">On SmartAC in Year 5</div>
+                      <div className="text-4xl font-bold text-[#1b5eec] mb-1">{results.year5AfterMembers.toLocaleString()}</div>
+                      <div className="text-sm text-muted-foreground">members</div>
+                    </div>
+                  </div>
+                  <div className="text-center mt-6 pt-6 border-t">
+                    <div className="text-sm text-muted-foreground mb-1">Member Growth on SmartAC</div>
+                    <div className="text-3xl font-bold text-green-600 dark:text-green-400">+{formatPercent(results.memberGrowthPercent)}</div>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Key Metrics Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <Card className="bg-gradient-to-br from-green-500/10 to-green-600/5 border-green-500/20">
                   <CardContent className="pt-6">
                     <div className="text-center">
                       <DollarSign className="h-8 w-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
                       <div className="text-2xl md:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                        {formatCurrency(results.netSavings)}
+                        {formatCurrency(results.netGain)}
                       </div>
-                      <div className="text-sm text-muted-foreground">Net Annual Savings</div>
-                      <div className="text-xs text-muted-foreground mt-1">(after platform cost)</div>
+                      <div className="text-sm text-muted-foreground">5-Year Net Gain</div>
+                      <div className="text-xs text-muted-foreground mt-1">(after ${formatCurrency(results.totalPlatformCost)} platform cost)</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -551,7 +491,7 @@ export default function SmartACROICalculator() {
                       <div className="text-2xl md:text-3xl font-bold text-[#1b5eec] mb-1">
                         {formatPercent(results.roi)}
                       </div>
-                      <div className="text-sm text-muted-foreground">Annual ROI</div>
+                      <div className="text-sm text-muted-foreground">5-Year ROI</div>
                       <div className="text-xs text-muted-foreground mt-1">(return on investment)</div>
                     </div>
                   </CardContent>
@@ -560,70 +500,21 @@ export default function SmartACROICalculator() {
                 <Card>
                   <CardContent className="pt-6">
                     <div className="text-center">
-                      <div className="text-xl font-bold mb-1">Truck Roll Savings</div>
-                      <div className="text-2xl font-bold text-[#1b5eec] mb-2">
-                        {formatCurrency(results.truckRollSavings)}
+                      <Users className="h-8 w-8 text-[#1b5eec] mx-auto mb-2" />
+                      <div className="text-2xl md:text-3xl font-bold text-[#1b5eec] mb-1">
+                        {formatCurrency(results.incrementalRevenue)}
                       </div>
-                      <div className="text-xs text-muted-foreground">
-                        {formatCurrency(results.beforeTruckRollCost)} → {formatCurrency(results.afterTruckRollCost)}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="text-center">
-                      <div className="text-xl font-bold mb-1">Revenue Increase</div>
-                      <div className="text-2xl font-bold text-[#1b5eec] mb-2">
-                        {formatCurrency(results.afterRevenue - results.beforeRevenue)}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {formatCurrency(results.beforeRevenue)} → {formatCurrency(results.afterRevenue)}
-                      </div>
+                      <div className="text-sm text-muted-foreground">Incremental Revenue</div>
+                      <div className="text-xs text-muted-foreground mt-1">(5-year total)</div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              {/* Before/After Comparison */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Before vs. After Comparison</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-2">Annual Revenue</div>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-lg line-through text-muted-foreground">{formatCurrency(results.beforeRevenue)}</span>
-                        <span className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.afterRevenue)}</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-2">Annual Profit</div>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-lg line-through text-muted-foreground">{formatCurrency(results.beforeProfit)}</span>
-                        <span className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.afterProfit)}</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-2">Truck Roll Costs</div>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-lg line-through text-muted-foreground">{formatCurrency(results.beforeTruckRollCost)}</span>
-                        <span className="text-2xl font-bold text-green-600 dark:text-green-400">{formatCurrency(results.afterTruckRollCost)}</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
               {/* 5-Year Growth Chart */}
               <Card>
                 <CardHeader>
-                  <CardTitle>5-Year Revenue Growth Projection</CardTitle>
+                  <CardTitle>5-Year Member & Revenue Growth</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="h-80">
@@ -632,26 +523,26 @@ export default function SmartACROICalculator() {
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="year" />
                         <YAxis
-                          tickFormatter={(value) => `$${(value / 1000000).toFixed(1)}M`}
+                          tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`}
                         />
                         <RechartsTooltip
                           formatter={(value: number) => formatCurrency(value)}
                           labelStyle={{ color: '#333' }}
                         />
                         <Legend />
-                        <Bar dataKey="before" name="Before SmartAC" fill="#94a3b8" />
+                        <Bar dataKey="before" name="Current Approach" fill="#94a3b8" />
                         <Bar dataKey="after" name="With SmartAC" fill="#1b5eec" />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
                   <div className="mt-6 grid md:grid-cols-2 gap-4">
                     <div className="p-4 bg-muted rounded-lg">
-                      <div className="text-sm text-muted-foreground mb-1">5-Year Total (Before)</div>
-                      <div className="text-2xl font-bold">{formatCurrency(results.fiveYearGrowthBefore)}</div>
+                      <div className="text-sm text-muted-foreground mb-1">5-Year Revenue (Current)</div>
+                      <div className="text-2xl font-bold">{formatCurrency(results.totalRevenueBefore)}</div>
                     </div>
                     <div className="p-4 bg-[#1b5eec]/10 border-2 border-[#1b5eec]/30 rounded-lg">
-                      <div className="text-sm text-muted-foreground mb-1">5-Year Total (With SmartAC)</div>
-                      <div className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.fiveYearGrowthAfter)}</div>
+                      <div className="text-sm text-muted-foreground mb-1">5-Year Revenue (With SmartAC)</div>
+                      <div className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.totalRevenueAfter)}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -664,12 +555,12 @@ export default function SmartACROICalculator() {
                     Ready to Transform Your Membership Program?
                   </h3>
                   <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                    See how SmartAC can help you achieve these results. Schedule a personalized demo with our team to learn more about implementing SmartAC in your business.
+                    These numbers are just the beginning. Schedule a personalized ROI review with SmartAC's team to model your specific scenarios and see how SmartAC can scale your membership program.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="/contact" data-testid="link-schedule-demo">
                       <Button size="lg" className="bg-[#1b5eec] hover:bg-[#1b5eec]/90 text-white">
-                        Schedule a SmartAC Demo
+                        Book a 5-Year ROI Review
                       </Button>
                     </a>
                     <a href="/resources" data-testid="link-learn-more">
