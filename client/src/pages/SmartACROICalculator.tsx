@@ -557,15 +557,10 @@ export default function SmartACROICalculator() {
                   <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                     These numbers are just the beginning. Schedule a personalized ROI review with SmartAC's team to model your specific scenarios and see how SmartAC can scale your membership program.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex justify-center">
                     <a href="https://go.st-hacks.cc/smart-ac" target="_blank" rel="noopener noreferrer" data-testid="link-schedule-demo">
                       <Button size="lg" className="bg-[#1b5eec] hover:bg-[#1b5eec]/90 text-white focus-visible:ring-0 focus-visible:outline-none">
                         Schedule a SmartAC Demo
-                      </Button>
-                    </a>
-                    <a href="/resources" data-testid="link-learn-more">
-                      <Button size="lg" variant="outline" className="border-[#1b5eec] text-[#1b5eec] hover:bg-[#1b5eec]/10">
-                        Learn More About SmartAC
                       </Button>
                     </a>
                   </div>
