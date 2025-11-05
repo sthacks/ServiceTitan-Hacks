@@ -217,157 +217,220 @@ export default function SmartACROICalculator() {
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="annualCost">Annual Membership Cost ($)</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Average yearly cost per membership plan</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="annualCost">Annual Membership Cost ($)</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Average yearly cost per membership plan</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">${inputs.annualCost}</span>
                       </div>
-                      <Input
+                      <Slider
                         id="annualCost"
-                        type="number"
-                        value={inputs.annualCost}
-                        onChange={(e) => handleInputChange('annualCost', e.target.value)}
-                        data-testid="input-annual-cost"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={50}
+                        max={1000}
+                        step={10}
+                        value={[inputs.annualCost]}
+                        onValueChange={(value) => handleSliderChange('annualCost', value)}
+                        className="mb-2"
+                        data-testid="slider-annual-cost"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>$50</span>
+                        <span>$1,000</span>
+                      </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="closeRate">Membership Close Rate (%)</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Percentage of leads that become members</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="closeRate">Membership Close Rate (%)</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Percentage of leads that become members</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">{inputs.closeRate}%</span>
                       </div>
-                      <Input
+                      <Slider
                         id="closeRate"
-                        type="number"
-                        value={inputs.closeRate}
-                        onChange={(e) => handleInputChange('closeRate', e.target.value)}
-                        data-testid="input-close-rate"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={1}
+                        max={100}
+                        step={1}
+                        value={[inputs.closeRate]}
+                        onValueChange={(value) => handleSliderChange('closeRate', value)}
+                        className="mb-2"
+                        data-testid="slider-close-rate"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>1%</span>
+                        <span>100%</span>
+                      </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="retentionRate">Annual Retention Rate (%)</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Percentage of members who renew each year</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="retentionRate">Annual Retention Rate (%)</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Percentage of members who renew each year</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">{inputs.retentionRate}%</span>
                       </div>
-                      <Input
+                      <Slider
                         id="retentionRate"
-                        type="number"
-                        value={inputs.retentionRate}
-                        onChange={(e) => handleInputChange('retentionRate', e.target.value)}
-                        data-testid="input-retention-rate"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={1}
+                        max={100}
+                        step={1}
+                        value={[inputs.retentionRate]}
+                        onValueChange={(value) => handleSliderChange('retentionRate', value)}
+                        className="mb-2"
+                        data-testid="slider-retention-rate"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>1%</span>
+                        <span>100%</span>
+                      </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="truckRolls">Avg Truck Rolls per Member/Year</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Average service visits per member annually</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="truckRolls">Avg Truck Rolls per Member/Year</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Average service visits per member annually</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">{inputs.truckRolls}</span>
                       </div>
-                      <Input
+                      <Slider
                         id="truckRolls"
-                        type="number"
-                        value={inputs.truckRolls}
-                        onChange={(e) => handleInputChange('truckRolls', e.target.value)}
-                        data-testid="input-truck-rolls"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={0.5}
+                        max={10}
+                        step={0.5}
+                        value={[inputs.truckRolls]}
+                        onValueChange={(value) => handleSliderChange('truckRolls', value)}
+                        className="mb-2"
+                        data-testid="slider-truck-rolls"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>0.5</span>
+                        <span>10</span>
+                      </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="rollCost">Average Truck Roll Cost ($)</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Cost per service visit including labor and overhead</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="rollCost">Average Truck Roll Cost ($)</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Cost per service visit including labor and overhead</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">${inputs.rollCost}</span>
                       </div>
-                      <Input
+                      <Slider
                         id="rollCost"
-                        type="number"
-                        value={inputs.rollCost}
-                        onChange={(e) => handleInputChange('rollCost', e.target.value)}
-                        data-testid="input-roll-cost"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={25}
+                        max={500}
+                        step={5}
+                        value={[inputs.rollCost]}
+                        onValueChange={(value) => handleSliderChange('rollCost', value)}
+                        className="mb-2"
+                        data-testid="slider-roll-cost"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>$25</span>
+                        <span>$500</span>
+                      </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="revenuePerMember">Avg Revenue per Member/Year ($)</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Average annual revenue generated per member</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="revenuePerMember">Avg Revenue per Member/Year ($)</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Average annual revenue generated per member</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">${inputs.revenuePerMember.toLocaleString()}</span>
                       </div>
-                      <Input
+                      <Slider
                         id="revenuePerMember"
-                        type="number"
-                        value={inputs.revenuePerMember}
-                        onChange={(e) => handleInputChange('revenuePerMember', e.target.value)}
-                        data-testid="input-revenue-per-member"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={100}
+                        max={5000}
+                        step={50}
+                        value={[inputs.revenuePerMember]}
+                        onValueChange={(value) => handleSliderChange('revenuePerMember', value)}
+                        className="mb-2"
+                        data-testid="slider-revenue-per-member"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>$100</span>
+                        <span>$5,000</span>
+                      </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="grossMargin">Gross Margin (%)</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Your profit margin after direct costs</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="grossMargin">Gross Margin (%)</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Your profit margin after direct costs</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">{inputs.grossMargin}%</span>
                       </div>
-                      <Input
+                      <Slider
                         id="grossMargin"
-                        type="number"
-                        value={inputs.grossMargin}
-                        onChange={(e) => handleInputChange('grossMargin', e.target.value)}
-                        data-testid="input-gross-margin"
-                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        min={1}
+                        max={100}
+                        step={1}
+                        value={[inputs.grossMargin]}
+                        onValueChange={(value) => handleSliderChange('grossMargin', value)}
+                        className="mb-2"
+                        data-testid="slider-gross-margin"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>1%</span>
+                        <span>100%</span>
+                      </div>
                     </div>
                   </div>
                 </TooltipProvider>
