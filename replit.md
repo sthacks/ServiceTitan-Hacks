@@ -80,3 +80,14 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 ### Design Consistency Updates (November 2025)
 - Fixed Resources page hero background to match consistent styling across all pages
 - Removed AI Call Recording Analysis from Courses page (user preference)
+
+### SmartAC ROI Calculator (November 2025)
+- Created comprehensive ROI calculator at `/smartac-roi-calculator` for HVAC contractors to calculate profit growth with SmartAC platform
+- Features 8 customizable input fields with tooltips (Active Memberships, Annual Cost, Close Rate, Retention Rate, Truck Rolls, etc.)
+- Real-time client-side calculations showing before/after comparison for revenue, profit, and truck roll costs
+- Displays Net Annual Savings, Annual ROI percentage, Truck Roll Savings, and Revenue Increase in visual cards
+- Interactive 5-year revenue growth projection using Recharts bar chart
+- SmartAC Improvement Factors card showing: Conversion (20% → 40%), Retention (70% → 90%), Truck Rolls (2 → 1), Virtual Savings ($300/home/year)
+- Mobile-responsive design with gradient hero section and CTA buttons to /contact and /resources
+- Added SmartAC ROI Calculator card to Resources page as internal tool (first card in grid)
+- Updated sitemap.xml with new calculator page (priority 0.8)
