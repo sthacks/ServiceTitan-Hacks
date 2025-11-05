@@ -179,7 +179,7 @@ export default function SmartACROICalculator() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Users className="h-5 w-5 text-primary" />
+                  <Users className="h-5 w-5 text-[#1b5eec]" />
                   Your Current Metrics
                 </CardTitle>
               </CardHeader>
@@ -199,7 +199,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">{inputs.activeMembers.toLocaleString()}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.activeMembers.toLocaleString()}</span>
                       </div>
                       <Slider
                         id="activeMembers"
@@ -230,7 +230,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">${inputs.annualCost}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">${inputs.annualCost}</span>
                       </div>
                       <Slider
                         id="annualCost"
@@ -261,7 +261,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">{inputs.closeRate}%</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.closeRate}%</span>
                       </div>
                       <Slider
                         id="closeRate"
@@ -292,7 +292,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">{inputs.retentionRate}%</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.retentionRate}%</span>
                       </div>
                       <Slider
                         id="retentionRate"
@@ -323,7 +323,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">{inputs.truckRolls}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.truckRolls}</span>
                       </div>
                       <Slider
                         id="truckRolls"
@@ -354,7 +354,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">${inputs.rollCost}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">${inputs.rollCost}</span>
                       </div>
                       <Slider
                         id="rollCost"
@@ -385,7 +385,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">${inputs.revenuePerMember.toLocaleString()}</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">${inputs.revenuePerMember.toLocaleString()}</span>
                       </div>
                       <Slider
                         id="revenuePerMember"
@@ -416,7 +416,7 @@ export default function SmartACROICalculator() {
                             </TooltipContent>
                           </Tooltip>
                         </div>
-                        <span className="text-sm font-semibold text-primary">{inputs.grossMargin}%</span>
+                        <span className="text-sm font-semibold text-[#1b5eec]">{inputs.grossMargin}%</span>
                       </div>
                       <Slider
                         id="grossMargin"
@@ -459,10 +459,10 @@ export default function SmartACROICalculator() {
             </Card>
 
             {/* SmartAC Improvements Card */}
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-[#1b5eec]/5 border-[#1b5eec]/20">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-primary" />
+                  <TrendingUp className="h-5 w-5 text-[#1b5eec]" />
                   SmartAC Improvement Factors
                 </CardTitle>
               </CardHeader>
@@ -499,7 +499,7 @@ export default function SmartACROICalculator() {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center p-4 bg-background rounded-lg border-2 border-primary/30">
+                  <div className="flex justify-between items-center p-4 bg-background rounded-lg border-2 border-[#1b5eec]/30">
                     <span className="text-sm font-medium">SmartAC Platform Cost</span>
                     <div className="text-right">
                       <div className="text-sm font-semibold">$1,000/month</div>
@@ -508,7 +508,7 @@ export default function SmartACROICalculator() {
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-background rounded-lg border-2 border-primary/30">
+                <div className="mt-6 p-4 bg-background rounded-lg border-2 border-[#1b5eec]/30">
                   <h4 className="font-semibold mb-2 text-sm">How SmartAC Works:</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
                     <li>• AI-powered diagnostics reduce unnecessary visits</li>
@@ -544,11 +544,11 @@ export default function SmartACROICalculator() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+                <Card className="bg-gradient-to-br from-[#1b5eec]/10 to-[#1b5eec]/5 border-[#1b5eec]/20">
                   <CardContent className="pt-6">
                     <div className="text-center">
-                      <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
-                      <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                      <TrendingUp className="h-8 w-8 text-[#1b5eec] mx-auto mb-2" />
+                      <div className="text-2xl md:text-3xl font-bold text-[#1b5eec] mb-1">
                         {formatPercent(results.roi)}
                       </div>
                       <div className="text-sm text-muted-foreground">Annual ROI</div>
@@ -561,7 +561,7 @@ export default function SmartACROICalculator() {
                   <CardContent className="pt-6">
                     <div className="text-center">
                       <div className="text-xl font-bold mb-1">Truck Roll Savings</div>
-                      <div className="text-2xl font-bold text-primary mb-2">
+                      <div className="text-2xl font-bold text-[#1b5eec] mb-2">
                         {formatCurrency(results.truckRollSavings)}
                       </div>
                       <div className="text-xs text-muted-foreground">
@@ -575,7 +575,7 @@ export default function SmartACROICalculator() {
                   <CardContent className="pt-6">
                     <div className="text-center">
                       <div className="text-xl font-bold mb-1">Revenue Increase</div>
-                      <div className="text-2xl font-bold text-primary mb-2">
+                      <div className="text-2xl font-bold text-[#1b5eec] mb-2">
                         {formatCurrency(results.afterRevenue - results.beforeRevenue)}
                       </div>
                       <div className="text-xs text-muted-foreground">
@@ -597,7 +597,7 @@ export default function SmartACROICalculator() {
                       <div className="text-sm text-muted-foreground mb-2">Annual Revenue</div>
                       <div className="flex items-baseline gap-2">
                         <span className="text-lg line-through text-muted-foreground">{formatCurrency(results.beforeRevenue)}</span>
-                        <span className="text-2xl font-bold text-primary">{formatCurrency(results.afterRevenue)}</span>
+                        <span className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.afterRevenue)}</span>
                       </div>
                     </div>
 
@@ -605,7 +605,7 @@ export default function SmartACROICalculator() {
                       <div className="text-sm text-muted-foreground mb-2">Annual Profit</div>
                       <div className="flex items-baseline gap-2">
                         <span className="text-lg line-through text-muted-foreground">{formatCurrency(results.beforeProfit)}</span>
-                        <span className="text-2xl font-bold text-primary">{formatCurrency(results.afterProfit)}</span>
+                        <span className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.afterProfit)}</span>
                       </div>
                     </div>
 
@@ -640,7 +640,7 @@ export default function SmartACROICalculator() {
                         />
                         <Legend />
                         <Bar dataKey="before" name="Before SmartAC" fill="#94a3b8" />
-                        <Bar dataKey="after" name="With SmartAC" fill="#ED254E" />
+                        <Bar dataKey="after" name="With SmartAC" fill="#1b5eec" />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -649,16 +649,16 @@ export default function SmartACROICalculator() {
                       <div className="text-sm text-muted-foreground mb-1">5-Year Total (Before)</div>
                       <div className="text-2xl font-bold">{formatCurrency(results.fiveYearGrowthBefore)}</div>
                     </div>
-                    <div className="p-4 bg-primary/10 border-2 border-primary/30 rounded-lg">
+                    <div className="p-4 bg-[#1b5eec]/10 border-2 border-[#1b5eec]/30 rounded-lg">
                       <div className="text-sm text-muted-foreground mb-1">5-Year Total (With SmartAC)</div>
-                      <div className="text-2xl font-bold text-primary">{formatCurrency(results.fiveYearGrowthAfter)}</div>
+                      <div className="text-2xl font-bold text-[#1b5eec]">{formatCurrency(results.fiveYearGrowthAfter)}</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* CTA Section */}
-              <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+              <Card className="bg-gradient-to-br from-[#1b5eec]/10 to-[#1b5eec]/5 border-[#1b5eec]/20">
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold font-heading mb-4">
                     Ready to Transform Your Membership Program?
@@ -668,12 +668,12 @@ export default function SmartACROICalculator() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="/contact" data-testid="link-schedule-demo">
-                      <Button size="lg">
+                      <Button size="lg" className="bg-[#1b5eec] hover:bg-[#1b5eec]/90 text-white">
                         Schedule a SmartAC Demo
                       </Button>
                     </a>
                     <a href="/resources" data-testid="link-learn-more">
-                      <Button size="lg" variant="outline">
+                      <Button size="lg" variant="outline" className="border-[#1b5eec] text-[#1b5eec] hover:bg-[#1b5eec]/10">
                         Learn More About SmartAC
                       </Button>
                     </a>
