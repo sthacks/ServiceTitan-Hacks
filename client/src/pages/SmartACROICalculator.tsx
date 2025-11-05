@@ -408,7 +408,7 @@ export default function SmartACROICalculator() {
                     <span className="text-sm font-medium">Conversion Rate</span>
                     <div className="text-right">
                       <div className="text-xs text-muted-foreground">20% → 40%</div>
-                      <div className="text-sm font-semibold text-primary">+100% increase</div>
+                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">+100% increase</div>
                     </div>
                   </div>
 
@@ -416,7 +416,7 @@ export default function SmartACROICalculator() {
                     <span className="text-sm font-medium">Retention Rate</span>
                     <div className="text-right">
                       <div className="text-xs text-muted-foreground">70% → 90%</div>
-                      <div className="text-sm font-semibold text-primary">+29% increase</div>
+                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">+29% increase</div>
                     </div>
                   </div>
 
@@ -424,14 +424,14 @@ export default function SmartACROICalculator() {
                     <span className="text-sm font-medium">Truck Rolls per Member</span>
                     <div className="text-right">
                       <div className="text-xs text-muted-foreground">2 → 1</div>
-                      <div className="text-sm font-semibold text-primary">50% reduction</div>
+                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">50% reduction</div>
                     </div>
                   </div>
 
                   <div className="flex justify-between items-center p-4 bg-background rounded-lg">
                     <span className="text-sm font-medium">Virtual Visit Savings</span>
                     <div className="text-right">
-                      <div className="text-sm font-semibold text-primary">$300/home/year</div>
+                      <div className="text-sm font-semibold text-green-600 dark:text-green-400">$300/home/year</div>
                     </div>
                   </div>
 
