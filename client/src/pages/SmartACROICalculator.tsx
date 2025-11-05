@@ -139,7 +139,7 @@ export default function SmartACROICalculator() {
   };
 
   const formatPercent = (value: number) => {
-    return `${value.toFixed(1)}%`;
+    return `${Math.round(value)}%`;
   };
 
   return (
