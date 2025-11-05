@@ -153,20 +153,14 @@ export default function SmartACROICalculator() {
       <Header />
       <main className="flex-1 bg-background">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-16 md:py-20">
+        <section className="bg-black py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <Calculator className="h-12 w-12 text-primary" />
-                <h1 className="text-4xl md:text-5xl font-bold font-heading">
-                  SmartAC ROI Calculator
-                </h1>
-              </div>
-              <p className="text-xl text-muted-foreground mb-4">
-                See Your 5-Year Profit Growth with SmartAC
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Enter a few numbers to see how SmartAC turns memberships into a growth engine.
+              <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">
+                SmartAC ROI Calculator: See Your 5-Year Profit Growth
+              </h1>
+              <p className="text-lg text-white/90">
+                Enter a few numbers to see how SmartAC turns memberships into a growth engine. Calculate your potential savings, revenue increase, and ROI with our interactive calculator designed for HVAC contractors.
               </p>
             </div>
           </div>
