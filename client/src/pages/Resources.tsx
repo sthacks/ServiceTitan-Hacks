@@ -37,6 +37,14 @@ export default function Resources() {
 
   const resources = [
     {
+      title: "SmartAC ROI Calculator",
+      description: "Calculate your potential profit growth, truck-roll savings, and membership revenue improvement with SmartAC. See your 5-year ROI projection and discover how much you could save instantly.",
+      type: "Tool",
+      image: winkROIImage,
+      url: "/smartac-roi-calculator",
+      isInternalTool: true,
+    },
+    {
       title: "Customer Lifetime Value Analysis Prompt",
       description: "Unlock the power of ServiceTitan reports with this easy-to-use prompt for ChatGPT. Perfect for business owners and marketers, enhance your understanding of customer lifetime value today!",
       type: "Tool",
@@ -227,7 +235,17 @@ export default function Resources() {
                     {resource.description}
                   </p>
                   
-                  {resource.isExternalTool || resource.isExternalCourse ? (
+                  {resource.isInternalTool ? (
+                    <a
+                      href={resource.url}
+                      className="w-full"
+                      data-testid={`link-internal-tool-${index}`}
+                    >
+                      <Button className="w-full gap-2">
+                        {resource.type === 'Tool' ? 'Use Calculator' : 'View Resource'}
+                      </Button>
+                    </a>
+                  ) : resource.isExternalTool || resource.isExternalCourse ? (
                     <a
                       href={resource.url}
                       target="_blank"
