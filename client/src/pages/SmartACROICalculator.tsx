@@ -560,7 +560,7 @@ export default function SmartACROICalculator() {
                   <div className="flex justify-center">
                     <a href="https://go.st-hacks.cc/smart-ac" target="_blank" rel="noopener noreferrer" data-testid="link-schedule-demo">
                       <Button size="lg" className="bg-[#1b5eec] hover:bg-[#1b5eec]/90 text-white focus-visible:ring-0 focus-visible:outline-none">
-                        Schedule a SmartAC Demo
+                        Learn More About SmartAC
                       </Button>
                     </a>
                   </div>
