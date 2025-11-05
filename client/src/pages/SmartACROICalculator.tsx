@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Calculator, RotateCcw, TrendingUp, DollarSign, Users, Info } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from "recharts";
@@ -40,6 +41,13 @@ export default function SmartACROICalculator() {
     setInputs(prev => ({
       ...prev,
       [field]: parseFloat(value) || 0
+    }));
+  };
+
+  const handleSliderChange = (field: string, value: number[]) => {
+    setInputs(prev => ({
+      ...prev,
+      [field]: value[0]
     }));
   };
 
@@ -178,24 +186,34 @@ export default function SmartACROICalculator() {
                 <TooltipProvider>
                   <div className="space-y-4">
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Label htmlFor="activeMembers">Active Memberships</Label>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Info className="h-4 w-4 text-muted-foreground" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Total number of active service plan members</p>
-                          </TooltipContent>
-                        </Tooltip>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Label htmlFor="activeMembers">Active Memberships</Label>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Total number of active service plan members</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                        <span className="text-sm font-semibold text-primary">{inputs.activeMembers.toLocaleString()}</span>
                       </div>
-                      <Input
+                      <Slider
                         id="activeMembers"
-                        type="number"
-                        value={inputs.activeMembers}
-                        onChange={(e) => handleInputChange('activeMembers', e.target.value)}
-                        data-testid="input-active-members"
+                        min={100}
+                        max={20000}
+                        step={100}
+                        value={[inputs.activeMembers]}
+                        onValueChange={(value) => handleSliderChange('activeMembers', value)}
+                        className="mb-2"
+                        data-testid="slider-active-members"
                       />
+                      <div className="flex justify-between text-xs text-muted-foreground">
+                        <span>100</span>
+                        <span>20,000</span>
+                      </div>
                     </div>
 
                     <div>
@@ -216,6 +234,7 @@ export default function SmartACROICalculator() {
                         value={inputs.annualCost}
                         onChange={(e) => handleInputChange('annualCost', e.target.value)}
                         data-testid="input-annual-cost"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
 
@@ -237,6 +256,7 @@ export default function SmartACROICalculator() {
                         value={inputs.closeRate}
                         onChange={(e) => handleInputChange('closeRate', e.target.value)}
                         data-testid="input-close-rate"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
 
@@ -258,6 +278,7 @@ export default function SmartACROICalculator() {
                         value={inputs.retentionRate}
                         onChange={(e) => handleInputChange('retentionRate', e.target.value)}
                         data-testid="input-retention-rate"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
 
@@ -279,6 +300,7 @@ export default function SmartACROICalculator() {
                         value={inputs.truckRolls}
                         onChange={(e) => handleInputChange('truckRolls', e.target.value)}
                         data-testid="input-truck-rolls"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
 
@@ -300,6 +322,7 @@ export default function SmartACROICalculator() {
                         value={inputs.rollCost}
                         onChange={(e) => handleInputChange('rollCost', e.target.value)}
                         data-testid="input-roll-cost"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
 
@@ -321,6 +344,7 @@ export default function SmartACROICalculator() {
                         value={inputs.revenuePerMember}
                         onChange={(e) => handleInputChange('revenuePerMember', e.target.value)}
                         data-testid="input-revenue-per-member"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
 
@@ -342,6 +366,7 @@ export default function SmartACROICalculator() {
                         value={inputs.grossMargin}
                         onChange={(e) => handleInputChange('grossMargin', e.target.value)}
                         data-testid="input-gross-margin"
+                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                     </div>
                   </div>
