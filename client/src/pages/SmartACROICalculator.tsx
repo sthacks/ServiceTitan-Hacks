@@ -234,7 +234,7 @@ export default function SmartACROICalculator() {
                         step={50}
                         value={[inputs.activeMembers]}
                         onValueChange={(value) => handleSliderChange('activeMembers', value)}
-                        className="mb-2"
+                        className="mb-2 [&_[role=slider]]:border-[#1b5eec] [&>span>span]:bg-[#1b5eec]"
                         data-testid="slider-active-members"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
@@ -265,7 +265,7 @@ export default function SmartACROICalculator() {
                         step={1}
                         value={[inputs.retentionRate]}
                         onValueChange={(value) => handleSliderChange('retentionRate', value)}
-                        className="mb-2"
+                        className="mb-2 [&_[role=slider]]:border-[#1b5eec] [&>span>span]:bg-[#1b5eec]"
                         data-testid="slider-retention-rate"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
@@ -296,7 +296,7 @@ export default function SmartACROICalculator() {
                         step={100}
                         value={[inputs.newVisitsPerYear]}
                         onValueChange={(value) => handleSliderChange('newVisitsPerYear', value)}
-                        className="mb-2"
+                        className="mb-2 [&_[role=slider]]:border-[#1b5eec] [&>span>span]:bg-[#1b5eec]"
                         data-testid="slider-new-visits"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
@@ -327,7 +327,7 @@ export default function SmartACROICalculator() {
                         step={1}
                         value={[inputs.closeRate]}
                         onValueChange={(value) => handleSliderChange('closeRate', value)}
-                        className="mb-2"
+                        className="mb-2 [&_[role=slider]]:border-[#1b5eec] [&>span>span]:bg-[#1b5eec]"
                         data-testid="slider-close-rate"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
@@ -358,7 +358,7 @@ export default function SmartACROICalculator() {
                         step={50}
                         value={[inputs.revenuePerMember]}
                         onValueChange={(value) => handleSliderChange('revenuePerMember', value)}
-                        className="mb-2"
+                        className="mb-2 [&_[role=slider]]:border-[#1b5eec] [&>span>span]:bg-[#1b5eec]"
                         data-testid="slider-revenue-per-member"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">
