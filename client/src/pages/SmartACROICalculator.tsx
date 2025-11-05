@@ -10,6 +10,7 @@ import { Slider } from "@/components/ui/slider";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Calculator, RotateCcw, TrendingUp, DollarSign, Users, Info } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from "recharts";
+import smartacLogo from "@assets/smartac_1762359582715.png";
 
 export default function SmartACROICalculator() {
   const [inputs, setInputs] = useState({
@@ -156,6 +157,12 @@ export default function SmartACROICalculator() {
         <section className="bg-black py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center max-w-3xl mx-auto">
+              <img 
+                src={smartacLogo} 
+                alt="SmartAC.com" 
+                className="h-16 md:h-20 mx-auto mb-8"
+                data-testid="img-smartac-logo"
+              />
               <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">
                 SmartAC ROI Calculator: See Your 5-Year Profit Growth
               </h1>
