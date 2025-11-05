@@ -1,0 +1,65 @@
+Build a responsive ROI calculator web app for HVAC contractors called "SmartAC ROI Calculator."
+
+### PURPOSE
+Show contractors how much profit growth, truck-roll savings, and membership revenue improvement they could achieve by adopting SmartAC’s platform. The calculator compares "Before SmartAC" vs. "With SmartAC" performance over one year and five years.
+
+### DESIGN & BRANDING
+- Use ServiceTitan Hacks / SmartAC color palette: red (#ED254E), dark gray (#333333), white background accents, light gray cards.
+- Modern clean layout with clear data cards and large numeric outputs.
+- Responsive for desktop and mobile.
+- Include SmartAC logo placeholder at top and a “Calculate ROI” button in SmartAC red.
+- Results section should appear only after calculation.
+
+### INPUT FIELDS (user editable)
+Label each clearly with tooltips showing example defaults:
+1. Active Memberships (default 5000)
+2. Annual Membership Cost ($/yr) (default 240)
+3. Membership Close Rate (%) (default 20)
+4. Annual Retention Rate (%) (default 70)
+5. Average Truck Rolls per Member per Year (default 2)
+6. Average Truck Roll Cost ($) (default 400)
+7. Average Revenue per Member per Year ($) (default 1000)
+8. Gross Margin (%) (default 50)
+
+### SMARTAC IMPROVEMENT FACTORS (pre-set sliders or constants)
+- Conversion Improvement: 20% → 40%
+- Retention Improvement: 70% → 90%
+- Truck Rolls per Member: 2 → 1
+- Virtual Visit Savings: $300 per home per year
+- SmartAC Platform Cost: $1000/month ($12,000/year)
+
+### CALCULATIONS
+Use the following formulas:
+- Before Revenue = (Active Memberships × Avg Revenue per Member)
+- Before Profit = Before Revenue × (Gross Margin / 100)
+- Before Truck Roll Cost = (Truck Rolls × Roll Cost × Active Memberships)
+- After Revenue = (Active Memberships × (CloseRate_after / CloseRate_before) × Avg Revenue per Member)
+- After Profit = After Revenue × (Gross Margin / 100)
+- After Truck Roll Cost = (Truck Rolls_after × Roll Cost × Active Memberships)
+- Annual Savings = (Before Truck Roll Cost − After Truck Roll Cost) + (After Profit − Before Profit)
+- 5-Year Compounding Growth = After Revenue × 1.279 (for base) vs. 2.79× multiplier (for SmartAC scenario)
+- ROI (%) = ((Annual Savings − 12000) / 12000) × 100
+
+### OUTPUT SECTION
+Display the following dynamically:
+- Membership Revenue Before / After
+- Profit Before / After
+- Truck-Roll Cost Before / After
+- Annual Savings
+- 5-Year Growth Projection (bar chart)
+- ROI (%)
+
+### UI ELEMENTS
+- Use cards for “Inputs,” “Results,” and “Assumptions.”
+- Include animated number counters on calculate.
+- Use a bar chart or line chart comparing Before vs. After over 5 years.
+- Add CTA at bottom: “Schedule a SmartAC Demo” (link placeholder).
+
+### BEHAVIOR
+- All calculations run instantly client-side when “Calculate ROI” is pressed.
+- Reset button clears all fields.
+- Tooltips on every input explaining industry averages.
+
+### COPY
+Header: “See Your 5-Year Profit Growth with SmartAC”
+Sub-header: “Enter a few numbers to see how SmartAC turns memberships into a growth engine.”
