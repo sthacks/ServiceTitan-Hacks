@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { DollarSign, Truck, Clock, Map, Wrench, Building2, Users, Calculator } from "lucide-react";
+import truckRollSocialImage from "@assets/cost per truck roll calculator_1762451997312.png";
 
 export default function TruckRollCalculator() {
   const [wage, setWage] = useState(28.00);
@@ -45,6 +46,9 @@ export default function TruckRollCalculator() {
         description="Calculate the true cost to send a technician to a home. Free HVAC contractor calculator includes labor burden, vehicle costs, overhead allocation, and truck/tooling expenses."
         keywords="truck roll cost calculator, HVAC service call cost, technician cost calculator, contractor cost analysis, field service pricing"
         canonicalUrl="https://servicetitanhacks.com/truck-roll-calculator"
+        ogImage={truckRollSocialImage}
+        ogTitle="Know Your True Cost Per Service Call"
+        ogDescription="Free calculator for HVAC contractors to determine real truck roll costs including labor burden, vehicle expenses, overhead, and equipment. Based on BLS and AAA data."
       />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12 max-w-7xl">
