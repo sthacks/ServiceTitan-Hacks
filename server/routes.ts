@@ -58,6 +58,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.redirect(301, redirectMap[req.path]);
     }
 
+    // Redirect login attempts to Thinkific course platform
+    if (req.path === '/users/sign_in') {
+      return res.redirect(301, 'https://servicetitanhacks.thinkific.com/users/sign_in');
+    }
+
     // Redirect course collections to Thinkific subdomain
     if (req.path === '/collections/courses') {
       return res.redirect(301, 'https://servicetitanhacks.thinkific.com/collections/courses');

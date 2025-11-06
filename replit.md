@@ -91,3 +91,13 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Mobile-responsive design with gradient hero section and CTA buttons to /contact and /resources
 - Added SmartAC ROI Calculator card to Resources page as internal tool (first card in grid)
 - Updated sitemap.xml with new calculator page (priority 0.8)
+
+### Cost Per Truck Roll Calculator (November 2025)
+- Created comprehensive truck roll cost calculator at `/truck-roll-calculator` with 9 customizable input fields
+- Real-time calculations for labor burden, vehicle costs, overhead allocation, truck/tool expenses
+- Displays 6 cost breakdowns: Fully Burdened Labor Rate, Labor Cost Per Call, Vehicle Cost Per Call, Truck/Tool Cost Per Call, Overhead Cost Per Call, and Total Cost
+- Defaults based on BLS median HVAC wage ($28/hr) and AAA vehicle costs ($0.85/mile)
+- Added source references section citing BLS HVAC wage data and AAA "Your Driving Costs" report
+- Implemented social preview metadata with custom HVAC van/calculator image, title "Know Your True Cost Per Service Call", and descriptive text
+- Added to Resources page navigation and sitemap.xml
+- 301 redirect configured: `/users/sign_in` → `https://servicetitanhacks.thinkific.com/users/sign_in` for course platform login
