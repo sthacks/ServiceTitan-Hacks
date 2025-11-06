@@ -18,14 +18,16 @@ import { Download, FileText, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import hvacMarketingImage from "@assets/IMG_4342_1760897351059.jpeg";
-import pricingObjectionsImage from "@assets/Untitled design_1760897689409.png";
-import referralWizardImage from "@assets/generated_images/Referral_marketing_business_illustration_4a956926.png";
-import winkROIImage from "@assets/generated_images/ROI_automation_savings_illustration_d00c9d33.png";
-import ltvAnalysisImage from "@assets/generated_images/Customer_lifetime_value_analysis_04f8592e.png";
-import zapierIntegrationImage from "@assets/generated_images/ServiceTitan_Zapier_integration_visual_c40d4316.png";
-import swimlaneChartImage from "@assets/generated_images/Business_process_swimlane_workflow_e4e79b67.png";
-import metricsGuideImage from "@assets/generated_images/Business_metrics_KPI_dashboard_b247c6c8.png";
+import smartacROIImage from "@assets/smartac roi calculator_1762448559884.png";
+import truckRollImage from "@assets/cost per truck roll calculator_1762448559885.png";
+import ltvAnalysisImage from "@assets/customer lifetime value calculator_1762448559884.png";
+import zapierIntegrationImage from "@assets/connect servicetitan to zapier_1762448559885.png";
+import pricingObjectionsImage from "@assets/master pricing objections_1762448559882.png";
+import swimlaneChartImage from "@assets/streamline your business with swimlane charts_1762448559882.png";
+import metricsGuideImage from "@assets/servicetitan metrics_1762448559882.png";
+import hvacMarketingImage from "@assets/hvac marketing calculator_1762448559883.png";
+import referralWizardImage from "@assets/referral wizard calculator_1762448559883.png";
+import winkROIImage from "@assets/wink roi saver calculator_1762448559883.png";
 import freeResourcesHero from "@assets/switchy images (21)_1761919068554.png";
 
 export default function Resources() {
@@ -40,7 +42,7 @@ export default function Resources() {
       title: "SmartAC ROI Calculator",
       description: "Calculate your potential profit growth, truck-roll savings, and membership revenue improvement with SmartAC. See your 5-year ROI projection and discover how much you could save instantly.",
       type: "Tool",
-      image: winkROIImage,
+      image: smartacROIImage,
       url: "/smartac-roi-calculator",
       isInternalTool: true,
     },
@@ -48,7 +50,7 @@ export default function Resources() {
       title: "Cost Per Truck Roll Calculator",
       description: "Discover your true cost to send a technician to a home. Calculate fully-burdened labor, vehicle expenses, overhead allocation, and total service call costs. Know your numbers before setting prices.",
       type: "Tool",
-      image: hvacMarketingImage,
+      image: truckRollImage,
       url: "/truck-roll-calculator",
       isInternalTool: true,
     },
