@@ -303,6 +303,37 @@ export default function TruckRollCalculator() {
               </div>
             </CardContent>
           </Card>
+
+          {/* References Section */}
+          <div className="mt-12 pt-8 border-t">
+            <h3 className="text-lg font-semibold mb-4">Sources for Stated Numbers</h3>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>
+                <strong>U.S. Bureau of Labor Statistics median HVAC wage:</strong>{" "}
+                <a 
+                  href="https://www.bls.gov/oes/current/oes499021.htm" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                  data-testid="link-bls-source"
+                >
+                  https://www.bls.gov/oes/current/oes499021.htm
+                </a>
+              </p>
+              <p>
+                <strong>AAA "Your Driving Costs" average truck operating cost:</strong>{" "}
+                <a 
+                  href="https://newsroom.aaa.com/2024/08/2024-your-driving-costs/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                  data-testid="link-aaa-source"
+                >
+                  https://newsroom.aaa.com/2024/08/2024-your-driving-costs/
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
