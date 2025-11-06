@@ -45,6 +45,14 @@ export default function Resources() {
       isInternalTool: true,
     },
     {
+      title: "Cost Per Truck Roll Calculator",
+      description: "Discover your true cost to send a technician to a home. Calculate fully-burdened labor, vehicle expenses, overhead allocation, and total service call costs. Know your numbers before setting prices.",
+      type: "Tool",
+      image: hvacMarketingImage,
+      url: "/truck-roll-calculator",
+      isInternalTool: true,
+    },
+    {
       title: "Customer Lifetime Value Analysis Prompt",
       description: "Unlock the power of ServiceTitan reports with this easy-to-use prompt for ChatGPT. Perfect for business owners and marketers, enhance your understanding of customer lifetime value today!",
       type: "Tool",

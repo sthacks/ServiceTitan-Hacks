@@ -1,0 +1,132 @@
+Here is the **exact prompt** you will give to your Replit AI agent.
+Copy it **as-is** and paste into Replit.
+
+---
+
+## ✅ **Replit AI Agent Prompt (Copy/Paste)**
+
+**Project Goal:**
+Create a **web-based calculator** that helps residential HVAC contractors determine their **true cost to send a technician to a home** (cost per service call / cost per truck roll).
+
+---
+
+### **Requirements**
+
+**1. Inputs (all user-editable):**
+
+* Technician hourly wage (default: 28.00)
+* Labor burden rate (%) to cover payroll tax, workers comp, health, PTO (default: 35)
+* Average time spent per service call (hours, including drive time) (default: 1.5)
+* Average round-trip miles per call (default: 20)
+* Cost per mile (includes fuel, repairs, depreciation, insurance) (default: 0.85)
+* Monthly truck/tooling cost (truck payment + insurance + tools + uniforms + devices) (default: 1250)
+* Billable field hours per tech per month (default: 150)
+* Monthly overhead cost (total office salaries, rent, software, etc.) (default: 45000)
+* Total billable field hours per month (for overhead allocation across entire team) (default: 600)
+
+---
+
+### **Calculations**
+
+1. **Fully Burdened Labor Rate**
+
+```
+fully_burdened_rate = wage * (1 + burden_rate/100)
+```
+
+2. **Labor Cost per Call**
+
+```
+labor_cost = fully_burdened_rate * hours_per_call
+```
+
+3. **Vehicle Operating Cost per Call**
+
+```
+vehicle_cost = miles_per_call * cost_per_mile
+```
+
+4. **Truck/Tooling Allocation**
+
+```
+truck_cost_per_hour = monthly_truck_cost / billable_hours_per_tech
+truck_cost = truck_cost_per_hour * hours_per_call
+```
+
+5. **Overhead Allocation per Call**
+
+```
+overhead_rate_per_hour = monthly_overhead / total_billable_company_hours
+overhead_cost = overhead_rate_per_hour * hours_per_call
+```
+
+6. **Total Cost per Call**
+
+```
+total_cost = labor_cost + vehicle_cost + truck_cost + overhead_cost
+```
+
+---
+
+### **Outputs to Display Clearly**
+
+* Fully burdened labor rate per hour
+* Labor cost per call
+* Vehicle cost per call
+* Truck/tool cost per call
+* Overhead cost per call
+* **Total cost per service call (final result, bold and large)**
+
+---
+
+### **UI Requirements**
+
+* Clean, professional layout.
+* Use simple labels and tooltips for clarity.
+* Display results dynamically as inputs change (no submit button required).
+* Present final cost with emphasis formatting (large font, bold, highlighted).
+* Add a note at the bottom:
+  *“This calculates cost to *send* a truck, not what you should charge. Your pricing must cover profit on top of this cost.”*
+
+---
+
+### **Tech Stack**
+
+* HTML
+* CSS (simple, mobile responsive)
+* Vanilla JavaScript (no frameworks)
+
+---
+
+### **File Structure**
+
+```
+index.html
+style.css
+script.js
+```
+
+---
+
+### **Success Criteria**
+
+* The calculator runs fully in the browser.
+* All calculations update instantly when inputs change.
+* The final result is obvious and visually highlighted.
+* Code is clean, commented, and easy to modify.
+
+---
+
+**End of Prompt**
+
+---
+
+If you'd like, I can now:
+
+✅ Create a **visual mockup**
+✅ Write the **marketing copy** to put above the calculator
+✅ Add a “Download as PDF estimate” feature
+✅ White-label it to your brand
+
+Just tell me:
+Do you want this **branded under your HVAC company name** or **ServiceTitan Hacks**?
