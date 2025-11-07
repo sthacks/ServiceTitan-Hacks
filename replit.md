@@ -101,3 +101,14 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Implemented social preview metadata with custom HVAC van/calculator image, title "Know Your True Cost Per Service Call", and descriptive text
 - Added to Resources page navigation and sitemap.xml
 - 301 redirect configured: `/users/sign_in` → `https://servicetitanhacks.thinkific.com/users/sign_in` for course platform login
+
+### Automation Playbook Landing Page (November 2025)
+- Created dedicated landing page at `/automation-playbook-landing` for the Automation Playbook: Zapier + Wink resource
+- Features hero image, title, description, and email capture form for PDF delivery
+- Resource is delivered via email with PDF attachment to ensure valid email addresses (using Resend)
+- Landing page showcases 4 key benefits: When to Use Zapier vs Wink, Build Hybrid Workflows, Setup Tips & Best Practices, Real-World Examples
+- Updated Resources page to link to landing page instead of modal popup for Automation Playbook card
+- Email includes personalized greeting, learning outcomes, links to resources/community, and PDF attachment (automation-playbook-zapier-wink.pdf)
+- Admin notification sent to bill@st-hacks.com for each download request
+- Backend route handles email delivery for "Automation Playbook: Zapier + Wink" resource specifically
+- Added to sitemap.xml with priority 0.8
