@@ -82,18 +82,18 @@ export default function Partners() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="p-6 text-center flex flex-col">
                     <a
                       href={partner.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block mb-6"
                     >
-                      <div className={`flex items-center justify-center ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'h-32' : 'h-20'}`}>
+                      <div className="h-32 flex items-center justify-center">
                         <img
                           src={partner.logo}
                           alt={`${partner.name} logo`}
-                          className="max-h-full max-w-full object-contain"
+                          className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
                           loading="lazy"
                           data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                         />
