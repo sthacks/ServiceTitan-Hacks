@@ -28,12 +28,6 @@ export default function Podcast() {
       url: "https://servicetitanhacks.podbean.com/e/automation-first-ai-second-practical-systems-for-the-trades/",
     },
     {
-      title: "AI Voice vs. Human CSRs: The Future of Home Service Calls with Nate Keller from Free-2-Grow",
-      description: "AI call handling is transforming home service businesses. Nate Keller from Free-2-Grow.com joins to explain how their AI-powered voice platform helps HVAC, plumbing, and electrical companies answer every call 24/7 and boost booking rates up to 80%.",
-      date: "September 9, 2025",
-      url: "https://servicetitanhacks.podbean.com/e/ai-voice-vs-human-csrs-the-future-of-home-service-calls/",
-    },
-    {
       title: "Omni SEO: How AI Answer Engines Are Reshaping Contractor Marketing with Corry Cullather from WebFX",
       description: "Homeowners are no longer just searching on Google — they're turning to AI engines like ChatGPT and Perplexity. Is your contracting business ready for Local SEO, Core SEO, and Omni SEO?",
       date: "September 2, 2025",

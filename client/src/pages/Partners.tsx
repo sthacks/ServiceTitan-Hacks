@@ -27,12 +27,6 @@ export default function Partners() {
       url: "https://go.st-hacks.cc/wink",
     },
     {
-      name: "Free-2-Grow",
-      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/e42/a11/fb9/Free_2_Grow.png",
-      description: "AI voice solutions for home service businesses to answer every call, boost booking rates, and capture revenue 24/7.",
-      url: "https://go.st-hacks.cc/free-2-grow",
-    },
-    {
       name: "SmartAC",
       logo: smartACLogo,
       description: "Smart automation and customer communication tools that help contractors deliver exceptional service experiences.",
@@ -95,7 +89,7 @@ export default function Partners() {
                       rel="noopener noreferrer"
                       className="block mb-6"
                     >
-                      <div className={`flex items-center justify-center ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' || partner.name === 'Free-2-Grow' ? 'h-32' : 'h-20'}`}>
+                      <div className={`flex items-center justify-center ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'h-32' : 'h-20'}`}>
                         <img
                           src={partner.logo}
                           alt={`${partner.name} logo`}

@@ -7,7 +7,6 @@ import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
 import winkLogo from "@assets/logos.zip - 6_1762022633613.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
-import free2GrowLogo from "@assets/logos.zip - 7_1762022633613.png";
 import volcaLogo from "@assets/logos.zip - 8_1762023121150.png";
 
 export default function Footer() {
@@ -31,7 +30,6 @@ export default function Footer() {
 
   const partners = [
     { name: "Volca.AI", logo: volcaLogo, url: "https://go.st-hacks.cc/volca" },
-    { name: "Free-2-Grow", logo: free2GrowLogo, url: "https://go.st-hacks.cc/free-2-grow" },
     { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
@@ -137,7 +135,7 @@ export default function Footer() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' || partner.name === 'Free-2-Grow' ? 'h-16' : 'h-12'}`}
+                  className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'h-16' : 'h-12'}`}
                   loading="lazy"
                 />
               </a>
