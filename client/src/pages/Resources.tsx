@@ -84,8 +84,8 @@ export default function Resources() {
       description: "Unlock your team's potential! Download my free Swimlane Chart template to establish clear processes, enhance collaboration, and adapt workflows for a more scalable business model.",
       type: "Digital Download",
       image: swimlaneChartImage,
-      url: "/downloads/Tech-Turnover-Swimlane.pdf",
-      isLocalFile: true,
+      url: "/swimlane-charts-landing",
+      isInternalTool: true,
     },
     {
       title: "ServiceTitan Metrics Guide",
