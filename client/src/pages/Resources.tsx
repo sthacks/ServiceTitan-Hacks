@@ -28,6 +28,7 @@ import metricsGuideImage from "@assets/servicetitan metrics_1762448559882.png";
 import hvacMarketingImage from "@assets/hvac marketing calculator_1762448559883.png";
 import referralWizardImage from "@assets/referral wizard calculator_1762448559883.png";
 import winkROIImage from "@assets/wink roi saver calculator_1762448559883.png";
+import automationPlaybookImage from "@assets/generated_images/Automation_playbook_cover_design_a88e140b.png";
 import freeResourcesHero from "@assets/switchy images (21)_1761919068554.png";
 
 export default function Resources() {
@@ -117,6 +118,14 @@ export default function Resources() {
       image: winkROIImage,
       url: "https://go.st-hacks.cc/roi-calc",
       isExternalTool: true,
+    },
+    {
+      title: "Automation Playbook: Zapier + Wink",
+      description: "Master the art of combining Zapier and Wink for maximum automation efficiency. Learn when to use each tool, how to build hybrid workflows, and get practical examples to streamline your ServiceTitan operations.",
+      type: "Digital Download",
+      image: automationPlaybookImage,
+      url: "/downloads/automation-playbook-zapier-wink.pdf",
+      isLocalFile: true,
     },
   ];
 
