@@ -341,7 +341,10 @@ ${JSON.stringify(jsonData, null, 2)}
       }
       
       // Send resource to user via email for specific resources
+      let shouldCheckEmail = false;
+      
       if (data.resourceName === "Automation Playbook: Zapier + Wink") {
+        shouldCheckEmail = true;
         try {
           const { client, fromEmail } = await getUncachableResendClient();
           
@@ -387,12 +390,59 @@ ${JSON.stringify(jsonData, null, 2)}
           console.error("Failed to send resource email to user:", emailError);
           // Still return success to user even if email fails
         }
+      } else if (data.resourceName === "ServiceTitan Metrics Guide") {
+        shouldCheckEmail = true;
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          // Read the Excel file
+          const xlsxPath = path.join(process.cwd(), 'public', 'downloads', 'servicetitan-metrics-guide.xlsx');
+          const xlsxBuffer = fs.readFileSync(xlsxPath);
+          const xlsxBase64 = xlsxBuffer.toString('base64');
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: data.email,
+            subject: '📊 Your ServiceTitan Metrics Guide is Ready!',
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: #ED254E;">Hi ${data.firstName}!</h2>
+                <p>Thanks for downloading the <strong>ServiceTitan Metrics Guide: 112 Essential KPIs</strong>!</p>
+                <p>Your free Excel spreadsheet is attached to this email. Here's what you'll get:</p>
+                <ul style="line-height: 1.8;">
+                  <li>112 essential metrics organized by department (Sales, Operations, Marketing, Finance, Customer Service)</li>
+                  <li>Clear definitions so you know exactly what each metric measures</li>
+                  <li>Formulas and calculations built right into the spreadsheet</li>
+                  <li>ServiceTitan-compatible structure for easy data pulling</li>
+                </ul>
+                <p style="margin-top: 30px;">
+                  <strong>Ready to dive deeper?</strong><br>
+                  Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
+                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                </p>
+                <p style="margin-top: 30px; color: #666; font-size: 14px;">
+                  Questions? Reply to this email anytime!<br>
+                  - The ServiceTitan Hacks Team
+                </p>
+              </div>
+            `,
+            attachments: [
+              {
+                filename: 'servicetitan-metrics-guide.xlsx',
+                content: xlsxBase64,
+              },
+            ],
+          });
+        } catch (emailError) {
+          console.error("Failed to send resource email to user:", emailError);
+          // Still return success to user even if email fails
+        }
       }
       
       res.status(201).json({ 
         message: "Success! Check your email for the download link.",
         lead: { id: lead.id },
-        shouldCheckEmail: data.resourceName === "Automation Playbook: Zapier + Wink"
+        shouldCheckEmail
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
