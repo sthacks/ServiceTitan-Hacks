@@ -9,6 +9,7 @@ import OpenAI from "openai";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import Stripe from "stripe";
 import path from "path";
+import fs from "fs";
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
@@ -319,14 +320,14 @@ ${JSON.stringify(jsonData, null, 2)}
       
       const lead = await storage.createResourceLead(data);
       
-      // Send email notification to bill@st-hacks.com with resource download info
+      // Send email notification to admin
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
         await client.emails.send({
           from: fromEmail,
           to: 'bill@st-hacks.com',
-          subject: data.resourceName,
+          subject: `New Resource Download: ${data.resourceName}`,
           html: `
             <h2>New Resource Download</h2>
             <p><strong>Resource:</strong> ${data.resourceName}</p>
@@ -335,13 +336,63 @@ ${JSON.stringify(jsonData, null, 2)}
           `,
         });
       } catch (emailError) {
-        console.error("Failed to send email notification:", emailError);
+        console.error("Failed to send admin notification:", emailError);
         // Don't fail the request if email fails
       }
       
+      // Send resource to user via email for specific resources
+      if (data.resourceName === "Automation Playbook: Zapier + Wink") {
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          // Read the PDF file
+          const pdfPath = path.join(process.cwd(), 'public', 'downloads', 'automation-playbook-zapier-wink.pdf');
+          const pdfBuffer = fs.readFileSync(pdfPath);
+          const pdfBase64 = pdfBuffer.toString('base64');
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: data.email,
+            subject: '🎉 Your Automation Playbook: Zapier + Wink is Ready!',
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: #ED254E;">Hi ${data.firstName}!</h2>
+                <p>Thanks for downloading the <strong>Automation Playbook: Zapier + Wink</strong>!</p>
+                <p>Your free guide is attached to this email. Here's what you'll learn:</p>
+                <ul style="line-height: 1.8;">
+                  <li>When to use Zapier vs Wink for maximum efficiency</li>
+                  <li>How to combine both tools for hybrid workflows</li>
+                  <li>Setup tips and best practices</li>
+                  <li>Example automation stacks for ServiceTitan contractors</li>
+                </ul>
+                <p style="margin-top: 30px;">
+                  <strong>Want to learn more?</strong><br>
+                  Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
+                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                </p>
+                <p style="margin-top: 30px; color: #666; font-size: 14px;">
+                  Questions? Reply to this email anytime!<br>
+                  - The ServiceTitan Hacks Team
+                </p>
+              </div>
+            `,
+            attachments: [
+              {
+                filename: 'automation-playbook-zapier-wink.pdf',
+                content: pdfBase64,
+              },
+            ],
+          });
+        } catch (emailError) {
+          console.error("Failed to send resource email to user:", emailError);
+          // Still return success to user even if email fails
+        }
+      }
+      
       res.status(201).json({ 
-        message: "Success! You can now download the resource.",
-        lead: { id: lead.id }
+        message: "Success! Check your email for the download link.",
+        lead: { id: lead.id },
+        shouldCheckEmail: data.resourceName === "Automation Playbook: Zapier + Wink"
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
