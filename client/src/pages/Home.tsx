@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
-import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart } from "lucide-react";
+import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
@@ -82,6 +82,14 @@ export default function Home() {
       link: "/podcast",
       image: podcastImage,
       alt: "ServiceTitan Hacks podcast - contractor conversations on AI tools and automation",
+    },
+    {
+      title: "Blog",
+      description: "Expert insights on ServiceTitan automation, AI tools for contractors, and practical tips to streamline your HVAC or plumbing business.",
+      icon: FileText,
+      link: "/blog",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FI8AAxp7ERumPFmkyYVug_31639896-1.jpg",
+      alt: "ServiceTitan Hacks blog - contractor insights on AI and automation",
     },
     {
       title: "All-Access Pass",
