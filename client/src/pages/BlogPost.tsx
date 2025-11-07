@@ -46,7 +46,7 @@ const blogPosts: BlogPost[] = [
     title: "Should I Switch to ServiceTitan? The Real Cost and Timeline",
     excerpt: "Considering ServiceTitan for your home service business? Learn when it makes sense to switch, what it really costs ($10K-$30K in setup), and why full implementation takes six months.",
     author: "Bill Brown",
-    date: "January 18, 2025",
+    date: "May 7, 2025",
     readTime: "5 min read",
     category: "ServiceTitan Tips",
     image: serviceTitanDashboardImage,
