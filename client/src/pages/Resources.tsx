@@ -124,8 +124,8 @@ export default function Resources() {
       description: "Master the art of combining Zapier and Wink for maximum automation efficiency. Learn when to use each tool, how to build hybrid workflows, and get practical examples to streamline your ServiceTitan operations.",
       type: "Digital Download",
       image: automationPlaybookImage,
-      url: "/downloads/automation-playbook-zapier-wink.pdf",
-      isLocalFile: true,
+      url: "/automation-playbook-landing",
+      isInternalTool: true,
     },
   ];
 
