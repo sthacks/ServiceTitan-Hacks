@@ -1,0 +1,81 @@
+ServiceTitan Hacks — SMS Privacy Policy
+
+Effective Date: November 7, 2025
+
+Scope
+This policy explains how ServiceTitan Hacks (“we,” “us,” “ST Hacks”) collects, uses, stores, shares, and protects mobile phone numbers and SMS message content when you opt in to receive text messages from us.
+
+1. What We Collect
+
+The phone number you provide to opt in to SMS.
+
+Message content you send to us (for support, replies, or opt-out).
+
+Metadata such as timestamps, delivery status, and carrier routing information.
+
+2. How We Use Your Information
+
+We use your phone number and message data to:
+
+Send the SMS messages you agreed to receive, including marketing, updates, reminders, and support replies.
+
+Manage and log opt-ins and opt-outs.
+
+Improve our services and detect abuse or fraud.
+
+We do not use SMS data for unrelated profiling without explicit notice and consent.
+
+3. Consent and Legal Basis
+
+You must provide explicit consent to receive marketing SMS from us.
+
+For U.S. residents, we comply with the Telephone Consumer Protection Act (TCPA), which requires prior express written consent before sending promotional texts.
+
+For users under the GDPR (European Union), consent is required to be freely given, specific, informed, and unambiguous.
+
+4. Message Frequency and Carrier Fees
+
+Message frequency varies by program. Standard message and data rates from your carrier may apply.
+
+5. How to Opt In and Opt Out
+
+Opt In: Provide your phone number and consent via our forms or text keyword signup.
+
+Opt Out: Reply STOP to any text message. You will receive one final confirmation message, and no further messages will be sent. You can also contact us at support@st-hacks.com
+ to unsubscribe.
+
+6. Third Parties and Service Providers
+
+We may share your phone number and message data with trusted service providers only as needed to deliver messages (for example, SMS gateway vendors). These providers are contractually obligated to protect your data and use it only for message delivery.
+
+SMS Number: (941) 222-7386
+
+7. Data Retention
+
+We retain SMS consent records, opt-in confirmations, and message logs for as long as legally required or necessary to defend against claims under the TCPA or similar laws.
+
+8. Security
+
+We implement administrative, technical, and physical safeguards to protect your data. If a data breach occurs, we will follow applicable notification laws.
+
+9. Sharing, Sale, and Marketing
+
+We do not sell or rent your phone number. We may share limited information with affiliates or vendors as described in this policy.
+
+10. Children
+
+We do not knowingly collect or target SMS communications to children under 13.
+
+11. Your Rights
+
+California residents: You may request access to, deletion of, or details about personal information we collect, consistent with the California Consumer Privacy Act (CCPA).
+
+EU/EEA residents: You may request access, correction, deletion, or portability of your data, or withdraw consent under the GDPR.
+
+12. Updates to This Policy
+
+We may revise this policy periodically. Updates will be posted with a new effective date.
+
+13. Contact
+
+Questions or requests: support@st-hacks.com
