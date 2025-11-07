@@ -134,31 +134,42 @@ export default function Resources() {
       const response = await apiRequest("POST", "/api/resource-leads", data);
       return response.json();
     },
-    onSuccess: (_, variables) => {
-      toast({
-        title: "Success!",
-        description: "Downloading your resource...",
-      });
+    onSuccess: (data, variables) => {
+      // Check if resource should be emailed vs downloaded
+      const shouldCheckEmail = data.shouldCheckEmail;
       
-      const resource = resources.find(r => r.title === variables.resourceName);
-      if (resource) {
-        setTimeout(() => {
-          if (resource.isLocalFile) {
-            // For local files, trigger download
-            const link = document.createElement('a');
-            link.href = resource.url;
-            // Extract filename from URL
-            const filename = resource.url.split('/').pop() || 'download';
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          } else {
-            // For external URLs, open in new tab
-            window.open(resource.url, '_blank');
-          }
-          handleCloseDialog();
-        }, 1000);
+      if (shouldCheckEmail) {
+        toast({
+          title: "Check Your Email! 📧",
+          description: `We've sent ${variables.resourceName} to ${variables.email}. Check your inbox (and spam folder) in the next few minutes.`,
+        });
+        handleCloseDialog();
+      } else {
+        toast({
+          title: "Success!",
+          description: "Downloading your resource...",
+        });
+        
+        const resource = resources.find(r => r.title === variables.resourceName);
+        if (resource) {
+          setTimeout(() => {
+            if (resource.isLocalFile) {
+              // For local files, trigger download
+              const link = document.createElement('a');
+              link.href = resource.url;
+              // Extract filename from URL
+              const filename = resource.url.split('/').pop() || 'download';
+              link.download = filename;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            } else {
+              // For external URLs, open in new tab
+              window.open(resource.url, '_blank');
+            }
+            handleCloseDialog();
+          }, 1000);
+        }
       }
     },
     onError: (error: any) => {
