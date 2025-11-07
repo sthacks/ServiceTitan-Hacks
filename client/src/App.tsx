@@ -33,6 +33,7 @@ import ZapierIntegrationCourse from "@/pages/ZapierIntegrationCourse";
 import AutomationPlaybookLanding from "@/pages/AutomationPlaybookLanding";
 import ServiceTitanMetricsLanding from "@/pages/ServiceTitanMetricsLanding";
 import SwimlaneChartsLanding from "@/pages/SwimlaneChartsLanding";
+import PricingObjectionsLanding from "@/pages/PricingObjectionsLanding";
 import PurchasingPlatform from "@/pages/PurchasingPlatform";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
@@ -72,6 +73,7 @@ function Router() {
       <Route path="/automation-playbook-landing" component={AutomationPlaybookLanding} />
       <Route path="/servicetitan-metrics-landing" component={ServiceTitanMetricsLanding} />
       <Route path="/swimlane-charts-landing" component={SwimlaneChartsLanding} />
+      <Route path="/pricing-objections-landing" component={PricingObjectionsLanding} />
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />

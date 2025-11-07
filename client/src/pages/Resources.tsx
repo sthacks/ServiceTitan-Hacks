@@ -76,8 +76,8 @@ export default function Resources() {
       description: "Transform tension into trust with my proven strategy for handling pricing objections. Download the 'Why It Costs What It Costs' graphic to confidently communicate your value without sounding defensive.",
       type: "Digital Download",
       image: pricingObjectionsImage,
-      url: "https://servicetitanhacks.thinkific.com/products/digital_downloads/transform-your-pricing-strategy",
-      isExternalTool: true,
+      url: "/pricing-objections-landing",
+      isInternalTool: true,
     },
     {
       title: "Streamline Your Business with Swimlane Charts",
