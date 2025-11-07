@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
 
 interface BlogPost {
   id: string;
@@ -48,7 +49,7 @@ const blogPosts: BlogPost[] = [
     date: "January 18, 2025",
     readTime: "5 min read",
     category: "ServiceTitan Tips",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    image: serviceTitanDashboardImage,
     slug: "should-i-switch-to-servicetitan"
   },
   {
