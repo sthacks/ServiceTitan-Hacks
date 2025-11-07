@@ -30,6 +30,7 @@ import JobSummaryCourse from "@/pages/JobSummaryCourse";
 import CompanyAppCourse from "@/pages/CompanyAppCourse";
 import MakeIntegrationCourse from "@/pages/MakeIntegrationCourse";
 import ZapierIntegrationCourse from "@/pages/ZapierIntegrationCourse";
+import AutomationPlaybookLanding from "@/pages/AutomationPlaybookLanding";
 import PurchasingPlatform from "@/pages/PurchasingPlatform";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/company-app-course" component={CompanyAppCourse} />
       <Route path="/make-integration-course" component={MakeIntegrationCourse} />
       <Route path="/zapier-integration-course" component={ZapierIntegrationCourse} />
+      <Route path="/automation-playbook-landing" component={AutomationPlaybookLanding} />
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
