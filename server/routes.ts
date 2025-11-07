@@ -437,6 +437,53 @@ ${JSON.stringify(jsonData, null, 2)}
           console.error("Failed to send resource email to user:", emailError);
           // Still return success to user even if email fails
         }
+      } else if (data.resourceName === "Streamline Your Business with Swimlane Charts") {
+        shouldCheckEmail = true;
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          // Read the PDF file
+          const pdfPath = path.join(process.cwd(), 'public', 'downloads', 'tech-turnover-swimlane.pdf');
+          const pdfBuffer = fs.readFileSync(pdfPath);
+          const pdfBase64 = pdfBuffer.toString('base64');
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: data.email,
+            subject: '🔄 Your Swimlane Chart Template is Ready!',
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: #ED254E;">Hi ${data.firstName}!</h2>
+                <p>Thanks for downloading the <strong>Swimlane Chart Template</strong>!</p>
+                <p>Your free template is attached to this email. Here's what you can do with it:</p>
+                <ul style="line-height: 1.8;">
+                  <li>Map your team workflows and identify bottlenecks</li>
+                  <li>Clarify who's responsible for each step in your processes</li>
+                  <li>Improve handoffs between departments and roles</li>
+                  <li>Build scalable systems that work as your company grows</li>
+                </ul>
+                <p style="margin-top: 30px;">
+                  <strong>Want more process improvement tools?</strong><br>
+                  Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
+                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                </p>
+                <p style="margin-top: 30px; color: #666; font-size: 14px;">
+                  Questions? Reply to this email anytime!<br>
+                  - The ServiceTitan Hacks Team
+                </p>
+              </div>
+            `,
+            attachments: [
+              {
+                filename: 'tech-turnover-swimlane.pdf',
+                content: pdfBase64,
+              },
+            ],
+          });
+        } catch (emailError) {
+          console.error("Failed to send resource email to user:", emailError);
+          // Still return success to user even if email fails
+        }
       }
       
       res.status(201).json({ 
