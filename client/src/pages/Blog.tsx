@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
+import serviceTitanDashboardImage from "@assets/32492017-1_1762523143157.jpg";
 
 interface BlogPost {
   id: string;
@@ -46,77 +47,11 @@ const blogPosts: BlogPost[] = [
     title: "Should I Switch to ServiceTitan? The Real Cost and Timeline",
     excerpt: "Considering ServiceTitan for your home service business? Learn when it makes sense to switch, what it really costs ($10K-$30K in setup), and why full implementation takes six months.",
     author: "Bill Brown",
-    date: "January 18, 2025",
+    date: "May 7, 2025",
     readTime: "5 min read",
     category: "ServiceTitan Tips",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    image: serviceTitanDashboardImage,
     slug: "should-i-switch-to-servicetitan"
-  },
-  {
-    id: "4",
-    title: "AI and Automation for Contractors: Where to Start (and What to Avoid)",
-    excerpt: "Tried ChatGPT but don't know how to use AI in your business? Learn the right way to start with automation and AI—plus what mistakes to avoid. A practical guide from an experienced contractor.",
-    author: "Bill Brown",
-    date: "January 15, 2025",
-    readTime: "7 min read",
-    category: "AI & Automation",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-    slug: "ai-automation-contractors-where-to-start"
-  },
-  {
-    id: "5",
-    title: "How to Double Your Booking Rate with Better Forms",
-    excerpt: "Learn the exact strategies top contractors use to convert more website visitors into booked jobs with optimized online forms.",
-    author: "Bill Brown",
-    date: "January 10, 2025",
-    readTime: "7 min read",
-    category: "Growth Strategy",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
-    slug: "double-booking-rate-better-forms"
-  },
-  {
-    id: "6",
-    title: "ServiceTitan Dashboard Hacks: 10 Metrics You Should Track Daily",
-    excerpt: "Stop drowning in data. Here are the 10 essential metrics that actually move the needle in your HVAC, plumbing, or electrical business.",
-    author: "Bill Brown",
-    date: "January 5, 2025",
-    readTime: "6 min read",
-    category: "ServiceTitan Tips",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    slug: "servicetitan-dashboard-metrics"
-  },
-  {
-    id: "7",
-    title: "The Ultimate Guide to Automating Follow-Up Calls",
-    excerpt: "Automate your follow-up process without losing the personal touch. Save hours every week while improving customer satisfaction.",
-    author: "Bill Brown",
-    date: "December 28, 2024",
-    readTime: "8 min read",
-    category: "Automation",
-    image: "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&h=400&fit=crop",
-    slug: "automate-follow-up-calls"
-  },
-  {
-    id: "8",
-    title: "Why Your Pricebook Descriptions Are Costing You Money",
-    excerpt: "Technical jargon kills conversions. Learn how to write pricebook descriptions that homeowners actually understand and buy from.",
-    author: "Bill Brown",
-    date: "December 20, 2024",
-    readTime: "5 min read",
-    category: "Sales Strategy",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",
-    slug: "pricebook-descriptions-costing-money"
-  },
-  {
-    id: "9",
-    title: "Equipment Buying 101: How to Get the Pricing Big Companies Get",
-    excerpt: "Small contractors can access the same pricing as large national chains. Here's exactly how to do it without complicated processes.",
-    author: "Bill Brown",
-    date: "December 15, 2024",
-    readTime: "6 min read",
-    category: "Business Operations",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=400&fit=crop",
-    slug: "equipment-buying-guide"
   }
 ];
 
