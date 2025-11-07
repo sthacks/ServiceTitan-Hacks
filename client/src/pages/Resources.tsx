@@ -88,12 +88,12 @@ export default function Resources() {
       isLocalFile: true,
     },
     {
-      title: "ServiceTitan Metric Definitions: The Plain English Guide",
-      description: "Eliminate confusion around ServiceTitan metrics! This free guide clarifies key KPIs in simple terms, ensuring your team aligns, makes confident decisions, and seizes revenue opportunities.",
+      title: "ServiceTitan Metrics Guide",
+      description: "Track the right KPIs for your business with this comprehensive Excel guide. 112 essential metrics covering sales, operations, finance, marketing, and customer service—all ServiceTitan-ready.",
       type: "Digital Download",
       image: metricsGuideImage,
-      url: "https://go.st-hacks.cc/servicetitan-metrics",
-      isExternalTool: true,
+      url: "/servicetitan-metrics-landing",
+      isInternalTool: true,
     },
     {
       title: "HVAC Marketing Calculator",
