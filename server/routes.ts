@@ -484,6 +484,53 @@ ${JSON.stringify(jsonData, null, 2)}
           console.error("Failed to send resource email to user:", emailError);
           // Still return success to user even if email fails
         }
+      } else if (data.resourceName === "Master Your Pricing Objections") {
+        shouldCheckEmail = true;
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          // Read the PDF file
+          const pdfPath = path.join(process.cwd(), 'public', 'downloads', 'pricing-objections-iceberg.pdf');
+          const pdfBuffer = fs.readFileSync(pdfPath);
+          const pdfBase64 = pdfBuffer.toString('base64');
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: data.email,
+            subject: '💰 Your Pricing Objections Graphic is Ready!',
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: #ED254E;">Hi ${data.firstName}!</h2>
+                <p>Thanks for downloading <strong>"Why It Costs What It Costs"</strong> – the pricing iceberg graphic!</p>
+                <p>Your free visual tool is attached to this email. Here's how to use it:</p>
+                <ul style="line-height: 1.8;">
+                  <li>Show customers what they can see (technician, time, parts) vs. what your pricing actually covers</li>
+                  <li>Help your team confidently explain pricing without sounding defensive</li>
+                  <li>Turn pricing objections into educational conversations</li>
+                  <li>Print it out or share it digitally during estimates</li>
+                </ul>
+                <p style="margin-top: 30px;">
+                  <strong>Want more sales and pricing strategies?</strong><br>
+                  Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
+                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                </p>
+                <p style="margin-top: 30px; color: #666; font-size: 14px;">
+                  Questions? Reply to this email anytime!<br>
+                  - The ServiceTitan Hacks Team
+                </p>
+              </div>
+            `,
+            attachments: [
+              {
+                filename: 'why-it-costs-what-it-costs.pdf',
+                content: pdfBase64,
+              },
+            ],
+          });
+        } catch (emailError) {
+          console.error("Failed to send resource email to user:", emailError);
+          // Still return success to user even if email fails
+        }
       }
       
       res.status(201).json({ 
