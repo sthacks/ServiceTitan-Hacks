@@ -102,13 +102,32 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Added to Resources page navigation and sitemap.xml
 - 301 redirect configured: `/users/sign_in` → `https://servicetitanhacks.thinkific.com/users/sign_in` for course platform login
 
-### Automation Playbook Landing Page (November 2025)
+### Resource Landing Pages with Email Delivery (November 2025)
+- Created email-gated landing pages for downloadable resources to ensure valid email collection and enable lead nurturing
+- All resource landing pages use consistent design pattern: hero section with image, benefit cards, email capture form, and CTA section
+- Resources are delivered via Resend email with attachments instead of direct downloads
+
+#### Automation Playbook Landing Page
 - Created dedicated landing page at `/automation-playbook-landing` for the Automation Playbook: Zapier + Wink resource
 - Features hero image, title, description, and email capture form for PDF delivery
-- Resource is delivered via email with PDF attachment to ensure valid email addresses (using Resend)
 - Landing page showcases 4 key benefits: When to Use Zapier vs Wink, Build Hybrid Workflows, Setup Tips & Best Practices, Real-World Examples
-- Updated Resources page to link to landing page instead of modal popup for Automation Playbook card
 - Email includes personalized greeting, learning outcomes, links to resources/community, and PDF attachment (automation-playbook-zapier-wink.pdf)
-- Admin notification sent to bill@st-hacks.com for each download request
-- Backend route handles email delivery for "Automation Playbook: Zapier + Wink" resource specifically
-- Added to sitemap.xml with priority 0.8
+
+#### ServiceTitan Metrics Guide Landing Page
+- Created dedicated landing page at `/servicetitan-metrics-landing` for the ServiceTitan Metrics Guide: 112 Essential KPIs
+- Excel file (servicetitan-metrics-guide.xlsx) contains 112 metrics organized by department (Sales, Operations, Marketing, Finance, Customer Service)
+- Landing page highlights: Metric definitions, formulas/calculations, and ServiceTitan-compatible structure
+- Email delivers Excel spreadsheet attachment with personalized greeting and links to community
+
+#### Swimlane Charts Landing Page
+- Created dedicated landing page at `/swimlane-charts-landing` for the Streamline Your Business with Swimlane Charts template
+- PDF file (tech-turnover-swimlane.pdf) shows process mapping for technician hiring and onboarding
+- Landing page highlights: Clear role definition, workflow visualization, streamlined handoffs, and scalable operations
+- Email delivers PDF attachment with benefits explanation and community links
+
+#### Technical Implementation
+- Backend route `/api/resource-leads` handles email delivery for all three resources based on resourceName match
+- All resources trigger admin notification email to bill@st-hacks.com with download details
+- Response includes `shouldCheckEmail: true` for email-gated resources to show appropriate success message
+- Resources page updated to link to landing pages (isInternalTool: true) instead of direct downloads
+- All landing pages added to sitemap.xml with priority 0.8
