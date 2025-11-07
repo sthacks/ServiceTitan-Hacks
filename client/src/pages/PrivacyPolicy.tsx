@@ -130,10 +130,10 @@ export default function PrivacyPolicy() {
                   </p>
                   <p className="font-semibold">ServiceTitan Hacks</p>
                   <p>
-                    Email: <a href="mailto:hello@st-hacks.com" className="text-primary hover:underline">hello@st-hacks.com</a>
+                    Email: <a href="mailto:support@st-hacks.com" className="text-primary hover:underline">support@st-hacks.com</a>
                   </p>
                   <p>
-                    Website: <a href="https://st-hacks.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">https://st-hacks.com</a>
+                    Website: <a href="https://servicetitanhacks.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">servicetitanhacks.com</a>
                   </p>
                 </CardContent>
               </Card>
