@@ -125,9 +125,20 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 - Landing page highlights: Clear role definition, workflow visualization, streamlined handoffs, and scalable operations
 - Email delivers PDF attachment with benefits explanation and community links
 
+#### Pricing Objections Landing Page
+- Created dedicated landing page at `/pricing-objections-landing` for the Master Your Pricing Objections resource
+- PDF file (pricing-objections-iceberg.pdf) contains the "Why It Costs What It Costs" iceberg graphic
+- Landing page highlights: Defend your value, communicate with confidence, close more sales, and train your team
+- Email delivers PDF attachment showing visible costs (technician, time, parts) vs. hidden business expenses
+- Helps contractors explain pricing objections without sounding defensive
+
 #### Technical Implementation
-- Backend route `/api/resource-leads` handles email delivery for all three resources based on resourceName match
+- Backend route `/api/resource-leads` handles email delivery for all four resources based on resourceName match:
+  - "Automation Playbook: Zapier + Wink" → automation-playbook-zapier-wink.pdf
+  - "ServiceTitan Metrics Guide" → servicetitan-metrics-guide.xlsx
+  - "Streamline Your Business with Swimlane Charts" → tech-turnover-swimlane.pdf
+  - "Master Your Pricing Objections" → pricing-objections-iceberg.pdf
 - All resources trigger admin notification email to bill@st-hacks.com with download details
 - Response includes `shouldCheckEmail: true` for email-gated resources to show appropriate success message
-- Resources page updated to link to landing pages (isInternalTool: true) instead of direct downloads
+- Resources page updated to link to landing pages (isInternalTool: true) instead of direct downloads or external Thinkific URLs
 - All landing pages added to sitemap.xml with priority 0.8
