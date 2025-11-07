@@ -7,8 +7,6 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import amazonLogo from "@assets/amazon-logo-transparent_1761309654831.png";
-import lowesProLogo from "@assets/lowes_pro_logo_RGB_horz_1761309909176.png";
 import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 import equipmentImage from "@assets/equipment_1761310475748.png";
@@ -23,6 +21,7 @@ export default function PurchasingPlatform() {
     email: "",
     company: "",
     zipCode: "",
+    hvacLicense: "",
     productInterest: "HVAC"
   });
 
@@ -86,7 +85,7 @@ export default function PurchasingPlatform() {
         name: data.name,
         email: data.email,
         company: data.company,
-        message: `Zip Code: ${data.zipCode}\nProduct Interest: ${data.productInterest}`,
+        message: `Zip Code: ${data.zipCode}\nHVAC License#: ${data.hvacLicense}\nProduct Interest: ${data.productInterest}`,
         role: "Equipment Buying Group Inquiry",
         consent: "Equipment Buying Group Contact Form"
       });
@@ -96,7 +95,7 @@ export default function PurchasingPlatform() {
         title: "Access Request Received!",
         description: "We'll get back to you within 24 hours with access details.",
       });
-      setFormData({ name: "", email: "", company: "", zipCode: "", productInterest: "HVAC" });
+      setFormData({ name: "", email: "", company: "", zipCode: "", hvacLicense: "", productInterest: "HVAC" });
     },
     onError: () => {
       toast({
@@ -142,7 +141,7 @@ export default function PurchasingPlatform() {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               Buy from Leading Brands
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
               <Card className="hover-elevate">
                 <CardContent className="p-6 flex items-center justify-center">
                   <img src={goodmanLogo} alt="Goodman" className="h-16 w-auto object-contain" />
@@ -151,16 +150,6 @@ export default function PurchasingPlatform() {
               <Card className="hover-elevate">
                 <CardContent className="p-6 flex items-center justify-center">
                   <img src={daikinLogo} alt="Daikin" className="h-16 w-auto object-contain" />
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 flex items-center justify-center">
-                  <img src={lowesProLogo} alt="Lowe's Pro" className="h-16 w-auto object-contain" />
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 flex items-center justify-center">
-                  <img src={amazonLogo} alt="Amazon" className="h-12 w-auto object-contain" />
                 </CardContent>
               </Card>
             </div>
@@ -247,7 +236,7 @@ export default function PurchasingPlatform() {
                   <CardTitle className="text-center text-lg">Browse & Order</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-center text-muted-foreground">Search live inventory from Goodman, Daikin, Lowe's, Amazon, and more.</p>
+                  <p className="text-center text-muted-foreground">Search live inventory from Goodman, Daikin, and other leading brands.</p>
                 </CardContent>
               </Card>
 
@@ -333,7 +322,7 @@ export default function PurchasingPlatform() {
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Exclusive Lowe's partnership</span>
+                      <span>National account pricing</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -367,7 +356,7 @@ export default function PurchasingPlatform() {
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Milwaukee, DeWalt, and more</span>
+                      <span>Professional-grade tools</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -408,10 +397,6 @@ export default function PurchasingPlatform() {
               <div className="text-center">
                 <img src={daikinLogo} alt="Daikin" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
                 <p className="text-sm text-muted-foreground">Authorized Distributor</p>
-              </div>
-              <div className="text-center">
-                <img src={lowesProLogo} alt="Lowe's Pro" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">Exclusive Partnership</p>
               </div>
             </div>
             <p className="text-center text-muted-foreground mt-8 max-w-3xl mx-auto">
@@ -504,6 +489,21 @@ export default function PurchasingPlatform() {
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="12345"
                         data-testid="input-zipcode"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        HVAC License# *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.hvacLicense}
+                        onChange={(e) => setFormData({ ...formData, hvacLicense: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Enter your HVAC license number"
+                        data-testid="input-hvac-license"
                       />
                     </div>
 
