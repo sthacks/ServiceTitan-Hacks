@@ -33,6 +33,7 @@ import ZapierIntegrationCourse from "@/pages/ZapierIntegrationCourse";
 import PurchasingPlatform from "@/pages/PurchasingPlatform";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
+import SMSTermsConditions from "@/pages/SMSTermsConditions";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -68,6 +69,7 @@ function Router() {
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
+      <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>

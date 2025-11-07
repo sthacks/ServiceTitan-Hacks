@@ -164,6 +164,11 @@ export default function Footer() {
                   SMS Privacy
                 </span>
               </Link>
+              <Link href="/sms-terms-conditions">
+                <span className="text-sm text-gray-500 hover:text-primary transition-colors cursor-pointer" data-testid="link-footer-sms-terms">
+                  SMS Terms
+                </span>
+              </Link>
               <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
                 <span className="text-sm text-gray-500 hover:text-primary transition-colors cursor-pointer" data-testid="link-footer-sitemap">
                   Sitemap
