@@ -320,20 +320,22 @@ ${JSON.stringify(jsonData, null, 2)}
       
       const lead = await storage.createResourceLead(data);
       
-      // Send email notification to admin
+      // Send email notification to admin in JSON format
       try {
         const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          resource: data.resourceName,
+          name: data.firstName,
+          email: data.email,
+          timestamp: new Date().toISOString()
+        };
         
         await client.emails.send({
           from: fromEmail,
           to: 'bill@st-hacks.com',
           subject: `New Resource Download: ${data.resourceName}`,
-          html: `
-            <h2>New Resource Download</h2>
-            <p><strong>Resource:</strong> ${data.resourceName}</p>
-            <p><strong>Name:</strong> ${data.firstName}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-          `,
+          text: JSON.stringify(jsonData, null, 2),
         });
       } catch (emailError) {
         console.error("Failed to send admin notification:", emailError);
