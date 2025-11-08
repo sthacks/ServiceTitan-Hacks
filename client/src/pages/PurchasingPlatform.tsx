@@ -22,6 +22,7 @@ export default function PurchasingPlatform() {
     company: "",
     zipCode: "",
     hvacLicense: "",
+    issuingAuthority: "",
     productInterest: "HVAC"
   });
 
@@ -85,7 +86,7 @@ export default function PurchasingPlatform() {
         name: data.name,
         email: data.email,
         company: data.company,
-        message: `Zip Code: ${data.zipCode}\nHVAC License#: ${data.hvacLicense}\nProduct Interest: ${data.productInterest}`,
+        message: `Zip Code: ${data.zipCode}\nContractors License: ${data.hvacLicense}\nIssuing Authority: ${data.issuingAuthority}\nProduct Interest: ${data.productInterest}`,
         role: "Equipment Buying Group Inquiry",
         consent: "Equipment Buying Group Contact Form"
       });
@@ -95,7 +96,7 @@ export default function PurchasingPlatform() {
         title: "Access Request Received!",
         description: "We'll get back to you within 24 hours with access details.",
       });
-      setFormData({ name: "", email: "", company: "", zipCode: "", hvacLicense: "", productInterest: "HVAC" });
+      setFormData({ name: "", email: "", company: "", zipCode: "", hvacLicense: "", issuingAuthority: "", productInterest: "HVAC" });
     },
     onError: () => {
       toast({
@@ -494,7 +495,7 @@ export default function PurchasingPlatform() {
 
                     <div>
                       <label className="block text-sm font-medium mb-2">
-                        HVAC License# *
+                        Contractors License *
                       </label>
                       <input
                         type="text"
@@ -502,8 +503,23 @@ export default function PurchasingPlatform() {
                         value={formData.hvacLicense}
                         onChange={(e) => setFormData({ ...formData, hvacLicense: e.target.value })}
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="Enter your HVAC license number"
-                        data-testid="input-hvac-license"
+                        placeholder="Enter your contractors license number"
+                        data-testid="input-contractors-license"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Issuing Authority *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.issuingAuthority}
+                        onChange={(e) => setFormData({ ...formData, issuingAuthority: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="e.g., California Contractors State License Board"
+                        data-testid="input-issuing-authority"
                       />
                     </div>
 
