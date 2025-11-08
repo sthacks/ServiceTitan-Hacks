@@ -11,7 +11,6 @@ import daikinLogo from "@assets/DAIKIN_logo.svg_1761309721068.png";
 import goodmanLogo from "@assets/lveq8sixrzoasc1g9pnm_1761309482725.jpg";
 import equipmentImage from "@assets/equipment_1761310475748.png";
 import waterHeatersImage from "@assets/water heaters_1761310497282.png";
-import toolsImage from "@assets/tools_1761310506283.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 
 export default function PurchasingPlatform() {
@@ -33,24 +32,24 @@ export default function PurchasingPlatform() {
     // Standard meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.");
+      metaDescription.setAttribute("content", "Access national-account pricing for HVAC equipment and water heaters—no contracts, no minimums. Free for ServiceTitan Hacks members.");
     } else {
       const meta = document.createElement('meta');
       meta.name = "description";
-      meta.content = "Access national-account pricing for HVAC equipment, water heaters, and tools—no contracts, no minimums. Free for ServiceTitan Hacks members.";
+      meta.content = "Access national-account pricing for HVAC equipment and water heaters—no contracts, no minimums. Free for ServiceTitan Hacks members.";
       document.head.appendChild(meta);
     }
 
     // Open Graph meta tags for social sharing
     const ogTags = [
       { property: 'og:title', content: 'Buy Like Private Equity' },
-      { property: 'og:description', content: 'Get the pricing that the big guys get on HVAC, water heaters, and tools—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
+      { property: 'og:description', content: 'Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
       { property: 'og:image', content: `${window.location.origin}${buyingGroupImage}` },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: window.location.href },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Buy Like Private Equity' },
-      { name: 'twitter:description', content: 'Get the pricing that the big guys get on HVAC, water heaters, and tools—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
+      { name: 'twitter:description', content: 'Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
       { name: 'twitter:image', content: `${window.location.origin}${buyingGroupImage}` },
     ];
 
@@ -123,7 +122,7 @@ export default function PurchasingPlatform() {
               Buy Like Private Equity
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-gray-200">
-              Get the pricing that the big guys get on HVAC, water heaters, and tools—no minimums, no contracts, no catch.
+              Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch.
             </p>
             <p className="text-lg md:text-xl text-gray-300 mb-8">
               100% Free for ServiceTitan Hacks Facebook Group Members
@@ -277,7 +276,7 @@ export default function PurchasingPlatform() {
             <p className="text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               Everything you need to run your business, all in one place.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Card className="overflow-hidden hover-elevate" data-testid="card-product-hvac">
                 <div className="aspect-video bg-muted flex items-center justify-center p-6">
                   <img src={equipmentImage} alt="HVAC Equipment" className="max-h-full w-auto object-contain" />
@@ -340,40 +339,6 @@ export default function PurchasingPlatform() {
                   </ul>
                   <a href="#form">
                     <Button variant="outline" className="w-full gap-2" data-testid="button-water-cta">
-                      See Available Products <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden hover-elevate" data-testid="card-product-tools">
-                <div className="aspect-video bg-muted flex items-center justify-center p-6">
-                  <img src={toolsImage} alt="Tools & Materials" className="max-h-full w-auto object-contain" />
-                </div>
-                <CardHeader>
-                  <CardTitle>Tools & Materials</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-4">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Professional-grade tools</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Power tools and hand tools</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Parts and supplies</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Volume pricing available</span>
-                    </li>
-                  </ul>
-                  <a href="#form">
-                    <Button variant="outline" className="w-full gap-2" data-testid="button-tools-cta">
                       See Available Products <ArrowRight className="h-4 w-4" />
                     </Button>
                   </a>
@@ -536,8 +501,7 @@ export default function PurchasingPlatform() {
                       >
                         <option value="HVAC">HVAC Equipment</option>
                         <option value="Water Heaters">Water Heaters</option>
-                        <option value="Tools">Tools & Materials</option>
-                        <option value="All">All Products</option>
+                        <option value="Both">Both HVAC & Water Heaters</option>
                       </select>
                     </div>
 
