@@ -253,28 +253,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email notification to bill@st-hacks.com with form data
       try {
         const { client, fromEmail } = await getUncachableResendClient();
-        
-        const jsonData = {
-          id: submission.id,
-          name: submission.name,
-          email: submission.email,
-          company: submission.company,
-          role: submission.role,
-          message: submission.message,
-          consent: submission.consent,
-          submittedAt: submission.submittedAt
-        };
 
         await client.emails.send({
           from: fromEmail,
           to: 'bill@st-hacks.com',
-          subject: 'New Contact Form Submission',
+          replyTo: submission.email,
+          subject: `New Contact Form: ${submission.name}`,
           html: `
-            <h2>New Contact Form Submission</h2>
-            <p>A new contact form has been submitted:</p>
-            <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">
-${JSON.stringify(jsonData, null, 2)}
-            </pre>
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+              <h2 style="color: #ED254E; margin-bottom: 20px;">New Contact Form Submission</h2>
+              
+              <div style="background-color: #f9f9f9; border-left: 4px solid #ED254E; padding: 15px; margin-bottom: 20px;">
+                <p style="margin: 0 0 10px 0;"><strong>From:</strong> ${submission.name}</p>
+                <p style="margin: 0 0 10px 0;"><strong>Email:</strong> <a href="mailto:${submission.email}" style="color: #ED254E;">${submission.email}</a></p>
+                <p style="margin: 0 0 10px 0;"><strong>Company:</strong> ${submission.company || 'Not provided'}</p>
+                <p style="margin: 0;"><strong>Role:</strong> ${submission.role || 'Not provided'}</p>
+              </div>
+              
+              <div style="background-color: #ffffff; border: 1px solid #e0e0e0; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                <h3 style="margin-top: 0; color: #333;">Message:</h3>
+                <p style="white-space: pre-wrap; line-height: 1.6; color: #555;">${submission.message}</p>
+              </div>
+              
+              <p style="color: #999; font-size: 12px; margin-top: 30px;">
+                Submitted: ${new Date(submission.submittedAt).toLocaleString('en-US', { 
+                  dateStyle: 'full', 
+                  timeStyle: 'short' 
+                })}<br>
+                ID: ${submission.id}
+              </p>
+            </div>
           `,
         });
       } catch (emailError) {
