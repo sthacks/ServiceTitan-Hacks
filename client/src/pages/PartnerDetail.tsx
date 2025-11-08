@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users } from "lucide-react";
+import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart } from "lucide-react";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
@@ -72,7 +72,7 @@ export default function PartnerDetail() {
       name: "Service Crucible",
       slug: "service-crucible",
       logo: serviceCrucibleLogo,
-      description: "Essential tools and resources for home service contractors to optimize operations and drive business growth.",
+      description: "We help HVAC, plumbing, and electrical companies grow stronger, run smoother, and make more profit.",
       url: "https://go.st-hacks.cc/Service-crucible",
     },
   ];
@@ -278,6 +278,160 @@ export default function PartnerDetail() {
               >
                 <Button size="lg" variant="outline" className="gap-2 bg-white text-primary hover:bg-white/90 border-white">
                   Book Your Demo <ExternalLink className="h-5 w-5" />
+                </Button>
+              </a>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Render detailed Service Crucible page
+  if (partner.slug === "service-crucible") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title={`${partner.name} | ServiceTitan Hacks Partners`}
+          description={partner.description}
+          keywords={`${partner.name}, ServiceTitan partner, contractor tools, HVAC software, business consulting, operations optimization`}
+          canonicalUrl={`https://servicetitanhacks.com/partners/${partner.slug}`}
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="object-contain max-h-32 w-auto"
+                    data-testid="img-partner-logo"
+                  />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  What We Do at Service Crucible
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  {partner.description}
+                </p>
+
+                <p className="text-lg text-foreground mb-8 max-w-3xl mx-auto">
+                  Many contractors start small, wearing all the hats—running calls, handling money, and managing people. We help them build real systems so the business can grow without falling apart.
+                </p>
+
+                <p className="text-lg text-foreground mb-12 max-w-3xl mx-auto">
+                  Our team has worked in the trades, so we know what it takes. We don't give you fluffy advice—we build clear steps and tools you can actually use.
+                </p>
+
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-learn-more-hero"
+                >
+                  <Button size="lg" className="gap-2">
+                    Get Started <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* How We Help */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-6xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-how-we-help">
+                Here's How We Help
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="bg-card border-0" data-testid="card-service-audit">
+                  <CardContent className="pt-6">
+                    <ClipboardCheck className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">The Crucible Audit</h3>
+                    <p className="text-foreground">
+                      Find out what's working and what's not in your business.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-service-execution">
+                  <CardContent className="pt-6">
+                    <Cog className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Execution Hub</h3>
+                    <p className="text-foreground">
+                      Get step-by-step systems to manage jobs, money, and people better.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-service-financial">
+                  <CardContent className="pt-6">
+                    <DollarSign className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Financial Tools</h3>
+                    <p className="text-foreground">
+                      Learn how to price for profit and track your numbers the right way.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-service-culture">
+                  <CardContent className="pt-6">
+                    <Heart className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Culture and Leadership</h3>
+                    <p className="text-foreground">
+                      Build a strong team that takes pride in their work.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Our Goal */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-4xl px-6 text-center">
+              <h2 className="text-3xl font-bold font-heading mb-6" data-testid="heading-our-goal">
+                Our Goal
+              </h2>
+              <p className="text-xl text-foreground max-w-3xl mx-auto" data-testid="text-goal-description">
+                Our goal is simple—help you turn your business into one that runs smoothly, makes solid profit, and gives you freedom from the daily chaos.
+              </p>
+            </div>
+          </section>
+
+          {/* Final CTA */}
+          <section className="py-16 bg-primary text-white">
+            <div className="mx-auto max-w-4xl px-6 text-center">
+              <h2 className="text-3xl font-bold font-heading mb-6" data-testid="heading-final-cta">
+                Ready to Grow Stronger?
+              </h2>
+              <p className="text-xl mb-8 text-white/90" data-testid="text-cta-description">
+                Let Service Crucible help you build the systems and team you need to scale your business with confidence.
+              </p>
+              <a
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="link-final-cta"
+              >
+                <Button size="lg" variant="outline" className="gap-2 bg-white text-primary hover:bg-white/90 border-white">
+                  Get Started Today <ExternalLink className="h-5 w-5" />
                 </Button>
               </a>
             </div>
