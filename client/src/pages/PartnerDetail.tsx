@@ -72,7 +72,7 @@ export default function PartnerDetail() {
       name: "Service Crucible",
       slug: "service-crucible",
       logo: serviceCrucibleLogo,
-      description: "We help HVAC, plumbing, and electrical companies grow stronger, run smoother, and make more profit.",
+      description: "Service Crucible helps HVAC, plumbing, and electrical companies grow, boost profits, and build systems that run without daily chaos.",
       url: "https://go.st-hacks.cc/Service-crucible",
     },
   ];
