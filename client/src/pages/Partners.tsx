@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
@@ -14,6 +14,8 @@ import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 
 export default function Partners() {
+  const [, setLocation] = useLocation();
+  
   const partners = [
     {
       name: "Volca.AI",
@@ -91,19 +93,20 @@ export default function Partners() {
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
                   <CardContent className="p-6 text-center flex flex-col">
-                    <Link href={`/partners/${partner.slug}`}>
-                      <a className="block mb-6">
-                        <div className="h-32 flex items-center justify-center">
-                          <img
-                            src={partner.logo}
-                            alt={`${partner.name} logo`}
-                            className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
-                            loading="lazy"
-                            data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                          />
-                        </div>
-                      </a>
-                    </Link>
+                    <div 
+                      className="block mb-6 cursor-pointer" 
+                      onClick={() => setLocation(`/partners/${partner.slug}`)}
+                    >
+                      <div className="h-32 flex items-center justify-center">
+                        <img
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
+                          loading="lazy"
+                          data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        />
+                      </div>
+                    </div>
                     <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
                     <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
                     <Link href={`/partners/${partner.slug}`}>
