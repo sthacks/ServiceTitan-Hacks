@@ -51,6 +51,17 @@ Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless) for database 
 
 ## Recent Changes
 
+### Individual Partner Pages (November 2025)
+- Created dedicated pages for all 7 partners at `/partners/:slug` with dynamic routing
+- Each partner page displays: large logo, partner name (H1), description (from card text as subtitle), and "Learn More" external link button
+- Partner slugs: volca-ai, wink-toolbox, smartac, contractor-commerce, liveswitch, polycam, service-crucible
+- Updated Partners.tsx to link partner cards to internal detail pages instead of external URLs
+- Added "Back to Partners" button on each partner detail page for easy navigation
+- All 7 partner pages added to sitemap.xml with priority 0.6
+- Navigation flow: Partners page → Partner detail page → External partner website (via "Learn More" button)
+
+
+
 ### Comprehensive SEO Implementation (November 2025)
 - Created reusable SEO component (client/src/components/SEO.tsx) with meta tags, Open Graph, Twitter Cards, and schema markup support
 - Added SEO meta tags to ALL 17+ pages with unique titles, descriptions under 160 characters, keywords, and canonical URLs
