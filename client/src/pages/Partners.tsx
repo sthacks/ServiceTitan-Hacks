@@ -4,7 +4,8 @@ import Hero from "@/components/Hero";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { Link } from "wouter";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
@@ -16,42 +17,49 @@ export default function Partners() {
   const partners = [
     {
       name: "Volca.AI",
+      slug: "volca-ai",
       logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png",
       description: "AI-powered solutions for home service contractors to automate workflows and enhance customer engagement.",
       url: "https://go.st-hacks.cc/volca",
     },
     {
       name: "Wink Toolbox",
+      slug: "wink-toolbox",
       logo: winkLogo,
       description: "Comprehensive tools and resources designed to optimize ServiceTitan operations and drive business growth.",
       url: "https://go.st-hacks.cc/wink",
     },
     {
       name: "SmartAC",
+      slug: "smartac",
       logo: smartACLogo,
       description: "Smart automation and customer communication tools that help contractors deliver exceptional service experiences.",
       url: "https://go.st-hacks.cc/smart-ac",
     },
     {
       name: "Contractor Commerce",
+      slug: "contractor-commerce",
       logo: contractorCommerceLogo,
       description: "E-commerce and online sales solutions tailored specifically for home service contractors and ServiceTitan users.",
       url: "https://go.st-hacks.cc/contractor-commerce",
     },
     {
       name: "LiveSwitch",
+      slug: "liveswitch",
       logo: liveswitchLogo,
       description: "Professional virtual phone solutions designed to streamline communication and enhance customer service for home service businesses.",
       url: "https://go.st-hacks.cc/liveswitch",
     },
     {
       name: "Polycam",
+      slug: "polycam",
       logo: polycamLogo,
       description: "Advanced 3D scanning and modeling solutions for home service contractors to capture accurate property measurements and documentation.",
       url: "https://go.st-hacks.cc/polycam",
     },
     {
       name: "Service Crucible",
+      slug: "service-crucible",
       logo: serviceCrucibleLogo,
       description: "Essential tools and resources for home service contractors to optimize operations and drive business growth.",
       url: "https://go.st-hacks.cc/Service-crucible",
@@ -83,34 +91,28 @@ export default function Partners() {
               {partners.map((partner, index) => (
                 <Card key={index} className="hover-elevate">
                   <CardContent className="p-6 text-center flex flex-col">
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block mb-6"
-                    >
-                      <div className="h-32 flex items-center justify-center">
-                        <img
-                          src={partner.logo}
-                          alt={`${partner.name} logo`}
-                          className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
-                          loading="lazy"
-                          data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        />
-                      </div>
-                    </a>
+                    <Link href={`/partners/${partner.slug}`}>
+                      <a className="block mb-6">
+                        <div className="h-32 flex items-center justify-center">
+                          <img
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
+                            loading="lazy"
+                            data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          />
+                        </div>
+                      </a>
+                    </Link>
                     <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
                     <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      <Button variant="outline" className="w-full gap-2">
-                        Learn More <ExternalLink className="h-4 w-4" />
-                      </Button>
-                    </a>
+                    <Link href={`/partners/${partner.slug}`}>
+                      <a data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <Button variant="outline" className="w-full gap-2">
+                          Learn More <ChevronRight className="h-4 w-4" />
+                        </Button>
+                      </a>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}

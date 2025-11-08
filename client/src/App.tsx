@@ -35,6 +35,7 @@ import ServiceTitanMetricsLanding from "@/pages/ServiceTitanMetricsLanding";
 import SwimlaneChartsLanding from "@/pages/SwimlaneChartsLanding";
 import PricingObjectionsLanding from "@/pages/PricingObjectionsLanding";
 import PurchasingPlatform from "@/pages/PurchasingPlatform";
+import PartnerDetail from "@/pages/PartnerDetail";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
 import SMSTermsConditions from "@/pages/SMSTermsConditions";
@@ -75,6 +76,7 @@ function Router() {
       <Route path="/swimlane-charts-landing" component={SwimlaneChartsLanding} />
       <Route path="/pricing-objections-landing" component={PricingObjectionsLanding} />
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
+      <Route path="/partners/:slug" component={PartnerDetail} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
