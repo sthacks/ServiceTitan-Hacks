@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -102,12 +103,12 @@ export default function Home() {
   ];
 
   const partners = [
-    { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
-    { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
-    { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
-    { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
-    { name: "Polycam", logo: polycamLogo, url: "https://go.st-hacks.cc/polycam" },
-    { name: "Service Crucible", logo: serviceCrucibleLogo, url: "https://go.st-hacks.cc/Service-crucible" },
+    { name: "Wink Toolbox", logo: winkLogo, slug: "wink-toolbox" },
+    { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
+    { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
+    { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
+    { name: "Polycam", logo: polycamLogo, slug: "polycam" },
+    { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },
   ];
 
   return (
@@ -181,22 +182,23 @@ export default function Home() {
             <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners in HVAC AI & Plumbing Automation</h2>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {partners.map((partner, index) => (
-                <a
+                <Link
                   key={index}
-                  href={partner.url}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="transition-all opacity-90 hover:opacity-100"
-                  data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/partners/${partner.slug}`}
                 >
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} - ServiceTitan contractor automation partner logo`}
-                    className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
+                  <span
+                    className="transition-all opacity-90 hover:opacity-100 cursor-pointer block"
+                    data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} - ServiceTitan contractor automation partner logo`}
+                      className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

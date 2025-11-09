@@ -28,12 +28,12 @@ export default function Footer() {
   ];
 
   const partners = [
-    { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
-    { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
-    { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
-    { name: "LiveSwitch", logo: liveswitchLogo, url: "https://go.st-hacks.cc/liveswitch" },
-    { name: "Polycam", logo: polycamLogo, url: "https://go.st-hacks.cc/polycam" },
-    { name: "Service Crucible", logo: serviceCrucibleLogo, url: "https://go.st-hacks.cc/Service-crucible" },
+    { name: "Wink Toolbox", logo: winkLogo, slug: "wink-toolbox" },
+    { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
+    { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
+    { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
+    { name: "Polycam", logo: polycamLogo, slug: "polycam" },
+    { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },
   ];
 
   return (
@@ -122,21 +122,22 @@ export default function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Partners</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center justify-center mb-8">
             {partners.map((partner, index) => (
-              <a
+              <Link
                 key={index}
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover-elevate transition-all flex items-center justify-center"
-                data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                href={`/partners/${partner.slug}`}
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-16' : 'h-12'}`}
-                  loading="lazy"
-                />
-              </a>
+                <span
+                  className="hover-elevate transition-all flex items-center justify-center cursor-pointer"
+                  data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-16' : 'h-12'}`}
+                    loading="lazy"
+                  />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
