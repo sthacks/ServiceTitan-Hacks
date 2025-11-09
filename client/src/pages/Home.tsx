@@ -11,7 +11,7 @@ import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
-import blogImage from "@assets/generated_images/Contractor_blog_workspace_scene_aa8bb38a.png";
+import blogImage from "@assets/32563772-1_1762708907799.jpg";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
