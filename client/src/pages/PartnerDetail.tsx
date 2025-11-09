@@ -27,13 +27,6 @@ export default function PartnerDetail() {
 
   const partners: Partner[] = [
     {
-      name: "Volca.AI",
-      slug: "volca-ai",
-      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png",
-      description: "AI-powered solutions for home service contractors to automate workflows and enhance customer engagement.",
-      url: "https://go.st-hacks.cc/volca",
-    },
-    {
       name: "Wink Toolbox",
       slug: "wink-toolbox",
       logo: winkLogo,
@@ -472,8 +465,7 @@ export default function PartnerDetail() {
                   alt={`${partner.name} logo`}
                   className={`object-contain ${
                     partner.name === "SmartAC" ||
-                    partner.name === "Contractor Commerce" ||
-                    partner.name === "Volca.AI"
+                    partner.name === "Contractor Commerce"
                       ? "max-h-40"
                       : "max-h-32"
                   } w-auto`}

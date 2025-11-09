@@ -18,13 +18,6 @@ export default function Partners() {
   
   const partners = [
     {
-      name: "Volca.AI",
-      slug: "volca-ai",
-      logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png",
-      description: "AI-powered solutions for home service contractors to automate workflows and enhance customer engagement.",
-      url: "https://go.st-hacks.cc/volca",
-    },
-    {
       name: "Wink Toolbox",
       slug: "wink-toolbox",
       logo: winkLogo,
