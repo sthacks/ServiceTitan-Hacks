@@ -149,37 +149,85 @@ export default function PartnerDetail() {
 
           {/* What Wink Toolbox Does */}
           <section className="py-16 bg-muted/30">
-            <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-4xl px-6">
               <h2 className="text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-what-it-does">
                 What Wink Toolbox Does
               </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <Card className="bg-card border-0" data-testid="card-feature-data">
+              
+              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+                Wink Toolbox helps contractors save time and cut mistakes by handling three major jobs.
+              </p>
+
+              <div className="space-y-6 mb-8">
+                <Card className="bg-card border-0" data-testid="card-feature-ocr">
                   <CardContent className="pt-6">
-                    <BarChart3 className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
+                      <span className="text-primary">1.</span>
+                      <a 
+                        href="https://go.st-hacks.cc/wink-ocr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        OCR
+                      </a> for invoices
+                    </h3>
                     <p className="text-foreground">
-                      Wink Toolbox lets you pull in data from your field-service, inventory and accounting systems into a single dashboard so you finally have one place to trust.
+                      Wink reads your vendor invoices for you. It pulls out names, dates, totals, and line items, then sends the data into your systems. You no longer type invoices by hand. This removes errors and saves hours each week.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-card border-0" data-testid="card-feature-automation">
+                <Card className="bg-card border-0" data-testid="card-feature-pricebook">
                   <CardContent className="pt-6">
-                    <Zap className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
+                      <span className="text-primary">2.</span>
+                      <a 
+                        href="https://go.st-hacks.cc/wink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        Pricebook
+                      </a> management
+                    </h3>
                     <p className="text-foreground">
-                      It also gives you automation tools to stop the manual busyness—trigger follow-up tasks, send alerts, run recurring reports automatically.
+                      Wink keeps your pricebook clean and updated. It matches vendor cost changes, fixes errors, and keeps items organized so your techs see the right prices.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-card border-0" data-testid="card-feature-integration">
+                <Card className="bg-card border-0" data-testid="card-feature-automations">
                   <CardContent className="pt-6">
-                    <Users className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
+                      <span className="text-primary">3.</span>
+                      Smart <a 
+                        href="https://go.st-hacks.cc/wink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        automations
+                      </a> with AI
+                    </h3>
                     <p className="text-foreground">
-                      Wink is built for trade and field-service operations (HVAC, plumbing, electrical etc.), integrates with dozens of popular platforms (including ServiceTitan), and works with your existing systems rather than replacing them.
+                      Wink builds custom automations that handle repeat tasks like matching invoices, syncing data, creating rules, and sending alerts. Your team gets more work done with fewer manual steps.
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="https://go.st-hacks.cc/wink-demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-book-demo"
+                >
+                  <Button size="lg" className="gap-2">
+                    Book a Demo with Wink <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
               </div>
             </div>
           </section>
