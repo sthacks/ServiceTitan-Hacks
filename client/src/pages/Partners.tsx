@@ -128,11 +128,13 @@ export default function Partners() {
                     <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
                     <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
                     <Link href={`/partners/${partner.slug}`}>
-                      <a data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                        <Button variant="outline" className="w-full gap-2">
-                          Learn More <ChevronRight className="h-4 w-4" />
-                        </Button>
-                      </a>
+                      <Button 
+                        variant="outline" 
+                        className="w-full gap-2"
+                        data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        Learn More <ChevronRight className="h-4 w-4" />
+                      </Button>
                     </Link>
                   </CardContent>
                 </Card>
