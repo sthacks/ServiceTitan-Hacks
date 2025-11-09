@@ -102,7 +102,6 @@ export default function Home() {
   ];
 
   const partners = [
-    { name: "Volca.AI", logo: "https://files.cdn.thinkific.com/file_uploads/1072722/images/ba8/d11/01b/volca.png", url: "https://go.st-hacks.cc/volca" },
     { name: "Wink Toolbox", logo: winkLogo, url: "https://go.st-hacks.cc/wink" },
     { name: "SmartAC", logo: smartACLogo, url: "https://go.st-hacks.cc/smart-ac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, url: "https://go.st-hacks.cc/contractor-commerce" },
@@ -193,7 +192,7 @@ export default function Home() {
                   <img
                     src={partner.logo}
                     alt={`${partner.name} - ServiceTitan contractor automation partner logo`}
-                    className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
+                    className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
                     loading="lazy"
                     decoding="async"
                   />
