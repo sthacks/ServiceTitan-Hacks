@@ -324,7 +324,7 @@ export default function PartnerDetail() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
-                  What We Do at Service Crucible
+                  What Service Crucible Does
                 </h1>
 
                 <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto" data-testid="text-partner-description">
@@ -332,11 +332,11 @@ export default function PartnerDetail() {
                 </p>
 
                 <p className="text-lg text-foreground mb-8 max-w-3xl mx-auto">
-                  Many contractors start small, wearing all the hats—running calls, handling money, and managing people. We help them build real systems so the business can grow without falling apart.
+                  Many contractors start small, wearing all the hats—running calls, handling money, and managing people. Service Crucible helps them build real systems so the business can grow without falling apart.
                 </p>
 
                 <p className="text-lg text-foreground mb-12 max-w-3xl mx-auto">
-                  Our team has worked in the trades, so we know what it takes. We don't give you fluffy advice—we build clear steps and tools you can actually use.
+                  The Service Crucible team has worked in the trades and understands what it takes. Service Crucible doesn't provide fluffy advice—they build clear steps and tools contractors can actually use.
                 </p>
 
                 <a
@@ -353,11 +353,11 @@ export default function PartnerDetail() {
             </div>
           </section>
 
-          {/* How We Help */}
+          {/* How Service Crucible Helps */}
           <section className="py-16 bg-muted/30">
             <div className="mx-auto max-w-6xl px-6">
               <h2 className="text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-how-we-help">
-                Here's How We Help
+                Here's How Service Crucible Helps
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="bg-card border-0" data-testid="card-service-audit">
@@ -403,14 +403,14 @@ export default function PartnerDetail() {
             </div>
           </section>
 
-          {/* Our Goal */}
+          {/* The Goal */}
           <section className="py-16 bg-background">
             <div className="mx-auto max-w-4xl px-6 text-center">
               <h2 className="text-3xl font-bold font-heading mb-6" data-testid="heading-our-goal">
-                Our Goal
+                The Goal
               </h2>
               <p className="text-xl text-foreground max-w-3xl mx-auto" data-testid="text-goal-description">
-                Our goal is simple—help you turn your business into one that runs smoothly, makes solid profit, and gives you freedom from the daily chaos.
+                The goal is simple—help contractors turn their businesses into ones that run smoothly, make solid profit, and give them freedom from daily chaos.
               </p>
             </div>
           </section>
