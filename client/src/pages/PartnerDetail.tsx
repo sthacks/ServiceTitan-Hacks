@@ -594,6 +594,114 @@ export default function PartnerDetail() {
     );
   }
 
+  // Render detailed Contractor Commerce page
+  if (partner.slug === "contractor-commerce") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title={`${partner.name} | ServiceTitan Hacks Partners`}
+          description={partner.description}
+          keywords={`${partner.name}, ServiceTitan partner, contractor tools, HVAC software, e-commerce, online store`}
+          canonicalUrl={`https://servicetitanhacks.com/partners/${partner.slug}`}
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="object-contain max-h-40 w-auto"
+                    data-testid="img-partner-logo"
+                  />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  {partner.name}
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  {partner.description}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* What Contractor Commerce Does */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-4xl px-6">
+              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+                Contractor Commerce helps HVAC and plumbing contractors sell more online without extra headaches.
+              </p>
+
+              <div className="space-y-6 mb-8">
+                <Card className="bg-card border-0" data-testid="card-feature-store">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Plug-and-play online store
+                    </h3>
+                    <p className="text-foreground">
+                      When you add Contractor Commerce, your website gets a ready-to-go online shop. You sell filters, memberships, and full systems—even when your trucks are off the road.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-products">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Products, services, and systems
+                    </h3>
+                    <p className="text-foreground">
+                      Sell air filters shipped direct to customers, purchase plans for service, or full system installs. Contractor Commerce handles stock, delivery, checkout, and your techs just do the job.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-leads">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      More leads, more sales
+                    </h3>
+                    <p className="text-foreground">
+                      Your site becomes a sales engine. Visitors get quotes, buy services, or book installs online. You turn more traffic into paying customers.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="https://go.st-hacks.cc/contractor-commerce"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-learn-more"
+                >
+                  <Button size="lg" className="gap-2">
+                    Learn More <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   // Default partner page layout for all other partners
   return (
     <div className="min-h-screen flex flex-col">
