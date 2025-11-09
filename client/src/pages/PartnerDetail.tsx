@@ -483,6 +483,117 @@ export default function PartnerDetail() {
     );
   }
 
+  // Render detailed SmartAC page
+  if (partner.slug === "smartac") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title={`${partner.name} | ServiceTitan Hacks Partners`}
+          description={partner.description}
+          keywords={`${partner.name}, ServiceTitan partner, contractor tools, HVAC software, membership programs, smart sensors`}
+          canonicalUrl={`https://servicetitanhacks.com/partners/${partner.slug}`}
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="object-contain max-h-32 w-auto"
+                    data-testid="img-partner-logo"
+                  />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  {partner.name}
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  {partner.description}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* What SmartAC Does */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-4xl px-6">
+              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+                SmartAC helps HVAC contractors grow their membership programs, keep more customers, and work smarter without adding more trucks or techs.
+              </p>
+
+              <div className="space-y-6 mb-8">
+                <Card className="bg-card border-0" data-testid="card-feature-sensors">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
+                      <span className="text-primary">1.</span>
+                      Smart sensors and monitoring
+                    </h3>
+                    <p className="text-foreground">
+                      SmartAC uses wireless sensors to watch HVAC systems for problems like leaks, airflow issues, or dirty filters. When something looks wrong, it sends an alert so you can fix it before it becomes a bigger problem.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-app">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
+                      <span className="text-primary">2.</span>
+                      Homeowner experience app
+                    </h3>
+                    <p className="text-foreground">
+                      SmartAC gives your customers a simple app. They can see their system health, get alerts, book service, and stay connected with your team. This builds trust and keeps you top of mind.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-membership">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
+                      <span className="text-primary">3.</span>
+                      Membership growth
+                    </h3>
+                    <p className="text-foreground">
+                      SmartAC helps turn one-time service calls into long-term members. Many contractors see more signups and higher retention. This means steady revenue without extra labor.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="https://go.st-hacks.cc/smart-ac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-learn-more"
+                >
+                  <Button size="lg" className="gap-2">
+                    Learn More <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   // Default partner page layout for all other partners
   return (
     <div className="min-h-screen flex flex-col">
