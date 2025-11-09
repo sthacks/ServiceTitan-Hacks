@@ -11,6 +11,7 @@ import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
+import blogImage from "@assets/generated_images/Contractor_blog_workspace_scene_aa8bb38a.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
@@ -89,7 +90,7 @@ export default function Home() {
       description: "Expert insights on ServiceTitan automation, AI tools for contractors, and practical tips to streamline your HVAC or plumbing business.",
       icon: FileText,
       link: "/blog",
-      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FI8AAxp7ERumPFmkyYVug_31639896-1.jpg",
+      image: blogImage,
       alt: "ServiceTitan Hacks blog - contractor insights on AI and automation",
     },
     {
