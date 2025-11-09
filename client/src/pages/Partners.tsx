@@ -80,6 +80,31 @@ export default function Partners() {
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-heading mb-4 text-center">Tools that save time, cut mistakes, and help you grow</h2>
+            <p className="text-lg text-muted-foreground mb-6 text-center">
+              These partner tools were picked because they solve real problems for ServiceTitan contractors. Each one helps your team work faster, book more jobs, and reduce busy work in the office and the field.
+            </p>
+            
+            <div className="bg-muted/30 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4">What these tools help you do:</h3>
+              <ul className="grid md:grid-cols-2 gap-3 text-muted-foreground">
+                <li>• Automate repeat tasks</li>
+                <li>• Keep your pricebook clean</li>
+                <li>• Track calls and book more appointments</li>
+                <li>• Sell filters, services, and systems online</li>
+                <li>• Grow your memberships</li>
+                <li>• Speed up invoice and document entry</li>
+                <li>• Capture job sites in 3D</li>
+                <li>• Build useful dashboards and reports</li>
+              </ul>
+            </div>
+
+            <p className="text-muted-foreground mt-6 text-center">
+              Every tool on this page is used by real contractors and supports day-to-day work. Pick the tools that fit your business and help your team work smarter.
+            </p>
+          </div>
+
           <div className="mb-16">
             <h2 className="text-3xl font-bold font-heading mb-8 text-center">Our Partners</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
