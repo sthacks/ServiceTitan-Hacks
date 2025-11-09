@@ -114,65 +114,6 @@ export default function Partners() {
               ))}
             </div>
           </div>
-
-          <div className="text-center">
-            <Card className="bg-primary/5 border-primary/20 max-w-4xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold font-heading mb-4">Interested in Becoming a Partner?</h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Contractors trust people, not ads. ServiceTitan Hacks gives your brand direct access to verified business owners and decision-makers who already trust our platform.
-                </p>
-                
-                <div className="grid md:grid-cols-3 gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">9,500+</div>
-                    <div className="text-sm text-muted-foreground">Verified ServiceTitan Users</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">4</div>
-                    <div className="text-sm text-muted-foreground">Active Marketing Channels</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">High</div>
-                    <div className="text-sm text-muted-foreground">Engagement & Measurable ROI</div>
-                  </div>
-                </div>
-
-                <div className="bg-background/50 rounded-lg p-6 mb-6">
-                  <h4 className="font-semibold mb-4">Sponsorship Tiers Available:</h4>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-                    <div>
-                      <div className="font-semibold mb-1">💎 Diamond Partner</div>
-                      <div className="text-muted-foreground text-xs">Full omnichannel exposure</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1">🥇 Elite Partner</div>
-                      <div className="text-muted-foreground text-xs">Weekly multi-channel visibility</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1">🥈 Featured Partner</div>
-                      <div className="text-muted-foreground text-xs">Regular cross-channel features</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1">🥉 Community Partner</div>
-                      <div className="text-muted-foreground text-xs">Entry-level presence</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a
-                    href="https://calendly.com/st-hacks/partners"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="link-schedule-call"
-                  >
-                    <Button size="lg">Schedule a Call</Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
       </main>

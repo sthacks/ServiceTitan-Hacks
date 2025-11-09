@@ -8,6 +8,7 @@ import { initGA } from "@/lib/analytics";
 import { useAnalytics } from "@/hooks/use-analytics";
 import Home from "@/pages/Home";
 import Partners from "@/pages/Partners";
+import Sponsors from "@/pages/Sponsors";
 import Tools from "@/pages/Tools";
 import Courses from "@/pages/Courses";
 import AllAccess from "@/pages/AllAccess";
@@ -49,6 +50,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/partners" component={Partners} />
+      <Route path="/sponsors" component={Sponsors} />
       <Route path="/tools" component={Tools} />
       <Route path="/courses" component={Courses} />
       <Route path="/all-access" component={AllAccess} />
