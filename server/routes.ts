@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
@@ -811,6 +811,126 @@ export async function registerRoutes(app: Express): Promise<Server> {
             from: fromEmail,
             to: 'bill@st-hacks.com',
             subject: 'Abandoned SmartAC Demo Form',
+            text: JSON.stringify(jsonData, null, 2),
+          });
+        } catch (emailError) {
+          console.error("Failed to send abandoned form email:", emailError);
+        }
+      }
+      
+      res.status(200).json({ message: "Processed" });
+    } catch (error) {
+      console.error("Abandoned form processing error:", error);
+      res.status(500).json({ message: "Failed to process." });
+    }
+  });
+
+  // Contractor Commerce demo submission endpoint
+  app.post("/api/contractor-commerce-demo", async (req, res) => {
+    try {
+      const data = insertContractorCommerceDemoSubmissionSchema.parse(req.body);
+      
+      const submission = await storage.createContractorCommerceDemoSubmission(data);
+      await storage.markContractorCommerceDemoAsComplete(data.email);
+      
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "DEMO_REQUEST",
+          formName: "Contractor Commerce Demo",
+          firstName: data.firstName || "(not provided)",
+          lastName: data.lastName || "(not provided)",
+          companyName: data.companyName || "(not provided)",
+          numberOfTechs: data.numberOfTechs || "(not provided)",
+          email: data.email,
+          websiteUrl: data.websiteUrl || "(not provided)",
+          cellPhone: data.cellPhone || "(not provided)",
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Contractor Commerce Demo Request',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send email:", emailError);
+      }
+      
+      res.status(201).json(submission);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("Contractor Commerce demo submission error:", error);
+      res.status(500).json({ 
+        message: "Failed to submit demo request. Please try again." 
+      });
+    }
+  });
+
+  // Auto-save partial Contractor Commerce demo submission
+  app.post("/api/contractor-commerce-demo/autosave", async (req, res) => {
+    try {
+      const data = insertContractorCommerceDemoSubmissionSchema.parse(req.body);
+      
+      await storage.upsertContractorCommerceDemoSubmission(data.email, data);
+      
+      res.status(200).json({ message: "Auto-saved" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("Contractor Commerce demo auto-save error:", error);
+      res.status(500).json({ 
+        message: "Failed to auto-save." 
+      });
+    }
+  });
+
+  // Send abandoned Contractor Commerce demo form email
+  app.post("/api/contractor-commerce-demo/abandoned", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ message: "Email required" });
+      }
+
+      // Get the incomplete submission
+      const submissions = await storage.getAllContractorCommerceDemoSubmissions();
+      const incomplete = submissions.find(s => s.email === email && !s.completed);
+      
+      if (incomplete) {
+        // Send email with partial data
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          const jsonData = {
+            type: "ABANDONED_FORM",
+            formName: "Contractor Commerce Demo",
+            email: incomplete.email,
+            firstName: incomplete.firstName || "(not provided)",
+            lastName: incomplete.lastName || "(not provided)",
+            companyName: incomplete.companyName || "(not provided)",
+            numberOfTechs: incomplete.numberOfTechs || "(not provided)",
+            websiteUrl: incomplete.websiteUrl || "(not provided)",
+            cellPhone: incomplete.cellPhone || "(not provided)",
+            abandonedAt: new Date().toISOString()
+          };
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: 'bill@st-hacks.com',
+            subject: 'Abandoned Contractor Commerce Demo Form',
             text: JSON.stringify(jsonData, null, 2),
           });
         } catch (emailError) {
