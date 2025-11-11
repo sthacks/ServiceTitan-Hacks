@@ -43,12 +43,14 @@ export default function PartnerDetail() {
   
   const [showWinkDemoDialog, setShowWinkDemoDialog] = useState(false);
   const [showSmartACDemoDialog, setShowSmartACDemoDialog] = useState(false);
+  const [showContractorCommerceDemoDialog, setShowContractorCommerceDemoDialog] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [winkFormSubmitted, setWinkFormSubmitted] = useState(false);
   const [smartACFormSubmitted, setSmartACFormSubmitted] = useState(false);
+  const [contractorCommerceFormSubmitted, setContractorCommerceFormSubmitted] = useState(false);
   const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // SmartAC-specific fields
@@ -62,6 +64,10 @@ export default function PartnerDetail() {
   const [membershipAgreements, setMembershipAgreements] = useState("");
   const [annualRevenue, setAnnualRevenue] = useState("");
   const [serviceTrucks, setServiceTrucks] = useState("");
+  
+  // Contractor Commerce-specific fields
+  const [numberOfTechs, setNumberOfTechs] = useState("");
+  const [cellPhone, setCellPhone] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -328,6 +334,138 @@ export default function PartnerDetail() {
       }
     };
   }, [showSmartACDemoDialog, email, firstName, lastName, phone, companyName, websiteUrl, zipCode, role, isLicensedContractor, readyToGrow, membershipAgreements, annualRevenue, serviceTrucks]);
+
+  const contractorCommerceDemoMutation = useMutation({
+    mutationFn: async (data: {
+      firstName: string;
+      lastName: string;
+      companyName: string;
+      numberOfTechs: string;
+      email: string;
+      websiteUrl: string;
+      cellPhone: string;
+    }) => {
+      const response = await apiRequest("POST", "/api/contractor-commerce-demo", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      setContractorCommerceFormSubmitted(true);
+      
+      toast({
+        title: "Demo Request Submitted!",
+        description: "Thank you for your interest in Contractor Commerce. We'll be in touch soon.",
+      });
+      handleCloseContractorCommerceDialog();
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit request. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const contractorCommerceAutoSaveMutation = useMutation({
+    mutationFn: async (data: {
+      firstName?: string;
+      lastName?: string;
+      companyName?: string;
+      numberOfTechs?: string;
+      email: string;
+      websiteUrl?: string;
+      cellPhone?: string;
+    }) => {
+      const response = await apiRequest("POST", "/api/contractor-commerce-demo/autosave", data);
+      return response.json();
+    },
+  });
+
+  const contractorCommerceAbandonedMutation = useMutation({
+    mutationFn: async (data: { email: string }) => {
+      const response = await apiRequest("POST", "/api/contractor-commerce-demo/abandoned", data);
+      return response.json();
+    },
+  });
+
+  const handleContractorCommerceDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (honeypot) {
+      return;
+    }
+
+    if (!firstName || !lastName || !companyName || !numberOfTechs || !email || !cellPhone) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    contractorCommerceDemoMutation.mutate({
+      firstName,
+      lastName,
+      companyName,
+      numberOfTechs,
+      email,
+      websiteUrl,
+      cellPhone,
+    });
+  };
+
+  const handleCloseContractorCommerceDialog = () => {
+    if (email && !contractorCommerceFormSubmitted) {
+      contractorCommerceAbandonedMutation.mutate({ email });
+    }
+    
+    setShowContractorCommerceDemoDialog(false);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setCompanyName("");
+    setNumberOfTechs("");
+    setWebsiteUrl("");
+    setCellPhone("");
+    setHoneypot("");
+    setContractorCommerceFormSubmitted(false);
+  };
+
+  useEffect(() => {
+    if (showContractorCommerceDemoDialog && email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+      
+      autoSaveTimeoutRef.current = setTimeout(() => {
+        contractorCommerceAutoSaveMutation.mutate({
+          firstName,
+          lastName,
+          companyName,
+          numberOfTechs,
+          email,
+          websiteUrl,
+          cellPhone,
+        });
+      }, 1000);
+    }
+    
+    return () => {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+    };
+  }, [showContractorCommerceDemoDialog, email, firstName, lastName, companyName, numberOfTechs, websiteUrl, cellPhone]);
 
   const partners: Partner[] = [
     {
@@ -1272,22 +1410,159 @@ export default function PartnerDetail() {
                 </Card>
               </div>
 
-              <div className="text-center">
-                <a
-                  href="https://go.st-hacks.cc/contractor-commerce"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-learn-more"
+              <div className="text-center space-y-4">
+                <Button 
+                  size="lg"
+                  onClick={() => setShowContractorCommerceDemoDialog(true)}
+                  data-testid="button-book-demo"
                 >
-                  <Button size="lg" className="gap-2">
-                    Learn More <ExternalLink className="h-5 w-5" />
-                  </Button>
-                </a>
+                  Book a Demo
+                </Button>
+                <div>
+                  <a
+                    href="https://go.st-hacks.cc/contractor-commerce"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="link-learn-more"
+                  >
+                    <Button size="lg" variant="outline" className="gap-2">
+                      Learn More <ExternalLink className="h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </section>
         </main>
         <Footer />
+
+        {/* Contractor Commerce Demo Dialog */}
+        <Dialog open={showContractorCommerceDemoDialog} onOpenChange={(open) => !open && handleCloseContractorCommerceDialog()}>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Book a Demo with Contractor Commerce</DialogTitle>
+              <DialogDescription>
+                Fill out the form below and we'll be in touch to schedule your personalized demo.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleContractorCommerceDemoSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="cc-firstName">First Name *</Label>
+                  <Input
+                    id="cc-firstName"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="John"
+                    required
+                    data-testid="input-first-name"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="cc-lastName">Last Name *</Label>
+                  <Input
+                    id="cc-lastName"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Smith"
+                    required
+                    data-testid="input-last-name"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="cc-companyName">Company Name *</Label>
+                <Input
+                  id="cc-companyName"
+                  type="text"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  placeholder="ABC Home Services"
+                  required
+                  data-testid="input-company-name"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="cc-numberOfTechs">Number of techs in your company *</Label>
+                <Select value={numberOfTechs} onValueChange={setNumberOfTechs}>
+                  <SelectTrigger id="cc-numberOfTechs" data-testid="select-number-of-techs">
+                    <SelectValue placeholder="Select range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1-5">1-5</SelectItem>
+                    <SelectItem value="6-10">6-10</SelectItem>
+                    <SelectItem value="11-25">11-25</SelectItem>
+                    <SelectItem value="26-50">26-50</SelectItem>
+                    <SelectItem value="51-100">51-100</SelectItem>
+                    <SelectItem value="100+">100+</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="cc-email">Company Email *</Label>
+                <Input
+                  id="cc-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="john@abchomeservices.com"
+                  required
+                  data-testid="input-email"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="cc-websiteUrl">Website URL</Label>
+                <Input
+                  id="cc-websiteUrl"
+                  type="url"
+                  value={websiteUrl}
+                  onChange={(e) => setWebsiteUrl(e.target.value)}
+                  placeholder="https://www.abchomeservices.com"
+                  data-testid="input-website-url"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="cc-cellPhone">Cell Phone Number *</Label>
+                <Input
+                  id="cc-cellPhone"
+                  type="tel"
+                  value={cellPhone}
+                  onChange={(e) => setCellPhone(e.target.value)}
+                  placeholder="(555) 123-4567"
+                  required
+                  data-testid="input-cell-phone"
+                />
+              </div>
+
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: "absolute", left: "-9999px" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
+              <Button 
+                type="submit" 
+                disabled={contractorCommerceDemoMutation.isPending} 
+                className="w-full"
+                data-testid="button-submit-contractor-commerce-demo"
+              >
+                {contractorCommerceDemoMutation.isPending ? "Submitting..." : "Submit Demo Request"}
+              </Button>
+            </form>
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
