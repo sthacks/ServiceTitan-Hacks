@@ -100,6 +100,19 @@ export const smartACDemoSubmissions = pgTable("smartac_demo_submissions", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const contractorCommerceDemoSubmissions = pgTable("contractor_commerce_demo_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  companyName: text("company_name"),
+  numberOfTechs: text("number_of_techs"),
+  email: text("email").notNull(),
+  websiteUrl: text("website_url"),
+  cellPhone: text("cell_phone"),
+  completed: boolean("completed").notNull().default(false),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -175,6 +188,20 @@ export const insertSmartACDemoSubmissionSchema = createInsertSchema(smartACDemoS
   serviceTrucks: z.string().optional(),
 });
 
+export const insertContractorCommerceDemoSubmissionSchema = createInsertSchema(contractorCommerceDemoSubmissions).omit({
+  id: true,
+  submittedAt: true,
+  completed: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+  companyName: z.string().optional(),
+  numberOfTechs: z.string().optional(),
+  websiteUrl: z.string().optional(),
+  cellPhone: z.string().optional(),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -191,3 +218,5 @@ export type WinkDemoSubmission = typeof winkDemoSubmissions.$inferSelect;
 export type InsertWinkDemoSubmission = z.infer<typeof insertWinkDemoSubmissionSchema>;
 export type SmartACDemoSubmission = typeof smartACDemoSubmissions.$inferSelect;
 export type InsertSmartACDemoSubmission = z.infer<typeof insertSmartACDemoSubmissionSchema>;
+export type ContractorCommerceDemoSubmission = typeof contractorCommerceDemoSubmissions.$inferSelect;
+export type InsertContractorCommerceDemoSubmission = z.infer<typeof insertContractorCommerceDemoSubmissionSchema>;
