@@ -12,9 +12,11 @@ import {
   type CoursePurchase,
   type InsertCoursePurchase,
   type WinkDemoSubmission,
-  type InsertWinkDemoSubmission
+  type InsertWinkDemoSubmission,
+  winkDemoSubmissions
 } from "@shared/schema";
 import { randomUUID } from "crypto";
+import { db } from "./db";
 
 export interface IStorage {
   // User operations for Replit Auth
@@ -199,18 +201,14 @@ export class MemStorage implements IStorage {
   }
 
   async createWinkDemoSubmission(insertSubmission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission> {
-    const id = randomUUID();
-    const submission: WinkDemoSubmission = {
-      ...insertSubmission,
-      id,
-      submittedAt: new Date()
-    };
-    this.winkDemoSubmissions.set(id, submission);
+    const [submission] = await db.insert(winkDemoSubmissions)
+      .values(insertSubmission)
+      .returning();
     return submission;
   }
 
   async getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]> {
-    return Array.from(this.winkDemoSubmissions.values());
+    return await db.select().from(winkDemoSubmissions);
   }
 }
 
