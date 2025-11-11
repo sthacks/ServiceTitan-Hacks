@@ -581,6 +581,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const data = insertWinkDemoSubmissionSchema.parse(req.body);
       
       const submission = await storage.createWinkDemoSubmission(data);
+      await storage.markWinkDemoAsComplete(data.email);
       
       // Send email notification to admin in strict JSON format
       try {
@@ -628,6 +629,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const data = insertSmartACDemoSubmissionSchema.parse(req.body);
       
       const submission = await storage.createSmartACDemoSubmission(data);
+      await storage.markSmartACDemoAsComplete(data.email);
       
       // Send email notification to admin in strict JSON format
       try {
@@ -676,6 +678,150 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         message: "Failed to process request. Please try again." 
       });
+    }
+  });
+
+  // Auto-save partial Wink demo submission
+  app.post("/api/wink-demo/autosave", async (req, res) => {
+    try {
+      const data = insertWinkDemoSubmissionSchema.parse(req.body);
+      
+      await storage.upsertWinkDemoSubmission(data.email, data);
+      
+      res.status(200).json({ message: "Auto-saved" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("Wink demo auto-save error:", error);
+      res.status(500).json({ 
+        message: "Failed to auto-save." 
+      });
+    }
+  });
+
+  // Send abandoned Wink demo form email
+  app.post("/api/wink-demo/abandoned", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ message: "Email required" });
+      }
+
+      // Get the incomplete submission
+      const submissions = await storage.getAllWinkDemoSubmissions();
+      const incomplete = submissions.find(s => s.email === email && !s.completed);
+      
+      if (incomplete) {
+        // Send email with partial data
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          const jsonData = {
+            type: "ABANDONED_FORM",
+            formName: "Wink Demo",
+            email: incomplete.email,
+            firstName: incomplete.firstName || "(not provided)",
+            lastName: incomplete.lastName || "(not provided)",
+            abandonedAt: new Date().toISOString()
+          };
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: 'bill@st-hacks.com',
+            subject: 'Abandoned Wink Demo Form',
+            text: JSON.stringify(jsonData, null, 2),
+          });
+        } catch (emailError) {
+          console.error("Failed to send abandoned form email:", emailError);
+        }
+      }
+      
+      res.status(200).json({ message: "Processed" });
+    } catch (error) {
+      console.error("Abandoned form processing error:", error);
+      res.status(500).json({ message: "Failed to process." });
+    }
+  });
+
+  // Auto-save partial SmartAC demo submission
+  app.post("/api/smartac-demo/autosave", async (req, res) => {
+    try {
+      const data = insertSmartACDemoSubmissionSchema.parse(req.body);
+      
+      await storage.upsertSmartACDemoSubmission(data.email, data);
+      
+      res.status(200).json({ message: "Auto-saved" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("SmartAC demo auto-save error:", error);
+      res.status(500).json({ 
+        message: "Failed to auto-save." 
+      });
+    }
+  });
+
+  // Send abandoned SmartAC demo form email
+  app.post("/api/smartac-demo/abandoned", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ message: "Email required" });
+      }
+
+      // Get the incomplete submission
+      const submissions = await storage.getAllSmartACDemoSubmissions();
+      const incomplete = submissions.find(s => s.email === email && !s.completed);
+      
+      if (incomplete) {
+        // Send email with partial data
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          const jsonData = {
+            type: "ABANDONED_FORM",
+            formName: "SmartAC Demo",
+            email: incomplete.email,
+            firstName: incomplete.firstName || "(not provided)",
+            lastName: incomplete.lastName || "(not provided)",
+            phone: incomplete.phone || "(not provided)",
+            companyName: incomplete.companyName || "(not provided)",
+            websiteUrl: incomplete.websiteUrl || "(not provided)",
+            zipCode: incomplete.zipCode || "(not provided)",
+            role: incomplete.role || "(not provided)",
+            isLicensedContractor: incomplete.isLicensedContractor || "(not provided)",
+            readyToGrow: incomplete.readyToGrow || "(not provided)",
+            membershipAgreements: incomplete.membershipAgreements || "(not provided)",
+            annualRevenue: incomplete.annualRevenue || "(not provided)",
+            serviceTrucks: incomplete.serviceTrucks || "(not provided)",
+            abandonedAt: new Date().toISOString()
+          };
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: 'bill@st-hacks.com',
+            subject: 'Abandoned SmartAC Demo Form',
+            text: JSON.stringify(jsonData, null, 2),
+          });
+        } catch (emailError) {
+          console.error("Failed to send abandoned form email:", emailError);
+        }
+      }
+      
+      res.status(200).json({ message: "Processed" });
+    } catch (error) {
+      console.error("Abandoned form processing error:", error);
+      res.status(500).json({ message: "Failed to process." });
     }
   });
 
