@@ -63,6 +63,10 @@ export default function PartnerDetail() {
   const [annualRevenue, setAnnualRevenue] = useState("");
   const [serviceTrucks, setServiceTrucks] = useState("");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [partnerSlug]);
+
   const winkDemoMutation = useMutation({
     mutationFn: async (data: { firstName: string; lastName: string; email: string }) => {
       const response = await apiRequest("POST", "/api/wink-demo", data);
