@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
@@ -931,6 +931,118 @@ export async function registerRoutes(app: Express): Promise<Server> {
             from: fromEmail,
             to: 'bill@st-hacks.com',
             subject: 'Abandoned Contractor Commerce Demo Form',
+            text: JSON.stringify(jsonData, null, 2),
+          });
+        } catch (emailError) {
+          console.error("Failed to send abandoned form email:", emailError);
+        }
+      }
+      
+      res.status(200).json({ message: "Processed" });
+    } catch (error) {
+      console.error("Abandoned form processing error:", error);
+      res.status(500).json({ message: "Failed to process." });
+    }
+  });
+
+  // LiveSwitch demo submission endpoint
+  app.post("/api/liveswitch-demo", async (req, res) => {
+    try {
+      const data = insertLiveswitchDemoSubmissionSchema.parse(req.body);
+      
+      const submission = await storage.createLiveswitchDemoSubmission(data);
+      await storage.markLiveswitchDemoAsComplete(data.email);
+      
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "DEMO_REQUEST",
+          formName: "LiveSwitch Demo",
+          firstName: data.firstName || "(not provided)",
+          lastName: data.lastName || "(not provided)",
+          email: data.email,
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New LiveSwitch Demo Request',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send email:", emailError);
+      }
+      
+      res.status(201).json(submission);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("LiveSwitch demo submission error:", error);
+      res.status(500).json({ 
+        message: "Failed to submit demo request. Please try again." 
+      });
+    }
+  });
+
+  // Auto-save partial LiveSwitch demo submission
+  app.post("/api/liveswitch-demo/autosave", async (req, res) => {
+    try {
+      const data = insertLiveswitchDemoSubmissionSchema.parse(req.body);
+      
+      await storage.upsertLiveswitchDemoSubmission(data.email, data);
+      
+      res.status(200).json({ message: "Auto-saved" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("LiveSwitch demo auto-save error:", error);
+      res.status(500).json({ 
+        message: "Failed to auto-save." 
+      });
+    }
+  });
+
+  // Send abandoned LiveSwitch demo form email
+  app.post("/api/liveswitch-demo/abandoned", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ message: "Email required" });
+      }
+
+      // Get the incomplete submission
+      const submissions = await storage.getAllLiveswitchDemoSubmissions();
+      const incomplete = submissions.find(s => s.email === email && !s.completed);
+      
+      if (incomplete) {
+        // Send email with partial data
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          const jsonData = {
+            type: "ABANDONED_FORM",
+            formName: "LiveSwitch Demo",
+            email: incomplete.email,
+            firstName: incomplete.firstName || "(not provided)",
+            lastName: incomplete.lastName || "(not provided)",
+            abandonedAt: new Date().toISOString()
+          };
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: 'bill@st-hacks.com',
+            subject: 'Abandoned LiveSwitch Demo Form',
             text: JSON.stringify(jsonData, null, 2),
           });
         } catch (emailError) {
