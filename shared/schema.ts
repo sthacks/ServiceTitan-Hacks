@@ -74,27 +74,29 @@ export const pricebookOptimizations = pgTable("pricebook_optimizations", {
 
 export const winkDemoSubmissions = pgTable("wink_demo_submissions", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
   email: text("email").notNull(),
+  completed: boolean("completed").notNull().default(false),
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
 export const smartACDemoSubmissions = pgTable("smartac_demo_submissions", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
   email: text("email").notNull(),
-  phone: text("phone").notNull(),
-  companyName: text("company_name").notNull(),
-  websiteUrl: text("website_url").notNull(),
-  zipCode: text("zip_code").notNull(),
-  role: text("role").notNull(),
-  isLicensedContractor: text("is_licensed_contractor").notNull(),
-  readyToGrow: text("ready_to_grow").notNull(),
-  membershipAgreements: text("membership_agreements").notNull(),
-  annualRevenue: text("annual_revenue").notNull(),
-  serviceTrucks: text("service_trucks").notNull(),
+  phone: text("phone"),
+  companyName: text("company_name"),
+  websiteUrl: text("website_url"),
+  zipCode: text("zip_code"),
+  role: text("role"),
+  isLicensedContractor: text("is_licensed_contractor"),
+  readyToGrow: text("ready_to_grow"),
+  membershipAgreements: text("membership_agreements"),
+  annualRevenue: text("annual_revenue"),
+  serviceTrucks: text("service_trucks"),
+  completed: boolean("completed").notNull().default(false),
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
@@ -146,16 +148,31 @@ export const insertPricebookOptimizationSchema = createInsertSchema(pricebookOpt
 export const insertWinkDemoSubmissionSchema = createInsertSchema(winkDemoSubmissions).omit({
   id: true,
   submittedAt: true,
+  completed: true,
 }).extend({
   email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
 });
 
 export const insertSmartACDemoSubmissionSchema = createInsertSchema(smartACDemoSubmissions).omit({
   id: true,
   submittedAt: true,
+  completed: true,
 }).extend({
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+  phone: z.string().optional(),
+  companyName: z.string().optional(),
+  websiteUrl: z.string().optional(),
+  zipCode: z.string().optional(),
+  role: z.string().optional(),
+  isLicensedContractor: z.string().optional(),
+  readyToGrow: z.string().optional(),
+  membershipAgreements: z.string().optional(),
+  annualRevenue: z.string().optional(),
+  serviceTrucks: z.string().optional(),
 });
 
 export type UpsertUser = z.infer<typeof upsertUserSchema>;

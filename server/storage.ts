@@ -20,6 +20,7 @@ import {
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
+import { sql } from "drizzle-orm";
 
 export interface IStorage {
   // User operations for Replit Auth
@@ -49,9 +50,13 @@ export interface IStorage {
   
   createWinkDemoSubmission(submission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission>;
   getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]>;
+  upsertWinkDemoSubmission(email: string, submission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission>;
+  markWinkDemoAsComplete(email: string): Promise<void>;
   
   createSmartACDemoSubmission(submission: InsertSmartACDemoSubmission): Promise<SmartACDemoSubmission>;
   getAllSmartACDemoSubmissions(): Promise<SmartACDemoSubmission[]>;
+  upsertSmartACDemoSubmission(email: string, submission: InsertSmartACDemoSubmission): Promise<SmartACDemoSubmission>;
+  markSmartACDemoAsComplete(email: string): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -228,6 +233,62 @@ export class MemStorage implements IStorage {
 
   async getAllSmartACDemoSubmissions(): Promise<SmartACDemoSubmission[]> {
     return await db.select().from(smartACDemoSubmissions);
+  }
+
+  async upsertWinkDemoSubmission(email: string, insertSubmission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission> {
+    const existing = await db.select().from(winkDemoSubmissions)
+      .where(sql`${winkDemoSubmissions.email} = ${email} AND ${winkDemoSubmissions.completed} = false`)
+      .limit(1);
+    
+    if (existing.length > 0) {
+      const [updated] = await db.update(winkDemoSubmissions)
+        .set({
+          ...insertSubmission,
+          submittedAt: new Date(),
+        })
+        .where(sql`${winkDemoSubmissions.id} = ${existing[0].id}`)
+        .returning();
+      return updated;
+    } else {
+      const [submission] = await db.insert(winkDemoSubmissions)
+        .values(insertSubmission)
+        .returning();
+      return submission;
+    }
+  }
+
+  async markWinkDemoAsComplete(email: string): Promise<void> {
+    await db.update(winkDemoSubmissions)
+      .set({ completed: true })
+      .where(sql`${winkDemoSubmissions.email} = ${email} AND ${winkDemoSubmissions.completed} = false`);
+  }
+
+  async upsertSmartACDemoSubmission(email: string, insertSubmission: InsertSmartACDemoSubmission): Promise<SmartACDemoSubmission> {
+    const existing = await db.select().from(smartACDemoSubmissions)
+      .where(sql`${smartACDemoSubmissions.email} = ${email} AND ${smartACDemoSubmissions.completed} = false`)
+      .limit(1);
+    
+    if (existing.length > 0) {
+      const [updated] = await db.update(smartACDemoSubmissions)
+        .set({
+          ...insertSubmission,
+          submittedAt: new Date(),
+        })
+        .where(sql`${smartACDemoSubmissions.id} = ${existing[0].id}`)
+        .returning();
+      return updated;
+    } else {
+      const [submission] = await db.insert(smartACDemoSubmissions)
+        .values(insertSubmission)
+        .returning();
+      return submission;
+    }
+  }
+
+  async markSmartACDemoAsComplete(email: string): Promise<void> {
+    await db.update(smartACDemoSubmissions)
+      .set({ completed: true })
+      .where(sql`${smartACDemoSubmissions.email} = ${email} AND ${smartACDemoSubmissions.completed} = false`);
   }
 }
 
