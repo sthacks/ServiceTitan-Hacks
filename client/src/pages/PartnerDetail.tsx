@@ -44,6 +44,7 @@ export default function PartnerDetail() {
   const [showWinkDemoDialog, setShowWinkDemoDialog] = useState(false);
   const [showSmartACDemoDialog, setShowSmartACDemoDialog] = useState(false);
   const [showContractorCommerceDemoDialog, setShowContractorCommerceDemoDialog] = useState(false);
+  const [showLiveswitchDemoDialog, setShowLiveswitchDemoDialog] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -51,6 +52,7 @@ export default function PartnerDetail() {
   const [winkFormSubmitted, setWinkFormSubmitted] = useState(false);
   const [smartACFormSubmitted, setSmartACFormSubmitted] = useState(false);
   const [contractorCommerceFormSubmitted, setContractorCommerceFormSubmitted] = useState(false);
+  const [liveswitchFormSubmitted, setLiveswitchFormSubmitted] = useState(false);
   const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // SmartAC-specific fields
@@ -466,6 +468,111 @@ export default function PartnerDetail() {
       }
     };
   }, [showContractorCommerceDemoDialog, email, firstName, lastName, companyName, numberOfTechs, websiteUrl, cellPhone]);
+
+  const liveswitchDemoMutation = useMutation({
+    mutationFn: async (data: {
+      firstName: string;
+      lastName: string;
+      email: string;
+    }) => {
+      const response = await apiRequest("POST", "/api/liveswitch-demo", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      setLiveswitchFormSubmitted(true);
+      
+      // Build LiveSwitch URL with prefilled email parameter
+      const liveswitchUrl = new URL("https://www.liveswitch.com/book-a-demo/");
+      liveswitchUrl.searchParams.append("email", email);
+      
+      // Redirect to LiveSwitch booking page
+      window.location.href = liveswitchUrl.toString();
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit request. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const liveswitchAutoSaveMutation = useMutation({
+    mutationFn: async (data: {
+      firstName?: string;
+      lastName?: string;
+      email: string;
+    }) => {
+      const response = await apiRequest("POST", "/api/liveswitch-demo/autosave", data);
+      return response.json();
+    },
+  });
+
+  const liveswitchAbandonedMutation = useMutation({
+    mutationFn: async (data: { email: string }) => {
+      const response = await apiRequest("POST", "/api/liveswitch-demo/abandoned", data);
+      return response.json();
+    },
+  });
+
+  const handleLiveswitchDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (honeypot) {
+      return;
+    }
+
+    if (!firstName || !lastName || !email) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    liveswitchDemoMutation.mutate({ firstName, lastName, email });
+  };
+
+  const handleCloseLiveswitchDialog = () => {
+    if (email && !liveswitchFormSubmitted) {
+      liveswitchAbandonedMutation.mutate({ email });
+    }
+    
+    setShowLiveswitchDemoDialog(false);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setHoneypot("");
+    setLiveswitchFormSubmitted(false);
+  };
+
+  useEffect(() => {
+    if (showLiveswitchDemoDialog && email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+      
+      autoSaveTimeoutRef.current = setTimeout(() => {
+        liveswitchAutoSaveMutation.mutate({ firstName, lastName, email });
+      }, 1000);
+    }
+    
+    return () => {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+    };
+  }, [showLiveswitchDemoDialog, email, firstName, lastName]);
 
   const partners: Partner[] = [
     {
@@ -1613,21 +1720,105 @@ export default function PartnerDetail() {
                 {partner.description}
               </p>
 
-              <a
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="link-learn-more"
-              >
-                <Button size="lg" className="gap-2">
-                  Learn More <ExternalLink className="h-5 w-5" />
-                </Button>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {partner.slug === "liveswitch" && (
+                  <Button 
+                    size="lg"
+                    onClick={() => setShowLiveswitchDemoDialog(true)}
+                    data-testid="button-book-demo"
+                  >
+                    Book a Demo
+                  </Button>
+                )}
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-learn-more"
+                >
+                  <Button size="lg" variant={partner.slug === "liveswitch" ? "outline" : "default"} className="gap-2">
+                    Learn More <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
+
+      {/* LiveSwitch Demo Dialog */}
+      {partner.slug === "liveswitch" && (
+        <Dialog open={showLiveswitchDemoDialog} onOpenChange={(open) => !open && handleCloseLiveswitchDialog()}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Book a Demo with LiveSwitch</DialogTitle>
+              <DialogDescription>
+                Fill out the form below and we'll redirect you to schedule your demo.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleLiveswitchDemoSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="ls-firstName">First Name *</Label>
+                <Input
+                  id="ls-firstName"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="John"
+                  required
+                  data-testid="input-first-name"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="ls-lastName">Last Name *</Label>
+                <Input
+                  id="ls-lastName"
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder="Smith"
+                  required
+                  data-testid="input-last-name"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="ls-email">Email Address *</Label>
+                <Input
+                  id="ls-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="john@example.com"
+                  required
+                  data-testid="input-email"
+                />
+              </div>
+
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: "absolute", left: "-9999px" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
+              <Button 
+                type="submit" 
+                disabled={liveswitchDemoMutation.isPending} 
+                className="w-full"
+                data-testid="button-submit-liveswitch-demo"
+              >
+                {liveswitchDemoMutation.isPending ? "Submitting..." : "Continue to Booking"}
+              </Button>
+            </form>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 }
