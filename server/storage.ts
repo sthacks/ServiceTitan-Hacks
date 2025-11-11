@@ -10,7 +10,9 @@ import {
   type PricebookOptimization,
   type InsertPricebookOptimization,
   type CoursePurchase,
-  type InsertCoursePurchase
+  type InsertCoursePurchase,
+  type WinkDemoSubmission,
+  type InsertWinkDemoSubmission
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
@@ -39,6 +41,9 @@ export interface IStorage {
   
   createPricebookOptimization(optimization: InsertPricebookOptimization): Promise<PricebookOptimization>;
   getAllPricebookOptimizations(): Promise<PricebookOptimization[]>;
+  
+  createWinkDemoSubmission(submission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission>;
+  getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -48,6 +53,7 @@ export class MemStorage implements IStorage {
   private contactSubmissions: Map<string, ContactSubmission>;
   private resourceLeads: Map<string, ResourceLead>;
   private pricebookOptimizations: Map<string, PricebookOptimization>;
+  private winkDemoSubmissions: Map<string, WinkDemoSubmission>;
 
   constructor() {
     this.users = new Map();
@@ -56,6 +62,7 @@ export class MemStorage implements IStorage {
     this.contactSubmissions = new Map();
     this.resourceLeads = new Map();
     this.pricebookOptimizations = new Map();
+    this.winkDemoSubmissions = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -189,6 +196,21 @@ export class MemStorage implements IStorage {
 
   async getAllPricebookOptimizations(): Promise<PricebookOptimization[]> {
     return Array.from(this.pricebookOptimizations.values());
+  }
+
+  async createWinkDemoSubmission(insertSubmission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission> {
+    const id = randomUUID();
+    const submission: WinkDemoSubmission = {
+      ...insertSubmission,
+      id,
+      submittedAt: new Date()
+    };
+    this.winkDemoSubmissions.set(id, submission);
+    return submission;
+  }
+
+  async getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]> {
+    return Array.from(this.winkDemoSubmissions.values());
   }
 }
 

@@ -72,6 +72,14 @@ export const pricebookOptimizations = pgTable("pricebook_optimizations", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const winkDemoSubmissions = pgTable("wink_demo_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  email: text("email").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -117,6 +125,13 @@ export const insertPricebookOptimizationSchema = createInsertSchema(pricebookOpt
   currentDescription: z.string().min(10, "Please provide more details in your description"),
 });
 
+export const insertWinkDemoSubmissionSchema = createInsertSchema(winkDemoSubmissions).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -129,3 +144,5 @@ export type ResourceLead = typeof resourceLeads.$inferSelect;
 export type InsertResourceLead = z.infer<typeof insertResourceLeadSchema>;
 export type PricebookOptimization = typeof pricebookOptimizations.$inferSelect;
 export type InsertPricebookOptimization = z.infer<typeof insertPricebookOptimizationSchema>;
+export type WinkDemoSubmission = typeof winkDemoSubmissions.$inferSelect;
+export type InsertWinkDemoSubmission = z.infer<typeof insertWinkDemoSubmissionSchema>;
