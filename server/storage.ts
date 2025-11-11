@@ -15,8 +15,11 @@ import {
   type InsertWinkDemoSubmission,
   type SmartACDemoSubmission,
   type InsertSmartACDemoSubmission,
+  type ContractorCommerceDemoSubmission,
+  type InsertContractorCommerceDemoSubmission,
   winkDemoSubmissions,
-  smartACDemoSubmissions
+  smartACDemoSubmissions,
+  contractorCommerceDemoSubmissions
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -57,6 +60,11 @@ export interface IStorage {
   getAllSmartACDemoSubmissions(): Promise<SmartACDemoSubmission[]>;
   upsertSmartACDemoSubmission(email: string, submission: InsertSmartACDemoSubmission): Promise<SmartACDemoSubmission>;
   markSmartACDemoAsComplete(email: string): Promise<void>;
+  
+  createContractorCommerceDemoSubmission(submission: InsertContractorCommerceDemoSubmission): Promise<ContractorCommerceDemoSubmission>;
+  getAllContractorCommerceDemoSubmissions(): Promise<ContractorCommerceDemoSubmission[]>;
+  upsertContractorCommerceDemoSubmission(email: string, submission: InsertContractorCommerceDemoSubmission): Promise<ContractorCommerceDemoSubmission>;
+  markContractorCommerceDemoAsComplete(email: string): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -289,6 +297,45 @@ export class MemStorage implements IStorage {
     await db.update(smartACDemoSubmissions)
       .set({ completed: true })
       .where(sql`${smartACDemoSubmissions.email} = ${email} AND ${smartACDemoSubmissions.completed} = false`);
+  }
+
+  async createContractorCommerceDemoSubmission(insertSubmission: InsertContractorCommerceDemoSubmission): Promise<ContractorCommerceDemoSubmission> {
+    const [submission] = await db.insert(contractorCommerceDemoSubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
+  }
+
+  async getAllContractorCommerceDemoSubmissions(): Promise<ContractorCommerceDemoSubmission[]> {
+    return await db.select().from(contractorCommerceDemoSubmissions);
+  }
+
+  async upsertContractorCommerceDemoSubmission(email: string, insertSubmission: InsertContractorCommerceDemoSubmission): Promise<ContractorCommerceDemoSubmission> {
+    const existing = await db.select().from(contractorCommerceDemoSubmissions)
+      .where(sql`${contractorCommerceDemoSubmissions.email} = ${email} AND ${contractorCommerceDemoSubmissions.completed} = false`)
+      .limit(1);
+    
+    if (existing.length > 0) {
+      const [updated] = await db.update(contractorCommerceDemoSubmissions)
+        .set({
+          ...insertSubmission,
+          submittedAt: new Date(),
+        })
+        .where(sql`${contractorCommerceDemoSubmissions.id} = ${existing[0].id}`)
+        .returning();
+      return updated;
+    } else {
+      const [submission] = await db.insert(contractorCommerceDemoSubmissions)
+        .values(insertSubmission)
+        .returning();
+      return submission;
+    }
+  }
+
+  async markContractorCommerceDemoAsComplete(email: string): Promise<void> {
+    await db.update(contractorCommerceDemoSubmissions)
+      .set({ completed: true })
+      .where(sql`${contractorCommerceDemoSubmissions.email} = ${email} AND ${contractorCommerceDemoSubmissions.completed} = false`);
   }
 }
 
