@@ -17,7 +17,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle2, Copy, Check } from "lucide-react";
 import { z } from "zod";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const formSchema = insertPricebookOptimizationSchema.extend({
   honeypot: z.string().max(0),
@@ -34,25 +34,8 @@ export default function PricebookOptimizer() {
   const [showOtherCategory, setShowOtherCategory] = useState(false);
   const [result, setResult] = useState<OptimizationResult | null>(null);
   const [copied, setCopied] = useState(false);
-
-  // Load JotForm script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://form.jotform.com/jsform/252955602550154';
-    script.type = 'text/javascript';
-    script.async = true;
-    
-    const formContainer = document.getElementById('jotform-container');
-    if (formContainer) {
-      formContainer.appendChild(script);
-    }
-
-    return () => {
-      if (formContainer && formContainer.contains(script)) {
-        formContainer.removeChild(script);
-      }
-    };
-  }, []);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const howItWorksItems = [
     {
@@ -140,6 +123,8 @@ export default function PricebookOptimizer() {
       return response.json();
     },
     onSuccess: (data: any) => {
+      setFormSubmitted(true);
+      
       if (data.optimization) {
         setResult({
           optimizedDescription: data.optimization.optimizedDescription,
@@ -170,6 +155,73 @@ export default function PricebookOptimizer() {
       });
     },
   });
+
+  const autoSaveMutation = useMutation({
+    mutationFn: async (data: any) => {
+      const response = await apiRequest("POST", "/api/pricebook-optimization/autosave", data);
+      return response.json();
+    },
+  });
+
+  const abandonedMutation = useMutation({
+    mutationFn: async (data: { email: string }) => {
+      const response = await apiRequest("POST", "/api/pricebook-optimization/abandoned", data);
+      return response.json();
+    },
+  });
+
+  // Auto-save when form data changes
+  useEffect(() => {
+    const email = form.watch("email");
+    const category = form.watch("category");
+    const currentDescription = form.watch("currentDescription");
+    const firstName = form.watch("firstName");
+    const lastName = form.watch("lastName");
+    const otherCategory = form.watch("otherCategory");
+
+    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && category && currentDescription && currentDescription.length >= 10) {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+      
+      autoSaveTimeoutRef.current = setTimeout(() => {
+        autoSaveMutation.mutate({ 
+          email, 
+          category, 
+          currentDescription, 
+          firstName, 
+          lastName,
+          otherCategory 
+        });
+      }, 1000);
+    }
+    
+    return () => {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+    };
+  }, [form.watch("email"), form.watch("category"), form.watch("currentDescription"), form.watch("firstName"), form.watch("lastName"), form.watch("otherCategory")]);
+
+  // Track form abandonment
+  useEffect(() => {
+    const email = form.watch("email");
+
+    const handleBeforeUnload = () => {
+      if (email && !formSubmitted) {
+        navigator.sendBeacon('/api/pricebook-optimization/abandoned', JSON.stringify({ email }));
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      if (email && !formSubmitted) {
+        abandonedMutation.mutate({ email });
+      }
+    };
+  }, [form.watch("email"), formSubmitted]);
 
   const handleCopy = async () => {
     if (result?.optimizedDescription) {
@@ -308,7 +360,170 @@ export default function PricebookOptimizer() {
           <div className="mx-auto max-w-3xl px-6">
             <Card>
               <CardContent className="p-8">
-                <div id="jotform-container" />
+                <h2 className="text-2xl font-bold font-heading mb-4">Turn One of Your Pricebook Items Into a Homeowner-Friendly Description</h2>
+                <p className="text-muted-foreground mb-6">
+                  We'll take your technical explanation and rewrite it in plain, engaging language that helps your techs connect with homeowners and build value—fast.
+                </p>
+                <p className="text-sm text-muted-foreground mb-8 italic">
+                  The more detail you provide in your description, the better the results. Also, these descriptions can be 100% customized to your company.
+                </p>
+                
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="category"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Choose a category *</FormLabel>
+                          <Select 
+                            onValueChange={(value) => {
+                              field.onChange(value);
+                              setShowOtherCategory(value === "OTHER");
+                            }} 
+                            value={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger data-testid="select-category">
+                                <SelectValue placeholder="Please Select" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {categories.map((cat) => (
+                                <SelectItem key={cat.value} value={cat.value}>
+                                  {cat.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {showOtherCategory && (
+                      <FormField
+                        control={form.control}
+                        name="otherCategory"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Other Category *</FormLabel>
+                            <FormControl>
+                              <Input 
+                                {...field} 
+                                placeholder="Examples: ac repair, water heater replacement, electrical"
+                                data-testid="input-other-category"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    )}
+
+                    <FormField
+                      control={form.control}
+                      name="currentDescription"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Current description from ServiceTitan Pricebook *</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              {...field}
+                              rows={6}
+                              placeholder="The more detail, the better the result from the AI."
+                              data-testid="textarea-current-description"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <FormField
+                        control={form.control}
+                        name="firstName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>First Name *</FormLabel>
+                            <FormControl>
+                              <Input 
+                                {...field} 
+                                placeholder="John"
+                                data-testid="input-first-name"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="lastName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Last Name *</FormLabel>
+                            <FormControl>
+                              <Input 
+                                {...field} 
+                                placeholder="Smith"
+                                data-testid="input-last-name"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email *</FormLabel>
+                          <FormControl>
+                            <Input 
+                              {...field} 
+                              type="email"
+                              placeholder="john@example.com"
+                              data-testid="input-email"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="honeypot"
+                      render={({ field }) => (
+                        <FormItem style={{ position: "absolute", left: "-9999px" }}>
+                          <FormControl>
+                            <Input 
+                              {...field} 
+                              tabIndex={-1}
+                              autoComplete="off"
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full"
+                      disabled={mutation.isPending}
+                      data-testid="button-submit"
+                    >
+                      {mutation.isPending ? "Optimizing..." : "OPTIMIZE IT"}
+                    </Button>
+                  </form>
+                </Form>
               </CardContent>
             </Card>
           </div>
