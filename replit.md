@@ -21,16 +21,20 @@ The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the
 Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, and smartac_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
 
 ### Demo Booking Systems
-The platform features two comprehensive demo booking systems:
+The platform features two comprehensive demo booking systems with auto-save and abandoned form tracking:
 
-**Wink Toolbox Demo**: Basic 3-field form (first name, last name, email) available via dialog on partner page or direct URL at /partners/wink-toolbox/book-demo. On submission, saves to database, sends JSON email to bill@st-hacks.com, and redirects to Calendly with prefilled parameters (firstName, lastName, email, a1="ServiceTitan Hacks").
+**Wink Toolbox Demo**: Basic 3-field form (first name, last name, email) available via dialog on partner page. Features auto-save when email is entered (stored with completed=false), abandoned form email notification when dialog closes without submission, and on successful submission: marks completed=true, sends JSON email to bill@st-hacks.com, and redirects to Calendly with prefilled parameters (firstName, lastName, email, a1="ServiceTitan Hacks").
 
-**SmartAC Demo**: Comprehensive 13-field form at /partners/smartac/book-demo including:
+**SmartAC Demo**: Comprehensive 13-field form displayed as dialog on partner page including:
 - Basic contact info: first name, last name, email, phone
 - Company details: company name, website URL, zip code
 - Business profile: role (dropdown), licensed HVAC contractor status (dropdown), growth timeline (dropdown)
 - Business metrics: membership agreements count (dropdown), annual revenue (radio buttons), service truck count (radio buttons)
-On submission, saves all data to database and sends JSON-formatted email to bill@st-hacks.com for Zapier CRM integration.
+
+Both forms implement:
+- Auto-save: Partial data saved to database when email entered (1 second debounce, completed=false)
+- Abandoned form tracking: If dialog closes without submission, sends JSON-formatted email to bill@st-hacks.com with partial data and "ABANDONED_FORM" type
+- Complete submission: Marks completed=true and sends full submission email to bill@st-hacks.com for Zapier CRM integration
 
 ## External Dependencies
 
