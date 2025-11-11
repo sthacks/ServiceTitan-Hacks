@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -47,6 +47,9 @@ export default function PartnerDetail() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  const [winkFormSubmitted, setWinkFormSubmitted] = useState(false);
+  const [smartACFormSubmitted, setSmartACFormSubmitted] = useState(false);
+  const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // SmartAC-specific fields
   const [phone, setPhone] = useState("");
@@ -66,6 +69,8 @@ export default function PartnerDetail() {
       return response.json();
     },
     onSuccess: () => {
+      setWinkFormSubmitted(true);
+      
       // Build Calendly URL with prefilled parameters
       const calendlyUrl = new URL("https://letsmeet.winktoolbox.com/meetings/wink/team-usa");
       calendlyUrl.searchParams.append("firstName", firstName);
@@ -82,6 +87,20 @@ export default function PartnerDetail() {
         description: error.message || "Failed to submit request. Please try again.",
         variant: "destructive",
       });
+    },
+  });
+
+  const winkAutoSaveMutation = useMutation({
+    mutationFn: async (data: { firstName?: string; lastName?: string; email: string }) => {
+      const response = await apiRequest("POST", "/api/wink-demo/autosave", data);
+      return response.json();
+    },
+  });
+
+  const winkAbandonedMutation = useMutation({
+    mutationFn: async (data: { email: string }) => {
+      const response = await apiRequest("POST", "/api/wink-demo/abandoned", data);
+      return response.json();
     },
   });
 
@@ -114,12 +133,35 @@ export default function PartnerDetail() {
   };
 
   const handleCloseWinkDialog = () => {
+    if (email && !winkFormSubmitted) {
+      winkAbandonedMutation.mutate({ email });
+    }
+    
     setShowWinkDemoDialog(false);
     setFirstName("");
     setLastName("");
     setEmail("");
     setHoneypot("");
+    setWinkFormSubmitted(false);
   };
+
+  useEffect(() => {
+    if (showWinkDemoDialog && email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+      
+      autoSaveTimeoutRef.current = setTimeout(() => {
+        winkAutoSaveMutation.mutate({ firstName, lastName, email });
+      }, 1000);
+    }
+    
+    return () => {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+    };
+  }, [showWinkDemoDialog, email, firstName, lastName]);
 
   const smartACDemoMutation = useMutation({
     mutationFn: async (data: {
@@ -141,6 +183,8 @@ export default function PartnerDetail() {
       return response.json();
     },
     onSuccess: () => {
+      setSmartACFormSubmitted(true);
+      
       toast({
         title: "Demo Request Submitted!",
         description: "Thank you for your interest in SmartAC. We'll be in touch soon.",
@@ -153,6 +197,34 @@ export default function PartnerDetail() {
         description: error.message || "Failed to submit request. Please try again.",
         variant: "destructive",
       });
+    },
+  });
+
+  const smartACAutoSaveMutation = useMutation({
+    mutationFn: async (data: {
+      firstName?: string;
+      lastName?: string;
+      email: string;
+      phone?: string;
+      companyName?: string;
+      websiteUrl?: string;
+      zipCode?: string;
+      role?: string;
+      isLicensedContractor?: string;
+      readyToGrow?: string;
+      membershipAgreements?: string;
+      annualRevenue?: string;
+      serviceTrucks?: string;
+    }) => {
+      const response = await apiRequest("POST", "/api/smartac-demo/autosave", data);
+      return response.json();
+    },
+  });
+
+  const smartACAbandonedMutation = useMutation({
+    mutationFn: async (data: { email: string }) => {
+      const response = await apiRequest("POST", "/api/smartac-demo/abandoned", data);
+      return response.json();
     },
   });
 
@@ -199,6 +271,10 @@ export default function PartnerDetail() {
   };
 
   const handleCloseSmartACDialog = () => {
+    if (email && !smartACFormSubmitted) {
+      smartACAbandonedMutation.mutate({ email });
+    }
+    
     setShowSmartACDemoDialog(false);
     setFirstName("");
     setLastName("");
@@ -214,7 +290,40 @@ export default function PartnerDetail() {
     setAnnualRevenue("");
     setServiceTrucks("");
     setHoneypot("");
+    setSmartACFormSubmitted(false);
   };
+
+  useEffect(() => {
+    if (showSmartACDemoDialog && email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+      
+      autoSaveTimeoutRef.current = setTimeout(() => {
+        smartACAutoSaveMutation.mutate({
+          firstName,
+          lastName,
+          email,
+          phone,
+          companyName,
+          websiteUrl,
+          zipCode,
+          role,
+          isLicensedContractor,
+          readyToGrow,
+          membershipAgreements,
+          annualRevenue,
+          serviceTrucks,
+        });
+      }, 1000);
+    }
+    
+    return () => {
+      if (autoSaveTimeoutRef.current) {
+        clearTimeout(autoSaveTimeoutRef.current);
+      }
+    };
+  }, [showSmartACDemoDialog, email, firstName, lastName, phone, companyName, websiteUrl, zipCode, role, isLicensedContractor, readyToGrow, membershipAgreements, annualRevenue, serviceTrucks]);
 
   const partners: Partner[] = [
     {
