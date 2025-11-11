@@ -1174,6 +1174,7 @@ Please rewrite this service description following the instructions above.`;
 
       // Store the optimization request with the result
       const optimization = await storage.createPricebookOptimization(data);
+      await storage.markPricebookAsComplete(data.email);
       
       // Send email notification to bill@st-hacks.com with JSON data including the AI result
       try {
@@ -1241,6 +1242,76 @@ ${JSON.stringify(jsonData, null, 2)}
       res.status(500).json({ 
         message: "Failed to fetch optimizations." 
       });
+    }
+  });
+
+  // Auto-save partial pricebook optimization
+  app.post("/api/pricebook-optimization/autosave", async (req, res) => {
+    try {
+      const data = insertPricebookOptimizationSchema.parse(req.body);
+      
+      await storage.upsertPricebookOptimization(data.email, data);
+      
+      res.status(200).json({ message: "Auto-saved" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("Pricebook optimization auto-save error:", error);
+      res.status(500).json({ 
+        message: "Failed to auto-save." 
+      });
+    }
+  });
+
+  // Send abandoned pricebook optimization form email
+  app.post("/api/pricebook-optimization/abandoned", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ message: "Email required" });
+      }
+
+      // Get the incomplete submission
+      const optimizations = await storage.getAllPricebookOptimizations();
+      const incomplete = optimizations.find(o => o.email === email && !o.completed);
+      
+      if (incomplete) {
+        // Send email with partial data
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          
+          const jsonData = {
+            type: "ABANDONED_FORM",
+            formName: "Pricebook Optimizer",
+            email: incomplete.email,
+            firstName: incomplete.firstName || "(not provided)",
+            lastName: incomplete.lastName || "(not provided)",
+            category: incomplete.category || "(not provided)",
+            currentDescription: incomplete.currentDescription ? 
+              (incomplete.currentDescription.substring(0, 100) + "...") : "(not provided)",
+            abandonedAt: new Date().toISOString()
+          };
+          
+          await client.emails.send({
+            from: fromEmail,
+            to: 'bill@st-hacks.com',
+            subject: 'Abandoned Pricebook Optimizer Form',
+            text: JSON.stringify(jsonData, null, 2),
+          });
+        } catch (emailError) {
+          console.error("Failed to send abandoned form email:", emailError);
+        }
+      }
+      
+      res.status(200).json({ message: "Processed" });
+    } catch (error) {
+      console.error("Abandoned form processing error:", error);
+      res.status(500).json({ message: "Failed to process." });
     }
   });
 

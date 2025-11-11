@@ -19,6 +19,7 @@ import {
   type InsertContractorCommerceDemoSubmission,
   type LiveswitchDemoSubmission,
   type InsertLiveswitchDemoSubmission,
+  pricebookOptimizations,
   winkDemoSubmissions,
   smartACDemoSubmissions,
   contractorCommerceDemoSubmissions,
