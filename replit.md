@@ -18,7 +18,19 @@ The backend is an Express.js server on Node.js with TypeScript, providing a REST
 The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage
-Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, and course purchases. Zod schemas are used for validation, and Drizzle Kit for migrations.
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, and smartac_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
+
+### Demo Booking Systems
+The platform features two comprehensive demo booking systems:
+
+**Wink Toolbox Demo**: Basic 3-field form (first name, last name, email) available via dialog on partner page or direct URL at /partners/wink-toolbox/book-demo. On submission, saves to database, sends JSON email to bill@st-hacks.com, and redirects to Calendly with prefilled parameters (firstName, lastName, email, a1="ServiceTitan Hacks").
+
+**SmartAC Demo**: Comprehensive 13-field form at /partners/smartac/book-demo including:
+- Basic contact info: first name, last name, email, phone
+- Company details: company name, website URL, zip code
+- Business profile: role (dropdown), licensed HVAC contractor status (dropdown), growth timeline (dropdown)
+- Business metrics: membership agreements count (dropdown), annual revenue (radio buttons), service truck count (radio buttons)
+On submission, saves all data to database and sends JSON-formatted email to bill@st-hacks.com for Zapier CRM integration.
 
 ## External Dependencies
 
