@@ -39,6 +39,7 @@ import PurchasingPlatform from "@/pages/PurchasingPlatform";
 import PartnerDetail from "@/pages/PartnerDetail";
 import WinkBookDemo from "@/pages/WinkBookDemo";
 import SmartACBookDemo from "@/pages/SmartACBookDemo";
+import ContractorCommerceBookDemo from "@/pages/ContractorCommerceBookDemo";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
 import SMSTermsConditions from "@/pages/SMSTermsConditions";
@@ -82,6 +83,7 @@ function Router() {
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
       <Route path="/partners/wink-toolbox/book-demo" component={WinkBookDemo} />
       <Route path="/partners/smartac/book-demo" component={SmartACBookDemo} />
+      <Route path="/partners/contractor-commerce/book-demo" component={ContractorCommerceBookDemo} />
       <Route path="/partners/:slug" component={PartnerDetail} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
