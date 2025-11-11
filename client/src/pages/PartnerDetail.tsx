@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
@@ -40,10 +42,23 @@ export default function PartnerDetail() {
   const { toast } = useToast();
   
   const [showWinkDemoDialog, setShowWinkDemoDialog] = useState(false);
+  const [showSmartACDemoDialog, setShowSmartACDemoDialog] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  
+  // SmartAC-specific fields
+  const [phone, setPhone] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [role, setRole] = useState("");
+  const [isLicensedContractor, setIsLicensedContractor] = useState("");
+  const [readyToGrow, setReadyToGrow] = useState("");
+  const [membershipAgreements, setMembershipAgreements] = useState("");
+  const [annualRevenue, setAnnualRevenue] = useState("");
+  const [serviceTrucks, setServiceTrucks] = useState("");
 
   const winkDemoMutation = useMutation({
     mutationFn: async (data: { firstName: string; lastName: string; email: string }) => {
@@ -103,6 +118,101 @@ export default function PartnerDetail() {
     setFirstName("");
     setLastName("");
     setEmail("");
+    setHoneypot("");
+  };
+
+  const smartACDemoMutation = useMutation({
+    mutationFn: async (data: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      companyName: string;
+      websiteUrl: string;
+      zipCode: string;
+      role: string;
+      isLicensedContractor: string;
+      readyToGrow: string;
+      membershipAgreements: string;
+      annualRevenue: string;
+      serviceTrucks: string;
+    }) => {
+      const response = await apiRequest("POST", "/api/smartac-demo", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Demo Request Submitted!",
+        description: "Thank you for your interest in SmartAC. We'll be in touch soon.",
+      });
+      handleCloseSmartACDialog();
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit request. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleSmartACDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (honeypot) {
+      return;
+    }
+
+    if (!firstName || !lastName || !email || !phone || !companyName || !websiteUrl || !zipCode || !role || !isLicensedContractor || !readyToGrow || !membershipAgreements || !annualRevenue || !serviceTrucks) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    smartACDemoMutation.mutate({
+      firstName,
+      lastName,
+      email,
+      phone,
+      companyName,
+      websiteUrl,
+      zipCode,
+      role,
+      isLicensedContractor,
+      readyToGrow,
+      membershipAgreements,
+      annualRevenue,
+      serviceTrucks,
+    });
+  };
+
+  const handleCloseSmartACDialog = () => {
+    setShowSmartACDemoDialog(false);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setCompanyName("");
+    setWebsiteUrl("");
+    setZipCode("");
+    setRole("");
+    setIsLicensedContractor("");
+    setReadyToGrow("");
+    setMembershipAgreements("");
+    setAnnualRevenue("");
+    setServiceTrucks("");
     setHoneypot("");
   };
 
@@ -722,7 +832,7 @@ export default function PartnerDetail() {
               <div className="text-center">
                 <Button 
                   size="lg"
-                  onClick={() => setLocation("/partners/smartac/book-demo")}
+                  onClick={() => setShowSmartACDemoDialog(true)}
                   data-testid="button-book-demo"
                 >
                   Book a Demo
@@ -732,6 +842,231 @@ export default function PartnerDetail() {
           </section>
         </main>
         <Footer />
+
+        {/* SmartAC Demo Dialog */}
+        <Dialog open={showSmartACDemoDialog} onOpenChange={(open) => !open && handleCloseSmartACDialog()}>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Book a Demo with SmartAC</DialogTitle>
+              <DialogDescription>
+                Complete all fields below to schedule your personalized demo.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleSmartACDemoSubmit} className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="smartac-firstName">First name *</Label>
+                  <Input
+                    id="smartac-firstName"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    data-testid="input-smartac-firstname"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="smartac-lastName">Last name *</Label>
+                  <Input
+                    id="smartac-lastName"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    data-testid="input-smartac-lastname"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="smartac-email">Email *</Label>
+                  <Input
+                    id="smartac-email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    data-testid="input-smartac-email"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="smartac-phone">Cell phone number *</Label>
+                  <Input
+                    id="smartac-phone"
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    data-testid="input-smartac-phone"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="smartac-companyName">Company name *</Label>
+                  <Input
+                    id="smartac-companyName"
+                    type="text"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                    data-testid="input-smartac-company"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="smartac-websiteUrl">Website URL *</Label>
+                  <Input
+                    id="smartac-websiteUrl"
+                    type="url"
+                    value={websiteUrl}
+                    onChange={(e) => setWebsiteUrl(e.target.value)}
+                    data-testid="input-smartac-website"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="smartac-zipCode">Zip code *</Label>
+                  <Input
+                    id="smartac-zipCode"
+                    type="text"
+                    value={zipCode}
+                    onChange={(e) => setZipCode(e.target.value)}
+                    data-testid="input-smartac-zipcode"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="smartac-role">What is your role? *</Label>
+                  <Select value={role} onValueChange={setRole}>
+                    <SelectTrigger data-testid="select-smartac-role">
+                      <SelectValue placeholder="Select your role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="owner">Owner</SelectItem>
+                      <SelectItem value="manager">Manager</SelectItem>
+                      <SelectItem value="technician">Technician</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="smartac-licensed">Are you a licensed residential HVAC contractor? *</Label>
+                <Select value={isLicensedContractor} onValueChange={setIsLicensedContractor}>
+                  <SelectTrigger data-testid="select-smartac-licensed">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="yes">Yes</SelectItem>
+                    <SelectItem value="no">No</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="smartac-ready">When would you be ready to grow your HVAC business with SmartAC? *</Label>
+                <Select value={readyToGrow} onValueChange={setReadyToGrow}>
+                  <SelectTrigger data-testid="select-smartac-ready">
+                    <SelectValue placeholder="Select timeframe" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="immediately">Immediately</SelectItem>
+                    <SelectItem value="1-3months">1-3 months</SelectItem>
+                    <SelectItem value="3-6months">3-6 months</SelectItem>
+                    <SelectItem value="6-12months">6-12 months</SelectItem>
+                    <SelectItem value="justexploring">Just exploring</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="smartac-memberships">How many membership agreements do you have? *</Label>
+                <Select value={membershipAgreements} onValueChange={setMembershipAgreements}>
+                  <SelectTrigger data-testid="select-smartac-memberships">
+                    <SelectValue placeholder="Select range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0-100">0-100</SelectItem>
+                    <SelectItem value="101-500">101-500</SelectItem>
+                    <SelectItem value="501-1000">501-1000</SelectItem>
+                    <SelectItem value="1001-2000">1001-2000</SelectItem>
+                    <SelectItem value="2000+">2000+</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label>What is your approximate annual revenue? *</Label>
+                <RadioGroup value={annualRevenue} onValueChange={setAnnualRevenue} className="space-y-2 mt-2">
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="under500k" id="smartac-revenue1" data-testid="radio-smartac-revenue-under500k" />
+                    <Label htmlFor="smartac-revenue1" className="font-normal cursor-pointer">Under $500K</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="500k-3m" id="smartac-revenue2" data-testid="radio-smartac-revenue-500k-3m" />
+                    <Label htmlFor="smartac-revenue2" className="font-normal cursor-pointer">$500K - $3MM</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="3m-10m" id="smartac-revenue3" data-testid="radio-smartac-revenue-3m-10m" />
+                    <Label htmlFor="smartac-revenue3" className="font-normal cursor-pointer">$3MM - $10MM</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="10m-20m" id="smartac-revenue4" data-testid="radio-smartac-revenue-10m-20m" />
+                    <Label htmlFor="smartac-revenue4" className="font-normal cursor-pointer">$10MM - $20MM</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="20m+" id="smartac-revenue5" data-testid="radio-smartac-revenue-20m+" />
+                    <Label htmlFor="smartac-revenue5" className="font-normal cursor-pointer">$20MM+</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <div>
+                <Label>Number of service trucks *</Label>
+                <RadioGroup value={serviceTrucks} onValueChange={setServiceTrucks} className="space-y-2 mt-2">
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="1-4" id="smartac-trucks1" data-testid="radio-smartac-trucks-1-4" />
+                    <Label htmlFor="smartac-trucks1" className="font-normal cursor-pointer">1-4</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="5-10" id="smartac-trucks2" data-testid="radio-smartac-trucks-5-10" />
+                    <Label htmlFor="smartac-trucks2" className="font-normal cursor-pointer">5-10</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="11-20" id="smartac-trucks3" data-testid="radio-smartac-trucks-11-20" />
+                    <Label htmlFor="smartac-trucks3" className="font-normal cursor-pointer">11-20</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="21-39" id="smartac-trucks4" data-testid="radio-smartac-trucks-21-39" />
+                    <Label htmlFor="smartac-trucks4" className="font-normal cursor-pointer">21-39</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="40+" id="smartac-trucks5" data-testid="radio-smartac-trucks-40+" />
+                    <Label htmlFor="smartac-trucks5" className="font-normal cursor-pointer">40+</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: "absolute", left: "-9999px" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
+              <Button 
+                type="submit" 
+                disabled={smartACDemoMutation.isPending} 
+                className="w-full"
+                data-testid="button-submit-smartac-demo"
+              >
+                {smartACDemoMutation.isPending ? "Submitting..." : "Submit Demo Request"}
+              </Button>
+            </form>
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
