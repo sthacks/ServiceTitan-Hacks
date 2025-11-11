@@ -69,6 +69,7 @@ export const pricebookOptimizations = pgTable("pricebook_optimizations", {
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
   email: text("email").notNull(),
+  completed: boolean("completed").notNull().default(false),
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
@@ -162,9 +163,12 @@ export const insertResourceLeadSchema = createInsertSchema(resourceLeads).omit({
 export const insertPricebookOptimizationSchema = createInsertSchema(pricebookOptimizations).omit({
   id: true,
   submittedAt: true,
+  completed: true,
 }).extend({
   email: z.string().email("Please enter a valid email address"),
   currentDescription: z.string().min(10, "Please provide more details in your description"),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
 });
 
 export const insertWinkDemoSubmissionSchema = createInsertSchema(winkDemoSubmissions).omit({

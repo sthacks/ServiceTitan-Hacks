@@ -53,6 +53,8 @@ export interface IStorage {
   
   createPricebookOptimization(optimization: InsertPricebookOptimization): Promise<PricebookOptimization>;
   getAllPricebookOptimizations(): Promise<PricebookOptimization[]>;
+  upsertPricebookOptimization(email: string, optimization: InsertPricebookOptimization): Promise<PricebookOptimization>;
+  markPricebookAsComplete(email: string): Promise<void>;
   
   createWinkDemoSubmission(submission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission>;
   getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]>;
@@ -214,19 +216,42 @@ export class MemStorage implements IStorage {
   }
 
   async createPricebookOptimization(insertOptimization: InsertPricebookOptimization): Promise<PricebookOptimization> {
-    const id = randomUUID();
-    const optimization: PricebookOptimization = { 
-      ...insertOptimization,
-      otherCategory: insertOptimization.otherCategory || null,
-      id, 
-      submittedAt: new Date() 
-    };
-    this.pricebookOptimizations.set(id, optimization);
+    const [optimization] = await db.insert(pricebookOptimizations)
+      .values(insertOptimization)
+      .returning();
     return optimization;
   }
 
   async getAllPricebookOptimizations(): Promise<PricebookOptimization[]> {
-    return Array.from(this.pricebookOptimizations.values());
+    return await db.select().from(pricebookOptimizations);
+  }
+
+  async upsertPricebookOptimization(email: string, insertOptimization: InsertPricebookOptimization): Promise<PricebookOptimization> {
+    const existing = await db.select().from(pricebookOptimizations)
+      .where(sql`${pricebookOptimizations.email} = ${email} AND ${pricebookOptimizations.completed} = false`)
+      .limit(1);
+    
+    if (existing.length > 0) {
+      const [updated] = await db.update(pricebookOptimizations)
+        .set({
+          ...insertOptimization,
+          submittedAt: new Date(),
+        })
+        .where(sql`${pricebookOptimizations.id} = ${existing[0].id}`)
+        .returning();
+      return updated;
+    } else {
+      const [optimization] = await db.insert(pricebookOptimizations)
+        .values(insertOptimization)
+        .returning();
+      return optimization;
+    }
+  }
+
+  async markPricebookAsComplete(email: string): Promise<void> {
+    await db.update(pricebookOptimizations)
+      .set({ completed: true })
+      .where(sql`${pricebookOptimizations.email} = ${email} AND ${pricebookOptimizations.completed} = false`);
   }
 
   async createWinkDemoSubmission(insertSubmission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission> {
