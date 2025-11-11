@@ -113,6 +113,15 @@ export const contractorCommerceDemoSubmissions = pgTable("contractor_commerce_de
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const liveswitchDemoSubmissions = pgTable("liveswitch_demo_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  email: text("email").notNull(),
+  completed: boolean("completed").notNull().default(false),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -202,6 +211,16 @@ export const insertContractorCommerceDemoSubmissionSchema = createInsertSchema(c
   cellPhone: z.string().optional(),
 });
 
+export const insertLiveswitchDemoSubmissionSchema = createInsertSchema(liveswitchDemoSubmissions).omit({
+  id: true,
+  submittedAt: true,
+  completed: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -220,3 +239,5 @@ export type SmartACDemoSubmission = typeof smartACDemoSubmissions.$inferSelect;
 export type InsertSmartACDemoSubmission = z.infer<typeof insertSmartACDemoSubmissionSchema>;
 export type ContractorCommerceDemoSubmission = typeof contractorCommerceDemoSubmissions.$inferSelect;
 export type InsertContractorCommerceDemoSubmission = z.infer<typeof insertContractorCommerceDemoSubmissionSchema>;
+export type LiveswitchDemoSubmission = typeof liveswitchDemoSubmissions.$inferSelect;
+export type InsertLiveswitchDemoSubmission = z.infer<typeof insertLiveswitchDemoSubmissionSchema>;
