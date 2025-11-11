@@ -1,10 +1,23 @@
+import { useState } from "react";
 import { useParams, useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
@@ -24,6 +37,74 @@ export default function PartnerDetail() {
   const params = useParams();
   const [, setLocation] = useLocation();
   const partnerSlug = params.slug;
+  const { toast } = useToast();
+  
+  const [showWinkDemoDialog, setShowWinkDemoDialog] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+
+  const winkDemoMutation = useMutation({
+    mutationFn: async (data: { firstName: string; lastName: string; email: string }) => {
+      const response = await apiRequest("POST", "/api/wink-demo", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      // Build Calendly URL with prefilled parameters
+      const calendlyUrl = new URL("https://letsmeet.winktoolbox.com/meetings/wink/team-usa");
+      calendlyUrl.searchParams.append("firstName", firstName);
+      calendlyUrl.searchParams.append("lastName", lastName);
+      calendlyUrl.searchParams.append("email", email);
+      calendlyUrl.searchParams.append("a1", "ServiceTitan Hacks"); // "How did you hear about Wink?"
+      
+      // Redirect to Calendly
+      window.location.href = calendlyUrl.toString();
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit request. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleWinkDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (honeypot) {
+      return;
+    }
+
+    if (!firstName || !lastName || !email) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    winkDemoMutation.mutate({ firstName, lastName, email });
+  };
+
+  const handleCloseWinkDialog = () => {
+    setShowWinkDemoDialog(false);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setHoneypot("");
+  };
 
   const partners: Partner[] = [
     {
@@ -218,16 +299,14 @@ export default function PartnerDetail() {
               </div>
 
               <div className="text-center">
-                <a
-                  href="https://go.st-hacks.cc/wink-demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-book-demo"
+                <Button 
+                  size="lg" 
+                  className="gap-2"
+                  onClick={() => setShowWinkDemoDialog(true)}
+                  data-testid="button-book-demo"
                 >
-                  <Button size="lg" className="gap-2">
-                    Book a Demo with Wink <ExternalLink className="h-5 w-5" />
-                  </Button>
-                </a>
+                  Book a Demo with Wink
+                </Button>
               </div>
             </div>
           </section>
@@ -311,20 +390,86 @@ export default function PartnerDetail() {
               <p className="text-xl mb-8 text-white/90" data-testid="text-cta-description">
                 Book a personalised demo of Wink Toolbox today and see how you can eliminate your reporting bottlenecks and unlock your growth metrics.
               </p>
-              <a
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="link-final-cta"
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="gap-2 bg-white text-primary hover:bg-white/90 border-white"
+                onClick={() => setShowWinkDemoDialog(true)}
+                data-testid="button-final-cta"
               >
-                <Button size="lg" variant="outline" className="gap-2 bg-white text-primary hover:bg-white/90 border-white">
-                  Book Your Demo <ExternalLink className="h-5 w-5" />
-                </Button>
-              </a>
+                Book Your Demo
+              </Button>
             </div>
           </section>
         </main>
         <Footer />
+
+        {/* Wink Demo Dialog */}
+        <Dialog open={showWinkDemoDialog} onOpenChange={(open) => !open && handleCloseWinkDialog()}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Book a Demo with Wink</DialogTitle>
+              <DialogDescription>
+                Enter your details below to schedule a personalized demo with the Wink team.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleWinkDemoSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="wink-firstName">First Name *</Label>
+                <Input
+                  id="wink-firstName"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="Your first name"
+                  data-testid="input-wink-firstname"
+                />
+              </div>
+              <div>
+                <Label htmlFor="wink-lastName">Last Name *</Label>
+                <Input
+                  id="wink-lastName"
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder="Your last name"
+                  data-testid="input-wink-lastname"
+                />
+              </div>
+              <div>
+                <Label htmlFor="wink-email">Email Address *</Label>
+                <Input
+                  id="wink-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  data-testid="input-wink-email"
+                />
+              </div>
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: "absolute", left: "-9999px" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+              <p className="text-xs text-muted-foreground">
+                After submitting, you'll be redirected to Wink's scheduling page to choose your demo time.
+              </p>
+              <Button 
+                type="submit" 
+                disabled={winkDemoMutation.isPending} 
+                className="w-full"
+                data-testid="button-submit-wink-demo"
+              >
+                {winkDemoMutation.isPending ? "Submitting..." : "Continue to Schedule"}
+              </Button>
+            </form>
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
