@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
@@ -616,6 +616,63 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
       console.error("Wink demo submission error:", error);
+      res.status(500).json({ 
+        message: "Failed to process request. Please try again." 
+      });
+    }
+  });
+
+  // SmartAC demo submission endpoint
+  app.post("/api/smartac-demo", async (req, res) => {
+    try {
+      const data = insertSmartACDemoSubmissionSchema.parse(req.body);
+      
+      const submission = await storage.createSmartACDemoSubmission(data);
+      
+      // Send email notification to admin in strict JSON format
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          companyName: data.companyName,
+          websiteUrl: data.websiteUrl,
+          zipCode: data.zipCode,
+          role: data.role,
+          isLicensedContractor: data.isLicensedContractor,
+          readyToGrow: data.readyToGrow,
+          membershipAgreements: data.membershipAgreements,
+          annualRevenue: data.annualRevenue,
+          serviceTrucks: data.serviceTrucks,
+          timestamp: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New SmartAC Demo Request',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+        // Don't fail the request if email fails
+      }
+      
+      res.status(201).json({ 
+        message: "Success!",
+        submission: { id: submission.id }
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ 
+          message: validationError.message 
+        });
+      }
+      console.error("SmartAC demo submission error:", error);
       res.status(500).json({ 
         message: "Failed to process request. Please try again." 
       });

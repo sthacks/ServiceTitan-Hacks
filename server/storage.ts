@@ -13,7 +13,10 @@ import {
   type InsertCoursePurchase,
   type WinkDemoSubmission,
   type InsertWinkDemoSubmission,
-  winkDemoSubmissions
+  type SmartACDemoSubmission,
+  type InsertSmartACDemoSubmission,
+  winkDemoSubmissions,
+  smartACDemoSubmissions
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -46,6 +49,9 @@ export interface IStorage {
   
   createWinkDemoSubmission(submission: InsertWinkDemoSubmission): Promise<WinkDemoSubmission>;
   getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]>;
+  
+  createSmartACDemoSubmission(submission: InsertSmartACDemoSubmission): Promise<SmartACDemoSubmission>;
+  getAllSmartACDemoSubmissions(): Promise<SmartACDemoSubmission[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -56,6 +62,7 @@ export class MemStorage implements IStorage {
   private resourceLeads: Map<string, ResourceLead>;
   private pricebookOptimizations: Map<string, PricebookOptimization>;
   private winkDemoSubmissions: Map<string, WinkDemoSubmission>;
+  private smartACDemoSubmissions: Map<string, SmartACDemoSubmission>;
 
   constructor() {
     this.users = new Map();
@@ -65,6 +72,7 @@ export class MemStorage implements IStorage {
     this.resourceLeads = new Map();
     this.pricebookOptimizations = new Map();
     this.winkDemoSubmissions = new Map();
+    this.smartACDemoSubmissions = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -209,6 +217,17 @@ export class MemStorage implements IStorage {
 
   async getAllWinkDemoSubmissions(): Promise<WinkDemoSubmission[]> {
     return await db.select().from(winkDemoSubmissions);
+  }
+
+  async createSmartACDemoSubmission(insertSubmission: InsertSmartACDemoSubmission): Promise<SmartACDemoSubmission> {
+    const [submission] = await db.insert(smartACDemoSubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
+  }
+
+  async getAllSmartACDemoSubmissions(): Promise<SmartACDemoSubmission[]> {
+    return await db.select().from(smartACDemoSubmissions);
   }
 }
 

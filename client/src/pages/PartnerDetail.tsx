@@ -720,16 +720,13 @@ export default function PartnerDetail() {
               </div>
 
               <div className="text-center">
-                <a
-                  href="https://go.st-hacks.cc/smart-ac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-learn-more"
+                <Button 
+                  size="lg"
+                  onClick={() => setLocation("/partners/smartac/book-demo")}
+                  data-testid="button-book-demo"
                 >
-                  <Button size="lg" className="gap-2">
-                    Learn More <ExternalLink className="h-5 w-5" />
-                  </Button>
-                </a>
+                  Book a Demo
+                </Button>
               </div>
             </div>
           </section>

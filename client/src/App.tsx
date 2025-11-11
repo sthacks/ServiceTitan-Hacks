@@ -38,6 +38,7 @@ import PricingObjectionsLanding from "@/pages/PricingObjectionsLanding";
 import PurchasingPlatform from "@/pages/PurchasingPlatform";
 import PartnerDetail from "@/pages/PartnerDetail";
 import WinkDemoForm from "@/pages/WinkDemoForm";
+import SmartACDemoForm from "@/pages/SmartACDemoForm";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
 import SMSTermsConditions from "@/pages/SMSTermsConditions";
@@ -80,6 +81,7 @@ function Router() {
       <Route path="/pricing-objections-landing" component={PricingObjectionsLanding} />
       <Route path="/purchasing-platform" component={PurchasingPlatform} />
       <Route path="/partners/wink-toolbox/book-demo" component={WinkDemoForm} />
+      <Route path="/partners/smartac/book-demo" component={SmartACDemoForm} />
       <Route path="/partners/:slug" component={PartnerDetail} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />

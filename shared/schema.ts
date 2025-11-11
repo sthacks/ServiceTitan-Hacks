@@ -80,6 +80,24 @@ export const winkDemoSubmissions = pgTable("wink_demo_submissions", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const smartACDemoSubmissions = pgTable("smartac_demo_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  companyName: text("company_name").notNull(),
+  websiteUrl: text("website_url").notNull(),
+  zipCode: text("zip_code").notNull(),
+  role: text("role").notNull(),
+  isLicensedContractor: text("is_licensed_contractor").notNull(),
+  readyToGrow: text("ready_to_grow").notNull(),
+  membershipAgreements: text("membership_agreements").notNull(),
+  annualRevenue: text("annual_revenue").notNull(),
+  serviceTrucks: text("service_trucks").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -132,6 +150,14 @@ export const insertWinkDemoSubmissionSchema = createInsertSchema(winkDemoSubmiss
   email: z.string().email("Please enter a valid email address"),
 });
 
+export const insertSmartACDemoSubmissionSchema = createInsertSchema(smartACDemoSubmissions).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -146,3 +172,5 @@ export type PricebookOptimization = typeof pricebookOptimizations.$inferSelect;
 export type InsertPricebookOptimization = z.infer<typeof insertPricebookOptimizationSchema>;
 export type WinkDemoSubmission = typeof winkDemoSubmissions.$inferSelect;
 export type InsertWinkDemoSubmission = z.infer<typeof insertWinkDemoSubmissionSchema>;
+export type SmartACDemoSubmission = typeof smartACDemoSubmissions.$inferSelect;
+export type InsertSmartACDemoSubmission = z.infer<typeof insertSmartACDemoSubmissionSchema>;
