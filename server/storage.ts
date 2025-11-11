@@ -17,9 +17,12 @@ import {
   type InsertSmartACDemoSubmission,
   type ContractorCommerceDemoSubmission,
   type InsertContractorCommerceDemoSubmission,
+  type LiveswitchDemoSubmission,
+  type InsertLiveswitchDemoSubmission,
   winkDemoSubmissions,
   smartACDemoSubmissions,
-  contractorCommerceDemoSubmissions
+  contractorCommerceDemoSubmissions,
+  liveswitchDemoSubmissions
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -65,6 +68,11 @@ export interface IStorage {
   getAllContractorCommerceDemoSubmissions(): Promise<ContractorCommerceDemoSubmission[]>;
   upsertContractorCommerceDemoSubmission(email: string, submission: InsertContractorCommerceDemoSubmission): Promise<ContractorCommerceDemoSubmission>;
   markContractorCommerceDemoAsComplete(email: string): Promise<void>;
+  
+  createLiveswitchDemoSubmission(submission: InsertLiveswitchDemoSubmission): Promise<LiveswitchDemoSubmission>;
+  getAllLiveswitchDemoSubmissions(): Promise<LiveswitchDemoSubmission[]>;
+  upsertLiveswitchDemoSubmission(email: string, submission: InsertLiveswitchDemoSubmission): Promise<LiveswitchDemoSubmission>;
+  markLiveswitchDemoAsComplete(email: string): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -336,6 +344,45 @@ export class MemStorage implements IStorage {
     await db.update(contractorCommerceDemoSubmissions)
       .set({ completed: true })
       .where(sql`${contractorCommerceDemoSubmissions.email} = ${email} AND ${contractorCommerceDemoSubmissions.completed} = false`);
+  }
+
+  async createLiveswitchDemoSubmission(insertSubmission: InsertLiveswitchDemoSubmission): Promise<LiveswitchDemoSubmission> {
+    const [submission] = await db.insert(liveswitchDemoSubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
+  }
+
+  async getAllLiveswitchDemoSubmissions(): Promise<LiveswitchDemoSubmission[]> {
+    return await db.select().from(liveswitchDemoSubmissions);
+  }
+
+  async upsertLiveswitchDemoSubmission(email: string, insertSubmission: InsertLiveswitchDemoSubmission): Promise<LiveswitchDemoSubmission> {
+    const existing = await db.select().from(liveswitchDemoSubmissions)
+      .where(sql`${liveswitchDemoSubmissions.email} = ${email} AND ${liveswitchDemoSubmissions.completed} = false`)
+      .limit(1);
+    
+    if (existing.length > 0) {
+      const [updated] = await db.update(liveswitchDemoSubmissions)
+        .set({
+          ...insertSubmission,
+          submittedAt: new Date(),
+        })
+        .where(sql`${liveswitchDemoSubmissions.id} = ${existing[0].id}`)
+        .returning();
+      return updated;
+    } else {
+      const [submission] = await db.insert(liveswitchDemoSubmissions)
+        .values(insertSubmission)
+        .returning();
+      return submission;
+    }
+  }
+
+  async markLiveswitchDemoAsComplete(email: string): Promise<void> {
+    await db.update(liveswitchDemoSubmissions)
+      .set({ completed: true })
+      .where(sql`${liveswitchDemoSubmissions.email} = ${email} AND ${liveswitchDemoSubmissions.completed} = false`);
   }
 }
 
