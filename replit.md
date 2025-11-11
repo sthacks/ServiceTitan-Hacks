@@ -18,10 +18,10 @@ The backend is an Express.js server on Node.js with TypeScript, providing a REST
 The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage
-Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, and smartac_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, and contractor_commerce_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
 
 ### Demo Booking Systems
-The platform features two comprehensive demo booking systems with auto-save and abandoned form tracking:
+The platform features three comprehensive demo booking systems with auto-save and abandoned form tracking:
 
 **Wink Toolbox Demo**: Basic 3-field form (first name, last name, email) available via dialog on partner page. Features auto-save when email is entered (stored with completed=false), abandoned form email notification when dialog closes without submission, and on successful submission: marks completed=true, sends JSON email to bill@st-hacks.com, and redirects to Calendly with prefilled parameters (firstName, lastName, email, a1="ServiceTitan Hacks").
 
@@ -31,10 +31,19 @@ The platform features two comprehensive demo booking systems with auto-save and 
 - Business profile: role (dropdown), licensed HVAC contractor status (dropdown), growth timeline (dropdown)
 - Business metrics: membership agreements count (dropdown), annual revenue (radio buttons), service truck count (radio buttons)
 
-Both forms implement:
+**Contractor Commerce Demo**: 7-field form displayed as dialog on partner page and standalone booking page at /partners/contractor-commerce/book-demo including:
+- Basic contact info: first name, last name, email, cell phone
+- Company details: company name, website URL (optional), number of techs (dropdown: 1-5, 6-10, 11-25, 26-50, 51-100, 100+)
+
+All three forms implement:
 - Auto-save: Partial data saved to database when email entered (1 second debounce, completed=false)
 - Abandoned form tracking: If dialog closes without submission, sends JSON-formatted email to bill@st-hacks.com with partial data and "ABANDONED_FORM" type
 - Complete submission: Marks completed=true and sends full submission email to bill@st-hacks.com for Zapier CRM integration
+
+Form behavior patterns:
+- Wink: Redirects to Calendly with prefilled parameters after submission
+- SmartAC: Shows success toast and closes dialog after submission
+- Contractor Commerce: Shows success toast and closes dialog after submission
 
 ## External Dependencies
 
