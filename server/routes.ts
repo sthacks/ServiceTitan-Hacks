@@ -6,7 +6,7 @@ import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
 import OpenAI from "openai";
-import { setupAuth, isAuthenticated } from "./replitAuth";
+import { setupAuth, isAuthenticated } from "./auth";
 import Stripe from "stripe";
 import path from "path";
 import fs from "fs";
@@ -21,12 +21,12 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 // Admin middleware
 const isAdmin = async (req: any, res: any, next: any) => {
-  if (!req.isAuthenticated()) {
+  if (!req.oidc.isAuthenticated()) {
     return res.status(401).json({ message: "Unauthorized" });
   }
   
   try {
-    const userId = req.user.claims.sub;
+    const userId = req.oidc.user.sub;
     const user = await storage.getUser(userId);
     
     if (!user || !user.isAdmin) {
