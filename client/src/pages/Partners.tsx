@@ -109,35 +109,36 @@ export default function Partners() {
             <h2 className="text-3xl font-bold font-heading mb-8 text-center">Our Partners</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {partners.map((partner, index) => (
-                <Card key={index} className="hover-elevate">
-                  <CardContent className="p-6 text-center flex flex-col">
-                    <div 
-                      className="block mb-6 cursor-pointer" 
-                      onClick={() => setLocation(`/partners/${partner.slug}`)}
-                    >
-                      <div className="h-32 flex items-center justify-center">
-                        <img
-                          src={partner.logo}
-                          alt={`${partner.name} logo`}
-                          className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
-                          loading="lazy"
-                          data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        />
+                <Link 
+                  key={index} 
+                  href={`/partners/${partner.slug}`}
+                  data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <Card className="hover-elevate cursor-pointer h-full">
+                    <CardContent className="p-6 text-center flex flex-col h-full">
+                      <div className="block mb-6">
+                        <div className="h-32 flex items-center justify-center">
+                          <img
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            className={`object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' || partner.name === 'Volca.AI' ? 'max-h-28' : 'max-h-20'} w-auto`}
+                            loading="lazy"
+                            data-testid={`img-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
-                    <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
-                    <Link href={`/partners/${partner.slug}`}>
+                      <h3 className="text-xl font-semibold font-heading mb-3">{partner.name}</h3>
+                      <p className="text-muted-foreground mb-4 min-h-[4rem]">{partner.description}</p>
                       <Button 
                         variant="outline" 
-                        className="w-full gap-2"
-                        data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="w-full gap-2 mt-auto"
+                        data-testid={`button-learn-more-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         Learn More <ChevronRight className="h-4 w-4" />
                       </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
