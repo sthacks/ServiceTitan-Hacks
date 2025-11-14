@@ -17,9 +17,13 @@ export default function WinkBookDemo() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   
-  const [firstName, setFirstName] = useState("");
+  const urlParams = new URLSearchParams(window.location.search);
+  const prefillFirstName = urlParams.get('firstName') || "";
+  const prefillEmail = urlParams.get('email') || "";
+  
+  const [firstName, setFirstName] = useState(prefillFirstName);
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(prefillEmail);
   const [honeypot, setHoneypot] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
