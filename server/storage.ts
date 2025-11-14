@@ -19,11 +19,14 @@ import {
   type InsertContractorCommerceDemoSubmission,
   type LiveswitchDemoSubmission,
   type InsertLiveswitchDemoSubmission,
+  type SmartACROISubmission,
+  type InsertSmartACROISubmission,
   pricebookOptimizations,
   winkDemoSubmissions,
   smartACDemoSubmissions,
   contractorCommerceDemoSubmissions,
-  liveswitchDemoSubmissions
+  liveswitchDemoSubmissions,
+  smartacROISubmissions
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -76,6 +79,9 @@ export interface IStorage {
   getAllLiveswitchDemoSubmissions(): Promise<LiveswitchDemoSubmission[]>;
   upsertLiveswitchDemoSubmission(email: string, submission: InsertLiveswitchDemoSubmission): Promise<LiveswitchDemoSubmission>;
   markLiveswitchDemoAsComplete(email: string): Promise<void>;
+  
+  createSmartACROISubmission(submission: InsertSmartACROISubmission): Promise<SmartACROISubmission>;
+  getAllSmartACROISubmissions(): Promise<SmartACROISubmission[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -409,6 +415,17 @@ export class MemStorage implements IStorage {
     await db.update(liveswitchDemoSubmissions)
       .set({ completed: true })
       .where(sql`${liveswitchDemoSubmissions.email} = ${email} AND ${liveswitchDemoSubmissions.completed} = false`);
+  }
+
+  async createSmartACROISubmission(insertSubmission: InsertSmartACROISubmission): Promise<SmartACROISubmission> {
+    const [submission] = await db.insert(smartacROISubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
+  }
+
+  async getAllSmartACROISubmissions(): Promise<SmartACROISubmission[]> {
+    return await db.select().from(smartacROISubmissions);
   }
 }
 

@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
@@ -1312,6 +1312,142 @@ ${JSON.stringify(jsonData, null, 2)}
     } catch (error) {
       console.error("Abandoned form processing error:", error);
       res.status(500).json({ message: "Failed to process." });
+    }
+  });
+
+  // SmartAC ROI Calculator submission
+  app.post("/api/smartac-roi", async (req, res) => {
+    try {
+      const parsed = insertSmartACROISubmissionSchema.safeParse(req.body);
+      if (!parsed.success) {
+        const validationError = fromZodError(parsed.error);
+        return res.status(400).json({ message: validationError.message });
+      }
+
+      const data = parsed.data;
+      
+      // Save to database
+      const submission = await storage.createSmartACROISubmission(data);
+      
+      // Parse ROI results from JSON string
+      const results = JSON.parse(data.roiResults);
+      
+      // Send ROI report to user
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const formatCurrency = (value: number) => `$${Math.round(value).toLocaleString()}`;
+        const formatPercent = (value: number) => `${Math.round(value)}%`;
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: data.email,
+          subject: 'Your SmartAC ROI Report is Ready!',
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+              <h2 style="color: #1b5eec; margin-bottom: 20px;">Hi ${data.firstName}!</h2>
+              
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                Thanks for calculating your SmartAC ROI! Here's your personalized 5-year projection:
+              </p>
+              
+              <div style="background: linear-gradient(135deg, rgba(27, 94, 236, 0.1), rgba(27, 94, 236, 0.05)); border-left: 4px solid #1b5eec; padding: 20px; margin: 30px 0; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #1b5eec;">Your Results at a Glance</h3>
+                
+                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">5-Year Net Gain</div>
+                  <div style="font-size: 28px; font-weight: bold; color: #22c55e;">${formatCurrency(results.netGain)}</div>
+                  <div style="font-size: 12px; color: #999; margin-top: 5px;">After ${formatCurrency(results.totalPlatformCost)} platform cost</div>
+                </div>
+                
+                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">5-Year ROI</div>
+                  <div style="font-size: 28px; font-weight: bold; color: #1b5eec;">${formatPercent(results.roi)}</div>
+                  <div style="font-size: 12px; color: #999; margin-top: 5px;">Return on investment</div>
+                </div>
+                
+                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Year 5 Member Growth</div>
+                  <div style="font-size: 28px; font-weight: bold; color: #1b5eec;">+${formatPercent(results.memberGrowthPercent)}</div>
+                  <div style="font-size: 12px; color: #999; margin-top: 5px;">${results.year5BeforeMembers} → ${results.year5AfterMembers} members</div>
+                </div>
+                
+                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Incremental Revenue</div>
+                  <div style="font-size: 24px; font-weight: bold; color: #1b5eec;">${formatCurrency(results.incrementalRevenue)}</div>
+                  <div style="font-size: 12px; color: #999; margin-top: 5px;">5-year total</div>
+                </div>
+              </div>
+              
+              <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 30px 0;">
+                <h3 style="margin-top: 0; color: #333;">How SmartAC Drives This Growth</h3>
+                <ul style="line-height: 1.8; color: #555;">
+                  <li>Smart sensors make memberships more valuable</li>
+                  <li>Virtual inspections reduce truck rolls</li>
+                  <li>Automated engagement boosts retention by 15%</li>
+                  <li>Mobile app doubles close rates</li>
+                </ul>
+              </div>
+              
+              <div style="text-align: center; margin: 40px 0;">
+                <a href="https://go.st-hacks.cc/smart-ac" style="display: inline-block; background: #1b5eec; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">
+                  Learn More About SmartAC
+                </a>
+              </div>
+              
+              <p style="font-size: 14px; color: #666; margin-top: 30px;">
+                Want to dive deeper into how SmartAC can transform your membership program?
+                <a href="https://go.st-hacks.cc/smart-ac" style="color: #1b5eec;">Schedule a personalized ROI review</a> with the SmartAC team.
+              </p>
+              
+              <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+              
+              <p style="font-size: 12px; color: #999; text-align: center;">
+                This report was generated from <a href="https://servicetitanhacks.com" style="color: #1b5eec;">ServiceTitan Hacks</a>
+              </p>
+            </div>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Failed to send ROI report to user:", emailError);
+        // Don't fail the request if email fails
+      }
+      
+      // Send notification to bill@st-hacks.com with lead info
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "ROI_CALCULATION",
+          formName: "SmartAC ROI Calculator",
+          firstName: data.firstName,
+          email: data.email,
+          inputs: {
+            activeMembers: data.activeMembers,
+            retentionRate: data.retentionRate,
+            newVisitsPerYear: data.newVisitsPerYear,
+            closeRate: data.closeRate,
+            revenuePerMember: data.revenuePerMember
+          },
+          results: JSON.parse(data.roiResults),
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New SmartAC ROI Calculator Submission',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+        // Don't fail the request if email fails
+      }
+      
+      res.json(submission);
+    } catch (error) {
+      console.error("SmartAC ROI submission error:", error);
+      res.status(500).json({ message: "Failed to save ROI calculation" });
     }
   });
 
