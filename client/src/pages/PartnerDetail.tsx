@@ -21,7 +21,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
-import smartACLogoWhite from "@assets/white.4c718087 (4)_1763145184369.png";
+import smartACLogoWhite from "@assets/smartac (4)_1763149949473.png";
 import smartACBackground from "@assets/Smartac (3)_1763145156012.png";
 import smartACAppMockup from "@assets/SMAC-APP-MOCKUP-BRENSONS-HIGH-RISK_1763149326382.webp";
 import smartACApp from "@assets/image (4)_1763145249281.png";
