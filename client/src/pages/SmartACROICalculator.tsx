@@ -173,9 +173,10 @@ export default function SmartACROICalculator() {
 
   const submitMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
-      return await apiRequest<any>("/api/smartac-roi", {
-        method: "POST",
-        body: JSON.stringify({
+      return await apiRequest(
+        "POST",
+        "/api/smartac-roi",
+        {
           firstName: data.firstName,
           email: data.email,
           activeMembers: inputs.activeMembers,
@@ -184,8 +185,8 @@ export default function SmartACROICalculator() {
           closeRate: inputs.closeRate,
           revenuePerMember: inputs.revenuePerMember,
           roiResults: JSON.stringify(calculatedResults),
-        }),
-      });
+        }
+      );
     },
     onSuccess: () => {
       setResults(calculatedResults);
