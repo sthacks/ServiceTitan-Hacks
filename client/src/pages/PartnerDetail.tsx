@@ -23,7 +23,7 @@ import { apiRequest } from "@/lib/queryClient";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import smartACLogoWhite from "@assets/white.4c718087 (4)_1763145184369.png";
 import smartACBackground from "@assets/Smartac (3)_1763145156012.png";
-import smartACAppMockup from "@assets/SMAC-APP-MOCKUP-BRENSONS-HIGH-RISK_1763146236494.webp";
+import smartACAppMockup from "@assets/SMAC-APP-MOCKUP-BRENSONS-HIGH-RISK_1763149326382.webp";
 import smartACApp from "@assets/image (4)_1763145249281.png";
 import smartACSensorsApp from "@assets/smartac.com-all-sensors-app_1763146209818.jpg";
 import smartACDashboard from "@assets/image (3)_1763145261344.png";
@@ -1254,9 +1254,9 @@ export default function PartnerDetail() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="p-6 bg-muted/50 flex items-center justify-center order-2 md:order-1">
                         <img
-                          src={smartACApp}
-                          alt="SmartAC homeowner mobile app interface"
-                          className="w-full max-w-xs rounded-lg shadow-md"
+                          src={smartACAppMockup}
+                          alt="SmartAC mobile app showing Brenson's HVAC dashboard with loyalty balance and system health"
+                          className="w-full max-w-sm rounded-lg shadow-md"
                           data-testid="img-mobile-app"
                         />
                       </div>
