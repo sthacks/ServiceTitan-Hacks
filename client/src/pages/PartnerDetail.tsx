@@ -687,16 +687,14 @@ export default function PartnerDetail() {
                   {partner.description}
                 </p>
 
-                <a
-                  href={partner.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-demo-cta"
+                <Button 
+                  size="lg" 
+                  className="gap-2"
+                  onClick={() => setShowWinkDemoDialog(true)}
+                  data-testid="button-demo-cta"
                 >
-                  <Button size="lg" className="gap-2">
-                    Book a Demo <ExternalLink className="h-5 w-5" />
-                  </Button>
-                </a>
+                  Book a Demo
+                </Button>
               </div>
             </div>
           </section>
