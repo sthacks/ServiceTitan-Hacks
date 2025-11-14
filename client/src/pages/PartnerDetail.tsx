@@ -21,6 +21,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
+import smartACLogoWhite from "@assets/white.4c718087 (4)_1763145184369.png";
+import smartACBackground from "@assets/Smartac (3)_1763145156012.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
@@ -1109,12 +1111,16 @@ export default function PartnerDetail() {
         <Header />
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="py-16 bg-background">
-            <div className="mx-auto max-w-6xl px-6">
+          <section 
+            className="py-16 bg-cover bg-center bg-no-repeat relative"
+            style={{ backgroundImage: `url(${smartACBackground})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
+            <div className="mx-auto max-w-6xl px-6 relative z-10">
               <Button
                 variant="ghost"
                 onClick={() => setLocation("/partners")}
-                className="mb-8"
+                className="mb-8 text-white hover:bg-white/20 hover:text-white"
                 data-testid="button-back-to-partners"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
@@ -1124,18 +1130,18 @@ export default function PartnerDetail() {
               <div className="text-center">
                 <div className="mb-8 flex items-center justify-center">
                   <img
-                    src={partner.logo}
+                    src={smartACLogoWhite}
                     alt={`${partner.name} logo`}
                     className="object-contain max-h-32 w-auto"
                     data-testid="img-partner-logo"
                   />
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white" data-testid="text-partner-name">
                   {partner.name}
                 </h1>
 
-                <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
+                <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
                   {partner.description}
                 </p>
               </div>
