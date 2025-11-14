@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-black border-b border-gray-800 shadow-sm">
+    <header className="sticky top-0 z-50 bg-gradient-to-b from-[#2970bf] to-white border-b border-gray-200 shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home-logo">
@@ -108,13 +108,13 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-gray-800">
+          <nav className="lg:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 link.external ? (
                   <a key={link.path} href={link.path} target="_blank" rel="noopener noreferrer">
                     <span
-                      className="block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer text-white hover:text-gray-300 hover:bg-gray-800"
+                      className="block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer text-white hover:text-white hover:bg-white/20"
                       onClick={() => setMobileMenuOpen(false)}
                       data-testid={`link-mobile-${link.label.toLowerCase()}`}
                     >
@@ -126,8 +126,8 @@ export default function Header() {
                     <span
                       className={`block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer ${
                         location === link.path
-                          ? "text-primary bg-gray-800"
-                          : "text-white hover:text-gray-300 hover:bg-gray-800"
+                          ? "text-primary bg-white/20"
+                          : "text-white hover:text-white hover:bg-white/20"
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
                       data-testid={`link-mobile-${link.label.toLowerCase()}`}
@@ -138,12 +138,12 @@ export default function Header() {
                 )
               ))}
               
-              <div className="mt-2 pt-2 border-t border-gray-800">
+              <div className="mt-2 pt-2 border-t border-gray-200">
                 {isAuthenticated && user?.isAdmin && (
                   <Link href="/admin">
                     <Button
                       variant="ghost"
-                      className="w-full justify-start text-primary hover:text-primary/80 hover:bg-gray-800"
+                      className="w-full justify-start text-primary hover:text-primary/80 hover:bg-white/20"
                       onClick={() => setMobileMenuOpen(false)}
                       data-testid="button-mobile-admin"
                     >
@@ -155,7 +155,7 @@ export default function Header() {
                 {isAuthenticated ? (
                   <Button
                     variant="ghost"
-                    className="w-full justify-start text-white hover:text-gray-300 hover:bg-gray-800"
+                    className="w-full justify-start text-white hover:text-white hover:bg-white/20"
                     onClick={() => window.location.href = "/api/logout"}
                     data-testid="button-mobile-logout"
                   >
@@ -165,7 +165,7 @@ export default function Header() {
                 ) : (
                   <Button
                     variant="ghost"
-                    className="w-full justify-start text-white hover:text-gray-300 hover:bg-gray-800"
+                    className="w-full justify-start text-white hover:text-white hover:bg-white/20"
                     onClick={() => window.location.href = "/api/login"}
                     data-testid="button-mobile-login"
                   >
