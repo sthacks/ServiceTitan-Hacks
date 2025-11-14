@@ -1202,7 +1202,7 @@ export default function PartnerDetail() {
                   />
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white" data-testid="text-partner-name">
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-black" data-testid="text-partner-name">
                   {partner.name}
                 </h1>
 
