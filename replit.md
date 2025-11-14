@@ -18,7 +18,7 @@ The backend is an Express.js server on Node.js with TypeScript, providing a REST
 The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage
-Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, smartac_roi_submissions, contractor_commerce_demo_submissions, and liveswitch_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, smartac_roi_submissions, wink_roi_submissions, contractor_commerce_demo_submissions, and liveswitch_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
 
 ### Demo Booking Systems
 The platform features four comprehensive demo booking systems with auto-save and abandoned form tracking:
@@ -56,6 +56,18 @@ Interactive tool at /smartac-roi-calculator that calculates 5-year membership gr
 4. CTA button "Book Your SmartAC Demo" links to /partners/smartac/book-demo with prefilled firstName and email query parameters
 5. Sends lead notification email to bill@st-hacks.com
 6. Stores submission in smartac_roi_submissions table with all inputs and calculated results
+
+### Wink ROI Calculator
+Interactive tool at /wink-roi-calculator that calculates time savings and cost reduction from automated invoicing. When users calculate ROI:
+1. Calculator accepts 8 inputs: invoices per month (50-1000), minutes per invoice (5-60), worker hourly pay ($10-50), mistake rate (1-20%), cost per mistake ($50-500), Wink monthly cost ($99-499), setup cost ($0-5000), and setup cost spread (6-24 months)
+2. Calculates ROI metrics: 70% time savings on invoicing, labor cost savings, mistake reduction savings, Year 1 net savings, and 5-year cumulative net gain
+3. Dialog collects first name and email before displaying results
+4. Sends branded ROI report email to user with ServiceTitan Hacks colors (Primary Red #ED254E, Deep Red #C1121F, Dark Gray #2D3142)
+5. Email includes personalized metrics: Year 1 net savings, 5-year cumulative, monthly time saved, and annual savings
+6. CTA button "Book Your Wink Demo" links to /partners/wink-toolbox/book-demo with prefilled firstName and email query parameters
+7. Sends lead notification email to bill@st-hacks.com
+8. Stores submission in wink_roi_submissions table with all inputs and calculated results
+9. Results page displays 4 summary cards, 5-year projection chart, and detailed breakdown of savings calculations
 
 ## External Dependencies
 
