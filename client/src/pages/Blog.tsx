@@ -21,6 +21,17 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "5",
+    title: "Selling HVAC Systems to Millennials: Why Online Pricing Is No Longer Optional",
+    excerpt: "Millennials are now the largest adult generation in the U.S. Learn why transparent online pricing isn't just nice to have—it's becoming mandatory if you want to capture the next decade of HVAC replacement business.",
+    author: "Bill Brown",
+    date: "November 14, 2025",
+    readTime: "11 min read",
+    category: "Marketing",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=400&fit=crop",
+    slug: "selling-hvac-systems-to-millennials-online-pricing"
+  },
+  {
     id: "4",
     title: "How to Sell SaaS to Residential HVAC, Plumbing, Electrical, and Other Home-Service Contractors",
     excerpt: "Selling software to home-service companies is fundamentally different from typical B2B sales. Learn the hard-won lessons from a decade of operating an Inc. 5000 HVAC company and implementing dozens of software solutions.",
