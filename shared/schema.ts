@@ -123,6 +123,19 @@ export const liveswitchDemoSubmissions = pgTable("liveswitch_demo_submissions", 
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const smartacROISubmissions = pgTable("smartac_roi_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name").notNull(),
+  email: text("email").notNull(),
+  activeMembers: integer("active_members").notNull(),
+  retentionRate: integer("retention_rate").notNull(),
+  newVisitsPerYear: integer("new_visits_per_year").notNull(),
+  closeRate: integer("close_rate").notNull(),
+  revenuePerMember: integer("revenue_per_member").notNull(),
+  roiResults: text("roi_results").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -225,6 +238,14 @@ export const insertLiveswitchDemoSubmissionSchema = createInsertSchema(liveswitc
   lastName: z.string().optional(),
 });
 
+export const insertSmartACROISubmissionSchema = createInsertSchema(smartacROISubmissions).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().min(1, "First name is required"),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -245,3 +266,5 @@ export type ContractorCommerceDemoSubmission = typeof contractorCommerceDemoSubm
 export type InsertContractorCommerceDemoSubmission = z.infer<typeof insertContractorCommerceDemoSubmissionSchema>;
 export type LiveswitchDemoSubmission = typeof liveswitchDemoSubmissions.$inferSelect;
 export type InsertLiveswitchDemoSubmission = z.infer<typeof insertLiveswitchDemoSubmissionSchema>;
+export type SmartACROISubmission = typeof smartacROISubmissions.$inferSelect;
+export type InsertSmartACROISubmission = z.infer<typeof insertSmartACROISubmissionSchema>;
