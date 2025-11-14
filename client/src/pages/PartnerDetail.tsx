@@ -23,7 +23,7 @@ import { apiRequest } from "@/lib/queryClient";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import smartACLogoWhite from "@assets/white.4c718087 (4)_1763145184369.png";
 import smartACBackground from "@assets/Smartac (3)_1763145156012.png";
-import smartACCustomers from "@assets/image (2)_1763145242210.png";
+import smartACAppMockup from "@assets/SMAC-APP-MOCKUP-BRENSONS-HIGH-RISK_1763146236494.webp";
 import smartACApp from "@assets/image (4)_1763145249281.png";
 import smartACSensorsApp from "@assets/smartac.com-all-sensors-app_1763146209818.jpg";
 import smartACDashboard from "@assets/image (3)_1763145261344.png";
@@ -1219,11 +1219,11 @@ export default function PartnerDetail() {
 
           {/* Customer Connection Image */}
           <section className="py-12 bg-background">
-            <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-5xl px-6 flex justify-center">
               <img
-                src={smartACCustomers}
-                alt="HVAC technicians connecting with customers"
-                className="w-full rounded-xl shadow-lg"
+                src={smartACAppMockup}
+                alt="SmartAC mobile app showing Brenson's HVAC dashboard with loyalty balance and system health"
+                className="max-w-md rounded-xl shadow-2xl"
                 data-testid="img-customer-connection"
               />
             </div>
