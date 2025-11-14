@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
+import billBrownProfile from "@assets/red shirt round_1763150613592.png";
 
 interface BlogPost {
   id: string;
@@ -1246,7 +1247,13 @@ export default function BlogPost() {
 
           {/* Meta Information */}
           <div className="flex items-center gap-6 text-muted-foreground mb-12 pb-8 border-b">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <img
+                src={billBrownProfile}
+                alt="Bill Brown"
+                className="w-12 h-12 rounded-full object-cover"
+                data-testid="img-author-profile"
+              />
               <span className="font-medium text-foreground">{post.author}</span>
             </div>
             <div className="flex items-center gap-2">
