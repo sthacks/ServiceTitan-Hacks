@@ -18,7 +18,7 @@ The backend is an Express.js server on Node.js with TypeScript, providing a REST
 The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage
-Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, contractor_commerce_demo_submissions, and liveswitch_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, smartac_roi_submissions, contractor_commerce_demo_submissions, and liveswitch_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
 
 ### Demo Booking Systems
 The platform features four comprehensive demo booking systems with auto-save and abandoned form tracking:
@@ -44,9 +44,18 @@ All four forms implement:
 
 Form behavior patterns:
 - Wink: Redirects to Calendly with prefilled parameters after submission
-- SmartAC: Shows success toast and closes dialog after submission
+- SmartAC: Shows success toast and closes dialog after submission; standalone booking page at /partners/smartac/book-demo supports query parameter prefilling (firstName, email)
 - Contractor Commerce: Shows success toast and closes dialog after submission
 - LiveSwitch: Redirects to LiveSwitch booking page with prefilled email parameter after submission
+
+### SmartAC ROI Calculator
+Interactive tool at /smartac-roi-calculator that calculates 5-year membership growth projections. When users calculate ROI:
+1. Dialog collects first name and email
+2. Sends branded ROI report email to user with ServiceTitan Hacks colors (Primary Red #ED254E, Deep Red #C1121F, Dark Gray #2D3142)
+3. Email includes personalized ROI metrics: 5-year net gain, ROI percentage, member growth, and incremental revenue
+4. CTA button "Book Your SmartAC Demo" links to /partners/smartac/book-demo with prefilled firstName and email query parameters
+5. Sends lead notification email to bill@st-hacks.com
+6. Stores submission in smartac_roi_submissions table with all inputs and calculated results
 
 ## External Dependencies
 
