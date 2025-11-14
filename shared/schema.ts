@@ -136,6 +136,22 @@ export const smartacROISubmissions = pgTable("smartac_roi_submissions", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const winkROISubmissions = pgTable("wink_roi_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name").notNull(),
+  email: text("email").notNull(),
+  invoicesPerMonth: integer("invoices_per_month").notNull(),
+  minutesPerInvoice: integer("minutes_per_invoice").notNull(),
+  workerHourlyPay: integer("worker_hourly_pay").notNull(),
+  mistakeRate: integer("mistake_rate").notNull(),
+  costPerMistake: integer("cost_per_mistake").notNull(),
+  winkMonthlyCost: integer("wink_monthly_cost").notNull(),
+  setupCost: integer("setup_cost").notNull(),
+  setupCostSpread: integer("setup_cost_spread").notNull(),
+  roiResults: text("roi_results").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -246,6 +262,14 @@ export const insertSmartACROISubmissionSchema = createInsertSchema(smartacROISub
   firstName: z.string().min(1, "First name is required"),
 });
 
+export const insertWinkROISubmissionSchema = createInsertSchema(winkROISubmissions).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().min(1, "First name is required"),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -268,3 +292,5 @@ export type LiveswitchDemoSubmission = typeof liveswitchDemoSubmissions.$inferSe
 export type InsertLiveswitchDemoSubmission = z.infer<typeof insertLiveswitchDemoSubmissionSchema>;
 export type SmartACROISubmission = typeof smartacROISubmissions.$inferSelect;
 export type InsertSmartACROISubmission = z.infer<typeof insertSmartACROISubmissionSchema>;
+export type WinkROISubmission = typeof winkROISubmissions.$inferSelect;
+export type InsertWinkROISubmission = z.infer<typeof insertWinkROISubmissionSchema>;

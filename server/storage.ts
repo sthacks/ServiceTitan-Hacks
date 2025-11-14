@@ -21,12 +21,15 @@ import {
   type InsertLiveswitchDemoSubmission,
   type SmartACROISubmission,
   type InsertSmartACROISubmission,
+  type WinkROISubmission,
+  type InsertWinkROISubmission,
   pricebookOptimizations,
   winkDemoSubmissions,
   smartACDemoSubmissions,
   contractorCommerceDemoSubmissions,
   liveswitchDemoSubmissions,
-  smartacROISubmissions
+  smartacROISubmissions,
+  winkROISubmissions
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -82,6 +85,9 @@ export interface IStorage {
   
   createSmartACROISubmission(submission: InsertSmartACROISubmission): Promise<SmartACROISubmission>;
   getAllSmartACROISubmissions(): Promise<SmartACROISubmission[]>;
+  
+  createWinkROISubmission(submission: InsertWinkROISubmission): Promise<WinkROISubmission>;
+  getAllWinkROISubmissions(): Promise<WinkROISubmission[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -426,6 +432,17 @@ export class MemStorage implements IStorage {
 
   async getAllSmartACROISubmissions(): Promise<SmartACROISubmission[]> {
     return await db.select().from(smartacROISubmissions);
+  }
+
+  async createWinkROISubmission(insertSubmission: InsertWinkROISubmission): Promise<WinkROISubmission> {
+    const [submission] = await db.insert(winkROISubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
+  }
+
+  async getAllWinkROISubmissions(): Promise<WinkROISubmission[]> {
+    return await db.select().from(winkROISubmissions);
   }
 }
 
