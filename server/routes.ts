@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
@@ -1525,6 +1525,223 @@ ${JSON.stringify(jsonData, null, 2)}
       res.json(submission);
     } catch (error) {
       console.error("SmartAC ROI submission error:", error);
+      res.status(500).json({ message: "Failed to save ROI calculation" });
+    }
+  });
+
+  // Wink ROI Calculator submission
+  app.post("/api/wink-roi", async (req, res) => {
+    try {
+      const parsed = insertWinkROISubmissionSchema.safeParse(req.body);
+      if (!parsed.success) {
+        const validationError = fromZodError(parsed.error);
+        return res.status(400).json({ message: validationError.message });
+      }
+
+      const data = parsed.data;
+      
+      // Save to database
+      const submission = await storage.createWinkROISubmission(data);
+      
+      // Parse ROI results from JSON string
+      const results = JSON.parse(data.roiResults);
+      
+      // Send ROI report to user
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const formatCurrency = (value: number) => `$${Math.round(value).toLocaleString()}`;
+        const formatNumber = (value: number) => Math.round(value).toLocaleString();
+        
+        // Create booking URL with prefilled parameters
+        const bookingUrl = `https://servicetitanhacks.com/partners/wink/book-demo?firstName=${encodeURIComponent(data.firstName)}&email=${encodeURIComponent(data.email)}`;
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: data.email,
+          subject: 'Your Wink Toolbox ROI Report - ServiceTitan Hacks',
+          html: `
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px 0;">
+                <tr>
+                  <td align="center">
+                    <table width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                      
+                      <!-- Header with ServiceTitan Hacks Branding -->
+                      <tr>
+                        <td style="background: linear-gradient(135deg, #ED254E 0%, #C1121F 100%); padding: 40px 30px; text-align: center;">
+                          <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">ServiceTitan Hacks</h1>
+                          <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">AI & Automation for Home Service Contractors</p>
+                        </td>
+                      </tr>
+                      
+                      <!-- Main Content -->
+                      <tr>
+                        <td style="padding: 40px 30px;">
+                          <h2 style="margin: 0 0 20px 0; color: #2D3142; font-size: 24px; font-weight: 600;">Hi ${data.firstName}!</h2>
+                          
+                          <p style="margin: 0 0 25px 0; color: #2D3142; font-size: 16px; line-height: 1.6;">
+                            Thanks for calculating your Wink Toolbox ROI! Here's your personalized analysis showing how much time and money you could save by automating your invoicing process.
+                          </p>
+                          
+                          <!-- Results Summary Box -->
+                          <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, rgba(237, 37, 78, 0.08), rgba(193, 18, 31, 0.05)); border-left: 4px solid #ED254E; border-radius: 8px; margin: 30px 0;">
+                            <tr>
+                              <td style="padding: 25px;">
+                                <h3 style="margin: 0 0 20px 0; color: #ED254E; font-size: 20px; font-weight: 600;">Your Results at a Glance</h3>
+                                
+                                <!-- Net Savings Year 1 -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; margin-bottom: 15px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Year 1 Net Savings</div>
+                                      <div style="font-size: 32px; font-weight: 700; color: #22c55e; margin-bottom: 6px;">${formatCurrency(results.netSavingsYear1)}</div>
+                                      <div style="font-size: 12px; color: #999;">After Wink platform costs</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <!-- 5-Year ROI -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; margin-bottom: 15px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">5-Year Cumulative Savings</div>
+                                      <div style="font-size: 32px; font-weight: 700; color: #ED254E; margin-bottom: 6px;">${formatCurrency(results.netSavingsYear5)}</div>
+                                      <div style="font-size: 12px; color: #999;">${results.fiveYearROI}% ROI</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <!-- Time Savings -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; margin-bottom: 15px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Time Saved Per Month</div>
+                                      <div style="font-size: 32px; font-weight: 700; color: #ED254E; margin-bottom: 6px;">${formatNumber(results.hoursSavedPerMonth)} hours</div>
+                                      <div style="font-size: 12px; color: #999;">${results.timeSavings}% faster invoicing</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <!-- Annual Savings -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Total Annual Savings</div>
+                                      <div style="font-size: 28px; font-weight: 700; color: #ED254E; margin-bottom: 6px;">${formatCurrency(results.totalAnnualSavings)}</div>
+                                      <div style="font-size: 12px; color: #999;">Time + mistake reduction</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <!-- How Wink Works -->
+                          <table width="100%" cellpadding="0" cellspacing="0" style="background: #f9fafb; border-radius: 8px; margin: 30px 0;">
+                            <tr>
+                              <td style="padding: 25px;">
+                                <h3 style="margin: 0 0 15px 0; color: #2D3142; font-size: 18px; font-weight: 600;">How Wink Toolbox Saves You Money</h3>
+                                <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+                                  <li style="margin-bottom: 8px;">AI-powered invoice generation cuts manual entry time by ${results.timeSavings}%</li>
+                                  <li style="margin-bottom: 8px;">Automated accuracy checks reduce costly billing mistakes</li>
+                                  <li style="margin-bottom: 8px;">Save ${formatNumber(results.hoursSavedPerMonth)} hours per month on invoicing</li>
+                                  <li style="margin-bottom: 0;">Reclaim ${formatCurrency(results.monthlySavings)}/month in labor costs</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <!-- CTA Button -->
+                          <table width="100%" cellpadding="0" cellspacing="0" style="margin: 35px 0;">
+                            <tr>
+                              <td align="center">
+                                <table cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td style="border-radius: 6px; background: linear-gradient(135deg, #ED254E 0%, #C1121F 100%); box-shadow: 0 4px 12px rgba(237, 37, 78, 0.3);">
+                                      <a href="${bookingUrl}" style="display: inline-block; padding: 16px 40px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; letter-spacing: 0.3px;">
+                                        Book Your Wink Demo
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <p style="margin: 25px 0 0 0; color: #666; font-size: 14px; line-height: 1.6; text-align: center;">
+                            Ready to see Wink Toolbox in action?<br>
+                            Book a personalized demo and discover how AI can transform your invoicing.
+                          </p>
+                        </td>
+                      </tr>
+                      
+                      <!-- Footer -->
+                      <tr>
+                        <td style="background-color: #2D3142; padding: 30px; text-align: center;">
+                          <p style="margin: 0 0 10px 0; color: #ffffff; font-size: 16px; font-weight: 600;">ServiceTitan Hacks</p>
+                          <p style="margin: 0 0 15px 0; color: rgba(255,255,255,0.7); font-size: 13px;">Helping contractors grow with AI & automation</p>
+                          <p style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.5);">
+                            <a href="https://servicetitanhacks.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">servicetitanhacks.com</a>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </body>
+            </html>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Failed to send ROI report to user:", emailError);
+        // Don't fail the request if email fails
+      }
+      
+      // Send notification to bill@st-hacks.com with lead info
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "ROI_CALCULATION",
+          formName: "Wink ROI Calculator",
+          firstName: data.firstName,
+          email: data.email,
+          inputs: {
+            invoicesPerMonth: data.invoicesPerMonth,
+            minutesPerInvoice: data.minutesPerInvoice,
+            workerHourlyPay: data.workerHourlyPay,
+            mistakeRate: data.mistakeRate,
+            costPerMistake: data.costPerMistake,
+            winkMonthlyCost: data.winkMonthlyCost,
+            setupCost: data.setupCost,
+            setupCostSpread: data.setupCostSpread
+          },
+          results: JSON.parse(data.roiResults),
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Wink ROI Calculator Submission',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+        // Don't fail the request if email fails
+      }
+      
+      res.json(submission);
+    } catch (error) {
+      console.error("Wink ROI submission error:", error);
       res.status(500).json({ message: "Failed to save ROI calculation" });
     }
   });
