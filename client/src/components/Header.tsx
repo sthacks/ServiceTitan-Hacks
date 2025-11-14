@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-b from-[#2970bf] to-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-black border-b border-gray-200 shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home-logo">
