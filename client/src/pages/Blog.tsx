@@ -21,6 +21,17 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "4",
+    title: "How to Sell SaaS to Residential HVAC, Plumbing, Electrical, and Other Home-Service Contractors",
+    excerpt: "Selling software to home-service companies is fundamentally different from typical B2B sales. Learn the hard-won lessons from a decade of operating an Inc. 5000 HVAC company and implementing dozens of software solutions.",
+    author: "Bill Brown",
+    date: "November 14, 2025",
+    readTime: "12 min read",
+    category: "Business Operations",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    slug: "how-to-sell-saas-to-home-service-contractors"
+  },
+  {
     id: "1",
     title: "Stop Selling Other People's Equipment—Build Your Brand Instead",
     excerpt: "Most HVAC contractors sell equipment under big-name logos that don't care about them. Learn why all systems are basically the same and how to take back control of your brand, profits, and reputation.",
