@@ -1,0 +1,293 @@
+How to Sell SaaS to Residential HVAC, Plumbing, Electrical, and Other Home-Service Contractors
+
+By Bill Brown, Founder of ServiceTitan Hacks
+
+Selling software to residential home-service companies is fundamentally different from selling to typical SMBs or agencies. HVAC, plumbing, electrical, roofing, pest control, and garage door contractors operate in a real-time, pressure-driven environment where every workflow must be fast, simple, and reliable.
+
+I spent more than a decade operating a residential HVAC company that earned a spot on the Inc. 5000 list. During that time, I personally developed my own internal applications (front-end and backend), integrated with countless APIs, and tested nearly every field-service management platform and third-party app on the market: ServiceTitan, Housecall Pro, Jobber, ServiceM8, FieldEdge, Workiz, and dozens more.
+
+I’ve lived through the adoption challenges, the failed implementations, the churn triggers, and the small handful of products that actually delivered value.
+
+This guide is designed for SaaS companies, integration partners, and third-party providers who want to build and sell successfully into the home-service vertical.
+
+Table of Contents
+
+Why Selling to Contractors Is Different
+
+The Importance of Seamless FSM Integration
+
+Field Technicians: The Hardest Users to Win
+
+Offline Capability: The Silent Dealbreaker
+
+The Zero-Friction Onboarding Rule
+
+Real-World Field Visits: The Fastest Way to Improve Product-Market Fit
+
+The Truth About Onboarding Fees
+
+Trade Shows and Demo Fatigue
+
+Why Direct Mail Outperforms Digital Outreach
+
+Seasonality and the “Not Now” Buying Cycle
+
+Final Recommendations
+
+Optional Bonus Resources
+
+1. Why Selling to Contractors Is Different
+
+Residential contractors are extremely busy, constantly interrupted, and rarely operating in controlled environments. Even if they use ServiceTitan or other FSM platforms, their daily workflow is chaotic.
+
+Most contractors and their staff:
+
+are non-technical
+
+struggle with learning new software
+
+have zero tolerance for complex workflows
+
+rely heavily on field technicians who dislike extra steps
+
+prefer tools that “just work” without training
+
+If your product requires extra attention or extra steps, adoption will suffer.
+
+2. Integration With the FSM Must Be Seamless
+
+If your product claims to integrate with:
+
+ServiceTitan
+
+Housecall Pro
+
+Jobber
+
+ServiceM8
+
+Workiz
+
+FieldEdge
+
+any other FSM system
+
+then it must integrate deeply and invisibly.
+
+Contractors will not tolerate:
+
+duplicate entry
+
+switching between apps
+
+manual syncing
+
+field logins to a separate system
+
+Your goal is to eliminate friction, not reintroduce it.
+
+The golden rule
+
+If a contractor has to “open your app,” you will lose adoption.
+
+The strongest integrations feel like native functionality.
+
+3. Field Technicians Will Make or Break Your Product
+
+Most SaaS vendors underestimate how difficult it is to get field technicians to adopt new tech.
+
+Techs often:
+
+work in basements and crawlspaces
+
+deal with poor cell signal
+
+wear gloves
+
+hold tools
+
+rush between jobs
+
+have little patience for complexity
+
+did not sign up to be trained on software
+
+Even when I built internal tools for my own company, I saw several fail because field techs didn’t accept them. And I was the owner, developer, and decision-maker.
+
+If your product touches the field, it must:
+
+require little or no training
+
+support offline use
+
+load instantly
+
+mirror their real-world workflow
+
+remove steps, not add them
+
+If techs dislike the workflow, the entire company will churn.
+
+4. Offline Capability Is Not Optional
+
+Contractors work in environments with unreliable or nonexistent connectivity:
+
+metal buildings
+
+basements
+
+mechanical rooms
+
+rural areas
+
+commercial spaces with concrete walls
+
+If your solution breaks without a strong signal, it breaks in the exact moment it’s needed most.
+
+Build offline-first for any field workflow.
+
+5. Onboarding Must Be Absolutely Zero-Friction
+
+Contractors hate onboarding friction more than almost anything else.
+
+Avoid asking for:
+
+logos
+
+business information
+
+hours of operation
+
+service area
+
+license numbers
+
+Instead, pull all of it automatically from the contractor’s website or public data sources.
+
+Reduce questions. Remove decisions. Shorten steps.
+
+The onboarding mindset
+
+You can never make onboarding too easy.
+
+If you can eliminate a step, eliminate it.
+
+6. Visit Contractors and Watch Techs Use Your App
+
+Hands down, the fastest way to improve product-market fit is to:
+
+visit contractors
+
+observe office workflows
+
+ride along with techs
+
+watch them tap through your tool
+
+identify bottlenecks in real time
+
+collect honest feedback
+
+Field feedback is brutally honest, which is exactly what you need.
+
+If field techs can’t use your solution easily, the product will fail no matter how good it looks on paper.
+
+7. Avoid Onboarding Fees Whenever Possible
+
+Contractors strongly dislike setup fees, and they will use them as a reason to avoid adopting a new solution.
+
+If you need to cover onboarding labor:
+
+consider a term commitment
+
+include a 90-day right to cancel
+
+align onboarding timing with shoulder seasons
+
+Most contractors will accept a term; they will not accept a large up-front fee.
+
+8. How Contractors Really Behave at Trade Shows
+
+Shows like Pantheon, AHR, Service World, and regional expos are packed with vendors. Contractors walk the floor and get bombarded with sales pitches.
+
+They often:
+
+book 10 to 20 demos
+
+attend the first half
+
+hit demo fatigue
+
+cancel the rest
+
+Avoid immediate demo pushes
+
+Instead:
+
+ask whether they are evaluating competitors
+
+ask how far they are into a decision
+
+nurture slowly after the event
+
+send value, not pressure
+
+Contractors rarely mean “No.”
+They usually mean “Not right now.”
+
+9. Direct Mail Outperforms Digital Outreach
+
+Cold emails, cold calls, and LinkedIn messages are rarely effective with contractors.
+
+But direct mail works.
+
+Every owner checks their physical mail, and high-impact packages stand out. One of the most memorable marketing pieces I ever received was a video mailer, even though it cost ~$50 per unit.
+
+If your ACV or LTV justifies it, direct mail can outperform every digital channel.
+
+10. Contractors Don’t Buy on Your Timeline
+
+Seasonality dictates everything.
+
+Contractors’ buying behavior depends on:
+
+weather
+
+staffing
+
+emergencies
+
+revenue cycles
+
+busy season
+
+equipment availability
+
+Pushing during peak season is a guaranteed way to lose deals.
+
+Your goal is to stay top-of-mind until timing aligns naturally.
+
+11. Final Recommendations for SaaS Teams
+
+If you want to succeed in the home-service market:
+
+integrate deeply with the FSM
+
+eliminate friction everywhere
+
+avoid complexity in the field
+
+support offline usage
+
+remove onboarding burden
+
+use trade shows strategically
+
+consider direct mail
+
+respect seasonal buying cycles
+
+Contractors stay loyal to tools that save time, reduce steps, and make life easier.
+They churn quickly from tools that add friction or create new work.
+
+Build for their reality, not for your assumptions.

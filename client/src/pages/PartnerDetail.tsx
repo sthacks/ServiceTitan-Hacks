@@ -1180,11 +1180,7 @@ export default function PartnerDetail() {
         <Header />
         <main className="flex-1">
           {/* Hero Section */}
-          <section 
-            className="py-16 bg-cover bg-center bg-no-repeat relative"
-            style={{ backgroundImage: `url(${smartACBackground})` }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
+          <section className="py-16 bg-gradient-to-b from-[#2970bf] to-white relative">
             <div className="mx-auto max-w-6xl px-6 relative z-10">
               <Button
                 variant="ghost"
