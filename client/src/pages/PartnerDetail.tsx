@@ -1217,18 +1217,6 @@ export default function PartnerDetail() {
             </div>
           </section>
 
-          {/* Customer Connection Image */}
-          <section className="py-12 bg-background">
-            <div className="mx-auto max-w-5xl px-6 flex justify-center">
-              <img
-                src={smartACAppMockup}
-                alt="SmartAC mobile app showing Brenson's HVAC dashboard with loyalty balance and system health"
-                className="max-w-md rounded-xl shadow-2xl"
-                data-testid="img-customer-connection"
-              />
-            </div>
-          </section>
-
           {/* What SmartAC Does */}
           <section className="py-16 bg-muted/30">
             <div className="mx-auto max-w-4xl px-6">
