@@ -19,9 +19,14 @@ export default function SmartACBookDemo() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   
-  const [firstName, setFirstName] = useState("");
+  // Get query parameters for prefilling form
+  const urlParams = new URLSearchParams(window.location.search);
+  const prefillFirstName = urlParams.get('firstName') || "";
+  const prefillEmail = urlParams.get('email') || "";
+  
+  const [firstName, setFirstName] = useState(prefillFirstName);
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(prefillEmail);
   const [phone, setPhone] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [websiteUrl, setWebsiteUrl] = useState("");

@@ -1339,73 +1339,151 @@ ${JSON.stringify(jsonData, null, 2)}
         const formatCurrency = (value: number) => `$${Math.round(value).toLocaleString()}`;
         const formatPercent = (value: number) => `${Math.round(value)}%`;
         
+        // Create booking URL with prefilled parameters
+        const bookingUrl = `https://servicetitanhacks.com/partners/smartac/book-demo?firstName=${encodeURIComponent(data.firstName)}&email=${encodeURIComponent(data.email)}`;
+        
         await client.emails.send({
           from: fromEmail,
           to: data.email,
-          subject: 'Your SmartAC ROI Report is Ready!',
+          subject: 'Your SmartAC ROI Report - ServiceTitan Hacks',
           html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-              <h2 style="color: #1b5eec; margin-bottom: 20px;">Hi ${data.firstName}!</h2>
-              
-              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-                Thanks for calculating your SmartAC ROI! Here's your personalized 5-year projection:
-              </p>
-              
-              <div style="background: linear-gradient(135deg, rgba(27, 94, 236, 0.1), rgba(27, 94, 236, 0.05)); border-left: 4px solid #1b5eec; padding: 20px; margin: 30px 0; border-radius: 8px;">
-                <h3 style="margin-top: 0; color: #1b5eec;">Your Results at a Glance</h3>
-                
-                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
-                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">5-Year Net Gain</div>
-                  <div style="font-size: 28px; font-weight: bold; color: #22c55e;">${formatCurrency(results.netGain)}</div>
-                  <div style="font-size: 12px; color: #999; margin-top: 5px;">After ${formatCurrency(results.totalPlatformCost)} platform cost</div>
-                </div>
-                
-                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
-                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">5-Year ROI</div>
-                  <div style="font-size: 28px; font-weight: bold; color: #1b5eec;">${formatPercent(results.roi)}</div>
-                  <div style="font-size: 12px; color: #999; margin-top: 5px;">Return on investment</div>
-                </div>
-                
-                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
-                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Year 5 Member Growth</div>
-                  <div style="font-size: 28px; font-weight: bold; color: #1b5eec;">+${formatPercent(results.memberGrowthPercent)}</div>
-                  <div style="font-size: 12px; color: #999; margin-top: 5px;">${results.year5BeforeMembers} → ${results.year5AfterMembers} members</div>
-                </div>
-                
-                <div style="background: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
-                  <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Incremental Revenue</div>
-                  <div style="font-size: 24px; font-weight: bold; color: #1b5eec;">${formatCurrency(results.incrementalRevenue)}</div>
-                  <div style="font-size: 12px; color: #999; margin-top: 5px;">5-year total</div>
-                </div>
-              </div>
-              
-              <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 30px 0;">
-                <h3 style="margin-top: 0; color: #333;">How SmartAC Drives This Growth</h3>
-                <ul style="line-height: 1.8; color: #555;">
-                  <li>Smart sensors make memberships more valuable</li>
-                  <li>Virtual inspections reduce truck rolls</li>
-                  <li>Automated engagement boosts retention by 15%</li>
-                  <li>Mobile app doubles close rates</li>
-                </ul>
-              </div>
-              
-              <div style="text-align: center; margin: 40px 0;">
-                <a href="https://go.st-hacks.cc/smart-ac" style="display: inline-block; background: #1b5eec; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">
-                  Learn More About SmartAC
-                </a>
-              </div>
-              
-              <p style="font-size: 14px; color: #666; margin-top: 30px;">
-                Want to dive deeper into how SmartAC can transform your membership program?
-                <a href="https://go.st-hacks.cc/smart-ac" style="color: #1b5eec;">Schedule a personalized ROI review</a> with the SmartAC team.
-              </p>
-              
-              <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-              
-              <p style="font-size: 12px; color: #999; text-align: center;">
-                This report was generated from <a href="https://servicetitanhacks.com" style="color: #1b5eec;">ServiceTitan Hacks</a>
-              </p>
-            </div>
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px 0;">
+                <tr>
+                  <td align="center">
+                    <table width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                      
+                      <!-- Header with ServiceTitan Hacks Branding -->
+                      <tr>
+                        <td style="background: linear-gradient(135deg, #ED254E 0%, #C1121F 100%); padding: 40px 30px; text-align: center;">
+                          <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">ServiceTitan Hacks</h1>
+                          <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">AI & Automation for Home Service Contractors</p>
+                        </td>
+                      </tr>
+                      
+                      <!-- Main Content -->
+                      <tr>
+                        <td style="padding: 40px 30px;">
+                          <h2 style="margin: 0 0 20px 0; color: #2D3142; font-size: 24px; font-weight: 600;">Hi ${data.firstName}!</h2>
+                          
+                          <p style="margin: 0 0 25px 0; color: #2D3142; font-size: 16px; line-height: 1.6;">
+                            Thanks for calculating your SmartAC ROI! Here's your personalized 5-year projection showing the growth potential for your membership program.
+                          </p>
+                          
+                          <!-- Results Summary Box -->
+                          <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, rgba(237, 37, 78, 0.08), rgba(193, 18, 31, 0.05)); border-left: 4px solid #ED254E; border-radius: 8px; margin: 30px 0;">
+                            <tr>
+                              <td style="padding: 25px;">
+                                <h3 style="margin: 0 0 20px 0; color: #ED254E; font-size: 20px; font-weight: 600;">Your Results at a Glance</h3>
+                                
+                                <!-- Net Gain Metric -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; margin-bottom: 15px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">5-Year Net Gain</div>
+                                      <div style="font-size: 32px; font-weight: 700; color: #22c55e; margin-bottom: 6px;">${formatCurrency(results.netGain)}</div>
+                                      <div style="font-size: 12px; color: #999;">After ${formatCurrency(results.totalPlatformCost)} platform cost</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <!-- ROI Metric -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; margin-bottom: 15px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">5-Year ROI</div>
+                                      <div style="font-size: 32px; font-weight: 700; color: #ED254E; margin-bottom: 6px;">${formatPercent(results.roi)}</div>
+                                      <div style="font-size: 12px; color: #999;">Return on investment</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <!-- Member Growth Metric -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; margin-bottom: 15px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Year 5 Member Growth</div>
+                                      <div style="font-size: 32px; font-weight: 700; color: #ED254E; margin-bottom: 6px;">+${formatPercent(results.memberGrowthPercent)}</div>
+                                      <div style="font-size: 12px; color: #999;">${results.year5BeforeMembers} → ${results.year5AfterMembers} members</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <!-- Revenue Metric -->
+                                <table width="100%" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px;">
+                                  <tr>
+                                    <td style="padding: 20px;">
+                                      <div style="font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Incremental Revenue</div>
+                                      <div style="font-size: 28px; font-weight: 700; color: #ED254E; margin-bottom: 6px;">${formatCurrency(results.incrementalRevenue)}</div>
+                                      <div style="font-size: 12px; color: #999;">5-year total</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <!-- How SmartAC Works -->
+                          <table width="100%" cellpadding="0" cellspacing="0" style="background: #f9fafb; border-radius: 8px; margin: 30px 0;">
+                            <tr>
+                              <td style="padding: 25px;">
+                                <h3 style="margin: 0 0 15px 0; color: #2D3142; font-size: 18px; font-weight: 600;">How SmartAC Drives This Growth</h3>
+                                <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+                                  <li style="margin-bottom: 8px;">Smart sensors make memberships more valuable to customers</li>
+                                  <li style="margin-bottom: 8px;">Virtual inspections reduce truck rolls and costs</li>
+                                  <li style="margin-bottom: 8px;">Automated engagement boosts retention by 15 percentage points</li>
+                                  <li style="margin-bottom: 0;">Mobile app doubles your membership close rates</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <!-- CTA Button -->
+                          <table width="100%" cellpadding="0" cellspacing="0" style="margin: 35px 0;">
+                            <tr>
+                              <td align="center">
+                                <table cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td style="border-radius: 6px; background: linear-gradient(135deg, #ED254E 0%, #C1121F 100%); box-shadow: 0 4px 12px rgba(237, 37, 78, 0.3);">
+                                      <a href="${bookingUrl}" style="display: inline-block; padding: 16px 40px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; letter-spacing: 0.3px;">
+                                        Book Your SmartAC Demo
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <p style="margin: 25px 0 0 0; color: #666; font-size: 14px; line-height: 1.6; text-align: center;">
+                            Want to see exactly how SmartAC can transform your business?<br>
+                            Book a personalized demo and we'll model your specific scenarios.
+                          </p>
+                        </td>
+                      </tr>
+                      
+                      <!-- Footer -->
+                      <tr>
+                        <td style="background-color: #2D3142; padding: 30px; text-align: center;">
+                          <p style="margin: 0 0 10px 0; color: #ffffff; font-size: 16px; font-weight: 600;">ServiceTitan Hacks</p>
+                          <p style="margin: 0 0 15px 0; color: rgba(255,255,255,0.7); font-size: 13px;">Helping contractors grow with AI & automation</p>
+                          <p style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.5);">
+                            <a href="https://servicetitanhacks.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">servicetitanhacks.com</a>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </body>
+            </html>
           `,
         });
       } catch (emailError) {
