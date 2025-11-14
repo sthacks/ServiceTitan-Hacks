@@ -25,6 +25,7 @@ import smartACLogoWhite from "@assets/white.4c718087 (4)_1763145184369.png";
 import smartACBackground from "@assets/Smartac (3)_1763145156012.png";
 import smartACCustomers from "@assets/image (2)_1763145242210.png";
 import smartACApp from "@assets/image (4)_1763145249281.png";
+import smartACSensorsApp from "@assets/smartac.com-all-sensors-app_1763146209818.jpg";
 import smartACDashboard from "@assets/image (3)_1763145261344.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
@@ -1250,9 +1251,9 @@ export default function PartnerDetail() {
                       </div>
                       <div className="p-6 bg-muted/50 flex items-center justify-center">
                         <img
-                          src={smartACApp}
-                          alt="SmartAC homeowner mobile app"
-                          className="w-full max-w-xs rounded-lg shadow-md"
+                          src={smartACSensorsApp}
+                          alt="SmartAC sensors and mobile app showing air filter monitoring"
+                          className="w-full max-w-md rounded-lg shadow-md"
                           data-testid="img-mobile-app-preview"
                         />
                       </div>
