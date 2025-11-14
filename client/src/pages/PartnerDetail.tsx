@@ -23,6 +23,9 @@ import { apiRequest } from "@/lib/queryClient";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import smartACLogoWhite from "@assets/white.4c718087 (4)_1763145184369.png";
 import smartACBackground from "@assets/Smartac (3)_1763145156012.png";
+import smartACCustomers from "@assets/image (2)_1763145242210.png";
+import smartACApp from "@assets/image (4)_1763145249281.png";
+import smartACDashboard from "@assets/image (3)_1763145261344.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
@@ -1148,47 +1151,95 @@ export default function PartnerDetail() {
             </div>
           </section>
 
+          {/* Customer Connection Image */}
+          <section className="py-12 bg-background">
+            <div className="mx-auto max-w-5xl px-6">
+              <img
+                src={smartACCustomers}
+                alt="HVAC technicians connecting with customers"
+                className="w-full rounded-xl shadow-lg"
+                data-testid="img-customer-connection"
+              />
+            </div>
+          </section>
+
           {/* What SmartAC Does */}
           <section className="py-16 bg-muted/30">
             <div className="mx-auto max-w-4xl px-6">
-              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+              <p className="text-lg text-foreground mb-12 text-center max-w-3xl mx-auto">
                 SmartAC helps HVAC contractors grow their membership programs, keep more customers, and work smarter without adding more trucks or techs.
               </p>
 
-              <div className="space-y-6 mb-8">
-                <Card className="bg-card border-0" data-testid="card-feature-sensors">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
-                      <span className="text-primary">1.</span>
-                      Smart sensors and monitoring
-                    </h3>
-                    <p className="text-foreground">
-                      SmartAC uses wireless sensors to watch HVAC systems for problems like leaks, airflow issues, or dirty filters. When something looks wrong, it sends an alert so you can fix it before it becomes a bigger problem.
-                    </p>
+              <div className="space-y-8 mb-8">
+                <Card className="bg-card border-0 overflow-hidden" data-testid="card-feature-sensors">
+                  <CardContent className="p-0">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="p-6 flex flex-col justify-center">
+                        <h3 className="text-2xl font-bold mb-4 flex items-start gap-2">
+                          <span className="text-primary">1.</span>
+                          Smart sensors and monitoring
+                        </h3>
+                        <p className="text-foreground leading-relaxed">
+                          SmartAC uses wireless sensors to watch HVAC systems for problems like leaks, airflow issues, or dirty filters. When something looks wrong, it sends an alert so you can fix it before it becomes a bigger problem.
+                        </p>
+                      </div>
+                      <div className="p-6 bg-muted/50 flex items-center justify-center">
+                        <img
+                          src={smartACApp}
+                          alt="SmartAC homeowner mobile app"
+                          className="w-full max-w-xs rounded-lg shadow-md"
+                          data-testid="img-mobile-app-preview"
+                        />
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-card border-0" data-testid="card-feature-app">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
-                      <span className="text-primary">2.</span>
-                      Homeowner experience app
-                    </h3>
-                    <p className="text-foreground">
-                      SmartAC gives your customers a simple app. They can see their system health, get alerts, book service, and stay connected with your team. This builds trust and keeps you top of mind.
-                    </p>
+                <Card className="bg-card border-0 overflow-hidden" data-testid="card-feature-app">
+                  <CardContent className="p-0">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="p-6 bg-muted/50 flex items-center justify-center order-2 md:order-1">
+                        <img
+                          src={smartACApp}
+                          alt="SmartAC homeowner mobile app interface"
+                          className="w-full max-w-xs rounded-lg shadow-md"
+                          data-testid="img-mobile-app"
+                        />
+                      </div>
+                      <div className="p-6 flex flex-col justify-center order-1 md:order-2">
+                        <h3 className="text-2xl font-bold mb-4 flex items-start gap-2">
+                          <span className="text-primary">2.</span>
+                          Homeowner experience app
+                        </h3>
+                        <p className="text-foreground leading-relaxed">
+                          SmartAC gives your customers a simple app. They can see their system health, get alerts, book service, and stay connected with your team. This builds trust and keeps you top of mind.
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-card border-0" data-testid="card-feature-membership">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
-                      <span className="text-primary">3.</span>
-                      Membership growth
-                    </h3>
-                    <p className="text-foreground">
-                      SmartAC helps turn one-time service calls into long-term members. Many contractors see more signups and higher retention. This means steady revenue without extra labor.
-                    </p>
+                <Card className="bg-card border-0 overflow-hidden" data-testid="card-feature-membership">
+                  <CardContent className="p-0">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="p-6 flex flex-col justify-center">
+                        <h3 className="text-2xl font-bold mb-4 flex items-start gap-2">
+                          <span className="text-primary">3.</span>
+                          Membership growth
+                        </h3>
+                        <p className="text-foreground leading-relaxed">
+                          SmartAC helps turn one-time service calls into long-term members. Many contractors see more signups and higher retention. This means steady revenue without extra labor.
+                        </p>
+                      </div>
+                      <div className="p-6 bg-muted/50 flex items-center justify-center">
+                        <img
+                          src={smartACDashboard}
+                          alt="SmartAC analytics and adoption dashboard"
+                          className="w-full rounded-lg shadow-md"
+                          data-testid="img-analytics-dashboard"
+                        />
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
