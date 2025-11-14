@@ -8,11 +8,27 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Calculator, RotateCcw, TrendingUp, DollarSign, Users, Info } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from "recharts";
 import smartacLogo from "@assets/smartac_1762359582715.png";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
+const contactFormSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  email: z.string().email("Please enter a valid email address"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function SmartACROICalculator() {
+  const { toast } = useToast();
   const [inputs, setInputs] = useState({
     activeMembers: 500,
     retentionRate: 75,
@@ -23,6 +39,16 @@ export default function SmartACROICalculator() {
 
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState<any>(null);
+  const [showDialog, setShowDialog] = useState(false);
+  const [calculatedResults, setCalculatedResults] = useState<any>(null);
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      firstName: "",
+      email: "",
+    },
+  });
 
   // SmartAC improvements based on their actual data
   const smartACImprovements = {
@@ -114,7 +140,7 @@ export default function SmartACROICalculator() {
     const netGain = incrementalRevenue - totalPlatformCost;
     const roi = (netGain / totalPlatformCost) * 100;
 
-    setResults({
+    const resultsData = {
       // Year 5 snapshots
       year5BeforeMembers,
       year5AfterMembers,
@@ -139,9 +165,49 @@ export default function SmartACROICalculator() {
       improvedRetention: Math.min(100, retentionRate + smartACImprovements.retentionImprovement),
       currentCloseRate: closeRate,
       improvedCloseRate: closeRate * smartACImprovements.closeRateMultiplier,
-    });
+    };
 
-    setShowResults(true);
+    setCalculatedResults(resultsData);
+    setShowDialog(true);
+  };
+
+  const submitMutation = useMutation({
+    mutationFn: async (data: ContactFormData) => {
+      return await apiRequest<any>("/api/smartac-roi", {
+        method: "POST",
+        body: JSON.stringify({
+          firstName: data.firstName,
+          email: data.email,
+          activeMembers: inputs.activeMembers,
+          retentionRate: inputs.retentionRate,
+          newVisitsPerYear: inputs.newVisitsPerYear,
+          closeRate: inputs.closeRate,
+          revenuePerMember: inputs.revenuePerMember,
+          roiResults: JSON.stringify(calculatedResults),
+        }),
+      });
+    },
+    onSuccess: () => {
+      setResults(calculatedResults);
+      setShowResults(true);
+      setShowDialog(false);
+      form.reset();
+      toast({
+        title: "ROI Report Sent!",
+        description: "Check your email for your personalized SmartAC ROI report.",
+      });
+    },
+    onError: (error: any) => {
+      toast({
+        variant: "destructive",
+        title: "Submission Failed",
+        description: error.message || "Failed to send ROI report. Please try again.",
+      });
+    },
+  });
+
+  const onSubmit = (data: ContactFormData) => {
+    submitMutation.mutate(data);
   };
 
   const handleReset = () => {
@@ -154,6 +220,8 @@ export default function SmartACROICalculator() {
     });
     setShowResults(false);
     setResults(null);
+    setCalculatedResults(null);
+    form.reset();
   };
 
   const formatCurrency = (value: number) => {
@@ -571,6 +639,65 @@ export default function SmartACROICalculator() {
         </div>
       </main>
       <Footer />
+
+      {/* Contact Dialog */}
+      <Dialog open={showDialog} onOpenChange={setShowDialog}>
+        <DialogContent className="sm:max-w-md" data-testid="dialog-roi-email">
+          <DialogHeader>
+            <DialogTitle>Get Your ROI Report</DialogTitle>
+            <DialogDescription>
+              Enter your details to receive your personalized SmartAC ROI report via email.
+            </DialogDescription>
+          </DialogHeader>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="firstName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>First Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="John" {...field} data-testid="input-first-name" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="john@example.com" {...field} data-testid="input-email" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <DialogFooter className="gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setShowDialog(false)}
+                  data-testid="button-cancel"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  disabled={submitMutation.isPending}
+                  data-testid="button-send-report"
+                >
+                  {submitMutation.isPending ? "Sending..." : "Send Report"}
+                </Button>
+              </DialogFooter>
+            </form>
+          </Form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
