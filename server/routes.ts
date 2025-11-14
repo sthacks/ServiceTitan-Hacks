@@ -1554,7 +1554,7 @@ ${JSON.stringify(jsonData, null, 2)}
         const formatNumber = (value: number) => Math.round(value).toLocaleString();
         
         // Create booking URL with prefilled parameters
-        const bookingUrl = `https://servicetitanhacks.com/partners/wink/book-demo?firstName=${encodeURIComponent(data.firstName)}&email=${encodeURIComponent(data.email)}`;
+        const bookingUrl = `https://servicetitanhacks.com/partners/wink-toolbox/book-demo?firstName=${encodeURIComponent(data.firstName)}&email=${encodeURIComponent(data.email)}`;
         
         await client.emails.send({
           from: fromEmail,
