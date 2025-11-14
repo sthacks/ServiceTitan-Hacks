@@ -30,6 +30,10 @@ import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
+import winkDashboard from "@assets/Dashboard (1)_1763145751270.webp";
+import winkCertifiedBadge from "@assets/Certified Provider Badge-1_1763145751270.webp";
+import winkCoachBadge from "@assets/Certified Provider Coach Badge-1_1763145751270.webp";
+import winkCustomerLogos from "@assets/wink-customer-logos.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 
 interface Partner {
@@ -836,6 +840,69 @@ export default function PartnerDetail() {
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <p>Pricing tiers that scale from startup to enterprise so you pick the level you need.</p>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Dashboard Preview */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-dashboard-preview">
+                See Wink in Action
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 text-center max-w-3xl mx-auto">
+                Get instant visibility into your business metrics with customizable dashboards and real-time reporting.
+              </p>
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <img
+                  src={winkDashboard}
+                  alt="Wink Toolbox dashboard showing analytics and reports"
+                  className="w-full"
+                  data-testid="img-wink-dashboard"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Trusted By */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-6xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-12 text-center" data-testid="heading-trusted-by">
+                Trusted by Leading Contractors
+              </h2>
+              <div className="bg-white rounded-xl p-8 shadow-lg">
+                <img
+                  src={winkCustomerLogos}
+                  alt="Companies using Wink Toolbox"
+                  className="w-full"
+                  data-testid="img-customer-logos"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* ServiceTitan Certified */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-4xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-certified">
+                ServiceTitan Certified Provider
+              </h2>
+              <p className="text-lg text-muted-foreground mb-12 text-center max-w-3xl mx-auto">
+                Wink Toolbox is an official ServiceTitan Certified Provider and Coach, ensuring seamless integration and expert support for your business.
+              </p>
+              <div className="flex justify-center items-center gap-12 flex-wrap">
+                <img
+                  src={winkCertifiedBadge}
+                  alt="ServiceTitan Certified Provider Badge"
+                  className="h-32 w-auto"
+                  data-testid="img-certified-badge"
+                />
+                <img
+                  src={winkCoachBadge}
+                  alt="ServiceTitan Certified Provider Coach Badge"
+                  className="h-32 w-auto"
+                  data-testid="img-coach-badge"
+                />
               </div>
             </div>
           </section>
