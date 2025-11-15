@@ -40,7 +40,7 @@ const blogPosts: BlogPost[] = [
     date: "November 14, 2025",
     readTime: "12 min read",
     category: "Business Operations",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    image: "/blog-saas-contractors.png",
     slug: "how-to-sell-saas-to-home-service-contractors"
   },
   {
