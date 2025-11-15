@@ -15,8 +15,13 @@ interface PodcastFeedItem {
     url: string;
     type: string;
   };
+  duration?: string;
+  image?: {
+    $?: {
+      href?: string;
+    };
+  } | string;
   itunes?: {
-    duration?: string;
     image?: string;
   };
   link?: string;
@@ -28,7 +33,10 @@ export async function syncPodcastEpisodes(): Promise<{ success: boolean; episode
     
     const parser = new Parser({
       customFields: {
-        item: ['itunes:duration', 'itunes:image']
+        item: [
+          ['itunes:duration', 'duration'],
+          ['itunes:image', 'image', { keepArray: false }]
+        ]
       }
     });
 
@@ -38,6 +46,10 @@ export async function syncPodcastEpisodes(): Promise<{ success: boolean; episode
       console.log('[Podcast Sync] No episodes found in feed');
       return { success: true, episodesAdded: 0 };
     }
+
+    // Get the podcast's default image from the channel/feed level
+    const feedImage = (feed as any).image?.url || (feed as any).itunes?.image || null;
+    console.log('[Podcast Sync] Feed image:', feedImage);
 
     let episodesAdded = 0;
 
@@ -59,6 +71,23 @@ export async function syncPodcastEpisodes(): Promise<{ success: boolean; episode
         continue;
       }
 
+      // Extract image URL from various possible formats
+      let imageUrl: string | null = null;
+      if (item.image) {
+        if (typeof item.image === 'string') {
+          imageUrl = item.image;
+        } else if (item.image.$?.href) {
+          imageUrl = item.image.$.href;
+        }
+      }
+      if (!imageUrl && item.itunes?.image) {
+        imageUrl = item.itunes.image;
+      }
+      // Use feed-level image as fallback if episode doesn't have its own
+      if (!imageUrl && feedImage) {
+        imageUrl = feedImage;
+      }
+
       // Add new episode
       await db.insert(podcastEpisodes).values({
         guid: item.guid,
@@ -66,8 +95,8 @@ export async function syncPodcastEpisodes(): Promise<{ success: boolean; episode
         description: item.contentSnippet || item.content || '',
         pubDate: item.pubDate ? new Date(item.pubDate) : new Date(),
         audioUrl: item.enclosure.url,
-        duration: item.itunes?.duration || null,
-        imageUrl: item.itunes?.image || null,
+        duration: (item as any).duration || item.itunes?.duration || null,
+        imageUrl: imageUrl,
         link: item.link || null,
       });
 
