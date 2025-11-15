@@ -77,6 +77,7 @@ export default function Partners() {
         title="ServiceTitan Hacks Partners"
         subtitle="Trusted tools and technology partners helping contractors automate, optimize, and grow their home service businesses."
         dark={true}
+        noGradient={true}
       />
 
       <section className="py-16 bg-background">

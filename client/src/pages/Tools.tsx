@@ -50,8 +50,8 @@ export default function Tools() {
       <main className="flex-1">
         <section className="relative py-24 overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${titleBg})` }}
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
           />
           <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="max-w-3xl mx-auto mb-8 text-center">

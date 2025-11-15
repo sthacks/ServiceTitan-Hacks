@@ -15,13 +15,21 @@ interface HeroProps {
   };
   dark?: boolean;
   backgroundImage?: string;
+  noGradient?: boolean;
 }
 
-export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark = true, backgroundImage }: HeroProps) {
-  const bgImage = backgroundImage || (dark ? titleBg : undefined);
+export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark = true, backgroundImage, noGradient = false }: HeroProps) {
+  const bgImage = backgroundImage;
+  const useGradient = dark && !backgroundImage && !noGradient;
   
   return (
     <section className={`relative ${dark ? "text-white" : "bg-background text-foreground"} py-24 md:py-32 overflow-hidden`}>
+      {useGradient && (
+        <div 
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
+        />
+      )}
       {bgImage && (
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -31,8 +39,8 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, dark =
       {backgroundImage && (
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50" />
       )}
-      <div className={`mx-auto max-w-7xl px-6 ${bgImage ? 'relative z-10' : ''}`}>
-        <div className={`max-w-4xl ${bgImage && !backgroundImage ? 'mx-auto text-center' : backgroundImage ? 'text-left' : 'mx-auto text-center'}`}>
+      <div className={`mx-auto max-w-7xl px-6 ${(bgImage || useGradient) ? 'relative z-10' : ''}`}>
+        <div className={`max-w-4xl ${(useGradient || (bgImage && !backgroundImage)) ? 'mx-auto text-center' : backgroundImage ? 'text-left' : 'mx-auto text-center'}`}>
           <h1 className="text-4xl md:text-5xl font-bold font-heading leading-tight mb-6">
             {title}
           </h1>
