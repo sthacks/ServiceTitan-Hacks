@@ -103,7 +103,6 @@ export default function Podcast() {
           <div className="mb-12">
             <iframe 
               title="ServiceTitan Hacks" 
-              allowTransparency={true}
               height="315" 
               width="100%" 
               style={{ border: 'none', minWidth: 'min(100%, 430px)', height: '315px' }}
@@ -129,14 +128,21 @@ export default function Podcast() {
               {episodes.map((episode, index) => (
                 <Card key={episode.id} className="hover-elevate">
                   <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 bg-primary/10 p-4 rounded-lg">
-                        <Headphones className="h-8 w-8 text-primary" />
-                      </div>
+                    <div className="flex items-start gap-6">
+                      {episode.imageUrl && (
+                        <div className="flex-shrink-0">
+                          <img 
+                            src={episode.imageUrl} 
+                            alt={episode.title}
+                            className="w-32 h-32 object-cover rounded-lg"
+                            data-testid={`img-episode-${index}`}
+                          />
+                        </div>
+                      )}
                       <div className="flex-1">
-                        <p className="text-sm text-muted-foreground mb-2">{formatDate(episode.pubDate)}</p>
+                        <p className="text-sm text-black mb-2">{formatDate(episode.pubDate)}</p>
                         <h3 className="text-xl font-semibold font-heading mb-3">{episode.title}</h3>
-                        <p className="text-muted-foreground mb-4">{episode.description}</p>
+                        <p className="text-black mb-4 line-clamp-2">{episode.description}</p>
                         <a
                           href={episode.link || episode.audioUrl}
                           target="_blank"
@@ -144,7 +150,7 @@ export default function Podcast() {
                           data-testid={`link-episode-${index}`}
                         >
                           <Button variant="outline" className="gap-2">
-                            Listen Now <ExternalLink className="h-4 w-4" />
+                            Read More <ExternalLink className="h-4 w-4" />
                           </Button>
                         </a>
                       </div>
