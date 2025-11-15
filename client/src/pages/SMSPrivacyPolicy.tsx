@@ -32,14 +32,14 @@ export default function SMSPrivacyPolicy() {
         <div className="prose prose-lg max-w-none">
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-scope">Scope</h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
+            <p className="text-foreground leading-relaxed mb-6">
               This policy explains how ServiceTitan Hacks ("we," "us," "ST Hacks") collects, uses, stores, shares, and protects mobile phone numbers and SMS message content when you opt in to receive text messages from us.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-what-we-collect">1. What We Collect</h2>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
+            <ul className="list-disc pl-6 text-foreground leading-relaxed space-y-2">
               <li>The phone number you provide to opt in to SMS.</li>
               <li>Message content you send to us (for support, replies, or opt-out).</li>
               <li>Metadata such as timestamps, delivery status, and carrier routing information.</li>
@@ -48,22 +48,22 @@ export default function SMSPrivacyPolicy() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-how-we-use">2. How We Use Your Information</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-foreground leading-relaxed mb-4">
               We use your phone number and message data to:
             </p>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
+            <ul className="list-disc pl-6 text-foreground leading-relaxed space-y-2">
               <li>Send the SMS messages you agreed to receive, including marketing, updates, reminders, and support replies.</li>
               <li>Manage and log opt-ins and opt-outs.</li>
               <li>Improve our services and detect abuse or fraud.</li>
             </ul>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-foreground leading-relaxed mt-4">
               We do not use SMS data for unrelated profiling without explicit notice and consent.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-consent">3. Consent and Legal Basis</h2>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
+            <ul className="list-disc pl-6 text-foreground leading-relaxed space-y-2">
               <li>You must provide explicit consent to receive marketing SMS from us.</li>
               <li>For U.S. residents, we comply with the Telephone Consumer Protection Act (TCPA), which requires prior express written consent before sending promotional texts.</li>
               <li>For users under the GDPR (European Union), consent is required to be freely given, specific, informed, and unambiguous.</li>
@@ -72,14 +72,14 @@ export default function SMSPrivacyPolicy() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-message-frequency">4. Message Frequency and Carrier Fees</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               Message frequency varies by program. Standard message and data rates from your carrier may apply.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-opt-in-out">5. How to Opt In and Opt Out</h2>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-3">
+            <ul className="list-disc pl-6 text-foreground leading-relaxed space-y-3">
               <li>
                 <strong>Opt In:</strong> Provide your phone number and consent via our forms or text keyword signup.
               </li>
@@ -95,10 +95,10 @@ export default function SMSPrivacyPolicy() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-third-parties">6. Third Parties and Service Providers</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-foreground leading-relaxed mb-4">
               We may share your phone number and message data with trusted service providers only as needed to deliver messages (for example, SMS gateway vendors). These providers are contractually obligated to protect your data and use it only for message delivery.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               <strong>SMS Number:</strong>{" "}
               <a href="tel:+19412227386" className="text-primary hover:underline" data-testid="link-sms-number">
                 (941) 222-7386
@@ -108,35 +108,35 @@ export default function SMSPrivacyPolicy() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-data-retention">7. Data Retention</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               We retain SMS consent records, opt-in confirmations, and message logs for as long as legally required or necessary to defend against claims under the TCPA or similar laws.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-security">8. Security</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               We implement administrative, technical, and physical safeguards to protect your data. If a data breach occurs, we will follow applicable notification laws.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-sharing">9. Sharing, Sale, and Marketing</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               We do not sell or rent your phone number. We may share limited information with affiliates or vendors as described in this policy.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-children">10. Children</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               We do not knowingly collect or target SMS communications to children under 13.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-your-rights">11. Your Rights</h2>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
+            <ul className="list-disc pl-6 text-foreground leading-relaxed space-y-2">
               <li>
                 <strong>California residents:</strong> You may request access to, deletion of, or details about personal information we collect, consistent with the California Consumer Privacy Act (CCPA).
               </li>
@@ -148,14 +148,14 @@ export default function SMSPrivacyPolicy() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-updates">12. Updates to This Policy</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               We may revise this policy periodically. Updates will be posted with a new effective date.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-contact">13. Contact</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               Questions or requests:{" "}
               <a href="mailto:support@st-hacks.com" className="text-primary hover:underline" data-testid="link-contact-email">
                 support@st-hacks.com
