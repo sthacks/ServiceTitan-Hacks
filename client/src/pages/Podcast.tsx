@@ -100,6 +100,21 @@ export default function Podcast() {
             </Card>
           </div>
 
+          <div className="mb-12">
+            <iframe 
+              title="ServiceTitan Hacks" 
+              allowTransparency={true}
+              height="315" 
+              width="100%" 
+              style={{ border: 'none', minWidth: 'min(100%, 430px)', height: '315px' }}
+              scrolling="no" 
+              data-name="pb-iframe-player" 
+              src="https://www.podbean.com/player-v2/?i=ujia6-13d3e8c-pbblog-playlist&share=1&download=1&rtl=0&fonts=Arial&skin=1b1b1b&font-color=auto&logo_link=episode_page&order=episodic&limit=10&filter=all&ss=a713390a017602015775e868a2cf26b0&btn-skin=c73a3a&size=315" 
+              loading="lazy" 
+              allowFullScreen
+            />
+          </div>
+
           <h2 className="text-3xl font-bold font-heading mb-8 text-center">Recent Episodes</h2>
           {isLoading ? (
             <div className="text-center py-12">
