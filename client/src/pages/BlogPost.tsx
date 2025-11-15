@@ -43,7 +43,8 @@ const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     category: "Business Operations",
     image: "/blog-saas-contractors.png",
-    slug: "how-to-sell-saas-to-home-service-contractors"
+    slug: "how-to-sell-saas-to-home-service-contractors",
+    ogImage: "https://servicetitanhacks.com/og-saas-blog.png"
   },
   {
     id: "1",
