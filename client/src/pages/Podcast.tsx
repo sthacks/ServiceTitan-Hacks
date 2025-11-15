@@ -6,34 +6,22 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Headphones, ExternalLink } from "lucide-react";
 import { SiApplepodcasts, SiSpotify } from "react-icons/si";
+import { useQuery } from "@tanstack/react-query";
+import type { PodcastEpisode } from "@shared/schema";
 
 export default function Podcast() {
-  const episodes = [
-    {
-      title: "From Truck to Boardroom: How Technicians Build Real HVAC Businesses with Kelley McKay from HVAC Millionaire University",
-      description: "Struggling to grow your HVAC business beyond the truck? HVAC industry veteran and coach Kelley McKay shares the exact mindset shifts, processes, and strategies that helped him scale from technician to building a sustainable, scalable, and sellable company.",
-      date: "September 30, 2025",
-      url: "https://servicetitanhacks.podbean.com/e/from-truck-to-boardroom-how-technicians-build-real-hvac-businesses/",
-    },
-    {
-      title: "Fix Your P&L or Fail: Surgical Finances for Home Services with Norris Ayvazian from Service Crucible",
-      description: "Trades coaching myths exposed: Learn why cookie-cutter playbooks don't work and how to fix your P&L, operations, and buy-in issues for real growth. Contractors will walk away knowing exactly what to prioritize to scale from $1M to $10M and beyond.",
-      date: "September 23, 2025",
-      url: "https://servicetitanhacks.podbean.com/e/fix-your-pl-or-fail-surgical-finances-for-home-services/",
-    },
-    {
-      title: "Automation First, AI Second: Practical Systems for the Trades with Tersh Blissett & Josh Crouch",
-      description: "Bill Brown interviews Tersh Blissett and Josh Crouch about the real difference between automation and AI, and how HVAC, plumbing, and electrical businesses are using processes, automations, and AI to save time and scale.",
-      date: "September 16, 2025",
-      url: "https://servicetitanhacks.podbean.com/e/automation-first-ai-second-practical-systems-for-the-trades/",
-    },
-    {
-      title: "Omni SEO: How AI Answer Engines Are Reshaping Contractor Marketing with Corry Cullather from WebFX",
-      description: "Homeowners are no longer just searching on Google — they're turning to AI engines like ChatGPT and Perplexity. Is your contracting business ready for Local SEO, Core SEO, and Omni SEO?",
-      date: "September 2, 2025",
-      url: "https://servicetitanhacks.podbean.com/e/omni-seo-how-ai-answer-engines-are-reshaping-contractor-marketing/",
-    },
-  ];
+  const { data: episodes = [], isLoading } = useQuery<PodcastEpisode[]>({
+    queryKey: ['/api/podcast/episodes'],
+  });
+
+  const formatDate = (dateString: string | Date) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -113,34 +101,44 @@ export default function Podcast() {
           </div>
 
           <h2 className="text-3xl font-bold font-heading mb-8 text-center">Recent Episodes</h2>
-          <div className="grid gap-8">
-            {episodes.map((episode, index) => (
-              <Card key={index} className="hover-elevate">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 bg-primary/10 p-4 rounded-lg">
-                      <Headphones className="h-8 w-8 text-primary" />
+          {isLoading ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Loading episodes...</p>
+            </div>
+          ) : episodes.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No episodes available yet. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="grid gap-8">
+              {episodes.map((episode, index) => (
+                <Card key={episode.id} className="hover-elevate">
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 bg-primary/10 p-4 rounded-lg">
+                        <Headphones className="h-8 w-8 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm text-muted-foreground mb-2">{formatDate(episode.pubDate)}</p>
+                        <h3 className="text-xl font-semibold font-heading mb-3">{episode.title}</h3>
+                        <p className="text-muted-foreground mb-4">{episode.description}</p>
+                        <a
+                          href={episode.link || episode.audioUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-testid={`link-episode-${index}`}
+                        >
+                          <Button variant="outline" className="gap-2">
+                            Listen Now <ExternalLink className="h-4 w-4" />
+                          </Button>
+                        </a>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-muted-foreground mb-2">{episode.date}</p>
-                      <h3 className="text-xl font-semibold font-heading mb-3">{episode.title}</h3>
-                      <p className="text-muted-foreground mb-4">{episode.description}</p>
-                      <a
-                        href={episode.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid={`link-episode-${index}`}
-                      >
-                        <Button variant="outline" className="gap-2">
-                          Listen Now <ExternalLink className="h-4 w-4" />
-                        </Button>
-                      </a>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          )}
 
           <div className="mt-16 text-center">
             <Card className="bg-primary/5 border-primary/20">
