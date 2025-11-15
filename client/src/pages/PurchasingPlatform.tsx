@@ -116,7 +116,7 @@ export default function PurchasingPlatform() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-24 text-center bg-[#1F1F1F] text-white">
+        <section className="py-20 md:py-24 text-center text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
           <div className="container mx-auto px-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               Buy Like Private Equity
@@ -136,9 +136,9 @@ export default function PurchasingPlatform() {
         </section>
 
         {/* Brand Logos Section */}
-        <section className="py-12 bg-muted/30">
+        <section className="py-12 text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
           <div className="container mx-auto px-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               Buy from Leading Brands
             </h2>
             <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -207,12 +207,12 @@ export default function PurchasingPlatform() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-16 md:py-20 bg-muted/30">
+        <section id="how-it-works" className="py-16 md:py-20 text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               HOW IT WORKS
             </h2>
-            <p className="text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-center text-gray-300 mb-12 max-w-2xl mx-auto">
               Simple 4-step process for contractors who don't have time to waste.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -349,12 +349,12 @@ export default function PurchasingPlatform() {
         </section>
 
         {/* Powered by Industry Leaders */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section className="py-16 md:py-20 text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-3" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               POWERED BY INDUSTRY LEADERS
             </h2>
-            <p className="text-center text-sm text-muted-foreground mb-8">Verified Partnerships. Authorized Pricing.</p>
+            <p className="text-center text-sm text-gray-300 mb-8">Verified Partnerships. Authorized Pricing.</p>
             <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
               <div className="text-center">
                 <img src={goodmanLogo} alt="Goodman" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
@@ -365,7 +365,7 @@ export default function PurchasingPlatform() {
                 <p className="text-sm text-muted-foreground">Authorized Distributor</p>
               </div>
             </div>
-            <p className="text-center text-muted-foreground mt-8 max-w-3xl mx-auto">
+            <p className="text-center text-gray-300 mt-8 max-w-3xl mx-auto">
               Our platform is built on partnerships with Goodman/Daikin and integrated with over 1,200 distributor locations nationwide.
             </p>
           </div>
