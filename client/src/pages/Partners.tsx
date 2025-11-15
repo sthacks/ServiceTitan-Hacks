@@ -73,12 +73,22 @@ export default function Partners() {
       />
       <Header />
       <main className="flex-1">
-        <Hero
-        title="ServiceTitan Hacks Partners"
-        subtitle="Trusted tools and technology partners helping contractors automate, optimize, and grow their home service businesses."
-        dark={true}
-        noGradient={true}
-      />
+        <section className="relative py-24 overflow-hidden">
+          <div 
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
+          />
+          <div className="mx-auto max-w-7xl px-6 relative z-10">
+            <div className="max-w-3xl mx-auto mb-8 text-center">
+              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
+                ServiceTitan Hacks Partners
+              </h1>
+              <p className="text-xl text-gray-300">
+                Trusted tools and technology partners helping contractors automate, optimize, and grow their home service businesses.
+              </p>
+            </div>
+          </div>
+        </section>
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
