@@ -358,11 +358,11 @@ export default function PurchasingPlatform() {
             <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
               <div className="text-center">
                 <img src={goodmanLogo} alt="Goodman" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">Direct Factory Pricing</p>
+                <p className="text-sm text-gray-300">Direct Factory Pricing</p>
               </div>
               <div className="text-center">
                 <img src={daikinLogo} alt="Daikin" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">Authorized Distributor</p>
+                <p className="text-sm text-gray-300">Authorized Distributor</p>
               </div>
             </div>
             <p className="text-center text-gray-300 mt-8 max-w-3xl mx-auto">
