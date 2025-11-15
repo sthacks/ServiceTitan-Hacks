@@ -1811,6 +1811,32 @@ ${blogPosts.map(post => `  <url>
     res.send(sitemap);
   });
 
+  // Podcast episodes API routes
+  app.get("/api/podcast/episodes", async (req, res) => {
+    try {
+      const episodes = await storage.getPodcastEpisodes();
+      res.json(episodes);
+    } catch (error) {
+      console.error("Error fetching podcast episodes:", error);
+      res.status(500).json({ message: "Failed to fetch podcast episodes" });
+    }
+  });
+
+  app.post("/api/podcast/sync", isAdmin, async (req, res) => {
+    try {
+      const { syncPodcastEpisodes } = await import('./podcastSync');
+      const result = await syncPodcastEpisodes();
+      res.json(result);
+    } catch (error) {
+      console.error("Error syncing podcast episodes:", error);
+      res.status(500).json({ 
+        success: false, 
+        episodesAdded: 0, 
+        error: error instanceof Error ? error.message : 'Unknown error' 
+      });
+    }
+  });
+
   // Robots.txt for SEO
   app.get("/robots.txt", (req, res) => {
     const baseUrl = "https://servicetitanhacks.com";

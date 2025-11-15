@@ -1,6 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import cron from "node-cron";
+import { syncPodcastEpisodes } from "./podcastSync";
 
 const app = express();
 app.use(express.json());
@@ -70,4 +72,24 @@ app.use((req, res, next) => {
   }, () => {
     log(`serving on port ${port}`);
   });
+
+  // Set up daily podcast sync cron job (runs at 2 AM daily)
+  cron.schedule('0 2 * * *', async () => {
+    log('[Cron] Running daily podcast sync...');
+    const result = await syncPodcastEpisodes();
+    if (result.success) {
+      log(`[Cron] Podcast sync completed. Added ${result.episodesAdded} new episodes.`);
+    } else {
+      log(`[Cron] Podcast sync failed: ${result.error}`);
+    }
+  });
+
+  // Run initial podcast sync on server start
+  log('[Init] Running initial podcast sync...');
+  const initialSync = await syncPodcastEpisodes();
+  if (initialSync.success) {
+    log(`[Init] Initial podcast sync completed. Added ${initialSync.episodesAdded} new episodes.`);
+  } else {
+    log(`[Init] Initial podcast sync failed: ${initialSync.error}`);
+  }
 })();

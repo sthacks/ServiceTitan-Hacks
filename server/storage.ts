@@ -23,13 +23,15 @@ import {
   type InsertSmartACROISubmission,
   type WinkROISubmission,
   type InsertWinkROISubmission,
+  type PodcastEpisode,
   pricebookOptimizations,
   winkDemoSubmissions,
   smartACDemoSubmissions,
   contractorCommerceDemoSubmissions,
   liveswitchDemoSubmissions,
   smartacROISubmissions,
-  winkROISubmissions
+  winkROISubmissions,
+  podcastEpisodes
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -88,6 +90,9 @@ export interface IStorage {
   
   createWinkROISubmission(submission: InsertWinkROISubmission): Promise<WinkROISubmission>;
   getAllWinkROISubmissions(): Promise<WinkROISubmission[]>;
+  
+  // Podcast operations
+  getPodcastEpisodes(): Promise<PodcastEpisode[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -443,6 +448,10 @@ export class MemStorage implements IStorage {
 
   async getAllWinkROISubmissions(): Promise<WinkROISubmission[]> {
     return await db.select().from(winkROISubmissions);
+  }
+
+  async getPodcastEpisodes(): Promise<PodcastEpisode[]> {
+    return await db.select().from(podcastEpisodes).orderBy(sql`${podcastEpisodes.pubDate} DESC`);
   }
 }
 
