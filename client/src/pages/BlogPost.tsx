@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
@@ -28,7 +29,7 @@ const blogPosts: BlogPost[] = [
     date: "November 14, 2025",
     readTime: "11 min read",
     category: "Marketing",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=400&fit=crop",
+    image: "/blog-millennials-pricing.png",
     slug: "selling-hvac-systems-to-millennials-online-pricing"
   },
   {
@@ -1210,8 +1211,20 @@ export default function BlogPost() {
     );
   }
 
+  const ogImageUrl = typeof post.image === 'string' && post.image.startsWith('http') 
+    ? post.image 
+    : `https://servicetitanhacks.com${post.image}`;
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title={`${post.title} | ServiceTitan Hacks Blog`}
+        description={post.excerpt}
+        keywords={`${post.category}, HVAC, ServiceTitan, ${post.title}`}
+        canonicalUrl={`https://servicetitanhacks.com/blog/${post.slug}`}
+        ogImage={ogImageUrl}
+        ogType="article"
+      />
       <Header />
       <main className="flex-1">
         {/* Hero Image */}

@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762523143157.jpg";
-import millennialsImage from "@assets/blog post images - selling to millenials_1763209896356.png";
 
 interface BlogPost {
   id: string;
@@ -29,7 +28,7 @@ const blogPosts: BlogPost[] = [
     date: "November 14, 2025",
     readTime: "11 min read",
     category: "Marketing",
-    image: millennialsImage,
+    image: "/blog-millennials-pricing.png",
     slug: "selling-hvac-systems-to-millennials-online-pricing"
   },
   {
