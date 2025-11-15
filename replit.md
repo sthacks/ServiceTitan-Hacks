@@ -18,7 +18,7 @@ The backend is an Express.js server on Node.js with TypeScript, providing a REST
 The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage
-Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, smartac_roi_submissions, wink_roi_submissions, contractor_commerce_demo_submissions, and liveswitch_demo_submissions. Zod schemas are used for validation, and Drizzle Kit for migrations.
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, smartac_roi_submissions, wink_roi_submissions, contractor_commerce_demo_submissions, liveswitch_demo_submissions, and podcast_episodes. Zod schemas are used for validation, and Drizzle Kit for migrations.
 
 ### Demo Booking Systems
 The platform features four comprehensive demo booking systems with auto-save and abandoned form tracking:
@@ -69,6 +69,33 @@ Interactive tool at /wink-roi-calculator that calculates time savings and cost r
 8. Stores submission in wink_roi_submissions table with all inputs and calculated results
 9. Results page displays 4 summary cards, 5-year projection chart, and detailed breakdown of savings calculations
 
+### Podcast RSS Feed Integration
+Automated podcast episode synchronization system that keeps the Podcast page (/podcast) up-to-date with the latest episodes from servicetitanhacks.podbean.com:
+
+**Technical Implementation**:
+- **RSS Parser**: Uses rss-parser package to fetch and parse Podbean RSS feed
+- **Database**: Episodes stored in podcast_episodes table with fields: id, guid (unique), title, description, pubDate, audioUrl, duration, imageUrl, link, createdAt
+- **Cron Job**: node-cron runs daily sync at 2 AM to check for new episodes
+- **Initial Sync**: On server start, runs automatic sync to populate any missing episodes
+- **Duplicate Prevention**: Uses guid field to prevent duplicate episodes from being added
+
+**Sync Process**:
+1. Fetches RSS feed from servicetitanhacks.podbean.com
+2. Parses episode metadata (title, description, audio URL, publish date, etc.)
+3. Checks each episode's guid against database to prevent duplicates
+4. Inserts only new episodes that don't already exist
+5. Returns count of episodes added
+
+**API Endpoints**:
+- GET `/api/podcast/episodes` - Returns all episodes ordered by pubDate DESC (public)
+- POST `/api/podcast/sync` - Manually triggers sync (requires authentication)
+
+**Frontend Display**:
+- Podcast page uses TanStack Query to fetch episodes from `/api/podcast/episodes`
+- Shows loading state while fetching
+- Displays episodes with formatted date, title, description, and "Listen Now" link
+- Empty state message if no episodes available
+
 ## External Dependencies
 
 ### UI & Styling
@@ -97,3 +124,5 @@ Interactive tool at /wink-roi-calculator that calculates time savings and cost r
 - **Google Analytics 4**: Web analytics.
 - **Google Fonts**: "Oxygen" and "Inter" font families.
 - **Facebook Groups, YouTube, Podcast platforms**: Community and content distribution.
+- **Podbean RSS Feed**: Podcast episode syndication (servicetitanhacks.podbean.com).
+- **node-cron**: Task scheduler for automated daily podcast sync.
