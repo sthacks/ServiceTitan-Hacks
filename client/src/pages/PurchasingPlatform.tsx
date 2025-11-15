@@ -363,27 +363,23 @@ export default function PurchasingPlatform() {
         </section>
 
         {/* Powered by Industry Leaders */}
-        <section className="relative py-16 md:py-20 overflow-hidden">
-          <div 
-            className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
-          />
-          <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-3 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-3 text-black" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               POWERED BY INDUSTRY LEADERS
             </h2>
-            <p className="text-center text-sm text-gray-300 mb-8">Verified Partnerships. Authorized Pricing.</p>
+            <p className="text-center text-sm text-black mb-8">Verified Partnerships. Authorized Pricing.</p>
             <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
               <div className="text-center">
                 <img src={goodmanLogo} alt="Goodman" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-gray-300">Direct Factory Pricing</p>
+                <p className="text-sm text-black">Direct Factory Pricing</p>
               </div>
               <div className="text-center">
                 <img src={daikinLogo} alt="Daikin" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-gray-300">Authorized Distributor</p>
+                <p className="text-sm text-black">Authorized Distributor</p>
               </div>
             </div>
-            <p className="text-center text-gray-300 mt-8 max-w-3xl mx-auto">
+            <p className="text-center text-black mt-8 max-w-3xl mx-auto">
               Our platform is built on partnerships with Goodman/Daikin and integrated with over 1,200 distributor locations nationwide.
             </p>
           </div>
