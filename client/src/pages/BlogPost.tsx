@@ -51,7 +51,7 @@ const blogPosts: BlogPost[] = [
     date: "January 22, 2025",
     readTime: "8 min read",
     category: "Business Operations",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=400&fit=crop",
+    image: "/blog-build-your-brand.jpg",
     slug: "stop-selling-other-peoples-equipment-build-your-brand"
   },
   {
