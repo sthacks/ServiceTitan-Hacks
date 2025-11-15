@@ -116,29 +116,39 @@ export default function PurchasingPlatform() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-24 text-center text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
-          <div className="container mx-auto px-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Buy Like Private Equity
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-gray-200">
-              Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch.
-            </p>
-            <p className="text-lg md:text-xl text-gray-300 mb-8">
-              100% Free for ServiceTitan Hacks Facebook Group Members
-            </p>
-            <a href="#form">
-              <Button size="lg" className="text-lg px-8 py-6 h-auto" data-testid="button-hero-cta">
-                Get Access
-              </Button>
-            </a>
+        <section className="relative py-24 overflow-hidden">
+          <div 
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
+          />
+          <div className="mx-auto max-w-7xl px-6 relative z-10">
+            <div className="max-w-3xl mx-auto mb-8 text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+                Buy Like Private Equity
+              </h1>
+              <p className="text-xl md:text-2xl mb-6 text-gray-300">
+                Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch.
+              </p>
+              <p className="text-lg md:text-xl text-gray-300 mb-8">
+                100% Free for ServiceTitan Hacks Facebook Group Members
+              </p>
+              <a href="#form">
+                <Button size="lg" className="text-lg px-8 py-6 h-auto" data-testid="button-hero-cta">
+                  Get Access
+                </Button>
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Brand Logos Section */}
-        <section className="py-12 text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
-          <div className="container mx-auto px-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+        <section className="relative py-12 overflow-hidden">
+          <div 
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
+          />
+          <div className="container mx-auto px-6 relative z-10">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-center mb-8 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               Buy from Leading Brands
             </h2>
             <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -207,9 +217,13 @@ export default function PurchasingPlatform() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-16 md:py-20 text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+        <section id="how-it-works" className="relative py-16 md:py-20 overflow-hidden">
+          <div 
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
+          />
+          <div className="container mx-auto px-6 relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-4 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               HOW IT WORKS
             </h2>
             <p className="text-lg text-center text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -349,9 +363,13 @@ export default function PurchasingPlatform() {
         </section>
 
         {/* Powered by Industry Leaders */}
-        <section className="py-16 md:py-20 text-white" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+        <section className="relative py-16 md:py-20 overflow-hidden">
+          <div 
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, #09090b 0%, #1a1b20 100%)' }}
+          />
+          <div className="container mx-auto px-6 relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-3 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               POWERED BY INDUSTRY LEADERS
             </h2>
             <p className="text-center text-sm text-gray-300 mb-8">Verified Partnerships. Authorized Pricing.</p>
