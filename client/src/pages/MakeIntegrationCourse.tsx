@@ -64,10 +64,11 @@ export default function MakeIntegrationCourse() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Make.com Integration Course | Connect ServiceTitan with 1000+ Apps"
-        description="Master ServiceTitan integration with Make.com. Build cost-effective automations and workflows. 10 lessons, 4 chapters. $69 course."
+        title="Make Integration Course for ServiceTitan"
+        description="Learn how to automate ServiceTitan using Make. Build workflows that save time, reduce errors and streamline operations."
         keywords="Make.com course, ServiceTitan integration, automation training, workflow automation, API integration"
         canonicalUrl="https://servicetitanhacks.com/make-integration-course"
+        ogImage="https://servicetitanhacks.com/og-make-integration-course.png"
         schemaData={courseSchema}
       />
       <Header />

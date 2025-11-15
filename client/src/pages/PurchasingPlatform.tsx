@@ -27,30 +27,30 @@ export default function PurchasingPlatform() {
 
   // SEO & Open Graph Meta Tags
   useEffect(() => {
-    document.title = "Equipment Buying Group | Get Pricing the Big Guys Get – ServiceTitan Hacks";
+    document.title = "Contractor Purchasing Platform";
     
     // Standard meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Access national-account pricing for HVAC equipment and water heaters—no contracts, no minimums. Free for ServiceTitan Hacks members.");
+      metaDescription.setAttribute("content", "Discover vetted software, AI tools and services for HVAC, plumbing and electrical contractors looking to scale.");
     } else {
       const meta = document.createElement('meta');
       meta.name = "description";
-      meta.content = "Access national-account pricing for HVAC equipment and water heaters—no contracts, no minimums. Free for ServiceTitan Hacks members.";
+      meta.content = "Discover vetted software, AI tools and services for HVAC, plumbing and electrical contractors looking to scale.";
       document.head.appendChild(meta);
     }
 
     // Open Graph meta tags for social sharing
     const ogTags = [
-      { property: 'og:title', content: 'Buy Like Private Equity' },
-      { property: 'og:description', content: 'Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
-      { property: 'og:image', content: `${window.location.origin}${buyingGroupImage}` },
+      { property: 'og:title', content: 'Contractor Purchasing Platform' },
+      { property: 'og:description', content: 'Discover vetted software, AI tools and services for HVAC, plumbing and electrical contractors looking to scale.' },
+      { property: 'og:image', content: 'https://servicetitanhacks.com/og-purchasing-platform.png' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: window.location.href },
+      { property: 'og:url', content: 'https://servicetitanhacks.com/purchasing-platform' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Buy Like Private Equity' },
-      { name: 'twitter:description', content: 'Get the pricing that the big guys get on HVAC and water heaters—no minimums, no contracts, no catch. 100% Free for ServiceTitan Hacks Facebook Group Members.' },
-      { name: 'twitter:image', content: `${window.location.origin}${buyingGroupImage}` },
+      { name: 'twitter:title', content: 'Contractor Purchasing Platform' },
+      { name: 'twitter:description', content: 'Discover vetted software, AI tools and services for HVAC, plumbing and electrical contractors looking to scale.' },
+      { name: 'twitter:image', content: 'https://servicetitanhacks.com/og-purchasing-platform.png' },
     ];
 
     ogTags.forEach(tag => {

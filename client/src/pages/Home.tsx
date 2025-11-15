@@ -25,7 +25,7 @@ export default function Home() {
     "name": "ServiceTitan Hacks",
     "url": "https://servicetitanhacks.com",
     "logo": "https://servicetitanhacks.com/logo.png",
-    "description": "AI and automation tools for ServiceTitan contractors in HVAC, plumbing, and electrical trades",
+    "description": "AI, automation, dashboards and practical tools for ServiceTitan contractors who want higher revenue, better processes and faster growth.",
     "sameAs": [
       "https://www.facebook.com/groups/servicetitanhacks",
       "https://www.youtube.com/@ServiceTitanHacks"
@@ -115,10 +115,11 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Hacks | AI Tools for Contractors & HVAC Automation"
-        description="AI tools for contractors. Learn ServiceTitan automation for HVAC, plumbing businesses. Free courses, tools & community. Join 9,500+ contractors."
+        title="ServiceTitan Hacks for HVAC and Home Service Growth"
+        description="AI, automation, dashboards and practical tools for ServiceTitan contractors who want higher revenue, better processes and faster growth."
         keywords="AI tools for contractors, ServiceTitan automation, HVAC AI, plumbing automation, home service automation"
         canonicalUrl="https://servicetitanhacks.com/"
+        ogImage="https://servicetitanhacks.com/og-home.png"
         schemaData={organizationSchema}
       />
       <Header />

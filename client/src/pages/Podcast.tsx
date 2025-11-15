@@ -38,10 +38,11 @@ export default function Podcast() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Podcast | Contractor Success Stories & Strategies"
-        description="Listen to the ServiceTitan Hacks podcast featuring contractor success stories, expert interviews, and proven business growth strategies."
+        title="Home Service Business Hacks Podcast"
+        description="Listen to interviews with contractors and founders about AI, automation, leadership and scaling home service businesses."
         keywords="ServiceTitan podcast, HVAC podcast, contractor podcast, business growth"
         canonicalUrl="https://servicetitanhacks.com/podcast"
+        ogImage="https://servicetitanhacks.com/og-podcast.png"
       />
       <Header />
       <main className="flex-1">

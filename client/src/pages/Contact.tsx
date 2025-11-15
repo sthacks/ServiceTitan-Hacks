@@ -8,10 +8,11 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Contact ServiceTitan Hacks | Get Help with AI & Automation"
-        description="Contact ServiceTitan Hacks for questions about courses, tools, or AI automation solutions for your home service business."
+        title="Contact ServiceTitan Hacks"
+        description="Get in touch with ServiceTitan Hacks for sponsorships, tools, courses, partnerships or media inquiries."
         keywords="contact ServiceTitan Hacks, support, help"
         canonicalUrl="https://servicetitanhacks.com/contact"
+        ogImage="https://servicetitanhacks.com/og-contact.png"
       />
       <Header />
       <main className="flex-1">

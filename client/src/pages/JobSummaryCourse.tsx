@@ -64,10 +64,11 @@ export default function JobSummaryCourse() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Job Summary Automation Course | AI-Powered ServiceTitan Summaries"
-        description="Automate job summaries with AI for HVAC, plumbing, and electrical companies. Professional bullet-point lists. 7 lessons, 1 chapter. $39 course."
+        title="Job Summary Cleaner Course for ServiceTitan"
+        description="Learn how to automate and rewrite job summaries in ServiceTitan to improve clarity, reduce errors and streamline dispatch."
         keywords="job summary automation, AI job notes, ServiceTitan automation, ChatGPT integration, automated summaries"
         canonicalUrl="https://servicetitanhacks.com/job-summary-course"
+        ogImage="https://servicetitanhacks.com/og-job-summary-course.png"
         schemaData={courseSchema}
       />
       <Header />

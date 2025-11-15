@@ -42,10 +42,11 @@ export default function AllAccess() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="All-Access Pass | Unlimited ServiceTitan Training & Resources"
-        description="Get unlimited access to all ServiceTitan Hacks courses, tools, and resources. Learn AI automation, integrations, and optimization at your own pace."
+        title="ServiceTitan Hacks All-Access Membership"
+        description="Get full access to tools, automations, courses and premium contractor resources inside ServiceTitan Hacks."
         keywords="ServiceTitan all access, course bundle, unlimited training, contractor education"
         canonicalUrl="https://servicetitanhacks.com/all-access"
+        ogImage="https://servicetitanhacks.com/og-all-access.png"
       />
       <Header />
       <main className="flex-1">

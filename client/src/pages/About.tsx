@@ -9,10 +9,11 @@ export default function About() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="About ServiceTitan Hacks | AI Tools for Home Service Contractors"
-        description="ServiceTitan Hacks helps home service contractors leverage AI and automation to grow smarter. Join 9,500+ contractors learning proven strategies."
+        title="About ServiceTitan Hacks and Bill Brown"
+        description="Learn the story behind ServiceTitan Hacks, built by INC 5000 contractor Bill Brown to help HVAC and home service companies scale smarter."
         keywords="ServiceTitan experts, HVAC automation, home service AI, contractor tools"
         canonicalUrl="https://servicetitanhacks.com/about"
+        ogImage="https://servicetitanhacks.com/og-about.png"
       />
       <Header />
       <main className="flex-1">

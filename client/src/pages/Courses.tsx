@@ -82,10 +82,11 @@ export default function Courses() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Courses | AI Automation & Integration Training"
-        description="Learn ServiceTitan automation, AI integration, and optimization with hands-on courses. From beginner Zapier integrations to advanced AI call analysis."
+        title="Courses for ServiceTitan, AI and Automation"
+        description="Online courses teaching HVAC contractors how to automate, streamline and scale using AI and ServiceTitan."
         keywords="ServiceTitan courses, HVAC training, AI automation, ServiceTitan integration, Make.com, Zapier"
         canonicalUrl="https://servicetitanhacks.com/courses"
+        ogImage="https://servicetitanhacks.com/og-courses.png"
       />
       <Header />
       <main className="flex-1">

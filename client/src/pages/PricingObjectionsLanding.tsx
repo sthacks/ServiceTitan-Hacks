@@ -98,10 +98,11 @@ export default function PricingObjectionsLanding() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Free Pricing Objections Graphic: Why It Costs What It Costs | ServiceTitan Hacks"
-        description="Stop defending your prices. Download this free visual tool that shows customers the iceberg of costs behind every service call. Perfect for HVAC, plumbing, and electrical contractors."
+        title="HVAC Pricing Objections Script and Guide"
+        description="Learn how to handle pricing objections with proven scripts for HVAC and home service sales teams to close more high-value jobs."
         keywords="pricing objections, pricing strategy, service pricing, contractor pricing, explain your pricing, pricing iceberg"
         canonicalUrl="https://servicetitanhacks.com/pricing-objections-landing"
+        ogImage="https://servicetitanhacks.com/og-pricing-objections.png"
       />
       <Header />
       <main className="flex-1">

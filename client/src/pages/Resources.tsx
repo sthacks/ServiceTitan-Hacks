@@ -225,10 +225,11 @@ export default function Resources() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Free ServiceTitan Resources | Tools, Calculators & Downloads"
-        description="Free ServiceTitan tools, calculators, and guides for HVAC, plumbing, and electrical contractors. ROI calculators, metrics guides, and automation templates."
+        title="Free HVAC and Contractor Resources"
+        description="Access free guides, calculators, dashboards and automation tools for ServiceTitan and home service companies."
         keywords="ServiceTitan resources, HVAC calculators, marketing ROI, business tools, free downloads"
         canonicalUrl="https://servicetitanhacks.com/resources"
+        ogImage="https://servicetitanhacks.com/og-resources.png"
       />
       <Header />
       <main className="flex-1">

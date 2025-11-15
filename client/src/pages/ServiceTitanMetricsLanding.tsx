@@ -98,10 +98,11 @@ export default function ServiceTitanMetricsLanding() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Free ServiceTitan Metrics Guide: 112 Essential KPIs | ServiceTitan Hacks"
-        description="Track the right metrics for your home service business. Free Excel guide with 112 essential KPIs covering sales, operations, finance, and customer service for HVAC, plumbing, and electrical contractors."
+        title="Key ServiceTitan Metrics Every Contractor Needs"
+        description="Discover the most important KPIs and dashboards for HVAC and home service companies inside ServiceTitan."
         keywords="ServiceTitan metrics, KPI tracking, business metrics, contractor KPIs, performance tracking, ServiceTitan reporting"
         canonicalUrl="https://servicetitanhacks.com/servicetitan-metrics-landing"
+        ogImage="https://servicetitanhacks.com/og-servicetitan-metrics.png"
       />
       <Header />
       <main className="flex-1">

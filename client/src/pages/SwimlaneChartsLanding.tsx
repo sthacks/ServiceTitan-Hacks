@@ -98,10 +98,11 @@ export default function SwimlaneChartsLanding() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Free Swimlane Chart Template for HVAC, Plumbing & Electrical Contractors"
-        description="Download a free swimlane chart template to map team workflows, improve communication, and scale your home service business. Perfect for visualizing processes in ServiceTitan."
+        title="Swimlane Chart Templates for Contractors"
+        description="Visualize your processes with contractor-specific swimlane charts that clarify roles, steps and workflow ownership."
         keywords="swimlane chart template, process mapping, workflow visualization, business process, team collaboration, ServiceTitan processes"
         canonicalUrl="https://servicetitanhacks.com/swimlane-charts-landing"
+        ogImage="https://servicetitanhacks.com/og-swimlane-charts.png"
       />
       <Header />
       <main className="flex-1">

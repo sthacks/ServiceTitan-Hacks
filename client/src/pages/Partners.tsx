@@ -65,10 +65,11 @@ export default function Partners() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Partners | Trusted Tools & Integrations"
-        description="Discover trusted ServiceTitan partners and integrations. Vetted tools to enhance your operations, from AI automation to business analytics."
+        title="ServiceTitan Hacks Sponsors and Partners"
+        description="Explore trusted partners for ServiceTitan users, including AI tools, automations, dashboards and contractor-focused solutions."
         keywords="ServiceTitan partners, integrations, HVAC tools, contractor software"
         canonicalUrl="https://servicetitanhacks.com/partners"
+        ogImage="https://servicetitanhacks.com/og-partners.png"
       />
       <Header />
       <main className="flex-1">

@@ -98,10 +98,11 @@ export default function AutomationPlaybookLanding() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Free Automation Playbook: Zapier + Wink for ServiceTitan | ServiceTitan Hacks"
-        description="Master the art of combining Zapier and Wink for maximum automation efficiency in ServiceTitan. Free guide with setup tips, hybrid workflows, and practical examples for contractors."
+        title="Automation Playbook for HVAC and ServiceTitan"
+        description="A practical automation playbook for HVAC and home service contractors using ServiceTitan, AI and workflow automation."
         keywords="Zapier ServiceTitan, Wink automation, ServiceTitan automation, workflow automation, contractor tools"
         canonicalUrl="https://servicetitanhacks.com/automation-playbook-landing"
+        ogImage="https://servicetitanhacks.com/og-automation-playbook.png"
       />
       <Header />
       <main className="flex-1">

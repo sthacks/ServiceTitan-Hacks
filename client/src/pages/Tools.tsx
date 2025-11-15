@@ -40,10 +40,11 @@ export default function Tools() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Tools | AI-Powered Business Automation"
-        description="Powerful tools to optimize your ServiceTitan operations. Pricebook optimizer, automation platforms, and AI-powered business solutions."
+        title="Contractor Tools and Automations for ServiceTitan"
+        description="Free and premium HVAC contractor tools including dashboards, calculators, automations and AI workflows."
         keywords="ServiceTitan tools, pricebook optimizer, AI tools, HVAC software, automation"
         canonicalUrl="https://servicetitanhacks.com/tools"
+        ogImage="https://servicetitanhacks.com/og-tools.png"
       />
       <Header />
       <main className="flex-1">

@@ -57,10 +57,11 @@ export default function CompanyAppCourse() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Company App Course | Build Custom Apps for Home Service Teams"
-        description="Build a professional company app for your HVAC, plumbing, or electrical business using Jotform. 13 lessons, 3 chapters. $97 course."
+        title="ServiceTitan Company App Course"
+        description="Step by step training to build a custom company app for HVAC and home service teams using ServiceTitan tools and workflows."
         keywords="company app course, Jotform training, employee app, ServiceTitan app, mobile forms"
         canonicalUrl="https://servicetitanhacks.com/company-app-course"
+        ogImage="https://servicetitanhacks.com/og-company-app-course.png"
         schemaData={courseSchema}
       />
       <Header />

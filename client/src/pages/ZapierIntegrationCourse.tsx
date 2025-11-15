@@ -49,10 +49,11 @@ export default function ZapierIntegrationCourse() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Free Zapier Course | Connect ServiceTitan with Zapier Integration"
-        description="Free course: Connect ServiceTitan to Zapier and automate workflows. 3 lessons, 1 chapter. Perfect for beginners."
+        title="Zapier Integration Course for ServiceTitan"
+        description="Automate tasks and connect ServiceTitan to your favorite apps using Zapier. Designed for HVAC and home service contractors."
         keywords="Zapier course, ServiceTitan Zapier, free automation course, workflow integration, beginner automation"
         canonicalUrl="https://servicetitanhacks.com/zapier-integration-course"
+        ogImage="https://servicetitanhacks.com/og-company-app-course.png"
         schemaData={courseSchema}
       />
       <Header />

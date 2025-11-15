@@ -83,10 +83,11 @@ export default function Blog() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="ServiceTitan Blog | AI, Automation & Growth Strategies"
-        description="Expert insights on ServiceTitan optimization, AI automation, and business growth strategies for HVAC, plumbing, and electrical contractors."
+        title="ServiceTitan Hacks Blog"
+        description="Articles on AI, automation, ServiceTitan workflows, processes, pricebook strategy and contractor growth."
         keywords="ServiceTitan blog, HVAC marketing, automation strategies, contractor tips"
         canonicalUrl="https://servicetitanhacks.com/blog"
+        ogImage="https://servicetitanhacks.com/og-blog.png"
       />
       <Header />
       <main className="flex-1">
