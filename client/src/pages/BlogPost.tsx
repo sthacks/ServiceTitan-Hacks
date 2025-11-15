@@ -18,6 +18,7 @@ interface BlogPost {
   category: string;
   image: string;
   slug: string;
+  ogImage?: string;
 }
 
 const blogPosts: BlogPost[] = [
@@ -30,7 +31,8 @@ const blogPosts: BlogPost[] = [
     readTime: "11 min read",
     category: "Marketing",
     image: "/blog-millennials-pricing.png",
-    slug: "selling-hvac-systems-to-millennials-online-pricing"
+    slug: "selling-hvac-systems-to-millennials-online-pricing",
+    ogImage: "https://servicetitanhacks.com/og-millennials-blog.png"
   },
   {
     id: "4",
@@ -63,7 +65,8 @@ const blogPosts: BlogPost[] = [
     readTime: "4 min read",
     category: "Process Improvement",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
-    slug: "dmaic-process-improvement-framework"
+    slug: "dmaic-process-improvement-framework",
+    ogImage: "https://servicetitanhacks.com/og-dmaic-methodology-blog.png"
   },
   {
     id: "3",
@@ -1211,9 +1214,11 @@ export default function BlogPost() {
     );
   }
 
-  const ogImageUrl = typeof post.image === 'string' && post.image.startsWith('http') 
-    ? post.image 
-    : `https://servicetitanhacks.com${post.image}`;
+  const ogImageUrl = post.ogImage 
+    ? post.ogImage
+    : (typeof post.image === 'string' && post.image.startsWith('http') 
+      ? post.image 
+      : `https://servicetitanhacks.com${post.image}`);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
