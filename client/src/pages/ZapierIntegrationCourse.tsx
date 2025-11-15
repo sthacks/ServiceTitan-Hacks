@@ -53,7 +53,7 @@ export default function ZapierIntegrationCourse() {
         description="Automate tasks and connect ServiceTitan to your favorite apps using Zapier. Designed for HVAC and home service contractors."
         keywords="Zapier course, ServiceTitan Zapier, free automation course, workflow integration, beginner automation"
         canonicalUrl="https://servicetitanhacks.com/zapier-integration-course"
-        ogImage="https://servicetitanhacks.com/og-company-app-course.png"
+        ogImage="https://servicetitanhacks.com/og-zapier-integration-course.png"
         schemaData={courseSchema}
       />
       <Header />

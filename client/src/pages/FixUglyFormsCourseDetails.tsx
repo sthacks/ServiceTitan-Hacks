@@ -64,10 +64,11 @@ export default function FixUglyFormsCourseDetails() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Fix Ugly Forms Course | AI-Powered Job Notes Cleanup"
-        description="Transform messy form submissions into polished job notes using ChatGPT and Zapier. 19 lessons, 6 chapters. $49 course."
+        title="Fix Ugly Forms Course for ServiceTitan"
+        description="Automate cleanup and formatting of form submissions with AI. Turn messy notes into professional job summaries with ChatGPT and automation."
         keywords="AI forms course, ChatGPT automation, job notes cleanup, form automation, ServiceTitan forms"
         canonicalUrl="https://servicetitanhacks.com/fix-ugly-forms-course-landing"
+        ogImage="https://servicetitanhacks.com/og-fix-ugly-forms.png"
         schemaData={courseSchema}
       />
       <Header />

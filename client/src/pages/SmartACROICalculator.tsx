@@ -241,10 +241,11 @@ export default function SmartACROICalculator() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="SmartAC ROI Calculator | 5-Year Profit Growth Calculator for HVAC"
-        description="Calculate your potential profit growth, truck-roll savings, and membership revenue improvement with SmartAC's platform. See your 5-year ROI projection instantly."
+        title="SmartAC ROI Calculator for HVAC Contractors"
+        description="Calculate potential profit growth, truck roll savings and membership revenue improvements using SmartAC for your HVAC business. Free ROI tool."
         keywords="HVAC ROI calculator, SmartAC, membership revenue, truck roll savings, HVAC profit calculator"
         canonicalUrl="https://servicetitanhacks.com/smartac-roi-calculator"
+        ogImage="https://servicetitanhacks.com/og-smartac-roi-calculator.png"
       />
       <Header />
       <main className="flex-1 bg-background">

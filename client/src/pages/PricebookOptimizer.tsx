@@ -238,10 +238,11 @@ export default function PricebookOptimizer() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Pricebook Optimizer | Transform Technical Service Descriptions with AI"
-        description="Free AI-powered tool to transform technical pricebook descriptions into homeowner-friendly language. Improve customer understanding and boost conversions."
+        title="Pricebook Optimizer Tool for HVAC Contractors"
+        description="Free AI tool to transform technical descriptions into customer-friendly language. Boost conversions and help homeowners understand your services."
         keywords="pricebook optimizer, AI pricebook, ServiceTitan pricebook, service descriptions, ChatGPT"
         canonicalUrl="https://servicetitanhacks.com/pricebook-optimizer"
+        ogImage="https://servicetitanhacks.com/og-pricebook-optimizer.png"
       />
       <Header />
       <main className="flex-1">

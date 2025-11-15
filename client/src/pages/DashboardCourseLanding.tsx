@@ -49,10 +49,11 @@ export default function DashboardCourseLanding() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="DIY TV Dashboard Course | Automated ServiceTitan Data Display"
-        description="Build an automated TV dashboard with live ServiceTitan data. 15 lessons, 2 chapters. Perfect for HVAC, plumbing, electrical shops. $97 course."
+        title="DIY Dashboard Course for ServiceTitan"
+        description="Build your own live, TV-ready dashboards for ServiceTitan. Track KPIs, sales, installs and more in real time for your HVAC team."
         keywords="TV dashboard course, ServiceTitan dashboard, automated reporting, data visualization, KPI dashboard"
         canonicalUrl="https://servicetitanhacks.com/dashboard-course-landing"
+        ogImage="https://servicetitanhacks.com/og-dashboard-course.png"
         schemaData={courseSchema}
       />
       <Header />

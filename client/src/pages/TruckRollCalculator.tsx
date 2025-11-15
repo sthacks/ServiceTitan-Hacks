@@ -42,13 +42,11 @@ export default function TruckRollCalculator() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
-        title="Cost Per Truck Roll Calculator - True Service Call Cost | ServiceTitan Hacks"
-        description="Calculate the true cost to send a technician to a home. Free HVAC contractor calculator includes labor burden, vehicle costs, overhead allocation, and truck/tooling expenses."
+        title="Cost Per Truck Roll Calculator for HVAC"
+        description="Calculate the true cost to send a technician to a home. Includes labor burden, vehicle costs, overhead and truck expenses for HVAC pros."
         keywords="truck roll cost calculator, HVAC service call cost, technician cost calculator, contractor cost analysis, field service pricing"
         canonicalUrl="https://servicetitanhacks.com/truck-roll-calculator"
-        ogImage={truckRollSocialImage}
-        ogTitle="Know Your True Cost Per Service Call"
-        ogDescription="Free calculator for HVAC contractors to determine real truck roll costs including labor burden, vehicle expenses, overhead, and equipment. Based on BLS and AAA data."
+        ogImage="https://servicetitanhacks.com/og-truck-roll-calculator.png"
       />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12 max-w-7xl">
