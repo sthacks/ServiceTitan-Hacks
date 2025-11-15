@@ -85,7 +85,7 @@ const blogPosts: BlogPost[] = [
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
   "selling-hvac-systems-to-millennials-online-pricing": (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
         For the past 20 years, most residential HVAC replacements have been purchased by Baby Boomers and Gen X homeowners. These generations bought HVAC systems long before online research became the norm, so traditional "call for price" or "schedule an estimate first" sales processes worked.
       </p>
@@ -341,7 +341,7 @@ const blogPostContent: Record<string, JSX.Element> = {
     </div>
   ),
   "how-to-sell-saas-to-home-service-contractors": (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
         Selling software to residential home-service companies is fundamentally different from selling to typical SMBs or agencies. HVAC, plumbing, electrical, roofing, pest control, and garage door contractors operate in a real-time, pressure-driven environment where every workflow must be fast, simple, and reliable.
       </p>
@@ -611,7 +611,7 @@ const blogPostContent: Record<string, JSX.Element> = {
     </div>
   ),
   "stop-selling-other-peoples-equipment-build-your-brand": (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
         The HVAC industry has a problem no one talks about: contractors are defending the reputation of manufacturers that don't care about them, their employees, or their customers.
       </p>
@@ -756,7 +756,7 @@ const blogPostContent: Record<string, JSX.Element> = {
     </div>
   ),
   "should-i-switch-to-servicetitan": (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
         If your home-service business is doing $5M+ in annual revenue and you're prepared to invest six months and $10K–$30K in expert implementation support, ServiceTitan can transform how you operate. If you're smaller or still building basic processes, wait until your systems are mature enough to handle the transition.
       </p>
@@ -806,7 +806,7 @@ const blogPostContent: Record<string, JSX.Element> = {
     </div>
   ),
   "dmaic-process-improvement-framework": (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
         Most business coaches talk about systems and processes—and they're not wrong.
         You can't scale chaos. You need structure.
@@ -888,7 +888,7 @@ const blogPostContent: Record<string, JSX.Element> = {
     </div>
   ),
   "ai-automation-contractors-where-to-start": (
-    <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black [&_table]:text-black [&_th]:text-black [&_td]:text-black">
       <p className="lead">
         Everyone's talking about AI. Every podcast, every conference, every sales pitch.
       </p>
@@ -1265,7 +1265,7 @@ export default function BlogPost() {
           </h1>
 
           {/* Meta Information */}
-          <div className="flex items-center gap-6 text-muted-foreground mb-12 pb-8 border-b">
+          <div className="flex items-center gap-6 text-black mb-12 pb-8 border-b">
             <div className="flex items-center gap-3">
               <img
                 src={billBrownProfile}
@@ -1290,7 +1290,7 @@ export default function BlogPost() {
             blogPostContent[slug]
           ) : (
             <div className="prose prose-lg max-w-none mb-12">
-              <p className="text-xl text-muted-foreground leading-relaxed mb-12">
+              <p className="text-xl text-black leading-relaxed mb-12">
                 {post.excerpt}
               </p>
               
@@ -1299,7 +1299,7 @@ export default function BlogPost() {
                 <h2 className="text-2xl font-bold mb-4 font-heading">
                   Full Article Coming Soon
                 </h2>
-                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                <p className="text-black mb-8 max-w-2xl mx-auto">
                   We're working on bringing you the complete article with in-depth insights, actionable strategies, and real-world examples. Check back soon!
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1321,7 +1321,7 @@ export default function BlogPost() {
           {/* Connect with Bill Section */}
           <div className="mt-12 pt-8 border-t">
             <h3 className="text-2xl font-bold mb-4 font-heading">Connect with Bill</h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-black mb-6">
               Have questions or want to discuss this article? Connect with me on social media:
             </p>
             <div className="flex flex-wrap gap-4">
