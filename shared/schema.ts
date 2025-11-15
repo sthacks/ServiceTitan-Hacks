@@ -123,6 +123,19 @@ export const liveswitchDemoSubmissions = pgTable("liveswitch_demo_submissions", 
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const podcastEpisodes = pgTable("podcast_episodes", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  guid: text("guid").notNull().unique(),
+  title: text("title").notNull(),
+  description: text("description"),
+  pubDate: timestamp("pub_date").notNull(),
+  audioUrl: text("audio_url").notNull(),
+  duration: text("duration"),
+  imageUrl: text("image_url"),
+  link: text("link"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
 export const smartacROISubmissions = pgTable("smartac_roi_submissions", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   firstName: text("first_name").notNull(),
@@ -294,3 +307,5 @@ export type SmartACROISubmission = typeof smartacROISubmissions.$inferSelect;
 export type InsertSmartACROISubmission = z.infer<typeof insertSmartACROISubmissionSchema>;
 export type WinkROISubmission = typeof winkROISubmissions.$inferSelect;
 export type InsertWinkROISubmission = z.infer<typeof insertWinkROISubmissionSchema>;
+export type PodcastEpisode = typeof podcastEpisodes.$inferSelect;
+export type InsertPodcastEpisode = typeof podcastEpisodes.$inferInsert;
