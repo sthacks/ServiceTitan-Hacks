@@ -50,18 +50,30 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // Add meta tags middleware before serving HTML
-  app.use(metaTagsMiddleware);
-
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
     // Serve static files from public folder in development
     app.use(express.static("public"));
+    // Add meta tags middleware for dev (after static files)
+    app.use(metaTagsMiddleware);
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // In production, serve static files first, then meta tags middleware
+    // This ensures images and assets are served before HTML routes
+    const express_static = require('express').static;
+    const path = require('path');
+    const distPath = path.resolve(import.meta.dirname, "public");
+    app.use(express_static(distPath));
+    
+    // Add meta tags middleware for production (after static files)
+    app.use(metaTagsMiddleware);
+    
+    // Finally, serve index.html for all remaining routes
+    app.use("*", (_req, res) => {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    });
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
