@@ -77,8 +77,8 @@ function injectMetaTags(html: string, reqPath: string): string {
 }
 
 export async function metaTagsMiddleware(req: Request, res: Response, next: NextFunction) {
-  // Skip API calls and static assets
-  if (req.path.startsWith('/api') || req.path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|txt|xml)$/)) {
+  // Skip API calls and static assets (including images)
+  if (req.path.startsWith('/api') || req.path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|txt|xml|webp|avif)$/i)) {
     return next();
   }
 
@@ -86,8 +86,11 @@ export async function metaTagsMiddleware(req: Request, res: Response, next: Next
   const userAgent = req.get('user-agent') || '';
   const isCrawler = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot/i.test(userAgent);
   
-  // Also serve custom HTML for direct requests to blog posts and specific pages
-  const needsCustomMeta = isCrawler || req.path.startsWith('/blog/') || req.path.match(/\/(about|contact|tools|courses|resources|podcast|partners|pricebook-optimizer|smartac-roi-calculator|dashboard-course|fix-ugly-forms-course)/);
+  // For crawlers, serve custom meta for all pages
+  // For regular users, only serve custom meta for specific routes
+  const isSpecificRoute = req.path.match(/^\/blog\/[^.]+$/) || req.path.match(/^\/(about|contact|tools|courses|resources|podcast|partners|pricebook-optimizer|smartac-roi-calculator|dashboard-course|fix-ugly-forms-course|all-access|purchasing-platform)$/);
+  
+  const needsCustomMeta = isCrawler || isSpecificRoute;
   
   if (!needsCustomMeta) {
     return next();
