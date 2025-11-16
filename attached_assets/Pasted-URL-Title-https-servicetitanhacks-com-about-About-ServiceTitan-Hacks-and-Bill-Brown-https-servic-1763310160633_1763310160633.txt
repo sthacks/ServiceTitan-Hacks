@@ -1,0 +1,31 @@
+URL	Title
+https://servicetitanhacks.com/about	About ServiceTitan Hacks and Bill Brown
+https://servicetitanhacks.com/contact	Contact ServiceTitan Hacks
+https://servicetitanhacks.com/purchasing-platform	Contractor Purchasing Platform
+https://servicetitanhacks.com/tools	Contractor Tools and Automations for ServiceTitan
+https://servicetitanhacks.com/courses	Courses for ServiceTitan, AI and Automation
+https://servicetitanhacks.com/blog/dmaic-process-improvement-framework	DMAIC Framework for HVAC Contractors
+https://servicetitanhacks.com/fix-ugly-forms-course	Fix Your Ugly Forms Course
+https://servicetitanhacks.com/resources	Free HVAC and Contractor Resources
+https://servicetitanhacks.com/podcast	Home Service Business Hacks Podcast
+https://servicetitanhacks.com/pricebook-optimizer	Pricebook Optimizer for ServiceTitan
+https://servicetitanhacks.com/dashboard-course	ServiceTitan Dashboard Course
+https://servicetitanhacks.com/all-access	ServiceTitan Hacks All-Access Membership
+https://servicetitanhacks.com/blog	ServiceTitan Hacks Blog
+https://servicetitanhacks.com/	ServiceTitan Hacks for HVAC and Home Service Growth
+https://servicetitanhacks.com/partners	ServiceTitan Hacks Sponsors and Partners
+https://servicetitanhacks.com/blog/should-i-switch-to-servicetitan	Should I Switch to ServiceTitan
+https://servicetitanhacks.com/blog/stop-selling-other-peoples-equipment-build-your-brand	Stop Selling Other Peoples Equipment
+https://servicetitanhacks.com/blog/how-to-sell-saas-to-home-service-contractors	How to Sell SaaS to Home Service Contractors
+https://servicetitanhacks.com/smartac-roi-calculator	SmartAC ROI Calculator for HVAC Contractors
+https://servicetitanhacks.com/truck-roll-calculator	HVAC Truck Roll Cost Calculator
+https://servicetitanhacks.com/pricing-objections-landing	HVAC Pricing Objections Script and Guide
+https://servicetitanhacks.com/swimlane-charts-landing	Swimlane Chart Templates for Contractors
+https://servicetitanhacks.com/servicetitan-metrics-landing	Key ServiceTitan Metrics Every Contractor Needs
+https://servicetitanhacks.com/automation-playbook-landing	Automation Playbook for HVAC and ServiceTitan
+https://servicetitanhacks.com/dashboard-course-landing	ServiceTitan Dashboard Course
+https://servicetitanhacks.com/company-app-course	ServiceTitan Company App Course
+https://servicetitanhacks.com/make-integration-course	Make Integration Course for ServiceTitan
+https://servicetitanhacks.com/zapier-integration-course	Zapier Integration Course for ServiceTitan
+https://servicetitanhacks.com/job-summary-course	Job Summary Cleaner Course for ServiceTitan
+https://servicetitanhacks.com/blog/selling-hvac-systems-to-millennials-online-pricing	Selling HVAC to Millennials With Online Pricing

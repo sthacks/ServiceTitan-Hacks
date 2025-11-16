@@ -55,7 +55,8 @@ const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Business Operations",
     image: "/blog-build-your-brand.jpg",
-    slug: "stop-selling-other-peoples-equipment-build-your-brand"
+    slug: "stop-selling-other-peoples-equipment-build-your-brand",
+    ogImage: "https://servicetitanhacks.com/og-stop-selling-equipment.png"
   },
   {
     id: "2",
@@ -78,7 +79,8 @@ const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "ServiceTitan Tips",
     image: serviceTitanDashboardImage,
-    slug: "should-i-switch-to-servicetitan"
+    slug: "should-i-switch-to-servicetitan",
+    ogImage: "https://servicetitanhacks.com/og-should-i-switch.png"
   }
 ];
 
