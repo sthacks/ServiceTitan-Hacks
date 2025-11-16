@@ -56,8 +56,12 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    // Serve static files from public folder in development
-    app.use(express.static("public"));
+    // Serve static files from public folder in development with caching
+    app.use(express.static("public", {
+      maxAge: '1d',
+      etag: true,
+      lastModified: true
+    }));
     // Add meta tags middleware after static files
     app.use(metaTagsMiddleware);
     await setupVite(app, server);
@@ -71,14 +75,30 @@ app.use((req, res, next) => {
       );
     }
 
-    // 1. Serve static files (images, CSS, JS)
-    app.use(express.static(distPath));
+    // 1. Serve static files (images, CSS, JS) with aggressive caching
+    app.use(express.static(distPath, {
+      maxAge: '1y', // Cache for 1 year for production
+      immutable: true, // Assets are immutable (Vite adds hashes to filenames)
+      etag: true,
+      lastModified: true,
+      setHeaders: (res, path) => {
+        // Different caching strategies for different file types
+        if (path.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+        } else if (path.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/)) {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        } else if (path.match(/\.(js|css)$/)) {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+      }
+    }));
 
     // 2. Apply meta tags middleware (for HTML routes)
     app.use(metaTagsMiddleware);
 
     // 3. Fall through to index.html if file doesn't exist
     app.use("*", (_req, res) => {
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
       res.sendFile(path.resolve(distPath, "index.html"));
     });
   }
