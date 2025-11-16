@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,13 @@ export default function DashboardCourse() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="ServiceTitan Dashboard Course"
+        description="A DIY course for home service pros who want visibility — without expensive software. Go at your own pace with this step-by-step tutorial."
+        keywords="ServiceTitan dashboard, HVAC dashboard, DIY course, ServiceTitan training"
+        canonicalUrl="https://servicetitanhacks.com/dashboard-course"
+        ogImage="https://servicetitanhacks.com/og-dashboard-course.png"
+      />
       <Header />
       <main className="flex-1">
         {/* Hero Section */}

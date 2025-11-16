@@ -245,7 +245,7 @@ export default function SmartACROICalculator() {
         description="Calculate potential profit growth, truck roll savings and membership revenue improvements using SmartAC for your HVAC business. Free ROI tool."
         keywords="HVAC ROI calculator, SmartAC, membership revenue, truck roll savings, HVAC profit calculator"
         canonicalUrl="https://servicetitanhacks.com/smartac-roi-calculator"
-        ogImage="https://servicetitanhacks.com/og-smartac-roi-calculator.png"
+        ogImage="https://servicetitanhacks.com/og-smartac-calculator.png"
       />
       <Header />
       <main className="flex-1 bg-background">

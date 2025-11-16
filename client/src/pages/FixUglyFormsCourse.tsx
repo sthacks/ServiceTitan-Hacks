@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -42,6 +43,13 @@ export default function FixUglyFormsCourse() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Fix Your Ugly Forms Course"
+        description="Transform messy form submissions into polished job notes using ChatGPT and Zapier. Streamline your documentation process and save time."
+        keywords="ServiceTitan forms, AI automation, Zapier integration, ChatGPT, job notes"
+        canonicalUrl="https://servicetitanhacks.com/fix-ugly-forms-course"
+        ogImage="https://servicetitanhacks.com/og-fix-ugly-forms.png"
+      />
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
