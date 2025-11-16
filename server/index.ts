@@ -4,6 +4,8 @@ import { setupVite, serveStatic, log } from "./vite";
 import { metaTagsMiddleware } from "./metaTagsMiddleware";
 import cron from "node-cron";
 import { syncPodcastEpisodes } from "./podcastSync";
+import path from "path";
+import fs from "fs";
 
 const app = express();
 app.use(express.json());
@@ -56,21 +58,26 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     // Serve static files from public folder in development
     app.use(express.static("public"));
-    // Add meta tags middleware for dev (after static files)
+    // Add meta tags middleware after static files
     app.use(metaTagsMiddleware);
     await setupVite(app, server);
   } else {
-    // In production, serve static files first, then meta tags middleware
-    // This ensures images and assets are served before HTML routes
-    const express_static = require('express').static;
-    const path = require('path');
+    // In production: serve static files first, then meta tags, then catch-all
     const distPath = path.resolve(import.meta.dirname, "public");
-    app.use(express_static(distPath));
-    
-    // Add meta tags middleware for production (after static files)
+
+    if (!fs.existsSync(distPath)) {
+      throw new Error(
+        `Could not find the build directory: ${distPath}, make sure to build the client first`,
+      );
+    }
+
+    // 1. Serve static files (images, CSS, JS)
+    app.use(express.static(distPath));
+
+    // 2. Apply meta tags middleware (for HTML routes)
     app.use(metaTagsMiddleware);
-    
-    // Finally, serve index.html for all remaining routes
+
+    // 3. Fall through to index.html if file doesn't exist
     app.use("*", (_req, res) => {
       res.sendFile(path.resolve(distPath, "index.html"));
     });
