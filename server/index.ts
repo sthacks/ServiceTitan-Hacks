@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { metaTagsMiddleware } from "./metaTagsMiddleware";
 import cron from "node-cron";
 import { syncPodcastEpisodes } from "./podcastSync";
 
@@ -48,6 +49,9 @@ app.use((req, res, next) => {
     res.status(status).json({ message });
     throw err;
   });
+
+  // Add meta tags middleware before serving HTML
+  app.use(metaTagsMiddleware);
 
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
