@@ -28,6 +28,16 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function SmartACROICalculator() {
+  return (
+    <div>
+      <h1>Test - SmartAC ROI Calculator</h1>
+      <p>If you can see this, the route works!</p>
+    </div>
+  );
+}
+
+function SmartACROICalculatorOLD() {
+  console.log("SmartACROICalculator component rendering");
   const { toast } = useToast();
   const [inputs, setInputs] = useState({
     activeMembers: 500,
