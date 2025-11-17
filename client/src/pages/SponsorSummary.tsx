@@ -1,8 +1,20 @@
 import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { useEffect } from "react";
 
 export default function SponsorSummary() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#09090b]">
       <SEO 
@@ -214,6 +226,13 @@ export default function SponsorSummary() {
             </ul>
           </CardContent>
         </Card>
+
+        {/* Calendly inline widget */}
+        <div 
+          className="calendly-inline-widget mb-8" 
+          data-url="https://calendly.com/st-hacks/sponsorship-review-and-strategy-call?primary_color=ed164d" 
+          style={{ minWidth: '320px', height: '700px' }}
+        ></div>
       </div>
     </div>
   );
