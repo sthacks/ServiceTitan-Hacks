@@ -28,7 +28,6 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function SmartACROICalculator() {
-  console.log("SmartACROICalculator component rendering");
   const { toast } = useToast();
   const [inputs, setInputs] = useState({
     activeMembers: 500,
