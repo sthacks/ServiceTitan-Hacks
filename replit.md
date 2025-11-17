@@ -69,6 +69,20 @@ Interactive tool at /wink-roi-calculator that calculates time savings and cost r
 8. Stores submission in wink_roi_submissions table with all inputs and calculated results
 9. Results page displays 4 summary cards, 5-year projection chart, and detailed breakdown of savings calculations
 
+### Server-Side Meta Tags Middleware
+The `metaTagsMiddleware.ts` injects page-specific meta tags for social media crawlers (Facebook, Twitter, LinkedIn) and certain static pages:
+
+**IMPORTANT**: Only static/informational pages should use server-side meta injection. Interactive calculator pages (/smartac-roi-calculator, /pricebook-optimizer, /wink-roi-calculator, /truck-roll-calculator) must be excluded from the middleware to allow client-side rendering. Including them causes blank pages because the middleware serves raw HTML instead of letting Vite serve the React app.
+
+**Routes with server-side meta injection**:
+- Blog posts: `/blog/:slug`
+- Static pages: `/about`, `/contact`, `/tools`, `/courses`, `/resources`, `/podcast`, `/partners`, `/dashboard-course`, `/fix-ugly-forms-course`, `/all-access`, `/purchasing-platform`
+- All pages for social media crawlers (facebookexternalhit, twitterbot, linkedinbot, etc.)
+
+**Routes excluded (client-side rendered)**:
+- Calculator pages: `/smartac-roi-calculator`, `/pricebook-optimizer`, `/wink-roi-calculator`, `/truck-roll-calculator`
+- All other dynamic/interactive pages
+
 ### Podcast RSS Feed Integration
 Automated podcast episode synchronization system that keeps the Podcast page (/podcast) up-to-date with the latest episodes from servicetitanhacks.podbean.com:
 
