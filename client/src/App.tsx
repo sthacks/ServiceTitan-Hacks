@@ -45,6 +45,7 @@ import ContractorCommerceBookDemo from "@/pages/ContractorCommerceBookDemo";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
 import SMSTermsConditions from "@/pages/SMSTermsConditions";
+import SponsorSummary from "@/pages/SponsorSummary";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -97,6 +98,7 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
+      <Route path="/private/sponsor-summary-1125" component={SponsorSummary} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>

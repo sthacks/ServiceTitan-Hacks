@@ -8,6 +8,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   schemaData?: object;
+  noindex?: boolean;
 }
 
 export default function SEO({
@@ -18,6 +19,7 @@ export default function SEO({
   ogImage = "https://servicetitanhacks.com/og-image.png",
   ogType = "website",
   schemaData,
+  noindex = false,
 }: SEOProps) {
   useEffect(() => {
     document.title = title;
@@ -39,6 +41,15 @@ export default function SEO({
     
     if (keywords) {
       updateOrCreateMeta("keywords", keywords);
+    }
+
+    if (noindex) {
+      updateOrCreateMeta("robots", "noindex, nofollow");
+    } else {
+      const robotsMeta = document.querySelector('meta[name="robots"]');
+      if (robotsMeta) {
+        robotsMeta.remove();
+      }
     }
 
     updateOrCreateMeta("og:title", title, true);

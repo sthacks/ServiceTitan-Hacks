@@ -1,0 +1,110 @@
+Goal:
+Create a private, unlisted, noindex sponsor summary page on the website.
+The page must NOT appear in navigation, footer, sitemap, or search results.
+The only access method should be the direct URL.
+
+Page Requirements
+
+Page URL:
+/private/sponsor-summary-1125
+
+Page Title:
+ServiceTitan Hacks Sponsorship Summary
+
+Meta settings:
+Add this exact tag inside the head section:
+
+<meta name="robots" content="noindex, nofollow">
+
+
+This prevents indexing by Google, Bing, and AI search engines.
+
+Sitemap:
+Do not add this page to the sitemap.
+Ensure the platform setting for "exclude from sitemap" is enabled.
+
+Navigation:
+Do not add this page to any navigation menu, header, footer, or internal link.
+
+Branding:
+Use the standard ST Hacks brand styling:
+• Black background
+• White Oxygen font
+• Standard spacing used across the website
+
+Page Content (Add exactly as written)
+
+Header:
+ServiceTitan Hacks Sponsorship Summary
+
+Section: Audience
+Verified ServiceTitan contractors across the core home service trades.
+• 9,700 Facebook group members
+• 93 percent verified contractors
+• 1,800 email subscribers with 45 percent open rate
+• 22,000 monthly website visitors
+• 63,000 YouTube views
+• 278 podcast downloads
+• HVAC, plumbing, electrical, garage doors, roofing
+
+Section: What Sponsors Receive
+Consistent multi channel visibility across:
+• Facebook posts written for high engagement
+• Newsletter features
+• YouTube content
+• Podcast segments
+• Website placement with tracking
+• Monthly or quarterly reporting
+• Strategy calls
+• Category exclusivity for Elite and Diamond tiers
+
+Section: Sponsorship Tiers
+
+Diamond Partner
+13,900 per month
+Weekly cross channel coverage, retargeting ads on Meta and YouTube, category exclusivity
+
+Elite Partner
+9,600 per month
+Weekly Facebook and email features, category exclusivity, 8 to 10 qualified leads per month
+
+Featured Partner
+5,700 per month
+Two Facebook posts per month, monthly email, quarterly reporting
+
+Community Partner
+3,500 per month
+One Facebook post per month, quarterly email, website placement
+
+Six month minimum term.
+Ten percent discount for annual agreements.
+Five percent additional discount for paying the term in full.
+
+Section: Measurement and Reporting
+All sponsorship placements use tracked links. Monthly or quarterly reporting includes:
+• Post engagement
+• Email clicks
+• YouTube and podcast visibility
+• Website traffic
+• Lead intent signals
+• Attribution notes
+
+Section: Next Steps
+• Confirm tier
+• Complete sponsor agreement
+• Schedule kickoff call
+• Launch within 14 days
+
+Technical Requirements
+
+Create the page template.
+
+Add the meta noindex tag in the head.
+
+Confirm this page is excluded from sitemap.xml.
+
+Confirm no internal links point to this page.
+
+Publish the page and return the final URL.
+
+Confirm page loads correctly on mobile and desktop.
