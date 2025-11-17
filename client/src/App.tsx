@@ -98,7 +98,7 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
-      <Route path="/private/sponsor-summary-1125" component={SponsorSummary} />
+      <Route path="/private/sponsor-summary-finturf" component={SponsorSummary} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
