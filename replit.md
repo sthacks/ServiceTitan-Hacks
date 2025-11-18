@@ -1,7 +1,7 @@
 # ServiceTitan Hacks - Replit Configuration
 
 ## Overview
-ServiceTitan Hacks is a mobile-first marketing website designed for home service contractors. Its primary purpose is to help contractors leverage AI, automation, and ServiceTitan customizations to grow their businesses. The platform offers vetted tools, educational content, and a community, focusing on AI integrations like a pricebook optimizer, educational courses, and a resource library, all presented through a modern, conversion-optimized web experience.
+ServiceTitan Hacks is a mobile-first marketing website for home service contractors, aiming to facilitate business growth through AI, automation, and ServiceTitan customizations. The platform offers vetted tools, educational content, and a community focus, featuring AI integrations like a pricebook optimizer, educational courses, and a resource library within a modern, conversion-optimized web experience. Its ambition is to empower contractors to leverage technology for business expansion and efficiency.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
@@ -9,179 +9,52 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### Frontend
-The frontend is a React 18+ TypeScript Single Page Application (SPA) using Vite, Wouter for routing, and a mobile-first, accessible design system. It is built with Shadcn/ui (Radix UI primitives) and Tailwind CSS, supporting light/dark modes with a custom color palette (Primary Red, Deep Red, Dark Gray) and specific typography (Oxygen, Inter). State management uses TanStack Query for server state and React hooks for local state. The component architecture follows an Atomic design pattern, with SEO optimized through meta tags, structured data, semantic HTML, and internal linking.
+The frontend is a React 18+ TypeScript Single Page Application (SPA) utilizing Vite, Wouter for routing, and a mobile-first, accessible design system. It is built with Shadcn/ui (Radix UI primitives) and Tailwind CSS, supporting light/dark modes with a custom color palette (Primary Red, Deep Red, Dark Gray) and specific typography (Oxygen, Inter). State management employs TanStack Query for server state and React hooks for local state, following an Atomic design pattern. SEO is optimized via meta tags, structured data, semantic HTML, and internal linking.
 
 ### Backend
 The backend is an Express.js server on Node.js with TypeScript, providing a RESTful API. It includes public endpoints for subscriptions, contact forms, AI pricebook optimization, and resource lead capture. Authentication is handled by Replit Auth (OpenID Connect) with Passport.js and a PostgreSQL session store. Stripe is used for payment processing, with protected endpoints for payment intents and webhooks. Data validation is implemented using Zod schemas.
 
 ### AI Integration
-The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for the Pricebook Optimizer, transforming technical service descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
+The platform integrates live ChatGPT (GPT-4o) via Replit AI Integrations for features like the Pricebook Optimizer, transforming technical descriptions into homeowner-friendly language using custom prompts and HTML-formatted output.
 
 ### Data Storage
-Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, wink_demo_submissions, smartac_demo_submissions, smartac_roi_submissions, wink_roi_submissions, contractor_commerce_demo_submissions, liveswitch_demo_submissions, and podcast_episodes. Zod schemas are used for validation, and Drizzle Kit for migrations.
+Drizzle ORM is used with PostgreSQL (via @neondatabase/serverless). The database schema includes tables for users, email subscribers, contact submissions, resource leads, pricebook optimizations, course purchases, and various demo/ROI calculator submissions (wink_demo, smartac_demo, smartac_roi, wink_roi, contractor_commerce_demo, liveswitch_demo), and podcast_episodes. Zod schemas validate data, and Drizzle Kit manages migrations.
 
-### Demo Booking Systems
-The platform features four comprehensive demo booking systems with auto-save and abandoned form tracking:
+### Demo Booking Systems & ROI Calculators
+The platform features four distinct demo booking systems (Wink Toolbox, SmartAC, Contractor Commerce, LiveSwitch) with auto-save, abandoned form tracking, and specific post-submission behaviors (e.g., Calendly redirects, success toasts, LiveSwitch redirects). It also includes interactive ROI calculators for SmartAC and Wink, which provide personalized reports, email notifications, and lead capture. A private Sponsor ROI Calculator offers a transparent, data-backed tool for evaluating sponsor investments, accessible via direct URL only.
 
-**Wink Toolbox Demo**: Basic 3-field form (first name, last name, email) available via dialog on partner page. Features auto-save when email is entered (stored with completed=false), abandoned form email notification when dialog closes without submission, and on successful submission: marks completed=true, sends JSON email to bill@st-hacks.com, and redirects to Calendly with prefilled parameters (firstName, lastName, email, a1="ServiceTitan Hacks").
-
-**SmartAC Demo**: Comprehensive 13-field form displayed as dialog on partner page including:
-- Basic contact info: first name, last name, email, phone
-- Company details: company name, website URL, zip code
-- Business profile: role (dropdown), licensed HVAC contractor status (dropdown), growth timeline (dropdown)
-- Business metrics: membership agreements count (dropdown), annual revenue (radio buttons), service truck count (radio buttons)
-
-**Contractor Commerce Demo**: 7-field form displayed as dialog on partner page and standalone booking page at /partners/contractor-commerce/book-demo including:
-- Basic contact info: first name, last name, email, cell phone
-- Company details: company name, website URL (optional), number of techs (dropdown: 1-5, 6-10, 11-25, 26-50, 51-100, 100+)
-
-**LiveSwitch Demo**: Basic 3-field form (first name, last name, email) available via dialog on partner page. Features auto-save when email is entered (stored with completed=false), abandoned form email notification when dialog closes without submission, and on successful submission: marks completed=true, sends JSON email to bill@st-hacks.com, and redirects to LiveSwitch booking page (https://www.liveswitch.com/book-a-demo/) with prefilled email parameter.
-
-All four forms implement:
-- Auto-save: Partial data saved to database when email entered (1 second debounce, completed=false)
-- Abandoned form tracking: If dialog closes without submission, sends JSON-formatted email to bill@st-hacks.com with partial data and "ABANDONED_FORM" type
-- Complete submission: Marks completed=true and sends full submission email to bill@st-hacks.com for Zapier CRM integration
-
-Form behavior patterns:
-- Wink: Redirects to Calendly with prefilled parameters after submission
-- SmartAC: Shows success toast and closes dialog after submission; standalone booking page at /partners/smartac/book-demo supports query parameter prefilling (firstName, email)
-- Contractor Commerce: Shows success toast and closes dialog after submission
-- LiveSwitch: Redirects to LiveSwitch booking page with prefilled email parameter after submission
-
-### SmartAC ROI Calculator
-Interactive tool at /smartac-roi-calculator that calculates 5-year membership growth projections. When users calculate ROI:
-1. Dialog collects first name and email
-2. Sends branded ROI report email to user with ServiceTitan Hacks colors (Primary Red #ED254E, Deep Red #C1121F, Dark Gray #2D3142)
-3. Email includes personalized ROI metrics: 5-year net gain, ROI percentage, member growth, and incremental revenue
-4. CTA button "Book Your SmartAC Demo" links to /partners/smartac/book-demo with prefilled firstName and email query parameters
-5. Sends lead notification email to bill@st-hacks.com
-6. Stores submission in smartac_roi_submissions table with all inputs and calculated results
-
-### Wink ROI Calculator
-Interactive tool at /wink-roi-calculator that calculates time savings and cost reduction from automated invoicing. When users calculate ROI:
-1. Calculator accepts 8 inputs: invoices per month (50-1000), minutes per invoice (5-60), worker hourly pay ($10-50), mistake rate (1-20%), cost per mistake ($50-500), Wink monthly cost ($99-499), setup cost ($0-5000), and setup cost spread (6-24 months)
-2. Calculates ROI metrics: 70% time savings on invoicing, labor cost savings, mistake reduction savings, Year 1 net savings, and 5-year cumulative net gain
-3. Dialog collects first name and email before displaying results
-4. Sends branded ROI report email to user with ServiceTitan Hacks colors (Primary Red #ED254E, Deep Red #C1121F, Dark Gray #2D3142)
-5. Email includes personalized metrics: Year 1 net savings, 5-year cumulative, monthly time saved, and annual savings
-6. CTA button "Book Your Wink Demo" links to /partners/wink-toolbox/book-demo with prefilled firstName and email query parameters
-7. Sends lead notification email to bill@st-hacks.com
-8. Stores submission in wink_roi_submissions table with all inputs and calculated results
-9. Results page displays 4 summary cards, 5-year projection chart, and detailed breakdown of savings calculations
-
-### Sponsor ROI Calculator
-Private admin tool at /private/sponsor-roi-calculator that calculates transparent, data-backed ROI projections for ServiceTitan Hacks sponsors. Calculator combines verified performance metrics with sponsor sales economics:
-
-**ServiceTitan Hacks Inputs (Admin Provided)**:
-- monthly_impressions: Total monthly impressions across all channels
-- monthly_clicks: Total monthly clicks generated
-- monthly_leads: Total monthly qualified leads delivered
-- sponsor_monthly_cost: Sponsor's monthly investment amount
-
-**Sponsor Inputs (User Provided)**:
-- close_rate: Sales close rate (0-1, e.g., 0.15 = 15%)
-- avg_revenue_per_sale: Average revenue per closed deal
-- gross_margin_percent: Gross profit margin (0-1, e.g., 0.30 = 30%)
-- time_horizon_months: Projection time period (default: 6 months)
-- attribution_confidence_score: Confidence level 1-5 (default: 2)
-
-**Calculation Features**:
-- Derived Metrics: Automatically calculates CTR, landing conversion rate, and projected closed deals per month
-- Monthly Projection: Projects monthly revenue, profit, and ROI multiple
-- Time Horizon Projection: Calculates total deals, revenue, profit, and ROI over specified time period
-- Scenario Analysis: Three scenarios based on close rate - Conservative (50%), Expected (100%), Aggressive (150% capped at 100%)
-- JSON Export: Downloads complete calculation results in structured JSON format
-
-**Validation Rules**:
-- All rates must be between 0 and 1
-- sponsor_monthly_cost must be greater than 0 to compute ROI
-- time_horizon_months must be greater than 0
-- Displays clear error messages for invalid inputs
-- Prevents division by zero errors
-
-**Access**: Private page with noindex meta tag, not included in sitemap or navigation. Direct URL access only for internal sponsor evaluation.
-
-### Private Sponsor Summary Page
-Private page at /private/sponsor-summary-finturf providing comprehensive sponsorship information for ServiceTitan Hacks partners:
-
-**Content Sections**:
-- Audience metrics: 9,700 Facebook members, 93% verified contractors, 1,800 email subscribers (45% open rate), 22,000 monthly website visitors
-- What sponsors receive: Multi-channel visibility across Facebook, newsletter, YouTube, podcast, website placement with tracking
-- Sponsorship tiers: Diamond ($13,900/mo), Elite ($9,600/mo), Featured ($5,700/mo), Community ($3,500/mo)
-- Measurement and reporting: Post engagement, email clicks, YouTube/podcast visibility, website traffic, lead intent signals
-- Next steps: 4-step process from tier confirmation to launch
-- Calendly booking widget: Embedded inline widget for "Sponsorship Review and Strategy Call" with custom brand color (#ed164d)
-
-**Access**: Private page with noindex meta tag, not included in sitemap or navigation. Direct URL access only.
-
-### Server-Side Meta Tags Middleware
-The `metaTagsMiddleware.ts` injects page-specific meta tags for social media crawlers (Facebook, Twitter, LinkedIn) and certain static pages:
-
-**IMPORTANT**: Only static/informational pages should use server-side meta injection. Interactive calculator pages (/smartac-roi-calculator, /pricebook-optimizer, /wink-roi-calculator, /truck-roll-calculator) must be excluded from the middleware to allow client-side rendering. Including them causes blank pages because the middleware serves raw HTML instead of letting Vite serve the React app.
-
-**Routes with server-side meta injection**:
-- Blog posts: `/blog/:slug`
-- Static pages: `/about`, `/contact`, `/tools`, `/courses`, `/resources`, `/podcast`, `/partners`, `/dashboard-course`, `/fix-ugly-forms-course`, `/all-access`, `/purchasing-platform`
-- All pages for social media crawlers (facebookexternalhit, twitterbot, linkedinbot, etc.)
-
-**Routes excluded (client-side rendered)**:
-- Calculator pages: `/smartac-roi-calculator`, `/pricebook-optimizer`, `/wink-roi-calculator`, `/truck-roll-calculator`
-- All other dynamic/interactive pages
+### Server-Side Meta Tags
+A middleware injects page-specific meta tags for social media crawlers and static informational pages. Interactive calculator pages and dynamic content are excluded to ensure client-side rendering.
 
 ### Podcast RSS Feed Integration
-Automated podcast episode synchronization system that keeps the Podcast page (/podcast) up-to-date with the latest episodes from servicetitanhacks.podbean.com:
-
-**Technical Implementation**:
-- **RSS Parser**: Uses rss-parser package to fetch and parse Podbean RSS feed
-- **Database**: Episodes stored in podcast_episodes table with fields: id, guid (unique), title, description, pubDate, audioUrl, duration, imageUrl, link, createdAt
-- **Cron Job**: node-cron runs daily sync at 2 AM to check for new episodes
-- **Initial Sync**: On server start, runs automatic sync to populate any missing episodes
-- **Duplicate Prevention**: Uses guid field to prevent duplicate episodes from being added
-
-**Sync Process**:
-1. Fetches RSS feed from servicetitanhacks.podbean.com
-2. Parses episode metadata (title, description, audio URL, publish date, etc.)
-3. Checks each episode's guid against database to prevent duplicates
-4. Inserts only new episodes that don't already exist
-5. Returns count of episodes added
-
-**API Endpoints**:
-- GET `/api/podcast/episodes` - Returns all episodes ordered by pubDate DESC (public)
-- POST `/api/podcast/sync` - Manually triggers sync (requires authentication)
-
-**Frontend Display**:
-- Podcast page uses TanStack Query to fetch episodes from `/api/podcast/episodes`
-- Shows loading state while fetching
-- Displays episodes with formatted date, title, description, and "Listen Now" link
-- Empty state message if no episodes available
+An automated system synchronizes podcast episodes from servicetitanhacks.podbean.com daily using `node-cron`. Episodes are stored in a PostgreSQL database (podcast_episodes table), preventing duplicates via GUID, and are exposed via a public API endpoint for the frontend.
 
 ## External Dependencies
 
 ### UI & Styling
-- **Radix UI Primitives**: Accessible component primitives.
-- **Shadcn/ui**: Pre-built components based on Radix UI and Tailwind CSS.
+- **Radix UI Primitives**: Component primitives.
+- **Shadcn/ui**: Pre-built components.
 - **Tailwind CSS**: Utility-first CSS framework.
 - **Lucide React & React Icons**: Icon libraries.
 
 ### Forms & Data
 - **React Hook Form**: Form state management and validation.
 - **Zod**: Schema validation.
-- **TanStack Query**: Server state management and data fetching.
+- **TanStack Query**: Server state management.
 
 ### Database
 - **Drizzle ORM**: Type-safe ORM for PostgreSQL.
 - **@neondatabase/serverless**: Serverless PostgreSQL driver.
 
 ### Authentication & Payments
-- **Replit Auth**: OAuth-based authentication (Google, GitHub, email/password).
-- **Stripe**: Payment processing (Payment Intents API, Elements, webhooks).
-- **express-session & connect-pg-simple**: Session management with PostgreSQL store.
+- **Replit Auth**: OAuth-based authentication.
+- **Stripe**: Payment processing.
+- **express-session & connect-pg-simple**: Session management.
 
 ### External Services
 - **Resend**: Transactional email service.
-- **OpenAI**: AI-powered content transformation via Replit AI Integrations (GPT-4o).
+- **OpenAI**: AI-powered content transformation (GPT-4o).
 - **Google Analytics 4**: Web analytics.
 - **Google Fonts**: "Oxygen" and "Inter" font families.
-- **Facebook Groups, YouTube, Podcast platforms**: Community and content distribution.
-- **Podbean RSS Feed**: Podcast episode syndication (servicetitanhacks.podbean.com).
-- **node-cron**: Task scheduler for automated daily podcast sync.
+- **Podbean RSS Feed**: Podcast episode syndication.
+- **node-cron**: Task scheduler.
