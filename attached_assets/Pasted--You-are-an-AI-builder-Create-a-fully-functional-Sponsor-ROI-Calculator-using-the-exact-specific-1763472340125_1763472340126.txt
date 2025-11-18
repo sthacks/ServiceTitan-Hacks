@@ -1,0 +1,185 @@
+```
+You are an AI builder. Create a fully functional Sponsor ROI Calculator using the exact specifications below. Follow every instruction precisely. Do not add or remove variables. Validate all inputs. Prevent division by zero. Output results in structured JSON exactly as defined.
+
+------------------------------------
+SYSTEM GOAL
+Build a transparent, data backed ROI calculator for ServiceTitan Hacks sponsors. The calculator uses two sets of inputs:
+1. Verified performance metrics from ServiceTitan Hacks (admin supplied).
+2. Sales economics provided by the sponsor (user supplied).
+
+The calculator must never assume or guess unknown data such as demo counts or close rates. All sponsor side variables must be editable by the sponsor.
+
+------------------------------------
+REQUIRED INPUT VARIABLES
+
+A. SERVICE TITAN HACKS INPUTS (ADMIN PROVIDED)
+These variables must be included and required:
+- monthly_impressions (number)
+- monthly_clicks (number)
+- monthly_leads (number)
+- sponsor_monthly_cost (number)
+
+Optional ST variables that may be provided:
+- email_open_rate (0 to 1)
+- click_through_rate (0 to 1)  
+  If not provided, compute as monthly_clicks / monthly_impressions when monthly_impressions > 0.
+- landing_conversion_rate (0 to 1)  
+  If not provided, compute as monthly_leads / monthly_clicks when monthly_clicks > 0.
+
+B. SPONSOR INPUTS (USER PROVIDED)
+These variables must always be editable by the sponsor:
+- close_rate (0 to 1)
+- avg_revenue_per_sale (number)
+- gross_margin_percent (0 to 1)
+- time_horizon_months (integer, default 6)
+
+Optional sponsor variables:
+- sales_cycle_months (number)
+- churn_rate (0 to 1)
+
+Validate:
+- close_rate must be between 0 and 1.
+- gross_margin_percent must be between 0 and 1.
+- time_horizon_months must be greater than 0.
+- sponsor_monthly_cost must be greater than 0 for ROI calculations.
+
+------------------------------------
+DERIVED METRICS
+
+If click_through_rate is not provided and monthly_impressions > 0:
+    click_through_rate = monthly_clicks / monthly_impressions
+
+If landing_conversion_rate is not provided and monthly_clicks > 0:
+    landing_conversion_rate = monthly_leads / monthly_clicks
+
+projected_closed_deals_per_month = monthly_leads * close_rate
+
+------------------------------------
+CORE ROI CALCULATIONS
+
+projected_monthly_revenue = projected_closed_deals_per_month * avg_revenue_per_sale
+
+projected_monthly_profit = projected_monthly_revenue * gross_margin_percent
+
+monthly_roi_multiple = projected_monthly_profit / sponsor_monthly_cost
+
+For time horizon (time_horizon_months):
+
+projected_closed_deals_total = projected_closed_deals_per_month * time_horizon_months
+
+projected_revenue_total = projected_monthly_revenue * time_horizon_months
+
+projected_profit_total = projected_monthly_profit * time_horizon_months
+
+roi_multiple_total = projected_profit_total / (sponsor_monthly_cost * time_horizon_months)
+
+Prevent division by zero. Return a clear error message instead if sponsor_monthly_cost is 0 or missing.
+
+------------------------------------
+SCENARIO MODELING
+
+Use the sponsor supplied close_rate as base_close_rate.
+
+Compute three scenarios:
+
+close_rate_conservative = base_close_rate * 0.5  
+close_rate_expected     = base_close_rate  
+close_rate_aggressive   = min(base_close_rate * 1.5, 1.0)
+
+For each scenario X, compute:
+- projected_closed_deals_per_month_X
+- projected_monthly_revenue_X
+- projected_monthly_profit_X
+- monthly_roi_multiple_X
+
+------------------------------------
+ATTRIBUTION CONFIDENCE SCORE
+
+Accept:
+- attribution_confidence_score (1 to 5)
+
+If none provided, default to 2.
+
+This score does not affect calculations. It must appear in the final JSON output.
+
+------------------------------------
+JSON OUTPUT FORMAT (REQUIRED)
+
+Return the final output in this exact structure:
+
+{
+  "inputs": {
+    "monthly_impressions": ...,
+    "monthly_clicks": ...,
+    "monthly_leads": ...,
+    "sponsor_monthly_cost": ...,
+    "close_rate": ...,
+    "avg_revenue_per_sale": ...,
+    "gross_margin_percent": ...,
+    "time_horizon_months": ...,
+    "attribution_confidence_score": ...
+  },
+  "derived_metrics": {
+    "click_through_rate": ...,
+    "landing_conversion_rate": ...,
+    "projected_closed_deals_per_month": ...
+  },
+  "monthly_projection": {
+    "projected_monthly_revenue": ...,
+    "projected_monthly_profit": ...,
+    "monthly_roi_multiple": ...
+  },
+  "time_horizon_projection": {
+    "projected_closed_deals_total": ...,
+    "projected_revenue_total": ...,
+    "projected_profit_total": ...,
+    "roi_multiple_total": ...
+  },
+  "scenarios": {
+    "conservative": {
+      "close_rate": ...,
+      "projected_closed_deals_per_month": ...,
+      "projected_monthly_revenue": ...,
+      "projected_monthly_profit": ...,
+      "monthly_roi_multiple": ...
+    },
+    "expected": {
+      "close_rate": ...,
+      "projected_closed_deals_per_month": ...,
+      "projected_monthly_revenue": ...,
+      "projected_monthly_profit": ...,
+      "monthly_roi_multiple": ...
+    },
+    "aggressive": {
+      "close_rate": ...,
+      "projected_closed_deals_per_month": ...,
+      "projected_monthly_revenue": ...,
+      "projected_monthly_profit": ...,
+      "monthly_roi_multiple": ...
+    }
+  }
+}
+
+------------------------------------
+VALIDATION RULES
+
+If any required input is missing:
+Return: "Error: Missing required input: [variable]."
+
+If any rate is outside 0 to 1:
+Return: "Error: Value out of range: [variable]. Rates must be between 0 and 1."
+
+If division by zero would occur:
+Return: "Error: sponsor_monthly_cost must be greater than 0 to compute ROI."
+
+------------------------------------
+OUTPUT REQUIREMENTS
+
+1. Perform all calculations.  
+2. Return the JSON object exactly in the required structure.  
+3. Do not add commentary, logs, or explanations.  
+4. Only output the structured JSON or a structured error message.
+
+------------------------------------
+BUILD IT NOW.
+```

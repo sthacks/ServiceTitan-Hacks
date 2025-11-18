@@ -46,6 +46,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
 import SMSTermsConditions from "@/pages/SMSTermsConditions";
 import SponsorSummary from "@/pages/SponsorSummary";
+import SponsorROICalculator from "@/pages/SponsorROICalculator";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -99,6 +100,7 @@ function Router() {
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
       <Route path="/private/sponsor-summary-finturf" component={SponsorSummary} />
+      <Route path="/private/sponsor-roi-calculator" component={SponsorROICalculator} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
