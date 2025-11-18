@@ -56,7 +56,7 @@ export default function AclarifySponsorSummary() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>Acquire 30 new customers in 2025</span>
+                <span>Acquire 30 new customers in the next 12 months</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
@@ -97,7 +97,7 @@ export default function AclarifySponsorSummary() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>9,700 plus contractors, 93 percent verified</span>
+                <span>9,700 members, 93 percent are contractors</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
