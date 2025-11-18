@@ -1,0 +1,181 @@
+Create a private, unlisted summary page for the sponsor Aclarify at the URL path:
+
+/private/sponsor-summary/aclarify
+
+
+This page will be used after the discovery call to summarize goals, metrics, and the recommended sponsorship tier.
+
+INPUTS NEEDED FROM USER
+
+Ask the user for the following fields:
+
+Discovery Call Summary (raw text or bullet points)
+
+Sponsor Goals
+
+Recommended Sponsorship Tier (Elite, Featured, or Community)
+
+Aclarify Logo URL (optional)
+
+Additional Notes (optional)
+
+Calendly link for next meeting
+
+If the user does not provide optional fields, leave those elements blank in the page.
+
+Sponsor name is pre-set:
+Aclarify
+
+OUTPUT FILE
+
+Generate an .html file.
+
+Save it at:
+
+/private/sponsor-summary/aclarify.html
+
+
+Ensure the page is accessible at that path when deployed.
+
+STYLE REQUIREMENTS
+
+Black background
+
+White text
+
+Font: Oxygen
+
+Max width 900px, centered
+
+Responsive design
+
+No emojis
+
+CSS embedded inside <style> tag
+
+No external JS
+
+PAGE STRUCTURE
+
+The agent must generate the page using the exact sections below.
+
+1. Header Section
+
+Include:
+
+Aclarify logo if provided
+
+Title: Sponsor Summary: Aclarify
+
+Subtitle: Prepared by ServiceTitan Hacks
+
+2. Executive Summary
+
+Use the user’s discovery call summary, formatted cleanly.
+
+3. Sponsor Goals
+
+Insert the user-provided goals.
+
+4. Audience Overview
+
+Insert this exact block:
+
+<h2>Who You Reach</h2>
+<ul>
+  <li>9,700 plus contractors, 93 percent verified</li>
+  <li>7,600 HVAC and plumbing</li>
+  <li>1,000 electrical</li>
+  <li>Strong base in garage doors, roofing, and specialty trades</li>
+  <li>1,800 plus email subscribers, 45 percent open rate</li>
+  <li>63,000 plus YouTube views</li>
+  <li>22,000 monthly website visitors</li>
+  <li>Audience is owners, operations leaders, and decision makers</li>
+</ul>
+
+5. Why ST Hacks Works
+
+Insert:
+
+<h2>Why This Works</h2>
+<ul>
+  <li>Built by a contractor, trusted by contractors</li>
+  <li>Higher intent than ads or conferences</li>
+  <li>Trackable performance and real engagement</li>
+  <li>Monthly performance reporting</li>
+</ul>
+
+6. Qualified Lead Definition
+<h2>What Counts as a Qualified Lead</h2>
+<p>Decision maker, currently using ServiceTitan, expressed interest through comment, email response, DM introduction, or opt in. Contact information must include name and email or a calendar link.</p>
+
+7. Performance Examples
+<h2>Examples of Results</h2>
+<ul>
+  <li>Wink Toolbox: 54 opt ins from one automation playbook post</li>
+  <li>SmartAC: Consistent inbound demos in first 3 weeks</li>
+  <li>Volca.ai: Reported ST Hacks as their number one lead source</li>
+  <li>Free 2 Grow: High intent conversations from ST users exploring call center automation</li>
+</ul>
+
+8. Sponsorship Tiers
+
+Include all three tiers exactly as written:
+
+<h2>Sponsorship Tiers</h2>
+
+<h3>Elite - 9,600 per month</h3>
+<ul>
+  <li>Weekly exposure across all core channels</li>
+  <li>8 to 10 qualified leads typical per month</li>
+  <li>Category exclusive</li>
+  <li>6 month minimum commitment</li>
+</ul>
+
+<h3>Featured - 5,700 per month</h3>
+<ul>
+  <li>Two Facebook posts per month</li>
+  <li>Cross channel exposure in Email and YouTube</li>
+  <li>Quarterly performance report</li>
+  <li>6 month minimum commitment</li>
+</ul>
+
+<h3>Community - 3,500 per month</h3>
+<ul>
+  <li>One Facebook post per month</li>
+  <li>Quarterly email feature</li>
+  <li>Shared sponsor section on website</li>
+  <li>6 month minimum commitment</li>
+</ul>
+
+9. Discounts
+<h2>Discount Options</h2>
+<ul>
+  <li>5 percent discount if paid in full for 6 months</li>
+  <li>10 percent discount if paid in full for 1 year</li>
+  <li>Discounts can be stacked</li>
+</ul>
+
+10. Next Steps
+
+Insert:
+
+<h2>Next Steps</h2>
+<p>Based on your goals, the recommended tier is <strong>{recommended-tier}</strong>.</p>
+<p>Schedule the next call here: <a href="{calendly-url}">{calendly-url}</a></p>
+
+
+The agent must replace {recommended-tier} and {calendly-url} based on user inputs.
+
+TECHNICAL STEPS THE AGENT MUST FOLLOW
+
+Create directory if missing:
+/private/sponsor-summary/
+
+Create aclarify.html using the structure above.
+
+Use kebab-case for file name: aclarify.html
+
+Return the final URL to the user:
+
+https://{project-domain}/private/sponsor-summary/aclarify.html
