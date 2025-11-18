@@ -69,6 +69,51 @@ Interactive tool at /wink-roi-calculator that calculates time savings and cost r
 8. Stores submission in wink_roi_submissions table with all inputs and calculated results
 9. Results page displays 4 summary cards, 5-year projection chart, and detailed breakdown of savings calculations
 
+### Sponsor ROI Calculator
+Private admin tool at /private/sponsor-roi-calculator that calculates transparent, data-backed ROI projections for ServiceTitan Hacks sponsors. Calculator combines verified performance metrics with sponsor sales economics:
+
+**ServiceTitan Hacks Inputs (Admin Provided)**:
+- monthly_impressions: Total monthly impressions across all channels
+- monthly_clicks: Total monthly clicks generated
+- monthly_leads: Total monthly qualified leads delivered
+- sponsor_monthly_cost: Sponsor's monthly investment amount
+
+**Sponsor Inputs (User Provided)**:
+- close_rate: Sales close rate (0-1, e.g., 0.15 = 15%)
+- avg_revenue_per_sale: Average revenue per closed deal
+- gross_margin_percent: Gross profit margin (0-1, e.g., 0.30 = 30%)
+- time_horizon_months: Projection time period (default: 6 months)
+- attribution_confidence_score: Confidence level 1-5 (default: 2)
+
+**Calculation Features**:
+- Derived Metrics: Automatically calculates CTR, landing conversion rate, and projected closed deals per month
+- Monthly Projection: Projects monthly revenue, profit, and ROI multiple
+- Time Horizon Projection: Calculates total deals, revenue, profit, and ROI over specified time period
+- Scenario Analysis: Three scenarios based on close rate - Conservative (50%), Expected (100%), Aggressive (150% capped at 100%)
+- JSON Export: Downloads complete calculation results in structured JSON format
+
+**Validation Rules**:
+- All rates must be between 0 and 1
+- sponsor_monthly_cost must be greater than 0 to compute ROI
+- time_horizon_months must be greater than 0
+- Displays clear error messages for invalid inputs
+- Prevents division by zero errors
+
+**Access**: Private page with noindex meta tag, not included in sitemap or navigation. Direct URL access only for internal sponsor evaluation.
+
+### Private Sponsor Summary Page
+Private page at /private/sponsor-summary-finturf providing comprehensive sponsorship information for ServiceTitan Hacks partners:
+
+**Content Sections**:
+- Audience metrics: 9,700 Facebook members, 93% verified contractors, 1,800 email subscribers (45% open rate), 22,000 monthly website visitors
+- What sponsors receive: Multi-channel visibility across Facebook, newsletter, YouTube, podcast, website placement with tracking
+- Sponsorship tiers: Diamond ($13,900/mo), Elite ($9,600/mo), Featured ($5,700/mo), Community ($3,500/mo)
+- Measurement and reporting: Post engagement, email clicks, YouTube/podcast visibility, website traffic, lead intent signals
+- Next steps: 4-step process from tier confirmation to launch
+- Calendly booking widget: Embedded inline widget for "Sponsorship Review and Strategy Call" with custom brand color (#ed164d)
+
+**Access**: Private page with noindex meta tag, not included in sitemap or navigation. Direct URL access only.
+
 ### Server-Side Meta Tags Middleware
 The `metaTagsMiddleware.ts` injects page-specific meta tags for social media crawlers (Facebook, Twitter, LinkedIn) and certain static pages:
 
