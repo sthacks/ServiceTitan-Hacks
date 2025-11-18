@@ -1,0 +1,183 @@
+Create a private, unlisted HTML sponsor summary page for Aclarify using the details provided. The page must be created at the path:
+
+/private/sponsor-summary/aclarify.html
+
+
+and must load at the URL:
+
+/private/sponsor-summary/aclarify
+
+1. DIRECTIVES FOR THE AGENT
+
+Follow these instructions exactly:
+
+Create folder if missing:
+/private/sponsor-summary/
+
+Generate a complete, mobile-responsive HTML file using the layout and content below.
+
+Save the final file as:
+/private/sponsor-summary/aclarify.html
+
+Use only:
+
+Black background (#000000)
+
+White text (#FFFFFF)
+
+Font: Oxygen, sans-serif
+
+Max width: 900px, centered
+
+Responsive design
+
+No emojis
+
+No external JS frameworks
+
+Styling must be inside a <style> tag or inline
+
+After generating the file, output the final URL:
+
+https://{project-domain}/private/sponsor-summary/aclarify
+
+2. PAGE CONTENT TO INSERT EXACTLY AS WRITTEN
+
+Use the following full content, word-for-word.
+
+HTML STRUCTURE FOR THE PAGE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor Summary: Aclarify</title>
+<style>
+  body {
+    background: #000000;
+    color: #FFFFFF;
+    font-family: Oxygen, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+  }
+  h1, h2, h3 {
+    font-weight: 600;
+    margin-top: 40px;
+  }
+  p, li {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  a {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+  .logo {
+    max-width: 220px;
+    margin-bottom: 30px;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Sponsor Summary: Aclarify</h1>
+<p>Prepared by ServiceTitan Hacks</p>
+
+<h2>Executive Summary</h2>
+<p>Aclarify is launching WorkBelt, a customizable online scheduling and analytics platform for ServiceTitan users. The team has deep technical and operational experience, including five years of ST API development. They currently have one customer live, with full v1 of the product completed in late 2024.</p>
+
+<p>Aclarify’s primary challenge is generating qualified leads and demos. Outbound channels have produced extremely low engagement, the ServiceTitan marketplace has produced no leads, and LinkedIn campaigns have been ineffective for reaching 5M to 50M contractors. They are seeking a reliable, high-intent channel to get in front of verified ServiceTitan users.</p>
+
+<p>The founders resonated strongly with analytics-driven messaging, problem-awareness content, and targeted opt-in campaigns. They acknowledged that contractors do not understand the scheduling-conversion problem, and need education before demo readiness. They also recognized that the ST Hacks audience aligns perfectly with their ICP and buying behavior.</p>
+
+<h2>Sponsor Goals</h2>
+<ul>
+  <li>Acquire 30 new customers in 2025</li>
+  <li>Reach a 250K annual run rate</li>
+  <li>Generate 3 to 5 demos per week</li>
+  <li>Establish a reliable inbound lead engine</li>
+  <li>Create messaging that builds problem awareness</li>
+  <li>Validate product-market fit with mid-size ST contractors</li>
+  <li>Expand awareness within the ServiceTitan ecosystem</li>
+</ul>
+
+<h2>Who You Reach</h2>
+<ul>
+  <li>9,700 plus contractors, 93 percent verified</li>
+  <li>7,600 HVAC and plumbing</li>
+  <li>1,000 electrical</li>
+  <li>Strong base in garage doors, roofing, and specialty trades</li>
+  <li>1,800 plus email subscribers, 45 percent open rate</li>
+  <li>63,000 plus YouTube views</li>
+  <li>22,000 monthly website visitors</li>
+  <li>Audience is owners, operations leaders, and decision makers</li>
+</ul>
+
+<h2>Why This Works</h2>
+<ul>
+  <li>Built by a contractor, trusted by contractors</li>
+  <li>Higher intent than ads or conferences</li>
+  <li>Trackable performance and real engagement</li>
+  <li>Monthly performance reporting</li>
+</ul>
+
+<h2>What Counts as a Qualified Lead</h2>
+<p>Decision maker, currently using ServiceTitan, expressed interest through comment, email response, DM introduction, or opt in. Contact information must include name and email or a calendar link.</p>
+
+<h2>Examples of Results</h2>
+<ul>
+  <li>Wink Toolbox: 54 opt ins from one automation playbook post</li>
+  <li>SmartAC: Consistent inbound demos in first 3 weeks</li>
+  <li>Volca.ai: Reported ST Hacks as their number one lead source</li>
+  <li>Free 2 Grow: High intent conversations from ST users exploring call center automation</li>
+</ul>
+
+<h2>Sponsorship Tiers</h2>
+
+<h3>Elite - 9,600 per month</h3>
+<ul>
+  <li>Weekly exposure across all core channels</li>
+  <li>8 to 10 qualified leads typical per month</li>
+  <li>Category exclusive</li>
+  <li>6 month minimum commitment</li>
+</ul>
+
+<h3>Featured - 5,700 per month</h3>
+<ul>
+  <li>Two Facebook posts per month</li>
+  <li>Cross channel exposure in Email and YouTube</li>
+  <li>Quarterly performance report</li>
+  <li>6 month minimum commitment</li>
+</ul>
+
+<h3>Community - 3,500 per month</h3>
+<ul>
+  <li>One Facebook post per month</li>
+  <li>Quarterly email feature</li>
+  <li>Shared sponsor section on website</li>
+  <li>6 month minimum commitment</li>
+</ul>
+
+<h2>Discount Options</h2>
+<ul>
+  <li>5 percent discount if paid in full for 6 months</li>
+  <li>10 percent discount if paid in full for 1 year</li>
+  <li>Discounts can be stacked</li>
+</ul>
+
+<h2>Next Steps</h2>
+<p>Schedule your sponsorship review and strategy call here:</p>
+<p><a href="https://calendly.com/st-hacks/sponsorship-review-and-strategy-call">https://calendly.com/st-hacks/sponsorship-review-and-strategy-call</a></p>
+
+</div>
+</body>
+</html>
