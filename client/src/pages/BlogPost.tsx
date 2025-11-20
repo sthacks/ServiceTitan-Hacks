@@ -334,6 +334,27 @@ const blogPostContent: Record<string, JSX.Element> = {
         And the contractors who deliver that trust online will dominate the next era of residential HVAC.
       </p>
 
+      <div className="bg-gradient-to-br from-[#ED254E]/10 to-[#C1121F]/10 border-l-4 border-[#ED254E] rounded-lg p-8 my-12">
+        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+          Ready to Add Online Pricing to Your HVAC Business?
+        </h3>
+        <p className="text-lg mb-6">
+          Learn how Contractor Commerce enables HVAC contractors to offer transparent online pricing that builds trust with millennial homeowners, increases lead volume, and gives you the early-adopter advantage.
+        </p>
+        <a 
+          href="https://go.st-hacks.cc/contractor-commerce" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-6 py-3 rounded-md transition-colors"
+          data-testid="link-contractor-commerce-cta"
+        >
+          Learn More About Online Pricing
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
       <h2>External Sources</h2>
       <ol>
         <li>Statista. "Online research before purchase among U.S. consumers." <a href="https://www.statista.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.statista.com</a></li>
