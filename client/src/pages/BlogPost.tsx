@@ -247,7 +247,7 @@ const blogPostContent: Record<string, JSX.Element> = {
         <li>self-schedulers</li>
       </ul>
 
-      <p>These tools increase trust and dramatically improve lead volume.</p>
+      <p>These tools increase trust and dramatically improve lead volume. For example, platforms like <a href="https://go.st-hacks.cc/contractor-commerce" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-1">Contractor Commerce</a> enable HVAC contractors to offer instant online pricing for system replacements, allowing homeowners to configure and price their system without requiring a phone call.</p>
 
       <p className="font-semibold">Fact:</p>
       <p>
@@ -283,7 +283,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       </p>
 
       <p>
-        Putting it online simply mirrors your real-world expertise.
+        Putting it online simply mirrors your real-world expertise. Some contractors are already implementing these principles through online pricing systems that guide homeowners through the full decision-making process digitally. (<a href="https://go.st-hacks.cc/contractor-commerce" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-2">Learn more about online pricing for HVAC contractors</a>)
       </p>
 
       <h2>7. Online Pricing Will Become Universal. Early Adopters Win.</h2>
@@ -305,11 +305,12 @@ const blogPostContent: Record<string, JSX.Element> = {
         <li>Solar installers use it.</li>
         <li>Roofing companies use it.</li>
         <li>Window and siding companies use it.</li>
+        <li>HVAC contractors are beginning to use it.</li>
       </ul>
 
       <p>The HVAC industry will follow.</p>
 
-      <p>The only question is who gets the early-adopter advantage.</p>
+      <p>The only question is who gets the early-adopter advantage. Forward-thinking contractors are already deploying online pricing systems that let homeowners configure, compare, and price HVAC systems on their own terms—building trust before the first phone call ever happens.</p>
 
       <h2>Conclusion: Millennials Aren't the Future Buyer — They're the Current Buyer</h2>
 
