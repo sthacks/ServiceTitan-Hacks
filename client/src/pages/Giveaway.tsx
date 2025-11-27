@@ -73,7 +73,7 @@ export default function Giveaway() {
       />
 
       {/* Hero Section */}
-      <section className="bg-white py-10 px-4">
+      <section className="py-10 px-4" style={{ background: 'linear-gradient(to bottom, #09090b, #1a1b20)' }}>
         <div className="container mx-auto max-w-4xl text-center">
           <img 
             src={logoImage} 
@@ -82,14 +82,14 @@ export default function Giveaway() {
             data-testid="img-logo"
           />
           <h1 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             style={{ fontFamily: 'Oxygen, sans-serif' }}
             data-testid="text-hero-title"
           >
             Join the ServiceTitan Hacks Newsletter Giveaway
           </h1>
           <h2 
-            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
             data-testid="text-hero-subtitle"
           >
             Get weekly AI workflows, ServiceTitan automations, and contractor growth strategies. Enter the giveaway by subscribing below.
