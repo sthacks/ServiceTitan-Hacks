@@ -143,7 +143,7 @@ export const metadata: Record<string, PageMetadata> = {
   // Giveaway Page
   "/giveaway": {
     title: "ServiceTitan Hacks Newsletter Giveaway",
-    description: "Enter the ServiceTitan Hacks newsletter giveaway for a chance to win AirPods 4, YETI Hard Cooler, Solo Stove Fire Pit, or MacBook Air. Join 9,700+ contractors.",
+    description: "Sign up for the newsletter and help unlock four major prize tiers, including AirPods 4, a YETI cooler, a Solo Stove fire pit, and a MacBook Air. One winner per unlocked tier. Join now and be part of the momentum.",
     ogImage: "https://servicetitanhacks.com/og-giveaway.png",
   },
   
