@@ -8,7 +8,10 @@ import soloStoveImage from "@assets/Untitled design - 3_1764262891991.png";
 import macbookImage from "@assets/Untitled design - 4_1764262891991.png";
 
 export default function Giveaway() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
@@ -20,7 +23,12 @@ export default function Giveaway() {
       const res = await fetch("/api/giveaway", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ 
+          firstName, 
+          lastName, 
+          email,
+          companyName: companyName || undefined
+        })
       });
 
       const data = await res.json();
@@ -28,7 +36,10 @@ export default function Giveaway() {
       if (res.ok) {
         setStatus("success");
         setStatusMessage(data.message || "You're entered. Check your email.");
+        setFirstName("");
+        setLastName("");
         setEmail("");
+        setCompanyName("");
       } else {
         setStatus("error");
         setStatusMessage(data.message || "There was an issue. Please try again.");
@@ -160,9 +171,43 @@ export default function Giveaway() {
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-4" data-testid="form-giveaway">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="firstName" className="block text-black font-medium mb-2">
+                  First name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ED254E] focus:border-transparent text-black"
+                  placeholder="John"
+                  data-testid="input-first-name"
+                />
+              </div>
+              <div>
+                <label htmlFor="lastName" className="block text-black font-medium mb-2">
+                  Last name
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ED254E] focus:border-transparent text-black"
+                  placeholder="Smith"
+                  data-testid="input-last-name"
+                />
+              </div>
+            </div>
             <div>
               <label htmlFor="email" className="block text-black font-medium mb-2">
-                Enter your email:
+                Email
               </label>
               <input
                 type="email"
@@ -174,6 +219,21 @@ export default function Giveaway() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ED254E] focus:border-transparent text-black"
                 placeholder="your@email.com"
                 data-testid="input-email"
+              />
+            </div>
+            <div>
+              <label htmlFor="companyName" className="block text-black font-medium mb-2">
+                Company name <span className="text-gray-500 font-normal">(optional)</span>
+              </label>
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ED254E] focus:border-transparent text-black"
+                placeholder="Your Company"
+                data-testid="input-company-name"
               />
             </div>
             <button

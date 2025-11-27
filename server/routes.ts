@@ -324,7 +324,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Giveaway newsletter signup endpoint
   app.post("/api/giveaway", async (req, res) => {
     try {
-      const { email } = req.body;
+      const { firstName, lastName, email, companyName } = req.body;
+      
+      if (!firstName || typeof firstName !== 'string' || firstName.trim() === '') {
+        return res.status(400).json({ 
+          message: "Please provide your first name." 
+        });
+      }
+      
+      if (!lastName || typeof lastName !== 'string' || lastName.trim() === '') {
+        return res.status(400).json({ 
+          message: "Please provide your last name." 
+        });
+      }
       
       if (!email || typeof email !== 'string' || !email.includes('@')) {
         return res.status(400).json({ 
@@ -337,7 +349,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          email: email,
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email.trim(),
+          companyName: companyName ? companyName.trim() : null,
           source: "Newsletter Giveaway",
           timestamp: new Date().toISOString()
         };
