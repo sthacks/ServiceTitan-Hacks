@@ -2,6 +2,10 @@ import { useState } from "react";
 import SEO from "@/components/SEO";
 import { Check } from "lucide-react";
 import logoImage from "@assets/secondary logo_1760895642629.png";
+import airpodsImage from "@assets/Untitled design - 1_1764262891991.png";
+import yetiImage from "@assets/Untitled design - 2_1764262891991.png";
+import soloStoveImage from "@assets/Untitled design - 3_1764262891991.png";
+import macbookImage from "@assets/Untitled design - 4_1764262891991.png";
 
 export default function Giveaway() {
   const [email, setEmail] = useState("");
@@ -36,10 +40,10 @@ export default function Giveaway() {
   };
 
   const prizeTiers = [
-    { tier: 1, unlock: 100, prize: "Apple AirPods 4" },
-    { tier: 2, unlock: 250, prize: "YETI Hard Cooler" },
-    { tier: 3, unlock: 500, prize: "Solo Stove Infinity Flame Fire Pit" },
-    { tier: 4, unlock: 1000, prize: "Apple MacBook Air 13 inch" }
+    { tier: 1, unlock: 100, prize: "Apple AirPods 4", image: airpodsImage },
+    { tier: 2, unlock: 250, prize: "YETI Hard Cooler", image: yetiImage },
+    { tier: 3, unlock: 500, prize: "Solo Stove Infinity Flame Fire Pit", image: soloStoveImage },
+    { tier: 4, unlock: 1000, prize: "Apple MacBook Air 13 inch", image: macbookImage }
   ];
 
   const newsletterBenefits = [
@@ -113,26 +117,28 @@ export default function Giveaway() {
           >
             Giveaway Prize Tiers
           </h2>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {prizeTiers.map((tier) => (
               <div 
                 key={tier.tier}
-                className="bg-white border border-[#DDD] rounded-2xl p-[18px]"
+                className="bg-white border border-[#DDD] rounded-2xl p-6 flex flex-col items-center text-center"
                 data-testid={`card-tier-${tier.tier}`}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                  <div className="flex items-center gap-3">
-                    <span className="bg-[#ED254E] text-white font-bold px-3 py-1 rounded-lg text-sm">
-                      Tier {tier.tier}
-                    </span>
-                    <span className="text-gray-600 font-medium">
-                      Unlocks at {tier.unlock.toLocaleString()} new subscribers
-                    </span>
-                  </div>
-                  <span className="text-black font-semibold text-lg">
-                    Prize: {tier.prize}
-                  </span>
-                </div>
+                <span className="bg-[#ED254E] text-white font-bold px-4 py-1.5 rounded-lg text-sm mb-4">
+                  Tier {tier.tier}
+                </span>
+                <img 
+                  src={tier.image} 
+                  alt={tier.prize}
+                  className="w-40 h-40 object-contain mb-4"
+                  data-testid={`img-tier-${tier.tier}`}
+                />
+                <span className="text-black font-semibold text-lg mb-2">
+                  {tier.prize}
+                </span>
+                <span className="text-gray-600 text-sm">
+                  Unlocks at {tier.unlock.toLocaleString()} new subscribers
+                </span>
               </div>
             ))}
           </div>
