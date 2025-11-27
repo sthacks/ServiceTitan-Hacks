@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SEO from "@/components/SEO";
-import { Check } from "lucide-react";
+import { Check, Copy, Share2 } from "lucide-react";
 import logoImage from "@assets/secondary logo_1760895642629.png";
 import airpodsImage from "@assets/Untitled design - 1_1764262891991.png";
 import yetiImage from "@assets/Untitled design - 2_1764262891991.png";
@@ -48,7 +48,33 @@ export default function Giveaway() {
   const [companyName, setCompanyName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
+  const [copied, setCopied] = useState(false);
   const timeLeft = useCountdown(TARGET_DATE);
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://st-hacks.com/giveaway';
+  const shareText = "I just entered the ServiceTitan Hacks Newsletter Giveaway! Join me for a chance to win AirPods, YETI cooler, Solo Stove, or a MacBook Air.";
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  const handleShareFacebook = () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank', 'width=600,height=400');
+  };
+
+  const handleShareTwitter = () => {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank', 'width=600,height=400');
+  };
+
+  const handleShareLinkedIn = () => {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank', 'width=600,height=400');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,11 +150,37 @@ export default function Giveaway() {
             Join the ServiceTitan Hacks Newsletter Giveaway
           </h1>
           <h2 
-            className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8"
             data-testid="text-hero-subtitle"
           >
             Get weekly AI workflows, ServiceTitan automations, and contractor growth strategies. Enter the giveaway by subscribing below.
           </h2>
+          
+          {/* Countdown Timer */}
+          {!timeLeft.expired ? (
+            <div className="flex justify-center gap-3 md:gap-6" data-testid="countdown-timer">
+              <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 md:px-6 md:py-4">
+                <div className="text-2xl md:text-4xl font-bold text-white" data-testid="countdown-days">{timeLeft.days}</div>
+                <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide">Days</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 md:px-6 md:py-4">
+                <div className="text-2xl md:text-4xl font-bold text-white" data-testid="countdown-hours">{timeLeft.hours}</div>
+                <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide">Hours</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 md:px-6 md:py-4">
+                <div className="text-2xl md:text-4xl font-bold text-white" data-testid="countdown-minutes">{timeLeft.minutes}</div>
+                <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide">Min</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur rounded-xl px-4 py-3 md:px-6 md:py-4">
+                <div className="text-2xl md:text-4xl font-bold text-white" data-testid="countdown-seconds">{timeLeft.seconds}</div>
+                <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide">Sec</div>
+              </div>
+            </div>
+          ) : (
+            <div className="text-xl text-[#ED254E] font-semibold" data-testid="countdown-expired">
+              Giveaway has ended!
+            </div>
+          )}
         </div>
       </section>
 
@@ -287,6 +339,49 @@ export default function Giveaway() {
               data-testid="text-form-status"
             >
               {statusMessage}
+            </div>
+          )}
+          
+          {status === "success" && (
+            <div className="mt-8 p-6 bg-gray-50 rounded-2xl" data-testid="share-section">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Share2 className="w-5 h-5 text-gray-700" />
+                <span className="text-black font-semibold">Share with a friend</span>
+              </div>
+              <p className="text-gray-600 text-sm mb-4">
+                Help us reach our subscriber goals and unlock more prizes!
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <button
+                  onClick={handleShareFacebook}
+                  className="flex items-center gap-2 px-4 py-2 bg-[#1877F2] text-white rounded-lg hover:bg-[#166FE5] transition-colors"
+                  data-testid="button-share-facebook"
+                >
+                  Facebook
+                </button>
+                <button
+                  onClick={handleShareTwitter}
+                  className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                  data-testid="button-share-twitter"
+                >
+                  X / Twitter
+                </button>
+                <button
+                  onClick={handleShareLinkedIn}
+                  className="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#095196] transition-colors"
+                  data-testid="button-share-linkedin"
+                >
+                  LinkedIn
+                </button>
+                <button
+                  onClick={handleCopyLink}
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors"
+                  data-testid="button-copy-link"
+                >
+                  <Copy className="w-4 h-4" />
+                  {copied ? "Copied!" : "Copy Link"}
+                </button>
+              </div>
             </div>
           )}
         </div>
