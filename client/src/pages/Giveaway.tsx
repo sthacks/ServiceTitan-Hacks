@@ -36,10 +36,10 @@ export default function Giveaway() {
   };
 
   const prizeTiers = [
-    { tier: 1, unlock: 100, prize: "Contractor headset" },
-    { tier: 2, unlock: 250, prize: "YETI or Traeger tabletop smoker" },
-    { tier: 3, unlock: 500, prize: "Blackstone, Solo Stove, or Packout bundle" },
-    { tier: 4, unlock: 1000, prize: "MacBook Air or premium contractor tech package" }
+    { tier: 1, unlock: 100, prize: "Apple AirPods 4" },
+    { tier: 2, unlock: 250, prize: "YETI Hard Cooler" },
+    { tier: 3, unlock: 500, prize: "Solo Stove Infinity Flame Fire Pit" },
+    { tier: 4, unlock: 1000, prize: "Apple MacBook Air 13 inch" }
   ];
 
   const newsletterBenefits = [
