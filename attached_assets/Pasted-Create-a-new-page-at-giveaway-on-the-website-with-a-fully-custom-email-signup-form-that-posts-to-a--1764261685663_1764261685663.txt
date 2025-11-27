@@ -1,0 +1,94 @@
+Create a new page at /giveaway on the website with a fully custom email signup form that posts to a Make.com webhook. Use Oxygen font, mobile responsive layout, and brand colors Bright Red #ED254E, Deep Red #C1124F, Medium Gray, Dark Gray, Black, and White.
+
+Page structure:
+	1.	HERO SECTION
+
+	•	White background, centered container
+	•	Add ServiceTitan Hacks logo at top
+	•	H1: “Join the ServiceTitan Hacks Newsletter Giveaway”
+	•	H2: “Get weekly AI workflows, ServiceTitan automations, and contractor growth strategies. Enter the giveaway by subscribing below.”
+	•	Add 40px top and bottom padding
+
+	2.	VALUE SECTION
+
+	•	White background, centered, max width 800px
+	•	H2: “What you get in the newsletter”
+	•	Bullet list:
+• Real ServiceTitan automations you can copy and paste
+• AI workflows that save hours each week
+• Field tested HVAC, plumbing, and electrical growth strategies
+• Tools, templates, and behind the scenes insights
+• Early access to calculators, dashboards, and new tools
+	•	Add 32px spacing above and below
+
+	3.	PRIZE TIERS SECTION
+
+	•	Light gray background #F4F4F4
+	•	Centered, max width 900px
+	•	H2: “Giveaway Prize Tiers”
+	•	Create four stacked cards, each white background, 1px border #DDD, 16px radius, padded 18px
+• Tier 1: “Unlocks at 100 new subscribers. Prize: Contractor headset.”
+• Tier 2: “Unlocks at 250 new subscribers. Prize: YETI or Traeger tabletop smoker.”
+• Tier 3: “Unlocks at 500 new subscribers. Prize: Blackstone, Solo Stove, or Packout bundle.”
+• Tier 4: “Unlocks at 1,000 new subscribers. Prize: MacBook Air or premium contractor tech package.”
+	•	Add 48px spacing top and bottom
+
+	4.	CUSTOM SIGNUP FORM SECTION
+
+	•	White background, centered, max width 600px
+	•	H2: “Enter the Giveaway”
+	•	Paragraph: “Subscribe with your email to enter. That is your entire entry. One winner per unlocked tier.”
+	•	Insert this custom HTML form:
+
+<form id="giveaway-form">
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email" required />
+  <button type="submit">Join the newsletter and enter</button>
+</form>
+<div id="form-status" style="margin-top:12px;"></div>
+
+
+	•	Add this JavaScript under the form and replace YOUR_WEBHOOK_URL with my Make.com webhook URL:
+
+<script>
+document.getElementById("giveaway-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+
+  const res = await fetch("YOUR_WEBHOOK_URL", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
+  });
+
+  if (res.ok) {
+    document.getElementById("form-status").innerText = "You're entered. Check your email.";
+    document.getElementById("giveaway-form").reset();
+  } else {
+    document.getElementById("form-status").innerText = "There was an issue. Please try again.";
+  }
+});
+</script>
+
+
+	•	Style the button in Bright Red #ED254E with white text, 16px radius, and full width on mobile.
+
+	5.	SOCIAL PROOF SECTION
+
+	•	White background, centered
+	•	Text: “9,700 contractors follow ServiceTitan Hacks. Open rates consistently above 46 percent.”
+	•	Font size 16px, color Dark Gray
+
+	6.	TRUST FOOTER
+
+	•	Light gray #F7F7F7
+	•	Centered text: “This newsletter is free. No spam. Unsubscribe anytime.”
+
+Technical requirements:
+	•	Create /giveaway page using existing site template
+	•	Add meta title “ServiceTitan Hacks Newsletter Giveaway”
+	•	Add meta description “Join the ServiceTitan Hacks newsletter giveaway and unlock prizes by subscribing.”
+	•	Ensure mobile responsiveness and no horizontal scrolling
+	•	Use Oxygen font globally
+	•	Ensure all sections follow existing site layout conventions
+	•	Deploy after building

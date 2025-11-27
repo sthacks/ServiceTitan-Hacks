@@ -48,6 +48,7 @@ import SMSTermsConditions from "@/pages/SMSTermsConditions";
 import SponsorSummary from "@/pages/SponsorSummary";
 import AclarifySponsorSummary from "@/pages/AclarifySponsorSummary";
 import SponsorROICalculator from "@/pages/SponsorROICalculator";
+import Giveaway from "@/pages/Giveaway";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -97,6 +98,7 @@ function Router() {
       <Route path="/partners/smartac/book-demo" component={SmartACBookDemo} />
       <Route path="/partners/contractor-commerce/book-demo" component={ContractorCommerceBookDemo} />
       <Route path="/partners/:slug" component={PartnerDetail} />
+      <Route path="/giveaway" component={Giveaway} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
