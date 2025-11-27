@@ -261,7 +261,7 @@ export default function Giveaway() {
       <section className="bg-white py-8 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <p className="text-gray-600 text-base" data-testid="text-social-proof">
-            9,700 contractors follow ServiceTitan Hacks. Open rates consistently above 46 percent.
+            9,700 contractors follow ServiceTitan Hacks.
           </p>
         </div>
       </section>
