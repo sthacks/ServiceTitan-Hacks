@@ -321,6 +321,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Giveaway newsletter signup endpoint
+  app.post("/api/giveaway", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      if (!email || typeof email !== 'string' || !email.includes('@')) {
+        return res.status(400).json({ 
+          message: "Please provide a valid email address." 
+        });
+      }
+
+      // Send email notification to admin with JSON data
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          email: email,
+          source: "Newsletter Giveaway",
+          timestamp: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Newsletter Giveaway Entry',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send giveaway notification:", emailError);
+        return res.status(500).json({ 
+          message: "Failed to process entry. Please try again." 
+        });
+      }
+      
+      res.status(201).json({ 
+        message: "You're entered. Check your email."
+      });
+    } catch (error) {
+      console.error("Giveaway submission error:", error);
+      res.status(500).json({ 
+        message: "Failed to process entry. Please try again." 
+      });
+    }
+  });
+
   // Resource lead capture endpoint
   app.post("/api/resource-leads", async (req, res) => {
     try {

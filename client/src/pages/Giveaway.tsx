@@ -13,19 +13,21 @@ export default function Giveaway() {
     setStatus("loading");
 
     try {
-      const res = await fetch(import.meta.env.VITE_GIVEAWAY_WEBHOOK_URL || "", {
+      const res = await fetch("/api/giveaway", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email })
       });
 
+      const data = await res.json();
+
       if (res.ok) {
         setStatus("success");
-        setStatusMessage("You're entered. Check your email.");
+        setStatusMessage(data.message || "You're entered. Check your email.");
         setEmail("");
       } else {
         setStatus("error");
-        setStatusMessage("There was an issue. Please try again.");
+        setStatusMessage(data.message || "There was an issue. Please try again.");
       }
     } catch (error) {
       setStatus("error");
