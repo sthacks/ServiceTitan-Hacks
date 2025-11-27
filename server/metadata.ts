@@ -140,6 +140,13 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-job-summary-course.png",
   },
   
+  // Giveaway Page
+  "/giveaway": {
+    title: "ServiceTitan Hacks Newsletter Giveaway",
+    description: "Enter the ServiceTitan Hacks newsletter giveaway for a chance to win AirPods 4, YETI Hard Cooler, Solo Stove Fire Pit, or MacBook Air. Join 9,700+ contractors.",
+    ogImage: "https://servicetitanhacks.com/og-giveaway.png",
+  },
+  
   // Landing Pages
   "/automation-playbook-landing": {
     title: "Automation Playbook for HVAC and ServiceTitan",

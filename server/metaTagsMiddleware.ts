@@ -89,7 +89,7 @@ export async function metaTagsMiddleware(req: Request, res: Response, next: Next
   // For crawlers, serve custom meta for all pages
   // For regular users, only serve custom meta for specific routes
   // NOTE: Removed pricebook-optimizer and smartac-roi-calculator - they are client-side rendered and don't need server-side meta injection
-  const isSpecificRoute = req.path.match(/^\/blog\/[^.]+$/) || req.path.match(/^\/(about|contact|tools|courses|resources|podcast|partners|dashboard-course|fix-ugly-forms-course|all-access|purchasing-platform)$/);
+  const isSpecificRoute = req.path.match(/^\/blog\/[^.]+$/) || req.path.match(/^\/(about|contact|tools|courses|resources|podcast|partners|dashboard-course|fix-ugly-forms-course|all-access|purchasing-platform|giveaway)$/);
   
   const needsCustomMeta = isCrawler || isSpecificRoute;
   
