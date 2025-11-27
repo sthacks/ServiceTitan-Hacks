@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SEO from "@/components/SEO";
 import { Check } from "lucide-react";
 import logoImage from "@assets/secondary logo_1760895642629.png";
@@ -7,6 +7,40 @@ import yetiImage from "@assets/Untitled design - 2_1764262891991.png";
 import soloStoveImage from "@assets/Untitled design - 3_1764262891991.png";
 import macbookImage from "@assets/Untitled design - 4_1764262891991.png";
 
+// Countdown target: December 7, 2025 at 5:00 PM EST
+const TARGET_DATE = new Date('2025-12-07T17:00:00-05:00');
+
+function useCountdown(targetDate: Date) {
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(targetDate));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(targetDate));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  return timeLeft;
+}
+
+function calculateTimeLeft(targetDate: Date) {
+  const now = new Date();
+  const difference = targetDate.getTime() - now.getTime();
+
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, expired: true };
+  }
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / 1000 / 60) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+    expired: false
+  };
+}
+
 export default function Giveaway() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,6 +48,7 @@ export default function Giveaway() {
   const [companyName, setCompanyName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
+  const timeLeft = useCountdown(TARGET_DATE);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
