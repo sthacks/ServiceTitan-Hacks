@@ -1310,6 +1310,14 @@ Please rewrite this service description following the instructions above.`;
       const optimization = await storage.createPricebookOptimization(data);
       await storage.markPricebookAsComplete(data.email);
       
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        tags: ["Pricebook Optimizer", "Tool User"]
+      });
+      
       // Send email notification to bill@st-hacks.com with JSON data including the AI result
       try {
         const { client, fromEmail } = await getUncachableResendClient();
@@ -1462,6 +1470,13 @@ ${JSON.stringify(jsonData, null, 2)}
       
       // Save to database
       const submission = await storage.createSmartACROISubmission(data);
+      
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        tags: ["SmartAC ROI Calculator", "Tool User"]
+      });
       
       // Parse ROI results from JSON string
       const results = JSON.parse(data.roiResults);
@@ -1676,6 +1691,13 @@ ${JSON.stringify(jsonData, null, 2)}
       
       // Save to database
       const submission = await storage.createWinkROISubmission(data);
+      
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        tags: ["Wink ROI Calculator", "Tool User"]
+      });
       
       // Parse ROI results from JSON string
       const results = JSON.parse(data.roiResults);
