@@ -226,6 +226,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const subscriber = await storage.createEmailSubscriber(data);
       
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        tags: ["Newsletter", "Website Signup"]
+      });
+      
       res.status(201).json({ 
         message: "Successfully subscribed!",
         subscriber: { id: subscriber.id, email: subscriber.email }
@@ -250,6 +256,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const data = insertContactSubmissionSchema.parse(req.body);
       
       const submission = await storage.createContactSubmission(data);
+      
+      // Sync to Mailchimp
+      const nameParts = data.name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName,
+        lastName,
+        companyName: data.company || undefined,
+        tags: ["Contact Form", "Website Lead"]
+      });
       
       // Send email notification to bill@st-hacks.com with form data
       try {
@@ -402,6 +420,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const data = insertResourceLeadSchema.parse(req.body);
       
       const lead = await storage.createResourceLead(data);
+      
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        tags: ["Resource Download", data.resourceName]
+      });
       
       // Send email notification to admin in JSON format
       try {
