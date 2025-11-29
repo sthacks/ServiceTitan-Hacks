@@ -266,7 +266,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         firstName,
         lastName,
         companyName: data.company || undefined,
-        tags: ["Contact Form", "Website Lead"]
+        tags: ["Contact Form", "Website Lead", "no welcome workflow"]
       });
       
       // Send email notification to bill@st-hacks.com with form data
@@ -369,7 +369,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         firstName: firstName.trim(),
         lastName: lastName.trim(),
         companyName: companyName ? companyName.trim() : undefined,
-        tags: ["Giveaway Entry", "Newsletter"]
+        tags: ["Giveaway Entry", "Newsletter", "no welcome workflow"]
       });
 
       if (!mailchimpResult.success) {
@@ -425,7 +425,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await addOrUpdateSubscriber({
         email: data.email,
         firstName: data.firstName,
-        tags: ["Resource Download", data.resourceName]
+        tags: ["Resource Download", data.resourceName, "no welcome workflow"]
       });
       
       // Send email notification to admin in JSON format
@@ -688,7 +688,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         email: data.email,
         firstName: data.firstName,
         lastName: data.lastName,
-        tags: ["Wink Demo Request", "Partner Lead"]
+        tags: ["Wink Demo Request", "Partner Lead", "no welcome workflow"]
       });
       
       // Send email notification to admin in strict JSON format
@@ -745,7 +745,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         firstName: data.firstName,
         lastName: data.lastName,
         companyName: data.companyName,
-        tags: ["SmartAC Demo Request", "Partner Lead"]
+        tags: ["SmartAC Demo Request", "Partner Lead", "no welcome workflow"]
       });
       
       // Send email notification to admin in strict JSON format
@@ -956,7 +956,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         firstName: data.firstName,
         lastName: data.lastName,
         companyName: data.companyName,
-        tags: ["Contractor Commerce Demo", "Partner Lead"]
+        tags: ["Contractor Commerce Demo", "Partner Lead", "no welcome workflow"]
       });
       
       try {
@@ -1084,7 +1084,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         email: data.email,
         firstName: data.firstName,
         lastName: data.lastName,
-        tags: ["LiveSwitch Demo Request", "Partner Lead"]
+        tags: ["LiveSwitch Demo Request", "Partner Lead", "no welcome workflow"]
       });
       
       try {
@@ -1315,7 +1315,7 @@ Please rewrite this service description following the instructions above.`;
         email: data.email,
         firstName: data.firstName,
         lastName: data.lastName,
-        tags: ["Pricebook Optimizer", "Tool User"]
+        tags: ["Pricebook Optimizer", "Tool User", "no welcome workflow"]
       });
       
       // Send email notification to bill@st-hacks.com with JSON data including the AI result
@@ -1475,7 +1475,7 @@ ${JSON.stringify(jsonData, null, 2)}
       await addOrUpdateSubscriber({
         email: data.email,
         firstName: data.firstName,
-        tags: ["SmartAC ROI Calculator", "Tool User"]
+        tags: ["SmartAC ROI Calculator", "Tool User", "no welcome workflow"]
       });
       
       // Parse ROI results from JSON string
@@ -1696,7 +1696,7 @@ ${JSON.stringify(jsonData, null, 2)}
       await addOrUpdateSubscriber({
         email: data.email,
         firstName: data.firstName,
-        tags: ["Wink ROI Calculator", "Tool User"]
+        tags: ["Wink ROI Calculator", "Tool User", "no welcome workflow"]
       });
       
       // Parse ROI results from JSON string
