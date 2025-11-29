@@ -10,6 +10,7 @@ import { setupAuth, isAuthenticated } from "./replitAuth";
 import Stripe from "stripe";
 import path from "path";
 import fs from "fs";
+import { addOrUpdateSubscriber } from "./mailchimp";
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
@@ -344,6 +345,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
+      // Add or update subscriber in Mailchimp
+      const mailchimpResult = await addOrUpdateSubscriber({
+        email: email.trim(),
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        companyName: companyName ? companyName.trim() : undefined,
+        tags: ["Giveaway Entry", "Newsletter"]
+      });
+
+      if (!mailchimpResult.success) {
+        console.error("Mailchimp sync failed:", mailchimpResult.message);
+      }
+
       // Send email notification to admin with JSON data
       try {
         const { client, fromEmail } = await getUncachableResendClient();
@@ -354,6 +368,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           email: email.trim(),
           companyName: companyName ? companyName.trim() : null,
           source: "Newsletter Giveaway",
+          mailchimpSynced: mailchimpResult.success,
           timestamp: new Date().toISOString()
         };
         
