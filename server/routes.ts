@@ -683,6 +683,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const submission = await storage.createWinkDemoSubmission(data);
       await storage.markWinkDemoAsComplete(data.email);
       
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        tags: ["Wink Demo Request", "Partner Lead"]
+      });
+      
       // Send email notification to admin in strict JSON format
       try {
         const { client, fromEmail } = await getUncachableResendClient();
@@ -730,6 +738,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const submission = await storage.createSmartACDemoSubmission(data);
       await storage.markSmartACDemoAsComplete(data.email);
+      
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        companyName: data.companyName,
+        tags: ["SmartAC Demo Request", "Partner Lead"]
+      });
       
       // Send email notification to admin in strict JSON format
       try {
@@ -933,6 +950,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const submission = await storage.createContractorCommerceDemoSubmission(data);
       await storage.markContractorCommerceDemoAsComplete(data.email);
       
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        companyName: data.companyName,
+        tags: ["Contractor Commerce Demo", "Partner Lead"]
+      });
+      
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
@@ -1052,6 +1078,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const submission = await storage.createLiveswitchDemoSubmission(data);
       await storage.markLiveswitchDemoAsComplete(data.email);
+      
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        tags: ["LiveSwitch Demo Request", "Partner Lead"]
+      });
       
       try {
         const { client, fromEmail } = await getUncachableResendClient();
