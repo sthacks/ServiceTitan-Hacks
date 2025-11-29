@@ -1,0 +1,38 @@
+I need you to act as a compliance-focused copywriter. I am updating the landing page for an HVAC equipment buying group. I need to rewrite specific sections of my copy to ensure strict adherence to the Daikin/Goodman Minimum Advertised Price (MAP) Policy while maintaining a persuasive sales tone.
+
+Here are the strict rules based on the legal policy:
+
+1. **FORBIDDEN TERMS:** I typically cannot use the words "Authorized," "Factory Authorized," "Authorized Reseller," "Sponsored," or "Partner" when referring to the Daikin or Goodman brands. The policy explicitly bans phrases that imply I have a special sponsorship from the manufacturer.
+2. **FORBIDDEN PHRASING:** Do not use "Direct Factory Pricing" or "Factory Direct" if it implies a direct legal partnership with the manufacturer.
+3. **GOAL:** Describe the *authenticity* of the equipment and the *magnitude* of the discounts without claiming a legal status I do not have.
+
+**Please rewrite the following sections of my code/copy:**
+
+---
+**SECTION 1: The "Powered By" Section**
+*Current Text:*
+"POWERED BY INDUSTRY LEADERS
+Verified Partnerships. Authorized Pricing.
+Goodman: Direct Factory Pricing
+Daikin: Authorized Distributor"
+
+*Instructions:*
+- Change "Authorized Pricing" to "National Account Pricing" or "Wholesale-Level Pricing."
+- Change "Direct Factory Pricing" to "Contractor-Exclusive Pricing."
+- Change "Authorized Distributor" to "Supplier of Genuine Equipment" or "Independent Reseller."
+- Remove "Verified Partnerships" if it refers to the manufacturers directly; use "Verified Supply Chain" instead.
+
+---
+**SECTION 2: The "Why Choose Us" Section**
+*Current Text:*
+"Buy from Leading Brands: Goodman, Daikin"
+
+*Instructions:*
+- Ensure we are not implying we are a "Factory Authorized" dealer.
+- Rewrite to focus on the *inventory* we have access to. Example: "Access Live Inventory for: Goodman, Daikin."
+
+---
+**SECTION 3: General Check**
+- Scan the rest of the text. If you see the word "Authorized" anywhere next to a brand name, replace it with "Genuine," "Original," or "Professional-Grade."
+
+Please output the revised copy blocks now.

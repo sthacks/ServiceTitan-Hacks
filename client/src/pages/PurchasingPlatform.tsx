@@ -149,7 +149,7 @@ export default function PurchasingPlatform() {
           />
           <div className="container mx-auto px-6 relative z-10">
             <h2 className="text-2xl md:text-3xl font-bold font-heading text-center mb-8 text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Buy from Leading Brands
+              Access Live Inventory for
             </h2>
             <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
               <Card className="hover-elevate">
@@ -368,19 +368,19 @@ export default function PurchasingPlatform() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-3 text-black" style={{ fontFamily: 'Oxygen, sans-serif' }}>
               POWERED BY INDUSTRY LEADERS
             </h2>
-            <p className="text-center text-sm text-black mb-8">Verified Partnerships. Authorized Pricing.</p>
+            <p className="text-center text-sm text-black mb-8">Verified Supply Chain. Wholesale-Level Pricing.</p>
             <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 max-w-4xl mx-auto">
               <div className="text-center">
                 <img src={goodmanLogo} alt="Goodman" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-black">Direct Factory Pricing</p>
+                <p className="text-sm text-black">Contractor-Exclusive Pricing</p>
               </div>
               <div className="text-center">
                 <img src={daikinLogo} alt="Daikin" className="h-16 md:h-20 w-auto object-contain mx-auto mb-2" />
-                <p className="text-sm text-black">Authorized Distributor</p>
+                <p className="text-sm text-black">Genuine Equipment Supplier</p>
               </div>
             </div>
             <p className="text-center text-black mt-8 max-w-3xl mx-auto">
-              Our platform is built on partnerships with Goodman/Daikin and integrated with over 1,200 distributor locations nationwide.
+              Our platform provides access to genuine Goodman and Daikin equipment through over 1,200 distributor locations nationwide.
             </p>
           </div>
         </section>
