@@ -7,8 +7,8 @@ import yetiImage from "@assets/Untitled design - 2_1764262891991.png";
 import soloStoveImage from "@assets/Untitled design - 3_1764262891991.png";
 import macbookImage from "@assets/Untitled design - 4_1764262891991.png";
 
-// Countdown target: December 7, 2025 at 5:00 PM EST
-const TARGET_DATE = new Date('2025-12-07T17:00:00-05:00');
+// Countdown target: December 12, 2025 at 5:00 PM EST
+const TARGET_DATE = new Date('2025-12-12T17:00:00-05:00');
 
 function useCountdown(targetDate: Date) {
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(targetDate));
