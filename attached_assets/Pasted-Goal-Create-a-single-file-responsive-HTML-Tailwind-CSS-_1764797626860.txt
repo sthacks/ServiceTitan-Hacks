@@ -1,0 +1,81 @@
+Goal: Create a single-file, responsive HTML/Tailwind CSS webpage that serves as a high-end, personalized "Partnership Proposal" for a B2B media network called "ServiceTitan Hacks."
+
+Design Style:
+
+Theme: "Dark Mode" / High-End SaaS Proposal.
+
+Background: #000000 (Pure Black).
+
+Primary Accent: #ec164d (Bright Pinkish-Red) - Use for buttons, the "HACKS" logo text, and key highlights.
+
+Secondary Accent: #c20f3d (Deep Red) - Use for hover states and subtle gradients.
+
+Secondary Elements: #7c7c7c and #6c6c6c (Brand Greys) - Use for borders, subtext, and card backgrounds.
+
+Font: Inter (from Google Fonts).
+
+Vibe: Exclusive, data-driven, executive-level.
+
+Structure & Content Requirements:
+
+Sticky Navbar: Black background with high blur. Logo text: "ServiceTitan HACKS" ("HACKS" in #ec164d). Right side text: "Prepared for: Kevin Cook & Property.com".
+
+Hero Section:
+
+Badge: "PRIVATE PROPOSAL" (White text on a #c20f3d pill background).
+
+Headline: "Bridging the Trust Gap for Property.com".
+
+Subheadline: "Kevin, based on our conversation about the pivot to SaaS and the need to validate the ServiceTitan integration, here is the roadmap to get Max Traffic and Max Qualifier into the hands of the high-revenue contractors who can prove the use case."
+
+CTA Button: Solid #ec164d background, white text, "View Partnership Options". Hover state should darken to #c20f3d.
+
+The "Problem/Solution" Section (Two Columns):
+
+Left (Text): "The Adoption Challenge." Explain that contractors don't trust ads, they trust peers. Use FontAwesome icons for a checklist: Gray 'X' for "Cold Email", Gray 'X' for "Trade Shows", Bright Red Check for "Peer Validation".
+
+Right (Data Card): A styled card (use #1a1a1a for card bg with #6c6c6c border) titled "The ST Hacks Ecosystem". Grid of 4 stats: "9,700+ Verified Members", "45% Email Open Rate", "7,600+ HVAC & Plumbing", "100% ServiceTitan Users".
+
+The "Ghost Lead" Section (Full Width, Black Background with Red Glow):
+
+Headline: "Solving the 'Ghost Lead' Problem".
+
+Subtext: "We know Property.com needs data to prove the model. We use a 3-point verification system."
+
+Three Cards (Flexbox):
+
+Direct Engagement: Tracked clicks & form fills.
+
+The Matchback: Cross-referencing your new users against our member list to prove influence.
+
+Pixel Retargeting: Building custom audiences for long-term conversion (Diamond Exclusive).
+
+Pricing Tiers Section (3 Cards):
+
+Card 1 (Featured): $5,700/mo. "Steady brand presence." Features: 2 FB Posts/mo, Bi-monthly Email.
+
+Card 2 (Elite - Highlighted): $9,600/mo. Add a "RECOMMENDED" ribbon in #ec164d. Features: Weekly Exposure, 3 FB Posts, Category Exclusivity, Goal: 8-10 Qualified Leads/mo. CTA Button: Solid Red.
+
+Card 3 (Diamond): $13,900/mo. "Market Dominance." Features: Full Omnichannel, Managed Pixel Retargeting, Weekly Posts, Goal: 15+ Leads/mo.
+
+CTA / Next Steps:
+
+Headline: "Ready to Validate the ServiceTitan Integration?"
+
+Two Buttons:
+
+"Lock in Exclusivity & Start" (mailto:bill@st-hacks.com link).
+
+"Book Strategy Kickoff" (calendly link).
+
+Technical Requirements:
+
+Use Tailwind CSS via CDN.
+
+Use FontAwesome via CDN for icons.
+
+Ensure full mobile responsiveness (stack columns on mobile).
+
+Add subtle hover effects to cards (border color change to #ec164d or slight lift).
+
+Single File Output: All HTML, CSS, and JS in one index.html file.
