@@ -214,13 +214,15 @@ export default function PropertyComProposal() {
                   <span>Quarterly Reporting</span>
                 </li>
               </ul>
-              <button 
-                onClick={() => window.location.href = 'mailto:bill@st-hacks.com?subject=Property.com Featured Partnership'}
-                className="w-full border border-[#6c6c6c] text-white font-semibold py-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+              <a 
+                href="https://buy.stripe.com/5kQ7sK0E8aBCgxh864gbm0O"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full border border-[#6c6c6c] text-white font-semibold py-3 rounded-lg hover:bg-white/5 transition-colors duration-200 block text-center"
                 data-testid="button-featured-tier"
               >
                 Get Started
-              </button>
+              </a>
             </div>
 
             {/* Elite Tier - Recommended */}
