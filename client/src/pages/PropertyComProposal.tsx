@@ -320,19 +320,12 @@ export default function PropertyComProposal() {
           <p className="text-lg text-[#7c7c7c] mb-10 max-w-2xl mx-auto">
             Let's build a pilot that proves the use case and gets Max Traffic in front of the right contractors.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="mailto:bill@st-hacks.com?subject=Property.com Partnership - Lock in Exclusivity"
-              className="bg-[#ec164d] hover:bg-[#c20f3d] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-block"
-              data-testid="link-lock-exclusivity"
-            >
-              Lock in Exclusivity & Start
-            </a>
+          <div className="flex justify-center">
             <a 
               href="https://calendly.com/st-hacks/sponsorship-review-and-strategy-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#6c6c6c] hover:border-[#ec164d] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-block"
+              className="bg-[#ec164d] hover:bg-[#c20f3d] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-block"
               data-testid="link-book-strategy"
             >
               Book Strategy Kickoff
