@@ -99,7 +99,7 @@ export default function PropertyComProposal() {
               <h3 className="text-xl font-bold text-white mb-6">The ST Hacks Ecosystem</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <div className="text-3xl font-bold text-[#ec164d] mb-1">9,700+</div>
+                  <div className="text-3xl font-bold text-[#ec164d] mb-1">9,800+</div>
                   <div className="text-sm text-[#7c7c7c]">Verified Members</div>
                 </div>
                 <div>
