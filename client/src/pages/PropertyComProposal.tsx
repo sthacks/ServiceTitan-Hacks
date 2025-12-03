@@ -255,13 +255,15 @@ export default function PropertyComProposal() {
                   <span>Goal: 8-10 Qualified Leads/mo</span>
                 </li>
               </ul>
-              <button 
-                onClick={() => window.location.href = 'mailto:bill@st-hacks.com?subject=Property.com Elite Partnership'}
-                className="w-full bg-[#ec164d] hover:bg-[#c20f3d] text-white font-semibold py-3 rounded-lg transition-colors duration-200"
+              <a 
+                href="https://buy.stripe.com/6oU28q1Ic39a94P720gbm0N"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#ec164d] hover:bg-[#c20f3d] text-white font-semibold py-3 rounded-lg transition-colors duration-200 block text-center"
                 data-testid="button-elite-tier"
               >
                 Lock in Elite
-              </button>
+              </a>
             </div>
 
             {/* Diamond Tier */}
