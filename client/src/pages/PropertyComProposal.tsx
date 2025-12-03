@@ -293,13 +293,15 @@ export default function PropertyComProposal() {
                   <span>Goal: 15+ Qualified Leads/mo</span>
                 </li>
               </ul>
-              <button 
-                onClick={() => window.location.href = 'mailto:bill@st-hacks.com?subject=Property.com Diamond Partnership'}
-                className="w-full border border-[#6c6c6c] text-white font-semibold py-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+              <a 
+                href="https://buy.stripe.com/7sY00i9aEbFGbcX3POgbm0M"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full border border-[#6c6c6c] text-white font-semibold py-3 rounded-lg hover:bg-white/5 transition-colors duration-200 block text-center"
                 data-testid="button-diamond-tier"
               >
                 Get Started
-              </button>
+              </a>
             </div>
           </div>
         </div>
