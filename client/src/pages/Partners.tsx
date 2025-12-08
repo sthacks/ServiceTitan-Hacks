@@ -12,7 +12,7 @@ import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
-import dataturkLogo from "@assets/cropped-cropped-dataturk_logo_250x51-1-1.png_1765215830855.webp";
+import dataturkLogo from "@assets/logo-21b053a2661df6e0f2bed3fa3d77630731d6a715ed24b52912e636d38_1765216543435.png";
 
 export default function Partners() {
   const [, setLocation] = useLocation();
