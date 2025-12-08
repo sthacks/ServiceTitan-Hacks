@@ -1858,179 +1858,255 @@ export default function PartnerDetail() {
             </div>
           </section>
 
-          {/* What is the Funnel Report Card */}
+          {/* Sample Funnel Report Card */}
           <section className="py-16 bg-muted/30">
-            <div className="mx-auto max-w-6xl px-6">
-              <h2 className="text-3xl font-bold font-heading mb-8 text-center">
-                Your Business Funnel, Graded Like a Report Card
+            <div className="mx-auto max-w-5xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-4 text-center">
+                Sample Funnel Report Card
               </h2>
               <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-                DataTurk analyzes your ServiceTitan data and gives you letter grades across every stage of your sales funnel — from marketing leads to revenue trends. Each grade comes with specific, actionable steps to improve and the dollar impact of making those changes.
+                See how DataTurk grades every stage of your business funnel with actionable insights and dollar impact.
               </p>
 
-              <div className="grid md:grid-cols-3 gap-6">
-                {/* Top of Funnel */}
-                <Card className="border-t-4 border-t-primary">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <BarChart3 className="h-5 w-5 text-primary" />
+              {/* TOP OF THE FUNNEL */}
+              <div className="mb-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <BarChart3 className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">TOP OF THE FUNNEL</h3>
+                    <p className="text-muted-foreground">How well you capture attention, answer the phone, and book appointments</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  {/* Marketing Leads */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-yellow-600">B-</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Marketing Leads</h4>
+                          <p className="text-foreground mb-3">You're doing well at capturing the attention of potential customers and answering the phone. There's room for improvement.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a B would mean as much as <strong>$51k additional revenue this month</strong> (about $610k/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase inbound calls to 1,824 (currently: 1,603)</li>
+                              <li>• Increase unique callers percentage to 74% (currently: 69%)</li>
+                              <li>• Reduce abandoned calls to 0 (currently: 92)</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-semibold">Top of Funnel</h3>
-                    </div>
-                    <ul className="space-y-3 text-foreground">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Marketing Leads:</strong> How well you capture attention and answer the phone</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Lead Classification:</strong> How well CSRs distinguish opportunities from non-opportunities</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Booking:</strong> How well you convert interest into booked appointments</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
 
-                {/* Middle of Funnel */}
-                <Card className="border-t-4 border-t-primary">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Users className="h-5 w-5 text-primary" />
+                  {/* Lead Classification */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-orange-600">C</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Lead Classification</h4>
+                          <p className="text-foreground mb-3">You're doing so-so at identifying how well the call center distinguishes opportunities from non-opportunities. This is worth improving.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a C+ would mean as much as <strong>$51k additional revenue this month</strong> (about $610k/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase inbound booked calls to opportunities rate to 86% (currently: 78%)</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-semibold">Middle of Funnel</h3>
-                    </div>
-                    <ul className="space-y-3 text-foreground">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Dispatch:</strong> How well you get techs assigned and to the right appointments</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Opportunity to Sell:</strong> How well you create chances for techs to present solutions</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
 
-                {/* Bottom of Funnel */}
-                <Card className="border-t-4 border-t-primary">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <DollarSign className="h-5 w-5 text-primary" />
+                  {/* Booking */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-red-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-red-600">D</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Booking</h4>
+                          <p className="text-foreground mb-3">You're doing poorly at turning interest into action — getting callers to book an appointment. Let's focus on getting you back on track.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a C would mean as much as <strong>$100k additional revenue this month</strong> (about $1.2M/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase inbound booked calls to 305 (currently: 244)</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-semibold">Bottom of Funnel</h3>
-                    </div>
-                    <ul className="space-y-3 text-foreground">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Conversion:</strong> How well you turn sales opportunities into completed jobs</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span><strong>Revenue Trend:</strong> How well you're growing revenue over time</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            </div>
-          </section>
 
-          {/* Why It Matters */}
-          <section className="py-16 bg-background">
-            <div className="mx-auto max-w-6xl px-6">
-              <h2 className="text-3xl font-bold font-heading mb-8 text-center">
-                Stop Guessing. Start Growing.
-              </h2>
+              {/* MIDDLE OF THE FUNNEL */}
+              <div className="mb-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">MIDDLE OF THE FUNNEL</h3>
+                    <p className="text-muted-foreground">How well you dispatch techs and create opportunities to sell</p>
+                  </div>
+                </div>
 
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Zap className="h-6 w-6 text-primary" />
-                      <h3 className="text-lg font-semibold">Actionable Insights</h3>
-                    </div>
-                    <p className="text-foreground">
-                      Every grade comes with specific recommendations. Know exactly what metrics to improve and by how much to reach the next grade level.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="grid gap-4">
+                  {/* Dispatch */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-yellow-600">B-</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Dispatch</h4>
+                          <p className="text-foreground mb-3">You're doing well at getting technicians assigned and out to jobs. There's room for improvement.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a B would mean as much as <strong>$100k additional revenue this month</strong> (about $1.2M/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase appointments count to 582 (currently: 466)</li>
+                              <li>• Increase appointments kept rate to 92% (currently: 89%)</li>
+                              <li>• Reduce appointments canceled rate to 8% (currently: 10%)</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
 
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <DollarSign className="h-6 w-6 text-primary" />
-                      <h3 className="text-lg font-semibold">Dollar Impact</h3>
-                    </div>
-                    <p className="text-foreground">
-                      See the revenue impact of improving each metric. DataTurk shows you exactly how much money you're leaving on the table and where to focus first.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <ClipboardCheck className="h-6 w-6 text-primary" />
-                      <h3 className="text-lg font-semibold">ServiceTitan Native</h3>
-                    </div>
-                    <p className="text-foreground">
-                      Built specifically for ServiceTitan users. DataTurk pulls directly from your ServiceTitan data to give you accurate, real-time analysis.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Cog className="h-6 w-6 text-primary" />
-                      <h3 className="text-lg font-semibold">AI-Powered Analysis</h3>
-                    </div>
-                    <p className="text-foreground">
-                      Advanced AI analyzes patterns in your data, compares your numbers to industry benchmarks, and identifies the highest-impact opportunities for growth.
-                    </p>
-                  </CardContent>
-                </Card>
+                  {/* Opportunity To Sell */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-orange-600">C</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Opportunity To Sell</h4>
+                          <p className="text-foreground mb-3">You're doing so-so at creating chances for your team to present solutions once they arrive at the customer's home. This is worth improving.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a C+ would mean as much as <strong>$150k additional revenue this month</strong> (about $1.8M/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase total sales leads count to 255 (currently: 186)</li>
+                              <li>• Increase sales lead closing rate to 56% (currently: 37%)</li>
+                              <li>• Increase estimate written percentage to 56% (currently: 45%)</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            </div>
-          </section>
 
-          {/* Real Results */}
-          <section className="py-16 bg-muted/30">
-            <div className="mx-auto max-w-6xl px-6">
-              <h2 className="text-3xl font-bold font-heading mb-4 text-center">
-                The Numbers Don't Lie
-              </h2>
-              <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-                DataTurk's Funnel Report Card shows contractors where small improvements lead to massive revenue gains.
-              </p>
+              {/* BOTTOM OF THE FUNNEL */}
+              <div className="mb-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <DollarSign className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">BOTTOM OF THE FUNNEL</h3>
+                    <p className="text-muted-foreground">How well you turn opportunities into completed jobs and grow revenue</p>
+                  </div>
+                </div>
 
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <div className="text-4xl font-bold text-primary mb-2">$1.2M+</div>
-                    <p className="text-muted-foreground">Potential annual revenue recovery from improving booking rates</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <div className="text-4xl font-bold text-primary mb-2">$2.4M+</div>
-                    <p className="text-muted-foreground">Potential annual revenue from better conversion rates</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <div className="text-4xl font-bold text-primary mb-2">7+</div>
-                    <p className="text-muted-foreground">Key metrics graded with specific improvement targets</p>
-                  </CardContent>
-                </Card>
+                <div className="grid gap-4">
+                  {/* Conversion */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-orange-600">C</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Conversion</h4>
+                          <p className="text-foreground mb-3">You're doing so-so at turning sales opportunities into completed jobs. This is worth improving.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a C+ would mean as much as <strong>$200k additional revenue this month</strong> (about $2.4M/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase sold estimate count to 103 (currently: 69)</li>
+                              <li>• Increase estimate written percentage to 50% (currently: 45%)</li>
+                              <li>• Increase sales lead closing rate to 42% (currently: 37%)</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Revenue Trend */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-orange-600">C</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2">Revenue Trend</h4>
+                          <p className="text-foreground mb-3">You're doing so-so at growing revenue over time. Keep your eye on your revenue trend line to make sure it's moving in the right direction.</p>
+                          <div className="bg-primary/5 rounded-lg p-4 mb-3">
+                            <p className="text-sm font-medium text-primary mb-2">Revenue Impact</p>
+                            <p className="text-foreground">Achieving a C+ would mean as much as <strong>$700k additional revenue this month</strong> (about $8.4M/year).</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium mb-2">How to improve:</p>
+                            <ul className="text-sm text-muted-foreground space-y-1">
+                              <li>• Increase total threshold jobs count to 250 (currently: 167)</li>
+                              <li>• Increase average threshold job revenue to $2.90k (currently: $2.35k)</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
+
+              {/* Total Potential Impact */}
+              <Card className="bg-primary/5 border-primary/20">
+                <CardContent className="p-8 text-center">
+                  <h3 className="text-2xl font-bold mb-4">Total Potential Annual Revenue Impact</h3>
+                  <div className="text-5xl font-bold text-primary mb-4">$16M+</div>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    This sample report shows how small improvements across your funnel can add up to massive revenue gains. Get your own personalized Funnel Report Card to see exactly where your business is leaving money on the table.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </section>
 
