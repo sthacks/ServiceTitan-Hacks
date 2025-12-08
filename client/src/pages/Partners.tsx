@@ -12,6 +12,7 @@ import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
+import dataturkLogo from "@assets/cropped-cropped-dataturk_logo_250x51-1-1.png_1765215830855.webp";
 
 export default function Partners() {
   const [, setLocation] = useLocation();
@@ -58,6 +59,13 @@ export default function Partners() {
       logo: serviceCrucibleLogo,
       description: "Service Crucible helps HVAC, plumbing, and electrical companies grow, boost profits, and build systems that run without daily chaos.",
       url: "https://go.st-hacks.cc/Service-crucible",
+    },
+    {
+      name: "DataTurk",
+      slug: "dataturk",
+      logo: dataturkLogo,
+      description: "AI-powered funnel analytics that grades your ServiceTitan performance from call center to close, with actionable insights to boost bookings, conversions, and revenue.",
+      url: "https://app.dataturk.ai",
     },
   ];
 

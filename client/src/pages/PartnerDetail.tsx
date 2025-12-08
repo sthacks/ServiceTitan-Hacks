@@ -36,6 +36,7 @@ import winkCertifiedBadge from "@assets/Certified Provider Badge-1_1763145751270
 import winkCoachBadge from "@assets/Certified Provider Coach Badge-1_1763145751270.webp";
 import winkCustomerLogos from "@assets/wink-customer-logos.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
+import dataturkLogo from "@assets/cropped-cropped-dataturk_logo_250x51-1-1.png_1765215830855.webp";
 
 interface Partner {
   name: string;
@@ -626,6 +627,13 @@ export default function PartnerDetail() {
       logo: serviceCrucibleLogo,
       description: "Service Crucible helps HVAC, plumbing, and electrical companies grow, boost profits, and build systems that run without daily chaos.",
       url: "https://go.st-hacks.cc/Service-crucible",
+    },
+    {
+      name: "DataTurk",
+      slug: "dataturk",
+      logo: dataturkLogo,
+      description: "AI-powered funnel analytics that grades your ServiceTitan performance from call center to close, with actionable insights to boost bookings, conversions, and revenue.",
+      url: "https://app.dataturk.ai",
     },
   ];
 
@@ -1777,6 +1785,290 @@ export default function PartnerDetail() {
             </form>
           </DialogContent>
         </Dialog>
+      </div>
+    );
+  }
+
+  // Render detailed DataTurk page
+  if (partner.slug === "dataturk") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title={`${partner.name} | ServiceTitan Hacks Partners`}
+          description={partner.description}
+          keywords={`${partner.name}, ServiceTitan partner, funnel analytics, contractor analytics, HVAC reporting, ServiceTitan reporting`}
+          canonicalUrl={`https://servicetitanhacks.com/partners/${partner.slug}`}
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="object-contain max-h-20 w-auto"
+                    data-testid="img-partner-logo"
+                  />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  Know Your Numbers. Fix What's Broken. Grow Faster.
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  DataTurk's Funnel Report Card grades your ServiceTitan performance from call center to close — and shows you exactly where you're leaving money on the table.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                  <a
+                    href="https://app.dataturk.ai/public/samples/funnel_report_card"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="link-view-sample"
+                  >
+                    <Button size="lg" className="gap-2">
+                      View Sample Report <ExternalLink className="h-5 w-5" />
+                    </Button>
+                  </a>
+                  <a
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="link-get-started"
+                  >
+                    <Button size="lg" variant="outline" className="gap-2">
+                      Get Started <ExternalLink className="h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* What is the Funnel Report Card */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-6xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center">
+                Your Business Funnel, Graded Like a Report Card
+              </h2>
+              <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+                DataTurk analyzes your ServiceTitan data and gives you letter grades across every stage of your sales funnel — from marketing leads to revenue trends. Each grade comes with specific, actionable steps to improve and the dollar impact of making those changes.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Top of Funnel */}
+                <Card className="border-t-4 border-t-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <BarChart3 className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold">Top of Funnel</h3>
+                    </div>
+                    <ul className="space-y-3 text-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Marketing Leads:</strong> How well you capture attention and answer the phone</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Lead Classification:</strong> How well CSRs distinguish opportunities from non-opportunities</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Booking:</strong> How well you convert interest into booked appointments</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Middle of Funnel */}
+                <Card className="border-t-4 border-t-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Users className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold">Middle of Funnel</h3>
+                    </div>
+                    <ul className="space-y-3 text-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Dispatch:</strong> How well you get techs assigned and to the right appointments</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Opportunity to Sell:</strong> How well you create chances for techs to present solutions</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Bottom of Funnel */}
+                <Card className="border-t-4 border-t-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <DollarSign className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold">Bottom of Funnel</h3>
+                    </div>
+                    <ul className="space-y-3 text-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Conversion:</strong> How well you turn sales opportunities into completed jobs</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span><strong>Revenue Trend:</strong> How well you're growing revenue over time</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Why It Matters */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center">
+                Stop Guessing. Start Growing.
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Zap className="h-6 w-6 text-primary" />
+                      <h3 className="text-lg font-semibold">Actionable Insights</h3>
+                    </div>
+                    <p className="text-foreground">
+                      Every grade comes with specific recommendations. Know exactly what metrics to improve and by how much to reach the next grade level.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <DollarSign className="h-6 w-6 text-primary" />
+                      <h3 className="text-lg font-semibold">Dollar Impact</h3>
+                    </div>
+                    <p className="text-foreground">
+                      See the revenue impact of improving each metric. DataTurk shows you exactly how much money you're leaving on the table and where to focus first.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <ClipboardCheck className="h-6 w-6 text-primary" />
+                      <h3 className="text-lg font-semibold">ServiceTitan Native</h3>
+                    </div>
+                    <p className="text-foreground">
+                      Built specifically for ServiceTitan users. DataTurk pulls directly from your ServiceTitan data to give you accurate, real-time analysis.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Cog className="h-6 w-6 text-primary" />
+                      <h3 className="text-lg font-semibold">AI-Powered Analysis</h3>
+                    </div>
+                    <p className="text-foreground">
+                      Advanced AI analyzes patterns in your data, compares your numbers to industry benchmarks, and identifies the highest-impact opportunities for growth.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Real Results */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-6xl px-6">
+              <h2 className="text-3xl font-bold font-heading mb-4 text-center">
+                The Numbers Don't Lie
+              </h2>
+              <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+                DataTurk's Funnel Report Card shows contractors where small improvements lead to massive revenue gains.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <Card className="text-center">
+                  <CardContent className="p-6">
+                    <div className="text-4xl font-bold text-primary mb-2">$1.2M+</div>
+                    <p className="text-muted-foreground">Potential annual revenue recovery from improving booking rates</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center">
+                  <CardContent className="p-6">
+                    <div className="text-4xl font-bold text-primary mb-2">$2.4M+</div>
+                    <p className="text-muted-foreground">Potential annual revenue from better conversion rates</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center">
+                  <CardContent className="p-6">
+                    <div className="text-4xl font-bold text-primary mb-2">7+</div>
+                    <p className="text-muted-foreground">Key metrics graded with specific improvement targets</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-4xl px-6 text-center">
+              <h2 className="text-3xl font-bold font-heading mb-6">
+                Ready to See Your Grade?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Get your free Funnel Report Card and discover where your business is leaving money on the table.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="https://app.dataturk.ai/public/samples/funnel_report_card"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-view-sample-cta"
+                >
+                  <Button size="lg" className="gap-2">
+                    View Sample Report <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-get-started-cta"
+                >
+                  <Button size="lg" variant="outline" className="gap-2">
+                    Get Your Report <ExternalLink className="h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
       </div>
     );
   }
