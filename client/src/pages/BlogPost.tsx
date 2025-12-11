@@ -24,6 +24,18 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "7",
+    title: "4 Surprising Ways Top Home Service Companies Actually Take Control of Their Schedule",
+    excerpt: "Most companies on ServiceTitan think they have a scheduling problem. What they really have is a visibility problem. Here are four real strategies top operators use to take control instead of hoping the day works out.",
+    author: "Bill Brown",
+    date: "December 11, 2025",
+    readTime: "5 min read",
+    category: "Operational Strategy",
+    image: titanDashboardsImage,
+    slug: "4-ways-top-companies-control-schedule",
+    ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png"
+  },
+  {
     id: "6",
     title: "Stop Treating Your Dashboard Like a Spreadsheet (My Philosophy on Metrics)",
     excerpt: "Business analytics dashboards have gone off the rails. They look like 24-hour news channels with tickers and pop-ups everywhere. If you have to study it, it's not a dashboard—it's a report. Here's my philosophy on how dashboards should actually work.",
@@ -99,6 +111,117 @@ const blogPosts: BlogPost[] = [
 
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
+  "4-ways-top-companies-control-schedule": (
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
+      <p className="lead">
+        Most companies on ServiceTitan think they have a scheduling problem. What they really have is a visibility problem.
+      </p>
+
+      <p>
+        The schedule is the heartbeat of the business, but most teams can't see capacity at a glance. Dispatchers dig through the board manually. CSRs guess. Managers ask the same questions every morning. Every empty slot is lost revenue, and nobody knows it until it is too late.
+      </p>
+
+      <p>
+        The companies that grow the fastest are not just reacting to the chaos. They change how their teams see the schedule in the first place. They make capacity visible, simple, and measurable. Here are four real strategies top operators use to take control instead of hoping the day works out.
+      </p>
+
+      <h2>1. They Turn Scheduling Into a Team Sport</h2>
+
+      <p>
+        The old world keeps scheduling locked inside dispatch. The new world puts capacity in front of the entire company.
+      </p>
+
+      <p>
+        Top operators put a 3 day capacity board on a TV in the office. One secure link or QR code, and everyone sees the exact same thing in real time. CSRs know the openings without asking. Dispatch knows the targets. Managers know where the day is headed before it starts.
+      </p>
+
+      <p>
+        This eliminates the constant back and forth and the daily "How are we looking" conversations that waste time and create misalignment. When the whole team sees the targets, the whole team owns the targets.
+      </p>
+
+      <h2>2. They Stop Reacting and Start Planning</h2>
+
+      <p>
+        Most companies wake up every morning and try to fix today. Elite operators look three days ahead.
+      </p>
+
+      <p>
+        A simple three day forward view changes everything. Today, tomorrow, and the next business day are shown side by side with actual capacity numbers. Add a three day weather forecast and now you know when outdoor jobs need to move, when to expect spikes, and when you need to fill holes before they become a problem.
+      </p>
+
+      <p>
+        If tomorrow is light on maintenance calls, they fix it today. No scrambling. No surprises. Just proactive planning that protects revenue before it slips away.
+      </p>
+
+      <h2>3. They Make Hitting Targets Simple and Fun</h2>
+
+      <p className="font-bold text-xl my-6">
+        You get what you measure, but you keep what you celebrate.
+      </p>
+
+      <p>
+        Top teams set clear capacity targets. For example: today at 90 percent, tomorrow at 80 percent, and day three at 70 percent. When those targets hit, the dashboard celebrates it. Streak counter. Fireball. Confetti. It sounds small, but it works.
+      </p>
+
+      <p>
+        Gamification takes a stressful daily chore and turns it into something the entire team participates in. They want to keep the streak alive. They want to win the day. And every time they do, the board is full and revenue goes up.
+      </p>
+
+      <p>
+        This is not about gimmicks. It is about reinforcing the behaviors that build consistent, predictable results.
+      </p>
+
+      <h2>4. They Use Tools Built for ServiceTitan Instead of Fighting Generic Dashboards</h2>
+
+      <p>
+        Generic dashboards are expensive, complicated, and never quite match the ServiceTitan workflow. Top companies skip all of that and use tools built specifically for the ServiceTitan API.
+      </p>
+
+      <p>
+        A native integration means setup is easy, there is nothing to configure, and no sensitive customer data is ever required. It works the way ServiceTitan users already think.
+      </p>
+
+      <p>
+        Flat rate pricing keeps it simple. Two hundred forty nine a month for unlimited users and unlimited screens. No hidden fees. No per seat math. Just plug it in and give the entire team what they need.
+      </p>
+
+      <p>
+        The result is faster adoption, lower cost, and a measurable improvement in scheduling efficiency from day one.
+      </p>
+
+      <h2>Are You Managing the Schedule, or Commanding It?</h2>
+
+      <p>
+        The difference is visibility and alignment. When the whole team sees capacity in real time, when you plan three days ahead instead of fighting the day you are in, when targets are clear and celebrated, and when your tools actually work with ServiceTitan instead of against it, everything gets easier.
+      </p>
+
+      <p className="font-bold text-xl my-6">
+        This is how top companies turn their schedule into an advantage instead of a daily firefight.
+      </p>
+
+      <p>
+        If your team could see the same goals all day, every day, how much more would you book?
+      </p>
+
+      <div className="bg-gradient-to-br from-[#ED254E]/10 to-[#C1121F]/10 border-l-4 border-[#ED254E] rounded-lg p-8 my-12">
+        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+          Ready to Take Control of Your Schedule?
+        </h3>
+        <p className="text-lg mb-6">
+          Titan Dashboards gives you a simple, beautiful 3-day capacity view—synced directly with ServiceTitan. No spreadsheets. No noise. Just clarity.
+        </p>
+        <a 
+          href="https://titandashboards.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-[#ED254E] hover:bg-[#C1121F] text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          data-testid="link-titan-dashboards-cta"
+        >
+          Visit TitanDashboards.com
+        </a>
+      </div>
+    </div>
+  ),
   "stop-treating-dashboard-like-spreadsheet": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">

@@ -8,6 +8,12 @@ export interface PageMetadata {
 
 export const metadata: Record<string, PageMetadata> = {
   // Blog Posts
+  "/blog/4-ways-top-companies-control-schedule": {
+    title: "4 Surprising Ways Top Home Service Companies Take Control of Their Schedule | ServiceTitan Hacks",
+    description: "Most companies think they have a scheduling problem. What they really have is a visibility problem. Learn four real strategies top operators use to take control of capacity.",
+    ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png",
+    ogType: "article",
+  },
   "/blog/stop-treating-dashboard-like-spreadsheet": {
     title: "Dashboard Philosophy for Contractors: Why Simple Beats Complex | ServiceTitan Hacks",
     description: "Your call center dashboard should be as simple as your truck's gas gauge. Learn the 5-second rule for contractor dashboards and why I built the Titan Call Board to replace noisy spreadsheets.",

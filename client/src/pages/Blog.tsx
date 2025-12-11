@@ -22,6 +22,17 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "7",
+    title: "4 Surprising Ways Top Home Service Companies Actually Take Control of Their Schedule",
+    excerpt: "Most companies on ServiceTitan think they have a scheduling problem. What they really have is a visibility problem. Here are four real strategies top operators use to take control instead of hoping the day works out.",
+    author: "Bill Brown",
+    date: "December 11, 2025",
+    readTime: "5 min read",
+    category: "Operational Strategy",
+    image: titanDashboardsImage,
+    slug: "4-ways-top-companies-control-schedule"
+  },
+  {
     id: "6",
     title: "Stop Treating Your Dashboard Like a Spreadsheet (My Philosophy on Metrics)",
     excerpt: "Business analytics dashboards have gone off the rails. They look like 24-hour news channels with tickers and pop-ups everywhere. If you have to study it, it's not a dashboard—it's a report. Here's my philosophy on how dashboards should actually work.",
