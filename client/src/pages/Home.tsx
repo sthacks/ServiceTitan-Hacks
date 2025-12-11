@@ -54,7 +54,7 @@ export default function Home() {
       alt: "Equipment buying group for HVAC contractors - ServiceTitan Hacks partnership",
     },
     {
-      title: "Tools & Products",
+      title: "Apps & Products",
       description: "Discover AI tools for contractors and automation solutions designed specifically for ServiceTitan users in HVAC and plumbing businesses.",
       icon: Wrench,
       link: "/tools",

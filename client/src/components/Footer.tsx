@@ -15,7 +15,7 @@ export default function Footer() {
   const quickLinks = [
     { path: "/", label: "Home" },
     { path: "/partners", label: "Partners" },
-    { path: "/tools", label: "Tools" },
+    { path: "/tools", label: "Apps" },
     { path: "/courses", label: "Courses" },
     { path: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
   ];

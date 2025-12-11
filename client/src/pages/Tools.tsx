@@ -40,7 +40,7 @@ export default function Tools() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Contractor Tools and Automations for ServiceTitan"
+        title="Contractor Apps and Software for ServiceTitan"
         description="Free and premium HVAC contractor tools including dashboards, calculators, automations and AI workflows."
         keywords="ServiceTitan tools, pricebook optimizer, AI tools, HVAC software, automation"
         canonicalUrl="https://servicetitanhacks.com/tools"
@@ -56,7 +56,7 @@ export default function Tools() {
           <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="max-w-3xl mx-auto mb-8 text-center">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
-                Tools & Products
+                Apps & Products
               </h1>
               <p className="text-xl text-gray-300">
                 Purpose-built solutions that integrate seamlessly with ServiceTitan. Boost efficiency, close more jobs, and deliver better service.

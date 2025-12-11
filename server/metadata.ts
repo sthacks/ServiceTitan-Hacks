@@ -62,8 +62,8 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-purchasing-platform.png",
   },
   "/tools": {
-    title: "Contractor Tools and Automations for ServiceTitan",
-    description: "Free tools, calculators, and automation templates for ServiceTitan users. Optimize your pricebook, calculate ROI, and streamline your HVAC or plumbing business.",
+    title: "Contractor Apps and Software for ServiceTitan",
+    description: "Purpose-built apps and software for ServiceTitan users. Dashboards, automation tools, and AI-powered solutions for HVAC and plumbing contractors.",
     ogImage: "https://servicetitanhacks.com/og-tools.png",
   },
   "/courses": {
