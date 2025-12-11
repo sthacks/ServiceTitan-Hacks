@@ -89,8 +89,6 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default function Blog() {
-  const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
@@ -111,22 +109,6 @@ export default function Blog() {
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
               AI, automation, and growth strategies for home service contractors who want to work smarter, not harder.
             </p>
-          </div>
-        </section>
-
-        {/* Category Filter */}
-        <section className="py-8 border-b bg-muted/50">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <Button variant="default" size="sm" data-testid="filter-all">
-                All Posts
-              </Button>
-              {categories.map(category => (
-                <Button key={category} variant="outline" size="sm" data-testid={`filter-${category.toLowerCase().replace(/\s+/g, '-')}`}>
-                  {category}
-                </Button>
-              ))}
-            </div>
           </div>
         </section>
 
