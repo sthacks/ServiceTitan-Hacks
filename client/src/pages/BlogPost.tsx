@@ -23,6 +23,18 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "6",
+    title: "Stop Treating Your Dashboard Like a Spreadsheet (My Philosophy on Metrics)",
+    excerpt: "Business analytics dashboards have gone off the rails. They look like 24-hour news channels with tickers and pop-ups everywhere. If you have to study it, it's not a dashboard—it's a report. Here's my philosophy on how dashboards should actually work.",
+    author: "Bill Brown",
+    date: "December 11, 2025",
+    readTime: "6 min read",
+    category: "Operational Strategy",
+    image: "/blog-dashboard-philosophy.png",
+    slug: "stop-treating-dashboard-like-spreadsheet",
+    ogImage: "https://servicetitanhacks.com/og-dashboard-philosophy.png"
+  },
+  {
     id: "5",
     title: "Selling HVAC Systems to Millennials: Why Online Pricing Is No Longer Optional",
     excerpt: "Millennials are now the largest adult generation in the U.S. Learn why transparent online pricing isn't just nice to have—it's becoming mandatory if you want to capture the next decade of HVAC replacement business.",
@@ -86,6 +98,143 @@ const blogPosts: BlogPost[] = [
 
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
+  "stop-treating-dashboard-like-spreadsheet": (
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
+      <p className="lead">
+        Business analytics dashboards have gone off the rails.
+      </p>
+      
+      <p>
+        Over the last few years, they have started to look like 24-hour news channels. You know what I mean—tickers rolling across the bottom, pop-ups on the side, and noise everywhere. They are crammed with so much data that you have to stand there and study them to understand what is going on.
+      </p>
+
+      <p className="font-bold text-xl my-6">
+        If you have to study it, it's not a dashboard. It's a report.
+      </p>
+
+      <p>
+        I've built countless dashboards over the years, and I've developed a specific philosophy on how they should work in a trade business. It comes down to the difference between a spreadsheet and the dashboard in your truck.
+      </p>
+
+      <h2>The "Car Dashboard" Philosophy</h2>
+
+      <p>Your truck's dashboard has a lot of information wired into it, but it only shows you what matters right now.</p>
+
+      <ul>
+        <li>The speedometer is large because you need to glance at it constantly.</li>
+        <li>The gas gauge is simple: E to F.</li>
+        <li>The "Check Engine" light only comes on when you have a problem.</li>
+      </ul>
+
+      <p>
+        It doesn't give you a spreadsheet analysis of your fuel injection ratios. It just tells you if you have enough gas to get where you're going.
+      </p>
+
+      <p>
+        Business dashboards need to be the same. They should be quick indicators of something very specific. They shouldn't try to shove the entire organization's data onto one screen.
+      </p>
+
+      <p className="font-bold text-xl my-6">
+        When I put a dashboard up on a TV in a call center, I know it's a winner if every employee knows exactly how to read it within 5 seconds, without me explaining it.
+      </p>
+
+      <h2>Why I Scrapped the DIY Class (And Built an App)</h2>
+
+      <p>
+        I recently planned to launch a class on ServiceTitanHacks showing you how to build a custom "3-Day Call Board."
+      </p>
+
+      <p>
+        But as I was building it, I realized I was violating my own rule. The DIY version was becoming "noisy." It required too much setup, too many broken formulas, and too much maintenance.
+      </p>
+
+      <p>
+        So, I pivoted. I built a standalone software app—The Titan Call Board—that strips away the noise and focuses strictly on the "Gas Gauge" of your business: Capacity.
+      </p>
+
+      <h2>The Digital Whiteboard Concept</h2>
+
+      <p>
+        The Titan Call Board is designed to be the simplest tool in your stack. It functions like a beautiful digital whiteboard, but with data synced directly from ServiceTitan.
+      </p>
+
+      <p>Here is how it works, and more importantly, why it works that way:</p>
+
+      <h3>1. The "Red to Green" Dial</h3>
+
+      <p>
+        We look at the next three business days. Each day has a simple dial indicator. It calculates a simple fraction: (Current Jobs / Jobs Needed).
+      </p>
+
+      <ul>
+        <li><strong>Current Jobs:</strong> This pulls automatically from ServiceTitan. You can filter by Business Unit or Job Type.</li>
+        <li><strong>Jobs Needed:</strong> This is set manually by you.</li>
+      </ul>
+
+      <h3>2. The "Hack": You Don't Need Perfect Data</h3>
+
+      <p>
+        This is the part ServiceTitan users will appreciate. Usually, to get a good capacity report, you need to have ServiceTitan's "Adjustable Capacity Planning" set up perfectly, and your technician schedules need to be immaculate.
+      </p>
+
+      <p className="font-bold">This dashboard bypasses that.</p>
+
+      <p>
+        You don't need perfect schedules. You just need to know, "I need 10 installs on Tuesday, and I currently have 6." The dashboard flashes red. The team knows the goal. Action is taken.
+      </p>
+
+      <h3>3. Why It Isn't Fully Automated (The Human Element)</h3>
+
+      <p>
+        I made a conscious decision not to use AI or algorithms to set the daily targets.
+      </p>
+
+      <p>
+        If a dashboard is 100% automatic, it runs in the background and people stop looking at it. It becomes wallpaper.
+      </p>
+
+      <p>
+        By making the "Jobs Needed" target manual, it forces the Call Center Manager or Owner to take ownership. You look at the weather (which is built into the dashboard), you look at the team availability, and you set the target.
+      </p>
+
+      <ul>
+        <li>You set the goal.</li>
+        <li>ServiceTitan provides the actuals.</li>
+        <li>The team chases the green light.</li>
+      </ul>
+
+      <h2>Simplicity Wins</h2>
+
+      <p>
+        The goal of a dashboard isn't to allow you to drill down into ten layers of data on a giant screen. The goal is to tell you if you are winning or losing, right now, at a glance.
+      </p>
+
+      <p>
+        If you are tired of "News Ticker" dashboards and want a clean, actionable view of your 3-day capacity, check out the new tool I just launched.
+      </p>
+
+      <div className="bg-gradient-to-br from-[#ED254E]/10 to-[#C1121F]/10 border-l-4 border-[#ED254E] rounded-lg p-8 my-12">
+        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+          Ready to See Your Capacity at a Glance?
+        </h3>
+        <p className="text-lg mb-6">
+          The Titan Call Board gives you a simple, beautiful view of your next 3 days—synced directly with ServiceTitan. No spreadsheets. No noise. Just clarity.
+        </p>
+        <a 
+          href="https://titandashboards.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-6 py-3 rounded-md transition-colors"
+          data-testid="link-titan-dashboards-cta"
+        >
+          Get the Titan Call Board
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  ),
   "selling-hvac-systems-to-millennials-online-pricing": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">

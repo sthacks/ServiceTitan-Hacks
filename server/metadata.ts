@@ -8,6 +8,12 @@ export interface PageMetadata {
 
 export const metadata: Record<string, PageMetadata> = {
   // Blog Posts
+  "/blog/stop-treating-dashboard-like-spreadsheet": {
+    title: "Stop Treating Your Dashboard Like a Spreadsheet (My Philosophy on Metrics) | ServiceTitan Hacks Blog",
+    description: "Business analytics dashboards have gone off the rails. If you have to study it, it's not a dashboard—it's a report. Here's my philosophy on how dashboards should actually work in a trade business.",
+    ogImage: "https://servicetitanhacks.com/og-dashboard-philosophy.png",
+    ogType: "article",
+  },
   "/blog/selling-hvac-systems-to-millennials-online-pricing": {
     title: "Selling HVAC Systems to Millennials: Why Online Pricing Is No Longer Optional | ServiceTitan Hacks Blog",
     description: "Millennials are now the largest adult generation in the U.S. Learn why transparent online pricing isn't just nice to have—it's becoming mandatory if you want to capture the next decade of HVAC replacement business.",
