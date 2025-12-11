@@ -9,8 +9,8 @@ export interface PageMetadata {
 export const metadata: Record<string, PageMetadata> = {
   // Blog Posts
   "/blog/stop-treating-dashboard-like-spreadsheet": {
-    title: "Stop Treating Your Dashboard Like a Spreadsheet (My Philosophy on Metrics) | ServiceTitan Hacks Blog",
-    description: "Business analytics dashboards have gone off the rails. If you have to study it, it's not a dashboard—it's a report. Here's my philosophy on how dashboards should actually work in a trade business.",
+    title: "Dashboard Philosophy for Contractors: Why Simple Beats Complex | ServiceTitan Hacks",
+    description: "Your call center dashboard should be as simple as your truck's gas gauge. Learn the 5-second rule for contractor dashboards and why I built the Titan Call Board to replace noisy spreadsheets.",
     ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png",
     ogType: "article",
   },
