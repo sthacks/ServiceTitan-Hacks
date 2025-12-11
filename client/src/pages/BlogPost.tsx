@@ -8,6 +8,7 @@ import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
 import billBrownProfile from "@assets/red shirt round_1763150613592.png";
 import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png";
+import callBoardHeroImage from "@assets/Hero_image_-_desktop_(2)_1765483039610.png";
 
 interface BlogPost {
   id: string;
@@ -31,9 +32,9 @@ const blogPosts: BlogPost[] = [
     date: "December 11, 2025",
     readTime: "5 min read",
     category: "Operational Strategy",
-    image: titanDashboardsImage,
+    image: callBoardHeroImage,
     slug: "4-ways-top-companies-control-schedule",
-    ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png"
+    ogImage: "https://servicetitanhacks.com/3-day-call-board-blog.png"
   },
   {
     id: "6",

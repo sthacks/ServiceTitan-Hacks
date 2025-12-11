@@ -11,7 +11,7 @@ export const metadata: Record<string, PageMetadata> = {
   "/blog/4-ways-top-companies-control-schedule": {
     title: "4 Surprising Ways Top Home Service Companies Take Control of Their Schedule | ServiceTitan Hacks",
     description: "Most companies think they have a scheduling problem. What they really have is a visibility problem. Learn four real strategies top operators use to take control of capacity.",
-    ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png",
+    ogImage: "https://servicetitanhacks.com/3-day-call-board-blog.png",
     ogType: "article",
   },
   "/blog/stop-treating-dashboard-like-spreadsheet": {
