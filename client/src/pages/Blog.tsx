@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762523143157.jpg";
+import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png";
 
 interface BlogPost {
   id: string;
@@ -28,7 +29,7 @@ const blogPosts: BlogPost[] = [
     date: "December 11, 2025",
     readTime: "6 min read",
     category: "Operational Strategy",
-    image: "/blog-dashboard-philosophy.png",
+    image: titanDashboardsImage,
     slug: "stop-treating-dashboard-like-spreadsheet"
   },
   {

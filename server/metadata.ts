@@ -11,7 +11,7 @@ export const metadata: Record<string, PageMetadata> = {
   "/blog/stop-treating-dashboard-like-spreadsheet": {
     title: "Stop Treating Your Dashboard Like a Spreadsheet (My Philosophy on Metrics) | ServiceTitan Hacks Blog",
     description: "Business analytics dashboards have gone off the rails. If you have to study it, it's not a dashboard—it's a report. Here's my philosophy on how dashboards should actually work in a trade business.",
-    ogImage: "https://servicetitanhacks.com/og-dashboard-philosophy.png",
+    ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png",
     ogType: "article",
   },
   "/blog/selling-hvac-systems-to-millennials-online-pricing": {
