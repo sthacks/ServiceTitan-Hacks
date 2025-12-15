@@ -322,7 +322,7 @@ export default function PropertyComProposal() {
           </p>
           <div className="flex justify-center">
             <a 
-              href="https://calendly.com/st-hacks/kickoff-call"
+              href="https://go.st-hacks.cc/partner-kickoff"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#ec164d] hover:bg-[#c20f3d] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-block"
