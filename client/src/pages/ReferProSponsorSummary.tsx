@@ -44,30 +44,26 @@ export default function ReferProSponsorSummary() {
           </CardContent>
         </Card>
 
-        {/* Call Summary */}
+        {/* Executive Recap */}
         <Card className="mb-8 bg-[#1a1b20] border-gray-800">
           <CardHeader>
             <CardTitle className="text-2xl text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Call Summary
+              Executive Recap
             </CardTitle>
           </CardHeader>
           <CardContent className="text-white space-y-3">
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>ReferPro is positioned around structured referral programs for home service companies</span>
+                <span><strong>The "Meat on the Bone" Metric:</strong> We aligned on the research showing 83% of customers are willing to refer, yet fewer than 10% actually do without automation</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>Product emphasis is on incentives, tracking, and making referrals repeatable (not accidental)</span>
+                <span><strong>The Operational Pain:</strong> We discussed the specific "Bum Business Owner" anxiety - the friction of manual programs leading to customers calling to ask, "Where is my gift card?"</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>Key theme: contractors often believe referrals are strong, but performance is limited without a formal program and consistent promotion</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>Discussion included the importance of team awareness and internal promotion so referrals actually happen</span>
+                <span><strong>Ideal Fit:</strong> ReferPro is best suited for contractors with a database of 1,000+ customers, ensuring the math works in their favor</span>
               </li>
             </ul>
           </CardContent>
@@ -113,27 +109,23 @@ export default function ReferProSponsorSummary() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>"Your referral program is not real if your team cannot explain it in 10 seconds"</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>"Most contractors think referrals are strong. Here is what a real referral process looks like"</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>"Incentives are only half the battle. Tracking and follow-up is the other half"</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
                 <span>"How many referrals are you getting by accident vs on purpose?"</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>"CSR scripts and technician prompts that actually drive referrals"</span>
+                <span>"The 'Where's My Gift Card?' Nightmare: Why manual tracking hurts your brand"</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>"Gift card vs cash vs account credit. What gets results?"</span>
+                <span>"Stop leaving 54% of your revenue on the table"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
+                <span>"Why paying $200 for a $15k install is a no-brainer"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
+                <span>"CSR scripts and technician prompts that actually drive referrals"</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
@@ -180,7 +172,19 @@ export default function ReferProSponsorSummary() {
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>HVAC, plumbing, electrical, garage doors, roofing</span>
+                <span>HVAC: ~4,000 companies</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
+                <span>Plumbing: ~2,600 companies</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
+                <span>Electrical: ~1,100 companies</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
+                <span>Growing segments in Garage Door and Roofing</span>
               </li>
             </ul>
           </CardContent>
@@ -199,7 +203,8 @@ export default function ReferProSponsorSummary() {
               <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Diamond Partner</h3>
               <p className="text-2xl font-bold text-[#ED254E] mb-3">$13,900 per month</p>
               <ul className="space-y-1 text-gray-300 mb-4">
-                <li>Weekly cross-channel coverage (Facebook, Email, YouTube, Podcast, Website)</li>
+                <li>Weekly cross-channel coverage (Facebook, Email, YouTube, Podcast Episode + YouTube Shorts, Website)</li>
+                <li>Custom Referral Revenue Calculator (high-value lead capture asset)</li>
                 <li>Retargeting ads on Meta and YouTube</li>
                 <li>Category exclusivity</li>
                 <li>Monthly strategy calls</li>
@@ -257,26 +262,6 @@ export default function ReferProSponsorSummary() {
               </a>
             </div>
 
-            {/* Community Partner */}
-            <div className="border-l-4 border-gray-600 pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Community Partner</h3>
-              <p className="text-2xl font-bold text-gray-400 mb-3">$3,500 per month</p>
-              <ul className="space-y-1 text-gray-300 mb-4">
-                <li>One Facebook post per month</li>
-                <li>Quarterly email feature</li>
-                <li>Website placement</li>
-              </ul>
-              <a 
-                href="https://buy.stripe.com/14A00i86A5hi3Kv720gbm0R"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block border border-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors"
-                data-testid="button-signup-community"
-              >
-                Get Started
-              </a>
-            </div>
-
             <div className="mt-6 pt-6 border-t border-gray-700 space-y-2 text-gray-300">
               <p>Six month minimum term.</p>
               <p>Ten percent discount for annual agreements.</p>
@@ -310,6 +295,10 @@ export default function ReferProSponsorSummary() {
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
                 <span>Confirm tier and start date</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
+                <span>Finalize "ST Hacks Special Offer" (Confirming Waived Onboarding Fee for members)</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
