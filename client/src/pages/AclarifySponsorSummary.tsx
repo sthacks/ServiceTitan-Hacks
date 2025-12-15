@@ -282,11 +282,11 @@ export default function AclarifySponsorSummary() {
           <CardContent className="text-white space-y-4">
             <p>Schedule your sponsorship review and strategy call:</p>
             <a 
-              href="https://calendly.com/st-hacks/sponsorship-review-and-strategy-call" 
+              href="https://go.st-hacks.cc/partnership-review" 
               className="text-[#ED254E] hover:text-[#C1121F] underline"
               data-testid="link-calendly"
             >
-              https://calendly.com/st-hacks/sponsorship-review-and-strategy-call
+              https://go.st-hacks.cc/partnership-review
             </a>
           </CardContent>
         </Card>
@@ -294,7 +294,7 @@ export default function AclarifySponsorSummary() {
         {/* Calendly inline widget */}
         <div 
           className="calendly-inline-widget mb-8" 
-          data-url="https://calendly.com/st-hacks/sponsorship-review-and-strategy-call?primary_color=ed164d" 
+          data-url="https://go.st-hacks.cc/partnership-review?primary_color=ed164d" 
           style={{ minWidth: '320px', height: '700px' }}
         ></div>
       </div>

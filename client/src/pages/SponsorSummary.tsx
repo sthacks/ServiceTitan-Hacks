@@ -230,7 +230,7 @@ export default function SponsorSummary() {
         {/* Calendly inline widget */}
         <div 
           className="calendly-inline-widget mb-8" 
-          data-url="https://calendly.com/st-hacks/sponsorship-review-and-strategy-call?primary_color=ed164d" 
+          data-url="https://go.st-hacks.cc/partnership-review?primary_color=ed164d" 
           style={{ minWidth: '320px', height: '700px' }}
         ></div>
       </div>
