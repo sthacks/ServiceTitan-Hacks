@@ -231,47 +231,83 @@ export default function ReferProSponsorSummary() {
             <div className="border-l-4 border-[#ED254E] pl-4">
               <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Diamond Partner</h3>
               <p className="text-2xl font-bold text-[#ED254E] mb-3">$13,900 per month</p>
-              <ul className="space-y-1 text-gray-300">
+              <ul className="space-y-1 text-gray-300 mb-4">
                 <li>Weekly cross-channel coverage (Facebook, Email, YouTube, Podcast, Website)</li>
                 <li>Retargeting ads on Meta and YouTube</li>
                 <li>Category exclusivity</li>
                 <li>Monthly strategy calls</li>
               </ul>
+              <a 
+                href="https://buy.stripe.com/7sY00i9aEbFGbcX3POgbm0M"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-6 py-2 rounded-lg transition-colors"
+                data-testid="button-signup-diamond"
+              >
+                Get Started
+              </a>
             </div>
 
             {/* Elite Partner */}
             <div className="border-l-4 border-[#C1121F] pl-4">
               <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Elite Partner</h3>
               <p className="text-2xl font-bold text-[#C1121F] mb-3">$9,600 per month</p>
-              <ul className="space-y-1 text-gray-300">
+              <ul className="space-y-1 text-gray-300 mb-4">
                 <li>Weekly Facebook and email features</li>
                 <li>Category exclusivity</li>
                 <li>Monthly strategy calls</li>
                 <li>Conservative lead expectations (8-10 qualified leads per month)</li>
               </ul>
+              <a 
+                href="https://buy.stripe.com/6oU28q1Ic39a94P720gbm0N"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C1121F] hover:bg-[#a00f1a] text-white font-semibold px-6 py-2 rounded-lg transition-colors"
+                data-testid="button-signup-elite"
+              >
+                Get Started
+              </a>
             </div>
 
             {/* Featured Partner */}
             <div className="border-l-4 border-gray-400 pl-4">
               <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Featured Partner</h3>
               <p className="text-2xl font-bold text-gray-300 mb-3">$5,700 per month</p>
-              <ul className="space-y-1 text-gray-300">
+              <ul className="space-y-1 text-gray-300 mb-4">
                 <li>Two Facebook posts per month</li>
                 <li>Monthly email feature</li>
                 <li>Quarterly reporting</li>
                 <li>Website placement</li>
               </ul>
+              <a 
+                href="https://buy.stripe.com/5kQ7sK0E8aBCgxh864gbm0O"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-gray-400 hover:bg-gray-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors"
+                data-testid="button-signup-featured"
+              >
+                Get Started
+              </a>
             </div>
 
             {/* Community Partner */}
             <div className="border-l-4 border-gray-600 pl-4">
               <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Community Partner</h3>
               <p className="text-2xl font-bold text-gray-400 mb-3">$3,500 per month</p>
-              <ul className="space-y-1 text-gray-300">
+              <ul className="space-y-1 text-gray-300 mb-4">
                 <li>One Facebook post per month</li>
                 <li>Quarterly email feature</li>
                 <li>Website placement</li>
               </ul>
+              <a 
+                href="https://buy.stripe.com/14A00i86A5hi3Kv720gbm0R"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors"
+                data-testid="button-signup-community"
+              >
+                Get Started
+              </a>
             </div>
 
             <div className="mt-6 pt-6 border-t border-gray-700 space-y-2 text-gray-300">
