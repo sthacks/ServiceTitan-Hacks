@@ -6,8 +6,8 @@ export default function ReferProSponsorSummary() {
   return (
     <div className="min-h-screen bg-[#09090b]">
       <SEO 
-        title="Sponsor Summary: ReferPro | ServiceTitan Hacks"
-        description="Private recap and sponsorship options for ReferPro"
+        title="Partner Summary: ReferPro | ServiceTitan Hacks"
+        description="Private recap and partnership options for ReferPro"
         noindex={true}
       />
       
@@ -24,9 +24,9 @@ export default function ReferProSponsorSummary() {
             />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-            Sponsor Summary: ReferPro
+            Partner Summary: ReferPro
           </h1>
-          <p className="text-xl text-gray-400">Private recap and sponsorship options</p>
+          <p className="text-xl text-gray-400">Private recap and partnership options</p>
         </div>
 
         {/* Call Details */}
@@ -73,11 +73,11 @@ export default function ReferProSponsorSummary() {
           </CardContent>
         </Card>
 
-        {/* Sponsor Goals */}
+        {/* Partner Goals */}
         <Card className="mb-8 bg-[#1a1b20] border-gray-800">
           <CardHeader>
             <CardTitle className="text-2xl text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Sponsor Goals Discussed
+              Partner Goals Discussed
             </CardTitle>
           </CardHeader>
           <CardContent className="text-white space-y-3">
@@ -186,11 +186,11 @@ export default function ReferProSponsorSummary() {
           </CardContent>
         </Card>
 
-        {/* Sponsorship Tiers Section */}
+        {/* Partnership Tiers Section */}
         <Card className="mb-8 bg-[#1a1b20] border-gray-800">
           <CardHeader>
             <CardTitle className="text-2xl text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Sponsorship Options
+              Partnership Options
             </CardTitle>
           </CardHeader>
           <CardContent className="text-white space-y-6">
