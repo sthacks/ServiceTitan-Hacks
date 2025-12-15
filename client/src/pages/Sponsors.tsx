@@ -158,7 +158,7 @@ export default function Sponsors() {
                       Schedule a call to discuss which sponsorship tier is right for your business and how we can help you reach more contractors.
                     </p>
                     <a
-                      href="https://calendly.com/st-hacks/partners"
+                      href="https://go.st-hacks.cc/partnership-discovery"
                       target="_blank"
                       rel="noopener noreferrer"
                       data-testid="link-schedule-call"

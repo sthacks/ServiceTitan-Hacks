@@ -186,7 +186,7 @@ Current Partners:
 5. Contractor Commerce - https://go.st-hacks.cc/contractor-commerce
 
 Sponsorship Info: https://www.servicetitanhacks.com/pages/sponsorships
-Schedule Call: https://calendly.com/st-hacks/partners
+Schedule Call: https://go.st-hacks.cc/partnership-discovery
 
 Audience Stats:
 - 9,500+ verified ServiceTitan users
