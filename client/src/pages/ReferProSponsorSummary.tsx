@@ -39,7 +39,7 @@ export default function ReferProSponsorSummary() {
           </CardHeader>
           <CardContent className="text-white space-y-2">
             <p><span className="text-gray-400">Date:</span> December 15, 2025</p>
-            <p><span className="text-gray-400">Participants:</span> Bill Brown + ReferPro team</p>
+            <p><span className="text-gray-400">Participants:</span> Bill Brown + Murphy Nadauld, CEO of ReferPro</p>
             <p><span className="text-gray-400">Meeting:</span> ReferPro Meeting</p>
           </CardContent>
         </Card>
