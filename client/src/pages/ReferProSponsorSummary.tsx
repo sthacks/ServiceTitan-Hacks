@@ -26,6 +26,15 @@ export default function ReferProSponsorSummary() {
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Hero Section */}
         <div className="text-center mb-12">
+          {/* ReferPro Logo */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src="https://images.ctfassets.net/mb2ty0185mk8/5Rvyd9zgjEYeY5G7iMN94e/8cb1f8c5759b0ebb89efbcd313c97427/rp-full-color-horizontal-dark__10_.png"
+              alt="ReferPro Logo"
+              className="h-16 md:h-20 w-auto"
+              data-testid="img-referpro-logo"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
             Sponsor Summary: ReferPro
           </h1>
