@@ -17,7 +17,7 @@ export default function ReferProSponsorSummary() {
           {/* ReferPro Logo */}
           <div className="flex justify-center mb-8">
             <img 
-              src="https://images.ctfassets.net/mb2ty0185mk8/5Rvyd9zgjEYeY5G7iMN94e/8cb1f8c5759b0ebb89efbcd313c97427/rp-full-color-horizontal-dark__10_.png"
+              src="https://cdn.prod.website-files.com/6748d26eb2ba34bd6f2a679d/6761c4f708c2e406d0989864_Group%2030.svg"
               alt="ReferPro Logo"
               className="h-16 md:h-20 w-auto"
               data-testid="img-referpro-logo"
