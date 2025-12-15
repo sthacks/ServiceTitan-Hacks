@@ -1,20 +1,8 @@
 import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Calendar, Users, ExternalLink } from "lucide-react";
-import { useEffect } from "react";
+import { Check, Calendar, Users } from "lucide-react";
 
 export default function ReferProSponsorSummary() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#09090b]">
       <SEO 
@@ -38,28 +26,7 @@ export default function ReferProSponsorSummary() {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
             Sponsor Summary: ReferPro
           </h1>
-          <p className="text-xl text-gray-400 mb-8">Private recap and sponsorship options</p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://go.st-hacks.cc/partnership-review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-              data-testid="button-book-call-hero"
-            >
-              <Calendar className="w-5 h-5" />
-              Book the follow-up call
-            </a>
-            <a 
-              href="#"
-              className="inline-flex items-center justify-center gap-2 border border-gray-600 hover:border-gray-400 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-              data-testid="button-download-deck"
-            >
-              <ExternalLink className="w-5 h-5" />
-              Download sponsorship deck
-            </a>
-          </div>
+          <p className="text-xl text-gray-400">Private recap and sponsorship options</p>
         </div>
 
         {/* Call Details */}
@@ -364,44 +331,9 @@ export default function ReferProSponsorSummary() {
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
                 <span>Confirm monthly reporting format and success metrics</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>
-                  <a 
-                    href="https://go.st-hacks.cc/partnership-review"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#ED254E] hover:text-[#C1121F] underline"
-                    data-testid="link-calendly-next-steps"
-                  >
-                    Book the next strategy call
-                  </a>
-                </span>
-              </li>
             </ul>
           </CardContent>
         </Card>
-
-        {/* CTA Footer */}
-        <div className="text-center mb-8">
-          <a 
-            href="https://go.st-hacks.cc/partnership-review"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors"
-            data-testid="button-book-call-footer"
-          >
-            <Calendar className="w-5 h-5" />
-            Book the follow-up call
-          </a>
-        </div>
-
-        {/* Calendly inline widget */}
-        <div 
-          className="calendly-inline-widget mb-8" 
-          data-url="https://go.st-hacks.cc/partnership-review?primary_color=ed164d" 
-          style={{ minWidth: '320px', height: '700px' }}
-        ></div>
       </div>
     </div>
   );
