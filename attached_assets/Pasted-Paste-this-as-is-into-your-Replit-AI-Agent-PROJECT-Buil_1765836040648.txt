@@ -1,0 +1,138 @@
+Paste this as-is into your Replit AI Agent.
+
+⸻
+
+PROJECT: Build private sponsor summary page for ReferPro
+
+GOAL
+Create a private, shareable, conversion-focused sponsor summary page for ReferPro, matching the same layout, spacing, and components used by the existing example page:
+	•	/private/sponsor-summary-finturf (use it as the exact template)
+
+The new page must:
+	•	Live at: /private/sponsor-summary-referpro
+	•	Use the same layout components, typography, section structure, and CTA patterns as the finturf page
+	•	Be mobile friendly and look professional on desktop
+	•	Include my latest audience metrics:
+	•	Facebook group: 9,900 contractors
+	•	Email list: 1,915 contacts
+
+IMPLEMENTATION INSTRUCTIONS
+	1.	Find the existing finturf page in the codebase
+
+	•	Search the repo for: “sponsor-summary-finturf” and open the page file.
+	•	Duplicate it to create the ReferPro page.
+	•	Keep the same overall section order and visual hierarchy.
+
+	2.	Create the new route and slug
+
+	•	New route: /private/sponsor-summary-referpro
+	•	Ensure it builds and deploys with no broken imports.
+
+	3.	Page content requirements (use the same components and patterns from finturf)
+
+A) Hero section (top of page)
+	•	Title: “Sponsor Summary: ReferPro”
+	•	Subtitle: “Private recap and sponsorship options”
+	•	Add a primary CTA button: “Book the follow-up call”
+	•	Link to Calendly: https://calendly.com/st-hacks/sponsorship-review-and-strategy-call
+	•	Add a secondary CTA button: “Download sponsorship deck” (if the finturf page has this pattern). If there is a shared deck link already in the codebase, reuse it. If not, create a placeholder “#”.
+
+B) Call details (small block)
+	•	Date: December 15, 2025
+	•	Participants: Bill Brown + ReferPro team (if the finturf template supports listing attendees, include this)
+	•	Meeting label: “Refer Pro Meeting” (this appears in the transcript PDF header)
+
+C) Call summary (short, scannable)
+Write a concise summary based on the uploaded ReferPro conversation PDF. Use bullet points and short paragraphs, similar length and density to the finturf page.
+
+Include these points (do not invent anything beyond these):
+	•	ReferPro is positioned around structured referral programs for home service companies.
+	•	The product emphasis is on incentives, tracking, and making referrals repeatable (not accidental).
+	•	A key theme discussed was: contractors often believe referrals are strong, but performance is limited without a formal program and consistent promotion.
+	•	Discussion included the importance of team awareness and internal promotion so referrals actually happen.
+
+D) Sponsor goals (section)
+Create a “Sponsor goals discussed” section with bullet points. Keep it aligned to the call content:
+	•	Increase adoption and visibility of ReferPro inside the ServiceTitan contractor ecosystem
+	•	Generate qualified leads and demos from decision-makers
+	•	Educate contractors on “why referrals underperform without a program” and “how incentives and process increase volume”
+	•	Build trust through content (podcast, posts, calculators, and practical examples)
+
+E) Recommended content angles (section)
+Add 5-7 content angles as bullets (worded like hooks). Keep them specific to referral programs:
+Examples of angles to include:
+	•	“Your referral program is not real if your team cannot explain it in 10 seconds”
+	•	“Most contractors think referrals are strong. Here is what a real referral process looks like”
+	•	“Incentives are only half the battle. Tracking and follow-up is the other half”
+	•	“How many referrals are you getting by accident vs on purpose?”
+	•	“CSR scripts and technician prompts that actually drive referrals”
+	•	“Gift card vs cash vs account credit. What gets results?”
+	•	“The simplest way to make referrals a weekly KPI”
+
+F) My audience and reach (section)
+This must match my latest metrics and the sponsorship deck framing.
+
+Display as a clean grid/cards like the finturf template, using these numbers:
+	•	Facebook group members: 9,900 contractors
+	•	Email subscribers: 1,915 contacts
+Also include the other standard channels if the finturf template includes them (YouTube views, website visitors, etc), but ONLY if they already exist as generic stats on the template page. If those numbers are not available in the codebase, do not guess.
+
+G) Sponsorship tier options (section)
+Add a “Sponsorship options” section that includes the 4 tiers and the key bullets from my sponsorship deck.
+
+Use these tier names and prices:
+	•	Diamond Partner: $13,900/month
+	•	Elite Partner: $9,600/month
+	•	Featured Partner: $5,700/month
+	•	Community Partner: $3,500/month
+
+For each tier, include short bullets (pull from the sponsorship deck PDF content already uploaded, and keep it consistent with the deck language):
+	•	Omnichannel exposure (Facebook, Email, YouTube, Podcast, Website) depending on tier
+	•	Retargeting included on Diamond (Meta and YouTube)
+	•	Lead expectations language should be conservative (do not promise exact outcomes)
+	•	Category exclusivity on higher tiers if that is already in the deck
+	•	Monthly strategy call on higher tiers
+
+Important: If the finturf page uses a comparison table, replicate that table format exactly and populate it with the tier names and the main deliverables.
+
+H) Suggested starting recommendation (section)
+Add a “Suggested starting point” section with a short recommendation:
+	•	Recommend starting at Elite or Featured depending on budget, with a note that we can start smaller and scale after proof of engagement.
+Do NOT claim any guaranteed lead numbers.
+
+I) Next steps (section)
+Add a simple checklist with 5-7 items:
+	•	Confirm tier and start date
+	•	Confirm category exclusivity scope (referrals / referral marketing)
+	•	Schedule podcast recording (if included in the standard onboarding flow from finturf)
+	•	Define lead capture asset (calculator, playbook, or checklist)
+	•	Set up tracking links and a dedicated landing page
+	•	Confirm monthly reporting format and success metrics
+	•	Book the next strategy call (link to Calendly)
+
+J) CTA footer (final block)
+Repeat the primary CTA button:
+	•	“Book the follow-up call” -> https://calendly.com/st-hacks/sponsorship-review-and-strategy-call
+
+	4.	Styling and structure requirements
+
+	•	Do not redesign. Clone the finturf page structure and styling.
+	•	Use the same component library and spacing tokens already used.
+	•	Keep copy tight, skimmable, and contractor-friendly.
+	•	No long paragraphs. Prefer bullets, short sections, bold labels.
+
+	5.	Data sources
+
+	•	Use the ReferPro conversation PDF as the source for the call summary and goals.
+	•	Use the sponsorship deck PDF as the source for tier deliverables.
+	•	Use the explicit updated metrics I provided:
+	•	9,900 contractors
+	•	1,915 email contacts
+
+	6.	Output
+
+	•	Commit the new page and confirm the final route works:
+	•	/private/sponsor-summary-referpro
+	•	Ensure there are no broken links, missing imports, or build errors.
+
+⸻

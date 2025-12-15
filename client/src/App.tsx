@@ -47,6 +47,7 @@ import SMSPrivacyPolicy from "@/pages/SMSPrivacyPolicy";
 import SMSTermsConditions from "@/pages/SMSTermsConditions";
 import SponsorSummary from "@/pages/SponsorSummary";
 import AclarifySponsorSummary from "@/pages/AclarifySponsorSummary";
+import ReferProSponsorSummary from "@/pages/ReferProSponsorSummary";
 import SponsorROICalculator from "@/pages/SponsorROICalculator";
 import PropertyComProposal from "@/pages/PropertyComProposal";
 import Giveaway from "@/pages/Giveaway";
@@ -105,6 +106,7 @@ function Router() {
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />
       <Route path="/private/sponsor-summary-finturf" component={SponsorSummary} />
       <Route path="/private/sponsor-summary/aclarify" component={AclarifySponsorSummary} />
+      <Route path="/private/sponsor-summary-referpro" component={ReferProSponsorSummary} />
       <Route path="/private/sponsor-roi-calculator" component={SponsorROICalculator} />
       <Route path="/private/proposal/property-com" component={PropertyComProposal} />
       <Route path="/admin" component={Admin} />
