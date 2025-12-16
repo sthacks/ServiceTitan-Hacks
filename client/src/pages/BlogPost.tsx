@@ -9,6 +9,7 @@ import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
 import billBrownProfile from "@assets/red shirt round_1763150613592.png";
 import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png";
 import callBoardHeroImage from "@assets/Hero_image_-_desktop_(2)_1765483039610.png";
+import aiSalesCoachImage from "@assets/34047466-3_1765897680481.jpg";
 
 interface BlogPost {
   id: string;
@@ -32,7 +33,7 @@ const blogPosts: BlogPost[] = [
     date: "December 16, 2025",
     readTime: "5 min read",
     category: "Sales",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop",
+    image: aiSalesCoachImage,
     slug: "diy-ai-sales-coach",
     ogImage: "https://servicetitanhacks.com/og-ai-sales-coach.png"
   },
