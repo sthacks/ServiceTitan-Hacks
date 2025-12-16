@@ -8,6 +8,12 @@ export interface PageMetadata {
 
 export const metadata: Record<string, PageMetadata> = {
   // Blog Posts
+  "/blog/diy-ai-sales-coach": {
+    title: "How I Built a DIY 'Sales Coach' for $25/Month Using AI | ServiceTitan Hacks Blog",
+    description: "I'll be honest: I am not a good salesperson. But I'm getting better—and the only reason is because I finally learned how to study my own mistakes using AI. Here's my $25/month hack.",
+    ogImage: "https://servicetitanhacks.com/og-ai-sales-coach.png",
+    ogType: "article",
+  },
   "/blog/4-ways-top-companies-control-schedule": {
     title: "4 Surprising Ways Top Home Service Companies Take Control of Their Schedule | ServiceTitan Hacks",
     description: "Most companies think they have a scheduling problem. What they really have is a visibility problem. Learn four real strategies top operators use to take control of capacity.",
