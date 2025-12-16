@@ -1835,9 +1835,21 @@ export default function BlogPost() {
           <div className="mt-12 pt-8 border-t">
             <h3 className="text-2xl font-bold mb-4 font-heading">Connect with Bill</h3>
             <p className="text-black mb-6">
-              Have questions or want to discuss this article? Connect with me on social media:
+              Have questions or want to discuss this article? Reach out directly or connect with me on social media:
             </p>
             <div className="flex flex-wrap gap-4">
+              <a
+                href="mailto:bill@st-hacks.com"
+                className="inline-flex items-center gap-2"
+                data-testid="link-email"
+              >
+                <Button variant="outline" size="lg" className="gap-2">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  bill@st-hacks.com
+                </Button>
+              </a>
               <a
                 href="https://www.linkedin.com/in/billbrown80/"
                 target="_blank"
