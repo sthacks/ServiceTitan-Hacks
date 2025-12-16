@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
+import { Copy, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -123,6 +124,72 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
+const SALES_COACH_PROMPT = `Role: You are a world-class Sales Coach and Revenue Intelligence expert specializing in in-home services. You have trained top closers in trades like HVAC, roofing, plumbing, and solar. I am uploading transcripts from my recent in-home sales appointments.
+
+Goal: I need you to brutally analyze my performance. Do not be polite; be objective and critical. My goal is to identify my blind spots so I can increase my closing rate in the home.
+
+Please analyze the attached transcripts for the following 4 specific areas:
+
+1. The Monologue Detector (Talk-to-Listen Ratio)
+- Identify sections where I speak for too long without asking a checking question.
+- Estimate my talk time vs. the homeowner's talk time.
+- Highlight any specific moments where I interrupted the homeowner.
+
+2. The "Trade Talk" Trap
+- Identify moments where I used technical industry language (specs, code requirements, complex mechanics) that might confuse a homeowner.
+- Action: Rewrite one of those technical explanations into a simple, kitchen-table analogy I could use instead.
+
+3. Missed Buying Signals & The Close
+- Did the homeowner ask a question or make a statement that showed interest (a buying signal) that I ignored or talked over?
+- Did I clearly ask for the sale? If not, identify the exact moment in the conversation where I should have asked for the business, and write out exactly what I should have said.
+
+4. Discovery & Comfort
+- Am I asking "Yes/No" questions or "Open-Ended" questions to understand their needs?
+- List 3 questions I should have asked to better understand their pain points or budget, but didn't.
+
+Output format:
+Please give me a bulleted Executive Summary of my top 3 weaknesses across these appointments, followed by specific "Before and After" examples using quotes from the transcripts.`;
+
+function SalesCoachPromptBox() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(SALES_COACH_PROMPT);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <div className="bg-white border-2 border-gray-300 rounded-lg p-4 my-6 relative">
+      <div className="flex items-center justify-between mb-3">
+        <p className="text-sm text-gray-700 font-semibold">The "In-Home Sales" Analysis Prompt:</p>
+        <button
+          onClick={handleCopy}
+          className="flex items-center gap-2 px-3 py-1.5 bg-[#ED254E] hover:bg-[#C1121F] text-white text-sm font-medium rounded-md transition-colors"
+          data-testid="button-copy-prompt"
+        >
+          {copied ? (
+            <>
+              <Check className="w-4 h-4" />
+              Copied!
+            </>
+          ) : (
+            <>
+              <Copy className="w-4 h-4" />
+              Copy Prompt
+            </>
+          )}
+        </button>
+      </div>
+      <pre className="whitespace-pre-wrap text-sm text-gray-800 font-mono overflow-x-auto bg-gray-50 p-4 rounded border border-gray-200">{SALES_COACH_PROMPT}</pre>
+    </div>
+  );
+}
+
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
   "diy-ai-sales-coach": (
@@ -211,34 +278,7 @@ const blogPostContent: Record<string, JSX.Element> = {
         Copy the prompt below and paste it into ChatGPT along with your transcripts. This is the "Master Sales Coach" prompt I use—it works whether you're selling HVAC systems, roofing, plumbing, solar, or any in-home service:
       </p>
       
-      <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 my-6 relative">
-        <p className="text-sm text-gray-600 mb-2 font-semibold">Copy this prompt:</p>
-        <pre className="whitespace-pre-wrap text-sm text-black font-mono overflow-x-auto">{`Role: You are a world-class Sales Coach and Revenue Intelligence expert specializing in in-home services. You have trained top closers in trades like HVAC, roofing, plumbing, and solar. I am uploading transcripts from my recent in-home sales appointments.
-
-Goal: I need you to brutally analyze my performance. Do not be polite; be objective and critical. My goal is to identify my blind spots so I can increase my closing rate in the home.
-
-Please analyze the attached transcripts for the following 4 specific areas:
-
-1. The Monologue Detector (Talk-to-Listen Ratio)
-- Identify sections where I speak for too long without asking a checking question.
-- Estimate my talk time vs. the homeowner's talk time.
-- Highlight any specific moments where I interrupted the homeowner.
-
-2. The "Trade Talk" Trap
-- Identify moments where I used technical industry language (specs, code requirements, complex mechanics) that might confuse a homeowner.
-- Action: Rewrite one of those technical explanations into a simple, kitchen-table analogy I could use instead.
-
-3. Missed Buying Signals & The Close
-- Did the homeowner ask a question or make a statement that showed interest (a buying signal) that I ignored or talked over?
-- Did I clearly ask for the sale? If not, identify the exact moment in the conversation where I should have asked for the business, and write out exactly what I should have said.
-
-4. Discovery & Comfort
-- Am I asking "Yes/No" questions or "Open-Ended" questions to understand their needs?
-- List 3 questions I should have asked to better understand their pain points or budget, but didn't.
-
-Output format:
-Please give me a bulleted Executive Summary of my top 3 weaknesses across these appointments, followed by specific "Before and After" examples using quotes from the transcripts.`}</pre>
-      </div>
+      <SalesCoachPromptBox />
       
       <p>
         <strong>The possibilities for feedback are endless.</strong> This prompt covers the big four areas: talk-to-listen ratio, technical jargon, missed buying signals, and discovery questions. The AI will find patterns you'd never catch on your own—and give you specific "before and after" examples from your actual conversations.
