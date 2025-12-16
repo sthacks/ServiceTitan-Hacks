@@ -25,6 +25,18 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "8",
+    title: "How I Built a DIY 'Sales Coach' for $25/Month Using AI",
+    excerpt: "I'll be honest: I am not a good salesperson. But I'm getting better—and the only reason is because I finally learned how to study my own mistakes using AI. Here's my $25/month hack.",
+    author: "Bill Brown",
+    date: "December 16, 2025",
+    readTime: "5 min read",
+    category: "Sales",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop",
+    slug: "diy-ai-sales-coach",
+    ogImage: "https://servicetitanhacks.com/og-ai-sales-coach.png"
+  },
+  {
     id: "7",
     title: "4 Surprising Ways Top Home Service Companies Actually Take Control of Their Schedule",
     excerpt: "Most companies on ServiceTitan think they have a scheduling problem. What they really have is a visibility problem. Here are four real strategies top operators use to take control instead of hoping the day works out.",
@@ -112,6 +124,140 @@ const blogPosts: BlogPost[] = [
 
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
+  "diy-ai-sales-coach": (
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
+      <h2>The Confession</h2>
+      
+      <p>
+        I'll be honest with you: <strong>I am not a good salesperson.</strong>
+      </p>
+      
+      <ul>
+        <li>I have trouble listening</li>
+        <li>I monologue over people instead of asking questions</li>
+        <li>I talk too fast</li>
+        <li>I get too technical</li>
+        <li>I don't ask for the sale often enough</li>
+      </ul>
+      
+      <p>
+        I'm pretty sure I check every box on the list of things you can do wrong in sales.
+      </p>
+      
+      <p>
+        <strong>But I'm getting better.</strong> And the only reason I'm getting better is because I finally learned how to study my own mistakes—something that, before AI, was nearly impossible to do in sales. Here's how I do it for about $25 a month.
+      </p>
+      
+      <h2>The Game Tape Concept</h2>
+      
+      <p>
+        The only way to get better is to know exactly what happened.
+      </p>
+      
+      <p>
+        The best football players watch game tape. The best golfers analyze their swing frame by frame. The best baseball players break down every at-bat and practice relentlessly.
+      </p>
+      
+      <p>
+        <strong>The problem with sales is this:</strong> when you mess up a call, you don't really know exactly where you messed up. The conversation moves too fast. You're in the moment. And by the time it's over, you only remember the general feeling—not the specific words, pauses, or missed opportunities.
+      </p>
+      
+      <p>
+        Unlike athletes, salespeople don't have a natural way to rewind and study their performance. At least, we didn't—until now.
+      </p>
+      
+      <h2>The AI Unlock: From Note-Taker to Coach</h2>
+      
+      <p>
+        During Covid, I started recording all of my Zoom calls and using AI note-takers during conversations.
+      </p>
+      
+      <p>
+        Initially, the note-takers were great because they would compile a list of action items, allowing me to focus on the call rather than scribbling notes. (Honestly, I'm a horrible note-taker anyway. I'd walk away from 45-minute calls with maybe three weak bullet points.)
+      </p>
+      
+      <p>
+        But here's the key insight: <strong>Note-takers are for memory. ChatGPT is for coaching.</strong>
+      </p>
+      
+      <p>
+        When I started doing more sales calls, I continued recording the conversations. But when ChatGPT came out, I realized I could take those transcripts and analyze them on a much deeper level.
+      </p>
+      
+      <h2>The Workflow: Your Step-by-Step Guide</h2>
+      
+      <p>
+        Here's exactly how I built my $25/month AI sales coach:
+      </p>
+      
+      <p>
+        <strong>Step 1: Record the Call</strong><br />
+        Use Zoom's built-in recording feature for virtual calls. Make sure transcription is enabled.
+      </p>
+      
+      <p>
+        <strong>Step 2: Export Transcripts to PDF</strong><br />
+        After each call, download the transcript. I save them in a folder organized by week or campaign.
+      </p>
+      
+      <p>
+        <strong>Step 3: Batch Upload 10 Calls to ChatGPT</strong><br />
+        Once I have about 10 similar calls (discovery calls, demos, follow-ups—whatever you're working on), I upload all the PDFs into ChatGPT.
+      </p>
+      
+      <p>
+        <strong>Step 4: Use This Prompt</strong><br />
+        Here's the exact prompt I use:
+      </p>
+      
+      <blockquote className="border-l-4 border-[#ED254E] pl-4 italic my-6">
+        "These are transcripts from my last 10 sales calls. I want you to analyze them and tell me:
+        <ul className="not-italic mt-2">
+          <li>What is the number one thing I do wrong?</li>
+          <li>Where does the conversation typically go wrong?</li>
+          <li>What questions do customers ask that I don't answer correctly—and what could I have said instead?</li>
+          <li>Do I talk too much?</li>
+          <li>Do I talk too fast?</li>
+        </ul>
+      </blockquote>
+      
+      <p>
+        <strong>The possibilities for feedback are endless.</strong> You can ask about specific objections, how well you handle pricing conversations, or whether you're creating enough urgency. The AI will find patterns you'd never catch on your own.
+      </p>
+      
+      <h2>The Solution for In-Person Meetings</h2>
+      
+      <p>
+        What about when you're not on Zoom?
+      </p>
+      
+      <p>
+        Today, there's something called the <strong>Plaud Note Pin</strong>—a small device you can wear on your wrist or clip to your shirt. It easily records in-person conversations, transcribes them, and even has built-in AI feedback within the Plaud app.
+      </p>
+      
+      <p>
+        It's the missing piece for anyone doing face-to-face selling.
+      </p>
+      
+      <h2>The Bottom Line</h2>
+      
+      <p>
+        Honestly, I haven't figured out any other way to improve at sales than to <strong>know exactly what the number one thing you need to work on is.</strong>
+      </p>
+      
+      <p>
+        You can read all the books. You can attend all the workshops. But until you see your own patterns—the way you interrupt, the questions you dodge, the pauses you fill with rambling—you're just guessing at what to fix.
+      </p>
+      
+      <p>
+        <strong>Record. Transcribe. Analyze. Repeat.</strong>
+      </p>
+      
+      <p>
+        That's the hack. Hope it helps.
+      </p>
+    </div>
+  ),
   "4-ways-top-companies-control-schedule": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">

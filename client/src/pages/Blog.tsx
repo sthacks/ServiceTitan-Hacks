@@ -23,6 +23,17 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "8",
+    title: "How I Built a DIY 'Sales Coach' for $25/Month Using AI",
+    excerpt: "I'll be honest: I am not a good salesperson. But I'm getting better—and the only reason is because I finally learned how to study my own mistakes using AI. Here's my $25/month hack.",
+    author: "Bill Brown",
+    date: "December 16, 2025",
+    readTime: "5 min read",
+    category: "Sales",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop",
+    slug: "diy-ai-sales-coach"
+  },
+  {
     id: "7",
     title: "4 Surprising Ways Top Home Service Companies Actually Take Control of Their Schedule",
     excerpt: "Most companies on ServiceTitan think they have a scheduling problem. What they really have is a visibility problem. Here are four real strategies top operators use to take control instead of hoping the day works out.",
