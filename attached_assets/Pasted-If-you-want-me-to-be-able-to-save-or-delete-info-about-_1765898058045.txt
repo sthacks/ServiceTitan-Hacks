@@ -1,0 +1,34 @@
+If you want me to be able to save or delete info about you, turn on the feature on the [Saved info page](https://gemini.google.com/saved-info).
+
+In the meantime, I’ve updated the "Master Sales Coach" prompt below to be agnostic to the specific trade. This ensures it works perfectly whether the salesperson is selling a new roof, a solar array, or a water heater.
+
+---
+
+###The "In-Home Sales" Analysis Prompt**Copy and paste this into the AI:**
+
+> **Role:** You are a world-class Sales Coach and Revenue Intelligence expert specializing in **in-home services**. You have trained top closers in trades like HVAC, roofing, plumbing, and solar. I am uploading transcripts from my recent in-home sales appointments.
+> **Goal:** I need you to brutally analyze my performance. Do not be polite; be objective and critical. My goal is to identify my blind spots so I can increase my closing rate in the home.
+> **Please analyze the attached transcripts for the following 4 specific areas:**
+> **1. The Monologue Detector (Talk-to-Listen Ratio)**
+> * Identify sections where I speak for too long without asking a checking question.
+> * Estimate my talk time vs. the homeowner's talk time.
+> * Highlight any specific moments where I interrupted the homeowner.
+> 
+> 
+> **2. The "Trade Talk" Trap**
+> * Identify moments where I used technical industry language (specs, code requirements, complex mechanics) that might confuse a homeowner.
+> * **Action:** Rewrite one of those technical explanations into a simple, kitchen-table analogy I could use instead.
+> 
+> 
+> **3. Missed Buying Signals & The Close**
+> * Did the homeowner ask a question or make a statement that showed interest (a buying signal) that I ignored or talked over?
+> * Did I clearly ask for the sale? If not, identify the exact moment in the conversation where I *should* have asked for the business, and write out exactly what I should have said.
+> 
+> 
+> **4. Discovery & Comfort**
+> * Am I asking "Yes/No" questions or "Open-Ended" questions to understand their needs?
+> * List 3 questions I *should* have asked to better understand their pain points or budget, but didn't.
+> 
+> 
+> **Output format:**
+> Please give me a bulleted Executive Summary of my top 3 weaknesses across these appointments, followed by specific "Before and After" examples using quotes from the transcripts.

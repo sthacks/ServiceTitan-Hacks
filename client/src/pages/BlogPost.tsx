@@ -208,22 +208,40 @@ const blogPostContent: Record<string, JSX.Element> = {
       
       <p>
         <strong>Step 4: Use This Prompt</strong><br />
-        Here's the exact prompt I use:
+        Copy the prompt below and paste it into ChatGPT along with your transcripts. This is the "Master Sales Coach" prompt I use—it works whether you're selling HVAC systems, roofing, plumbing, solar, or any in-home service:
       </p>
       
-      <blockquote className="border-l-4 border-[#ED254E] pl-4 italic my-6">
-        "These are transcripts from my last 10 customer conversations. I want you to analyze them and tell me:
-        <ul className="not-italic mt-2">
-          <li>What is the number one thing I do wrong?</li>
-          <li>Where does the conversation typically go wrong?</li>
-          <li>What questions do customers ask that I don't answer correctly—and what could I have said instead?</li>
-          <li>Do I talk too much?</li>
-          <li>Do I talk too fast?</li>
-        </ul>
-      </blockquote>
+      <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 my-6 relative">
+        <p className="text-sm text-gray-600 mb-2 font-semibold">Copy this prompt:</p>
+        <pre className="whitespace-pre-wrap text-sm text-black font-mono overflow-x-auto">{`Role: You are a world-class Sales Coach and Revenue Intelligence expert specializing in in-home services. You have trained top closers in trades like HVAC, roofing, plumbing, and solar. I am uploading transcripts from my recent in-home sales appointments.
+
+Goal: I need you to brutally analyze my performance. Do not be polite; be objective and critical. My goal is to identify my blind spots so I can increase my closing rate in the home.
+
+Please analyze the attached transcripts for the following 4 specific areas:
+
+1. The Monologue Detector (Talk-to-Listen Ratio)
+- Identify sections where I speak for too long without asking a checking question.
+- Estimate my talk time vs. the homeowner's talk time.
+- Highlight any specific moments where I interrupted the homeowner.
+
+2. The "Trade Talk" Trap
+- Identify moments where I used technical industry language (specs, code requirements, complex mechanics) that might confuse a homeowner.
+- Action: Rewrite one of those technical explanations into a simple, kitchen-table analogy I could use instead.
+
+3. Missed Buying Signals & The Close
+- Did the homeowner ask a question or make a statement that showed interest (a buying signal) that I ignored or talked over?
+- Did I clearly ask for the sale? If not, identify the exact moment in the conversation where I should have asked for the business, and write out exactly what I should have said.
+
+4. Discovery & Comfort
+- Am I asking "Yes/No" questions or "Open-Ended" questions to understand their needs?
+- List 3 questions I should have asked to better understand their pain points or budget, but didn't.
+
+Output format:
+Please give me a bulleted Executive Summary of my top 3 weaknesses across these appointments, followed by specific "Before and After" examples using quotes from the transcripts.`}</pre>
+      </div>
       
       <p>
-        <strong>The possibilities for feedback are endless.</strong> You can ask about specific objections, how well you handle pricing conversations, or whether you're creating enough urgency. The AI will find patterns you'd never catch on your own.
+        <strong>The possibilities for feedback are endless.</strong> This prompt covers the big four areas: talk-to-listen ratio, technical jargon, missed buying signals, and discovery questions. The AI will find patterns you'd never catch on your own—and give you specific "before and after" examples from your actual conversations.
       </p>
       
       <h2>Why the Plaud Note Pin Works So Well</h2>
