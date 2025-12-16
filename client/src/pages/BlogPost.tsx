@@ -192,18 +192,18 @@ const blogPostContent: Record<string, JSX.Element> = {
       </p>
       
       <p>
-        <strong>Step 1: Record the Call</strong><br />
-        Use Zoom's built-in recording feature for virtual calls. Make sure transcription is enabled.
+        <strong>Step 1: Record Your Customer Conversations</strong><br />
+        Get yourself a <strong>Plaud Note Pin</strong> or similar recording device. It's a small pin you can clip to your shirt or wear on your wrist. It records your conversations with customers—whether you're in their kitchen presenting options, on a service call, or meeting face-to-face anywhere. It automatically transcribes everything.
       </p>
       
       <p>
         <strong>Step 2: Export Transcripts to PDF</strong><br />
-        After each call, download the transcript. I save them in a folder organized by week or campaign.
+        After each conversation, export the transcript. I save them in a folder organized by week or type of call (service calls, sales presentations, follow-ups).
       </p>
       
       <p>
-        <strong>Step 3: Batch Upload 10 Calls to ChatGPT</strong><br />
-        Once I have about 10 similar calls (discovery calls, demos, follow-ups—whatever you're working on), I upload all the PDFs into ChatGPT.
+        <strong>Step 3: Batch Upload 10 Conversations to ChatGPT</strong><br />
+        Once I have about 10 similar conversations, I upload all the PDFs into ChatGPT.
       </p>
       
       <p>
@@ -212,7 +212,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       </p>
       
       <blockquote className="border-l-4 border-[#ED254E] pl-4 italic my-6">
-        "These are transcripts from my last 10 sales calls. I want you to analyze them and tell me:
+        "These are transcripts from my last 10 customer conversations. I want you to analyze them and tell me:
         <ul className="not-italic mt-2">
           <li>What is the number one thing I do wrong?</li>
           <li>Where does the conversation typically go wrong?</li>
@@ -226,18 +226,18 @@ const blogPostContent: Record<string, JSX.Element> = {
         <strong>The possibilities for feedback are endless.</strong> You can ask about specific objections, how well you handle pricing conversations, or whether you're creating enough urgency. The AI will find patterns you'd never catch on your own.
       </p>
       
-      <h2>The Solution for In-Person Meetings</h2>
+      <h2>Why the Plaud Note Pin Works So Well</h2>
       
       <p>
-        What about when you're not on Zoom?
+        If you're a technician or in-home salesperson, you're not sitting at a desk on Zoom calls. You're in customers' homes, in their garages, in their basements. You need something that works in the field.
       </p>
       
       <p>
-        Today, there's something called the <strong>Plaud Note Pin</strong>—a small device you can wear on your wrist or clip to your shirt. It easily records in-person conversations, transcribes them, and even has built-in AI feedback within the Plaud app.
+        The <strong>Plaud Note Pin</strong> is small, unobtrusive, and records hours of conversation. It transcribes automatically and even has built-in AI feedback within the app. You can review your conversations on the drive to your next call.
       </p>
       
       <p>
-        It's the missing piece for anyone doing face-to-face selling.
+        It's the missing piece for anyone doing face-to-face customer interactions.
       </p>
       
       <h2>The Bottom Line</h2>
