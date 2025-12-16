@@ -258,6 +258,16 @@ Please give me a bulleted Executive Summary of my top 3 weaknesses across these 
         It's the missing piece for anyone doing face-to-face customer interactions.
       </p>
       
+      <h2>You Don't Need Your Company to Buy This</h2>
+      
+      <p>
+        Here's the thing: you don't need to wait for your company to champion this or approve a budget. This is a personal development tool. I pay for ChatGPT myself. I bought my own Plaud Note Pin. It costs me about $25 a month total.
+      </p>
+      
+      <p>
+        Think about it—if this helps you close even one more job per month, you've paid for years of the subscription in a single commission check. This is an investment in yourself, not a company expense request.
+      </p>
+      
       <h2>The Bottom Line</h2>
       
       <p>
