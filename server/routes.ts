@@ -52,16 +52,25 @@ const isMasterAdmin = async (req: any, res: any, next: any) => {
   }
   
   try {
-    const userId = req.user.claims.sub;
-    const userEmail = req.user.claims.email;
+    const claims = req.user.claims;
+    const userId = claims.sub;
+    const userEmail = claims.email;
     
     console.log(`[Partner Portal] Checking master admin for userId: ${userId}, email: ${userEmail}`);
-    console.log(`[Partner Portal] All claims:`, JSON.stringify(req.user.claims));
     
     let partnerUser = await storage.getPartnerUser(userId);
     
     // Auto-create master admin for Bill (case-insensitive email check)
     if (!partnerUser && userEmail?.toLowerCase() === MASTER_ADMIN_EMAIL.toLowerCase()) {
+      // Ensure user exists in users table first (foreign key requirement)
+      await storage.upsertUser({
+        id: userId,
+        email: userEmail,
+        firstName: claims.first_name,
+        lastName: claims.last_name,
+        profileImageUrl: claims.profile_image_url,
+      });
+      
       partnerUser = await storage.createPartnerUser({
         userId,
         companyId: null,
@@ -2091,13 +2100,23 @@ ${blogPosts.map(post => `  <url>
   // Get current partner user info
   app.get('/api/partner-portal/me', isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
-      const userEmail = req.user.claims.email;
+      const claims = req.user.claims;
+      const userId = claims.sub;
+      const userEmail = claims.email;
       
       let partnerUser = await storage.getPartnerUser(userId);
       
-      // Auto-create master admin for Bill
-      if (!partnerUser && userEmail === MASTER_ADMIN_EMAIL) {
+      // Auto-create master admin for Bill (case-insensitive)
+      if (!partnerUser && userEmail?.toLowerCase() === MASTER_ADMIN_EMAIL.toLowerCase()) {
+        // Ensure user exists in users table first (foreign key requirement)
+        await storage.upsertUser({
+          id: userId,
+          email: userEmail,
+          firstName: claims.first_name,
+          lastName: claims.last_name,
+          profileImageUrl: claims.profile_image_url,
+        });
+        
         partnerUser = await storage.createPartnerUser({
           userId,
           companyId: null,
