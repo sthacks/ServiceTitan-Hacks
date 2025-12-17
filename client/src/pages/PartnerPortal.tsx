@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -18,6 +19,8 @@ interface PartnerMeResponse {
 }
 
 export default function PartnerPortal() {
+  const [, setLocation] = useLocation();
+  
   const { data: meData, isLoading: meLoading } = useQuery<PartnerMeResponse>({
     queryKey: ['/api/partner-portal/me'],
   });
@@ -36,6 +39,13 @@ export default function PartnerPortal() {
     queryKey: ['/api/partner-portal/brand-assets'],
     enabled: !!meData?.isPartner && !!meData?.company,
   });
+
+  // Redirect master admins to the admin dashboard
+  useEffect(() => {
+    if (meData?.isPartner && meData?.partnerUser?.role === 'master_admin') {
+      setLocation('/partner-portal/admin');
+    }
+  }, [meData, setLocation]);
 
   if (meLoading) {
     return (

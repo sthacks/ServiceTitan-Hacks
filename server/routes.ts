@@ -2069,11 +2069,26 @@ ${blogPosts.map(post => `  <url>
   // PARTNER PORTAL API ROUTES
   // ============================================
 
+  // Master admin email - Bill
+  const MASTER_ADMIN_EMAIL = 'bill@st-hacks.com';
+
   // Get current partner user info
   app.get('/api/partner-portal/me', isAuthenticated, async (req: any, res) => {
     try {
       const userId = req.user.claims.sub;
-      const partnerUser = await storage.getPartnerUser(userId);
+      const userEmail = req.user.claims.email;
+      
+      let partnerUser = await storage.getPartnerUser(userId);
+      
+      // Auto-create master admin for Bill
+      if (!partnerUser && userEmail === MASTER_ADMIN_EMAIL) {
+        partnerUser = await storage.createPartnerUser({
+          userId,
+          companyId: null,
+          role: 'master_admin'
+        });
+        console.log(`[Partner Portal] Auto-created master admin for ${userEmail}`);
+      }
       
       if (!partnerUser) {
         return res.json({ isPartner: false });
