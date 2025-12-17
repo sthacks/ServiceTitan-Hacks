@@ -132,6 +132,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.redirect(301, 'https://servicetitanhacks.thinkific.com/users/sign_in');
     }
 
+    // Redirect /login to /api/login for Replit Auth
+    if (req.path === '/login') {
+      return res.redirect(302, '/api/login');
+    }
+
     // Redirect course collections to Thinkific subdomain
     if (req.path === '/collections/courses') {
       return res.redirect(301, 'https://servicetitanhacks.thinkific.com/collections/courses');

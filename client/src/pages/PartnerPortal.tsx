@@ -58,9 +58,12 @@ export default function PartnerPortal() {
               please check your email for the invitation link.
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="/login">
-                <Button data-testid="button-login">Sign In</Button>
-              </Link>
+              <Button 
+                data-testid="button-login"
+                onClick={() => window.location.href = "/api/login"}
+              >
+                Sign In
+              </Button>
               <Link href="/contact">
                 <Button variant="outline" data-testid="button-contact">Contact Us</Button>
               </Link>
