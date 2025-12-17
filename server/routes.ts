@@ -55,10 +55,13 @@ const isMasterAdmin = async (req: any, res: any, next: any) => {
     const userId = req.user.claims.sub;
     const userEmail = req.user.claims.email;
     
+    console.log(`[Partner Portal] Checking master admin for userId: ${userId}, email: ${userEmail}`);
+    console.log(`[Partner Portal] All claims:`, JSON.stringify(req.user.claims));
+    
     let partnerUser = await storage.getPartnerUser(userId);
     
-    // Auto-create master admin for Bill
-    if (!partnerUser && userEmail === MASTER_ADMIN_EMAIL) {
+    // Auto-create master admin for Bill (case-insensitive email check)
+    if (!partnerUser && userEmail?.toLowerCase() === MASTER_ADMIN_EMAIL.toLowerCase()) {
       partnerUser = await storage.createPartnerUser({
         userId,
         companyId: null,
@@ -68,6 +71,7 @@ const isMasterAdmin = async (req: any, res: any, next: any) => {
     }
     
     if (!partnerUser || partnerUser.role !== 'master_admin') {
+      console.log(`[Partner Portal] Access denied for ${userEmail}. partnerUser:`, partnerUser);
       return res.status(403).json({ message: "Forbidden: Master admin access required" });
     }
     
