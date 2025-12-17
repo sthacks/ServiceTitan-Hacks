@@ -52,6 +52,9 @@ import SponsorROICalculator from "@/pages/SponsorROICalculator";
 import PropertyComProposal from "@/pages/PropertyComProposal";
 import Giveaway from "@/pages/Giveaway";
 import Admin from "@/pages/Admin";
+import PartnerPortal from "@/pages/PartnerPortal";
+import PartnerPortalAdmin from "@/pages/PartnerPortalAdmin";
+import PartnerPortalAcceptInvite from "@/pages/PartnerPortalAcceptInvite";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -110,6 +113,9 @@ function Router() {
       <Route path="/private/sponsor-roi-calculator" component={SponsorROICalculator} />
       <Route path="/private/proposal/property-com" component={PropertyComProposal} />
       <Route path="/admin" component={Admin} />
+      <Route path="/partner-portal" component={PartnerPortal} />
+      <Route path="/partner-portal/admin" component={PartnerPortalAdmin} />
+      <Route path="/partner-portal/accept-invite" component={PartnerPortalAcceptInvite} />
       <Route component={NotFound} />
     </Switch>
   );

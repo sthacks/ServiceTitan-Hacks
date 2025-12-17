@@ -1,7 +1,8 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
+import { randomUUID } from "crypto";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
@@ -38,6 +39,72 @@ const isAdmin = async (req: any, res: any, next: any) => {
   } catch (error) {
     console.error("Error checking admin status:", error);
     res.status(500).json({ message: "Failed to verify admin status" });
+  }
+};
+
+// Partner Portal middleware - checks if user is a master admin
+const isMasterAdmin = async (req: any, res: any, next: any) => {
+  if (!req.isAuthenticated()) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+  
+  try {
+    const userId = req.user.claims.sub;
+    const partnerUser = await storage.getPartnerUser(userId);
+    
+    if (!partnerUser || partnerUser.role !== 'master_admin') {
+      return res.status(403).json({ message: "Forbidden: Master admin access required" });
+    }
+    
+    req.partnerUser = partnerUser;
+    next();
+  } catch (error) {
+    console.error("Error checking master admin status:", error);
+    res.status(500).json({ message: "Failed to verify master admin status" });
+  }
+};
+
+// Partner Portal middleware - checks if user is an account admin or master admin
+const isAccountAdmin = async (req: any, res: any, next: any) => {
+  if (!req.isAuthenticated()) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+  
+  try {
+    const userId = req.user.claims.sub;
+    const partnerUser = await storage.getPartnerUser(userId);
+    
+    if (!partnerUser || (partnerUser.role !== 'account_admin' && partnerUser.role !== 'master_admin')) {
+      return res.status(403).json({ message: "Forbidden: Account admin access required" });
+    }
+    
+    req.partnerUser = partnerUser;
+    next();
+  } catch (error) {
+    console.error("Error checking account admin status:", error);
+    res.status(500).json({ message: "Failed to verify account admin status" });
+  }
+};
+
+// Partner Portal middleware - checks if user has any partner role
+const isPartnerUser = async (req: any, res: any, next: any) => {
+  if (!req.isAuthenticated()) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+  
+  try {
+    const userId = req.user.claims.sub;
+    const partnerUser = await storage.getPartnerUser(userId);
+    
+    if (!partnerUser) {
+      return res.status(403).json({ message: "Forbidden: Partner access required" });
+    }
+    
+    req.partnerUser = partnerUser;
+    next();
+  } catch (error) {
+    console.error("Error checking partner user status:", error);
+    res.status(500).json({ message: "Failed to verify partner status" });
   }
 };
 
@@ -1990,6 +2057,460 @@ ${blogPosts.map(post => `  <url>
         episodesAdded: 0, 
         error: error instanceof Error ? error.message : 'Unknown error' 
       });
+    }
+  });
+
+  // ============================================
+  // PARTNER PORTAL API ROUTES
+  // ============================================
+
+  // Get current partner user info
+  app.get('/api/partner-portal/me', isAuthenticated, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      const partnerUser = await storage.getPartnerUser(userId);
+      
+      if (!partnerUser) {
+        return res.json({ isPartner: false });
+      }
+      
+      let company = null;
+      if (partnerUser.companyId) {
+        company = await storage.getPartnerCompany(partnerUser.companyId);
+      }
+      
+      res.json({
+        isPartner: true,
+        partnerUser,
+        company
+      });
+    } catch (error) {
+      console.error("Error fetching partner user:", error);
+      res.status(500).json({ message: "Failed to fetch partner user" });
+    }
+  });
+
+  // Master Admin: Get all companies
+  app.get('/api/partner-portal/companies', isMasterAdmin, async (req: any, res) => {
+    try {
+      const companies = await storage.getAllPartnerCompanies();
+      res.json(companies);
+    } catch (error) {
+      console.error("Error fetching companies:", error);
+      res.status(500).json({ message: "Failed to fetch companies" });
+    }
+  });
+
+  // Master Admin: Create a new company
+  app.post('/api/partner-portal/companies', isMasterAdmin, async (req: any, res) => {
+    try {
+      const validated = insertPartnerCompanySchema.parse(req.body);
+      const company = await storage.createPartnerCompany(validated);
+      res.status(201).json(company);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: fromZodError(error).toString() });
+      }
+      console.error("Error creating company:", error);
+      res.status(500).json({ message: "Failed to create company" });
+    }
+  });
+
+  // Master Admin: Get a specific company
+  app.get('/api/partner-portal/companies/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      const company = await storage.getPartnerCompany(req.params.id);
+      if (!company) {
+        return res.status(404).json({ message: "Company not found" });
+      }
+      res.json(company);
+    } catch (error) {
+      console.error("Error fetching company:", error);
+      res.status(500).json({ message: "Failed to fetch company" });
+    }
+  });
+
+  // Master Admin: Update a company
+  app.patch('/api/partner-portal/companies/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      const company = await storage.updatePartnerCompany(req.params.id, req.body);
+      if (!company) {
+        return res.status(404).json({ message: "Company not found" });
+      }
+      res.json(company);
+    } catch (error) {
+      console.error("Error updating company:", error);
+      res.status(500).json({ message: "Failed to update company" });
+    }
+  });
+
+  // Master Admin: Delete a company
+  app.delete('/api/partner-portal/companies/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      await storage.deletePartnerCompany(req.params.id);
+      res.status(204).send();
+    } catch (error) {
+      console.error("Error deleting company:", error);
+      res.status(500).json({ message: "Failed to delete company" });
+    }
+  });
+
+  // Master Admin: Get users for a company
+  app.get('/api/partner-portal/companies/:companyId/users', isMasterAdmin, async (req: any, res) => {
+    try {
+      const users = await storage.getPartnerUsersByCompany(req.params.companyId);
+      res.json(users);
+    } catch (error) {
+      console.error("Error fetching company users:", error);
+      res.status(500).json({ message: "Failed to fetch company users" });
+    }
+  });
+
+  // Master Admin: Create invite for account admin
+  app.post('/api/partner-portal/invites', isMasterAdmin, async (req: any, res) => {
+    try {
+      const { email, companyId, role } = req.body;
+      const userId = req.user.claims.sub;
+      
+      const token = randomUUID();
+      const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
+      
+      const invite = await storage.createPartnerInvite({
+        email,
+        companyId,
+        role: role || 'account_admin',
+        invitedBy: userId,
+        token,
+        expiresAt
+      });
+      
+      // Send invite email via Resend
+      try {
+        const resend = getUncachableResendClient();
+        await resend.emails.send({
+          from: 'ServiceTitan Hacks <noreply@st-hacks.com>',
+          to: email,
+          subject: 'You\'ve been invited to the ServiceTitan Hacks Partner Portal',
+          html: `
+            <h2>Partner Portal Invitation</h2>
+            <p>You've been invited to join the ServiceTitan Hacks Partner Portal.</p>
+            <p>Click the link below to accept your invitation:</p>
+            <p><a href="https://servicetitanhacks.com/partner-portal/accept-invite?token=${token}">Accept Invitation</a></p>
+            <p>This link expires in 7 days.</p>
+          `
+        });
+      } catch (emailError) {
+        console.error("Error sending invite email:", emailError);
+      }
+      
+      res.status(201).json(invite);
+    } catch (error) {
+      console.error("Error creating invite:", error);
+      res.status(500).json({ message: "Failed to create invite" });
+    }
+  });
+
+  // Account Admin: Invite a user to their company
+  app.post('/api/partner-portal/companies/:companyId/invites', isAccountAdmin, async (req: any, res) => {
+    try {
+      const { email } = req.body;
+      const userId = req.user.claims.sub;
+      const partnerUser = req.partnerUser;
+      
+      // Account admins can only invite to their own company
+      if (partnerUser.role !== 'master_admin' && partnerUser.companyId !== req.params.companyId) {
+        return res.status(403).json({ message: "Cannot invite users to other companies" });
+      }
+      
+      const token = randomUUID();
+      const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+      
+      const invite = await storage.createPartnerInvite({
+        email,
+        companyId: req.params.companyId,
+        role: 'user',
+        invitedBy: userId,
+        token,
+        expiresAt
+      });
+      
+      // Send invite email
+      try {
+        const company = await storage.getPartnerCompany(req.params.companyId);
+        const resend = getUncachableResendClient();
+        await resend.emails.send({
+          from: 'ServiceTitan Hacks <noreply@st-hacks.com>',
+          to: email,
+          subject: `You've been invited to ${company?.name || 'a partner'}'s portal`,
+          html: `
+            <h2>Partner Portal Invitation</h2>
+            <p>You've been invited to join ${company?.name || 'a partner'}'s portal on ServiceTitan Hacks.</p>
+            <p>Click the link below to accept your invitation:</p>
+            <p><a href="https://servicetitanhacks.com/partner-portal/accept-invite?token=${token}">Accept Invitation</a></p>
+            <p>This link expires in 7 days.</p>
+          `
+        });
+      } catch (emailError) {
+        console.error("Error sending invite email:", emailError);
+      }
+      
+      res.status(201).json(invite);
+    } catch (error) {
+      console.error("Error creating invite:", error);
+      res.status(500).json({ message: "Failed to create invite" });
+    }
+  });
+
+  // Accept an invite
+  app.post('/api/partner-portal/accept-invite', isAuthenticated, async (req: any, res) => {
+    try {
+      const { token } = req.body;
+      const userId = req.user.claims.sub;
+      
+      const invite = await storage.getPartnerInviteByToken(token);
+      if (!invite) {
+        return res.status(404).json({ message: "Invite not found" });
+      }
+      
+      if (invite.acceptedAt) {
+        return res.status(400).json({ message: "Invite already accepted" });
+      }
+      
+      if (new Date(invite.expiresAt) < new Date()) {
+        return res.status(400).json({ message: "Invite has expired" });
+      }
+      
+      // Create the partner user
+      await storage.createPartnerUser({
+        userId,
+        companyId: invite.companyId,
+        role: invite.role
+      });
+      
+      // Mark invite as accepted
+      await storage.acceptPartnerInvite(token);
+      
+      res.json({ message: "Invite accepted successfully" });
+    } catch (error) {
+      console.error("Error accepting invite:", error);
+      res.status(500).json({ message: "Failed to accept invite" });
+    }
+  });
+
+  // Get company invites (for account admins and master admins)
+  app.get('/api/partner-portal/companies/:companyId/invites', isAccountAdmin, async (req: any, res) => {
+    try {
+      const partnerUser = req.partnerUser;
+      
+      if (partnerUser.role !== 'master_admin' && partnerUser.companyId !== req.params.companyId) {
+        return res.status(403).json({ message: "Cannot view invites for other companies" });
+      }
+      
+      const invites = await storage.getPartnerInvitesByCompany(req.params.companyId);
+      res.json(invites);
+    } catch (error) {
+      console.error("Error fetching invites:", error);
+      res.status(500).json({ message: "Failed to fetch invites" });
+    }
+  });
+
+  // Partner User: Get campaign metrics for their company
+  app.get('/api/partner-portal/metrics', isPartnerUser, async (req: any, res) => {
+    try {
+      const partnerUser = req.partnerUser;
+      
+      if (!partnerUser.companyId) {
+        return res.status(400).json({ message: "No company associated with this user" });
+      }
+      
+      const metrics = await storage.getPartnerCampaignMetrics(partnerUser.companyId);
+      res.json(metrics);
+    } catch (error) {
+      console.error("Error fetching metrics:", error);
+      res.status(500).json({ message: "Failed to fetch metrics" });
+    }
+  });
+
+  // Master Admin: Create campaign metrics for a company
+  app.post('/api/partner-portal/companies/:companyId/metrics', isMasterAdmin, async (req: any, res) => {
+    try {
+      const validated = insertPartnerCampaignMetricSchema.parse({
+        ...req.body,
+        companyId: req.params.companyId
+      });
+      const metric = await storage.createPartnerCampaignMetric(validated);
+      res.status(201).json(metric);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: fromZodError(error).toString() });
+      }
+      console.error("Error creating metric:", error);
+      res.status(500).json({ message: "Failed to create metric" });
+    }
+  });
+
+  // Master Admin: Update campaign metrics
+  app.patch('/api/partner-portal/metrics/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      const metric = await storage.updatePartnerCampaignMetric(req.params.id, req.body);
+      if (!metric) {
+        return res.status(404).json({ message: "Metric not found" });
+      }
+      res.json(metric);
+    } catch (error) {
+      console.error("Error updating metric:", error);
+      res.status(500).json({ message: "Failed to update metric" });
+    }
+  });
+
+  // Master Admin: Delete campaign metrics
+  app.delete('/api/partner-portal/metrics/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      await storage.deletePartnerCampaignMetric(req.params.id);
+      res.status(204).send();
+    } catch (error) {
+      console.error("Error deleting metric:", error);
+      res.status(500).json({ message: "Failed to delete metric" });
+    }
+  });
+
+  // Partner User: Get content calendar for their company
+  app.get('/api/partner-portal/calendar', isPartnerUser, async (req: any, res) => {
+    try {
+      const partnerUser = req.partnerUser;
+      
+      if (!partnerUser.companyId) {
+        return res.status(400).json({ message: "No company associated with this user" });
+      }
+      
+      const items = await storage.getPartnerContentCalendar(partnerUser.companyId);
+      res.json(items);
+    } catch (error) {
+      console.error("Error fetching calendar:", error);
+      res.status(500).json({ message: "Failed to fetch calendar" });
+    }
+  });
+
+  // Master Admin: Create content calendar item
+  app.post('/api/partner-portal/companies/:companyId/calendar', isMasterAdmin, async (req: any, res) => {
+    try {
+      const validated = insertPartnerContentCalendarSchema.parse({
+        ...req.body,
+        companyId: req.params.companyId
+      });
+      const item = await storage.createPartnerContentCalendarItem(validated);
+      res.status(201).json(item);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: fromZodError(error).toString() });
+      }
+      console.error("Error creating calendar item:", error);
+      res.status(500).json({ message: "Failed to create calendar item" });
+    }
+  });
+
+  // Master Admin: Update content calendar item
+  app.patch('/api/partner-portal/calendar/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      const item = await storage.updatePartnerContentCalendarItem(req.params.id, req.body);
+      if (!item) {
+        return res.status(404).json({ message: "Calendar item not found" });
+      }
+      res.json(item);
+    } catch (error) {
+      console.error("Error updating calendar item:", error);
+      res.status(500).json({ message: "Failed to update calendar item" });
+    }
+  });
+
+  // Master Admin: Delete content calendar item
+  app.delete('/api/partner-portal/calendar/:id', isMasterAdmin, async (req: any, res) => {
+    try {
+      await storage.deletePartnerContentCalendarItem(req.params.id);
+      res.status(204).send();
+    } catch (error) {
+      console.error("Error deleting calendar item:", error);
+      res.status(500).json({ message: "Failed to delete calendar item" });
+    }
+  });
+
+  // Partner User: Get brand assets for their company
+  app.get('/api/partner-portal/brand-assets', isPartnerUser, async (req: any, res) => {
+    try {
+      const partnerUser = req.partnerUser;
+      
+      if (!partnerUser.companyId) {
+        return res.status(400).json({ message: "No company associated with this user" });
+      }
+      
+      const assets = await storage.getPartnerBrandAssets(partnerUser.companyId);
+      res.json(assets);
+    } catch (error) {
+      console.error("Error fetching brand assets:", error);
+      res.status(500).json({ message: "Failed to fetch brand assets" });
+    }
+  });
+
+  // Account Admin: Create brand asset
+  app.post('/api/partner-portal/brand-assets', isAccountAdmin, async (req: any, res) => {
+    try {
+      const partnerUser = req.partnerUser;
+      const userId = req.user.claims.sub;
+      
+      if (!partnerUser.companyId && partnerUser.role !== 'master_admin') {
+        return res.status(400).json({ message: "No company associated with this user" });
+      }
+      
+      const companyId = req.body.companyId || partnerUser.companyId;
+      
+      const validated = insertPartnerBrandAssetSchema.parse({
+        ...req.body,
+        companyId,
+        uploadedBy: userId
+      });
+      const asset = await storage.createPartnerBrandAsset(validated);
+      res.status(201).json(asset);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: fromZodError(error).toString() });
+      }
+      console.error("Error creating brand asset:", error);
+      res.status(500).json({ message: "Failed to create brand asset" });
+    }
+  });
+
+  // Account Admin: Delete brand asset
+  app.delete('/api/partner-portal/brand-assets/:id', isAccountAdmin, async (req: any, res) => {
+    try {
+      await storage.deletePartnerBrandAsset(req.params.id);
+      res.status(204).send();
+    } catch (error) {
+      console.error("Error deleting brand asset:", error);
+      res.status(500).json({ message: "Failed to delete brand asset" });
+    }
+  });
+
+  // Master Admin: Manually add a user as master admin (bootstrap)
+  app.post('/api/partner-portal/bootstrap-master-admin', isAdmin, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      
+      // Check if already a partner user
+      const existing = await storage.getPartnerUser(userId);
+      if (existing) {
+        return res.status(400).json({ message: "Already a partner user" });
+      }
+      
+      const partnerUser = await storage.createPartnerUser({
+        userId,
+        companyId: null,
+        role: 'master_admin'
+      });
+      
+      res.status(201).json(partnerUser);
+    } catch (error) {
+      console.error("Error bootstrapping master admin:", error);
+      res.status(500).json({ message: "Failed to bootstrap master admin" });
     }
   });
 

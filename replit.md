@@ -29,6 +29,26 @@ A middleware injects page-specific meta tags for social media crawlers and stati
 ### Podcast RSS Feed Integration
 An automated system synchronizes podcast episodes from servicetitanhacks.podbean.com daily using `node-cron`. Episodes are stored in a PostgreSQL database (podcast_episodes table), preventing duplicates via GUID, and are exposed via a public API endpoint for the frontend.
 
+### Partner Portal System
+A comprehensive partner portal enables partners to view campaign performance, content calendars, subscription details, and upload brand assets. The system uses a hierarchical user structure:
+- **Master Admin** (Bill): Can see all partner companies, create new companies, invite account admins, and enter campaign metrics
+- **Account Admin**: Can manage their company's users and upload brand assets
+- **User**: Read-only access to their company's dashboard
+
+**Database Tables**: partner_companies, partner_users, partner_invites, partner_campaign_metrics, partner_content_calendar, partner_brand_assets
+
+**Routes**: `/partner-portal` (dashboard), `/partner-portal/admin` (master admin), `/partner-portal/accept-invite` (invite acceptance)
+
+**API Endpoints**: 
+- `/api/partner-portal/me` - Get current user's partner info
+- `/api/partner-portal/companies` - CRUD for companies (master admin)
+- `/api/partner-portal/invites` - Create invitations (master admin)
+- `/api/partner-portal/metrics` - Campaign metrics
+- `/api/partner-portal/calendar` - Content calendar
+- `/api/partner-portal/brand-assets` - Brand asset management
+
+Campaign metrics are entered manually initially, with future Mailchimp/Facebook/YouTube API integrations planned.
+
 ## External Dependencies
 
 ### UI & Styling

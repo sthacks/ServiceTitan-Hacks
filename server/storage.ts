@@ -24,6 +24,18 @@ import {
   type WinkROISubmission,
   type InsertWinkROISubmission,
   type PodcastEpisode,
+  type PartnerCompany,
+  type InsertPartnerCompany,
+  type PartnerUser,
+  type InsertPartnerUser,
+  type PartnerInvite,
+  type InsertPartnerInvite,
+  type PartnerCampaignMetric,
+  type InsertPartnerCampaignMetric,
+  type PartnerContentCalendarItem,
+  type InsertPartnerContentCalendarItem,
+  type PartnerBrandAsset,
+  type InsertPartnerBrandAsset,
   pricebookOptimizations,
   winkDemoSubmissions,
   smartACDemoSubmissions,
@@ -31,7 +43,14 @@ import {
   liveswitchDemoSubmissions,
   smartacROISubmissions,
   winkROISubmissions,
-  podcastEpisodes
+  podcastEpisodes,
+  partnerCompanies,
+  partnerUsers,
+  partnerInvites,
+  partnerCampaignMetrics,
+  partnerContentCalendar,
+  partnerBrandAssets,
+  users
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
@@ -93,6 +112,46 @@ export interface IStorage {
   
   // Podcast operations
   getPodcastEpisodes(): Promise<PodcastEpisode[]>;
+  
+  // Partner Portal operations
+  // Companies
+  createPartnerCompany(company: InsertPartnerCompany): Promise<PartnerCompany>;
+  getPartnerCompany(id: string): Promise<PartnerCompany | undefined>;
+  getAllPartnerCompanies(): Promise<PartnerCompany[]>;
+  updatePartnerCompany(id: string, updates: Partial<InsertPartnerCompany>): Promise<PartnerCompany | undefined>;
+  deletePartnerCompany(id: string): Promise<void>;
+  
+  // Partner Users
+  createPartnerUser(partnerUser: InsertPartnerUser): Promise<PartnerUser>;
+  getPartnerUser(userId: string): Promise<PartnerUser | undefined>;
+  getPartnerUsersByCompany(companyId: string): Promise<Array<PartnerUser & { user: User }>>;
+  updatePartnerUserRole(userId: string, role: string): Promise<void>;
+  deletePartnerUser(userId: string): Promise<void>;
+  getMasterAdmins(): Promise<PartnerUser[]>;
+  
+  // Partner Invites
+  createPartnerInvite(invite: InsertPartnerInvite): Promise<PartnerInvite>;
+  getPartnerInviteByToken(token: string): Promise<PartnerInvite | undefined>;
+  getPartnerInvitesByCompany(companyId: string): Promise<PartnerInvite[]>;
+  acceptPartnerInvite(token: string): Promise<void>;
+  deletePartnerInvite(id: string): Promise<void>;
+  
+  // Campaign Metrics
+  createPartnerCampaignMetric(metric: InsertPartnerCampaignMetric): Promise<PartnerCampaignMetric>;
+  getPartnerCampaignMetrics(companyId: string): Promise<PartnerCampaignMetric[]>;
+  updatePartnerCampaignMetric(id: string, updates: Partial<InsertPartnerCampaignMetric>): Promise<PartnerCampaignMetric | undefined>;
+  deletePartnerCampaignMetric(id: string): Promise<void>;
+  
+  // Content Calendar
+  createPartnerContentCalendarItem(item: InsertPartnerContentCalendarItem): Promise<PartnerContentCalendarItem>;
+  getPartnerContentCalendar(companyId: string): Promise<PartnerContentCalendarItem[]>;
+  updatePartnerContentCalendarItem(id: string, updates: Partial<InsertPartnerContentCalendarItem>): Promise<PartnerContentCalendarItem | undefined>;
+  deletePartnerContentCalendarItem(id: string): Promise<void>;
+  
+  // Brand Assets
+  createPartnerBrandAsset(asset: InsertPartnerBrandAsset): Promise<PartnerBrandAsset>;
+  getPartnerBrandAssets(companyId: string): Promise<PartnerBrandAsset[]>;
+  deletePartnerBrandAsset(id: string): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -452,6 +511,154 @@ export class MemStorage implements IStorage {
 
   async getPodcastEpisodes(): Promise<PodcastEpisode[]> {
     return await db.select().from(podcastEpisodes).orderBy(sql`${podcastEpisodes.pubDate} DESC`);
+  }
+
+  // Partner Portal implementations
+  async createPartnerCompany(company: InsertPartnerCompany): Promise<PartnerCompany> {
+    const [newCompany] = await db.insert(partnerCompanies).values(company).returning();
+    return newCompany;
+  }
+
+  async getPartnerCompany(id: string): Promise<PartnerCompany | undefined> {
+    const [company] = await db.select().from(partnerCompanies).where(sql`${partnerCompanies.id} = ${id}`);
+    return company;
+  }
+
+  async getAllPartnerCompanies(): Promise<PartnerCompany[]> {
+    return await db.select().from(partnerCompanies).orderBy(sql`${partnerCompanies.createdAt} DESC`);
+  }
+
+  async updatePartnerCompany(id: string, updates: Partial<InsertPartnerCompany>): Promise<PartnerCompany | undefined> {
+    const [updated] = await db.update(partnerCompanies)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(sql`${partnerCompanies.id} = ${id}`)
+      .returning();
+    return updated;
+  }
+
+  async deletePartnerCompany(id: string): Promise<void> {
+    await db.delete(partnerCompanies).where(sql`${partnerCompanies.id} = ${id}`);
+  }
+
+  async createPartnerUser(partnerUser: InsertPartnerUser): Promise<PartnerUser> {
+    const [newPartnerUser] = await db.insert(partnerUsers).values(partnerUser).returning();
+    return newPartnerUser;
+  }
+
+  async getPartnerUser(userId: string): Promise<PartnerUser | undefined> {
+    const [partnerUser] = await db.select().from(partnerUsers).where(sql`${partnerUsers.userId} = ${userId}`);
+    return partnerUser;
+  }
+
+  async getPartnerUsersByCompany(companyId: string): Promise<Array<PartnerUser & { user: User }>> {
+    const result = await db.select({
+      partnerUser: partnerUsers,
+      user: users
+    })
+    .from(partnerUsers)
+    .innerJoin(users, sql`${partnerUsers.userId} = ${users.id}`)
+    .where(sql`${partnerUsers.companyId} = ${companyId}`);
+    
+    return result.map(r => ({ ...r.partnerUser, user: r.user }));
+  }
+
+  async updatePartnerUserRole(userId: string, role: string): Promise<void> {
+    await db.update(partnerUsers)
+      .set({ role })
+      .where(sql`${partnerUsers.userId} = ${userId}`);
+  }
+
+  async deletePartnerUser(userId: string): Promise<void> {
+    await db.delete(partnerUsers).where(sql`${partnerUsers.userId} = ${userId}`);
+  }
+
+  async getMasterAdmins(): Promise<PartnerUser[]> {
+    return await db.select().from(partnerUsers).where(sql`${partnerUsers.role} = 'master_admin'`);
+  }
+
+  async createPartnerInvite(invite: InsertPartnerInvite): Promise<PartnerInvite> {
+    const [newInvite] = await db.insert(partnerInvites).values(invite).returning();
+    return newInvite;
+  }
+
+  async getPartnerInviteByToken(token: string): Promise<PartnerInvite | undefined> {
+    const [invite] = await db.select().from(partnerInvites).where(sql`${partnerInvites.token} = ${token}`);
+    return invite;
+  }
+
+  async getPartnerInvitesByCompany(companyId: string): Promise<PartnerInvite[]> {
+    return await db.select().from(partnerInvites).where(sql`${partnerInvites.companyId} = ${companyId}`);
+  }
+
+  async acceptPartnerInvite(token: string): Promise<void> {
+    await db.update(partnerInvites)
+      .set({ acceptedAt: new Date() })
+      .where(sql`${partnerInvites.token} = ${token}`);
+  }
+
+  async deletePartnerInvite(id: string): Promise<void> {
+    await db.delete(partnerInvites).where(sql`${partnerInvites.id} = ${id}`);
+  }
+
+  async createPartnerCampaignMetric(metric: InsertPartnerCampaignMetric): Promise<PartnerCampaignMetric> {
+    const [newMetric] = await db.insert(partnerCampaignMetrics).values(metric).returning();
+    return newMetric;
+  }
+
+  async getPartnerCampaignMetrics(companyId: string): Promise<PartnerCampaignMetric[]> {
+    return await db.select().from(partnerCampaignMetrics)
+      .where(sql`${partnerCampaignMetrics.companyId} = ${companyId}`)
+      .orderBy(sql`${partnerCampaignMetrics.reportDate} DESC`);
+  }
+
+  async updatePartnerCampaignMetric(id: string, updates: Partial<InsertPartnerCampaignMetric>): Promise<PartnerCampaignMetric | undefined> {
+    const [updated] = await db.update(partnerCampaignMetrics)
+      .set(updates)
+      .where(sql`${partnerCampaignMetrics.id} = ${id}`)
+      .returning();
+    return updated;
+  }
+
+  async deletePartnerCampaignMetric(id: string): Promise<void> {
+    await db.delete(partnerCampaignMetrics).where(sql`${partnerCampaignMetrics.id} = ${id}`);
+  }
+
+  async createPartnerContentCalendarItem(item: InsertPartnerContentCalendarItem): Promise<PartnerContentCalendarItem> {
+    const [newItem] = await db.insert(partnerContentCalendar).values(item).returning();
+    return newItem;
+  }
+
+  async getPartnerContentCalendar(companyId: string): Promise<PartnerContentCalendarItem[]> {
+    return await db.select().from(partnerContentCalendar)
+      .where(sql`${partnerContentCalendar.companyId} = ${companyId}`)
+      .orderBy(sql`${partnerContentCalendar.scheduledDate} ASC`);
+  }
+
+  async updatePartnerContentCalendarItem(id: string, updates: Partial<InsertPartnerContentCalendarItem>): Promise<PartnerContentCalendarItem | undefined> {
+    const [updated] = await db.update(partnerContentCalendar)
+      .set(updates)
+      .where(sql`${partnerContentCalendar.id} = ${id}`)
+      .returning();
+    return updated;
+  }
+
+  async deletePartnerContentCalendarItem(id: string): Promise<void> {
+    await db.delete(partnerContentCalendar).where(sql`${partnerContentCalendar.id} = ${id}`);
+  }
+
+  async createPartnerBrandAsset(asset: InsertPartnerBrandAsset): Promise<PartnerBrandAsset> {
+    const [newAsset] = await db.insert(partnerBrandAssets).values(asset).returning();
+    return newAsset;
+  }
+
+  async getPartnerBrandAssets(companyId: string): Promise<PartnerBrandAsset[]> {
+    return await db.select().from(partnerBrandAssets)
+      .where(sql`${partnerBrandAssets.companyId} = ${companyId}`)
+      .orderBy(sql`${partnerBrandAssets.createdAt} DESC`);
+  }
+
+  async deletePartnerBrandAsset(id: string): Promise<void> {
+    await db.delete(partnerBrandAssets).where(sql`${partnerBrandAssets.id} = ${id}`);
   }
 }
 
