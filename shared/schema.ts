@@ -309,3 +309,171 @@ export type WinkROISubmission = typeof winkROISubmissions.$inferSelect;
 export type InsertWinkROISubmission = z.infer<typeof insertWinkROISubmissionSchema>;
 export type PodcastEpisode = typeof podcastEpisodes.$inferSelect;
 export type InsertPodcastEpisode = typeof podcastEpisodes.$inferInsert;
+
+// ============================================
+// PARTNER PORTAL TABLES
+// ============================================
+
+// Partner Companies - the main organization entity
+export const partnerCompanies = pgTable("partner_companies", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  logoUrl: text("logo_url"),
+  primaryColor: text("primary_color").default("#ED254E"),
+  subscriptionTier: text("subscription_tier"), // e.g., "Diamond", "Elite", "Featured"
+  subscriptionStartDate: timestamp("subscription_start_date"),
+  subscriptionEndDate: timestamp("subscription_end_date"),
+  deliverables: text("deliverables"), // JSON string of deliverables
+  termsAccepted: boolean("terms_accepted").default(false),
+  notes: text("notes"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+// Partner Users - links users to companies with roles
+export const partnerUsers = pgTable("partner_users", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").notNull().references(() => users.id),
+  companyId: varchar("company_id").references(() => partnerCompanies.id),
+  role: text("role").notNull().default("user"), // "master_admin", "account_admin", "user"
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Partner Invites - pending invites
+export const partnerInvites = pgTable("partner_invites", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email").notNull(),
+  companyId: varchar("company_id").references(() => partnerCompanies.id),
+  role: text("role").notNull().default("user"), // "account_admin" or "user"
+  invitedBy: varchar("invited_by").references(() => users.id),
+  token: text("token").notNull().unique(),
+  expiresAt: timestamp("expires_at").notNull(),
+  acceptedAt: timestamp("accepted_at"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Partner Campaign Metrics - performance data
+export const partnerCampaignMetrics = pgTable("partner_campaign_metrics", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  companyId: varchar("company_id").notNull().references(() => partnerCompanies.id),
+  reportDate: timestamp("report_date").notNull(),
+  reportPeriod: text("report_period"), // e.g., "August 2025"
+  
+  // Email metrics
+  emailRecipients: integer("email_recipients"),
+  emailOpenRate: text("email_open_rate"),
+  emailClickRate: text("email_click_rate"),
+  emailTotalClicks: integer("email_total_clicks"),
+  emailTopLink: text("email_top_link"),
+  emailNotes: text("email_notes"),
+  
+  // Facebook metrics
+  fbPostReach: integer("fb_post_reach"),
+  fbPostEngagement: integer("fb_post_engagement"),
+  fbVideoViews: integer("fb_video_views"),
+  fbNotes: text("fb_notes"),
+  
+  // YouTube metrics
+  ytViews: integer("yt_views"),
+  ytAvgDuration: text("yt_avg_duration"),
+  ytRetention: text("yt_retention"),
+  ytSubscribers: integer("yt_subscribers"),
+  ytNotes: text("yt_notes"),
+  
+  // Facebook Ads metrics
+  fbAdReach: integer("fb_ad_reach"),
+  fbAdImpressions: integer("fb_ad_impressions"),
+  fbAdClicks: integer("fb_ad_clicks"),
+  fbAdCtr: text("fb_ad_ctr"),
+  fbAdCpc: text("fb_ad_cpc"),
+  fbAdSpend: text("fb_ad_spend"),
+  fbAdNotes: text("fb_ad_notes"),
+  
+  // Funnel metrics
+  funnelGroupMembers: integer("funnel_group_members"),
+  funnelPosts: integer("funnel_posts"),
+  funnelComments: integer("funnel_comments"),
+  funnelReactions: integer("funnel_reactions"),
+  funnelActiveMembers: integer("funnel_active_members"),
+  funnelLandingPageVisits: integer("funnel_landing_page_visits"),
+  funnelUniqueUsers: integer("funnel_unique_users"),
+  funnelNotes: text("funnel_notes"),
+  
+  // Link engagement
+  linkTotalClicks: integer("link_total_clicks"),
+  linkUniqueUsers: integer("link_unique_users"),
+  linkReferrers: integer("link_referrers"),
+  linkNotes: text("link_notes"),
+  
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Partner Content Calendar - scheduled content
+export const partnerContentCalendar = pgTable("partner_content_calendar", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  companyId: varchar("company_id").notNull().references(() => partnerCompanies.id),
+  scheduledDate: timestamp("scheduled_date").notNull(),
+  contentType: text("content_type").notNull(), // "email", "social", "podcast", "video", "ad"
+  title: text("title").notNull(),
+  description: text("description"),
+  status: text("status").default("scheduled"), // "scheduled", "published", "cancelled"
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Partner Brand Assets - uploaded brand files
+export const partnerBrandAssets = pgTable("partner_brand_assets", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  companyId: varchar("company_id").notNull().references(() => partnerCompanies.id),
+  assetType: text("asset_type").notNull(), // "logo", "icon", "banner", "color_palette", "font", "other"
+  fileName: text("file_name").notNull(),
+  fileUrl: text("file_url").notNull(),
+  uploadedBy: varchar("uploaded_by").references(() => users.id),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Insert schemas
+export const insertPartnerCompanySchema = createInsertSchema(partnerCompanies).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export const insertPartnerUserSchema = createInsertSchema(partnerUsers).omit({
+  id: true,
+  createdAt: true,
+});
+
+export const insertPartnerInviteSchema = createInsertSchema(partnerInvites).omit({
+  id: true,
+  createdAt: true,
+  acceptedAt: true,
+});
+
+export const insertPartnerCampaignMetricSchema = createInsertSchema(partnerCampaignMetrics).omit({
+  id: true,
+  createdAt: true,
+});
+
+export const insertPartnerContentCalendarSchema = createInsertSchema(partnerContentCalendar).omit({
+  id: true,
+  createdAt: true,
+});
+
+export const insertPartnerBrandAssetSchema = createInsertSchema(partnerBrandAssets).omit({
+  id: true,
+  createdAt: true,
+});
+
+// Types
+export type PartnerCompany = typeof partnerCompanies.$inferSelect;
+export type InsertPartnerCompany = z.infer<typeof insertPartnerCompanySchema>;
+export type PartnerUser = typeof partnerUsers.$inferSelect;
+export type InsertPartnerUser = z.infer<typeof insertPartnerUserSchema>;
+export type PartnerInvite = typeof partnerInvites.$inferSelect;
+export type InsertPartnerInvite = z.infer<typeof insertPartnerInviteSchema>;
+export type PartnerCampaignMetric = typeof partnerCampaignMetrics.$inferSelect;
+export type InsertPartnerCampaignMetric = z.infer<typeof insertPartnerCampaignMetricSchema>;
+export type PartnerContentCalendarItem = typeof partnerContentCalendar.$inferSelect;
+export type InsertPartnerContentCalendarItem = z.infer<typeof insertPartnerContentCalendarSchema>;
+export type PartnerBrandAsset = typeof partnerBrandAssets.$inferSelect;
+export type InsertPartnerBrandAsset = z.infer<typeof insertPartnerBrandAssetSchema>;
