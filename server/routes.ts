@@ -11,7 +11,7 @@ import { setupAuth, isAuthenticated } from "./replitAuth";
 import Stripe from "stripe";
 import path from "path";
 import fs from "fs";
-import { addOrUpdateSubscriber } from "./mailchimp";
+import { addOrUpdateSubscriber, getCampaignReports, getAggregateStats, getListGrowth, isMailchimpConfigured } from "./mailchimp";
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
@@ -2488,6 +2488,64 @@ ${blogPosts.map(post => `  <url>
       console.error("Error deleting brand asset:", error);
       res.status(500).json({ message: "Failed to delete brand asset" });
     }
+  });
+
+  // Mailchimp integration endpoints
+  app.get('/api/partner-portal/mailchimp/campaigns', isMasterAdmin, async (req: any, res) => {
+    try {
+      if (!isMailchimpConfigured()) {
+        return res.status(503).json({ message: "Mailchimp not configured" });
+      }
+      
+      const { count, sinceDate, beforeDate } = req.query;
+      const reports = await getCampaignReports({
+        count: count ? parseInt(count) : 10,
+        sinceDate: sinceDate as string,
+        beforeDate: beforeDate as string,
+      });
+      
+      res.json(reports);
+    } catch (error) {
+      console.error("Error fetching Mailchimp campaigns:", error);
+      res.status(500).json({ message: "Failed to fetch Mailchimp campaigns" });
+    }
+  });
+
+  app.get('/api/partner-portal/mailchimp/stats', isMasterAdmin, async (req: any, res) => {
+    try {
+      if (!isMailchimpConfigured()) {
+        return res.status(503).json({ message: "Mailchimp not configured" });
+      }
+      
+      const { sinceDate, beforeDate } = req.query;
+      const stats = await getAggregateStats({
+        sinceDate: sinceDate as string,
+        beforeDate: beforeDate as string,
+      });
+      
+      res.json(stats);
+    } catch (error) {
+      console.error("Error fetching Mailchimp stats:", error);
+      res.status(500).json({ message: "Failed to fetch Mailchimp stats" });
+    }
+  });
+
+  app.get('/api/partner-portal/mailchimp/list-growth', isMasterAdmin, async (req: any, res) => {
+    try {
+      if (!isMailchimpConfigured()) {
+        return res.status(503).json({ message: "Mailchimp not configured" });
+      }
+      
+      const growth = await getListGrowth();
+      res.json(growth);
+    } catch (error) {
+      console.error("Error fetching Mailchimp list growth:", error);
+      res.status(500).json({ message: "Failed to fetch Mailchimp list growth" });
+    }
+  });
+
+  app.get('/api/partner-portal/mailchimp/status', isMasterAdmin, async (req: any, res) => {
+    res.json({ configured: isMailchimpConfigured() });
   });
 
   // Master Admin: Manually add a user as master admin (bootstrap)

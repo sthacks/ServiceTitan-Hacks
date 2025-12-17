@@ -28,6 +28,13 @@ declare module '@mailchimp/mailchimp_marketing' {
           tags: Array<{ name: string; status: 'active' | 'inactive' }>;
         }
       ): Promise<void>;
+      getList(listId: string): Promise<any>;
+    };
+    campaigns: {
+      list(params: any): Promise<any>;
+    };
+    reports: {
+      getCampaignReport(campaignId: string): Promise<any>;
     };
   }
 
