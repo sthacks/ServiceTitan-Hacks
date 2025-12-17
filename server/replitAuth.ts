@@ -117,7 +117,7 @@ export async function setupAuth(app: Express) {
     req.logout(() => {
       const endSessionUrl = client.buildEndSessionUrl(config, {
         client_id: process.env.REPL_ID!,
-        post_logout_redirect_uri: `${req.protocol}://${req.hostname}/api/login?prompt=select_account`,
+        post_logout_redirect_uri: `https://${req.hostname}/`,
       });
       res.redirect(endSessionUrl.href);
     });
