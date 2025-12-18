@@ -139,6 +139,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Meet the best-in-class integration partners we trust to help you automate and optimize your ServiceTitan workflow.",
     ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
+  "/partners/smartac": {
+    title: "SmartAC | ServiceTitan Hacks Partner",
+    description: "SmartAC provides remote HVAC monitoring that reduces truck rolls and increases membership retention. Comfort without concern.",
+    ogImage: "https://servicetitanhacks.com/og-smartac-partner.png",
+  },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
     description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",
