@@ -73,7 +73,7 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Discover vetted software, AI tools and services for HVAC, plumbing and electrical contractors looking to scale.",
     ogImage: "https://servicetitanhacks.com/og-purchasing-platform.png",
   },
-  "/tools": {
+  "/apps": {
     title: "Contractor Apps and Software for ServiceTitan",
     description: "Purpose-built apps and software for ServiceTitan users. Dashboards, automation tools, and AI-powered solutions for HVAC and plumbing contractors.",
     ogImage: "https://servicetitanhacks.com/og-tools.png",

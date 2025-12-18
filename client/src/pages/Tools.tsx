@@ -57,7 +57,7 @@ export default function Tools() {
         title="Contractor Apps and Software for ServiceTitan"
         description="Free and premium HVAC contractor tools including dashboards, calculators, automations and AI workflows."
         keywords="ServiceTitan tools, pricebook optimizer, AI tools, HVAC software, automation"
-        canonicalUrl="https://servicetitanhacks.com/tools"
+        canonicalUrl="https://servicetitanhacks.com/apps"
         ogImage="https://servicetitanhacks.com/og-tools.png"
       />
       <Header />

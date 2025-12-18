@@ -8,7 +8,7 @@ export default function PillarCardExample() {
         title="AI Integrations"
         description="Connect powerful AI tools directly to ServiceTitan for instant ROI."
         icon={aiIcon}
-        link="/tools"
+        link="/apps"
       />
     </div>
   );

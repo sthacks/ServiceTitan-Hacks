@@ -145,7 +145,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.use((req, res, next) => {
     const redirectMap: { [key: string]: string } = {
       '/pages/servicetitan-hacks-partners': '/partners',
-      '/pages/servicetitan-hacks-products': '/tools',
+      '/pages/servicetitan-hacks-products': '/apps',
       '/collections/free-resources': '/resources',
       '/bundles/servicetitan-hacks-all-access-pass': '/all-access',
     };
@@ -2024,7 +2024,7 @@ ${JSON.stringify(jsonData, null, 2)}
       { url: "/contact", priority: "0.7", changefreq: "monthly" },
       { url: "/partners", priority: "0.8", changefreq: "weekly" },
       { url: "/all-access", priority: "0.9", changefreq: "weekly" },
-      { url: "/tools", priority: "0.8", changefreq: "weekly" },
+      { url: "/apps", priority: "0.8", changefreq: "weekly" },
       { url: "/pricebook-optimizer", priority: "0.8", changefreq: "weekly" },
       { url: "/resources", priority: "0.7", changefreq: "weekly" },
       { url: "/purchasing-platform", priority: "0.8", changefreq: "weekly" },
@@ -2640,7 +2640,7 @@ Sitemap: ${baseUrl}/sitemap.xml
 
 # Directories
 Allow: /courses
-Allow: /tools
+Allow: /apps
 Allow: /resources
 Allow: /partners
 Allow: /blog

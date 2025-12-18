@@ -57,7 +57,7 @@ export default function Home() {
       title: "Apps & Products",
       description: "Discover AI tools for contractors and automation solutions designed specifically for ServiceTitan users in HVAC and plumbing businesses.",
       icon: Wrench,
-      link: "/tools",
+      link: "/apps",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FwPQ226FHSzWW8kg7Kz2o_31639583-3.jpg",
       alt: "AI tools for contractors - ServiceTitan automation products and software",
     },

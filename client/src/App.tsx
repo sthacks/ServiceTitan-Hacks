@@ -70,7 +70,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/partners" component={Partners} />
       <Route path="/sponsors" component={Sponsors} />
-      <Route path="/tools" component={Tools} />
+      <Route path="/apps" component={Tools} />
       <Route path="/courses" component={Courses} />
       <Route path="/all-access" component={AllAccess} />
       <Route path="/podcast" component={Podcast} />
