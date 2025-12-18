@@ -1305,7 +1305,7 @@ export default function PartnerDetail() {
               <div className="text-center">
                 <Button 
                   size="lg"
-                  onClick={() => setShowSmartACDemoDialog(true)}
+                  onClick={() => window.open("https://hub.smartac.com/servicetitanhacks-offer?eid=xoeqYg", "_blank")}
                   data-testid="button-book-demo"
                 >
                   Book a Demo
