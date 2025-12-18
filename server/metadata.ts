@@ -149,6 +149,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Back-office AI automation that delivers immediate, measurable returns. Stop buying hype—start building your profitability engine.",
     ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
   },
+  "/partners/contractor-commerce": {
+    title: "Contractor Commerce | ServiceTitan Hacks Partner",
+    description: "Built by contractors, for contractors. Online HVAC system pricing and sales tools that let homeowners shop on their terms.",
+    ogImage: "https://servicetitanhacks.com/og-contractor-commerce-partner.jpg",
+  },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
     description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",
