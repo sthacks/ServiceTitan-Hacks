@@ -39,80 +39,116 @@ export const metadata: Record<string, PageMetadata> = {
     ogType: "article",
   },
   "/blog/stop-selling-other-peoples-equipment-build-your-brand": {
-    title: "Stop Selling Other People's Equipment—Build Your Brand Instead | ServiceTitan Hacks Blog",
-    description: "Most HVAC contractors sell equipment under big-name logos that don't care about them. Learn why all systems are basically the same and how to take back control of your brand, profits, and reputation.",
+    title: "Stop Selling Their Brand. Build Yours.",
+    description: "Why are you paying to advertise for manufacturers? Learn the strategy behind private labeling your equipment.",
     ogImage: "https://servicetitanhacks.com/og-stop-selling-equipment.png",
     ogType: "article",
   },
   "/blog/dmaic-process-improvement-framework": {
-    title: "Stop Putting Out Fires: How DMAIC Permanently Fixes Broken Processes | ServiceTitan Hacks Blog",
-    description: "Most business coaches sell you their systems. But what happens when it doesn't fit your team? Learn the proven framework that helped GE and Motorola—and how to use it in your home service business.",
+    title: "The DMAIC Framework for Contractors",
+    description: "Define. Measure. Analyze. Improve. Control. A proven framework to fix broken processes in your HVAC business.",
     ogImage: "https://servicetitanhacks.com/og-dmaic-methodology-blog.png",
     ogType: "article",
   },
   "/blog/should-i-switch-to-servicetitan": {
-    title: "Should I Switch to ServiceTitan? The Real Cost and Timeline | ServiceTitan Hacks Blog",
-    description: "Considering ServiceTitan for your home service business? Learn when it makes sense to switch, what it really costs ($10K-$30K in setup), and why full implementation takes six months.",
+    title: "Should You Switch to ServiceTitan? (Honest Review)",
+    description: "Thinking about taking the plunge? We break down the real pros, cons, and ROI of switching to ServiceTitan.",
     ogImage: "https://servicetitanhacks.com/og-should-i-switch.png",
+    ogType: "article",
+  },
+  "/blog/ai-automation-contractors-where-to-start": {
+    title: "AI for Contractors: Where to Start?",
+    description: "Overwhelmed by AI buzz? Here are the practical, first steps to actually using automation in your service business.",
+    ogImage: "https://servicetitanhacks.com/og-ai-automation.png",
+    ogType: "article",
+  },
+  "/blog/double-booking-rate-better-forms": {
+    title: "Double Your Booking Rate with Better Forms",
+    description: "Your intake forms might be killing your conversion rate. See how small tweaks can lead to massive booking improvements.",
+    ogImage: "https://servicetitanhacks.com/og-double-booking.png",
+    ogType: "article",
+  },
+  "/blog/servicetitan-dashboard-metrics": {
+    title: "5 ServiceTitan Metrics You Can't Ignore",
+    description: "Are you tracking the right numbers? Here are the essential dashboard metrics every owner needs to watch daily.",
+    ogImage: "https://servicetitanhacks.com/og-dashboard-metrics.png",
+    ogType: "article",
+  },
+  "/blog/ultimate-guide-automating-follow-up-calls": {
+    title: "The Ultimate Guide to Automating Follow-Ups",
+    description: "The money is in the follow-up. Learn how to automate your calls so no unsold estimate ever slips through the cracks.",
+    ogImage: "https://servicetitanhacks.com/og-automating-followups.png",
+    ogType: "article",
+  },
+  "/blog/top-servicetitan-integrations-2025": {
+    title: "Top ServiceTitan Integrations for 2025",
+    description: "Upgrade your tech stack. We reviewed the top apps and integrations you need to be using this year.",
+    ogImage: "https://servicetitanhacks.com/og-top-integrations-2025.png",
+    ogType: "article",
+  },
+  "/blog/convert-more-leads-better-website": {
+    title: "How to Convert More Leads with Your Website",
+    description: "Is your website just a brochure or a lead machine? Simple changes to turn more visitors into booked ServiceTitan jobs.",
+    ogImage: "https://servicetitanhacks.com/og-convert-leads-website.png",
     ogType: "article",
   },
   
   // Main Pages
   "/about": {
-    title: "About ServiceTitan Hacks and Bill Brown",
-    description: "Learn about ServiceTitan Hacks, founded by Bill Brown, an Inc. 5000 HVAC contractor sharing AI tools, automation strategies, and ServiceTitan workflows for home service businesses.",
+    title: "About Us | The Mission Behind ServiceTitan Hacks",
+    description: "We help contractors scale by mastering the tools they already use. Learn about our story and mission to revolutionize the trades.",
     ogImage: "https://servicetitanhacks.com/og-about.png",
   },
   "/contact": {
     title: "Contact ServiceTitan Hacks",
-    description: "Get in touch with ServiceTitan Hacks for questions about courses, tools, partnerships, or automation strategies for your home service business.",
+    description: "Have a question about our courses or automation tools? Let's connect. Reach out to our team today.",
     ogImage: "https://servicetitanhacks.com/og-contact.png",
   },
   "/purchasing-platform": {
-    title: "Contractor Purchasing Platform",
-    description: "Discover vetted software, AI tools and services for HVAC, plumbing and electrical contractors looking to scale.",
+    title: "Join the Equipment Buying Group",
+    description: "Stop overpaying for equipment. Access big-player pricing on HVAC and plumbing supplies through our group.",
     ogImage: "https://servicetitanhacks.com/og-purchasing-platform.png",
   },
   "/apps": {
-    title: "Contractor Apps and Software for ServiceTitan",
-    description: "Purpose-built apps and software for ServiceTitan users. Dashboards, automation tools, and AI-powered solutions for HVAC and plumbing contractors.",
+    title: "Essential Tools for ServiceTitan Users",
+    description: "Don't just use ServiceTitan—supercharge it. Explore our curated list of apps and automations designed for contractors.",
     ogImage: "https://servicetitanhacks.com/og-tools.png",
   },
   "/courses": {
-    title: "Courses for ServiceTitan, AI and Automation",
-    description: "Learn ServiceTitan workflows, AI integrations, and automation strategies through hands-on courses designed for HVAC, plumbing, and electrical contractors.",
+    title: "ServiceTitan Automation Courses",
+    description: "From dashboards to forms—master the technical side of your business with our step-by-step video training courses.",
     ogImage: "https://servicetitanhacks.com/og-courses.png",
   },
   "/resources": {
-    title: "Free HVAC and Contractor Resources",
-    description: "Download free templates, guides, and resources for home service contractors. Get access to swimlane charts, scripts, playbooks, and more.",
+    title: "Free Resources & Templates for Contractors",
+    description: "Download free calculators, SOPs, and guides to help you run a better service business. No strings attached.",
     ogImage: "https://servicetitanhacks.com/og-resources.png",
   },
   "/podcast": {
-    title: "Home Service Business Hacks Podcast",
-    description: "Listen to the Home Service Business Hacks podcast featuring interviews with contractors, software founders, and industry experts on AI, automation, and growth strategies.",
+    title: "The ServiceTitan Hacks Podcast",
+    description: "Candid conversations on innovation in the trades. Hear from contractors and founders changing the game.",
     ogImage: "https://servicetitanhacks.com/og-podcast.png",
   },
   "/blog": {
-    title: "ServiceTitan Hacks Blog",
-    description: "Articles on AI, automation, ServiceTitan workflows, processes, pricebook strategy and contractor growth.",
+    title: "ServiceTitan Hacks Blog | Contractor Insights",
+    description: "Your go-to source for ServiceTitan tips, AI strategies, and growth hacks. Read the latest from industry experts.",
     ogImage: "https://servicetitanhacks.com/og-blog.png",
   },
   "/partners": {
-    title: "ServiceTitan Hacks Sponsors and Partners",
-    description: "Discover vetted software partners and sponsors that help home service contractors grow. Tools for AI, automation, memberships, and business operations.",
+    title: "Our Trusted Technology Partners",
+    description: "Meet the best-in-class integration partners we trust to help you automate and optimize your ServiceTitan workflow.",
     ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
   "/all-access": {
-    title: "ServiceTitan Hacks All-Access Membership",
-    description: "Get unlimited access to all ServiceTitan Hacks courses, tools, and resources. Join a community of contractors leveraging AI and automation to scale.",
+    title: "Get the All-Access Pass | Unlimited Growth",
+    description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",
     ogImage: "https://servicetitanhacks.com/og-all-access.png",
   },
   
   // Tool Pages
   "/pricebook-optimizer": {
-    title: "Pricebook Optimizer for ServiceTitan",
-    description: "Transform technical service descriptions into customer-friendly language using AI. Optimize your ServiceTitan pricebook for better conversion and clarity.",
+    title: "The Pricebook Optimizer Tool",
+    description: "Fix your margins and save time. The easiest way to clean up and optimize your ServiceTitan pricebook.",
     ogImage: "https://servicetitanhacks.com/og-pricebook-optimizer.png",
   },
   "/smartac-roi-calculator": {
@@ -128,13 +164,13 @@ export const metadata: Record<string, PageMetadata> = {
   
   // Course Pages
   "/dashboard-course": {
-    title: "ServiceTitan Dashboard Course",
-    description: "A DIY course for home service pros who want visibility — without expensive software. Go at your own pace with this step-by-step tutorial.",
+    title: "Master Your ServiceTitan Dashboard",
+    description: "Data drives revenue. Learn how to build and read dashboards that actually tell you how your business is performing.",
     ogImage: "https://servicetitanhacks.com/og-dashboard-course.png",
   },
   "/fix-ugly-forms-course": {
-    title: "Fix Your Ugly Forms Course",
-    description: "Transform messy form submissions into polished job notes using ChatGPT and Zapier. Streamline your documentation process and save time.",
+    title: "Fix Ugly Forms & Book More Jobs",
+    description: "Ugly forms lose customers. Learn to design professional ServiceTitan forms that convert leads into booked jobs.",
     ogImage: "https://servicetitanhacks.com/og-fix-ugly-forms.png",
   },
   "/company-app-course": {
@@ -197,8 +233,8 @@ export const metadata: Record<string, PageMetadata> = {
 export function getMetadata(path: string): PageMetadata {
   // Default homepage metadata
   const defaultMetadata: PageMetadata = {
-    title: "ServiceTitan Hacks - AI and Automations for Home Service Contractors",
-    description: "AI tools for contractors. Learn ServiceTitan automation for HVAC, plumbing businesses. Free courses, tools & community. Join 9,500+ contractors.",
+    title: "ServiceTitan Hacks | AI & Automation for Contractors",
+    description: "Join the community of contractors mastering ServiceTitan. Get free tools, automation courses, and exclusive resources to grow your business.",
     ogImage: "https://servicetitanhacks.com/og-home.png",
   };
 
