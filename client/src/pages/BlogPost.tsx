@@ -578,7 +578,7 @@ const blogPostContent: Record<string, JSX.Element> = {
   "selling-hvac-systems-to-millennials-online-pricing": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
-        For the past 20 years, most residential HVAC replacements have been purchased by Baby Boomers and Gen X homeowners. These generations bought HVAC systems long before online research became the norm, so traditional "call for price" or "schedule an estimate first" sales processes worked.
+        For the past 20 years, most residential HVAC replacements have been purchased by Baby Boomers and Gen X homeowners. These generations bought HVAC systems long before online research became the norm, so traditional "call for price" or "schedule an estimate first" sales processes worked effectively.
       </p>
       
       <p>
@@ -586,58 +586,48 @@ const blogPostContent: Record<string, JSX.Element> = {
       </p>
 
       <p>
-        Millennials are now the largest adult generation in the U.S., and although their home-ownership rate lags behind Boomers, they represent a rapidly rising share of first-time buyers. As this demographic becomes a larger percentage of your customer base, their digital expectations will determine who wins HVAC replacement business.
+        Millennials are now the largest adult generation in the U.S. Although their homeownership rate initially lagged behind Boomers, they now represent a rapidly rising share of first-time buyers. As this demographic becomes a larger percentage of your customer base, their digital expectations will determine who wins HVAC replacement business.
       </p>
 
       <p>
-        This article explains why offering transparent online pricing, at least in the form of credible price ranges, is becoming mandatory — not optional — if you want to win the Millennial homeowner.
+        This article explains why offering transparent online pricing—at least in the form of credible price ranges—is becoming mandatory if you want to win the Millennial homeowner.
       </p>
 
       <h2>1. Millennials Expect Accessible Online Information, Not Phone-Call Gatekeeping</h2>
 
-      <p>The shift in buyer expectations is measurable:</p>
+      <p>The shift in buyer expectations is measurable.</p>
 
       <p className="font-semibold">Fact:</p>
       <p>
-        A 2023 Statista survey reported that 84% of U.S. consumers research products online before making a purchase, even for high-ticket categories.
+        A 2023 Statista survey reported that 84% of U.S. consumers research products online before making a purchase, even for high-ticket categories like home improvement and automobiles.
       </p>
 
       <p className="font-semibold">Fact:</p>
       <p>
-        A report by Salesforce found that millennials are significantly more likely than older generations to prefer digital self-service during the buying process, including online research and online price discovery.
+        A report by Salesforce found that Millennials are significantly more likely than older generations to prefer digital self-service during the buying process, including online research and price discovery.
       </p>
 
       <p>
-        If you're a millennial and you've been on the Internet purchasing things your entire life, and you see the "Call for Price" tab, the feeling is: I'm not going to call you.
+        If a potential customer has spent their entire adult life purchasing goods via the Internet, a "Call for Price" tab creates friction. The immediate reaction is often, "I'm not going to call you."
       </p>
 
       <p>
-        This is not theory. It is demonstrated behavior in every major consumer category.
+        This is not theory; it is demonstrated behavior in every major consumer category. When a younger homeowner lands on a contractor's website and cannot find even a ballpark price range, the emotional response is frustration, not curiosity. Frustrated buyers do not pick up the phone; they simply click the back button.
       </p>
-
-      <p>
-        When a younger homeowner lands on a contractor's website and cannot find even a ballpark price range, the emotional response is frustration, not curiosity. And frustrated buyers do not pick up the phone.
-      </p>
-
-      <p>They simply click the back button.</p>
 
       <h2>2. Google and AI Results Reward Contractors Who Give People What They Want</h2>
 
-      <p>This insight aligns directly with Marcus Sheridan's keynote:</p>
-
-      <p className="italic">
-        "In the future, buyers will not sift through a mountain of blue links. They will get the answer. If AI is not recommending you, you're in trouble."
+      <p>
+        Future buyers will not sift through a mountain of blue links to find a phone number. They want direct answers. Today, Google's search algorithm—and increasingly, AI-driven search tools—heavily favors pages that provide:
       </p>
-
-      <p>Today, Google's search algorithm heavily favors pages that provide:</p>
       <ul>
-        <li>clear answers</li>
-        <li>transparent information</li>
-        <li>pricing guidance</li>
-        <li>high-intent user experiences</li>
+        <li>Clear answers</li>
+        <li>Transparent information</li>
+        <li>Pricing guidance</li>
+        <li>High-intent user experiences</li>
       </ul>
 
-      <p>That reward system is not going away.</p>
+      <p>This reward system is not going away.</p>
 
       <p className="font-semibold">Fact:</p>
       <p>
@@ -645,161 +635,114 @@ const blogPostContent: Record<string, JSX.Element> = {
       </p>
 
       <p>
-        When your website refuses to answer the very question customers most want answered — "How much does it cost?" — Google has little incentive to rank you.
-      </p>
-
-      <p>
-        This isn't about beating the algorithm.<br />
-        It's about earning the recommendation of both Google and AI-driven search tools.
+        When your website refuses to answer the very question customers most want answered — "How much does it cost?" — Google has little incentive to rank you. It is about earning the recommendation of both Google and the new wave of AI search assistants.
       </p>
 
       <h2>3. The "Call for Price" Model Will Quietly Shrink Your Market Share</h2>
 
-      <p className="font-semibold">
-        "If you believe that younger buyers could even possibly expect online pricing and you don't change, you will lose market share."
+      <p>
+        If you believe that younger buyers will tolerate hidden pricing, you risk losing market share to competitors who adapt faster.
       </p>
 
       <p>
-        That warning aligns directly with Marcus Sheridan's "Big Five" framework — the five topics buyers always research:
+        To maintain visibility, your content must address the five topics buyers inevitably research before spending money:
       </p>
       <ul>
-        <li>Cost</li>
-        <li>Problems</li>
-        <li>Comparisons</li>
-        <li>Reviews</li>
-        <li>Best/Top</li>
+        <li><strong>Cost:</strong> How much is this going to set me back?</li>
+        <li><strong>Problems:</strong> What could go wrong?</li>
+        <li><strong>Comparisons:</strong> How does Brand A compare to Brand B?</li>
+        <li><strong>Reviews:</strong> What do others think?</li>
+        <li><strong>Best in Class:</strong> What is the top-rated option?</li>
       </ul>
 
       <p>
-        Every industry that embraces these five topics online gains trust and market exposure. The industries that avoid them lose visibility.
+        Every industry that embraces these five topics online gains trust and market exposure. The industries that avoid them lose visibility. Companies in similar high-ticket verticals (like swimming pools or roofing) that have published detailed pricing guides have historically seen massive increases in revenue because they capture early-stage research traffic that competitors ignore.
       </p>
+
+      <h2>4. The Real Race to the Bottom Is Invisible</h2>
+
+      <p>A common objection HVAC companies raise is: "If I post pricing online, won't it turn into a race to the bottom?"</p>
+
+      <p>The reality is that "the bottom" is not low pricing. The bottom is:</p>
+      <ul>
+        <li>Not getting the click.</li>
+        <li>Not getting the phone call.</li>
+        <li>Not getting the booking.</li>
+        <li>Not even knowing the customer existed.</li>
+      </ul>
 
       <p>
-        Marcus's example from the pool industry is instructive: His company published one pricing article. It eventually generated over $35 million in revenue because it captured early-stage research traffic that competitors ignored.
-      </p>
-
-      <p>
-        This is not about copying pools.<br />
-        It's about understanding buyer psychology across all industries.
-      </p>
-
-      <h2>4. The Real Race to the Bottom Is Invisible: Not Being Considered at All</h2>
-
-      <p>A common objection HVAC companies raise is:</p>
-
-      <p className="italic">
-        "If I post pricing online, won't it turn into a race to the bottom?"
-      </p>
-
-      <p className="font-semibold">
-        "The bottom is not even getting the click, not getting the phone call, not getting the booking, not even knowing the customer existed. That's the bottom."
-      </p>
-
-      <p>
-        Low pricing is not the enemy.<br />
-        Invisibility is.
-      </p>
-
-      <p>
-        If Millennials never see your estimate page because you hide pricing, you lose before the race begins.
+        Low pricing is not the enemy; invisibility is. If Millennials never see your estimate page because you hide pricing, you lose the sale before the race even begins.
       </p>
 
       <h2>5. Your Website Must Become a Transparent Digital Sales Experience</h2>
 
-      <p>Marcus Sheridan identifies four pillars of a known and trusted brand. Two apply immediately to HVAC contractors:</p>
+      <p>To build a trusted brand in the digital age, you must adopt two key principles:</p>
 
-      <p className="font-semibold">Pillar 1: Say what others refuse to say</p>
+      <p className="font-semibold">Address what others ignore:</p>
       <p>
-        Most contractors do not talk directly about cost, problems, comparisons, or alternatives.<br />
-        That is why the ones who do become trusted quickly.
+        Most contractors do not talk directly about cost, problems, comparisons, or alternatives. The ones who do become trusted authorities.
       </p>
 
-      <p className="font-semibold">Pillar 3: Sell in ways your competitors are unwilling to sell</p>
+      <p className="font-semibold">Sell the way buyers want to buy:</p>
+      <p>
+        The trend is clear—buyers want to self-educate, maintain control, and make progress online without a salesperson hovering over them.
+      </p>
 
-      <p>The trend is clear:</p>
+      <p>What this means for HVAC companies: You must consider adding tools that facilitate this self-service journey:</p>
       <ul>
-        <li>Buyers want to self-educate.</li>
-        <li>Buyers want control.</li>
-        <li>Buyers want transparency.</li>
-        <li>Buyers want to make progress online without a salesperson.</li>
-      </ul>
-
-      <p>You can resist that trend or build systems around it.</p>
-
-      <p>What this means for HVAC companies:</p>
-      <p>You must consider adding:</p>
-      <ul>
-        <li>online pricing ranges</li>
-        <li>system-level configurators</li>
+        <li>Online pricing ranges</li>
+        <li>System-level configurators</li>
         <li>"Which system is right for me?" quizzes</li>
-        <li>instant estimate tools</li>
-        <li>self-schedulers</li>
+        <li>Instant estimate tools</li>
+        <li>Self-schedulers</li>
       </ul>
 
-      <p>These tools increase trust and dramatically improve lead volume. For example, platforms like <a href="https://go.st-hacks.cc/contractor-commerce" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-1">Contractor Commerce</a> enable HVAC contractors to offer instant online pricing for system replacements, allowing homeowners to configure and price their system without requiring a phone call.</p>
+      <p>
+        These tools increase trust and dramatically improve lead volume. Platforms like <a href="https://go.st-hacks.cc/contractor-commerce" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-1">Contractor Commerce</a> enable HVAC contractors to offer instant online pricing for system replacements, allowing homeowners to configure and price their system without requiring a phone call.
+      </p>
 
       <p className="font-semibold">Fact:</p>
       <p>
-        Salesforce reports that 66% of customers prefer brands that offer self-service tools, and this preference is stronger among Millennials.
+        Salesforce reports that 66% of customers prefer brands that offer self-service tools, and this preference is even stronger among Millennials.
       </p>
 
-      <h2>6. The Perfect HVAC Pricing Page: What It Should Include</h2>
+      <h2>6. The Anatomy of a High-Converting Pricing Page</h2>
 
       <p>
-        Marcus Sheridan teaches the "Perfect Pricing Page" model.<br />
-        You already use these principles in the home. Now bring them online.
+        You already explain pricing dynamics in the home every day. The most successful contractors are now mirroring that real-world expertise online.
       </p>
 
-      <p>A complete pricing page includes:</p>
+      <p>A complete, high-converting pricing page should include:</p>
       <ul>
-        <li>factors that increase price</li>
-        <li>factors that decrease price</li>
-        <li>why different companies charge different rates</li>
-        <li>where your pricing generally falls</li>
-        <li>package explanations</li>
-        <li>upgrades and add-ons</li>
-        <li>hidden or unexpected costs</li>
-        <li>life-cycle cost comparisons</li>
-        <li>financing options</li>
-        <li>photos or videos with price ranges</li>
-        <li>a pricing estimator</li>
-        <li>transparent disclaimers</li>
-        <li>educational pricing videos</li>
+        <li><strong>Factors that increase price:</strong> (e.g., ductwork modifications, high-efficiency units).</li>
+        <li><strong>Factors that decrease price:</strong> (e.g., rebates, tax credits, standard efficiency).</li>
+        <li><strong>Why rates vary:</strong> Explain why you might charge more than the "truck and a ladder" guy.</li>
+        <li><strong>Ballpark ranges:</strong> Where your pricing generally falls.</li>
+        <li><strong>Package explanations:</strong> Good, Better, Best.</li>
+        <li><strong>Upgrades and add-ons:</strong> Thermostats, zoning, air purifiers.</li>
+        <li><strong>Hidden or unexpected costs:</strong> Be transparent about permit fees or electrical upgrades.</li>
+        <li><strong>Financing options:</strong> Show monthly payments, not just total cost.</li>
       </ul>
 
       <p>
-        You know all of this because you explain it to customers daily.
-      </p>
-
-      <p>
-        Putting it online simply mirrors your real-world expertise. Some contractors are already implementing these principles through online pricing systems that guide homeowners through the full decision-making process digitally. (<a href="https://go.st-hacks.cc/contractor-commerce" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-2">Learn more about online pricing for HVAC contractors</a>)
+        This approach guides homeowners through the full decision-making process digitally, filtering out low-quality leads and warming up serious buyers.
       </p>
 
       <h2>7. Online Pricing Will Become Universal. Early Adopters Win.</h2>
 
-      <p>Marcus said:</p>
-
-      <p className="italic">
-        "Within five years, every one of your competitors will have a pricing estimator on their site."
-      </p>
-
-      <p>This is historically accurate.</p>
-
       <p>
-        The boating industry went from zero manufacturers offering online "Build & Price" to 70% adoption.
+        Within five years, it is highly likely that the majority of your competitors will have a pricing estimator on their site. This trajectory has played out in dozens of other industries:
       </p>
-
       <ul>
-        <li>Auto manufacturers use it.</li>
-        <li>Solar installers use it.</li>
-        <li>Roofing companies use it.</li>
-        <li>Window and siding companies use it.</li>
-        <li>HVAC contractors are beginning to use it.</li>
+        <li><strong>Boating:</strong> Went from zero to 70% adoption of online "Build & Price" tools.</li>
+        <li><strong>Automotive:</strong> Universal adoption of online configurators.</li>
+        <li><strong>Solar & Roofing:</strong> Rapidly moving toward instant online quotes.</li>
       </ul>
 
-      <p>The HVAC industry will follow.</p>
-
-      <p>The only question is who gets the early-adopter advantage. Forward-thinking contractors are already deploying online pricing systems that let homeowners configure, compare, and price HVAC systems on their own terms—building trust before the first phone call ever happens.</p>
+      <p>
+        The HVAC industry will follow. The only question is who secures the early-adopter advantage. Forward-thinking contractors are already deploying online pricing systems that let homeowners configure, compare, and price HVAC systems on their own terms—building trust before the first phone call ever happens.
+      </p>
 
       <h2>Conclusion: Millennials Aren't the Future Buyer — They're the Current Buyer</h2>
 
@@ -813,14 +756,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       </ul>
 
       <p>
-        Because Millennial homeowners don't want sales pressure.<br />
-        They want clarity.<br />
-        They want control.<br />
-        They want trust.
-      </p>
-
-      <p className="font-bold text-xl my-6">
-        And the contractors who deliver that trust online will dominate the next era of residential HVAC.
+        Millennial homeowners do not want sales pressure. They want clarity, control, and trust. The contractors who deliver that trust online will dominate the next era of residential HVAC.
       </p>
 
       <div className="bg-gradient-to-br from-[#ED254E]/10 to-[#C1121F]/10 border-l-4 border-[#ED254E] rounded-lg p-8 my-12">
@@ -828,7 +764,7 @@ const blogPostContent: Record<string, JSX.Element> = {
           Ready to Add Online Pricing to Your HVAC Business?
         </h3>
         <p className="text-lg mb-6">
-          Learn how Contractor Commerce enables HVAC contractors to offer transparent online pricing that builds trust with millennial homeowners, increases lead volume, and gives you the early-adopter advantage.
+          Learn how Contractor Commerce enables HVAC contractors to offer transparent online pricing that builds trust with Millennial homeowners, increases lead volume, and gives you the early-adopter advantage.
         </p>
         <a 
           href="https://go.st-hacks.cc/contractor-commerce" 
@@ -845,12 +781,11 @@ const blogPostContent: Record<string, JSX.Element> = {
       </div>
 
       <h2>External Sources</h2>
-      <ol>
-        <li>Statista. "Online research before purchase among U.S. consumers." <a href="https://www.statista.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.statista.com</a></li>
-        <li>Salesforce. "State of the Connected Customer." <a href="https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.salesforce.com</a></li>
-        <li>Google. "Search Quality Evaluator Guidelines." <a href="https://developers.google.com/search" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://developers.google.com/search</a></li>
-        <li>Salesforce. "State of the Connected Customer." (Self-service preference data) <a href="https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.salesforce.com</a></li>
-      </ol>
+      <ul>
+        <li>Statista: "Online research before purchase among U.S. consumers." <a href="https://www.statista.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.statista.com</a></li>
+        <li>Salesforce: "State of the Connected Customer." <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.salesforce.com</a></li>
+        <li>Google: "Search Quality Evaluator Guidelines." <a href="https://developers.google.com/search" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://developers.google.com/search</a></li>
+      </ul>
     </div>
   ),
   "how-to-sell-saas-to-home-service-contractors": (
