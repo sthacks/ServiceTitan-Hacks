@@ -144,6 +144,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "SmartAC provides remote HVAC monitoring that reduces truck rolls and increases membership retention. Comfort without concern.",
     ogImage: "https://servicetitanhacks.com/og-smartac-partner.png",
   },
+  "/partners/wink-toolbox": {
+    title: "Wink Toolbox | ServiceTitan Hacks Partner",
+    description: "Back-office AI automation that delivers immediate, measurable returns. Stop buying hype—start building your profitability engine.",
+    ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
+  },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
     description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",
