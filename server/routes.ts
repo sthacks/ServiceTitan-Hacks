@@ -370,40 +370,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
         tags: ["Contact Form", "Website Lead", "no welcome workflow"]
       });
       
-      // Send email notification to bill@st-hacks.com with form data
+      // Send email notification to bill@st-hacks.com with form data in JSON format
       try {
         const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = JSON.stringify({
+          id: submission.id,
+          name: submission.name,
+          email: submission.email,
+          company: submission.company || null,
+          role: submission.role || null,
+          message: submission.message,
+          submittedAt: submission.submittedAt
+        }, null, 2);
 
         await client.emails.send({
           from: fromEmail,
           to: 'bill@st-hacks.com',
           replyTo: submission.email,
           subject: `New Contact Form: ${submission.name}`,
-          html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-              <h2 style="color: #ED254E; margin-bottom: 20px;">New Contact Form Submission</h2>
-              
-              <div style="background-color: #f9f9f9; border-left: 4px solid #ED254E; padding: 15px; margin-bottom: 20px;">
-                <p style="margin: 0 0 10px 0;"><strong>From:</strong> ${submission.name}</p>
-                <p style="margin: 0 0 10px 0;"><strong>Email:</strong> <a href="mailto:${submission.email}" style="color: #ED254E;">${submission.email}</a></p>
-                <p style="margin: 0 0 10px 0;"><strong>Company:</strong> ${submission.company || 'Not provided'}</p>
-                <p style="margin: 0;"><strong>Role:</strong> ${submission.role || 'Not provided'}</p>
-              </div>
-              
-              <div style="background-color: #ffffff; border: 1px solid #e0e0e0; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
-                <h3 style="margin-top: 0; color: #333;">Message:</h3>
-                <p style="white-space: pre-wrap; line-height: 1.6; color: #555;">${submission.message}</p>
-              </div>
-              
-              <p style="color: #999; font-size: 12px; margin-top: 30px;">
-                Submitted: ${new Date(submission.submittedAt).toLocaleString('en-US', { 
-                  dateStyle: 'full', 
-                  timeStyle: 'short' 
-                })}<br>
-                ID: ${submission.id}
-              </p>
-            </div>
-          `,
+          html: `<pre style="font-family: monospace; background-color: #f4f4f5; padding: 20px; border-radius: 8px; white-space: pre-wrap;">${jsonData}</pre>`,
         });
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
