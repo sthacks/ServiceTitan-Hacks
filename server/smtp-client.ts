@@ -66,8 +66,8 @@ export function getBuyingGroupConfirmationEmail(firstName: string) {
         <!-- Status Box -->
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
           <tr>
-            <td style="background-color: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; border-radius: 0 8px 8px 0;">
-              <p style="margin: 0; font-size: 14px; font-weight: 600; color: #dc2626; text-transform: uppercase; letter-spacing: 0.5px;">
+            <td style="background-color: #fef2f2; border-left: 4px solid #eb285b; padding: 16px 20px; border-radius: 0 8px 8px 0;">
+              <p style="margin: 0; font-size: 14px; font-weight: 600; color: #eb285b; text-transform: uppercase; letter-spacing: 0.5px;">
                 Status: Pending Approval
               </p>
             </td>
@@ -83,7 +83,7 @@ export function getBuyingGroupConfirmationEmail(firstName: string) {
           <tr>
             <td>
               <a href="https://servicetitanhacks.com/resources" 
-                 style="display: inline-block; background-color: #dc2626; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 600; padding: 14px 28px; border-radius: 8px;">
+                 style="display: inline-block; background-color: #eb285b; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 600; padding: 14px 28px; border-radius: 8px;">
                 Browse Free Resources
               </a>
             </td>
@@ -98,7 +98,7 @@ export function getBuyingGroupConfirmationEmail(firstName: string) {
         <p style="margin: 0 0 8px 0; font-size: 14px; color: #71717a;">
           Questions? Reply to this email or contact us at
         </p>
-        <a href="mailto:bill@st-hacks.com" style="color: #dc2626; text-decoration: none; font-weight: 600;">
+        <a href="mailto:bill@st-hacks.com" style="color: #eb285b; text-decoration: none; font-weight: 600;">
           bill@st-hacks.com
         </a>
         <p style="margin: 16px 0 0 0; font-size: 12px; color: #a1a1aa;">
