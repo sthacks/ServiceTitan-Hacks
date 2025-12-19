@@ -18,7 +18,7 @@ export async function sendEmail({
   html: string;
 }) {
   const mailOptions = {
-    from: `ServiceTitan Hacks <${process.env.SMTP_EMAIL}>`,
+    from: `Bill with ServiceTitan Hacks <${process.env.SMTP_EMAIL}>`,
     to,
     subject,
     html,
