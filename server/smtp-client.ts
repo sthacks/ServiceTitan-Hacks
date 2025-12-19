@@ -40,7 +40,7 @@ export function getBuyingGroupConfirmationEmail(firstName: string) {
     <!-- Header -->
     <tr>
       <td style="background: linear-gradient(to bottom, #09090b 0%, #1a1b20 100%); padding: 32px 24px; text-align: center;">
-        <img src="https://servicetitanhacks.com/logo.png" alt="ServiceTitan Hacks" style="height: 48px; width: auto;" />
+        <img src="https://servicetitanhacks.com/assets/secondary%20logo_1760895642629-DgGaSbgX.png" alt="ServiceTitan Hacks" style="height: 48px; width: auto;" />
       </td>
     </tr>
     
