@@ -16,13 +16,11 @@ import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 export default function PurchasingPlatform() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    company: "",
-    zipCode: "",
-    hvacLicense: "",
-    issuingAuthority: "",
-    productInterest: "HVAC"
+    phone: "",
+    companyWebsite: ""
   });
 
   // SEO & Open Graph Meta Tags
@@ -82,10 +80,10 @@ export default function PurchasingPlatform() {
   const contactMutation = useMutation({
     mutationFn: async (data: typeof formData) => {
       return apiRequest("POST", "/api/contact", {
-        name: data.name,
+        name: `${data.firstName} ${data.lastName}`,
         email: data.email,
-        company: data.company,
-        message: `Zip Code: ${data.zipCode}\nContractors License: ${data.hvacLicense}\nIssuing Authority: ${data.issuingAuthority}\nProduct Interest: ${data.productInterest}`,
+        company: data.companyWebsite,
+        message: `Phone: ${data.phone}\nCompany Website: ${data.companyWebsite}`,
         role: "Equipment Buying Group Inquiry",
         consent: "Equipment Buying Group Contact Form"
       });
@@ -95,7 +93,7 @@ export default function PurchasingPlatform() {
         title: "Access Request Received!",
         description: "We'll get back to you within 24 hours with access details.",
       });
-      setFormData({ name: "", email: "", company: "", zipCode: "", hvacLicense: "", issuingAuthority: "", productInterest: "HVAC" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", companyWebsite: "" });
     },
     onError: () => {
       toast({
@@ -414,15 +412,29 @@ export default function PurchasingPlatform() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">
-                        Name *
+                        First Name *
                       </label>
                       <input
                         type="text"
                         required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        value={formData.firstName}
+                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        data-testid="input-name"
+                        data-testid="input-firstname"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.lastName}
+                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        data-testid="input-lastname"
                       />
                     </div>
 
@@ -442,78 +454,31 @@ export default function PurchasingPlatform() {
 
                     <div>
                       <label className="block text-sm font-medium mb-2">
-                        Company Name *
+                        Phone Number *
                       </label>
                       <input
-                        type="text"
+                        type="tel"
                         required
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        data-testid="input-company"
+                        data-testid="input-phone"
                       />
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium mb-2">
-                        Zip Code *
+                        Company Website *
                       </label>
                       <input
-                        type="text"
+                        type="url"
                         required
-                        value={formData.zipCode}
-                        onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
+                        value={formData.companyWebsite}
+                        onChange={(e) => setFormData({ ...formData, companyWebsite: e.target.value })}
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="12345"
-                        data-testid="input-zipcode"
+                        placeholder="https://yourcompany.com"
+                        data-testid="input-website"
                       />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Contractors License *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.hvacLicense}
-                        onChange={(e) => setFormData({ ...formData, hvacLicense: e.target.value })}
-                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="Enter your contractors license number"
-                        data-testid="input-contractors-license"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Issuing Authority *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.issuingAuthority}
-                        onChange={(e) => setFormData({ ...formData, issuingAuthority: e.target.value })}
-                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="e.g., California Contractors State License Board"
-                        data-testid="input-issuing-authority"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Product Interest *
-                      </label>
-                      <select
-                        required
-                        value={formData.productInterest}
-                        onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
-                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        data-testid="select-product-interest"
-                      >
-                        <option value="HVAC">HVAC Equipment</option>
-                        <option value="Water Heaters">Water Heaters</option>
-                        <option value="Both">Both HVAC & Water Heaters</option>
-                      </select>
                     </div>
 
                     <Button
