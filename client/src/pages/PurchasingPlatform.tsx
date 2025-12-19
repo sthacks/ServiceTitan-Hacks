@@ -20,7 +20,9 @@ export default function PurchasingPlatform() {
     lastName: "",
     email: "",
     phone: "",
-    companyWebsite: ""
+    companyWebsite: "",
+    contractorLicense: "",
+    issuingAuthority: ""
   });
 
   // SEO & Open Graph Meta Tags
@@ -83,7 +85,7 @@ export default function PurchasingPlatform() {
         name: `${data.firstName} ${data.lastName}`,
         email: data.email,
         company: data.companyWebsite,
-        message: `Phone: ${data.phone}\nCompany Website: ${data.companyWebsite}`,
+        message: `Phone: ${data.phone}\nCompany Website: ${data.companyWebsite}\nContractor License #: ${data.contractorLicense}\nIssuing Authority: ${data.issuingAuthority}`,
         role: "Equipment Buying Group Inquiry",
         consent: "Equipment Buying Group Contact Form"
       });
@@ -93,7 +95,7 @@ export default function PurchasingPlatform() {
         title: "Access Request Received!",
         description: "We'll get back to you within 24 hours with access details.",
       });
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", companyWebsite: "" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", companyWebsite: "", contractorLicense: "", issuingAuthority: "" });
     },
     onError: () => {
       toast({
@@ -478,6 +480,36 @@ export default function PurchasingPlatform() {
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="https://yourcompany.com"
                         data-testid="input-website"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Contractor License # *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.contractorLicense}
+                        onChange={(e) => setFormData({ ...formData, contractorLicense: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Enter your contractor license number"
+                        data-testid="input-contractor-license"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Issuing Authority *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.issuingAuthority}
+                        onChange={(e) => setFormData({ ...formData, issuingAuthority: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="e.g., California Contractors State License Board"
+                        data-testid="input-issuing-authority"
                       />
                     </div>
 
