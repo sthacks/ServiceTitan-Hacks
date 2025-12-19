@@ -6,6 +6,7 @@ import { randomUUID } from "crypto";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { getUncachableResendClient } from "./resend-client";
+import { sendEmail, getBuyingGroupConfirmationEmail } from "./smtp-client";
 import OpenAI from "openai";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import Stripe from "stripe";
@@ -407,6 +408,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
         // Don't fail the request if email fails
+      }
+      
+      // Send confirmation email for Equipment Buying Group submissions via Google SMTP
+      if (data.role === "Equipment Buying Group Inquiry") {
+        try {
+          const firstName = data.name.trim().split(' ')[0] || 'there';
+          await sendEmail({
+            to: data.email,
+            subject: "Your Equipment Buying Group Request - Pending Approval",
+            html: getBuyingGroupConfirmationEmail(firstName),
+          });
+          console.log(`Buying group confirmation email sent to ${data.email}`);
+        } catch (smtpError) {
+          console.error("Failed to send SMTP confirmation email:", smtpError);
+          // Don't fail the request if email fails
+        }
       }
       
       res.status(201).json({ 
