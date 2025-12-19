@@ -473,12 +473,12 @@ export default function PurchasingPlatform() {
                         Company Website *
                       </label>
                       <input
-                        type="url"
+                        type="text"
                         required
                         value={formData.companyWebsite}
                         onChange={(e) => setFormData({ ...formData, companyWebsite: e.target.value })}
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="https://yourcompany.com"
+                        placeholder="yourcompany.com"
                         data-testid="input-website"
                       />
                     </div>
