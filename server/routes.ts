@@ -374,15 +374,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
-        const jsonData = JSON.stringify({
+        // Parse Equipment Buying Group fields from message if applicable
+        let jsonPayload: Record<string, any> = {
           id: submission.id,
           name: submission.name,
           email: submission.email,
           company: submission.company || null,
           role: submission.role || null,
-          message: submission.message,
           submittedAt: submission.submittedAt
-        }, null, 2);
+        };
+        
+        if (submission.role === "Equipment Buying Group Inquiry") {
+          // Parse structured fields from message
+          const phoneMatch = submission.message.match(/Phone:\s*(.+)/);
+          const websiteMatch = submission.message.match(/Company Website:\s*(.+)/);
+          const licenseMatch = submission.message.match(/Contractor License #:\s*(.+)/);
+          const authorityMatch = submission.message.match(/Issuing Authority:\s*(.+)/);
+          
+          jsonPayload = {
+            id: submission.id,
+            firstName: submission.name.split(' ')[0] || null,
+            lastName: submission.name.split(' ').slice(1).join(' ') || null,
+            email: submission.email,
+            phone: phoneMatch ? phoneMatch[1].trim() : null,
+            companyWebsite: websiteMatch ? websiteMatch[1].trim() : null,
+            contractorLicense: licenseMatch ? licenseMatch[1].trim() : null,
+            issuingAuthority: authorityMatch ? authorityMatch[1].trim() : null,
+            submittedAt: submission.submittedAt
+          };
+        } else {
+          jsonPayload.message = submission.message;
+        }
+        
+        const jsonData = JSON.stringify(jsonPayload, null, 2);
 
         await client.emails.send({
           from: fromEmail,
