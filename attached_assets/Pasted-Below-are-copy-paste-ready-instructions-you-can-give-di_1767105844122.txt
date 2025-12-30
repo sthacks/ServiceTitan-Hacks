@@ -1,0 +1,230 @@
+Below are **copy-paste ready instructions** you can give directly to your Replit agent.
+They are explicit, scoped, and written to produce a publish-ready January blog post for SmartAC.
+
+---
+
+## Replit Instructions: January SmartAC Blog Post
+
+### Goal
+
+Write a January blog post for ServiceTitanHacks.com, sponsored by SmartAC, focused on why contractors overvalue new customers and undervalue existing customers, and why retention matters for 2026 planning.
+
+The post should educate first, sell last. SmartAC should be positioned as a retention and engagement solution, not a lead source.
+
+---
+
+### Target Audience
+
+* HVAC and home service contractors
+* Owners, operators, and general managers
+* ServiceTitan users
+* Businesses doing $1M to $20M annually
+
+Assume the reader understands basic marketing and operations concepts.
+
+---
+
+### Tone and Style
+
+* Direct
+* Practical
+* Grounded in real contractor experience
+* No hype
+* No buzzwords
+* No exaggerated claims
+* No emojis
+
+Write like an experienced contractor explaining reality to other contractors.
+
+---
+
+### Length
+
+* 1,200 to 1,500 words
+* Clear section headers
+* Short paragraphs
+* Skimmable formatting
+
+---
+
+### Blog Title
+
+Use one of the following, or a close variation:
+
+* "Why Contractors Overthink Attribution and Miss the Bigger Revenue Question"
+* "Why HVAC Contractors Overvalue New Customers and Undervalue Retention"
+
+---
+
+### Required Structure and Content
+
+#### Introduction
+
+* Acknowledge that contractors care deeply about attribution and tracking revenue
+* State that attribution is useful, but incomplete
+* Introduce the idea that zooming in too far can hide more important strategic questions
+* Set up the core theme: new customers vs existing customers
+
+---
+
+#### Section 1: Attribution Is Not the Same as Strategy
+
+Cover:
+
+* How contractors track lead sources, campaigns, and channels
+* Why granular attribution feels productive
+* Why attribution alone does not tell you how your business actually grows
+* Emphasize that attribution is a tool, not the end goal
+
+Do not criticize marketing agencies directly here. Keep it neutral.
+
+---
+
+#### Section 2: Why Contractors Overvalue New Customers (Part 1)
+
+Explain:
+
+* Most digital marketing agencies are built around new customer acquisition
+* Common metrics agencies report:
+
+  * Cost per lead
+  * Cost per booked call
+  * Cost per acquired customer
+* What is rarely reported well:
+
+  * Revenue from existing customers
+  * Retention
+  * Membership renewals
+  * Long-term customer value
+
+Make the point that this is structural, not malicious.
+Explain how reporting shapes contractor behavior over time.
+
+---
+
+#### Section 3: Why Contractors Overvalue New Customers (Part 2)
+
+Explain the psychological side:
+
+* Describe the real-world scenario:
+
+  * New customer calls
+  * Same-day replacement
+  * $20k to $30k contract
+  * Money in the bank quickly
+* Explain why this creates immediate gratification
+* Contrast this with existing customer revenue:
+
+  * Slower
+  * Less dramatic
+  * More predictable
+
+Explain how this trains owners to chase short-term wins.
+
+---
+
+#### Section 4: The Cost of Ignoring Retention
+
+Explain:
+
+* What happens when churn is replaced with constant acquisition
+* How this affects:
+
+  * Marketing spend
+  * Capacity planning
+  * Technician utilization
+  * Stress on operations
+* Emphasize predictability vs volatility
+
+No numbers are required. Focus on operational reality.
+
+---
+
+#### Section 5: The Bigger Year-End Question Contractors Should Ask
+
+Introduce two questions:
+
+1. What percentage of 2025 revenue came from existing customers vs new customers?
+2. For a customer acquired in 2025, if they are retained, what revenue should be expected in 2026?
+
+Explain why these questions matter more than individual channel performance when planning the next year.
+
+---
+
+#### Section 6: How to Think About Future Customer Value (Simple Model)
+
+Explain conceptually, without math formulas:
+
+* Membership revenue
+* Ongoing service and repair revenue
+* Replacement probability over time
+
+Keep this high-level and easy to understand.
+
+---
+
+#### Section 7: Retention Is an Experience Problem
+
+Explain:
+
+* Customers leave when they forget you
+* Silence between visits leads to disengagement
+* Engagement builds trust and loyalty
+
+No tech talk yet. Focus on customer experience.
+
+---
+
+#### Section 8: Where SmartAC Fits
+
+Position SmartAC as:
+
+* Not a lead source
+* Not a sales script
+* A customer engagement layer
+* A system visibility and communication tool
+
+Explain how SmartAC:
+
+* Keeps customers connected year round
+* Reduces reliance on tech-driven sales conversations
+* Supports membership retention naturally
+
+This should feel explanatory, not promotional.
+
+---
+
+#### Conclusion
+
+* Reiterate that new customers matter, but retention compounds
+* Encourage contractors to review:
+
+  * Existing vs new revenue split
+  * Membership retention
+  * Engagement gaps
+* Close with the idea that better retention creates a calmer, more predictable business
+
+---
+
+### SEO Requirements
+
+Include natural usage of these phrases:
+
+* HVAC customer retention
+* HVAC membership programs
+* HVAC customer lifetime value
+* Home service customer retention
+* HVAC business growth
+
+Do not keyword stuff.
+
+---
+
+### Final Instruction
+
+Return only the finished blog post.
+No explanations.
+No outlines.
+No commentary.
+
+The output should be ready to publish as-is.

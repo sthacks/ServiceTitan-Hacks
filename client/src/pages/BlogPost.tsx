@@ -27,6 +27,18 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "9",
+    title: "Why HVAC Contractors Overvalue New Customers and Undervalue Retention",
+    excerpt: "Attribution is useful, but incomplete. When contractors zoom in too far on lead sources and acquisition costs, they miss the bigger strategic question: where does revenue actually come from, and how do you keep it?",
+    author: "Bill Brown",
+    date: "January 2, 2026",
+    readTime: "8 min read",
+    category: "Business Strategy",
+    image: "/blog-retention-strategy.jpg",
+    slug: "why-hvac-contractors-overvalue-new-customers",
+    ogImage: "https://servicetitanhacks.com/og-retention-strategy.png"
+  },
+  {
     id: "8",
     title: "How I Built a DIY 'Sales Coach' for $25/Month Using AI",
     excerpt: "I'll be honest: I am not a good salesperson. But I'm getting better—and the only reason is because I finally learned how to study my own mistakes using AI. Here's my $25/month hack.",
@@ -192,6 +204,223 @@ function SalesCoachPromptBox() {
 
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
+  "why-hvac-contractors-overvalue-new-customers": (
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
+      <p className="lead">
+        Every contractor I know cares about attribution. Where did the lead come from? Which campaign drove the call? What is our cost per acquired customer?
+      </p>
+
+      <p>
+        These are good questions. Tracking where revenue originates is useful. It helps you understand what is working and what is not.
+      </p>
+
+      <p>
+        But attribution is incomplete. It tells you where a customer came from. It does not tell you how your business actually grows.
+      </p>
+
+      <p>
+        When you zoom in too far on lead sources and campaign performance, you can miss the bigger strategic question: what percentage of your revenue comes from customers you already have versus customers you are paying to acquire?
+      </p>
+
+      <p>
+        That question matters more than any individual channel report when you are planning for 2026.
+      </p>
+
+      <h2>Attribution Is Not the Same as Strategy</h2>
+
+      <p>
+        Most contractors track lead sources carefully. They know which campaigns are running, which channels are producing calls, and roughly what they are spending to acquire new customers.
+      </p>
+
+      <p>
+        This feels productive. You can point to numbers and say whether something is working or not. You can compare cost per lead across different sources. You can see which campaigns produced booked calls and which did not.
+      </p>
+
+      <p>
+        But granular attribution can become a distraction if it is not connected to the bigger picture. Knowing that Google Ads produced 47 leads last month does not tell you whether your business is actually growing or just replacing customers you are losing.
+      </p>
+
+      <p>
+        Attribution is a tool. It is not the end goal. The end goal is a business that grows predictably without requiring you to constantly chase new customers to replace the ones who forgot about you.
+      </p>
+
+      <h2>Why Contractors Overvalue New Customers: The Reporting Problem</h2>
+
+      <p>
+        Most digital marketing agencies are built around new customer acquisition. That is what they sell, so that is what they report on.
+      </p>
+
+      <p>
+        The metrics you typically see from an agency include cost per lead, cost per booked call, and cost per acquired customer. These are useful numbers, and good agencies track them well.
+      </p>
+
+      <p>
+        But what agencies rarely report on includes revenue from existing customers, membership retention rates, renewal percentages, and long-term customer value.
+      </p>
+
+      <p>
+        This is not malicious. Agencies report on what they control. They control ad spend and campaign performance. They do not control what happens after the customer is acquired.
+      </p>
+
+      <p>
+        The problem is that over time, this reporting shapes contractor behavior. When the only numbers you review every month are acquisition metrics, you start to believe that acquisition is the only thing that matters.
+      </p>
+
+      <h2>Why Contractors Overvalue New Customers: The Dopamine Problem</h2>
+
+      <p>
+        Beyond reporting, there is a psychological component.
+      </p>
+
+      <p>
+        Picture the scenario: a new customer calls. They need a system replacement. Your tech goes out, runs a comfort assessment, presents options, and closes the deal that same day. Twenty to thirty thousand dollars in revenue. Money in the bank before the week is over.
+      </p>
+
+      <p>
+        That feels good. It is immediate, tangible, and exciting. You can tell your team about the win. You can see the revenue hit your account.
+      </p>
+
+      <p>
+        Now contrast that with existing customer revenue. A membership renewal here. A maintenance visit there. A small repair from someone who has been a customer for years. It is slower, less dramatic, and harder to celebrate.
+      </p>
+
+      <p>
+        Over time, this trains owners to chase the short-term wins. The big installation feels like growth. The quiet, consistent revenue from retained customers feels like background noise.
+      </p>
+
+      <p>
+        But background noise compounds. Big one-time wins do not.
+      </p>
+
+      <h2>The Cost of Ignoring Retention</h2>
+
+      <p>
+        When you ignore retention, you end up on a treadmill. You lose customers through churn, and you replace them with constant acquisition. The business feels busy, but it is not actually growing.
+      </p>
+
+      <p>
+        This affects more than just revenue. It affects marketing spend, because you are always paying to refill a leaky bucket. It affects capacity planning, because your job volume is unpredictable. It affects technician utilization, because you are constantly ramping to handle inconsistent demand. It affects your stress level, because every slow week feels like a crisis.
+      </p>
+
+      <p>
+        A business built on retention is calmer. Revenue becomes more predictable. You spend less on acquisition because existing customers keep coming back. You plan capacity with more confidence because you know what to expect.
+      </p>
+
+      <h2>The Bigger Year-End Question Contractors Should Ask</h2>
+
+      <p>
+        If you are planning for 2026, two questions matter more than individual campaign performance.
+      </p>
+
+      <p>
+        First: what percentage of 2025 revenue came from existing customers versus new customers?
+      </p>
+
+      <p>
+        If you do not know this number, you do not really understand how your business works. Most contractors assume new customers drive most of their revenue. Many are surprised to learn that existing customers often account for half or more.
+      </p>
+
+      <p>
+        Second: for a customer acquired in 2025, if they are retained, what revenue should you expect in 2026?
+      </p>
+
+      <p>
+        This question forces you to think about customer value over time instead of just acquisition cost. A customer who stays with you for five years is worth far more than the initial sale. But only if you keep them.
+      </p>
+
+      <h2>How to Think About Future Customer Value</h2>
+
+      <p>
+        You do not need complicated formulas to understand HVAC customer lifetime value. The concept is straightforward.
+      </p>
+
+      <p>
+        A retained customer generates revenue in multiple ways. Membership fees, if they are on a maintenance plan. Ongoing service and repair work as issues arise. And eventually, replacement revenue when their system reaches end of life.
+      </p>
+
+      <p>
+        The longer a customer stays with you, the more of this revenue you capture. If they leave after one year, someone else gets the replacement sale. If they stay for ten years, you get everything.
+      </p>
+
+      <p>
+        This is why retention matters. It is not just about the next membership renewal. It is about capturing the full lifetime value of every customer you acquire.
+      </p>
+
+      <h2>Retention Is an Experience Problem</h2>
+
+      <p>
+        Customers do not leave because they are angry. Most leave because they forget you exist.
+      </p>
+
+      <p>
+        Think about it from their perspective. You install a system or perform a service visit. Maybe you sign them up for a membership. Then they do not hear from you for months. When their system has a problem or their membership is up for renewal, they cannot remember who you are. They search online and call whoever shows up first.
+      </p>
+
+      <p>
+        This is not a marketing problem. It is an engagement problem. The silence between visits is what kills home service customer retention.
+      </p>
+
+      <p>
+        Engagement builds trust. When customers hear from you regularly, they remember you. When they feel connected to your company, they renew their membership. When something goes wrong, they call you instead of searching for someone new.
+      </p>
+
+      <h2>Where SmartAC Fits</h2>
+
+      <p>
+        SmartAC is not a lead source. It is not a sales script. It is a customer engagement layer that keeps your customers connected year round.
+      </p>
+
+      <p>
+        The system provides visibility into customer equipment through connected sensors. When something is off, customers get notified. When maintenance is due, they are reminded. When seasonal changes affect their system, they see it.
+      </p>
+
+      <p>
+        This does a few things. It keeps your company in front of customers between visits. It reduces the burden on technicians to drive every conversation about system health. It gives customers a reason to stay engaged with you even when nothing is wrong.
+      </p>
+
+      <p>
+        Most importantly, it supports HVAC membership programs naturally. Customers who feel connected to their system and to your company are more likely to renew. They are more likely to call you when they need service. They are more likely to trust your recommendations when it is time to replace.
+      </p>
+
+      <p>
+        SmartAC does not replace your marketing or your sales process. It fills the gap between customer visits that causes so many contractors to lose customers they already paid to acquire.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        New customers matter. Every HVAC business growth strategy needs acquisition.
+      </p>
+
+      <p>
+        But retention compounds. A customer you keep for a decade is worth far more than a customer you replace every two years. The math is simple. The execution is what most contractors miss.
+      </p>
+
+      <p>
+        As you plan for 2026, take time to review where your revenue actually came from in 2025. Look at your existing versus new customer split. Look at your membership retention rate. Look at the gaps in engagement between visits.
+      </p>
+
+      <p>
+        The contractors who build predictable, calm businesses are the ones who stop treating every week like a hunt for new customers and start treating their existing customers like the asset they are.
+      </p>
+
+      <div className="bg-gradient-to-br from-[#ED254E]/10 to-[#C1121F]/10 border-l-4 border-[#ED254E] rounded-lg p-8 my-12">
+        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+          Keep Your Customers Connected Year-Round
+        </h3>
+        <p className="text-lg mb-6">
+          SmartAC helps HVAC contractors improve retention by keeping customers engaged between service visits. See how it works for your business.
+        </p>
+        <a 
+          href="/partners/smartac" 
+          className="inline-block bg-[#ED254E] hover:bg-[#C1121F] text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          data-testid="link-smartac-cta"
+        >
+          Learn More About SmartAC
+        </a>
+      </div>
+    </div>
+  ),
   "diy-ai-sales-coach": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <h2>The Confession</h2>
