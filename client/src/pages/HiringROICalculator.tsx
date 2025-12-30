@@ -255,18 +255,18 @@ export default function HiringROICalculator() {
   const formatNumber = (value: number, decimals: number = 1) => value.toFixed(decimals);
 
   const inputFields = [
-    { key: "avgTicket", label: "Average Revenue Per Job", helper: "Average ticket size for a completed service call", suffix: "$", min: 0, max: 10000 },
-    { key: "jobsPerWeekPerTech", label: "Jobs Per Week Per Tech", helper: "How many jobs a technician completes weekly", suffix: "", min: 1, max: 100 },
-    { key: "grossMarginPct", label: "Gross Margin", helper: "Your gross profit margin on jobs", suffix: "%", min: 0, max: 100 },
-    { key: "weeksToHire", label: "Weeks Role Stays Open", helper: "How long it typically takes to fill a position", suffix: "weeks", min: 1, max: 52 },
-    { key: "callbacksPct", label: "Callbacks / Rework Rate", helper: "Percentage of jobs requiring callbacks when rushed", suffix: "%", min: 0, max: 100 },
-    { key: "currentOvertimeHoursPerWeek", label: "Current Overtime Hours/Week", helper: "Extra hours worked due to being short-staffed", suffix: "hrs", min: 0, max: 100 },
-    { key: "overtimeHourlyCost", label: "Overtime Hourly Cost", helper: "Blended OT cost per hour (1.5x base)", suffix: "$", min: 0, max: 200 },
-    { key: "officeLoadHoursPerWeek", label: "Office Load Hours/Week", helper: "Extra dispatch/CSR/manager time from understaffing", suffix: "hrs", min: 0, max: 100 },
-    { key: "officeHourlyCost", label: "Office Hourly Cost", helper: "Average hourly cost for office staff", suffix: "$", min: 0, max: 200 },
-    { key: "monthlyHiringCost", label: "Monthly Hiring Cost", helper: "Job ads, recruiter fees, signing bonuses, etc.", suffix: "$", min: 0, max: 20000 },
-    { key: "rampWeeks", label: "Ramp-Up Weeks", helper: "Weeks until new hire is fully productive", suffix: "weeks", min: 1, max: 26 },
-    { key: "rampProductivityPct", label: "Ramp Productivity", helper: "Average productivity during ramp period", suffix: "%", min: 0, max: 100 },
+    { key: "avgTicket", label: "Average Revenue Per Job", helper: "How much money you make on a typical job. Add up all your jobs and divide by the number of jobs.", suffix: "$", min: 0, max: 10000 },
+    { key: "jobsPerWeekPerTech", label: "Jobs Per Week Per Tech", helper: "How many jobs one technician finishes in a normal week. Count completed calls, not just visits.", suffix: "", min: 1, max: 100 },
+    { key: "grossMarginPct", label: "Gross Margin", helper: "The profit you keep after paying for parts and direct labor. If you charge $100 and spend $65, your margin is 35%.", suffix: "%", min: 0, max: 100 },
+    { key: "weeksToHire", label: "Weeks Role Stays Open", helper: "How long the job posting stays open before someone starts. Count from when the old tech leaves to when the new one begins.", suffix: "weeks", min: 1, max: 52 },
+    { key: "callbacksPct", label: "Callbacks / Rework Rate", helper: "When you're short-staffed, techs rush and make mistakes. This is how many jobs need a free return visit to fix problems.", suffix: "%", min: 0, max: 100 },
+    { key: "currentOvertimeHoursPerWeek", label: "Current Overtime Hours/Week", helper: "Extra hours your team works each week because you're missing a tech. This includes evenings and weekends.", suffix: "hrs", min: 0, max: 100 },
+    { key: "overtimeHourlyCost", label: "Overtime Hourly Cost", helper: "What you pay per hour for overtime work. Usually 1.5x the normal hourly rate plus benefits.", suffix: "$", min: 0, max: 200 },
+    { key: "officeLoadHoursPerWeek", label: "Office Load Hours/Week", helper: "Extra time your office staff spends each week juggling schedules, handling complaints, and covering for the missing tech.", suffix: "hrs", min: 0, max: 100 },
+    { key: "officeHourlyCost", label: "Office Hourly Cost", helper: "What you pay office workers per hour, including dispatchers, CSRs, and managers.", suffix: "$", min: 0, max: 200 },
+    { key: "monthlyHiringCost", label: "Monthly Hiring Cost", helper: "Money spent each month trying to find someone. This includes job ads, recruiter fees, and any sign-on bonuses.", suffix: "$", min: 0, max: 20000 },
+    { key: "rampWeeks", label: "Ramp-Up Weeks", helper: "How long it takes a new hire to work as fast as your experienced techs. Most new techs need 4-8 weeks.", suffix: "weeks", min: 1, max: 26 },
+    { key: "rampProductivityPct", label: "Ramp Productivity", helper: "How productive the new hire is during training. At 60%, they do about 6 jobs for every 10 a trained tech would do.", suffix: "%", min: 0, max: 100 },
   ];
 
   return (
@@ -395,10 +395,12 @@ export default function HiringROICalculator() {
                         <div className="p-2 rounded-lg bg-red-100 dark:bg-red-900/30">
                           <TrendingDown className="h-5 w-5 text-red-600 dark:text-red-400" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <p className="text-sm text-muted-foreground">Lost Gross Profit</p>
                           <p className="text-xl font-bold" data-testid="text-lost-profit">{formatCurrency(results.lostGrossProfit)}</p>
-                          <p className="text-xs text-muted-foreground">{results.lostJobs} jobs missed</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Money you would have made from {results.lostJobs} jobs that didn't happen because you were short a tech.
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -410,10 +412,12 @@ export default function HiringROICalculator() {
                         <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-900/30">
                           <Clock className="h-5 w-5 text-orange-600 dark:text-orange-400" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <p className="text-sm text-muted-foreground">Hidden Labor Cost</p>
                           <p className="text-xl font-bold" data-testid="text-hidden-labor">{formatCurrency(results.hiddenLaborCost)}</p>
-                          <p className="text-xs text-muted-foreground">OT + Office load</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Extra money spent on overtime for your techs plus extra hours your office staff works to cover the gap.
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -425,10 +429,12 @@ export default function HiringROICalculator() {
                         <div className="p-2 rounded-lg bg-yellow-100 dark:bg-yellow-900/30">
                           <AlertTriangle className="h-5 w-5 text-yellow-600 dark:text-yellow-400" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <p className="text-sm text-muted-foreground">Callback Cost</p>
                           <p className="text-xl font-bold" data-testid="text-callback-cost">{formatCurrency(results.callbackCost)}</p>
-                          <p className="text-xs text-muted-foreground">Quality drag from rushing</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            When techs rush, they make mistakes. This is the cost of going back to fix problems for free.
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -440,10 +446,12 @@ export default function HiringROICalculator() {
                         <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
                           <Users className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <p className="text-sm text-muted-foreground">Ramp Productivity Loss</p>
                           <p className="text-xl font-bold" data-testid="text-ramp-loss">{formatCurrency(results.rampGrossProfitLoss)}</p>
-                          <p className="text-xs text-muted-foreground">During {inputs.rampWeeks} week ramp</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            New hires work slower while learning. This is the profit you miss during their first {inputs.rampWeeks} weeks.
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -455,10 +463,12 @@ export default function HiringROICalculator() {
                         <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30">
                           <DollarSign className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <p className="text-sm text-muted-foreground">Hiring Spend During Open Role</p>
                           <p className="text-xl font-bold" data-testid="text-hiring-spend">{formatCurrency(results.hiringSpendDuringOpen)}</p>
-                          <p className="text-xs text-muted-foreground">Ads, recruiter fees, etc.</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Money spent on job postings, recruiter fees, and bonuses while searching for the right person.
+                          </p>
                         </div>
                       </div>
                     </CardContent>
