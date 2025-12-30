@@ -1,0 +1,231 @@
+## Replit AI instructions: "Hiring ROI Calculator" (Traderunner)
+
+Build a production-ready web app called **Hiring ROI Calculator**. It must be simple, fast, mobile-first, and designed to capture lead data before showing results. This calculator is for **ServiceTitan contractors** to estimate the ROI of hiring the next technician.
+
+### 1. Tech stack and project setup
+
+* Use **Next.js (App Router)** with **TypeScript**.
+* Styling: **Tailwind CSS**.
+* Form handling: **react-hook-form** + **zod** validation.
+* State: local state only.
+* Analytics: add placeholder functions for tracking events.
+* Hosting: assume deployment on Replit, but code must be standard Next.js.
+
+Create these routes:
+
+* `/` = calculator landing page with inputs + lead gate modal
+* `/thank-you` = optional confirmation page (keep simple)
+* `/api/lead` = POST endpoint to store/forward lead + calculation inputs/results
+
+### 2. Core user flow (must match exactly)
+
+1. User lands on `/` and sees:
+
+   * Short headline + subhead
+   * Calculator input form
+   * A "Calculate ROI" button
+2. When user clicks "Calculate ROI":
+
+   * Validate inputs
+   * If lead info is NOT collected yet, show a **lead capture modal** (gated)
+   * After lead is submitted successfully:
+
+     * Run calculations
+     * Show results section on the same page (no navigation required)
+3. If lead submission fails:
+
+   * Show a clear error message and do not show results
+4. After results render:
+
+   * Show a CTA button: "Book a demo with Traderunner" (link placeholder)
+
+### 3. Lead capture requirements (gate)
+
+Lead fields (required unless noted):
+
+* First name
+* Last name
+* Email
+* Mobile phone
+* Company name
+* Trade (dropdown: HVAC, Plumbing, Electrical, Garage Door, Other)
+* ServiceTitan user? (Yes/No)
+* Company size (dropdown: 1-5 techs, 6-15, 16-30, 31-60, 61+)
+
+Rules:
+
+* Do NOT show results until lead is successfully submitted.
+* After successful submission, store a flag in `localStorage` like `hiring_calc_lead_submitted=true` so returning users do not see the modal again.
+* Still submit each calculation event to `/api/lead` even if lead already submitted, but include a field `leadAlreadyCaptured=true`.
+
+### 4. Calculator inputs (what the user fills out)
+
+All inputs are required and numeric unless specified.
+
+Inputs:
+
+1. `avgTicket` (Average revenue per completed job) default 650
+2. `jobsPerWeekPerTech` default 25
+3. `grossMarginPct` default 35 (percentage)
+4. `weeksToHire` (weeks role stays open) default 6
+5. `callbacksPct` (callbacks/rework percent) default 5
+6. `currentOvertimeHoursPerWeek` default 10
+7. `overtimeHourlyCost` default 45
+8. `officeLoadHoursPerWeek` (dispatch/CSR/manager time consumed by understaffing) default 5
+9. `officeHourlyCost` default 35
+10. `monthlyHiringCost` (ads, recruiter, signing, etc) default 1500
+11. `rampWeeks` (weeks until new hire is fully productive) default 4
+12. `rampProductivityPct` (average productivity during ramp) default 60
+
+Input UI:
+
+* Use labeled fields with helper text
+* Show "%" suffix for percentage fields
+* Use input constraints and zod validation:
+
+  * No negatives
+  * Reasonable max caps (ex: percentages 0-100)
+* Add a "Reset to defaults" button
+
+### 5. Calculation logic (implement exactly)
+
+All math must be deterministic and shown with clear labels in results.
+
+Convert:
+
+* `grossMargin = grossMarginPct / 100`
+* `callbacks = callbacksPct / 100`
+* `rampProd = rampProductivityPct / 100`
+
+A) Lost revenue while role is open
+
+* `lostJobs = jobsPerWeekPerTech * weeksToHire`
+* `lostRevenue = lostJobs * avgTicket`
+* `lostGrossProfit = lostRevenue * grossMargin`
+
+B) Hidden labor costs while short-staffed
+
+* `overtimeCost = currentOvertimeHoursPerWeek * overtimeHourlyCost * weeksToHire`
+* `officeLoadCost = officeLoadHoursPerWeek * officeHourlyCost * weeksToHire`
+* `hiddenLaborCost = overtimeCost + officeLoadCost`
+
+C) Callback / quality drag estimate while short-staffed
+Assume a portion of jobs are impacted by rushed work:
+
+* `affectedRevenue = lostRevenue` (use same baseline intentionally)
+* `callbackCost = affectedRevenue * callbacks * grossMargin`
+
+D) Ramp-up productivity loss (after hire starts)
+Compute expected gross profit if fully productive during ramp minus actual:
+
+* `rampJobsIfFull = jobsPerWeekPerTech * rampWeeks`
+* `rampRevenueIfFull = rampJobsIfFull * avgTicket`
+* `rampGrossProfitIfFull = rampRevenueIfFull * grossMargin`
+* `rampGrossProfitActual = rampGrossProfitIfFull * rampProd`
+* `rampGrossProfitLoss = rampGrossProfitIfFull - rampGrossProfitActual`
+
+E) Total cost of not hiring faster
+
+* `totalCost = lostGrossProfit + hiddenLaborCost + callbackCost + rampGrossProfitLoss + (monthlyHiringCost * (weeksToHire / 4.345))`
+
+  * Use 4.345 weeks per month constant
+
+F) "Break-even speed" insight
+Compute how many weeks faster hiring needs to be to save $10,000:
+
+* `costPerWeek = totalCost / weeksToHire`
+* `weeksSavedFor10k = 10000 / costPerWeek`
+
+Edge cases:
+
+* If weeksToHire is 0, block calculation (validation).
+* If costPerWeek is 0, show "Cannot compute" for weeksSavedFor10k.
+
+### 6. Results UI requirements
+
+After calculation, show:
+
+1. Big number: **"Estimated cost of leaving the role open"** = `totalCost`
+2. Breakdown cards:
+
+   * Lost gross profit (A)
+   * Hidden labor cost (B)
+   * Callback cost (C)
+   * Ramp productivity loss (D)
+   * Hiring spend during open role portion
+3. Insight callouts:
+
+   * "That is about $X per week." (costPerWeek)
+   * "Hire about Y weeks faster to save $10,000." (weeksSavedFor10k)
+4. CTA section:
+
+   * Button: "Book a demo with Traderunner"
+   * Secondary link: "Download results as PDF" (implement later, but put placeholder button disabled)
+
+Formatting:
+
+* Currency formatting in USD with commas, no cents.
+* Weeks shown to 1 decimal.
+* Use responsive layout: stacked on mobile, grid on desktop.
+
+### 7. API endpoint behavior (`/api/lead`)
+
+Implement a server route:
+
+* Accept POST JSON:
+
+  * lead fields
+  * calculator inputs
+  * calculated outputs
+  * metadata:
+
+    * timestamp (server time)
+    * userAgent
+    * referrer
+    * leadAlreadyCaptured boolean
+* For now:
+
+  * Log the payload to server console
+  * Also store in a local JSON file or sqlite (choose sqlite if easy)
+* Return:
+
+  * `{ ok: true }` or `{ ok: false, error: "..." }`
+
+### 8. Copy and layout (use this copy)
+
+Headline: "What is one unfilled technician role costing you?"
+Subhead: "Use this quick calculator to estimate gross profit loss, hidden labor costs, and ramp-up drag. Get the results sent to you and see how much faster hiring pays off."
+
+Button: "Calculate ROI"
+
+Lead modal title: "Where should we send your results?"
+Lead modal disclaimer (small text): "By submitting, you agree to be contacted about hiring solutions. No spam."
+
+### 9. Quality checklist
+
+* Mobile-first
+* Validations and friendly error messages
+* No results without lead submission
+* Results formatting clean and readable
+* Code must be organized:
+
+  * `lib/calc.ts` for calculation functions
+  * `components/CalculatorForm.tsx`
+  * `components/LeadModal.tsx`
+  * `components/Results.tsx`
+  * `app/api/lead/route.ts`
+* Add minimal unit tests for calculation functions (optional but preferred)
+
+### 10. Deliverable
+
+Replit should output:
+
+* A working calculator app with the full gating flow
+* A working API endpoint receiving leads and calculation payloads
+
+Notes:
+
+* Use placeholder links for Traderunner demo booking.
+* No external paid services required.
+
+End.

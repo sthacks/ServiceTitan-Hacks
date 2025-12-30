@@ -165,6 +165,24 @@ export const winkROISubmissions = pgTable("wink_roi_submissions", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const hiringROISubmissions = pgTable("hiring_roi_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  companyName: text("company_name").notNull(),
+  trade: text("trade").notNull(),
+  serviceTitanUser: text("servicetitan_user").notNull(),
+  companySize: text("company_size").notNull(),
+  calculatorInputs: text("calculator_inputs").notNull(),
+  calculatorResults: text("calculator_results").notNull(),
+  leadAlreadyCaptured: boolean("lead_already_captured").default(false),
+  userAgent: text("user_agent"),
+  referrer: text("referrer"),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -283,6 +301,20 @@ export const insertWinkROISubmissionSchema = createInsertSchema(winkROISubmissio
   firstName: z.string().min(1, "First name is required"),
 });
 
+export const insertHiringROISubmissionSchema = createInsertSchema(hiringROISubmissions).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  phone: z.string().min(1, "Phone is required"),
+  companyName: z.string().min(1, "Company name is required"),
+  trade: z.string().min(1, "Trade is required"),
+  serviceTitanUser: z.string().min(1, "Please select an option"),
+  companySize: z.string().min(1, "Company size is required"),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -307,6 +339,8 @@ export type SmartACROISubmission = typeof smartacROISubmissions.$inferSelect;
 export type InsertSmartACROISubmission = z.infer<typeof insertSmartACROISubmissionSchema>;
 export type WinkROISubmission = typeof winkROISubmissions.$inferSelect;
 export type InsertWinkROISubmission = z.infer<typeof insertWinkROISubmissionSchema>;
+export type HiringROISubmission = typeof hiringROISubmissions.$inferSelect;
+export type InsertHiringROISubmission = z.infer<typeof insertHiringROISubmissionSchema>;
 export type PodcastEpisode = typeof podcastEpisodes.$inferSelect;
 export type InsertPodcastEpisode = typeof podcastEpisodes.$inferInsert;
 
