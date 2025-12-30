@@ -8,8 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Calculator, RotateCcw, DollarSign, Clock, Users, AlertTriangle, TrendingDown, Info, ExternalLink } from "lucide-react";
+import { Calculator, RotateCcw, DollarSign, Clock, Users, AlertTriangle, TrendingDown, ExternalLink } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -312,44 +311,33 @@ export default function HiringROICalculator() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <TooltipProvider>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {inputFields.map((field) => (
-                      <div key={field.key} className="space-y-2">
-                        <div className="flex items-center gap-1">
-                          <Label htmlFor={field.key} className="text-sm font-medium">
-                            {field.label}
-                          </Label>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <Info className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="max-w-xs">{field.helper}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </div>
-                        <div className="relative">
-                          <Input
-                            id={field.key}
-                            type="number"
-                            min={field.min}
-                            max={field.max}
-                            value={inputs[field.key as keyof CalculatorInputs]}
-                            onChange={(e) => handleInputChange(field.key as keyof CalculatorInputs, e.target.value)}
-                            className="pr-12"
-                            data-testid={`input-${field.key}`}
-                          />
-                          {field.suffix && (
-                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
-                              {field.suffix}
-                            </span>
-                          )}
-                        </div>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {inputFields.map((field) => (
+                    <div key={field.key} className="space-y-2">
+                      <Label htmlFor={field.key} className="text-sm font-medium">
+                        {field.label}
+                      </Label>
+                      <div className="relative">
+                        <Input
+                          id={field.key}
+                          type="number"
+                          min={field.min}
+                          max={field.max}
+                          value={inputs[field.key as keyof CalculatorInputs]}
+                          onChange={(e) => handleInputChange(field.key as keyof CalculatorInputs, e.target.value)}
+                          className="pr-12"
+                          data-testid={`input-${field.key}`}
+                        />
+                        {field.suffix && (
+                          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
+                            {field.suffix}
+                          </span>
+                        )}
                       </div>
-                    ))}
-                  </div>
-                </TooltipProvider>
+                      <p className="text-xs text-muted-foreground">{field.helper}</p>
+                    </div>
+                  ))}
+                </div>
 
                 <div className="flex gap-3 pt-4">
                   <Button
