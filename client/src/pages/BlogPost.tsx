@@ -31,7 +31,7 @@ const blogPosts: BlogPost[] = [
     title: "Why HVAC Contractors Overvalue New Customers and Undervalue Retention",
     excerpt: "Attribution is useful, but incomplete. When contractors zoom in too far on lead sources and acquisition costs, they miss the bigger strategic question: where does revenue actually come from, and how do you keep it?",
     author: "Bill Brown",
-    date: "January 2, 2026",
+    date: "December 30, 2025",
     readTime: "8 min read",
     category: "Business Strategy",
     image: "/blog-retention-strategy.jpg",
