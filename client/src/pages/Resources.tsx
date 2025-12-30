@@ -251,7 +251,20 @@ export default function Resources() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resources.map((resource, index) => (
-              <Card key={index} className="hover-elevate flex flex-col">
+              <Card 
+                key={index} 
+                className="hover-elevate flex flex-col cursor-pointer"
+                onClick={() => {
+                  if (resource.isInternalTool) {
+                    window.location.href = resource.url;
+                  } else if (resource.isExternalTool || resource.isExternalCourse) {
+                    window.open(resource.url, '_blank');
+                  } else {
+                    handleDownloadClick(resource.title);
+                  }
+                }}
+                data-testid={`card-resource-${index}`}
+              >
                 <div className="aspect-video overflow-hidden rounded-t-lg bg-muted">
                   <img
                     src={resource.image}
@@ -275,30 +288,19 @@ export default function Resources() {
                   </p>
                   
                   {resource.isInternalTool ? (
-                    <a
-                      href={resource.url}
-                      className="w-full"
-                      data-testid={`link-internal-tool-${index}`}
-                    >
+                    <div className="w-full">
                       <Button className="w-full gap-2">
                         {resource.type === 'Tool' ? 'Use Calculator' : 'View Resource'}
                       </Button>
-                    </a>
+                    </div>
                   ) : resource.isExternalTool || resource.isExternalCourse ? (
-                    <a
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full"
-                      data-testid={`link-${resource.type === 'Course' ? 'course' : resource.type === 'Tool' ? 'tool' : 'resource'}-${index}`}
-                    >
+                    <div className="w-full">
                       <Button className="w-full gap-2">
                         {resource.type === 'Course' ? 'View Course' : resource.type === 'Tool' ? 'View Calculator' : 'Get Free Resource'} <ExternalLink className="h-4 w-4" />
                       </Button>
-                    </a>
+                    </div>
                   ) : (
                     <Button
-                      onClick={() => handleDownloadClick(resource.title)}
                       className="w-full gap-2"
                       data-testid={`button-download-${index}`}
                     >
