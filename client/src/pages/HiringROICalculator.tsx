@@ -132,11 +132,17 @@ export default function HiringROICalculator() {
   const [showLeadModal, setShowLeadModal] = useState(false);
   const [pendingResults, setPendingResults] = useState<CalculationResults | null>(null);
   const [leadAlreadyCaptured, setLeadAlreadyCaptured] = useState(false);
+  const [testMode, setTestMode] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "true") {
       setLeadAlreadyCaptured(true);
+    }
+    // Check for test mode bypass via URL param
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("test") === "1") {
+      setTestMode(true);
     }
   }, []);
 
@@ -199,7 +205,15 @@ export default function HiringROICalculator() {
     const calcResults = calculateROI(inputs);
     setPendingResults(calcResults);
 
-    if (leadAlreadyCaptured) {
+    if (testMode) {
+      // Test mode - bypass lead capture entirely, no API call
+      setResults(calcResults);
+      setShowResults(true);
+      toast({
+        title: "Test Mode Active",
+        description: "Lead capture bypassed for testing.",
+      });
+    } else if (leadAlreadyCaptured) {
       submitMutation.mutate({
         firstName: "Returning",
         lastName: "User",
