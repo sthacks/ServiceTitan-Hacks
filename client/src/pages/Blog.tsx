@@ -9,6 +9,7 @@ import serviceTitanDashboardImage from "@assets/32492017-1_1762523143157.jpg";
 import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png";
 import callBoardHeroImage from "@assets/Hero_image_-_desktop_(2)_1765483039610.png";
 import aiSalesCoachImage from "@assets/34047466-3_1765897680481.jpg";
+import retentionStrategyImage from "@assets/switchy_images_(3)_1767106347930.png";
 
 interface BlogPost {
   id: string;
@@ -23,6 +24,17 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
+  {
+    id: "9",
+    title: "Why HVAC Contractors Overvalue New Customers and Undervalue Retention",
+    excerpt: "Attribution is useful, but incomplete. When contractors zoom in too far on lead sources and acquisition costs, they miss the bigger strategic question: where does revenue actually come from, and how do you keep it?",
+    author: "Bill Brown",
+    date: "December 30, 2025",
+    readTime: "8 min read",
+    category: "Business Strategy",
+    image: retentionStrategyImage,
+    slug: "why-hvac-contractors-overvalue-new-customers"
+  },
   {
     id: "8",
     title: "How I Built a DIY 'Sales Coach' for $25/Month Using AI",
