@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
@@ -2026,6 +2026,72 @@ ${JSON.stringify(jsonData, null, 2)}
     } catch (error) {
       console.error("Wink ROI submission error:", error);
       res.status(500).json({ message: "Failed to save ROI calculation" });
+    }
+  });
+
+  // Hiring ROI Calculator submission (Traderunner)
+  app.post("/api/hiring-roi", async (req, res) => {
+    try {
+      const parsed = insertHiringROISubmissionSchema.safeParse(req.body);
+      if (!parsed.success) {
+        const validationError = fromZodError(parsed.error);
+        return res.status(400).json({ ok: false, error: validationError.message });
+      }
+
+      const data = parsed.data;
+      
+      // Save to database
+      const submission = await storage.createHiringROISubmission(data);
+      
+      // Sync to Mailchimp (only if this is a new lead)
+      if (!data.leadAlreadyCaptured) {
+        await addOrUpdateSubscriber({
+          email: data.email,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          tags: ["Hiring ROI Calculator", "Tool User", "Traderunner Lead", "no welcome workflow"]
+        });
+      }
+      
+      // Parse results from JSON string
+      const results = JSON.parse(data.calculatorResults);
+      const inputs = JSON.parse(data.calculatorInputs);
+      
+      // Send admin notification
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "ROI_CALCULATION",
+          formName: "Hiring ROI Calculator (Traderunner)",
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          companyName: data.companyName,
+          trade: data.trade,
+          serviceTitanUser: data.serviceTitanUser,
+          companySize: data.companySize,
+          leadAlreadyCaptured: data.leadAlreadyCaptured || false,
+          inputs: inputs,
+          results: results,
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Hiring ROI Calculator Submission (Traderunner)',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+      }
+      
+      res.json({ ok: true });
+    } catch (error) {
+      console.error("Hiring ROI submission error:", error);
+      res.status(500).json({ ok: false, error: "Failed to save ROI calculation" });
     }
   });
 

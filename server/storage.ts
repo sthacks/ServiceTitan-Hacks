@@ -23,6 +23,8 @@ import {
   type InsertSmartACROISubmission,
   type WinkROISubmission,
   type InsertWinkROISubmission,
+  type HiringROISubmission,
+  type InsertHiringROISubmission,
   type PodcastEpisode,
   type PartnerCompany,
   type InsertPartnerCompany,
@@ -43,6 +45,7 @@ import {
   liveswitchDemoSubmissions,
   smartacROISubmissions,
   winkROISubmissions,
+  hiringROISubmissions,
   podcastEpisodes,
   partnerCompanies,
   partnerUsers,
@@ -109,6 +112,9 @@ export interface IStorage {
   
   createWinkROISubmission(submission: InsertWinkROISubmission): Promise<WinkROISubmission>;
   getAllWinkROISubmissions(): Promise<WinkROISubmission[]>;
+  
+  createHiringROISubmission(submission: InsertHiringROISubmission): Promise<HiringROISubmission>;
+  getAllHiringROISubmissions(): Promise<HiringROISubmission[]>;
   
   // Podcast operations
   getPodcastEpisodes(): Promise<PodcastEpisode[]>;
@@ -507,6 +513,17 @@ export class MemStorage implements IStorage {
 
   async getAllWinkROISubmissions(): Promise<WinkROISubmission[]> {
     return await db.select().from(winkROISubmissions);
+  }
+
+  async createHiringROISubmission(insertSubmission: InsertHiringROISubmission): Promise<HiringROISubmission> {
+    const [submission] = await db.insert(hiringROISubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
+  }
+
+  async getAllHiringROISubmissions(): Promise<HiringROISubmission[]> {
+    return await db.select().from(hiringROISubmissions);
   }
 
   async getPodcastEpisodes(): Promise<PodcastEpisode[]> {
