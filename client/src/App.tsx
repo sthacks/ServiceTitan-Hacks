@@ -22,6 +22,7 @@ import PricebookOptimizer from "@/pages/PricebookOptimizer";
 import SmartACROICalculator from "@/pages/SmartACROICalculator";
 import SmartACROICalculatorTest from "@/pages/SmartACROICalculatorTest";
 import WinkROICalculator from "@/pages/WinkROICalculator";
+import HiringROICalculator from "@/pages/HiringROICalculator";
 import TruckRollCalculator from "@/pages/TruckRollCalculator";
 import DashboardCourse from "@/pages/DashboardCourse";
 import DashboardCourseLanding from "@/pages/DashboardCourseLanding";
@@ -83,6 +84,7 @@ function Router() {
       <Route path="/smartac-roi-calculator-test" component={SmartACROICalculatorTest} />
       <Route path="/smartac-roi-calculator" component={SmartACROICalculator} />
       <Route path="/wink-roi-calculator" component={WinkROICalculator} />
+      <Route path="/hiring-roi-calculator" component={HiringROICalculator} />
       <Route path="/truck-roll-calculator" component={TruckRollCalculator} />
       <Route path="/dashboard-course" component={DashboardCourse} />
       <Route path="/dashboard-course-landing" component={DashboardCourseLanding} />

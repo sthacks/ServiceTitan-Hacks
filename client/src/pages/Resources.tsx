@@ -40,6 +40,14 @@ export default function Resources() {
 
   const resources = [
     {
+      title: "Hiring ROI Calculator",
+      description: "Calculate the true cost of leaving a technician role unfilled. Estimate lost gross profit, hidden labor costs, callback drag, and ramp-up productivity loss. See how much faster hiring pays off.",
+      type: "Tool",
+      image: truckRollImage,
+      url: "/hiring-roi-calculator",
+      isInternalTool: true,
+    },
+    {
       title: "SmartAC ROI Calculator",
       description: "Calculate your potential profit growth, truck-roll savings, and membership revenue improvement with SmartAC. See your 5-year ROI projection and discover how much you could save instantly.",
       type: "Tool",
