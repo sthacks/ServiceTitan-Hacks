@@ -30,7 +30,7 @@ const config = {
   zoomRegistrationUrl: "https://zoom.us/webinar/register/YOUR_WEBINAR_ID",
   zoomEmbedUrl: "", // Leave empty to use local form, or paste Zoom embed URL
   traderunnerDemoUrl: "https://gotraderunner.com",
-  hostName: "Bill",
+  hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Bill helps home service contractors leverage technology to grow their businesses. He's trained over 1,000 contractors on ServiceTitan optimization and growth strategies.",
   guestName: "Andre Nordon",
