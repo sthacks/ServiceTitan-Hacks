@@ -28,7 +28,7 @@ const config = {
   webinarTime: "2:00 PM",
   timezone: "EST",
   zoomRegistrationUrl: "https://zoom.us/webinar/register/YOUR_WEBINAR_ID",
-  zoomEmbedUrl: "", // Leave empty to use local form, or paste Zoom embed URL
+  streamYardEmbedUrl: "https://streamyard.com/watch/u8dm8waDK5V5?embed=true", // StreamYard registration embed
   traderunnerDemoUrl: "https://gotraderunner.com",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
@@ -128,116 +128,22 @@ function RegistrationForm({ className = "" }: { className?: string }) {
     window.location.href = `${config.zoomRegistrationUrl}?${params.toString()}`;
   };
 
-  if (config.zoomEmbedUrl) {
-    return (
-      <div className={className}>
+  // Use StreamYard embed for registration
+  return (
+    <div className={className}>
+      <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
         <iframe
-          src={config.zoomEmbedUrl}
+          src={config.streamYardEmbedUrl}
           width="100%"
-          height="400"
-          frameBorder="0"
-          allow="microphone; camera"
-          className="rounded-lg"
+          height="100%"
+          frameBorder={0}
+          allow="autoplay; fullscreen"
+          style={{ width: "100%", height: "100%", position: "absolute", left: 0, top: 0, overflow: "hidden" }}
           title="Webinar Registration"
+          data-testid="iframe-streamyard-registration"
         />
       </div>
-    );
-  }
-
-  return (
-    <Card className={`${className} border-2 border-primary/30 dark:border-primary/40`}>
-      <CardContent className="pt-6">
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary/90 dark:text-primary/80 px-3 py-1 rounded-full text-sm font-medium mb-3">
-            <Calendar className="h-4 w-4" />
-            {config.webinarDate} at {config.webinarTime} {config.timezone}
-          </div>
-          <h3 className="text-xl font-bold">Register Free</h3>
-        </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label htmlFor="firstName">First Name</Label>
-              <Input
-                id="firstName"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                placeholder="John"
-                data-testid="input-webinar-first-name"
-              />
-              {errors.firstName && <p className="text-xs text-red-500 mt-1">{errors.firstName}</p>}
-            </div>
-            <div>
-              <Label htmlFor="lastName">Last Name</Label>
-              <Input
-                id="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                placeholder="Smith"
-                data-testid="input-webinar-last-name"
-              />
-              {errors.lastName && <p className="text-xs text-red-500 mt-1">{errors.lastName}</p>}
-            </div>
-          </div>
-          <div>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="john@company.com"
-              data-testid="input-webinar-email"
-            />
-            {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
-          </div>
-          <div>
-            <Label htmlFor="companyName">Company Name <span className="text-muted-foreground">(optional)</span></Label>
-            <Input
-              id="companyName"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-              placeholder="ABC Heating & Cooling"
-              data-testid="input-webinar-company"
-            />
-          </div>
-          <div>
-            <Label htmlFor="phone">Phone <span className="text-muted-foreground">(optional)</span></Label>
-            <Input
-              id="phone"
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="(555) 123-4567"
-              data-testid="input-webinar-phone"
-            />
-          </div>
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id="optIn"
-              checked={optIn}
-              onCheckedChange={(checked) => setOptIn(checked as boolean)}
-              data-testid="checkbox-webinar-optin"
-            />
-            <Label htmlFor="optIn" className="text-sm text-muted-foreground cursor-pointer">
-              Send me the templates and reminders
-            </Label>
-          </div>
-          <Button 
-            type="submit" 
-            className="w-full bg-primary hover:bg-primary/90" 
-            size="lg" 
-            disabled={isSubmitting}
-            data-testid="button-webinar-register"
-          >
-            {isSubmitting ? "Registering..." : "Save My Seat"}
-          </Button>
-          <p className="text-xs text-center text-muted-foreground">
-            Free registration. No credit card required.
-          </p>
-        </form>
-      </CardContent>
-    </Card>
+    </div>
   );
 }
 
