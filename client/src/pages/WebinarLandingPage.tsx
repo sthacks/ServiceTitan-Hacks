@@ -32,7 +32,7 @@ const config = {
   traderunnerDemoUrl: "https://gotraderunner.com",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
-  hostBio: "Bill helps home service contractors leverage technology to grow their businesses. He's trained over 1,000 contractors on ServiceTitan optimization and growth strategies.",
+  hostBio: "Bill helps home service contractors leverage technology to grow their businesses. He's trained 1,000s of contractors on ServiceTitan optimization and growth strategies.",
   guestName: "Andre Nordon",
   guestTitle: "Co-Founder, TradeRunner",
   guestBio: "Andre built TradeRunner after seeing how broken Indeed was for hiring in the trades. TradeRunner's AI-powered platform gives HVAC and plumbing companies instant access to 20,000+ verified technicians who aren't on job boards.",
