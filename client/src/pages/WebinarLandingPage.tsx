@@ -198,51 +198,49 @@ export default function WebinarLandingPage() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-background">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                {config.webinarTitle}
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                {config.webinarSubtitle}
-              </p>
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Discover where A-player techs actually are (hint: not on Indeed)",
-                  "Watch a live demo searching real candidates in real markets",
-                  "Get scripts that achieve 78% reply rates",
-                  "Learn a repeatable system you can run in 30 minutes a day",
-                  "Special offer for ServiceTitan Hacks community",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90"
-                  onClick={() => scrollToSection("register")}
-                  data-testid="button-hero-register"
-                >
-                  Register Free
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => scrollToSection("learn")}
-                  data-testid="button-hero-learn"
-                >
-                  <PlayCircle className="h-4 w-4 mr-2" />
-                  See What You'll Learn
-                </Button>
-              </div>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+              {config.webinarTitle}
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+              {config.webinarSubtitle}
+            </p>
+            <ul className="space-y-4 mb-8 max-w-2xl mx-auto text-left">
+              {[
+                "Discover where A-player techs actually are (hint: not on Indeed)",
+                "Watch a live demo searching real candidates in real markets",
+                "Get scripts that achieve 78% reply rates",
+                "Learn a repeatable system you can run in 30 minutes a day",
+                "Special offer for ServiceTitan Hacks community",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => scrollToSection("register")}
+                data-testid="button-hero-register"
+              >
+                Register Free
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection("learn")}
+                data-testid="button-hero-learn"
+              >
+                <PlayCircle className="h-4 w-4 mr-2" />
+                See What You'll Learn
+              </Button>
             </div>
-            <div id="register">
-              <RegistrationForm />
-            </div>
+          </div>
+          <div id="register" className="max-w-4xl mx-auto">
+            <RegistrationForm />
           </div>
         </div>
       </section>
