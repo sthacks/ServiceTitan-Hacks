@@ -13,7 +13,7 @@ import {
 import { ChevronUp, CheckCircle2, PlayCircle, Calendar } from "lucide-react";
 import SEO from "@/components/SEO";
 import tradeRunnerLogo from "@assets/16c394c6b_TradeRunnerLogo_(1)_1767650187233.png";
-import serviceTitanHacksLogo from "@assets/Horizontal_Black_Lettering_1767650208388.png";
+import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import guestImage from "@assets/Webinar_Pics_(1)_1767651566557.png";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
@@ -265,7 +265,7 @@ export default function WebinarLandingPage() {
             <img 
               src={serviceTitanHacksLogo} 
               alt="ServiceTitan Hacks" 
-              className="h-12 object-contain brightness-0 invert"
+              className="h-12 object-contain"
               data-testid="img-sth-logo"
             />
             <span className="hidden sm:block text-2xl text-white/50">+</span>
