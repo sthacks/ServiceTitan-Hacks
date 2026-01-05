@@ -10,11 +10,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronUp, Users, Building2, Clock, CheckCircle2, Calendar, PlayCircle } from "lucide-react";
+import { ChevronUp, CheckCircle2, PlayCircle, Calendar } from "lucide-react";
 import SEO from "@/components/SEO";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767649519720.png";
 import tradeRunnerLogo from "@assets/16c394c6b_TradeRunnerLogo_(1)_1767650187233.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_Black_Lettering_1767650208388.png";
+import hostImage from "@assets/red_shirt_round_1767651554251.png";
+import guestImage from "@assets/Webinar_Pics_(1)_1767651566557.png";
 
 // ============================================
 // CONFIGURATION - Edit these values
@@ -397,9 +399,12 @@ export default function WebinarLandingPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="pt-6 text-center">
-                <div className="w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-primary" />
-                </div>
+                <img 
+                  src={hostImage} 
+                  alt={config.hostName}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  data-testid="img-host"
+                />
                 <p className="text-sm text-primary font-medium mb-1">Host</p>
                 <h3 className="text-xl font-bold mb-1">{config.hostName}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.hostTitle}</p>
@@ -408,9 +413,12 @@ export default function WebinarLandingPage() {
             </Card>
             <Card>
               <CardContent className="pt-6 text-center">
-                <div className="w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Building2 className="h-12 w-12 text-primary" />
-                </div>
+                <img 
+                  src={guestImage} 
+                  alt={config.guestName}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  data-testid="img-guest"
+                />
                 <p className="text-sm text-primary font-medium mb-1">Guest</p>
                 <h3 className="text-xl font-bold mb-1">{config.guestName}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.guestTitle}</p>
