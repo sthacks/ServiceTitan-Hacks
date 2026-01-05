@@ -22,8 +22,8 @@ import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 // CONFIGURATION - Edit these values
 // ============================================
 const config = {
-  webinarTitle: "The Invisible Labor Market",
-  webinarSubtitle: "The TradeRunner Method for Finding A-Players Who Aren't on Indeed",
+  webinarTitle: "How to Find and Recruit A-Player Technicians Not On Job Boards",
+  webinarSubtitle: "Live training showing actionable methods any service business can implement this week.",
   webinarDate: "Thursday, January 15, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
@@ -32,10 +32,10 @@ const config = {
   traderunnerDemoUrl: "https://gotraderunner.com",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
-  hostBio: "Bill helps home service contractors leverage technology to grow their businesses. He's trained 1,000s of contractors on ServiceTitan optimization and growth strategies.",
+  hostBio: "Bill helps home service businesses fix their hiring bottlenecks with proven systems. He's trained 1,000+ contractors on ServiceTitan optimization and growth strategies.",
   guestName: "Andre Nordon",
   guestTitle: "Co-Founder, TradeRunner",
-  guestBio: "Andre built TradeRunner after seeing how broken Indeed was for hiring in the trades. TradeRunner's AI-powered platform gives HVAC and plumbing companies instant access to 20,000+ verified technicians who aren't on job boards.",
+  guestBio: "Andre built tools to access 20,000+ techs outside job boards. TradeRunner's AI-powered platform gives HVAC and plumbing companies instant access to verified technicians who aren't on Indeed.",
 };
 
 // ============================================
@@ -47,35 +47,39 @@ const stats = [
 ];
 
 const learningCards = [
-  { title: "Why 'Post and Pray' is Broken", description: "The 3 reasons traditional job boards fail for experienced technicians—and why waiting for inbound applicants is costing you." },
-  { title: "The 'Invisible Market' Explained", description: "Discover why the best techs never see your job postings—they're busy working for your competitors." },
-  { title: "How to Proactively Hunt Talent", description: "Stop waiting for luck. Learn the outbound method that lets you contact qualified candidates in minutes, not months." },
-  { title: "Scripts That Get Replies", description: "The exact text templates that get 78% reply rates without sounding like a desperate telemarketer." },
-  { title: "Live Demo: Real-Time Candidate Search", description: "Watch us search a real market and find hundreds of experienced, currently-employed techs you'd never find on Indeed." },
-  { title: "Building Your Hiring Pipeline", description: "A repeatable system you can run in 30 minutes a day to keep your trucks filled for busy season." },
+  { title: "Why Job Boards Fail for Experienced Techs", description: "Walk away understanding the 3 reasons Indeed doesn't work for A-players—and stop wasting money on posts that get ignored." },
+  { title: "Where A-Players Actually Are", description: "Learn exactly where top technicians spend their time online so you can reach them directly." },
+  { title: "How to Hunt Talent in Minutes", description: "Master the outbound method that lets you contact qualified candidates today—not months from now." },
+  { title: "Scripts That Get 70%+ Reply Rates", description: "Get the exact high-reply text templates you can copy, paste, and send immediately." },
+  { title: "Live Demo: Real-Time Search in Your Market", description: "Watch us find hundreds of experienced, currently-employed techs in a real market live on the call." },
+  { title: "Building an Ongoing Hiring Pipeline", description: "Leave with a repeatable 30-minute daily system to keep your trucks filled year-round." },
 ];
 
 const agenda = [
-  { time: "0:00", topic: "The Warm-Up: Why hiring good techs feels impossible" },
-  { time: "5:00", topic: "The Fireside Chat: Why the 'Old Way' (Indeed) is failing" },
-  { time: "12:00", topic: "The 'Invisible Market' concept: Where A-players actually are" },
-  { time: "20:00", topic: "Live Demo: Real-time candidate search in your market" },
-  { time: "30:00", topic: "The TradeRunner Offer: Special deal for our community" },
-  { time: "35:00", topic: "Q&A: Your questions answered live" },
+  { time: "0:00", topic: "Why hiring good techs feels impossible (and what to do about it)" },
+  { time: "5:00", topic: "Why Indeed fails for experienced techs—the data" },
+  { time: "12:00", topic: "The 'Invisible Market': Where A-players actually are" },
+  { time: "20:00", topic: "LIVE DEMO: Real-time candidate search in a real market" },
+  { time: "30:00", topic: "Exclusive offer for ServiceTitan Hacks community" },
+  { time: "35:00", topic: "Live Q&A: Your hiring questions answered" },
 ];
 
 const faqs = [
   {
     question: "Is this really free?",
-    answer: "Yes, this live training is completely free.",
+    answer: "Yes, 100% free. No credit card required. Just register and show up.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes, registered attendees will receive a replay link. However, live attendees can ask questions directly.",
+    answer: "Yes! All registered attendees receive the recording and templates via email. But live attendees get to ask questions and access the exclusive offer.",
   },
   {
     question: "Can I ask questions live?",
-    answer: "Absolutely! We reserve the last 10 minutes for live Q&A.",
+    answer: "Absolutely! We reserve the last 10 minutes for live Q&A. Come with your toughest hiring questions.",
+  },
+  {
+    question: "What if I can't make it live?",
+    answer: "Register anyway. We'll send you the replay, templates, and scripts within 24 hours.",
   },
 ];
 
@@ -219,11 +223,11 @@ export default function WebinarLandingPage() {
             </p>
             <ul className="space-y-4 mb-8 max-w-2xl mx-auto text-left">
               {[
-                "Discover where A-player techs actually are (hint: not on Indeed)",
-                "Watch a live demo searching real candidates in real markets",
-                "Get scripts that achieve 78% reply rates",
-                "Learn a repeatable system you can run in 30 minutes a day",
-                "Special offer for ServiceTitan Hacks community",
+                "Where Top Techs Really Are and How to Reach Them",
+                "Live Demonstration: Candidate Search in Your Market",
+                "High-Reply Scripts You Can Use Today",
+                "A Repeatable 30-Minute Daily Hiring System",
+                "Exclusive Offer for the ServiceTitan Hacks Community",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
@@ -238,7 +242,7 @@ export default function WebinarLandingPage() {
                 onClick={() => scrollToSection("register")}
                 data-testid="button-hero-register"
               >
-                Register Free
+                Reserve My Spot
               </Button>
               <Button
                 size="lg"
@@ -250,6 +254,7 @@ export default function WebinarLandingPage() {
                 See What You'll Learn
               </Button>
             </div>
+            <p className="text-sm text-white/50 mt-4">Free live training. Recording and templates emailed.</p>
           </div>
           <div id="register" className="max-w-4xl mx-auto">
             <RegistrationForm />
@@ -296,9 +301,9 @@ export default function WebinarLandingPage() {
       {/* What You'll Learn */}
       <section id="learn" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What You'll Learn</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What You'll Walk Away With</h2>
           <p className="text-center text-white/60 mb-12 max-w-2xl mx-auto">
-            Walk away with actionable strategies you can implement immediately.
+            Actionable strategies you can implement this week—not theories, real systems.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {learningCards.map((card, i) => (
@@ -319,9 +324,9 @@ export default function WebinarLandingPage() {
       {/* Agenda */}
       <section id="agenda" className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Agenda</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What We'll Cover</h2>
           <p className="text-center text-white/60 mb-12">
-            45 minutes of fireside chat, live demo, and Q&A
+            45 minutes packed with strategies, a live demo, and your questions answered
           </p>
           <div className="space-y-4">
             {agenda.map((item, i) => (
@@ -399,10 +404,10 @@ export default function WebinarLandingPage() {
       <section className="py-16 md:py-24 px-4 text-white bg-[#ee255b]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to meet A-players you can't find on job boards?
+            Ready to Fill Your Hiring Pipeline Without Job Boards?
           </h2>
-          <p className="text-white/70 mb-8">
-            Stop waiting for luck. Start building a pipeline.
+          <p className="text-white/90 mb-8">
+            Takes only 10 seconds to register. Free live training with templates included.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -412,7 +417,7 @@ export default function WebinarLandingPage() {
               onClick={() => scrollToSection("register")}
               data-testid="button-final-cta"
             >
-              Register Free
+              Reserve My Spot
             </Button>
             <Button
               size="lg"
@@ -424,7 +429,7 @@ export default function WebinarLandingPage() {
               Learn More About TradeRunner
             </Button>
           </div>
-          <p className="text-sm text-white/50 mt-4">Takes 10 seconds to register.</p>
+          <p className="text-sm text-white/70 mt-4">Recording and hiring scripts sent after the event.</p>
         </div>
       </section>
 

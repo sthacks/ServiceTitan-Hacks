@@ -1,0 +1,98 @@
+You are a professional web content specialist optimizing a webinar landing page for higher conversions. The current page has a good structure but needs clearer benefit messaging, stronger CTAs, simplified forms, and outcome-focused language.
+
+Here is what needs to be rewritten or improved:
+
+---
+
+1. **Hero Section (Headline and Subheadline)**  
+Rewrite the headline and subheadline to clearly communicate the primary outcome of attending the webinar. Focus on the result attendees will get (e.g., find and hire A-player techs not on job boards). Make the language simple, benefit-focused, and direct.
+
+Example direction:  
+"How to Find and Recruit A-Player Technicians Not On Job Boards  
+Live training showing actionable methods any service business can implement this week."
+
+---
+
+2. **Top CTA Button Text**  
+Update all CTA button text from “Register Free” to benefit-oriented text such as:  
+- “Reserve My Spot”  
+- “Claim My Hiring Strategies”  
+- “Get Instant Access”
+
+Add a short trust microcopy under the button like:  
+"Free live training. Recording and templates emailed."
+
+---
+
+3. **Benefit Bullets Under Hero**  
+Rewrite the bullet list so each item clearly states an **outcome or takeaway** rather than a topic. Use benefits like improved hiring speed, specific scripts, and systems people can implement immediately.
+
+Rewrite the 5 bullet items to something like:  
+- “Where Top Techs Really Are and How to Reach Them”  
+- “Live Demonstration: Candidate Search in Your Market”  
+- “High-Reply Scripts You Can Use Today”  
+- “A Repeatable 30-Minute Daily Hiring System”  
+- “Special Exclusive Offer for the ServiceTitan Hacks Community”
+
+Use strong active verbs and focus on what the attendee leaves with.
+
+---
+
+4. **Registration Form Section**  
+Simplify the form by reducing fields to:  
+- Email  
+- First Name  
+Remove Last Name field to reduce friction.
+
+Add a message above the form:  
+“We respect your privacy. No spam. Recording and templates sent after.”
+
+---
+
+5. **What You’ll Learn Section**  
+Rewrite these six learning blocks to be outcome-driven. Each block should clearly state what the attendee walks away with.  
+Example rewrites:  
+1. “Why Job Boards Fail for Experienced Techs”  
+2. “Where A-Players Actually Are and How to Reach Them”  
+3. “How to Hunt Talent Proactively in Minutes”  
+4. “Scripts that Get 70%+ Reply Rates”  
+5. “Live Demo: Real-Time Search in Your Market”  
+6. “Building an Ongoing Hiring Pipeline”
+
+Add a one-sentence outcome under each.
+
+---
+
+6. **Agenda Section**  
+Shorten and format the agenda for scanning. Turn it into bullets with one key outcome per line. Bold or highlight the outcomes (e.g., Live demo, scripts, tools).
+
+---
+
+7. **Meet Your Hosts Section**  
+Rewrite host bios to include one metric or result they’ve achieved and focus on how they help the attendee.  
+Example:  
+“Bill Brown: Helps home service businesses fix their hiring bottlenecks with proven systems.”  
+“André Nordon: Built tools to access 20,000+ techs outside job boards.”
+
+---
+
+8. **Bottom CTA Section**  
+Rewrite the bottom call-to-action headline to be outcome-oriented. Example:  
+“Ready to Fill Your Hiring Pipeline Without Job Boards?”  
+Add supportive text:  
+“Takes only 10 seconds to register. Free live training with templates.”
+
+Use a primary CTA button with benefit text.
+
+---
+
+9. **General Tone and Style**  
+- Keep language direct, conversational, and action-oriented.  
+- Use short sentences, active voice, and benefits over features.  
+- Use consistent CTAs and micro-commitments throughout.
+
+---
+
+Generate full rewritten content for each section above. Do not restructure the layout beyond content edits. Focus only on text/content improvements.  
+
+Output the rewritten text in a structured format with clear section headings.  
