@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronUp, CheckCircle2, PlayCircle, Calendar } from "lucide-react";
 import SEO from "@/components/SEO";
-import webinarHeroImage from "@assets/switchy_images_(9)_1767649519720.png";
 import tradeRunnerLogo from "@assets/16c394c6b_TradeRunnerLogo_(1)_1767650187233.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_Black_Lettering_1767650208388.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
@@ -242,18 +241,6 @@ export default function WebinarLandingPage() {
           <div id="register" className="max-w-4xl mx-auto">
             <RegistrationForm />
           </div>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="py-8 md:py-12 px-4 bg-white dark:bg-background">
-        <div className="container mx-auto max-w-4xl">
-          <img 
-            src={webinarHeroImage} 
-            alt="The Invisible Labor Market - Live Fireside Chat with Bill and Andre Nordon" 
-            className="w-full rounded-lg shadow-lg"
-            data-testid="img-webinar-hero"
-          />
         </div>
       </section>
 
