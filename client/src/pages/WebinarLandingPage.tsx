@@ -16,6 +16,7 @@ import tradeRunnerLogo from "@assets/16c394c6b_TradeRunnerLogo_(1)_1767650187233
 import serviceTitanHacksLogo from "@assets/Horizontal_Black_Lettering_1767650208388.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import guestImage from "@assets/Webinar_Pics_(1)_1767651566557.png";
+import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 
 // ============================================
 // CONFIGURATION - Edit these values
@@ -193,6 +194,18 @@ export default function WebinarLandingPage() {
           </Button>
         </div>
       </div>
+
+      {/* Hero Image */}
+      <section className="pt-8 md:pt-12 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <img 
+            src={webinarHeroImage} 
+            alt="The Invisible Labor Market - Live Fireside Chat" 
+            className="w-full rounded-lg shadow-2xl"
+            data-testid="img-webinar-hero"
+          />
+        </div>
+      </section>
 
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4">
