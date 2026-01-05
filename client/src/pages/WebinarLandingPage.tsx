@@ -439,7 +439,7 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 px-4 bg-primary text-white">
+      <section className="py-16 md:py-24 px-4 text-white bg-[#000000]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to meet A-players you can't find on job boards?
@@ -451,7 +451,7 @@ export default function WebinarLandingPage() {
             <Button
               size="lg"
               variant="secondary"
-              className="bg-white text-primary hover:bg-primary/5"
+              className="bg-white text-black hover:bg-white/90"
               onClick={() => scrollToSection("register")}
               data-testid="button-final-cta"
             >
