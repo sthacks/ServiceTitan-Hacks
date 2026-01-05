@@ -83,6 +83,8 @@ function RegistrationForm({ className = "" }: { className?: string }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [phone, setPhone] = useState("");
   const [optIn, setOptIn] = useState(true);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -109,7 +111,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
       await fetch("/api/webinar-registration", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email, optIn }),
+        body: JSON.stringify({ firstName, lastName, email, companyName, phone, optIn }),
       });
     } catch (error) {
       console.error("Registration webhook error:", error);
@@ -188,6 +190,27 @@ function RegistrationForm({ className = "" }: { className?: string }) {
               data-testid="input-webinar-email"
             />
             {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+          </div>
+          <div>
+            <Label htmlFor="companyName">Company Name <span className="text-muted-foreground">(optional)</span></Label>
+            <Input
+              id="companyName"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+              placeholder="ABC Heating & Cooling"
+              data-testid="input-webinar-company"
+            />
+          </div>
+          <div>
+            <Label htmlFor="phone">Phone <span className="text-muted-foreground">(optional)</span></Label>
+            <Input
+              id="phone"
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="(555) 123-4567"
+              data-testid="input-webinar-phone"
+            />
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox

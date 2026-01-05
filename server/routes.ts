@@ -1321,7 +1321,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Webinar registration webhook endpoint
   app.post("/api/webinar-registration", async (req, res) => {
     try {
-      const { firstName, lastName, email, optIn } = req.body;
+      const { firstName, lastName, email, companyName, phone, optIn } = req.body;
       
       if (!firstName || !lastName || !email) {
         return res.status(400).json({ message: "Missing required fields" });
@@ -1334,6 +1334,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         firstName,
         lastName,
         email,
+        companyName: companyName || "",
+        phone: phone || "",
         optIn: optIn ?? true,
         webinarName: "The Invisible Labor Market",
         registeredAt: new Date().toISOString(),
