@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronUp, CheckCircle2, PlayCircle, Calendar } from "lucide-react";
 import SEO from "@/components/SEO";
-import tradeRunnerLogo from "@assets/16c394c6b_TradeRunnerLogo_(1)_1767650187233.png";
+import tradeRunnerLogo from "@assets/TradeRunner_Logo_w_Website_1767654255967.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import guestImage from "@assets/Webinar_Pics_(1)_1767651566557.png";
@@ -272,7 +272,7 @@ export default function WebinarLandingPage() {
             <img 
               src={tradeRunnerLogo} 
               alt="TradeRunner" 
-              className="h-12 object-contain brightness-0 invert"
+              className="h-12 object-contain"
               data-testid="img-traderunner-logo"
             />
           </div>
