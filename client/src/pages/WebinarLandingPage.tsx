@@ -13,6 +13,8 @@ import {
 import { ChevronUp, Users, Building2, Clock, CheckCircle2, Calendar, PlayCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767649519720.png";
+import tradeRunnerLogo from "@assets/16c394c6b_TradeRunnerLogo_(1)_1767650187233.png";
+import serviceTitanHacksLogo from "@assets/Horizontal_Black_Lettering_1767650208388.png";
 
 // ============================================
 // CONFIGURATION - Edit these values
@@ -301,6 +303,28 @@ export default function WebinarLandingPage() {
             className="w-full rounded-lg shadow-lg"
             data-testid="img-webinar-hero"
           />
+        </div>
+      </section>
+
+      {/* Presented By */}
+      <section className="py-8 px-4 bg-white dark:bg-background">
+        <div className="container mx-auto max-w-2xl">
+          <p className="text-center text-sm text-muted-foreground mb-6">Presented by</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12">
+            <img 
+              src={serviceTitanHacksLogo} 
+              alt="ServiceTitan Hacks" 
+              className="h-12 object-contain dark:brightness-0 dark:invert"
+              data-testid="img-sth-logo"
+            />
+            <span className="hidden sm:block text-2xl text-muted-foreground">+</span>
+            <img 
+              src={tradeRunnerLogo} 
+              alt="TradeRunner" 
+              className="h-12 object-contain dark:brightness-0 dark:invert"
+              data-testid="img-traderunner-logo"
+            />
+          </div>
         </div>
       </section>
 
