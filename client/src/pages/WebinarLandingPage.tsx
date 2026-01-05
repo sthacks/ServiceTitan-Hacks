@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronUp, Users, Building2, Clock, CheckCircle2, Calendar, PlayCircle } from "lucide-react";
 import SEO from "@/components/SEO";
+import webinarHeroImage from "@assets/switchy_images_(9)_1767649519720.png";
 
 // ============================================
 // CONFIGURATION - Edit these values
@@ -323,6 +324,18 @@ export default function WebinarLandingPage() {
               <RegistrationForm />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Image */}
+      <section className="py-8 md:py-12 px-4 bg-white dark:bg-background">
+        <div className="container mx-auto max-w-4xl">
+          <img 
+            src={webinarHeroImage} 
+            alt="The Invisible Labor Market - Live Fireside Chat with Bill and Andre Nordon" 
+            className="w-full rounded-lg shadow-lg"
+            data-testid="img-webinar-hero"
+          />
         </div>
       </section>
 
