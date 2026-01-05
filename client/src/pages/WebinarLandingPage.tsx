@@ -86,7 +86,9 @@ function RegistrationForm({ className = "" }: { className?: string }) {
   const [optIn, setOptIn] = useState(true);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
 
@@ -100,6 +102,20 @@ function RegistrationForm({ className = "" }: { className?: string }) {
       return;
     }
 
+    setIsSubmitting(true);
+
+    // Send registration to backend webhook
+    try {
+      await fetch("/api/webinar-registration", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, optIn }),
+      });
+    } catch (error) {
+      console.error("Registration webhook error:", error);
+    }
+
+    // Redirect to Zoom registration
     const params = new URLSearchParams({
       first_name: firstName,
       last_name: lastName,
@@ -184,8 +200,14 @@ function RegistrationForm({ className = "" }: { className?: string }) {
               Send me the templates and reminders
             </Label>
           </div>
-          <Button type="submit" className="w-full bg-primary hover:bg-primary/90" size="lg" data-testid="button-webinar-register">
-            Save My Seat
+          <Button 
+            type="submit" 
+            className="w-full bg-primary hover:bg-primary/90" 
+            size="lg" 
+            disabled={isSubmitting}
+            data-testid="button-webinar-register"
+          >
+            {isSubmitting ? "Registering..." : "Save My Seat"}
           </Button>
           <p className="text-xs text-center text-muted-foreground">
             Free registration. No credit card required.

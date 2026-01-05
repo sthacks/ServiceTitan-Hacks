@@ -1318,6 +1318,55 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Webinar registration webhook endpoint
+  app.post("/api/webinar-registration", async (req, res) => {
+    try {
+      const { firstName, lastName, email, optIn } = req.body;
+      
+      if (!firstName || !lastName || !email) {
+        return res.status(400).json({ message: "Missing required fields" });
+      }
+      
+      // Send to Make.com webhook
+      const webhookUrl = "https://hook.us1.make.com/wfq4mmnjy0lwt4iylnv1mioc63t94r7s";
+      
+      const webhookData = {
+        firstName,
+        lastName,
+        email,
+        optIn: optIn ?? true,
+        webinarName: "The Invisible Labor Market",
+        registeredAt: new Date().toISOString(),
+      };
+      
+      const webhookResponse = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(webhookData),
+      });
+      
+      if (!webhookResponse.ok) {
+        console.error("Webhook failed:", await webhookResponse.text());
+        // Don't fail the registration if webhook fails
+      }
+      
+      // Also sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email,
+        firstName,
+        lastName,
+        tags: ["Webinar Registration", "Invisible Labor Market", "no welcome workflow"]
+      });
+      
+      res.status(200).json({ message: "Registration successful" });
+    } catch (error) {
+      console.error("Webinar registration error:", error);
+      res.status(500).json({ message: "Registration failed" });
+    }
+  });
+
   // Pricebook optimization request endpoint
   app.post("/api/pricebook-optimization", async (req, res) => {
     try {
