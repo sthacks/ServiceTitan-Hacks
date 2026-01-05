@@ -39,9 +39,7 @@ const config = {
 // ============================================
 const stats = [
   { label: "Verified Techs in Database", value: "20,000+" },
-  { label: "New Techs Added Weekly", value: "1,000+" },
   { label: "Candidate Reply Rate", value: "78%" },
-  { label: "Time to First Contact", value: "Minutes" },
 ];
 
 const learningCards = [
@@ -69,44 +67,20 @@ const testimonials = [
     company: "Portfolio of 8+ HVAC & Plumbing Brands",
     role: "",
   },
-  {
-    quote: "We found candidates in minutes that we'd never have seen on Indeed. The techs are actually qualified and currently working—not the unemployed applicants firing off 50 resumes a day.",
-    name: "Mike T.",
-    company: "Regional HVAC Company",
-    role: "Owner",
-  },
-  {
-    quote: "Skip the broken system. This outbound approach changed how we think about hiring. We're proactively building a pipeline instead of hoping for luck.",
-    name: "Sarah K.",
-    company: "Premier Plumbing",
-    role: "HR Director",
-  },
 ];
 
 const faqs = [
   {
     question: "Is this really free?",
-    answer: "Yes, this live training is completely free. We want to help as many contractors as possible solve their hiring challenges before busy season.",
+    answer: "Yes, this live training is completely free.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes, registered attendees will receive a replay link. However, live attendees get priority access to the special offer and can ask questions directly.",
-  },
-  {
-    question: "Does this work in rural areas or just big cities?",
-    answer: "TradeRunner has 20,000+ verified techs across the country. During the webinar, we'll do a live search in a real market so you can see the coverage for yourself.",
-  },
-  {
-    question: "What if I text a candidate and they tell me to stop?",
-    answer: "Recruiting texts are fully compliant with privacy laws—no opt-in required. But in thousands of texts sent through TradeRunner, only 1 candidate has ever objected. People love texting because it's easy.",
-  },
-  {
-    question: "Is TradeRunner a contract or month-to-month?",
-    answer: "We'll cover pricing and commitment details during the webinar. There's a special offer for ServiceTitan Hacks community members.",
+    answer: "Yes, registered attendees will receive a replay link. However, live attendees can ask questions directly.",
   },
   {
     question: "Can I ask questions live?",
-    answer: "Absolutely! We reserve the last 10 minutes for live Q&A. Bill will be grilling Andre on the hard questions contractors are thinking.",
+    answer: "Absolutely! We reserve the last 10 minutes for live Q&A.",
   },
 ];
 
@@ -341,8 +315,8 @@ export default function WebinarLandingPage() {
 
       {/* Social Proof Strip */}
       <section className="py-12 bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="container mx-auto max-w-md px-4">
+          <div className="grid grid-cols-2 gap-8 text-center">
             {stats.map((stat, i) => (
               <div key={i}>
                 <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
@@ -350,9 +324,6 @@ export default function WebinarLandingPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-center text-muted-foreground mt-6">
-            TradeRunner platform statistics
-          </p>
         </div>
       </section>
 
