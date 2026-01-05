@@ -166,7 +166,7 @@ export default function WebinarLandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-background">
+    <div className="min-h-screen bg-[#000000] text-white">
       <SEO
         title={`${config.webinarTitle} | Free Live Training`}
         description="Learn the TradeRunner method for finding A-player technicians who are not on Indeed. Free live webinar with scripts, templates, and workflows included."
@@ -195,13 +195,13 @@ export default function WebinarLandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-background">
+      <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {config.webinarTitle}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>
             <ul className="space-y-4 mb-8 max-w-2xl mx-auto text-left">
@@ -214,7 +214,7 @@ export default function WebinarLandingPage() {
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                  <span className="text-white/80">{item}</span>
                 </li>
               ))}
             </ul>
@@ -245,21 +245,21 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Presented By */}
-      <section className="py-8 px-4 bg-white dark:bg-background">
+      <section className="py-8 px-4">
         <div className="container mx-auto max-w-2xl">
-          <p className="text-center text-sm text-muted-foreground mb-6">Presented by</p>
+          <p className="text-center text-sm text-white/50 mb-6">Presented by</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12">
             <img 
               src={serviceTitanHacksLogo} 
               alt="ServiceTitan Hacks" 
-              className="h-12 object-contain dark:brightness-0 dark:invert"
+              className="h-12 object-contain brightness-0 invert"
               data-testid="img-sth-logo"
             />
-            <span className="hidden sm:block text-2xl text-muted-foreground">+</span>
+            <span className="hidden sm:block text-2xl text-white/50">+</span>
             <img 
               src={tradeRunnerLogo} 
               alt="TradeRunner" 
-              className="h-12 object-contain dark:brightness-0 dark:invert"
+              className="h-12 object-contain brightness-0 invert"
               data-testid="img-traderunner-logo"
             />
           </div>
@@ -267,13 +267,13 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Social Proof Strip */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+      <section className="py-12 border-y border-white/10">
         <div className="container mx-auto max-w-md px-4">
           <div className="grid grid-cols-2 gap-8 text-center">
             {stats.map((stat, i) => (
               <div key={i}>
                 <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div className="text-sm text-white/60">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -284,18 +284,18 @@ export default function WebinarLandingPage() {
       <section id="learn" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What You'll Learn</h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-white/60 mb-12 max-w-2xl mx-auto">
             Walk away with actionable strategies you can implement immediately.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {learningCards.map((card, i) => (
-              <Card key={i} className="hover-elevate">
+              <Card key={i} className="hover-elevate bg-white/5 border-white/10">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                     <span className="text-primary font-bold text-lg">{i + 1}</span>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{card.description}</p>
+                  <h3 className="text-lg font-semibold mb-2 text-white">{card.title}</h3>
+                  <p className="text-white/60 text-sm">{card.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -304,10 +304,10 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Agenda */}
-      <section id="agenda" className="py-16 md:py-24 px-4 bg-gray-50 dark:bg-gray-900">
+      <section id="agenda" className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Agenda</h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
+          <p className="text-center text-white/60 mb-12">
             45 minutes of fireside chat, live demo, and Q&A
           </p>
           <div className="space-y-4">
@@ -316,13 +316,13 @@ export default function WebinarLandingPage() {
                 <div className="w-16 flex-shrink-0 text-right">
                   <span className="text-primary font-mono font-medium">{item.time}</span>
                 </div>
-                <div className="flex-1 pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0">
-                  <span className="text-gray-800 dark:text-gray-200">{item.topic}</span>
+                <div className="flex-1 pb-4 border-b border-white/10 last:border-0">
+                  <span className="text-white/80">{item.topic}</span>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-center text-muted-foreground mt-8">
+          <p className="text-xs text-center text-white/40 mt-8">
             Agenda is approximate.
           </p>
         </div>
@@ -333,7 +333,7 @@ export default function WebinarLandingPage() {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Meet Your Hosts</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card>
+            <Card className="bg-white/5 border-white/10">
               <CardContent className="pt-6 text-center">
                 <img 
                   src={hostImage} 
@@ -342,12 +342,12 @@ export default function WebinarLandingPage() {
                   data-testid="img-host"
                 />
                 <p className="text-sm text-primary font-medium mb-1">Host</p>
-                <h3 className="text-xl font-bold mb-1">{config.hostName}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.hostTitle}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{config.hostBio}</p>
+                <h3 className="text-xl font-bold mb-1 text-white">{config.hostName}</h3>
+                <p className="text-sm text-white/60 mb-4">{config.hostTitle}</p>
+                <p className="text-sm text-white/60">{config.hostBio}</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="bg-white/5 border-white/10">
               <CardContent className="pt-6 text-center">
                 <img 
                   src={guestImage} 
@@ -356,9 +356,9 @@ export default function WebinarLandingPage() {
                   data-testid="img-guest"
                 />
                 <p className="text-sm text-primary font-medium mb-1">Guest</p>
-                <h3 className="text-xl font-bold mb-1">{config.guestName}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.guestTitle}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{config.guestBio}</p>
+                <h3 className="text-xl font-bold mb-1 text-white">{config.guestName}</h3>
+                <p className="text-sm text-white/60 mb-4">{config.guestTitle}</p>
+                <p className="text-sm text-white/60">{config.guestBio}</p>
               </CardContent>
             </Card>
           </div>
@@ -366,14 +366,14 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-16 md:py-24 px-4">
+      <section id="faq" className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-gray-600 dark:text-gray-400">
+              <AccordionItem key={i} value={`faq-${i}`} className="border-white/10">
+                <AccordionTrigger className="text-left text-white hover:text-white/80">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-white/60">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -383,7 +383,7 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 px-4 text-white bg-[#000000]">
+      <section className="py-16 md:py-24 px-4 text-white bg-[#ee255b]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to meet A-players you can't find on job boards?
@@ -416,16 +416,16 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-gray-200 dark:border-gray-800">
+      <footer className="py-8 px-4 border-t border-white/10">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-white/50">
               ServiceTitan Hacks
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Privacy</a>
-              <a href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Terms</a>
-              <a href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Contact</a>
+              <a href="/privacy" className="text-white/50 hover:text-white">Privacy</a>
+              <a href="/terms" className="text-white/50 hover:text-white">Terms</a>
+              <a href="/contact" className="text-white/50 hover:text-white">Contact</a>
             </div>
           </div>
         </div>
