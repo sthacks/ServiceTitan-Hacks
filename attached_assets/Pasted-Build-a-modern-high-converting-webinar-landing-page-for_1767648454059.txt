@@ -1,0 +1,137 @@
+Build a modern, high-converting webinar landing page for a webinar titled "The Invisible Labor Market".
+
+Goal
+- Drive webinar registrations.
+- Present the problem and promise clearly.
+- Make the registration CTA obvious and repeated.
+
+Tech
+- Use Next.js (App Router) + TypeScript + Tailwind CSS.
+- Single public route: "/" with one page component.
+- No backend required.
+- Use semantic HTML, accessible labels, and good Lighthouse scores.
+
+Brand + Style
+- Clean, modern SaaS look.
+- White background, subtle light gray sections, dark text.
+- Accent color: #6D28D9 (purple). Secondary accent: #111827 (near-black).
+- Rounded cards, soft shadows, generous spacing.
+- Typography: system font stack (or Inter if available).
+- Responsive: mobile-first, looks great at 390px, 768px, 1024px, 1440px.
+- Sticky top bar with CTA on desktop, collapses cleanly on mobile.
+
+Content to include (use this exact structure)
+1) Top announcement bar
+- Text: "Free live training" + date/time + "Limited seats"
+- CTA button: "Save my seat"
+
+2) Hero section (above the fold)
+- Left: headline, subhead, bullet value points.
+- Right: registration card with form fields and primary CTA.
+Headline:
+- "The Invisible Labor Market"
+Subheadline:
+- "The TradeRunner method for finding A-players who are not on Indeed."
+Bullets (3 to 5):
+- "Find candidates your competitors never see"
+- "Build a repeatable sourcing system in 30 minutes a day"
+- "Improve applicant quality without raising ad spend"
+- "Scripts, templates, and workflows included"
+Hero CTAs:
+- Primary: "Register free"
+- Secondary: "See what you will learn" (scroll to agenda)
+
+3) Social proof strip
+- Row of 4 simple stats (use placeholder numbers that I can edit later):
+  - "Attendees trained: 1,200+"
+  - "Contractors helped: 300+"
+  - "Avg time to first candidates: 7 days"
+  - "Repeatable process: Yes"
+Add small note: "Stats are examples. Replace with your real numbers."
+
+4) "What you will learn" section
+- 6 cards in a 2x3 grid on desktop, stacked on mobile.
+Card titles:
+- "Where the invisible talent is"
+- "How to start conversations that get replies"
+- "The 3-message follow-up sequence"
+- "Filtering for A-player signals"
+- "Turning leads into booked interviews"
+- "Tracking and improving your pipeline"
+
+5) Agenda section
+- Timeline list with times (use placeholders):
+  - "00:00 Welcome and the real hiring problem"
+  - "05:00 The invisible market explained"
+  - "15:00 The TradeRunner sourcing loop"
+  - "30:00 Scripts and examples"
+  - "45:00 Implementation plan"
+  - "55:00 Q&A"
+Add note: "Agenda is approximate."
+
+6) Speaker section
+- Two speaker cards with headshots as placeholders.
+- Speaker 1: "Host: [HOST_NAME]" with title "[HOST_TITLE]" and 2 sentence bio.
+- Speaker 2: "Guest: [GUEST_NAME]" with title "[GUEST_TITLE]" and 2 sentence bio.
+Include placeholders and make it easy to edit.
+
+7) Testimonials section
+- 3 testimonial cards, placeholders with realistic tone:
+  - Quote, name, company, role.
+Use placeholder names like "Alex R., HVAC Owner".
+
+8) FAQ section (accordion)
+Questions:
+- "Is this really free?"
+- "Will there be a replay?"
+- "Who is this for?"
+- "What will I get after registering?"
+- "Can I ask questions live?"
+
+9) Final CTA section
+- Big headline: "Ready to meet A-players you cannot find on job boards?"
+- Button: "Register free"
+- Secondary text: "Takes 10 seconds."
+
+Registration form behavior (important)
+- The page should support two registration modes:
+  Mode A (default): simple on-page form that redirects to a Zoom registration link with query params.
+  Mode B (optional): embed an iframe for Zoom registration if I paste an embed URL.
+Implementation details:
+- Create a config object at the top of the page:
+  - webinarTitle
+  - webinarDate (string)
+  - webinarTime (string)
+  - timezone (string)
+  - zoomRegistrationUrl (string placeholder)
+  - zoomEmbedUrl (string optional, can be empty)
+- If zoomEmbedUrl is non-empty, show an iframe embed in the registration card.
+- If zoomEmbedUrl is empty, show a local form with:
+  - First name
+  - Last name
+  - Email
+On submit:
+- Validate required fields.
+- Build a redirect URL to zoomRegistrationUrl, appending:
+  - first_name, last_name, email as query params (use encodeURIComponent).
+- Then window.location.href to that URL.
+Also:
+- Add a checkbox: "Send me the templates and reminders" (checked by default). If checked, include a query param "opt_in=1" else "opt_in=0".
+
+Other requirements
+- Add smooth scrolling for anchor links.
+- Add section IDs for navigation: learn, agenda, speakers, faq.
+- Add basic SEO metadata: title, description, Open Graph placeholders.
+- Add a small footer with links: "Privacy", "Terms", and "Contact" (placeholders).
+- Include a "Back to top" button that appears after scrolling 600px.
+
+Deliverables
+- Provide the complete code for:
+  - app/page.tsx
+  - app/layout.tsx
+  - app/globals.css (minimal)
+  - tailwind config if needed
+- Keep the code clean and editable.
+- Do not include any external API keys.
+- Use only placeholder images via simple colored SVG or a public placeholder image URL.
+- After the code, include a short "How to edit" section listing which config fields to change.
