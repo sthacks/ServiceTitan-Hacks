@@ -18,88 +18,94 @@ import SEO from "@/components/SEO";
 // ============================================
 const config = {
   webinarTitle: "The Invisible Labor Market",
-  webinarDate: "January 15, 2026",
+  webinarSubtitle: "The TradeRunner Method for Finding A-Players Who Aren't on Indeed",
+  webinarDate: "Thursday, January 15, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
   zoomRegistrationUrl: "https://zoom.us/webinar/register/YOUR_WEBINAR_ID",
   zoomEmbedUrl: "", // Leave empty to use local form, or paste Zoom embed URL
+  traderunnerDemoUrl: "https://gotraderunner.com",
   hostName: "Bill",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Bill helps home service contractors leverage technology to grow their businesses. He's trained over 1,000 contractors on ServiceTitan optimization and growth strategies.",
-  guestName: "TradeRunner Team",
-  guestTitle: "Hiring & Recruiting Experts",
-  guestBio: "The TradeRunner team specializes in helping contractors find and hire A-player technicians using proven sourcing methods that go beyond traditional job boards.",
+  guestName: "Andre Nordon",
+  guestTitle: "Co-Founder, TradeRunner",
+  guestBio: "Andre built TradeRunner after seeing how broken Indeed was for hiring in the trades. TradeRunner's AI-powered platform gives HVAC and plumbing companies instant access to 20,000+ verified technicians who aren't on job boards.",
 };
 
 // ============================================
 // CONTENT - Edit these sections
 // ============================================
 const stats = [
-  { label: "Attendees trained", value: "1,200+" },
-  { label: "Contractors helped", value: "300+" },
-  { label: "Avg time to first candidates", value: "7 days" },
-  { label: "Repeatable process", value: "Yes" },
+  { label: "Verified Techs in Database", value: "20,000+" },
+  { label: "New Techs Added Weekly", value: "1,000+" },
+  { label: "Candidate Reply Rate", value: "78%" },
+  { label: "Time to First Contact", value: "Minutes" },
 ];
 
 const learningCards = [
-  { title: "Where the invisible talent is", description: "Discover untapped channels where A-players spend time but recruiters don't look." },
-  { title: "How to start conversations that get replies", description: "Learn the opening messages that get 3x the response rate of cold outreach." },
-  { title: "The 3-message follow-up sequence", description: "A proven sequence that keeps candidates engaged without being pushy." },
-  { title: "Filtering for A-player signals", description: "Identify the traits that separate top performers from time-wasters." },
-  { title: "Turning leads into booked interviews", description: "Convert interested candidates into scheduled interviews efficiently." },
-  { title: "Tracking and improving your pipeline", description: "Simple metrics to measure and optimize your sourcing efforts." },
+  { title: "Why 'Post and Pray' is Broken", description: "The 3 reasons traditional job boards fail for experienced technicians—and why waiting for inbound applicants is costing you." },
+  { title: "The 'Invisible Market' Explained", description: "Discover why the best techs never see your job postings—they're busy working for your competitors." },
+  { title: "How to Proactively Hunt Talent", description: "Stop waiting for luck. Learn the outbound method that lets you contact qualified candidates in minutes, not months." },
+  { title: "Scripts That Get Replies", description: "The exact text templates that get 78% reply rates without sounding like a desperate telemarketer." },
+  { title: "Live Demo: Real-Time Candidate Search", description: "Watch us search a real market and find hundreds of experienced, currently-employed techs you'd never find on Indeed." },
+  { title: "Building Your Hiring Pipeline", description: "A repeatable system you can run in 30 minutes a day to keep your trucks filled for busy season." },
 ];
 
 const agenda = [
-  { time: "00:00", topic: "Welcome and the real hiring problem" },
-  { time: "05:00", topic: "The invisible market explained" },
-  { time: "15:00", topic: "The TradeRunner sourcing loop" },
-  { time: "30:00", topic: "Scripts and examples" },
-  { time: "45:00", topic: "Implementation plan" },
-  { time: "55:00", topic: "Q&A" },
+  { time: "0:00", topic: "The Warm-Up: Why hiring good techs feels impossible" },
+  { time: "5:00", topic: "The Fireside Chat: Why the 'Old Way' (Indeed) is failing" },
+  { time: "12:00", topic: "The 'Invisible Market' concept: Where A-players actually are" },
+  { time: "20:00", topic: "Live Demo: Real-time candidate search in your market" },
+  { time: "30:00", topic: "The TradeRunner Offer: Special deal for our community" },
+  { time: "35:00", topic: "Q&A: Your questions answered live" },
 ];
 
 const testimonials = [
   {
-    quote: "I found 3 qualified candidates in my first week using these methods. None of them were on Indeed.",
-    name: "Alex R.",
-    company: "Comfort Pro HVAC",
+    quote: "TradeRunner knows how urgent hiring is in this space, and their platform delivers fast, qualified matches so we can keep jobs moving and revenue flowing. No wasted time on job boards or sorting through unqualified applicants.",
+    name: "Operations Manager",
+    company: "Portfolio of 8+ HVAC & Plumbing Brands",
+    role: "",
+  },
+  {
+    quote: "We found candidates in minutes that we'd never have seen on Indeed. The techs are actually qualified and currently working—not the unemployed applicants firing off 50 resumes a day.",
+    name: "Mike T.",
+    company: "Regional HVAC Company",
     role: "Owner",
   },
   {
-    quote: "The scripts alone saved me hours of trial and error. My response rate went from 5% to over 30%.",
-    name: "Maria S.",
-    company: "Elite Plumbing",
-    role: "Operations Manager",
-  },
-  {
-    quote: "Finally, a hiring approach that doesn't rely on luck. I've hired 2 techs using this system.",
-    name: "James T.",
-    company: "Premier Electric",
-    role: "Owner",
+    quote: "Skip the broken system. This outbound approach changed how we think about hiring. We're proactively building a pipeline instead of hoping for luck.",
+    name: "Sarah K.",
+    company: "Premier Plumbing",
+    role: "HR Director",
   },
 ];
 
 const faqs = [
   {
     question: "Is this really free?",
-    answer: "Yes, this live training is completely free. We want to help as many contractors as possible solve their hiring challenges.",
+    answer: "Yes, this live training is completely free. We want to help as many contractors as possible solve their hiring challenges before busy season.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes, registered attendees will receive a replay link. However, live attendees get priority access to bonus materials and can ask questions directly.",
+    answer: "Yes, registered attendees will receive a replay link. However, live attendees get priority access to the special offer and can ask questions directly.",
   },
   {
-    question: "Who is this for?",
-    answer: "This training is designed for home service contractors (HVAC, plumbing, electrical, etc.) who are struggling to find qualified technicians through traditional job boards.",
+    question: "Does this work in rural areas or just big cities?",
+    answer: "TradeRunner has 20,000+ verified techs across the country. During the webinar, we'll do a live search in a real market so you can see the coverage for yourself.",
   },
   {
-    question: "What will I get after registering?",
-    answer: "You'll receive a confirmation email with the webinar link, calendar invite, and a pre-training checklist to help you prepare.",
+    question: "What if I text a candidate and they tell me to stop?",
+    answer: "Recruiting texts are fully compliant with privacy laws—no opt-in required. But in thousands of texts sent through TradeRunner, only 1 candidate has ever objected. People love texting because it's easy.",
+  },
+  {
+    question: "Is TradeRunner a contract or month-to-month?",
+    answer: "We'll cover pricing and commitment details during the webinar. There's a special offer for ServiceTitan Hacks community members.",
   },
   {
     question: "Can I ask questions live?",
-    answer: "Absolutely! We reserve the last 15 minutes for live Q&A. You can also submit questions in advance when you register.",
+    answer: "Absolutely! We reserve the last 10 minutes for live Q&A. Bill will be grilling Andre on the hard questions contractors are thinking.",
   },
 ];
 
@@ -277,14 +283,15 @@ export default function WebinarLandingPage() {
                 {config.webinarTitle}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                The TradeRunner method for finding A-players who are not on Indeed.
+                {config.webinarSubtitle}
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "Find candidates your competitors never see",
-                  "Build a repeatable sourcing system in 30 minutes a day",
-                  "Improve applicant quality without raising ad spend",
-                  "Scripts, templates, and workflows included",
+                  "Discover where A-player techs actually are (hint: not on Indeed)",
+                  "Watch a live demo searching real candidates in real markets",
+                  "Get scripts that achieve 78% reply rates",
+                  "Learn a repeatable system you can run in 30 minutes a day",
+                  "Special offer for ServiceTitan Hacks community",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
@@ -331,7 +338,7 @@ export default function WebinarLandingPage() {
             ))}
           </div>
           <p className="text-xs text-center text-muted-foreground mt-6">
-            Stats are examples. Replace with your real numbers.
+            TradeRunner platform statistics
           </p>
         </div>
       </section>
@@ -364,7 +371,7 @@ export default function WebinarLandingPage() {
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Agenda</h2>
           <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
-            What we'll cover in 60 minutes
+            45 minutes of fireside chat, live demo, and Q&A
           </p>
           <div className="space-y-4">
             {agenda.map((item, i) => (
@@ -426,7 +433,7 @@ export default function WebinarLandingPage() {
                   <p className="text-gray-700 dark:text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
                   <div>
                     <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}, {testimonial.company}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role ? `${testimonial.role}, ` : ""}{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -458,19 +465,30 @@ export default function WebinarLandingPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to meet A-players you can't find on job boards?
           </h2>
-          <p className="text-primary/30 mb-8">
-            Join hundreds of contractors who've transformed their hiring process.
+          <p className="text-white/70 mb-8">
+            Stop waiting for luck. Start building a pipeline.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-white text-primary hover:bg-primary/5"
-            onClick={() => scrollToSection("register")}
-            data-testid="button-final-cta"
-          >
-            Register Free
-          </Button>
-          <p className="text-sm text-primary/30 mt-4">Takes 10 seconds.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-white text-primary hover:bg-primary/5"
+              onClick={() => scrollToSection("register")}
+              data-testid="button-final-cta"
+            >
+              Register Free
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/10"
+              onClick={() => window.open(config.traderunnerDemoUrl, "_blank")}
+              data-testid="button-traderunner-demo"
+            >
+              Learn More About TradeRunner
+            </Button>
+          </div>
+          <p className="text-sm text-white/50 mt-4">Takes 10 seconds to register.</p>
         </div>
       </section>
 
