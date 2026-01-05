@@ -151,10 +151,10 @@ function RegistrationForm({ className = "" }: { className?: string }) {
   }
 
   return (
-    <Card className={`${className} border-2 border-purple-200 dark:border-purple-800`}>
+    <Card className={`${className} border-2 border-primary/30 dark:border-primary/40`}>
       <CardContent className="pt-6">
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-medium mb-3">
+          <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary/90 dark:text-primary/80 px-3 py-1 rounded-full text-sm font-medium mb-3">
             <Calendar className="h-4 w-4" />
             {config.webinarDate} at {config.webinarTime} {config.timezone}
           </div>
@@ -208,7 +208,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
               Send me the templates and reminders
             </Label>
           </div>
-          <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700" size="lg" data-testid="button-webinar-register">
+          <Button type="submit" className="w-full bg-primary hover:bg-primary/90" size="lg" data-testid="button-webinar-register">
             Save My Seat
           </Button>
           <p className="text-xs text-center text-muted-foreground">
@@ -249,17 +249,17 @@ export default function WebinarLandingPage() {
       />
 
       {/* Announcement Bar */}
-      <div className="bg-purple-600 text-white py-3 px-4">
+      <div className="bg-primary text-white py-3 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
           <span className="font-medium">Free Live Training</span>
           <span className="hidden sm:inline">|</span>
           <span>{config.webinarDate} at {config.webinarTime} {config.timezone}</span>
           <span className="hidden sm:inline">|</span>
-          <span className="text-purple-200">Limited Seats</span>
+          <span className="text-primary/30">Limited Seats</span>
           <Button
             size="sm"
             variant="secondary"
-            className="bg-white text-purple-600 hover:bg-purple-50"
+            className="bg-white text-primary hover:bg-primary/5"
             onClick={() => scrollToSection("register")}
             data-testid="button-announcement-cta"
           >
@@ -287,7 +287,7 @@ export default function WebinarLandingPage() {
                   "Scripts, templates, and workflows included",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -295,7 +295,7 @@ export default function WebinarLandingPage() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
-                  className="bg-purple-600 hover:bg-purple-700"
+                  className="bg-primary hover:bg-primary/90"
                   onClick={() => scrollToSection("register")}
                   data-testid="button-hero-register"
                 >
@@ -325,7 +325,7 @@ export default function WebinarLandingPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, i) => (
               <div key={i}>
-                <div className="text-3xl font-bold text-purple-600 mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
               </div>
             ))}
@@ -347,8 +347,8 @@ export default function WebinarLandingPage() {
             {learningCards.map((card, i) => (
               <Card key={i} className="hover-elevate">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-purple-600 font-bold text-lg">{i + 1}</span>
+                  <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <span className="text-primary font-bold text-lg">{i + 1}</span>
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">{card.description}</p>
@@ -370,7 +370,7 @@ export default function WebinarLandingPage() {
             {agenda.map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
                 <div className="w-16 flex-shrink-0 text-right">
-                  <span className="text-purple-600 font-mono font-medium">{item.time}</span>
+                  <span className="text-primary font-mono font-medium">{item.time}</span>
                 </div>
                 <div className="flex-1 pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0">
                   <span className="text-gray-800 dark:text-gray-200">{item.topic}</span>
@@ -391,10 +391,10 @@ export default function WebinarLandingPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="pt-6 text-center">
-                <div className="w-24 h-24 bg-purple-100 dark:bg-purple-900/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-purple-600" />
+                <div className="w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <Users className="h-12 w-12 text-primary" />
                 </div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Host</p>
+                <p className="text-sm text-primary font-medium mb-1">Host</p>
                 <h3 className="text-xl font-bold mb-1">{config.hostName}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.hostTitle}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{config.hostBio}</p>
@@ -402,10 +402,10 @@ export default function WebinarLandingPage() {
             </Card>
             <Card>
               <CardContent className="pt-6 text-center">
-                <div className="w-24 h-24 bg-purple-100 dark:bg-purple-900/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Building2 className="h-12 w-12 text-purple-600" />
+                <div className="w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <Building2 className="h-12 w-12 text-primary" />
                 </div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Guest</p>
+                <p className="text-sm text-primary font-medium mb-1">Guest</p>
                 <h3 className="text-xl font-bold mb-1">{config.guestName}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.guestTitle}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{config.guestBio}</p>
@@ -453,24 +453,24 @@ export default function WebinarLandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 px-4 bg-purple-600 text-white">
+      <section className="py-16 md:py-24 px-4 bg-primary text-white">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to meet A-players you can't find on job boards?
           </h2>
-          <p className="text-purple-200 mb-8">
+          <p className="text-primary/30 mb-8">
             Join hundreds of contractors who've transformed their hiring process.
           </p>
           <Button
             size="lg"
             variant="secondary"
-            className="bg-white text-purple-600 hover:bg-purple-50"
+            className="bg-white text-primary hover:bg-primary/5"
             onClick={() => scrollToSection("register")}
             data-testid="button-final-cta"
           >
             Register Free
           </Button>
-          <p className="text-sm text-purple-200 mt-4">Takes 10 seconds.</p>
+          <p className="text-sm text-primary/30 mt-4">Takes 10 seconds.</p>
         </div>
       </section>
 
@@ -494,7 +494,7 @@ export default function WebinarLandingPage() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-all z-50"
+          className="fixed bottom-6 right-6 p-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 transition-all z-50"
           aria-label="Back to top"
           data-testid="button-back-to-top"
         >
