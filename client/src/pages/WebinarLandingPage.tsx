@@ -60,15 +60,6 @@ const agenda = [
   { time: "35:00", topic: "Q&A: Your questions answered live" },
 ];
 
-const testimonials = [
-  {
-    quote: "TradeRunner knows how urgent hiring is in this space, and their platform delivers fast, qualified matches so we can keep jobs moving and revenue flowing. No wasted time on job boards or sorting through unqualified applicants.",
-    name: "Operations Manager",
-    company: "Portfolio of 8+ HVAC & Plumbing Brands",
-    role: "",
-  },
-];
-
 const faqs = [
   {
     question: "Is this really free?",
@@ -402,26 +393,6 @@ export default function WebinarLandingPage() {
                 <p className="text-sm text-gray-600 dark:text-gray-400">{config.guestBio}</p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 md:py-24 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Contractors Are Saying</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, i) => (
-              <Card key={i}>
-                <CardContent className="pt-6">
-                  <p className="text-gray-700 dark:text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role ? `${testimonial.role}, ` : ""}{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
