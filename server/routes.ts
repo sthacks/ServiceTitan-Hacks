@@ -886,6 +886,84 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Wink ROI Saver Calculator lead capture endpoint
+  app.post("/api/wink-roi-saver", async (req, res) => {
+    try {
+      const schema = z.object({
+        firstName: z.string().min(1).max(100),
+        email: z.string().email().max(255),
+        phoneNumber: z.string().max(50).optional(),
+      });
+      
+      const data = schema.parse(req.body);
+      
+      // Sync to Mailchimp
+      await addOrUpdateSubscriber({
+        email: data.email,
+        firstName: data.firstName,
+        tags: ["Wink ROI Calculator", "Partner Lead", "no welcome workflow"]
+      });
+      
+      // Send email notification to admin
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "WINK_ROI_SAVER_LEAD",
+          firstName: data.firstName,
+          email: data.email,
+          phone: data.phoneNumber || "Not provided",
+          timestamp: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New Wink ROI Saver Calculator Lead',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+      }
+      
+      // Send lead to partner portal webhook
+      try {
+        const webhookApiKey = process.env.LEADS_WEBHOOK_API_KEY;
+        if (webhookApiKey) {
+          const webhookPayload = {
+            company_slug: 'wink-toolbox',
+            name: data.firstName,
+            email: data.email,
+            phone: data.phoneNumber || undefined,
+            source: 'ROI Calculator',
+            source_details: 'Wink ROI Saver Calculator - servicetitanhacks.com/wink-roi-saver',
+            notes: 'Lead captured from Wink Toolbox ROI Calculator'
+          };
+          
+          await fetch('https://imnhusloafhxccznjelj.supabase.co/functions/v1/create-lead', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': webhookApiKey
+            },
+            body: JSON.stringify(webhookPayload)
+          });
+        }
+      } catch (webhookError) {
+        console.error("Failed to send lead to partner portal:", webhookError);
+      }
+      
+      res.json({ ok: true });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ message: validationError.message });
+      }
+      console.error("Wink ROI Saver lead error:", error);
+      res.status(500).json({ message: "Failed to process request." });
+    }
+  });
+
   // SmartAC demo submission endpoint
   app.post("/api/smartac-demo", async (req, res) => {
     try {
