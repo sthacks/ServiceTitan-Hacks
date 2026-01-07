@@ -2171,6 +2171,36 @@ ${JSON.stringify(jsonData, null, 2)}
         console.error("Failed to send admin notification:", emailError);
       }
       
+      // Send lead to partner portal webhook (only for new leads)
+      if (!data.leadAlreadyCaptured) {
+        try {
+          const webhookApiKey = process.env.LEADS_WEBHOOK_API_KEY;
+          if (webhookApiKey) {
+            const webhookPayload = {
+              company_slug: 'traderunner',
+              name: `${data.firstName} ${data.lastName}`,
+              email: data.email,
+              phone: data.phone,
+              company_name: data.companyName,
+              source: 'ROI Calculator',
+              source_details: 'Hiring ROI Calculator - servicetitanhacks.com/hiring-roi-calculator',
+              notes: `Trade: ${data.trade}, Company Size: ${data.companySize}, ServiceTitan User: ${data.serviceTitanUser}. Calculator inputs: ${inputs.weeksToHire} weeks to hire, $${inputs.avgTicket} avg ticket, ${inputs.jobsPerWeekPerTech} jobs/week/tech, ${inputs.grossMarginPct}% margin. Results: $${Math.round(results.totalCost).toLocaleString()} total cost, $${Math.round(results.costPerWeek).toLocaleString()}/week.`
+            };
+            
+            await fetch('https://imnhusloafhxccznjelj.supabase.co/functions/v1/create-lead', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': webhookApiKey
+              },
+              body: JSON.stringify(webhookPayload)
+            });
+          }
+        } catch (webhookError) {
+          console.error("Failed to send lead to partner portal:", webhookError);
+        }
+      }
+      
       res.json({ ok: true });
     } catch (error) {
       console.error("Hiring ROI submission error:", error);
