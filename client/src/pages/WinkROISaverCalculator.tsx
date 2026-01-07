@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Calculator, Copy, Calendar, FileText, CheckCircle, DollarSign, TrendingUp, Target, Lock } from "lucide-react";
+import { Calculator, Copy, Calendar, FileText, CheckCircle, DollarSign, TrendingUp, Target } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -387,15 +387,17 @@ export default function WinkROISaverCalculator() {
             </div>
 
             <div className="space-y-6">
-              {results && !showResults && (
+              {!showResults && (
                 <Card className="border-primary/50 bg-primary/5">
                   <CardContent className="pt-6 text-center space-y-4">
-                    <Lock className="h-12 w-12 mx-auto text-primary/60" />
+                    <Calculator className="h-12 w-12 mx-auto text-primary/60" />
                     <div>
-                      <p className="text-2xl font-bold text-primary mb-1">
-                        {formatCurrency(results.monthlySavings)}/month
+                      <p className="text-xl font-bold mb-1">
+                        Ready to See Your Savings?
                       </p>
-                      <p className="text-sm text-muted-foreground">Estimated savings based on your inputs</p>
+                      <p className="text-sm text-muted-foreground">
+                        Enter your info to see your personalized ROI report based on the numbers above.
+                      </p>
                     </div>
                     <Button 
                       size="lg" 
@@ -403,11 +405,8 @@ export default function WinkROISaverCalculator() {
                       onClick={handleShowResults}
                       data-testid="button-see-results"
                     >
-                      See Your Full Report
+                      Get My Results
                     </Button>
-                    <p className="text-xs text-muted-foreground">
-                      Enter your info to unlock the complete ROI breakdown
-                    </p>
                   </CardContent>
                 </Card>
               )}
