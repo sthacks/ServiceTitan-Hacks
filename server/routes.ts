@@ -770,6 +770,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       }
       
+      // Send lead to partner portal webhook for Wink-related resources
+      if (data.resourceName === "Automation Playbook: Zapier + Wink") {
+        try {
+          const webhookApiKey = process.env.LEADS_WEBHOOK_API_KEY;
+          if (webhookApiKey) {
+            const webhookPayload = {
+              company_slug: 'wink-toolbox',
+              name: data.firstName,
+              email: data.email,
+              source: 'Resource Download',
+              source_details: 'Automation Playbook: Zapier + Wink - servicetitanhacks.com/automation-playbook',
+              notes: `Downloaded the Automation Playbook: Zapier + Wink guide`
+            };
+            
+            await fetch('https://imnhusloafhxccznjelj.supabase.co/functions/v1/create-lead', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': webhookApiKey
+              },
+              body: JSON.stringify(webhookPayload)
+            });
+          }
+        } catch (webhookError) {
+          console.error("Failed to send lead to partner portal:", webhookError);
+        }
+      }
+      
       res.status(201).json({ 
         message: "Success! Check your email for the download link.",
         lead: { id: lead.id },
