@@ -12,7 +12,7 @@ import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png"
 import callBoardHeroImage from "@assets/Hero_image_-_desktop_(2)_1765483039610.png";
 import aiSalesCoachImage from "@assets/34047466-3_1765897680481.jpg";
 import retentionStrategyImage from "@assets/switchy_images_(3)_1767106347930.png";
-import hvacEquipmentBrandsImage from "@assets/stock_images/hvac_air_conditionin_5cc7e588.jpg";
+import hvacEquipmentBrandsImage from "@assets/ChatGPT_Image_Jan_7,_2026,_10_49_50_AM_1767801011737.png";
 
 interface BlogPost {
   id: string;
