@@ -124,8 +124,8 @@ export default function Resources() {
       description: "Calculate your potential savings and ROI with Wink's automation tools. See exactly how much time and money you can save by streamlining your ServiceTitan operations.",
       type: "Tool",
       image: winkROIImage,
-      url: "https://go.st-hacks.cc/roi-calc",
-      isExternalTool: true,
+      url: "/wink-roi-saver",
+      isInternalTool: true,
     },
     {
       title: "Automation Playbook: Zapier + Wink",
