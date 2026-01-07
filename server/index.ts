@@ -11,6 +11,22 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Prevent caching issues with Facebook's in-app browser
+// This middleware adds headers that help with WebView browsers
+app.use((req, res, next) => {
+  // Detect Facebook's in-app browser via fbclid parameter or user agent
+  const isFacebookBrowser = req.query.fbclid || 
+    (req.headers['user-agent'] && req.headers['user-agent'].includes('FBAN'));
+  
+  if (isFacebookBrowser && !req.path.startsWith('/api') && !req.path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf)$/)) {
+    // Disable caching for Facebook browser to prevent blank page issues
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+  }
+  next();
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
