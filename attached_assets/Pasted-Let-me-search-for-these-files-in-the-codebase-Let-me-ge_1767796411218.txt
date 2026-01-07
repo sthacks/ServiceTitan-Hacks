@@ -1,0 +1,212 @@
+Let me search for these files in the codebase:
+
+Let me get the remaining parts of the ROICalculator to capture the complete UI and all features:
+
+Now I have a comprehensive understanding of the ROI Calculator. Let me create a detailed prompt for you to rebuild this in Replit:
+
+---
+
+## Detailed Prompt for Rebuilding the Wink Toolbox ROI Calculator in Replit
+
+Here's a comprehensive prompt you can use to recreate this application:
+
+---
+
+**PROMPT FOR REPLIT:**
+
+---
+
+# Build a Wink Toolbox ROI Calculator
+
+Create a React-based ROI (Return on Investment) calculator for "Wink Toolbox" - an OCR/invoice automation product. The calculator should be mobile-first, use Tailwind CSS, and include lead capture functionality.
+
+## Technology Stack
+- React 18+ with TypeScript
+- Tailwind CSS for styling
+- Zod for form validation
+- A backend function for email notifications (using Resend API)
+- localStorage for state persistence
+
+## Core Features
+
+### 1. Lead Capture Form (Gated Access)
+The calculator is gated behind a simple form. Users must provide:
+- **First Name** (required)
+- **Email** (required, validated as email format)
+- **Phone Number** (optional)
+
+Form validation requirements:
+- First name: non-empty, max 100 characters
+- Email: valid email format, max 255 characters
+- Phone number: optional, max 50 characters
+
+On successful submission:
+1. Send an email notification to `bill@st-hacks.com` with the lead's info
+2. Save user info to localStorage (`roi-calculator-user`)
+3. Show the calculator
+
+### 2. URL Parameter Support
+The app should read these URL parameters on load:
+- `firstName` - Pre-fills first name field
+- `email` - Pre-fills email field
+- `phoneNumber` - Pre-fills phone number field
+- `skipForm=true` - Bypasses the form entirely and shows calculator as "Guest"
+- All calculator input values (see below) can also be passed as URL params
+
+Example URLs:
+- `?firstName=John&email=john@example.com` - Pre-fills form
+- `?skipForm=true` - Direct calculator access
+- `?invoicesPerMonth=1000&hourlyRate=50` - Pre-set calculator values
+
+### 3. Calculator Inputs (All Using Sliders)
+
+| Input | Label | Min | Max | Step | Default | Description |
+|-------|-------|-----|-----|------|---------|-------------|
+| invoicesPerMonth | Invoices each month | 200 | 10,000 | 50 | 500 | Number of invoices processed |
+| minutesPerInvoice | Minutes per invoice (old way) | 1 | 20 | 0.5 | 8 | Time to manually process each invoice |
+| hourlyRate | Hourly labor cost | $15 | $100 | $1 | $30 | Cost of employee time |
+| errorRate | Error rate (old way) | 0% | 10% | 0.5% | 2% | Percentage of invoices with errors |
+| costPerError | Cost per error | $50 | $350 | $10 | $150 | Average cost to fix an error |
+| amortizeMonths | Spread setup cost over | 6 | 24 | 1 | 12 months | Period to amortize implementation fee |
+
+**Fixed Values (Display Only, Not Editable):**
+- Base Fee: $499/month
+- Implementation/Setup Fee: $2,000 (one-time)
+
+### 4. Pricing Calculation Logic
+
+**Wink Toolbox Pricing (Tiered):**
+- First 200 invoices per month: FREE ($0)
+- Each additional invoice beyond 200: $0.48
+
+**Monthly Wink Cost Formula:**
+```
+if (invoicesPerMonth <= 200) {
+  winkMonthlyCost = 0;
+} else {
+  winkMonthlyCost = (invoicesPerMonth - 200) * 0.48;
+}
+totalWinkMonthlyCost = winkMonthlyCost + (implementationFee / amortizeMonths);
+```
+
+**Manual Processing Cost Formula:**
+```
+manualLaborCost = (invoicesPerMonth * minutesPerInvoice / 60) * hourlyRate;
+manualErrorCost = invoicesPerMonth * (errorRate / 100) * costPerError;
+totalManualMonthlyCost = manualLaborCost + manualErrorCost;
+```
+
+**Savings:**
+```
+monthlySavings = totalManualMonthlyCost - totalWinkMonthlyCost;
+annualSavings = monthlySavings * 12;
+roi = ((annualSavings / (baseFee * 12 + implementationFee)) * 100);
+```
+
+**Break-Even Analysis:**
+Calculate the invoice volume where automation becomes profitable:
+```
+manualCostPerInvoice = (minutesPerInvoice / 60) * hourlyRate + (errorRate / 100) * costPerError;
+fixedMonthlyCosts = implementationFee / amortizeMonths;
+
+if (invoicesPerMonth <= 200) {
+  // Check if manual cost exceeds fixed costs
+  breakEvenInvoices = null if manualTotal < fixedCosts
+} else {
+  breakEvenInvoices = (fixedMonthlyCosts + 200 * 0.48) / (manualCostPerInvoice - 0.48);
+}
+```
+
+### 5. Results Display
+
+Show these calculated values:
+1. **Monthly Savings** - Large, prominent display with dollar formatting
+2. **Annual Savings** - Secondary prominent display
+3. **ROI Percentage** - Show as percentage
+4. **Break-Even Point** - Either "You save money from day one!" or "You start saving at X invoices/month"
+
+**Visual Comparison:**
+Show a horizontal bar chart comparing:
+- "Old Way (Manual)" - Red/orange bar showing total manual cost
+- "New Way (Wink)" - Green bar showing Wink cost
+- Bar widths should be proportional to actual costs
+
+### 6. UI Layout and Design
+
+**Header Section:**
+- Wink Toolbox logo at top (use placeholder or provide logo URL)
+- Title: "Wink Toolbox ROI Calculator"
+- Welcome message: "Welcome, {firstName}! See how much money you can save each month and year." (or generic message for guests)
+- Subtext: "These numbers are estimates. You can change them to match your business."
+
+**"What is Wink Toolbox?" Card:**
+An informational card with simple 8th-grade reading level language:
+
+Left column - "What Wink Toolbox Does:"
+- Reads invoices and finds the important information
+- Finds company names, totals, and dates
+- Splits up documents with many pages
+- Works with your accounting software
+
+Right column - "Why Businesses Like It:"
+- Save 15-30 hours every month
+- Make 90% fewer mistakes
+- No need to hire more people
+- Gets it right 96% of the time
+
+**Input Section:**
+- Group all sliders in a card titled "Your Business Numbers"
+- Each slider shows: label, current value, slider control
+- Include helpful hint text for "Minutes per invoice": "Includes reading, typing, and checking your work"
+
+**Fixed Costs Section:**
+- Separate card showing Base Fee ($499/mo) and Setup Fee ($2,000) as read-only fields
+
+**Results Section:**
+- Three cards in a row: Monthly Savings, Annual Savings, ROI %
+- Break-even analysis text below
+- Visual bar comparison
+
+**Footer/CTA Section:**
+- "Book a Demo" button (links to `https://cal.com/wink-toolbox/roi-review`)
+- "Copy Calculator Link" button - generates URL with all current slider values
+
+**Assumptions Section:**
+Collapsible or always-visible section titled "How This Works" explaining:
+- Savings based on less typing time
+- Savings from fewer mistakes
+- First 200 invoices are free each month
+- Setup cost is spread over the selected months
+
+### 7. State Persistence
+- Save all calculator inputs to localStorage (`roi-calculator-inputs`)
+- Save user info to localStorage (`roi-calculator-user`)
+- Load saved values on app initialization (URL params override localStorage)
+
+### 8. Copy Link Feature
+When user clicks "Copy Calculator Link":
+1. Generate URL with all current input values as query parameters
+2. Copy to clipboard
+3. Show toast notification: "Calculator link copied to clipboard"
+
+### 9. Email Notification Backend
+Create a serverless function that:
+- Receives: firstName, email, phoneNumber (optional)
+- Sends email via Resend API to `bill@st-hacks.com`
+- Subject: "New ROI Calculator Lead: {firstName}"
+- Body includes: Name, Email, Phone (if provided), timestamp
+
+### 10. Design Requirements
+- Mobile-first, responsive design
+- Use card-based layout with subtle shadows
+- Primary color accent for Wink branding (blue-ish)
+- Clean, professional look
+- All text should be simple and easy to understand
+
+---
+
+This prompt contains all the specifications needed to rebuild your calculator. If you need me to adjust any details or break this into smaller implementation steps for Replit, just let me know!
+
+Export prompt to file
+Add technical implementation details
+Create simplified calculator-only prompt
