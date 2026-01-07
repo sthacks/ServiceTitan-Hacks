@@ -1849,6 +1849,38 @@ ${JSON.stringify(jsonData, null, 2)}
         // Don't fail the request if email fails
       }
       
+      // Send lead to partner portal webhook
+      try {
+        const webhookResponse = await fetch(
+          'https://imnhusloafhxccznjelj.supabase.co/functions/v1/create-lead',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': process.env.LEADS_WEBHOOK_API_KEY || ''
+            },
+            body: JSON.stringify({
+              company_slug: 'smartac',
+              name: data.firstName,
+              email: data.email,
+              source: 'ROI Calculator',
+              source_details: 'SmartAC ROI Calculator - servicetitanhacks.com/smartac-roi-calculator',
+              notes: `Calculator inputs: ${data.activeMembers} members, ${data.retentionRate}% retention, ${data.newVisitsPerYear} visits/year, ${data.closeRate}% close rate, $${data.revenuePerMember}/member. Results: ${data.roiResults}`
+            })
+          }
+        );
+        
+        if (!webhookResponse.ok) {
+          const error = await webhookResponse.json();
+          console.error("Partner portal webhook error:", error);
+        } else {
+          console.log("Lead sent to partner portal successfully");
+        }
+      } catch (webhookError) {
+        console.error("Failed to send lead to partner portal:", webhookError);
+        // Don't fail the request if webhook fails
+      }
+      
       res.json(submission);
     } catch (error) {
       console.error("SmartAC ROI submission error:", error);
