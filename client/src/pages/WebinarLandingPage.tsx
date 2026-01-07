@@ -84,58 +84,22 @@ const faqs = [
 ];
 
 function RegistrationForm({ className = "" }: { className?: string }) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [optIn, setOptIn] = useState(true);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const newErrors: Record<string, string> = {};
-
-    if (!firstName.trim()) newErrors.firstName = "First name is required";
-    if (!lastName.trim()) newErrors.lastName = "Last name is required";
-    if (!email.trim()) newErrors.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = "Please enter a valid email";
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Send registration to backend webhook
-    try {
-      await fetch("/api/webinar-registration", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email, companyName, phone, optIn }),
-      });
-    } catch (error) {
-      console.error("Registration webhook error:", error);
-    }
-
-    // Redirect to Zoom registration
-    const params = new URLSearchParams({
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      opt_in: optIn ? "1" : "0",
-    });
-
-    window.location.href = `${config.zoomRegistrationUrl}?${params.toString()}`;
-  };
-
-  // Use StreamYard embed for registration
   return (
     <div className={className}>
       <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
+        {!iframeLoaded && (
+          <div 
+            className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-lg"
+            data-testid="loading-registration"
+          >
+            <div className="text-center">
+              <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-3" />
+              <p className="text-white/60 text-sm">Loading registration...</p>
+            </div>
+          </div>
+        )}
         <iframe
           src={config.streamYardEmbedUrl}
           width="100%"
@@ -145,6 +109,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
           style={{ width: "100%", height: "100%", position: "absolute", left: 0, top: 0, overflow: "hidden" }}
           title="Webinar Registration"
           data-testid="iframe-streamyard-registration"
+          onLoad={() => setIframeLoaded(true)}
         />
       </div>
     </div>
