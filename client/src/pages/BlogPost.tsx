@@ -12,6 +12,7 @@ import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png"
 import callBoardHeroImage from "@assets/Hero_image_-_desktop_(2)_1765483039610.png";
 import aiSalesCoachImage from "@assets/34047466-3_1765897680481.jpg";
 import retentionStrategyImage from "@assets/switchy_images_(3)_1767106347930.png";
+import hvacEquipmentBrandsImage from "@assets/stock_images/hvac_air_conditionin_5cc7e588.jpg";
 
 interface BlogPost {
   id: string;
@@ -27,6 +28,18 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
+  {
+    id: "10",
+    title: "Why I Stopped Caring So Much About HVAC Equipment Brands",
+    excerpt: "After 25 years in HVAC—as a tech, installer, sales rep, business owner, and working manufacturer-side—I've seen how equipment is actually made. Most brands are more similar than different. Here's what really matters.",
+    author: "Bill Brown",
+    date: "January 7, 2026",
+    readTime: "6 min read",
+    category: "Business Operations",
+    image: hvacEquipmentBrandsImage,
+    slug: "why-i-stopped-caring-about-hvac-equipment-brands",
+    ogImage: "https://servicetitanhacks.com/og-hvac-equipment-brands.png"
+  },
   {
     id: "9",
     title: "Why HVAC Contractors Overvalue New Customers and Undervalue Retention",
@@ -205,6 +218,236 @@ function SalesCoachPromptBox() {
 
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
+  "why-i-stopped-caring-about-hvac-equipment-brands": (
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
+      <p className="lead">
+        This is something I have been thinking about for a long time.
+      </p>
+
+      <p>
+        I have been in the HVAC industry for about 25 years. Technician. Installer. Sales. Business owner. Manufacturer side.
+      </p>
+
+      <p>
+        I have sat on both sides of the table.
+      </p>
+
+      <p>
+        At one point in my career, I worked in supplier quality for a manufacturer that built air conditioning systems for data centers. Part of my job was auditing manufacturing facilities to determine whether components were actually being built to specification.
+      </p>
+
+      <p>
+        That meant visiting suppliers and OEMs directly.
+      </p>
+
+      <p>
+        Copeland. Carrier. Goodman. Rheem. Trane. And others.
+      </p>
+
+      <p>
+        Seeing how equipment is actually made changes your perspective.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Most HVAC Equipment Is More Similar Than Different</h2>
+
+      <p>
+        Once you have been inside enough manufacturing lines, a pattern becomes obvious.
+      </p>
+
+      <p>
+        Most HVAC equipment is far more similar than most contractors want to admit.
+      </p>
+
+      <p>
+        The majority of components are outsourced. Controls. Motors. Compressors. Valves.
+      </p>
+
+      <p>
+        Often from the same suppliers.
+      </p>
+
+      <p>
+        Honeywell. White-Rodgers. Emerson. Danfoss. Fasco. Lau.
+      </p>
+
+      <p>
+        Every manufacturer follows AHRI standards. Every manufacturer follows UL requirements. Every manufacturer operates at high volume.
+      </p>
+
+      <p>
+        High volume typically means more automation, not less. And more automation generally means more consistency.
+      </p>
+
+      <p>
+        What actually changes over time is not the brand name on the cabinet.
+      </p>
+
+      <p>
+        It is specific components. Specific product revisions. Specific support and distribution issues.
+      </p>
+
+      <p>
+        Every manufacturer will experience a wave of problems at some point. Guaranteed.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">So What Actually Differentiates One Brand From Another?</h2>
+
+      <p>
+        If it is not pure equipment quality, what is it?
+      </p>
+
+      <p>
+        In practice, the difference usually comes down to three things:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Brand perception</li>
+        <li>Local distributor support</li>
+        <li>How confident the contractor feels standing behind what they sell</li>
+      </ul>
+
+      <p>
+        I have personally installed and serviced Carrier, Bryant, Trane, Lennox, Rheem, Ruud, and Goodman.
+      </p>
+
+      <p>
+        The confidence contractors feel in a brand is often less about objective data and more about confirmation bias. We tend to justify the choice we already made.
+      </p>
+
+      <p>
+        Sometimes we confuse faith in a manufacturer with faith in ourselves.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Why I Ultimately Chose Goodman as a Private Label Dealer</h2>
+
+      <p>
+        The reason I chose Goodman was not because I believe it is magically better equipment.
+      </p>
+
+      <p>
+        It was because of a few practical realities.
+      </p>
+
+      <p>
+        <strong>First, the 10-year parts and labor warranty.</strong>
+      </p>
+
+      <p>
+        If I were a homeowner, that matters more to me than a logo.
+      </p>
+
+      <p>
+        <strong>Second, accountability.</strong>
+      </p>
+
+      <p>
+        When equipment fails during the warranty period, the customer does not stay with the manufacturer. They come back to the contractor.
+      </p>
+
+      <p>
+        If a customer calls the manufacturer, they are almost always sent back to the installing contractor anyway.
+      </p>
+
+      <p>
+        So if I am 100 percent responsible for the equipment in someone's home, the branding should be mine.
+      </p>
+
+      <p>
+        I do not believe any manufacturer cares more about my customers than I do.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">The Financial Side Contractors Rarely Talk About</h2>
+
+      <p>
+        There is also the margin reality.
+      </p>
+
+      <p>
+        Goodman equipment is typically lower cost than many other brands, especially as features increase.
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Two-stage systems</li>
+        <li>Variable speed</li>
+        <li>Higher-end configurations</li>
+      </ul>
+
+      <p>
+        Lower equipment cost creates margin flexibility.
+      </p>
+
+      <p>
+        When times are good, you keep more profit. When times slow down, you can stay competitive without destroying your numbers.
+      </p>
+
+      <p>
+        That flexibility matters more than most contractors realize.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">From Perspective to Action</h2>
+
+      <p>
+        After sharing this perspective with contractors, I kept getting the same follow-up questions.
+      </p>
+
+      <p>
+        "How are you actually buying it?"
+      </p>
+
+      <p>
+        "Is there a way to see pricing without committing?"
+      </p>
+
+      <p>
+        That is why we built the ServiceTitan Hacks purchasing platform.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">What the Purchasing Platform Actually Is</h2>
+
+      <p>
+        The platform exists for one reason: visibility.
+      </p>
+
+      <p>
+        It allows contractors to register and see what Goodman pricing looks like through our group purchasing setup.
+      </p>
+
+      <p>
+        That is it.
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>No contracts</li>
+        <li>No minimums</li>
+        <li>No requirement to switch brands</li>
+        <li>No obligation to buy</li>
+      </ul>
+
+      <p>
+        It is not a sales call. It is not a commitment.
+      </p>
+
+      <p>
+        It is simply access to real numbers.
+      </p>
+
+      <p>
+        If you have ever wondered whether your current equipment cost structure is helping you or quietly working against you, this gives you clarity without pressure.
+      </p>
+
+      <p>
+        You can learn more here: <a href="https://servicetitanhacks.com/purchasing-platform" className="text-primary hover:underline">servicetitanhacks.com/purchasing-platform</a>
+      </p>
+
+      <p>
+        You do not have to change anything.
+      </p>
+
+      <p>
+        But having the information tends to change how you think.
+      </p>
+    </div>
+  ),
   "why-hvac-contractors-overvalue-new-customers": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">

@@ -10,6 +10,7 @@ import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png"
 import callBoardHeroImage from "@assets/Hero_image_-_desktop_(2)_1765483039610.png";
 import aiSalesCoachImage from "@assets/34047466-3_1765897680481.jpg";
 import retentionStrategyImage from "@assets/switchy_images_(3)_1767106347930.png";
+import hvacEquipmentBrandsImage from "@assets/stock_images/hvac_air_conditionin_5cc7e588.jpg";
 
 interface BlogPost {
   id: string;
@@ -24,6 +25,17 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
+  {
+    id: "10",
+    title: "Why I Stopped Caring So Much About HVAC Equipment Brands",
+    excerpt: "After 25 years in HVAC—as a tech, installer, sales rep, business owner, and working manufacturer-side—I've seen how equipment is actually made. Most brands are more similar than different. Here's what really matters.",
+    author: "Bill Brown",
+    date: "January 7, 2026",
+    readTime: "6 min read",
+    category: "Business Operations",
+    image: hvacEquipmentBrandsImage,
+    slug: "why-i-stopped-caring-about-hvac-equipment-brands"
+  },
   {
     id: "9",
     title: "Why HVAC Contractors Overvalue New Customers and Undervalue Retention",
