@@ -88,7 +88,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
 
   return (
     <div className={className}>
-      <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
+      <div className="w-full relative" style={{ minHeight: "500px", height: "auto" }}>
         {!iframeLoaded && (
           <div 
             className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-lg"
@@ -103,10 +103,9 @@ function RegistrationForm({ className = "" }: { className?: string }) {
         <iframe
           src={config.streamYardEmbedUrl}
           width="100%"
-          height="100%"
           frameBorder={0}
           allow="autoplay; fullscreen"
-          style={{ width: "100%", height: "100%", position: "absolute", left: 0, top: 0, overflow: "hidden" }}
+          className="w-full min-h-[500px] md:min-h-[450px] rounded-lg"
           title="Webinar Registration"
           data-testid="iframe-streamyard-registration"
           onLoad={() => setIframeLoaded(true)}
