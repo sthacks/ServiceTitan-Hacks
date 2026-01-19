@@ -195,7 +195,7 @@ export default function WinkPayrollWebinar() {
         title={`${config.webinarTitle} | Free Live Training`}
         description="Learn how to automate your commissions and produce payroll-ready reports without replacing your current payroll provider. Free live webinar for contractors."
         keywords="payroll automation, commission automation, HVAC payroll, contractor accounting, ServiceTitan payroll"
-        canonicalUrl="https://servicetitanhacks.com/webinar/payroll-ap-automation"
+        canonicalUrl="https://servicetitanhacks.com/webinar/stop-spreadsheet-payroll"
       />
 
       {/* Announcement Bar */}

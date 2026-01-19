@@ -124,7 +124,7 @@ function Router() {
       <Route path="/partner-portal/admin" component={PartnerPortalAdmin} />
       <Route path="/partner-portal/accept-invite" component={PartnerPortalAcceptInvite} />
       <Route path="/webinar/invisible-labor-market" component={WebinarLandingPage} />
-      <Route path="/webinar/payroll-ap-automation" component={WinkPayrollWebinar} />
+      <Route path="/webinar/stop-spreadsheet-payroll" component={WinkPayrollWebinar} />
       <Route path="/events" component={Events} />
       <Route component={NotFound} />
     </Switch>

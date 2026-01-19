@@ -35,7 +35,7 @@ const events: Event[] = [
     timezone: "EST",
     type: "webinar",
     image: webinarHeroImage,
-    link: "/webinar/payroll-ap-automation",
+    link: "/webinar/stop-spreadsheet-payroll",
     status: "upcoming",
     hosts: ["Bill Brown", "Wink Toolbox"]
   },
