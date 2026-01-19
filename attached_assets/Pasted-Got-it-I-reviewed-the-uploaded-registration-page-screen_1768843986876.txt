@@ -1,0 +1,150 @@
+Got it. I reviewed the uploaded registration page screenshot PDF and can now **mirror the exact structure, flow, and sectioning** used on your last webinar page, not just the tone.
+
+Below is **registration page copy rewritten to match the same format and hierarchy** as the *Invisible Labor Market* page, adapted cleanly for the Wink Toolbox webinar.
+This is based on the visual layout and section order shown in the PDF .
+
+---
+
+# LIVE FIRESIDE CHAT
+
+## Payroll and AP Are Not DIY Automations
+
+**Why payroll commissions and AP OCR fail in real contractor businesses, and how to remove risk without owning the complexity**
+
+**LIVE – Wednesday, February 18 – 2:00 PM ET**
+
+---
+
+### Main Hero Section (above the fold)
+
+**Automating Payroll and AP Without Breaking Trust**
+
+Live training explaining why payroll and accounts payable are the two most dangerous workflows to automate incorrectly, and how contractors should evaluate solutions that protect accuracy, retention, and trust.
+
+**You will learn:**
+
+* Why payroll errors quietly destroy employee confidence
+* Why AI-only OCR breaks down on real vendor invoices
+* The difference between automation that shifts work vs removes risk
+* What human-in-the-loop actually means in practice
+* How to evaluate payroll and AP solutions without DIY risk
+
+[ **Reserve My Spot** ]
+
+---
+
+### Registration Form Section
+
+**Automating Payroll and AP Without Breaking Trust**
+
+First Name
+Last Name
+Email Address
+
+[ **Register** ]
+
+*Replay available to all registrants*
+
+---
+
+### Social Proof / Context Section
+
+**Trusted by the ServiceTitan community**
+
+* 9,700+ ServiceTitan contractors
+* Real operator experience
+* No sales fluff, no DIY tutorials
+
+This session is designed for decision-makers, not builders.
+
+---
+
+## What You Will Walk Away With
+
+### 1. Why Payroll Automation Fails
+
+Understand where commission logic, pay structures, and adjustments break most systems and why spreadsheets still dominate payroll.
+
+### 2. Why AP OCR Is Harder Than It Looks
+
+Learn why vendor invoices, job costing, and purchase orders defeat AI-only scanning tools.
+
+### 3. How Risk Actually Gets Removed
+
+See what safeguards matter when money, trust, and retention are on the line.
+
+### 4. How to Evaluate Solutions Correctly
+
+Know what questions to ask vendors before buying or switching systems.
+
+### 5. Clarity, Not Complexity
+
+Walk away knowing what should be handled by a specialist vs internal staff.
+
+---
+
+## What We Will Cover (Agenda)
+
+**0:00** Why payroll and AP are trust systems, not efficiency systems
+**5:00** Why OCR fails without human oversight
+**15:00** Platform tools vs specialist systems
+**30:00** Payroll and commission risk management
+**45:00** Live Q&A
+**55:00** Next steps and resources
+
+*45 to 60 minutes total*
+
+---
+
+## Meet Your Hosts
+
+**Bill Brown**
+Founder, ServiceTitan Hacks
+Former contractor, operator, and automation advisor helping service businesses reduce operational risk.
+
+**Wink Toolbox Team**
+Specialists in payroll commission automation and AP OCR with human-in-the-loop safeguards.
+
+---
+
+## Frequently Asked Questions
+
+**Is this a sales webinar?**
+No. This is an education-first session focused on decision clarity.
+
+**Is this a DIY automation class?**
+No. This webinar explains why payroll and AP should not be built internally.
+
+**Will there be a replay?**
+Yes. All registrants receive access.
+
+**Can I ask questions live?**
+Yes. Live Q&A is included.
+
+---
+
+## Bottom CTA Section (Pink Band Equivalent)
+
+### Ready to Remove Payroll and AP Risk Without Guessing?
+
+Live fireside chat. No fluff. Real contractor context.
+
+[ **Reserve My Spot** ]
+
+*Free live training. Replay included.*
+
+---
+
+### Notes on Accuracy
+
+* Structure mirrors the original page sections and flow 
+* No DIY implication anywhere
+* CTA language matches prior webinar style
+* Section count and hierarchy intentionally similar for consistency
+
+If you want next, I can:
+
+* Convert this directly into **Kajabi / Webflow / WordPress blocks**
+* Tighten for mobile-first
+* Create the confirmation page and thank-you copy
+* Map this 1:1 into your partner portal fields

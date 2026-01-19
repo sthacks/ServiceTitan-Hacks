@@ -26,6 +26,20 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "2",
+    title: "Payroll and AP Are Not DIY Automations",
+    description: "Why payroll commissions and AP OCR fail in real contractor businesses, and how to remove risk without owning the complexity. Learn what human-in-the-loop actually means.",
+    date: "Wednesday, February 18, 2026",
+    eventDateTime: new Date("2026-02-18T14:00:00-05:00"),
+    time: "2:00 PM",
+    timezone: "ET",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinar/payroll-ap-automation",
+    status: "upcoming",
+    hosts: ["Bill Brown", "Wink Toolbox Team"]
+  },
+  {
     id: "1",
     title: "How to Find and Recruit A-Player Technicians Not On Job Boards",
     description: "Live training showing actionable methods any service business can implement this week. Learn the TradeRunner method for finding technicians who aren't on Indeed.",

@@ -58,6 +58,7 @@ import PartnerPortal from "@/pages/PartnerPortal";
 import PartnerPortalAdmin from "@/pages/PartnerPortalAdmin";
 import PartnerPortalAcceptInvite from "@/pages/PartnerPortalAcceptInvite";
 import WebinarLandingPage from "@/pages/WebinarLandingPage";
+import WinkPayrollWebinar from "@/pages/WinkPayrollWebinar";
 import Events from "@/pages/Events";
 import NotFound from "@/pages/not-found";
 
@@ -123,6 +124,7 @@ function Router() {
       <Route path="/partner-portal/admin" component={PartnerPortalAdmin} />
       <Route path="/partner-portal/accept-invite" component={PartnerPortalAcceptInvite} />
       <Route path="/webinar/invisible-labor-market" component={WebinarLandingPage} />
+      <Route path="/webinar/payroll-ap-automation" component={WinkPayrollWebinar} />
       <Route path="/events" component={Events} />
       <Route component={NotFound} />
     </Switch>
