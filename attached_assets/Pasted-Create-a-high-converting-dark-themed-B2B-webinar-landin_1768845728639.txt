@@ -1,0 +1,43 @@
+Create a high-converting, dark-themed B2B webinar landing page for Service Industry Contractors. 
+
+**Style Guidelines:** Modern, professional, and high-authority. Use a deep charcoal/black background (#121212) with bold accent colors (electric blue or orange). Use clean sans-serif typography.
+
+**Hero Section:**
+- Title: Stop the Spreadsheet Payroll Nightmare
+- Subtitle: Learn how to automate your commissions and produce payroll-ready reports without replacing your current payroll provider.
+- Date/Time: February 18, 2026 | 2:00 PM EST
+- CTA: 'Reserve My Spot' button (leads to footer form)
+
+**Partners Section:**
+- Text: 'Brought to you by'
+- Logos: ServiceTitan Hacks and Wink Toolbox.
+
+**What You'll Walk Away With (3 Bullets):**
+- A clear, auditable way to replace fragile spreadsheets with consistent, automated rules.
+- The 'Shadow Mode' framework for testing automation without risking your current payroll accuracy.
+- Sample payroll-ready export templates that map directly to your earnings codes.
+
+**What We'll Cover (Agenda):**
+- Why spreadsheets are the #1 cause of margin leakage in the trades.
+- Defining the 'Calculation Layer': What it is and why it sits between your CRM and Payroll.
+- Role-based compensation frameworks for Techs, Sales, and Installers.
+- How to handle complex clawbacks, spiffs, and membership bonuses automatically.
+- The 3-step phased rollout to go from manual to automated safely.
+- Live Demo: From ServiceTitan data to a Payroll-Ready CSV in seconds.
+
+**Meet Your Hosts:**
+- Bill Brown: Founder of ServiceTitan Hacks. Helped 1,000+ contractors fix bottlenecks through proven systems and ST optimization.
+- Guest Speaker: Commission Automation Expert from Wink Toolbox.
+
+**FAQ Section:**
+- Is this really free? Yes, we want to help contractors professionalize their operations.
+- Will there be a replay? Yes, but you must register to receive the link.
+- Can I ask questions live? Absolutely, we have a dedicated Q&A session at the end.
+- Do I have to switch payroll companies? No. This system works with ADP, Gusto, Paychex, and more.
+
+**Final CTA:**
+- Simple form: First Name, Last Name, Work Email.
+- Button: 'Register for the Webinar'
+
+**Footer:**
+- ServiceTitan Hacks Branding | Privacy Policy | Mobile Responsive.
