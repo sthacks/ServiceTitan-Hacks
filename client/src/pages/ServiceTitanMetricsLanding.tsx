@@ -207,7 +207,7 @@ export default function ServiceTitanMetricsLanding() {
               Measure What Matters. Grow Your Business.
             </h2>
             <p className="text-lg mb-8 text-white/90">
-              Join 9,500+ ServiceTitan contractors who use data-driven decision making to optimize operations, increase profitability, and scale sustainably. This metrics guide is your roadmap to understanding what's working and what needs attention in your business.
+              Join 10,000+ ServiceTitan contractors who use data-driven decision making to optimize operations, increase profitability, and scale sustainably. This metrics guide is your roadmap to understanding what's working and what needs attention in your business.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a

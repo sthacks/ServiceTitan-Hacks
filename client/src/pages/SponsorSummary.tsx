@@ -40,7 +40,7 @@ export default function SponsorSummary() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />
-                <span>9,700 Facebook group members</span>
+                <span>10,000+ Facebook group members</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-[#ED254E] flex-shrink-0 mt-0.5" />

@@ -71,7 +71,7 @@ export default function Sponsors() {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-3">Multi-Channel Exposure</h3>
                     <p className="text-muted-foreground">
-                      Reach your target audience through our Facebook Group (9,500+ members), YouTube channel, podcast, email list, and this website. Your message appears where contractors are already engaged and learning.
+                      Reach your target audience through our Facebook Group (10,000+ members), YouTube channel, podcast, email list, and this website. Your message appears where contractors are already engaged and learning.
                     </p>
                   </CardContent>
                 </Card>

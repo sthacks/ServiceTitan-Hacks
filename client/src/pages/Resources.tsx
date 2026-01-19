@@ -318,7 +318,7 @@ export default function Resources() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold font-heading mb-4">Looking for More?</h3>
                 <p className="text-muted-foreground mb-6">
-                  Join our free community of 9,500+ ServiceTitan users to access even more resources, ask questions, and connect with other contractors.
+                  Join our free community of 10,000+ ServiceTitan users to access even more resources, ask questions, and connect with other contractors.
                 </p>
                 <a
                   href="https://go.st-hacks.cc/servicetitanhacks"

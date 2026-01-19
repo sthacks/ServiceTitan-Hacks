@@ -207,7 +207,7 @@ export default function AutomationPlaybookLanding() {
               Stop Guessing. Start Automating Smarter.
             </h2>
             <p className="text-lg mb-8 text-white/90">
-              Join 9,500+ ServiceTitan contractors who are using automation to save time, reduce errors, and grow their businesses. This playbook is your first step toward mastering the tools that make it all possible.
+              Join 10,000+ ServiceTitan contractors who are using automation to save time, reduce errors, and grow their businesses. This playbook is your first step toward mastering the tools that make it all possible.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a

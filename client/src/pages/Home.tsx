@@ -215,7 +215,7 @@ export default function Home() {
         <section className="py-16 bg-primary/5">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-              Join 9,500+ ServiceTitan Contractors
+              Join 10,000+ ServiceTitan Contractors
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Connect with fellow contractors, access exclusive resources, and stay ahead with the latest AI and automation strategies for home service businesses.

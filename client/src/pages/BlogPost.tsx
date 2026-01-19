@@ -2070,7 +2070,7 @@ const blogPostContent: Record<string, JSX.Element> = {
           Ready to Learn More?
         </h3>
         <p className="text-base mb-4">
-          Join 5,000+ contractors in the ServiceTitan Hacks Facebook Group where we share automation workflows, AI tips, and real-world examples every week.
+          Join 10,000+ contractors in the ServiceTitan Hacks Facebook Group where we share automation workflows, AI tips, and real-world examples every week.
         </p>
         <a 
           href="https://www.facebook.com/groups/servicetitanhacks" 
