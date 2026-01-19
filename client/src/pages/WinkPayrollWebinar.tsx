@@ -83,7 +83,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
             data-testid="loading-registration"
           >
             <div className="text-center">
-              <div className="animate-spin w-8 h-8 border-2 border-[#F97316] border-t-transparent rounded-full mx-auto mb-3" />
+              <div className="animate-spin w-8 h-8 border-2 border-[#ED254E] border-t-transparent rounded-full mx-auto mb-3" />
               <p className="text-white/60 text-sm">Loading registration...</p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function WinkPayrollWebinar() {
       />
 
       {/* Announcement Bar */}
-      <div className="bg-[#F97316] text-white py-3 px-4">
+      <div className="bg-[#ED254E] text-white py-3 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
           <span className="font-medium">Free Live Webinar</span>
           <span className="hidden sm:inline">|</span>
@@ -202,7 +202,7 @@ export default function WinkPayrollWebinar() {
           <Button
             size="sm"
             variant="secondary"
-            className="bg-white text-[#F97316] hover:bg-white/90"
+            className="bg-white text-[#ED254E] hover:bg-white/90"
             onClick={() => scrollToSection("register")}
             data-testid="button-announcement-cta"
           >
@@ -215,7 +215,7 @@ export default function WinkPayrollWebinar() {
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-[#F97316] font-semibold uppercase tracking-wider mb-4">Free Live Training</p>
+            <p className="text-[#ED254E] font-semibold uppercase tracking-wider mb-4">Free Live Training</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {config.webinarTitle}
             </h1>
@@ -230,7 +230,7 @@ export default function WinkPayrollWebinar() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Button
                 size="lg"
-                className="bg-[#F97316] hover:bg-[#F97316]/90"
+                className="bg-[#ED254E] hover:bg-[#ED254E]/90"
                 onClick={() => scrollToSection("register")}
                 data-testid="button-hero-register"
               >
@@ -275,8 +275,8 @@ export default function WinkPayrollWebinar() {
             {learningCards.map((card, i) => (
               <Card key={i} className="hover-elevate bg-white/5 border-white/10">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-[#F97316]/20 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-[#F97316]" />
+                  <div className="w-12 h-12 bg-[#ED254E]/20 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-[#ED254E]" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-white">{card.title}</h3>
                   <p className="text-white/60 text-sm">{card.description}</p>
@@ -294,8 +294,8 @@ export default function WinkPayrollWebinar() {
           <div className="space-y-4">
             {agenda.map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
-                <div className="w-8 h-8 bg-[#F97316]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-[#F97316] font-bold text-sm">{i + 1}</span>
+                <div className="w-8 h-8 bg-[#ED254E]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-[#ED254E] font-bold text-sm">{i + 1}</span>
                 </div>
                 <div className="flex-1 pb-4 border-b border-white/10 last:border-0">
                   <span className="text-white/80">{item.topic}</span>
@@ -318,11 +318,11 @@ export default function WinkPayrollWebinar() {
                 className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
               />
               <h3 className="text-xl font-bold text-white mb-1">{config.hostName}</h3>
-              <p className="text-[#F97316] text-sm mb-4">{config.hostTitle}</p>
+              <p className="text-[#ED254E] text-sm mb-4">{config.hostTitle}</p>
               <p className="text-white/60 text-sm">{config.hostBio}</p>
             </Card>
             <Card className="bg-white/5 border-white/10 text-center p-8">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#F97316]/20 flex items-center justify-center">
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
                 <img 
                   src={winkToolboxLogo} 
                   alt={config.guestName}
@@ -330,7 +330,7 @@ export default function WinkPayrollWebinar() {
                 />
               </div>
               <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
-              <p className="text-[#F97316] text-sm mb-4">{config.guestTitle}</p>
+              <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
               <p className="text-white/60 text-sm">{config.guestBio}</p>
             </Card>
           </div>
@@ -361,7 +361,7 @@ export default function WinkPayrollWebinar() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 px-4 bg-[#F97316]">
+      <section className="py-16 md:py-24 px-4 bg-[#ED254E]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Stop the Spreadsheet Nightmare?
@@ -372,7 +372,7 @@ export default function WinkPayrollWebinar() {
           <Button
             size="lg"
             variant="secondary"
-            className="bg-white text-[#F97316] hover:bg-white/90"
+            className="bg-white text-[#ED254E] hover:bg-white/90"
             onClick={() => scrollToSection("register")}
             data-testid="button-bottom-cta"
           >
@@ -401,7 +401,7 @@ export default function WinkPayrollWebinar() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-[#F97316] text-white p-3 rounded-full shadow-lg hover:bg-[#F97316]/90 transition-all z-50"
+          className="fixed bottom-8 right-8 bg-[#ED254E] text-white p-3 rounded-full shadow-lg hover:bg-[#ED254E]/90 transition-all z-50"
           data-testid="button-back-to-top"
         >
           <ChevronUp className="h-6 w-6" />
