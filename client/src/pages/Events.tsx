@@ -26,6 +26,20 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "3",
+    title: "Upfront HVAC Pricing Without Losing Control",
+    description: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation.",
+    date: "Wednesday, February 11, 2026",
+    eventDateTime: new Date("2026-02-11T14:00:00-05:00"),
+    time: "2:00 PM",
+    timezone: "ET",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinar/upfront-pricing",
+    status: "upcoming",
+    hosts: ["Bill Brown", "Contractor Commerce"]
+  },
+  {
     id: "2",
     title: "Stop the Spreadsheet Payroll Nightmare",
     description: "Learn how to automate your commissions and produce payroll-ready reports without replacing your current payroll provider.",

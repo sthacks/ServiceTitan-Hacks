@@ -1,0 +1,40 @@
+Create a high-converting, dark-themed landing page for a webinar titled 'Upfront Pricing Without Losing Control'. 
+
+### SECTION 1: HERO
+- Headline: 'Upfront HVAC Pricing Without Losing Control'
+- Subheadline: 'Capture after-hours demand with AI-assisted online buying and human-controlled guardrails—without risking your reputation.'
+- Date/Time: Wednesday, February 11th | 2:00 PM ET
+- CTA Button: 'Reserve My Spot (Replay Included)'
+- Compliance Note: Must state 'This is NOT a DIY tutorial or a sales-heavy pitch.'
+
+### SECTION 2: PARTNERS
+- Display logos for 'ServiceTitan Hacks' and 'Contractor Commerce' with a 'Presented By' heading.
+
+### SECTION 3: OUTCOMES
+- Header: 'What You'll Walk Away With'
+- Bullet 1: 'The Guardrail Playbook: How to offer price ranges that protect your margins.'
+- Bullet 2: 'After-Hours Capture: A system to stop lead leakage while your office is closed.'
+- Bullet 3: 'Reputation Protection: How to handle complex jobs and sizing errors before they become 1-star reviews.'
+
+### SECTION 4: AGENDA
+- 2:00 PM: The 2026 HVAC Buyer - Why 'Contact Us' is failing.
+- 2:15 PM: Speed vs. Accuracy - Balancing the two with AI intake.
+- 2:30 PM: Live Demo - The Guardrailed Online Buying Flow.
+- 2:45 PM: Human-in-the-loop - Escalation strategies for your sales team.
+- 2:55 PM: Q&A and Next Steps.
+
+### SECTION 5: HOSTS
+- Bill Brown: Founder, ServiceTitan Hacks. Helps contractors fix operational bottlenecks. Trained 1,000+ businesses.
+- Guest Expert: Specialist in guided online buying for HVAC.
+
+### SECTION 6: FAQ
+- Is this really free? Yes, it is a strategic session for the industry.
+- Will there be a replay? Yes, all registrants receive the recording.
+- Can I ask questions live? Absolutely, we have a dedicated Q&A.
+- What if I can't make it live? Register anyway to get the replay and assets.
+
+### SECTION 7: FINAL CTA
+- Registration form (Name, Email, Company, Revenue Range).
+- Footer: ServiceTitan Hacks branding and privacy policy.
+
+STYLING: Modern, professional, mobile-responsive, use straight quotes and no em-dashes.
