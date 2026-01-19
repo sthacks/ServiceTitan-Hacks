@@ -15,6 +15,7 @@ export default function Header() {
     { path: "/apps", label: "Apps" },
     { path: "/purchasing-platform", label: "Buying Group" },
     { path: "/partners", label: "Partners" },
+    { path: "/events", label: "Events" },
     { path: "/resources", label: "Free Stuff" },
     { path: "/blog", label: "Blog" },
     { path: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
