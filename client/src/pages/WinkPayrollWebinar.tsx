@@ -17,7 +17,7 @@ const config = {
   webinarTitle: "Stop the Spreadsheet Payroll Nightmare",
   webinarFullTitle: "Stop the Spreadsheet Payroll Nightmare: Automate Commissions & Pay with a Calculation Layer",
   webinarSubtitle: "Leave with a clear, auditable way to replace fragile commission spreadsheets with consistent rules and payroll-ready reports—without ripping out your current payroll system.",
-  webinarDate: "February 18th, 2026",
+  webinarDate: "February 25th, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
   streamYardEmbedUrl: "https://streamyard.com/watch/gKau5NGvr7nJ?embed=true",
@@ -171,7 +171,7 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
 
 export default function WinkPayrollWebinar() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const eventDate = new Date("2026-02-18T14:00:00-05:00");
+  const eventDate = new Date("2026-02-25T14:00:00-05:00");
 
   useEffect(() => {
     const handleScroll = () => {
