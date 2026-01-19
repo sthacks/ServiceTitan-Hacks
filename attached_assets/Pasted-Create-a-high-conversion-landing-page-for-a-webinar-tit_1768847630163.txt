@@ -1,0 +1,40 @@
+Create a high-conversion landing page for a webinar titled 'Stop the Spreadsheet Payroll Nightmare.' 
+
+SECTION 1: HERO
+- Background: Dark, professional theme (charcoal/navy).
+- Headline: Stop the Spreadsheet Payroll Nightmare: Automate Commissions & Pay with a Calculation Layer.
+- Subheadline: Leave with a clear, auditable way to replace fragile commission spreadsheets with consistent rules and payroll-ready reports—without ripping out your current payroll system.
+- Date/Time: February 18th, 2026 | 2:00 PM ET.
+- CTA: 'Reserve My Spot' button (bright orange or green).
+- Note: 'NOT a DIY tutorial. NOT a sales-heavy pitch. Replay included.'
+
+SECTION 2: PARTNERS
+- Logos: ServiceTitan Hacks and Wink Toolbox.
+
+SECTION 3: OUTCOMES (What You'll Walk Away With)
+- 3-4 bullet points using checkmark icons:
+  - A blueprint for a 'Calculation Layer' that eliminates manual data entry.
+  - The 'Shadow Mode' strategy for risk-free automation rollout.
+  - Standardized compensation frameworks that protect your margins.
+  - A clear path to 100% auditable payroll-ready reports.
+
+SECTION 4: AGENDA (What We'll Cover)
+- 0:00 - The hidden cost of 'Spreadsheet Chaos'
+- 0:15 - Why your payroll provider isn't the problem (or the solution)
+- 0:30 - Walkthrough: The Calculation Layer Method
+- 0:45 - Live Case Study: From 8 hours to 15 minutes
+- 1:00 - Live Q&A with Bill Brown & Wink Toolbox
+
+SECTION 5: HOSTS
+- Bill Brown: Founder, ServiceTitan Hacks. Helped 1,000+ contractors optimize operations and fix bottlenecks.
+- Guest Speaker: Experts from Wink Toolbox specializing in compensation governance and automation.
+
+SECTION 6: FAQ
+- Is this really free? Yes, we want to improve the industry standard for compensation.
+- Will there be a replay? Yes, all registrants receive the recording via email.
+- Can I ask questions? Yes, we have a dedicated live Q&A session at the end.
+- What if I use a different payroll provider? This method works with any provider (ADP, Gusto, etc.).
+
+SECTION 7: FINAL CTA
+- Simple registration form (Name, Email, Company Name, Role).
+- Footer: ServiceTitan Hacks branding and copyright.

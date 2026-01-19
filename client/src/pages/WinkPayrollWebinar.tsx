@@ -15,59 +15,64 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 
 const config = {
   webinarTitle: "Stop the Spreadsheet Payroll Nightmare",
-  webinarSubtitle: "Learn how to automate your commissions and produce payroll-ready reports without replacing your current payroll provider.",
-  webinarDate: "February 18, 2026",
+  webinarFullTitle: "Stop the Spreadsheet Payroll Nightmare: Automate Commissions & Pay with a Calculation Layer",
+  webinarSubtitle: "Leave with a clear, auditable way to replace fragile commission spreadsheets with consistent rules and payroll-ready reports—without ripping out your current payroll system.",
+  webinarDate: "February 18th, 2026",
   webinarTime: "2:00 PM",
-  timezone: "EST",
+  timezone: "ET",
   streamYardEmbedUrl: "https://streamyard.com/watch/gKau5NGvr7nJ?embed=true",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
-  hostBio: "Helped 1,000+ contractors fix bottlenecks through proven systems and ST optimization.",
-  guestName: "Commission Automation Expert",
+  hostBio: "Helped 1,000+ contractors optimize operations and fix bottlenecks.",
+  guestName: "Wink Toolbox Experts",
   guestTitle: "Wink Toolbox",
-  guestBio: "Specialist in commission automation helping contractors eliminate spreadsheet chaos and produce accurate, auditable payroll reports.",
+  guestBio: "Specialists in compensation governance and automation for home service contractors.",
+  heroNote: "NOT a DIY tutorial. NOT a sales-heavy pitch. Replay included.",
 };
 
 const learningCards = [
   { 
-    title: "Replace Fragile Spreadsheets", 
-    description: "A clear, auditable way to replace fragile spreadsheets with consistent, automated rules." 
+    title: "The Calculation Layer Blueprint", 
+    description: "A blueprint for a 'Calculation Layer' that eliminates manual data entry." 
   },
   { 
-    title: "The Shadow Mode Framework", 
-    description: "Learn the 'Shadow Mode' framework for testing automation without risking your current payroll accuracy." 
+    title: "The Shadow Mode Strategy", 
+    description: "The 'Shadow Mode' strategy for risk-free automation rollout." 
   },
   { 
-    title: "Payroll-Ready Templates", 
-    description: "Get sample payroll-ready export templates that map directly to your earnings codes." 
+    title: "Compensation Frameworks", 
+    description: "Standardized compensation frameworks that protect your margins." 
+  },
+  { 
+    title: "Auditable Reports", 
+    description: "A clear path to 100% auditable payroll-ready reports." 
   },
 ];
 
 const agenda = [
-  { topic: "Why spreadsheets are the #1 cause of margin leakage in the trades" },
-  { topic: "Defining the 'Calculation Layer': What it is and why it sits between your CRM and Payroll" },
-  { topic: "Role-based compensation frameworks for Techs, Sales, and Installers" },
-  { topic: "How to handle complex clawbacks, spiffs, and membership bonuses automatically" },
-  { topic: "The 3-step phased rollout to go from manual to automated safely" },
-  { topic: "Live Demo: From ServiceTitan data to a Payroll-Ready CSV in seconds" },
+  { time: "0:00", topic: "The hidden cost of 'Spreadsheet Chaos'" },
+  { time: "0:15", topic: "Why your payroll provider isn't the problem (or the solution)" },
+  { time: "0:30", topic: "Walkthrough: The Calculation Layer Method" },
+  { time: "0:45", topic: "Live Case Study: From 8 hours to 15 minutes" },
+  { time: "1:00", topic: "Live Q&A with Bill Brown & Wink Toolbox" },
 ];
 
 const faqs = [
   {
     question: "Is this really free?",
-    answer: "Yes, we want to help contractors professionalize their operations.",
+    answer: "Yes, we want to improve the industry standard for compensation.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes, but you must register to receive the link.",
+    answer: "Yes, all registrants receive the recording via email.",
   },
   {
-    question: "Can I ask questions live?",
-    answer: "Absolutely, we have a dedicated Q&A session at the end.",
+    question: "Can I ask questions?",
+    answer: "Yes, we have a dedicated live Q&A session at the end.",
   },
   {
-    question: "Do I have to switch payroll companies?",
-    answer: "No. This system works with ADP, Gusto, Paychex, and more.",
+    question: "What if I use a different payroll provider?",
+    answer: "This method works with any provider (ADP, Gusto, etc.).",
   },
 ];
 
@@ -215,17 +220,18 @@ export default function WinkPayrollWebinar() {
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-[#ED254E] font-semibold uppercase tracking-wider mb-4">Free Live Training</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {config.webinarTitle}
+            <p className="text-[#ED254E] font-semibold uppercase tracking-wider mb-4">Free Live Webinar</p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-4xl mx-auto">
+              {config.webinarFullTitle}
             </h1>
             <p className="text-xl text-white/70 mb-6 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>
-            <div className="flex items-center justify-center gap-2 text-white/60 mb-6">
+            <div className="flex items-center justify-center gap-2 text-white/60 mb-4">
               <Calendar className="h-5 w-5" />
               <span className="font-medium">{config.webinarDate} | {config.webinarTime} {config.timezone}</span>
             </div>
+            <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Button
@@ -271,7 +277,7 @@ export default function WinkPayrollWebinar() {
       <section id="learn" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What You'll Walk Away With</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {learningCards.map((card, i) => (
               <Card key={i} className="hover-elevate bg-white/5 border-white/10">
                 <CardContent className="pt-6">
@@ -294,8 +300,8 @@ export default function WinkPayrollWebinar() {
           <div className="space-y-4">
             {agenda.map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
-                <div className="w-8 h-8 bg-[#ED254E]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-[#ED254E] font-bold text-sm">{i + 1}</span>
+                <div className="w-16 flex-shrink-0">
+                  <span className="text-[#ED254E] font-mono font-bold">{item.time}</span>
                 </div>
                 <div className="flex-1 pb-4 border-b border-white/10 last:border-0">
                   <span className="text-white/80">{item.topic}</span>
