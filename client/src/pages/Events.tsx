@@ -183,14 +183,14 @@ export default function Events() {
                 {upcomingEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-event-${event.id}`}>
                     <div className="md:flex">
-                      <div className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+                      <Link href={event.link} className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden block cursor-pointer">
                         <img
                           src={event.image}
                           alt={event.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
-                      </div>
+                      </Link>
                       <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
                         <div>
                           <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -248,19 +248,19 @@ export default function Events() {
                 {pastEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-past-event-${event.id}`}>
                     <div className="md:flex">
-                      <div className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden relative">
+                      <Link href={event.replayLink || event.link} className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden relative block cursor-pointer group">
                         <img
                           src={event.image}
                           alt={event.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                          <div className="bg-white/90 rounded-full p-4">
+                          <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
                             <Play className="h-8 w-8 text-primary fill-primary" />
                           </div>
                         </div>
-                      </div>
+                      </Link>
                       <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
                         <div>
                           <div className="flex flex-wrap items-center gap-3 mb-4">
