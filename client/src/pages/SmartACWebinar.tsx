@@ -12,6 +12,7 @@ import SEO from "@/components/SEO";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
+import heroImage from "@assets/smartac_(7)_1769006268306.png";
 
 const config = {
   webinarTitle: "Stop Rebuying Your Own Customers",
@@ -217,20 +218,22 @@ export default function SmartACWebinar() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-8 md:py-12 px-4">
         <div className="container mx-auto max-w-6xl">
+          {/* Hero Image */}
+          <div className="mb-8">
+            <img 
+              src={heroImage} 
+              alt="Stop Rebuying Your Own Customers - The Membership Retention System ServiceTitan Shops Actually Use - Wednesday, Feb 11th, 2026 | 2:00 PM EST"
+              className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl"
+              data-testid="img-hero"
+            />
+          </div>
+          
           <div className="text-center mb-12">
-            <p className="text-[#ED254E] font-semibold uppercase tracking-wider mb-4">Free Live Webinar</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-4xl mx-auto">
-              {config.webinarFullTitle}
-            </h1>
             <p className="text-xl text-white/70 mb-6 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>
-            <div className="flex items-center justify-center gap-2 text-white/60 mb-4">
-              <Calendar className="h-5 w-5" />
-              <span className="font-medium">{config.webinarDate} | {config.webinarTime} {config.timezone}</span>
-            </div>
             <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
