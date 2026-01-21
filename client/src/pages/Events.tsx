@@ -6,9 +6,10 @@ import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Video, Users, Play } from "lucide-react";
-import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 import smartACWebinarImage from "@assets/smartac_(9)_1769011910928.png";
 import contractorCommerceImage from "@assets/contractor_commerce_1769012284534.png";
+import winkWebinarImage from "@assets/wink_(2)_1769014863023.png";
+import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 
 interface Event {
   id: string;
@@ -64,7 +65,7 @@ const events: Event[] = [
     time: "2:00 PM",
     timezone: "EST",
     type: "webinar",
-    image: webinarHeroImage,
+    image: winkWebinarImage,
     link: "/webinar/stop-spreadsheet-payroll",
     status: "upcoming",
     hosts: ["Bill Brown", "Wink Toolbox"]
