@@ -1,0 +1,41 @@
+Create a modern, dark-themed landing page for a webinar titled 'Stop Rebuying Your Own Customers'. 
+
+SECTION 1: HERO
+- Headline: 'Stop Rebuying Your Own Customers: The Membership Retention System ServiceTitan Shops Actually Use'
+- Subheadline: 'Stop paying for the same leads twice. Discover the specialist retention layer that keeps members renewing, booking, and referring—without rebuilding your ServiceTitan setup.'
+- Date/Time: February 11, 2026 | 2:00 PM ET
+- CTA Button: 'Reserve My Spot'
+- Disclaimer: 'This is NOT a DIY tutorial. Replay included for all registrants.'
+
+SECTION 2: PARTNERS
+- Logos for 'ServiceTitan Hacks' and 'SmartAC'
+
+SECTION 3: OUTCOMES
+- Header: 'What You'll Walk Away With'
+- Bullet 1: 'The 4-Step Retention Timeline: From activation to win-back.'
+- Bullet 2: 'The Churn Killer: How to identify and stop cancellations before they happen.'
+- Bullet 3: 'CSR Talk Tracks: Proven scripts for member engagement.'
+- Bullet 4: 'Operational Blueprint: How to overlay SmartAC with your current ServiceTitan workflow.'
+
+SECTION 4: AGENDA
+- 00:00 - Why Members Actually Leave (It's not what you think)
+- 00:15 - The 'Invisible Leak' in ServiceTitan Workflows
+- 00:30 - The SmartAC Retention OS Walkthrough
+- 00:45 - Contractor Panel: Real Results from the Field
+- 00:55 - Live Q&A
+
+SECTION 5: HOSTS
+- Bill Brown (Founder, ServiceTitan Hacks): Expert in fixing operational bottlenecks for 1,000+ contractors.
+- Guest Speaker (SmartAC Specialist): Expert in membership retention technology.
+
+SECTION 6: FAQ
+- Is this really free? Yes, it is an educational session for the contractor community.
+- Will there be a replay? Yes, all registrants receive the recording via email.
+- Can I ask questions? Yes, we will have a live Q&A session at the end.
+- What if I don't use ServiceTitan? This session is specifically designed for shops running ServiceTitan.
+
+SECTION 7: FINAL CTA
+- Simple registration form (Name, Email, Company Name)
+- Footer: 'ServiceTitan Hacks © 2026. This is not a sales webinar.'
+
+STYLE RULES: Use straight quotes. Professional, contractor-operator aesthetic. Mobile responsive.

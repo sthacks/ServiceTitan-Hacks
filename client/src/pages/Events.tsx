@@ -26,6 +26,20 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "4",
+    title: "Stop Rebuying Your Own Customers",
+    description: "Discover the specialist retention layer that keeps members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
+    date: "Wednesday, February 11, 2026",
+    eventDateTime: new Date("2026-02-11T14:00:00-05:00"),
+    time: "2:00 PM",
+    timezone: "ET",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinar/membership-retention",
+    status: "upcoming",
+    hosts: ["Bill Brown", "SmartAC"]
+  },
+  {
     id: "3",
     title: "Upfront HVAC Pricing Without Losing Control",
     description: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation.",
