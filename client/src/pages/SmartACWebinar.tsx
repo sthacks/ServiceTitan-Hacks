@@ -12,7 +12,7 @@ import SEO from "@/components/SEO";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
-import heroImage from "@assets/smartac_(7)_1769006268306.png";
+import heroImage from "@assets/smartac_(10)_1769010027066.png";
 
 const config = {
   webinarTitle: "Stop Rebuying Your Own Customers",
