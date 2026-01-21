@@ -21,7 +21,7 @@ const config = {
   webinarDate: "February 11, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
-  streamYardEmbedUrl: "https://streamyard.com/watch/gKau5NGvr7nJ?embed=true",
+  streamYardEmbedUrl: "https://streamyard.com/watch/eUpY6bwVZus2?embed=true",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Expert in fixing operational bottlenecks for 1,000+ contractors.",
@@ -82,7 +82,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
 
   return (
     <div className={className}>
-      <div className="w-full relative" style={{ minHeight: "600px", height: "auto" }}>
+      <div className="w-full relative" style={{ paddingBottom: "56.25%" }}>
         {!iframeLoaded && (
           <div 
             className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-lg"
@@ -97,9 +97,11 @@ function RegistrationForm({ className = "" }: { className?: string }) {
         <iframe
           src={config.streamYardEmbedUrl}
           width="100%"
+          height="100%"
           frameBorder={0}
           allow="autoplay; fullscreen"
-          className="w-full min-h-[600px] md:min-h-[500px] rounded-lg"
+          style={{ position: "absolute", left: 0, top: 0, overflow: "hidden" }}
+          className="w-full h-full rounded-lg"
           title="Webinar Registration"
           data-testid="iframe-streamyard-registration"
           onLoad={() => setIframeLoaded(true)}
