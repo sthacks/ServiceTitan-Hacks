@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Video, Users, Play } from "lucide-react";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 import smartACWebinarImage from "@assets/smartac_(9)_1769011910928.png";
+import contractorCommerceImage from "@assets/contractor_commerce_1769012284534.png";
 
 interface Event {
   id: string;
@@ -44,12 +45,12 @@ const events: Event[] = [
     id: "3",
     title: "Upfront HVAC Pricing Without Losing Control",
     description: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation.",
-    date: "Wednesday, February 11, 2026",
-    eventDateTime: new Date("2026-02-11T14:00:00-05:00"),
+    date: "Wednesday, February 18, 2026",
+    eventDateTime: new Date("2026-02-18T14:00:00-05:00"),
     time: "2:00 PM",
     timezone: "ET",
     type: "webinar",
-    image: webinarHeroImage,
+    image: contractorCommerceImage,
     link: "/webinar/upfront-pricing",
     status: "upcoming",
     hosts: ["Bill Brown", "Contractor Commerce"]
