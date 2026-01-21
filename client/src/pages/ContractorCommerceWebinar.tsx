@@ -187,7 +187,7 @@ export default function ContractorCommerceWebinar() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white">
+    <div className="min-h-screen bg-black text-white">
       <SEO
         title={`${config.webinarTitle} | Free Live Training`}
         description="Capture after-hours demand with AI-assisted online buying and human-controlled guardrails. Free live webinar for HVAC contractors."
