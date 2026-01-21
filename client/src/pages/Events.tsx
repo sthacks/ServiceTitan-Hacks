@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Video, Users, Play } from "lucide-react";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
-import smartACWebinarImage from "@assets/smartac_(7)_1769006420467.png";
+import smartACWebinarImage from "@assets/smartac_(9)_1769011910928.png";
 
 interface Event {
   id: string;
