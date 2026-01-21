@@ -190,7 +190,7 @@ export default function WinkPayrollWebinar() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white">
+    <div className="min-h-screen bg-black text-white">
       <SEO
         title={`${config.webinarTitle} | Free Live Training`}
         description="Learn how to automate your commissions and produce payroll-ready reports without replacing your current payroll provider. Free live webinar for contractors."
