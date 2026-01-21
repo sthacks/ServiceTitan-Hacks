@@ -193,7 +193,7 @@ export default function SmartACWebinar() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white">
+    <div className="min-h-screen bg-black text-white">
       <SEO
         title={`${config.webinarTitle} | Free Live Training`}
         description="Stop paying for the same leads twice. Discover the specialist retention layer that keeps members renewing, booking, and referring. Free live webinar for contractors."
