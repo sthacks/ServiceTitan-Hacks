@@ -212,7 +212,7 @@ export default function Events() {
                 {upcomingEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-event-${event.id}`}>
                     <div className="md:flex">
-                      <Link href={event.link} className="md:w-2/5 overflow-hidden block cursor-pointer" style={{ aspectRatio: '1.905/1' }}>
+                      <Link href={event.link} className="md:w-2/5 overflow-hidden block cursor-pointer aspect-[1.905]">
                         <img
                           src={event.image}
                           alt={event.title}
@@ -277,7 +277,7 @@ export default function Events() {
                 {pastEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-past-event-${event.id}`}>
                     <div className="md:flex">
-                      <Link href={event.replayLink || event.link} className="md:w-2/5 overflow-hidden relative block cursor-pointer group" style={{ aspectRatio: '1.905/1' }}>
+                      <Link href={event.replayLink || event.link} className="md:w-2/5 overflow-hidden relative block cursor-pointer group aspect-[1.905]">
                         <img
                           src={event.image}
                           alt={event.title}
