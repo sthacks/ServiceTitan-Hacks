@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Video, Users, Play } from "lucide-react";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
+import smartACWebinarImage from "@assets/smartac_(7)_1769006420467.png";
 
 interface Event {
   id: string;
@@ -34,7 +35,7 @@ const events: Event[] = [
     time: "2:00 PM",
     timezone: "ET",
     type: "webinar",
-    image: webinarHeroImage,
+    image: smartACWebinarImage,
     link: "/webinar/membership-retention",
     status: "upcoming",
     hosts: ["Bill Brown", "SmartAC"]
