@@ -29,34 +29,6 @@ interface Event {
 
 const events: Event[] = [
   {
-    id: "6",
-    title: "Stop Rebuying Your Own Customers",
-    description: "Most home service businesses are leaking revenue without realizing it. They spend heavily on marketing to replace customers they already paid to acquire. Join Bill Brown and a SmartAC specialist to break down the exact retention system top ServiceTitan contractors are using.",
-    date: "Wednesday, February 4, 2026",
-    eventDateTime: new Date("2026-02-04T14:00:00-05:00"),
-    time: "2:00 PM",
-    timezone: "EST",
-    type: "webinar",
-    image: smartACWebinarImage,
-    link: "/webinar/customer-retention",
-    status: "upcoming",
-    hosts: ["Bill Brown", "SmartAC"]
-  },
-  {
-    id: "5",
-    title: "How Contractors Buy Equipment Like Private Equity",
-    description: "Independent contractors are paying more for equipment than they should. Learn how group purchasing works, why distributors keep pricing opaque, and how to access national-level equipment pricing through the Purchasing Platform.",
-    date: "Wednesday, February 4, 2026",
-    eventDateTime: new Date("2026-02-04T14:00:00-05:00"),
-    time: "2:00 PM",
-    timezone: "EST",
-    type: "webinar",
-    image: smartACWebinarImage,
-    link: "/webinar/equipment-pricing",
-    status: "upcoming",
-    hosts: ["Bill Brown", "Norris Ayvazian"]
-  },
-  {
     id: "4",
     title: "Stop Rebuying Your Own Customers",
     description: "Discover the specialist retention layer that keeps members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
