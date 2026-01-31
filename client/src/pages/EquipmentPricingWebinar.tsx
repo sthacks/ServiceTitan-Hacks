@@ -11,6 +11,7 @@ import { ChevronUp, CheckCircle2, Calendar } from "lucide-react";
 import SEO from "@/components/SEO";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
+import heroImage from "@assets/webinar_image_1769885730082.png";
 
 const config = {
   webinarTitle: "How Contractors Buy Equipment Like Private Equity",
@@ -224,19 +225,17 @@ export default function EquipmentPricingWebinar() {
       {/* Hero Section */}
       <section className="py-8 md:py-12 px-4">
         <div className="container mx-auto max-w-6xl">
+          {/* Hero Image */}
+          <div className="mb-8">
+            <img 
+              src={heroImage} 
+              alt="How to Buy Equipment Like Private Equity - Live Fireside Chat" 
+              className="w-full h-auto rounded-lg"
+              data-testid="img-hero"
+            />
+          </div>
+          
           <div className="text-center mb-12">
-            <p className="text-[#ED254E] font-semibold uppercase tracking-wider mb-4">Free Live Fireside Chat</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-4xl mx-auto">
-              {config.webinarFullTitle}
-            </h1>
-            <p className="text-xl text-white/70 mb-6 max-w-3xl mx-auto">
-              {config.webinarSubtitle}
-            </p>
-            <div className="flex items-center justify-center gap-2 text-white/60 mb-4">
-              <Calendar className="h-5 w-5" />
-              <span className="font-medium">{config.webinarDate} | {config.webinarTime} {config.timezone}</span>
-            </div>
-            <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Button
