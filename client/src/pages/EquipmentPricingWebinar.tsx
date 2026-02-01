@@ -203,6 +203,7 @@ export default function EquipmentPricingWebinar() {
         description="Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics. Free live webinar."
         keywords="equipment pricing, HVAC equipment, group purchasing, contractor purchasing, private equity pricing"
         canonicalUrl="https://servicetitanhacks.com/webinar/equipment-pricing"
+        ogImage={`${window.location.origin}${heroImage}`}
       />
 
       {/* Announcement Bar */}

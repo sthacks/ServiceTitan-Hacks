@@ -193,6 +193,7 @@ export default function ContractorCommerceWebinar() {
         description="Capture after-hours demand with AI-assisted online buying and human-controlled guardrails. Free live webinar for HVAC contractors."
         keywords="upfront pricing, HVAC pricing, online buying, contractor commerce, ServiceTitan"
         canonicalUrl="https://servicetitanhacks.com/webinar/upfront-pricing"
+        ogImage={`${window.location.origin}${heroImage}`}
       />
 
       {/* Announcement Bar */}

@@ -199,6 +199,7 @@ export default function SmartACWebinar() {
         description="Stop paying for the same leads twice. Discover the specialist retention layer that keeps members renewing, booking, and referring. Free live webinar for contractors."
         keywords="membership retention, ServiceTitan, SmartAC, contractor marketing, HVAC membership"
         canonicalUrl="https://servicetitanhacks.com/webinar/membership-retention"
+        ogImage={`${window.location.origin}${heroImage}`}
       />
 
       {/* Announcement Bar */}
