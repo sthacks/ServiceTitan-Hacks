@@ -242,6 +242,13 @@ export const metadata: Record<string, PageMetadata> = {
     description: "A DIY course for home service pros who want visibility — without expensive software. Go at your own pace with this step-by-step tutorial.",
     ogImage: "https://servicetitanhacks.com/og-dashboard-course.png",
   },
+  
+  // Webinar Pages
+  "/webinar/equipment-pricing": {
+    title: "How Contractors Buy Equipment Like Private Equity",
+    description: "Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics. Free live webinar.",
+    ogImage: "https://servicetitanhacks.com/og-equipment-pricing-webinar.png",
+  },
 };
 
 // Get metadata for a given URL path
