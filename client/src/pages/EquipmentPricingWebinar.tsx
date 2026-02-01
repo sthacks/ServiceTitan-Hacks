@@ -86,7 +86,7 @@ function RegistrationForm({ className = "" }: { className?: string }) {
 
   return (
     <div className={className}>
-      <div className="w-full relative" style={{ paddingBottom: "56.25%" }}>
+      <div className="w-full relative aspect-[3/4] md:aspect-[4/3]">
         {!iframeLoaded && (
           <div 
             className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-lg"
