@@ -183,6 +183,16 @@ export const hiringROISubmissions = pgTable("hiring_roi_submissions", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const phoneTapWaitlist = pgTable("phonetap_waitlist", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  companyName: text("company_name").notNull(),
+  companySize: text("company_size").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,
@@ -315,6 +325,17 @@ export const insertHiringROISubmissionSchema = createInsertSchema(hiringROISubmi
   companySize: z.string().min(1, "Company size is required"),
 });
 
+export const insertPhoneTapWaitlistSchema = createInsertSchema(phoneTapWaitlist).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(1, "Phone number is required"),
+  companyName: z.string().min(1, "Company name is required"),
+  companySize: z.string().min(1, "Company size is required"),
+});
+
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type CoursePurchase = typeof coursePurchases.$inferSelect;
@@ -341,6 +362,8 @@ export type WinkROISubmission = typeof winkROISubmissions.$inferSelect;
 export type InsertWinkROISubmission = z.infer<typeof insertWinkROISubmissionSchema>;
 export type HiringROISubmission = typeof hiringROISubmissions.$inferSelect;
 export type InsertHiringROISubmission = z.infer<typeof insertHiringROISubmissionSchema>;
+export type PhoneTapWaitlistEntry = typeof phoneTapWaitlist.$inferSelect;
+export type InsertPhoneTapWaitlist = z.infer<typeof insertPhoneTapWaitlistSchema>;
 export type PodcastEpisode = typeof podcastEpisodes.$inferSelect;
 export type InsertPodcastEpisode = typeof podcastEpisodes.$inferInsert;
 

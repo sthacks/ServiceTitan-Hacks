@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPhoneTapWaitlistSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
@@ -2311,6 +2311,52 @@ ${JSON.stringify(jsonData, null, 2)}
     } catch (error) {
       console.error("Hiring ROI submission error:", error);
       res.status(500).json({ ok: false, error: "Failed to save ROI calculation" });
+    }
+  });
+
+  // PhoneTAP Waitlist endpoint
+  app.post("/api/phonetap-waitlist", async (req, res) => {
+    try {
+      const parsed = insertPhoneTapWaitlistSchema.safeParse(req.body);
+      if (!parsed.success) {
+        const validationError = fromZodError(parsed.error);
+        return res.status(400).json({ ok: false, error: validationError.message });
+      }
+
+      const data = parsed.data;
+      
+      // Save to database
+      const entry = await storage.createPhoneTapWaitlistEntry(data);
+      
+      // Send email notification to admin
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "PHONETAP_WAITLIST",
+          formName: "PhoneTAP Waitlist",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          companyName: data.companyName,
+          companySize: data.companySize,
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: 'New PhoneTAP Waitlist Signup',
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+      }
+      
+      res.json({ ok: true, entry: { id: entry.id } });
+    } catch (error) {
+      console.error("PhoneTAP waitlist submission error:", error);
+      res.status(500).json({ ok: false, error: "Failed to save waitlist submission" });
     }
   });
 

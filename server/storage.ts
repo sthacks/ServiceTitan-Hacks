@@ -25,6 +25,8 @@ import {
   type InsertWinkROISubmission,
   type HiringROISubmission,
   type InsertHiringROISubmission,
+  type PhoneTapWaitlistEntry,
+  type InsertPhoneTapWaitlist,
   type PodcastEpisode,
   type PartnerCompany,
   type InsertPartnerCompany,
@@ -46,6 +48,7 @@ import {
   smartacROISubmissions,
   winkROISubmissions,
   hiringROISubmissions,
+  phoneTapWaitlist,
   podcastEpisodes,
   partnerCompanies,
   partnerUsers,
@@ -115,6 +118,9 @@ export interface IStorage {
   
   createHiringROISubmission(submission: InsertHiringROISubmission): Promise<HiringROISubmission>;
   getAllHiringROISubmissions(): Promise<HiringROISubmission[]>;
+  
+  createPhoneTapWaitlistEntry(entry: InsertPhoneTapWaitlist): Promise<PhoneTapWaitlistEntry>;
+  getAllPhoneTapWaitlistEntries(): Promise<PhoneTapWaitlistEntry[]>;
   
   // Podcast operations
   getPodcastEpisodes(): Promise<PodcastEpisode[]>;
@@ -524,6 +530,17 @@ export class MemStorage implements IStorage {
 
   async getAllHiringROISubmissions(): Promise<HiringROISubmission[]> {
     return await db.select().from(hiringROISubmissions);
+  }
+
+  async createPhoneTapWaitlistEntry(insertEntry: InsertPhoneTapWaitlist): Promise<PhoneTapWaitlistEntry> {
+    const [entry] = await db.insert(phoneTapWaitlist)
+      .values(insertEntry)
+      .returning();
+    return entry;
+  }
+
+  async getAllPhoneTapWaitlistEntries(): Promise<PhoneTapWaitlistEntry[]> {
+    return await db.select().from(phoneTapWaitlist);
   }
 
   async getPodcastEpisodes(): Promise<PodcastEpisode[]> {

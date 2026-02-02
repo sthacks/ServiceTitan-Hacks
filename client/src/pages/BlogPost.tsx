@@ -4,6 +4,7 @@ import { Copy, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import PhoneTapWaitlistCTA from "@/components/PhoneTapWaitlistCTA";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
@@ -2618,6 +2619,13 @@ export default function BlogPost() {
                   </Link>
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* PhoneTAP Waitlist CTA - only show on PhoneTAP article */}
+          {post.slug === "phonetap-built-for-csrs" && (
+            <div className="mt-12">
+              <PhoneTapWaitlistCTA />
             </div>
           )}
 
