@@ -26,6 +26,17 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "11",
+    title: "PhoneTAP Was Built for CSRs. Here Is Why That Matters.",
+    excerpt: "For most of my career in HVAC, I misunderstood one of the most important roles in the company: the customer service representative. CSRs are not a back office function—they are the gateway to revenue.",
+    author: "Bill Brown",
+    date: "February 2, 2026",
+    readTime: "7 min read",
+    category: "Call Center",
+    image: "/og-phonetap-csrs.png",
+    slug: "phonetap-built-for-csrs"
+  },
+  {
     id: "10",
     title: "Why I Stopped Caring So Much About HVAC Equipment Brands",
     excerpt: "After 25 years in HVAC—as a tech, installer, sales rep, business owner, and working manufacturer-side—I've seen how equipment is actually made. Most brands are more similar than different. Here's what really matters.",

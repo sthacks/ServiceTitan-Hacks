@@ -249,6 +249,14 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics. Free live webinar.",
     ogImage: "https://servicetitanhacks.com/og-equipment-pricing-webinar.png",
   },
+  
+  // Blog Posts - Additional
+  "/blog/phonetap-built-for-csrs": {
+    title: "PhoneTAP Was Built for CSRs. Here Is Why That Matters.",
+    description: "For most of my career in HVAC, I misunderstood one of the most important roles in the company: the customer service representative. CSRs are not a back office function—they are the gateway to revenue.",
+    ogImage: "https://servicetitanhacks.com/og-phonetap-csrs.png",
+    ogType: "article",
+  },
 };
 
 // Get metadata for a given URL path

@@ -1,0 +1,228 @@
+PhoneTAP Was Built for CSRs. Here Is Why That Matters.
+
+For most of my career in HVAC, I misunderstood one of the most important roles in the company.
+
+The customer service representative.
+
+I Did Every Job. And I Got This One Wrong.
+
+When I started my HVAC business, I did everything.
+	•	Sales
+	•	Service
+	•	Installation
+	•	Accounting
+	•	Marketing
+	•	Answering the phones
+
+The role I underestimated the most was the CSR and dispatch function.
+
+I thought it was easy.
+I did not enjoy it.
+So I hired for it early and trained for it poorly.
+
+The training looked like this:
+	•	Answer the phone
+	•	This is what we do
+	•	This is the service call price
+	•	Put them on the schedule
+
+No real sales training.
+No objection handling.
+No emotional intelligence.
+No feedback loop.
+
+I assumed they would just know how to do it.
+
+That assumption was wrong.
+
+CSRs Were Invisible in My Business
+
+In my company, CSRs were not celebrated.
+
+Sales had commissions.
+Techs had performance metrics.
+Installers had scorecards.
+
+CSRs had booking rate and cancellation rate.
+If those numbers were even accurate.
+
+Without trustworthy data, I only noticed CSRs when something went wrong.
+	•	Booking rate dropped
+	•	A customer complained
+	•	I overheard a bad call
+
+My conclusion at the time was not “my systems are broken”.
+It was “maybe I hired the wrong person”.
+
+That was on me.
+
+When AI Arrived, I Looked for the Wrong Solution First
+
+When ChatGPT launched, my first thought was simple.
+
+“AI voice can replace CSRs.”
+
+Not because it was the right solution.
+Because it was a way to avoid a role I never learned how to lead well.
+
+At the time, I was running my company remotely. I needed visibility.
+
+So I started by:
+	•	Pulling call recordings from ServiceTitan
+	•	Transcribing calls
+	•	Summarizing them
+	•	Dropping summaries into job records
+	•	Scoring sentiment as good, neutral, or bad
+	•	Sending alerts when calls went poorly
+
+That alone helped save customers and escalate issues faster.
+
+But it was not enough.
+
+The Data Was Still Lying
+
+I wanted to understand the call center the same way I understood:
+	•	Sales metrics
+	•	Service KPIs
+	•	Install performance
+
+So I went deeper.
+
+The first thing I needed was accurate call classification:
+	•	Booked
+	•	Unbooked
+	•	Abandoned
+	•	Excused
+	•	Not a lead
+
+When I compared call transcripts to how calls were classified, I found a problem.
+
+The data was wrong.
+Not slightly wrong.
+Very wrong.
+
+I checked other companies I was working with.
+
+Same issue.
+
+Even companies manually reviewing calls had unreliable classifications.
+
+Which meant leadership was making decisions based on bad data.
+
+CSRs Are the Front Door to All Marketing Spend
+
+This is where it clicked.
+
+You can do everything right in marketing.
+Spend thousands on ads.
+Rank in search.
+Build a strong brand.
+
+And one phone call can erase all of it.
+
+CSRs are not a back office function.
+They are the gateway to revenue.
+
+Why PhoneTAP Exists
+
+I partnered with Josh Crouch and Tersh Blissett, combining:
+	•	Years of operator experience
+	•	Years of manual call review
+	•	Deep marketing insight
+
+That became PhoneTAP.
+
+We trained AI using real calls reviewed by real humans.
+Not theoretical prompts.
+
+Today, we are confident in roughly 98 percent accuracy in call analysis.
+
+But accuracy alone was not the goal.
+
+I Did Not Want Another Dashboard That Only Management Likes
+
+When we first built dashboards, they showed:
+	•	Booking rate
+	•	Unbooked rate
+
+Then I asked a simple question.
+
+“What can a CSR actually control here?”
+
+A maintenance call is pre-sold.
+A pricing question is not.
+
+One unbooked service call can be far more expensive than five booked tune-ups.
+
+So we changed the lens.
+
+What CSRs Actually Do That Creates Value
+
+PhoneTAP looks for things that were previously invisible:
+	•	Objections raised by customers
+	•	Objections successfully overcome
+	•	Upset callers turned satisfied
+	•	Emotional trajectory of each call
+	•	High-stakes moments handled correctly
+
+Example:
+
+A customer asks about price.
+That is an objection.
+
+If handled poorly, the customer says “I will call back” and disappears.
+If handled well, the customer books immediately.
+
+Historically, there was no visibility into that win.
+
+Now there is.
+
+Celebrate What Is Going Right
+
+PhoneTAP was not built as a surveillance tool.
+
+It is not a “here is what you did wrong” system.
+
+It is a recognition system.
+	•	Objections overcome appear on the dashboard
+	•	Upset customers calmed appear on the dashboard
+	•	Positive momentum is visible
+	•	Wins are measurable
+
+Once value is visible, reward becomes possible.
+
+Including performance pay.
+
+Something CSRs have historically been excluded from because the data was unreliable.
+
+Why AI Voice Will Not Replace CSRs Anytime Soon
+
+Through deep analysis of real calls, I changed my mind.
+
+Customers call in with elevated emotion.
+They want to feel heard.
+They know when they are talking to a machine.
+
+If AI voice takes the easy calls, the remaining calls become harder.
+Training gets worse, not better.
+
+CSRs become even more important.
+
+Built Bottom-Up, Not Top-Down
+
+Most software is built for ownership.
+Then forced downward for adoption.
+
+PhoneTAP was built for CSRs.
+
+When CSRs love a tool:
+	•	Adoption is natural
+	•	Managers see the value
+	•	Ownership supports it
+
+That is how real utilization happens.
+
+PhoneTAP exists because I failed CSRs early in my career.
+It exists to make their impact visible, measurable, and rewarded.
+
+That was long overdue.
