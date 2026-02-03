@@ -1,0 +1,117 @@
+```text
+You are editing an existing webinar registration page in a Replit project.
+
+Goal: Update the copy and a few labels to reduce vendor/sales resistance and reposition this as an operator-to-operator fireside chat about increasing membership adds and close rate. SmartAC can be mentioned, but must NOT be the headline focus.
+
+Context:
+- Page URL path is: /webinar/membership-retention
+- Current page headline emphasizes "Membership Retention System" and SmartAC.
+- Replace copy across the page using the instructions below.
+- Keep the existing layout, styling, components, and form behavior the same unless explicitly requested.
+
+Hard requirements:
+1) Do NOT change the registration form fields or submission logic.
+2) Do NOT remove the hero image/video section. Keep it.
+3) Do NOT add new dependencies.
+4) Do NOT change routes/URLs.
+5) Only update text/copy and headings. If copy is stored in constants/content files, update those sources of truth.
+6) Ensure there are no em dashes (---). Use hyphens or periods.
+7) Use straight quotes only (" and '), no curly quotes.
+
+Tasks:
+A) HERO SECTION (top of page)
+- Set main headline to:
+  "Stop Rebuying Your Own Customers"
+- Set subheadline to:
+  "A live operator-to-operator conversation on how small timing changes dramatically increase membership close rates."
+- Add or replace the short supporting line under subheadline with:
+  "Most HVAC shops already have the demand. They are losing conversions because the membership conversation happens at the wrong moment."
+- Ensure the event meta line reads (or is updated to match):
+  "Live Fireside Chat"
+  "February 11 | 2:00 PM Eastern"
+  "Free to attend"
+- Update the primary CTA button text (hero CTA if present) to:
+  "Save My Seat"
+- If there is a small note near the hero that currently says something like "This is not a sales webinar", keep it but ensure it matches section C below.
+
+B) REGISTRATION FORM AREA (near the form)
+- Update the title above the form to:
+  "Stop Rebuying Your Own Customers"
+- If there is a "Already registered?" helper text, keep it.
+
+C) NON-SALES FRAMING BLOCK (add if there is a short paragraph area near hero or above benefits)
+Replace or insert a short block of copy (use an existing paragraph style if available) that reads exactly:
+
+"This is not a sales webinar.
+This is a candid conversation between operators who made changes inside their HVAC businesses and watched membership adds and close rates materially improve.
+Tools will be discussed, but the focus is on timing, process, and decision moments inside the call flow."
+
+Notes:
+- If the design only supports a single paragraph, format as 2 to 3 short paragraphs.
+- Do not add new UI components, reuse existing text blocks.
+
+D) SECTION: "What You'll Walk Away With"
+Replace the bullet/cards content with these five items (as cards or bullets depending on existing layout):
+1. "Why membership close rates feel random in most shops"
+2. "Where memberships are actually won or lost in a service call"
+3. "The timing mistake that quietly kills conversions"
+4. "How to add more members without discounts"
+5. "What we stopped doing that immediately improved results"
+
+E) SECTION: "What We'll Cover"
+Replace the agenda items with:
+- "Why most membership programs underperform even with strong demand"
+- "How operators improved close rates without changing pricing"
+- "The difference between selling memberships and earning commitment"
+- "How retention protects marketing spend long term"
+- "Live Q&A from real contractor questions"
+If there is a subtext line under this section, add:
+"No demos. No scripts. No fluff."
+
+F) SECTION: "Meet Your Hosts"
+Update host cards:
+- Host 1:
+  Name: "Bill Brown"
+  Subtitle lines (or description):
+  "Former HVAC owner"
+  "Founder, ServiceTitan Hacks"
+  "Scaled and exited a multi-million dollar HVAC business"
+- Host 2:
+  Name: "David Hargrove Jr"
+  Subtitle/description:
+  "HVAC operator and industry leader"
+  "Focused on improving close rates and long-term customer value"
+If there is also a SmartAC host card:
+- Keep it, but change the title to "SmartAC Team"
+- Change description to:
+  "SmartAC team members will join the discussion, but this is not a product pitch."
+
+G) FAQ SECTION
+Replace FAQ questions/answers with:
+1) Q: "Is this really free?"
+   A: "Yes. This is an educational fireside discussion."
+2) Q: "Will this be a sales pitch?"
+   A: "No. This session focuses on real operational changes, not product demos."
+3) Q: "Will there be a replay?"
+   A: "Yes. A replay will be sent to registered attendees."
+4) Q: "Can I ask questions live?"
+   A: "Yes. Live Q&A is included."
+5) Q: "Do I need to be a ServiceTitan customer?"
+   A: "No. The conversation applies to any shop running memberships."
+
+H) FINAL CTA SECTION (bottom)
+- Update the headline to:
+  "Ready to stop rebuying the same customers?"
+- Update supporting line to:
+  "Join the conversation and learn what actually moves membership conversion numbers."
+- Update CTA button text to:
+  "Save My Seat"
+
+Implementation notes:
+- First, locate where this page's copy lives (React component, Next.js page, content JSON, constants, etc.).
+- Make minimal changes to accomplish the text updates.
+- Verify there are no broken imports, no TypeScript errors (if TS), and the page renders.
+- Provide a short summary of which files were changed and where the copy lives now.
+
+Proceed with the edits now.
+```

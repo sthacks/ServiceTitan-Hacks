@@ -16,64 +16,79 @@ import heroImage from "@assets/smartac_(10)_1769010027066.png";
 
 const config = {
   webinarTitle: "Stop Rebuying Your Own Customers",
-  webinarFullTitle: "Stop Rebuying Your Own Customers: The Membership Retention System ServiceTitan Shops Actually Use",
-  webinarSubtitle: "Stop paying for the same leads twice. Discover the specialist retention layer that keeps members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
-  webinarDate: "February 11, 2026",
+  webinarFullTitle: "Stop Rebuying Your Own Customers",
+  webinarSubtitle: "A live operator-to-operator conversation on how small timing changes dramatically increase membership close rates.",
+  webinarSupportingLine: "Most HVAC shops already have the demand. They are losing conversions because the membership conversation happens at the wrong moment.",
+  eventType: "Live Fireside Chat",
+  webinarDate: "February 11",
   webinarTime: "2:00 PM",
-  timezone: "ET",
+  timezone: "Eastern",
   streamYardEmbedUrl: "https://streamyard.com/watch/eUpY6bwVZus2?embed=true",
   hostName: "Bill Brown",
-  hostTitle: "Founder, ServiceTitan Hacks",
-  hostBio: "Expert in fixing operational bottlenecks for 1,000+ contractors.",
-  guestName: "SmartAC Specialist",
-  guestTitle: "SmartAC",
-  guestBio: "Expert in membership retention technology for home service contractors.",
-  heroNote: "This is NOT a DIY tutorial. Replay included for all registrants.",
+  hostTitle: "Former HVAC owner",
+  hostSubtitle: "Founder, ServiceTitan Hacks",
+  hostBio: "Scaled and exited a multi-million dollar HVAC business",
+  guestName: "David Hargrove Jr",
+  guestTitle: "HVAC operator and industry leader",
+  guestBio: "Focused on improving close rates and long-term customer value",
+  smartACName: "SmartAC Team",
+  smartACBio: "SmartAC team members will join the discussion, but this is not a product pitch.",
+  heroNote: "This is not a sales webinar. Replay included for all registrants.",
 };
 
 const learningCards = [
   { 
-    title: "The 4-Step Retention Timeline", 
-    description: "From activation to win-back." 
+    title: "Why membership close rates feel random in most shops", 
+    description: "" 
   },
   { 
-    title: "The Churn Killer", 
-    description: "How to identify and stop cancellations before they happen." 
+    title: "Where memberships are actually won or lost in a service call", 
+    description: "" 
   },
   { 
-    title: "CSR Talk Tracks", 
-    description: "Proven scripts for member engagement." 
+    title: "The timing mistake that quietly kills conversions", 
+    description: "" 
   },
   { 
-    title: "Operational Blueprint", 
-    description: "How to overlay SmartAC with your current ServiceTitan workflow." 
+    title: "How to add more members without discounts", 
+    description: "" 
+  },
+  { 
+    title: "What we stopped doing that immediately improved results", 
+    description: "" 
   },
 ];
 
 const agenda = [
-  { time: "00:00", topic: "Why Members Actually Leave (It's not what you think)" },
-  { time: "00:15", topic: "The 'Invisible Leak' in ServiceTitan Workflows" },
-  { time: "00:30", topic: "The SmartAC Retention OS Walkthrough" },
-  { time: "00:45", topic: "Contractor Panel: Real Results from the Field" },
-  { time: "00:55", topic: "Live Q&A" },
+  { topic: "Why most membership programs underperform even with strong demand" },
+  { topic: "How operators improved close rates without changing pricing" },
+  { topic: "The difference between selling memberships and earning commitment" },
+  { topic: "How retention protects marketing spend long term" },
+  { topic: "Live Q&A from real contractor questions" },
 ];
+
+const agendaSubtext = "No demos. No scripts. No fluff.";
 
 const faqs = [
   {
     question: "Is this really free?",
-    answer: "Yes, it is an educational session for the contractor community.",
+    answer: "Yes. This is an educational fireside discussion.",
+  },
+  {
+    question: "Will this be a sales pitch?",
+    answer: "No. This session focuses on real operational changes, not product demos.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes, all registrants receive the recording via email.",
+    answer: "Yes. A replay will be sent to registered attendees.",
   },
   {
-    question: "Can I ask questions?",
-    answer: "Yes, we will have a live Q&A session at the end.",
+    question: "Can I ask questions live?",
+    answer: "Yes. Live Q&A is included.",
   },
   {
-    question: "What if I don't use ServiceTitan?",
-    answer: "This session is specifically designed for shops running ServiceTitan.",
+    question: "Do I need to be a ServiceTitan customer?",
+    answer: "No. The conversation applies to any shop running memberships.",
   },
 ];
 
@@ -205,9 +220,11 @@ export default function SmartACWebinar() {
       {/* Announcement Bar */}
       <div className="bg-[#ED254E] text-white py-3 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-          <span className="font-medium">Free Live Webinar</span>
+          <span className="font-medium">{config.eventType}</span>
           <span className="hidden sm:inline">|</span>
-          <span>{config.webinarDate} at {config.webinarTime} {config.timezone}</span>
+          <span>{config.webinarDate} | {config.webinarTime} {config.timezone}</span>
+          <span className="hidden sm:inline">|</span>
+          <span>Free to attend</span>
           <Button
             size="sm"
             variant="secondary"
@@ -215,7 +232,7 @@ export default function SmartACWebinar() {
             onClick={() => scrollToSection("register")}
             data-testid="button-announcement-cta"
           >
-            Reserve My Spot
+            Save My Seat
           </Button>
         </div>
       </div>
@@ -234,10 +251,20 @@ export default function SmartACWebinar() {
           </div>
           
           <div className="text-center mb-12">
-            <p className="text-xl text-white/70 mb-6 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 mb-4 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>
-            <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
+            <p className="text-lg text-white/60 mb-6 max-w-3xl mx-auto">
+              {config.webinarSupportingLine}
+            </p>
+            
+            {/* Non-sales framing block */}
+            <div className="max-w-2xl mx-auto mb-8 text-left bg-white/5 rounded-lg p-6">
+              <p className="text-white/80 mb-3">This is not a sales webinar.</p>
+              <p className="text-white/80 mb-3">This is a candid conversation between operators who made changes inside their HVAC businesses and watched membership adds and close rates materially improve.</p>
+              <p className="text-white/80">Tools will be discussed, but the focus is on timing, process, and decision moments inside the call flow.</p>
+            </div>
+            
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Button
@@ -246,7 +273,7 @@ export default function SmartACWebinar() {
                 onClick={() => scrollToSection("register")}
                 data-testid="button-hero-register"
               >
-                Reserve My Spot
+                Save My Seat
               </Button>
             </div>
           </div>
@@ -283,15 +310,14 @@ export default function SmartACWebinar() {
       <section id="learn" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What You'll Walk Away With</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {learningCards.map((card, i) => (
               <Card key={i} className="hover-elevate bg-white/5 border-white/10">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 bg-[#ED254E]/20 rounded-lg flex items-center justify-center mb-4">
                     <CheckCircle2 className="h-6 w-6 text-[#ED254E]" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-white">{card.title}</h3>
-                  <p className="text-white/60 text-sm">{card.description}</p>
+                  <h3 className="text-lg font-semibold text-white">{card.title}</h3>
                 </CardContent>
               </Card>
             ))}
@@ -306,8 +332,8 @@ export default function SmartACWebinar() {
           <div className="space-y-4">
             {agenda.map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
-                <div className="w-16 flex-shrink-0">
-                  <span className="text-[#ED254E] font-mono font-bold">{item.time}</span>
+                <div className="w-8 flex-shrink-0">
+                  <CheckCircle2 className="h-5 w-5 text-[#ED254E]" />
                 </div>
                 <div className="flex-1 pb-4 border-b border-white/10 last:border-0">
                   <span className="text-white/80">{item.topic}</span>
@@ -315,14 +341,15 @@ export default function SmartACWebinar() {
               </div>
             ))}
           </div>
+          <p className="text-center text-white/50 mt-8 italic">{agendaSubtext}</p>
         </div>
       </section>
 
       {/* Meet Your Hosts */}
       <section id="speakers" className="py-16 md:py-24 px-4">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Meet Your Hosts</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-white/5 border-white/10 text-center p-8">
               <img 
                 src={hostImage} 
@@ -330,20 +357,28 @@ export default function SmartACWebinar() {
                 className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
               />
               <h3 className="text-xl font-bold text-white mb-1">{config.hostName}</h3>
-              <p className="text-[#ED254E] text-sm mb-4">{config.hostTitle}</p>
+              <p className="text-[#ED254E] text-sm">{config.hostTitle}</p>
+              <p className="text-[#ED254E] text-sm mb-4">{config.hostSubtitle}</p>
               <p className="text-white/60 text-sm">{config.hostBio}</p>
+            </Card>
+            <Card className="bg-white/5 border-white/10 text-center p-8">
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
+                <Calendar className="h-10 w-10 text-[#ED254E]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
+              <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
+              <p className="text-white/60 text-sm">{config.guestBio}</p>
             </Card>
             <Card className="bg-white/5 border-white/10 text-center p-8">
               <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
                 <img 
                   src={smartACLogo} 
-                  alt={config.guestName}
+                  alt={config.smartACName}
                   className="w-16 h-16 object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
-              <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
-              <p className="text-white/60 text-sm">{config.guestBio}</p>
+              <h3 className="text-xl font-bold text-white mb-1">{config.smartACName}</h3>
+              <p className="text-white/60 text-sm">{config.smartACBio}</p>
             </Card>
           </div>
         </div>
@@ -376,10 +411,10 @@ export default function SmartACWebinar() {
       <section className="py-16 md:py-24 px-4 bg-[#ED254E]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Stop Rebuying Your Own Customers?
+            Ready to stop rebuying the same customers?
           </h2>
           <p className="text-white/80 mb-8">
-            Join us live and discover the retention system that keeps members engaged.
+            Join the conversation and learn what actually moves membership conversion numbers.
           </p>
           <Button
             size="lg"
@@ -388,7 +423,7 @@ export default function SmartACWebinar() {
             onClick={() => scrollToSection("register")}
             data-testid="button-bottom-cta"
           >
-            Register for the Webinar
+            Save My Seat
           </Button>
         </div>
       </section>
