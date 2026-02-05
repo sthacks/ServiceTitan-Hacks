@@ -49,6 +49,22 @@ A comprehensive partner portal enables partners to view campaign performance, co
 
 Campaign metrics are entered manually initially, with future Mailchimp/Facebook/YouTube API integrations planned.
 
+### Form Submission Emails
+All form submissions send email notifications to bill@st-hacks.com with a standardized JSON format:
+```json
+{
+  "url_source": "FORM_IDENTIFIER",
+  "formName": "Human Readable Form Name",
+  "firstName": "...",
+  "lastName": "...",
+  "phoneNumber": "...",
+  "email": "...",
+  "submittedAt": "ISO timestamp",
+  // ...additional form-specific fields
+}
+```
+Forms that don't collect lastName or phoneNumber send empty strings for consistency. Abandoned form emails follow the same structure with `_ABANDONED` suffix on url_source.
+
 ## External Dependencies
 
 ### UI & Styling
