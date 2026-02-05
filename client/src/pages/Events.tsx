@@ -359,11 +359,11 @@ export default function Events() {
                 {pastEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-past-event-${event.id}`}>
                     <div className="md:flex">
-                      <Link href={event.replayLink || event.link} className="md:w-2/5 overflow-hidden relative block cursor-pointer group">
+                      <Link href={event.replayLink || event.link} className="md:w-2/5 overflow-hidden relative block cursor-pointer group aspect-video">
                         <img
                           src={event.image}
                           alt={event.title}
-                          className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
