@@ -244,6 +244,11 @@ export const metadata: Record<string, PageMetadata> = {
   },
   
   // Webinar Pages
+  "/webinar/membership-retention": {
+    title: "Stop Rebuying Your Own Customers | ServiceTitan Hacks Webinar",
+    description: "A live operator-to-operator conversation on how small timing changes dramatically increase membership close rates. Most HVAC shops already have the demand—they're losing conversions because the membership conversation happens at the wrong moment.",
+    ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
+  },
   "/webinar/equipment-pricing": {
     title: "How Contractors Buy Equipment Like Private Equity",
     description: "Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics. Free live webinar.",
