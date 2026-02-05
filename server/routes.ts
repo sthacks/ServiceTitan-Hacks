@@ -374,15 +374,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
-        // Parse Equipment Buying Group fields from message if applicable
-        let jsonPayload: Record<string, any> = {
-          id: submission.id,
-          name: submission.name,
-          email: submission.email,
-          company: submission.company || null,
-          role: submission.role || null,
-          submittedAt: submission.submittedAt
-        };
+        // Parse name parts and equipment buying group fields from message if applicable
+        const nameParts = submission.name.trim().split(' ');
+        const firstName = nameParts[0] || "";
+        const lastName = nameParts.slice(1).join(' ') || "";
+        
+        let phoneNumber = "";
+        let additionalFields: Record<string, any> = {};
         
         if (submission.role === "Equipment Buying Group Inquiry") {
           // Parse structured fields from message
@@ -391,20 +389,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const licenseMatch = submission.message.match(/Contractor License #:\s*(.+)/);
           const authorityMatch = submission.message.match(/Issuing Authority:\s*(.+)/);
           
-          jsonPayload = {
-            id: submission.id,
-            firstName: submission.name.split(' ')[0] || null,
-            lastName: submission.name.split(' ').slice(1).join(' ') || null,
-            email: submission.email,
-            phone: phoneMatch ? phoneMatch[1].trim() : null,
+          phoneNumber = phoneMatch ? phoneMatch[1].trim() : "";
+          additionalFields = {
             companyWebsite: websiteMatch ? websiteMatch[1].trim() : null,
             contractorLicense: licenseMatch ? licenseMatch[1].trim() : null,
-            issuingAuthority: authorityMatch ? authorityMatch[1].trim() : null,
-            submittedAt: submission.submittedAt
+            issuingAuthority: authorityMatch ? authorityMatch[1].trim() : null
           };
         } else {
-          jsonPayload.message = submission.message;
+          additionalFields = { message: submission.message };
         }
+        
+        const jsonPayload = {
+          url_source: "CONTACT_FORM",
+          formName: "Contact Form",
+          firstName,
+          lastName,
+          phoneNumber,
+          email: submission.email,
+          submittedAt: submission.submittedAt,
+          company: submission.company || null,
+          role: submission.role || null,
+          ...additionalFields
+        };
         
         const jsonData = JSON.stringify(jsonPayload, null, 2);
 
@@ -508,13 +514,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          url_source: "GIVEAWAY",
+          formName: "Newsletter Giveaway",
           firstName: firstName.trim(),
           lastName: lastName.trim(),
+          phoneNumber: "",
           email: email.trim(),
+          submittedAt: new Date().toISOString(),
           companyName: companyName ? companyName.trim() : null,
-          source: "Newsletter Giveaway",
-          mailchimpSynced: mailchimpResult.success,
-          timestamp: new Date().toISOString()
+          mailchimpSynced: mailchimpResult.success
         };
         
         await client.emails.send({
@@ -560,10 +568,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          resource: data.resourceName,
-          name: data.firstName,
+          url_source: "RESOURCE_DOWNLOAD",
+          formName: "Resource Download",
+          firstName: data.firstName,
+          lastName: "",
+          phoneNumber: "",
           email: data.email,
-          timestamp: new Date().toISOString()
+          submittedAt: new Date().toISOString(),
+          resourceName: data.resourceName
         };
         
         await client.emails.send({
@@ -851,10 +863,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          url_source: "WINK_DEMO",
+          formName: "Wink Demo Request",
           firstName: data.firstName,
           lastName: data.lastName,
+          phoneNumber: "",
           email: data.email,
-          timestamp: new Date().toISOString()
+          submittedAt: new Date().toISOString()
         };
         
         await client.emails.send({
@@ -909,11 +924,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "WINK_ROI_SAVER_LEAD",
+          url_source: "WINK_ROI_SAVER",
+          formName: "Wink ROI Saver Calculator",
           firstName: data.firstName,
+          lastName: "",
+          phoneNumber: data.phoneNumber || "",
           email: data.email,
-          phone: data.phoneNumber || "Not provided",
-          timestamp: new Date().toISOString()
+          submittedAt: new Date().toISOString()
         };
         
         await client.emails.send({
@@ -986,10 +1003,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          url_source: "SMARTAC_DEMO",
+          formName: "SmartAC Demo Request",
           firstName: data.firstName,
           lastName: data.lastName,
+          phoneNumber: data.phone || "",
           email: data.email,
-          phone: data.phone,
+          submittedAt: new Date().toISOString(),
           companyName: data.companyName,
           websiteUrl: data.websiteUrl,
           zipCode: data.zipCode,
@@ -998,8 +1018,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           readyToGrow: data.readyToGrow,
           membershipAgreements: data.membershipAgreements,
           annualRevenue: data.annualRevenue,
-          serviceTrucks: data.serviceTrucks,
-          timestamp: new Date().toISOString()
+          serviceTrucks: data.serviceTrucks
         };
         
         await client.emails.send({
@@ -1072,12 +1091,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
-            type: "ABANDONED_FORM",
-            formName: "Wink Demo",
+            url_source: "WINK_DEMO_ABANDONED",
+            formName: "Wink Demo (Abandoned)",
+            firstName: incomplete.firstName || "",
+            lastName: incomplete.lastName || "",
+            phoneNumber: "",
             email: incomplete.email,
-            firstName: incomplete.firstName || "(not provided)",
-            lastName: incomplete.lastName || "(not provided)",
-            abandonedAt: new Date().toISOString()
+            submittedAt: new Date().toISOString()
           };
           
           await client.emails.send({
@@ -1139,22 +1159,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
-            type: "ABANDONED_FORM",
-            formName: "SmartAC Demo",
+            url_source: "SMARTAC_DEMO_ABANDONED",
+            formName: "SmartAC Demo (Abandoned)",
+            firstName: incomplete.firstName || "",
+            lastName: incomplete.lastName || "",
+            phoneNumber: incomplete.phone || "",
             email: incomplete.email,
-            firstName: incomplete.firstName || "(not provided)",
-            lastName: incomplete.lastName || "(not provided)",
-            phone: incomplete.phone || "(not provided)",
-            companyName: incomplete.companyName || "(not provided)",
-            websiteUrl: incomplete.websiteUrl || "(not provided)",
-            zipCode: incomplete.zipCode || "(not provided)",
-            role: incomplete.role || "(not provided)",
-            isLicensedContractor: incomplete.isLicensedContractor || "(not provided)",
-            readyToGrow: incomplete.readyToGrow || "(not provided)",
-            membershipAgreements: incomplete.membershipAgreements || "(not provided)",
-            annualRevenue: incomplete.annualRevenue || "(not provided)",
-            serviceTrucks: incomplete.serviceTrucks || "(not provided)",
-            abandonedAt: new Date().toISOString()
+            submittedAt: new Date().toISOString(),
+            companyName: incomplete.companyName || "",
+            websiteUrl: incomplete.websiteUrl || "",
+            zipCode: incomplete.zipCode || "",
+            role: incomplete.role || "",
+            isLicensedContractor: incomplete.isLicensedContractor || "",
+            readyToGrow: incomplete.readyToGrow || "",
+            membershipAgreements: incomplete.membershipAgreements || "",
+            annualRevenue: incomplete.annualRevenue || "",
+            serviceTrucks: incomplete.serviceTrucks || ""
           };
           
           await client.emails.send({
@@ -1196,16 +1216,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "DEMO_REQUEST",
+          url_source: "CONTRACTOR_COMMERCE_DEMO",
           formName: "Contractor Commerce Demo",
-          firstName: data.firstName || "(not provided)",
-          lastName: data.lastName || "(not provided)",
-          companyName: data.companyName || "(not provided)",
-          numberOfTechs: data.numberOfTechs || "(not provided)",
+          firstName: data.firstName || "",
+          lastName: data.lastName || "",
+          phoneNumber: data.cellPhone || "",
           email: data.email,
-          websiteUrl: data.websiteUrl || "(not provided)",
-          cellPhone: data.cellPhone || "(not provided)",
-          submittedAt: new Date().toISOString()
+          submittedAt: new Date().toISOString(),
+          companyName: data.companyName || "",
+          numberOfTechs: data.numberOfTechs || "",
+          websiteUrl: data.websiteUrl || ""
         };
         
         await client.emails.send({
@@ -1274,16 +1294,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
-            type: "ABANDONED_FORM",
-            formName: "Contractor Commerce Demo",
+            url_source: "CONTRACTOR_COMMERCE_DEMO_ABANDONED",
+            formName: "Contractor Commerce Demo (Abandoned)",
+            firstName: incomplete.firstName || "",
+            lastName: incomplete.lastName || "",
+            phoneNumber: incomplete.cellPhone || "",
             email: incomplete.email,
-            firstName: incomplete.firstName || "(not provided)",
-            lastName: incomplete.lastName || "(not provided)",
-            companyName: incomplete.companyName || "(not provided)",
-            numberOfTechs: incomplete.numberOfTechs || "(not provided)",
-            websiteUrl: incomplete.websiteUrl || "(not provided)",
-            cellPhone: incomplete.cellPhone || "(not provided)",
-            abandonedAt: new Date().toISOString()
+            submittedAt: new Date().toISOString(),
+            companyName: incomplete.companyName || "",
+            numberOfTechs: incomplete.numberOfTechs || "",
+            websiteUrl: incomplete.websiteUrl || ""
           };
           
           await client.emails.send({
@@ -1324,10 +1344,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "DEMO_REQUEST",
+          url_source: "LIVESWITCH_DEMO",
           formName: "LiveSwitch Demo",
-          firstName: data.firstName || "(not provided)",
-          lastName: data.lastName || "(not provided)",
+          firstName: data.firstName || "",
+          lastName: data.lastName || "",
+          phoneNumber: "",
           email: data.email,
           submittedAt: new Date().toISOString()
         };
@@ -1398,12 +1419,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
-            type: "ABANDONED_FORM",
-            formName: "LiveSwitch Demo",
+            url_source: "LIVESWITCH_DEMO_ABANDONED",
+            formName: "LiveSwitch Demo (Abandoned)",
+            firstName: incomplete.firstName || "",
+            lastName: incomplete.lastName || "",
+            phoneNumber: "",
             email: incomplete.email,
-            firstName: incomplete.firstName || "(not provided)",
-            lastName: incomplete.lastName || "(not provided)",
-            abandonedAt: new Date().toISOString()
+            submittedAt: new Date().toISOString()
           };
           
           await client.emails.send({
@@ -1607,15 +1629,17 @@ Please rewrite this service description following the instructions above.`;
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          id: optimization.id,
+          url_source: "PRICEBOOK_OPTIMIZER",
+          formName: "Pricebook Optimizer",
+          firstName: optimization.firstName,
+          lastName: optimization.lastName,
+          phoneNumber: "",
+          email: optimization.email,
+          submittedAt: optimization.submittedAt,
           category: optimization.category,
           otherCategory: optimization.otherCategory,
           currentDescription: optimization.currentDescription,
-          optimizedDescription: optimizedDescription,
-          firstName: optimization.firstName,
-          lastName: optimization.lastName,
-          email: optimization.email,
-          submittedAt: optimization.submittedAt
+          optimizedDescription: optimizedDescription
         };
 
         await client.emails.send({
@@ -1712,15 +1736,16 @@ ${JSON.stringify(jsonData, null, 2)}
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
-            type: "ABANDONED_FORM",
-            formName: "Pricebook Optimizer",
+            url_source: "PRICEBOOK_OPTIMIZER_ABANDONED",
+            formName: "Pricebook Optimizer (Abandoned)",
+            firstName: incomplete.firstName || "",
+            lastName: incomplete.lastName || "",
+            phoneNumber: "",
             email: incomplete.email,
-            firstName: incomplete.firstName || "(not provided)",
-            lastName: incomplete.lastName || "(not provided)",
-            category: incomplete.category || "(not provided)",
+            submittedAt: new Date().toISOString(),
+            category: incomplete.category || "",
             currentDescription: incomplete.currentDescription ? 
-              (incomplete.currentDescription.substring(0, 100) + "...") : "(not provided)",
-            abandonedAt: new Date().toISOString()
+              (incomplete.currentDescription.substring(0, 100) + "...") : ""
           };
           
           await client.emails.send({
@@ -1929,10 +1954,13 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "ROI_CALCULATION",
+          url_source: "SMARTAC_ROI_CALCULATOR",
           formName: "SmartAC ROI Calculator",
           firstName: data.firstName,
+          lastName: "",
+          phoneNumber: "",
           email: data.email,
+          submittedAt: new Date().toISOString(),
           inputs: {
             activeMembers: data.activeMembers,
             retentionRate: data.retentionRate,
@@ -1940,8 +1968,7 @@ ${JSON.stringify(jsonData, null, 2)}
             closeRate: data.closeRate,
             revenuePerMember: data.revenuePerMember
           },
-          results: JSON.parse(data.roiResults),
-          submittedAt: new Date().toISOString()
+          results: JSON.parse(data.roiResults)
         };
         
         await client.emails.send({
@@ -2182,10 +2209,13 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "ROI_CALCULATION",
+          url_source: "WINK_ROI_CALCULATOR",
           formName: "Wink ROI Calculator",
           firstName: data.firstName,
+          lastName: "",
+          phoneNumber: "",
           email: data.email,
+          submittedAt: new Date().toISOString(),
           inputs: {
             invoicesPerMonth: data.invoicesPerMonth,
             minutesPerInvoice: data.minutesPerInvoice,
@@ -2196,8 +2226,7 @@ ${JSON.stringify(jsonData, null, 2)}
             setupCost: data.setupCost,
             setupCostSpread: data.setupCostSpread
           },
-          results: JSON.parse(data.roiResults),
-          submittedAt: new Date().toISOString()
+          results: JSON.parse(data.roiResults)
         };
         
         await client.emails.send({
@@ -2251,20 +2280,20 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "ROI_CALCULATION",
+          url_source: "HIRING_ROI_CALCULATOR",
           formName: "Hiring ROI Calculator (Traderunner)",
           firstName: data.firstName,
           lastName: data.lastName,
+          phoneNumber: data.phone || "",
           email: data.email,
-          phone: data.phone,
+          submittedAt: new Date().toISOString(),
           companyName: data.companyName,
           trade: data.trade,
           serviceTitanUser: data.serviceTitanUser,
           companySize: data.companySize,
           leadAlreadyCaptured: data.leadAlreadyCaptured || false,
           inputs: inputs,
-          results: results,
-          submittedAt: new Date().toISOString()
+          results: results
         };
         
         await client.emails.send({
@@ -2332,15 +2361,17 @@ ${JSON.stringify(jsonData, null, 2)}
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
+        const nameParts = data.name.trim().split(' ');
         const jsonData = {
-          type: "PHONETAP_WAITLIST",
+          url_source: "PHONETAP_WAITLIST",
           formName: "PhoneTAP Waitlist",
-          name: data.name,
+          firstName: nameParts[0] || "",
+          lastName: nameParts.slice(1).join(' ') || "",
+          phoneNumber: data.phone || "",
           email: data.email,
-          phone: data.phone,
+          submittedAt: new Date().toISOString(),
           companyName: data.companyName,
-          companySize: data.companySize,
-          submittedAt: new Date().toISOString()
+          companySize: data.companySize
         };
         
         await client.emails.send({
@@ -2379,12 +2410,14 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
-          type: "REPLAY_ACCESS",
+          url_source: "REPLAY_ACCESS",
           formName: "Webinar Replay Access",
           firstName: data.firstName,
+          lastName: "",
+          phoneNumber: "",
           email: data.email,
-          webinarSlug: data.webinarSlug,
-          submittedAt: new Date().toISOString()
+          submittedAt: new Date().toISOString(),
+          webinarSlug: data.webinarSlug
         };
         
         await client.emails.send({
