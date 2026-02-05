@@ -284,8 +284,38 @@ export default function Events() {
           </div>
         </section>
 
+        {/* Navigation Tabs */}
+        <div className="sticky top-0 z-40 bg-background border-b">
+          <div className="container mx-auto px-6">
+            <div className="flex gap-4 py-3">
+              {upcomingEvents.length > 0 && (
+                <Button
+                  variant="ghost"
+                  className="gap-2"
+                  onClick={() => document.getElementById("upcoming-events")?.scrollIntoView({ behavior: "smooth" })}
+                  data-testid="tab-upcoming-events"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Upcoming Events
+                </Button>
+              )}
+              {pastEvents.length > 0 && (
+                <Button
+                  variant="ghost"
+                  className="gap-2"
+                  onClick={() => document.getElementById("past-events")?.scrollIntoView({ behavior: "smooth" })}
+                  data-testid="tab-past-events"
+                >
+                  <Play className="h-4 w-4" />
+                  Past Events
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+
         {upcomingEvents.length > 0 && (
-          <section className="py-16">
+          <section id="upcoming-events" className="py-16">
             <div className="container mx-auto px-6">
               <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
                 Upcoming Events
@@ -350,7 +380,7 @@ export default function Events() {
         )}
 
         {pastEvents.length > 0 && (
-          <section className="py-16 bg-muted/30">
+          <section id="past-events" className="py-16 bg-muted/30">
             <div className="container mx-auto px-6">
               <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
                 Past Events
