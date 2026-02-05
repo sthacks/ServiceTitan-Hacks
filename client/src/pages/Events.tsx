@@ -30,20 +30,6 @@ interface Event {
 
 const events: Event[] = [
   {
-    id: "5",
-    title: "How Contractors Buy Equipment Like Private Equity",
-    description: "Learn how private equity gets better equipment pricing, why traditional distributor relationships limit your leverage, and how group purchasing changes the economics for HVAC owners.",
-    date: "Wednesday, February 4, 2026",
-    eventDateTime: new Date("2026-02-04T14:00:00-05:00"),
-    time: "2:00 PM",
-    timezone: "EST",
-    type: "webinar",
-    image: equipmentPricingImage,
-    link: "/webinar/equipment-pricing",
-    status: "upcoming",
-    hosts: ["Bill Brown", "Norris Ayvazian"]
-  },
-  {
     id: "4",
     title: "Stop Rebuying Your Own Customers",
     description: "Discover the specialist retention layer that keeps members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
@@ -86,6 +72,21 @@ const events: Event[] = [
     hosts: ["Bill Brown", "Wink Toolbox"]
   },
   {
+    id: "5",
+    title: "How Contractors Buy Equipment Like Private Equity",
+    description: "Learn how private equity gets better equipment pricing, why traditional distributor relationships limit your leverage, and how group purchasing changes the economics for HVAC owners.",
+    date: "Wednesday, February 4, 2026",
+    eventDateTime: new Date("2026-02-04T14:00:00-05:00"),
+    time: "2:00 PM",
+    timezone: "EST",
+    type: "webinar",
+    image: equipmentPricingImage,
+    link: "/webinar/equipment-pricing",
+    replayLink: "/webinar/equipment-pricing-replay",
+    status: "past",
+    hosts: ["Bill Brown", "Norris Ayvazian"]
+  },
+  {
     id: "1",
     title: "How to Find and Recruit A-Player Technicians Not On Job Boards",
     description: "Live training showing actionable methods any service business can implement this week. Learn the TradeRunner method for finding technicians who aren't on Indeed.",
@@ -96,7 +97,7 @@ const events: Event[] = [
     type: "webinar",
     image: webinarHeroImage,
     link: "/webinar/invisible-labor-market",
-    replayLink: "/webinar/invisible-labor-market",
+    replayLink: "/webinar/recruiting-replay",
     status: "past",
     hosts: ["Bill Brown", "Andre Nordon"]
   }

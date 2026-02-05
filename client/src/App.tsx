@@ -63,6 +63,7 @@ import ContractorCommerceWebinar from "@/pages/ContractorCommerceWebinar";
 import SmartACWebinar from "@/pages/SmartACWebinar";
 import EquipmentPricingWebinar from "@/pages/EquipmentPricingWebinar";
 import EquipmentPricingReplay from "@/pages/EquipmentPricingReplay";
+import RecruitingWebinarReplay from "@/pages/RecruitingWebinarReplay";
 import Events from "@/pages/Events";
 import NotFound from "@/pages/not-found";
 
@@ -133,6 +134,7 @@ function Router() {
       <Route path="/webinar/membership-retention" component={SmartACWebinar} />
       <Route path="/webinar/equipment-pricing" component={EquipmentPricingWebinar} />
       <Route path="/webinar/equipment-pricing-replay" component={EquipmentPricingReplay} />
+      <Route path="/webinar/recruiting-replay" component={RecruitingWebinarReplay} />
       <Route path="/events" component={Events} />
       <Route component={NotFound} />
     </Switch>
