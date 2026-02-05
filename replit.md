@@ -53,6 +53,7 @@ Campaign metrics are entered manually initially, with future Mailchimp/Facebook/
 All form submissions send email notifications to bill@st-hacks.com with a standardized JSON format:
 ```json
 {
+  "site_source": "Replit-ServiceTitan-Hacks",
   "url_source": "FORM_IDENTIFIER",
   "formName": "Human Readable Form Name",
   "firstName": "...",

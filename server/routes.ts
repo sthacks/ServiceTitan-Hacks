@@ -400,6 +400,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
         
         const jsonPayload = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "CONTACT_FORM",
           formName: "Contact Form",
           firstName,
@@ -514,6 +515,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "GIVEAWAY",
           formName: "Newsletter Giveaway",
           firstName: firstName.trim(),
@@ -568,6 +570,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "RESOURCE_DOWNLOAD",
           formName: "Resource Download",
           firstName: data.firstName,
@@ -863,6 +866,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "WINK_DEMO",
           formName: "Wink Demo Request",
           firstName: data.firstName,
@@ -924,6 +928,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "WINK_ROI_SAVER",
           formName: "Wink ROI Saver Calculator",
           firstName: data.firstName,
@@ -1003,6 +1008,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "SMARTAC_DEMO",
           formName: "SmartAC Demo Request",
           firstName: data.firstName,
@@ -1091,6 +1097,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
+            site_source: "Replit-ServiceTitan-Hacks",
             url_source: "WINK_DEMO_ABANDONED",
             formName: "Wink Demo (Abandoned)",
             firstName: incomplete.firstName || "",
@@ -1159,6 +1166,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
+            site_source: "Replit-ServiceTitan-Hacks",
             url_source: "SMARTAC_DEMO_ABANDONED",
             formName: "SmartAC Demo (Abandoned)",
             firstName: incomplete.firstName || "",
@@ -1216,6 +1224,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "CONTRACTOR_COMMERCE_DEMO",
           formName: "Contractor Commerce Demo",
           firstName: data.firstName || "",
@@ -1294,6 +1303,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
+            site_source: "Replit-ServiceTitan-Hacks",
             url_source: "CONTRACTOR_COMMERCE_DEMO_ABANDONED",
             formName: "Contractor Commerce Demo (Abandoned)",
             firstName: incomplete.firstName || "",
@@ -1344,6 +1354,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "LIVESWITCH_DEMO",
           formName: "LiveSwitch Demo",
           firstName: data.firstName || "",
@@ -1419,6 +1430,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
+            site_source: "Replit-ServiceTitan-Hacks",
             url_source: "LIVESWITCH_DEMO_ABANDONED",
             formName: "LiveSwitch Demo (Abandoned)",
             firstName: incomplete.firstName || "",
@@ -1629,6 +1641,7 @@ Please rewrite this service description following the instructions above.`;
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "PRICEBOOK_OPTIMIZER",
           formName: "Pricebook Optimizer",
           firstName: optimization.firstName,
@@ -1736,6 +1749,7 @@ ${JSON.stringify(jsonData, null, 2)}
           const { client, fromEmail } = await getUncachableResendClient();
           
           const jsonData = {
+            site_source: "Replit-ServiceTitan-Hacks",
             url_source: "PRICEBOOK_OPTIMIZER_ABANDONED",
             formName: "Pricebook Optimizer (Abandoned)",
             firstName: incomplete.firstName || "",
@@ -1954,6 +1968,7 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "SMARTAC_ROI_CALCULATOR",
           formName: "SmartAC ROI Calculator",
           firstName: data.firstName,
@@ -2209,6 +2224,7 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "WINK_ROI_CALCULATOR",
           formName: "Wink ROI Calculator",
           firstName: data.firstName,
@@ -2280,6 +2296,7 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "HIRING_ROI_CALCULATOR",
           formName: "Hiring ROI Calculator (Traderunner)",
           firstName: data.firstName,
@@ -2363,6 +2380,7 @@ ${JSON.stringify(jsonData, null, 2)}
         
         const nameParts = data.name.trim().split(' ');
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "PHONETAP_WAITLIST",
           formName: "PhoneTAP Waitlist",
           firstName: nameParts[0] || "",
@@ -2410,6 +2428,7 @@ ${JSON.stringify(jsonData, null, 2)}
         const { client, fromEmail } = await getUncachableResendClient();
         
         const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
           url_source: "REPLAY_ACCESS",
           formName: "Webinar Replay Access",
           firstName: data.firstName,
