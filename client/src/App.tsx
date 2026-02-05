@@ -62,6 +62,7 @@ import WinkPayrollWebinar from "@/pages/WinkPayrollWebinar";
 import ContractorCommerceWebinar from "@/pages/ContractorCommerceWebinar";
 import SmartACWebinar from "@/pages/SmartACWebinar";
 import EquipmentPricingWebinar from "@/pages/EquipmentPricingWebinar";
+import EquipmentPricingReplay from "@/pages/EquipmentPricingReplay";
 import Events from "@/pages/Events";
 import NotFound from "@/pages/not-found";
 
@@ -131,6 +132,7 @@ function Router() {
       <Route path="/webinar/upfront-pricing" component={ContractorCommerceWebinar} />
       <Route path="/webinar/membership-retention" component={SmartACWebinar} />
       <Route path="/webinar/equipment-pricing" component={EquipmentPricingWebinar} />
+      <Route path="/webinar/equipment-pricing-replay" component={EquipmentPricingReplay} />
       <Route path="/events" component={Events} />
       <Route component={NotFound} />
     </Switch>
