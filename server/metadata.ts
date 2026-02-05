@@ -249,10 +249,35 @@ export const metadata: Record<string, PageMetadata> = {
     description: "A live operator-to-operator conversation on how small timing changes dramatically increase membership close rates. Most HVAC shops already have the demand—they're losing conversions because the membership conversation happens at the wrong moment.",
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
+  "/webinar/upfront-pricing": {
+    title: "Upfront HVAC Pricing Without Losing Control | ServiceTitan Hacks Webinar",
+    description: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation. Free live training for HVAC contractors.",
+    ogImage: "https://servicetitanhacks.com/og-upfront-pricing-webinar.png",
+  },
+  "/webinar/stop-spreadsheet-payroll": {
+    title: "Stop the Spreadsheet Payroll Nightmare | ServiceTitan Hacks Webinar",
+    description: "Leave with a clear, auditable way to replace fragile commission spreadsheets with consistent rules and payroll-ready reports—without ripping out your current payroll system.",
+    ogImage: "https://servicetitanhacks.com/og-spreadsheet-payroll-webinar.png",
+  },
   "/webinar/equipment-pricing": {
-    title: "How Contractors Buy Equipment Like Private Equity",
+    title: "How Contractors Buy Equipment Like Private Equity | ServiceTitan Hacks Webinar",
     description: "Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics. Free live webinar.",
     ogImage: "https://servicetitanhacks.com/og-equipment-pricing-webinar.png",
+  },
+  "/webinar/equipment-pricing-replay": {
+    title: "How Contractors Buy Equipment Like Private Equity | Replay",
+    description: "Watch the replay: Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics.",
+    ogImage: "https://servicetitanhacks.com/og-equipment-pricing-webinar.png",
+  },
+  "/webinar/invisible-labor-market": {
+    title: "How to Find and Recruit A-Player Technicians Not On Job Boards | ServiceTitan Hacks Webinar",
+    description: "Live training showing actionable methods any service business can implement this week to find top technicians outside traditional job boards.",
+    ogImage: "https://servicetitanhacks.com/og-recruiting-webinar.png",
+  },
+  "/webinar/recruiting-replay": {
+    title: "How to Find and Recruit A-Player Technicians Not On Job Boards | Replay",
+    description: "Watch the replay: Actionable methods any service business can implement to find top technicians outside traditional job boards.",
+    ogImage: "https://servicetitanhacks.com/og-recruiting-webinar.png",
   },
   
   // Blog Posts - Additional
