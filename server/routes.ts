@@ -2676,9 +2676,9 @@ ${blogPosts.map(post => `  <url>
       
       // Send invite email via Resend
       try {
-        const resend = getUncachableResendClient();
-        await resend.emails.send({
-          from: 'ServiceTitan Hacks <noreply@st-hacks.com>',
+        const { client, fromEmail } = await getUncachableResendClient();
+        await client.emails.send({
+          from: fromEmail,
           to: email,
           subject: 'You\'ve been invited to the ServiceTitan Hacks Partner Portal',
           html: `
@@ -2727,9 +2727,9 @@ ${blogPosts.map(post => `  <url>
       // Send invite email
       try {
         const company = await storage.getPartnerCompany(req.params.companyId);
-        const resend = getUncachableResendClient();
-        await resend.emails.send({
-          from: 'ServiceTitan Hacks <noreply@st-hacks.com>',
+        const { client, fromEmail } = await getUncachableResendClient();
+        await client.emails.send({
+          from: fromEmail,
           to: email,
           subject: `You've been invited to ${company?.name || 'a partner'}'s portal`,
           html: `
