@@ -193,6 +193,26 @@ export const phoneTapWaitlist = pgTable("phonetap_waitlist", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const replayAccess = pgTable("replay_access", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  firstName: text("first_name").notNull(),
+  email: text("email").notNull(),
+  webinarSlug: text("webinar_slug").notNull(),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+});
+
+export const insertReplayAccessSchema = createInsertSchema(replayAccess).omit({
+  id: true,
+  submittedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  firstName: z.string().min(1, "First name is required"),
+  webinarSlug: z.string().min(1, "Webinar slug is required"),
+});
+
+export type InsertReplayAccess = z.infer<typeof insertReplayAccessSchema>;
+export type ReplayAccess = typeof replayAccess.$inferSelect;
+
 // User upsert schema for Replit Auth
 export const upsertUserSchema = createInsertSchema(users).omit({
   isAdmin: true,

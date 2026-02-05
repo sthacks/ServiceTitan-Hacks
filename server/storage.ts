@@ -27,6 +27,9 @@ import {
   type InsertHiringROISubmission,
   type PhoneTapWaitlistEntry,
   type InsertPhoneTapWaitlist,
+  type ReplayAccess,
+  type InsertReplayAccess,
+  replayAccess,
   type PodcastEpisode,
   type PartnerCompany,
   type InsertPartnerCompany,
@@ -121,6 +124,8 @@ export interface IStorage {
   
   createPhoneTapWaitlistEntry(entry: InsertPhoneTapWaitlist): Promise<PhoneTapWaitlistEntry>;
   getAllPhoneTapWaitlistEntries(): Promise<PhoneTapWaitlistEntry[]>;
+  
+  createReplayAccessEntry(entry: InsertReplayAccess): Promise<ReplayAccess>;
   
   // Podcast operations
   getPodcastEpisodes(): Promise<PodcastEpisode[]>;
@@ -541,6 +546,13 @@ export class MemStorage implements IStorage {
 
   async getAllPhoneTapWaitlistEntries(): Promise<PhoneTapWaitlistEntry[]> {
     return await db.select().from(phoneTapWaitlist);
+  }
+
+  async createReplayAccessEntry(insertEntry: InsertReplayAccess): Promise<ReplayAccess> {
+    const [entry] = await db.insert(replayAccess)
+      .values(insertEntry)
+      .returning();
+    return entry;
   }
 
   async getPodcastEpisodes(): Promise<PodcastEpisode[]> {

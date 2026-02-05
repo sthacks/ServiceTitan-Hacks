@@ -1,11 +1,17 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Calendar, Clock, ArrowRight, Video, Users, Play } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import smartACWebinarImage from "@assets/smartac_(9)_1769011910928.png";
 import contractorCommerceImage from "@assets/contractor_commerce_1769012284534.png";
 import winkWebinarImage from "@assets/wink_(2)_1769014863023.png";
@@ -198,6 +204,64 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
 export default function Events() {
   const upcomingEvents = events.filter(e => e.status === "upcoming" || e.status === "live");
   const pastEvents = events.filter(e => e.status === "past");
+  const [, navigate] = useLocation();
+  const { toast } = useToast();
+  
+  const [replayModalOpen, setReplayModalOpen] = useState(false);
+  const [selectedReplay, setSelectedReplay] = useState<{ slug: string; title: string } | null>(null);
+  const [replayForm, setReplayForm] = useState({ firstName: "", email: "" });
+
+  const replayMutation = useMutation({
+    mutationFn: async (data: { firstName: string; email: string; webinarSlug: string }) => {
+      return apiRequest("POST", "/api/replay-access", data);
+    },
+    onSuccess: () => {
+      setReplayModalOpen(false);
+      setReplayForm({ firstName: "", email: "" });
+      if (selectedReplay) {
+        navigate(selectedReplay.slug);
+      }
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Something went wrong",
+        description: error.message || "Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleReplayClick = (replayLink: string, title: string) => {
+    setSelectedReplay({ slug: replayLink, title });
+    setReplayModalOpen(true);
+  };
+
+  const handleReplaySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!replayForm.firstName || !replayForm.email) {
+      toast({
+        title: "Missing fields",
+        description: "Please fill in all fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(replayForm.email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    if (selectedReplay) {
+      replayMutation.mutate({
+        firstName: replayForm.firstName,
+        email: replayForm.email,
+        webinarSlug: selectedReplay.slug,
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -334,12 +398,15 @@ export default function Events() {
                           </p>
                         </div>
                         <div className="mt-6">
-                          <Link href={event.replayLink || event.link}>
-                            <Button size="lg" className="gap-2" data-testid={`button-replay-${event.id}`}>
-                              <Play className="h-4 w-4" />
-                              Get the Replay
-                            </Button>
-                          </Link>
+                          <Button 
+                            size="lg" 
+                            className="gap-2" 
+                            data-testid={`button-replay-${event.id}`}
+                            onClick={() => handleReplayClick(event.replayLink || event.link, event.title)}
+                          >
+                            <Play className="h-4 w-4" />
+                            Get the Replay
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -395,6 +462,50 @@ export default function Events() {
         </section>
       </main>
       <Footer />
+
+      <Dialog open={replayModalOpen} onOpenChange={setReplayModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Get Access to the Replay</DialogTitle>
+            <DialogDescription>
+              Enter your details below to watch the replay.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleReplaySubmit} className="space-y-4">
+            <div>
+              <Label htmlFor="replay-firstName">First Name</Label>
+              <Input
+                id="replay-firstName"
+                data-testid="input-replay-firstName"
+                value={replayForm.firstName}
+                onChange={(e) => setReplayForm({ ...replayForm, firstName: e.target.value })}
+                placeholder="Your first name"
+                required
+              />
+            </div>
+            <div>
+              <Label htmlFor="replay-email">Email</Label>
+              <Input
+                id="replay-email"
+                type="email"
+                data-testid="input-replay-email"
+                value={replayForm.email}
+                onChange={(e) => setReplayForm({ ...replayForm, email: e.target.value })}
+                placeholder="you@company.com"
+                required
+              />
+            </div>
+            <Button
+              type="submit"
+              className="w-full"
+              data-testid="button-submit-replay-access"
+              disabled={replayMutation.isPending}
+            >
+              {replayMutation.isPending ? "Loading..." : "Watch the Replay"}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

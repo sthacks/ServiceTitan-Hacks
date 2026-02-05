@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPhoneTapWaitlistSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPhoneTapWaitlistSchema, insertReplayAccessSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
@@ -2357,6 +2357,50 @@ ${JSON.stringify(jsonData, null, 2)}
     } catch (error) {
       console.error("PhoneTAP waitlist submission error:", error);
       res.status(500).json({ ok: false, error: "Failed to save waitlist submission" });
+    }
+  });
+
+  // Replay Access endpoint
+  app.post("/api/replay-access", async (req, res) => {
+    try {
+      const parsed = insertReplayAccessSchema.safeParse(req.body);
+      if (!parsed.success) {
+        const validationError = fromZodError(parsed.error);
+        return res.status(400).json({ ok: false, error: validationError.message });
+      }
+
+      const data = parsed.data;
+      
+      // Save to database
+      const entry = await storage.createReplayAccessEntry(data);
+      
+      // Send email notification to admin
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        
+        const jsonData = {
+          type: "REPLAY_ACCESS",
+          formName: "Webinar Replay Access",
+          firstName: data.firstName,
+          email: data.email,
+          webinarSlug: data.webinarSlug,
+          submittedAt: new Date().toISOString()
+        };
+        
+        await client.emails.send({
+          from: fromEmail,
+          to: 'bill@st-hacks.com',
+          subject: `New Replay Access Request: ${data.webinarSlug}`,
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+      }
+      
+      res.json({ ok: true, entry: { id: entry.id } });
+    } catch (error) {
+      console.error("Replay access submission error:", error);
+      res.status(500).json({ ok: false, error: "Failed to save replay access submission" });
     }
   });
 
