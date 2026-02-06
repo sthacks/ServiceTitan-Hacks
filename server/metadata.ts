@@ -250,8 +250,8 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
   "/webinar/upfront-pricing": {
-    title: "Upfront HVAC Pricing Without Losing Control | ServiceTitan Hacks Webinar",
-    description: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation. Free live training for HVAC contractors.",
+    title: "The Price Conversation That Happens Before They Call You | ServiceTitan Hacks",
+    description: "A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation.",
     ogImage: "https://servicetitanhacks.com/og-upfront-pricing-webinar.png",
   },
   "/webinar/stop-spreadsheet-payroll": {

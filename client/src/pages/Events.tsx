@@ -51,8 +51,8 @@ const events: Event[] = [
   },
   {
     id: "3",
-    title: "Upfront HVAC Pricing Without Losing Control",
-    description: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation.",
+    title: "The Price Conversation That Happens Before They Call You",
+    description: "A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation.",
     date: "Wednesday, February 18, 2026",
     eventDateTime: new Date("2026-02-18T14:00:00-05:00"),
     time: "2:00 PM",

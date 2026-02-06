@@ -32,43 +32,60 @@ const config = {
 
 const learningCards = [
   { 
-    title: "The Guardrail Playbook", 
-    description: "How to offer price ranges that protect your margins." 
+    title: "Why Homeowners Research Price First", 
+    description: "Understand why customers look for pricing before calling, even when every job is different, and what that means for your business." 
   },
   { 
-    title: "After-Hours Capture", 
-    description: "A system to stop lead leakage while your office is closed." 
+    title: "Silent Disqualification", 
+    description: "How the absence of pricing creates invisible lead loss that contractors never see, and how to stop it." 
   },
   { 
-    title: "Reputation Protection", 
-    description: "How to handle complex jobs and sizing errors before they become 1-star reviews." 
+    title: "Transparency vs. Commoditization", 
+    description: "The critical difference between price transparency and price commoditization, and why most attempts at online pricing get it wrong." 
+  },
+  { 
+    title: "Controlled Pricing in Practice", 
+    description: "What controlled pricing looks like in the real world, including what it should and should not be used for." 
+  },
+  { 
+    title: "Avoiding the Wrong Behavior", 
+    description: "Why posting prices without a system attracts the wrong customers and undermines your sales process." 
+  },
+  { 
+    title: "Staying in Consideration", 
+    description: "How to stay in the homeowner's consideration set without losing control of the conversation, your margins, or your reputation." 
   },
 ];
 
 const agenda = [
-  { time: "2:00 PM", topic: "The 2026 HVAC Buyer - Why 'Contact Us' is failing." },
-  { time: "2:15 PM", topic: "Speed vs. Accuracy - Balancing the two with AI intake." },
-  { time: "2:30 PM", topic: "Live Demo - The Guardrailed Online Buying Flow." },
-  { time: "2:45 PM", topic: "Human-in-the-loop - Escalation strategies for your sales team." },
-  { time: "2:55 PM", topic: "Q&A and Next Steps." },
+  { time: "2:00 PM", topic: "Why homeowners research price before calling, even when every job is different." },
+  { time: "2:10 PM", topic: "How the absence of pricing creates silent disqualification contractors never see." },
+  { time: "2:20 PM", topic: "Why posting prices without a system attracts the wrong behavior." },
+  { time: "2:30 PM", topic: "The difference between price transparency and price commoditization." },
+  { time: "2:40 PM", topic: "What controlled pricing looks like in the real world, and what it should not be used for." },
+  { time: "2:50 PM", topic: "Q&A - Bring your opinions. This conversation is for you." },
 ];
 
 const faqs = [
   {
+    question: "Is this a sales pitch for online pricing software?",
+    answer: "No. This is a candid fireside chat between contractors about homeowner psychology, trust, and how pricing conversations really work. We talk openly about what works, what doesn't, and what to avoid.",
+  },
+  {
+    question: "I have strong opinions about online pricing. Is this for me?",
+    answer: "Especially if you do. This conversation is designed for contractors who think critically about how they present pricing. Bring your perspective.",
+  },
+  {
     question: "Is this really free?",
-    answer: "Yes, it is a strategic session for the industry.",
+    answer: "Yes. It is a strategic conversation for the industry, not a gated product demo.",
   },
   {
     question: "Will there be a replay?",
     answer: "Yes, all registrants receive the recording.",
   },
   {
-    question: "Can I ask questions live?",
-    answer: "Absolutely, we have a dedicated Q&A.",
-  },
-  {
     question: "What if I can't make it live?",
-    answer: "Register anyway to get the replay and assets.",
+    answer: "Register anyway to get the replay.",
   },
 ];
 
@@ -135,7 +152,7 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
 
 export default function ContractorCommerceWebinar() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const eventDate = new Date("2026-02-11T14:00:00-05:00");
+  const eventDate = new Date("2026-02-18T14:00:00-05:00");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,8 +174,8 @@ export default function ContractorCommerceWebinar() {
     <div className="min-h-screen bg-black text-white">
       <SEO
         title={`${config.webinarTitle} | Free Live Training`}
-        description="Capture after-hours demand with AI-assisted online buying and human-controlled guardrails. Free live webinar for HVAC contractors."
-        keywords="upfront pricing, HVAC pricing, online buying, contractor commerce, ServiceTitan"
+        description="A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation."
+        keywords="contractor pricing, online pricing, HVAC pricing, homeowner psychology, price transparency, contractor commerce, ServiceTitan"
         canonicalUrl="https://servicetitanhacks.com/webinar/upfront-pricing"
         ogImage={`${window.location.origin}${heroImage}`}
       />
@@ -193,7 +210,7 @@ export default function ContractorCommerceWebinar() {
           <div className="mb-8">
             <img 
               src={heroImage} 
-              alt="Upfront Pricing Without Losing Control - AI-Assisted Online Buying for HVAC - Live Wed Feb 18 02:00 PM ET"
+              alt="The Price Conversation That Happens Before They Call You - Live Fireside Chat - Wed Feb 18 02:00 PM ET"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl"
               data-testid="img-hero"
             />
@@ -249,7 +266,7 @@ export default function ContractorCommerceWebinar() {
       {/* What You'll Walk Away With */}
       <section id="learn" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What You'll Walk Away With</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What We'll Talk About</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {learningCards.map((card, i) => (
               <Card key={i} className="hover-elevate bg-white/5 border-white/10">
@@ -288,7 +305,7 @@ export default function ContractorCommerceWebinar() {
       {/* Meet Your Hosts */}
       <section id="speakers" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Meet Your Hosts</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Your Hosts</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="bg-white/5 border-white/10 text-center p-8">
               <img 
@@ -343,10 +360,10 @@ export default function ContractorCommerceWebinar() {
       <section className="py-16 md:py-24 px-4 bg-[#ED254E]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Capture More After-Hours Demand?
+            Have Strong Opinions About Online Pricing?
           </h2>
           <p className="text-white/80 mb-8">
-            Join us live and learn how to offer upfront pricing with the right guardrails.
+            Good. This fireside chat is for you. Join the conversation about homeowner psychology, trust, and staying in consideration without losing control.
           </p>
           <a
             href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
