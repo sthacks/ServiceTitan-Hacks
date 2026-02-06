@@ -21,7 +21,6 @@ const config = {
   webinarDate: "February 11th, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
-  streamYardEmbedUrl: "https://streamyard.com/watch/sBb3CTfsFJbx?embed=true",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Helps contractors fix operational bottlenecks. Trained 1,000+ businesses.",
@@ -72,38 +71,6 @@ const faqs = [
     answer: "Register anyway to get the replay and assets.",
   },
 ];
-
-function RegistrationForm({ className = "" }: { className?: string }) {
-  const [iframeLoaded, setIframeLoaded] = useState(false);
-
-  return (
-    <div className={className}>
-      <div className="w-full relative" style={{ minHeight: "600px", height: "auto" }}>
-        {!iframeLoaded && (
-          <div 
-            className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-lg"
-            data-testid="loading-registration"
-          >
-            <div className="text-center">
-              <div className="animate-spin w-8 h-8 border-2 border-[#ED254E] border-t-transparent rounded-full mx-auto mb-3" />
-              <p className="text-white/60 text-sm">Loading registration...</p>
-            </div>
-          </div>
-        )}
-        <iframe
-          src={config.streamYardEmbedUrl}
-          width="100%"
-          frameBorder={0}
-          allow="autoplay; fullscreen"
-          className="w-full min-h-[600px] md:min-h-[500px] rounded-lg"
-          title="Webinar Registration"
-          data-testid="iframe-streamyard-registration"
-          onLoad={() => setIframeLoaded(true)}
-        />
-      </div>
-    </div>
-  );
-}
 
 function CountdownTimer({ targetDate }: { targetDate: Date }) {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -202,15 +169,20 @@ export default function ContractorCommerceWebinar() {
           <span className="font-medium">Free Live Webinar</span>
           <span className="hidden sm:inline">|</span>
           <span>{config.webinarDate} at {config.webinarTime} {config.timezone}</span>
-          <Button
-            size="sm"
-            variant="secondary"
-            className="bg-white text-[#ED254E] hover:bg-white/90"
-            onClick={() => scrollToSection("register")}
-            data-testid="button-announcement-cta"
+          <a
+            href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Reserve My Spot
-          </Button>
+            <Button
+              size="sm"
+              variant="secondary"
+              className="bg-white text-[#ED254E] hover:bg-white/90"
+              data-testid="button-announcement-cta"
+            >
+              Reserve My Spot
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -234,19 +206,20 @@ export default function ContractorCommerceWebinar() {
             <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-              <Button
-                size="lg"
-                className="bg-[#ED254E] hover:bg-[#ED254E]/90"
-                onClick={() => scrollToSection("register")}
-                data-testid="button-hero-register"
+              <a
+                href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Reserve My Spot (Replay Included)
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-[#ED254E] hover:bg-[#ED254E]/90"
+                  data-testid="button-hero-register"
+                >
+                  Reserve My Spot (Replay Included)
+                </Button>
+              </a>
             </div>
-          </div>
-          
-          <div id="register" className="max-w-4xl mx-auto">
-            <RegistrationForm />
           </div>
         </div>
       </section>
@@ -375,15 +348,20 @@ export default function ContractorCommerceWebinar() {
           <p className="text-white/80 mb-8">
             Join us live and learn how to offer upfront pricing with the right guardrails.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-white text-[#ED254E] hover:bg-white/90"
-            onClick={() => scrollToSection("register")}
-            data-testid="button-bottom-cta"
+          <a
+            href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Register for the Webinar
-          </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-white text-[#ED254E] hover:bg-white/90"
+              data-testid="button-bottom-cta"
+            >
+              Register for the Webinar
+            </Button>
+          </a>
         </div>
       </section>
 
