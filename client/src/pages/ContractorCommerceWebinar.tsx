@@ -176,7 +176,7 @@ export default function ContractorCommerceWebinar() {
         title={`${config.webinarTitle} | Free Live Training`}
         description="A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation."
         keywords="contractor pricing, online pricing, HVAC pricing, homeowner psychology, price transparency, contractor commerce, ServiceTitan"
-        canonicalUrl="https://servicetitanhacks.com/webinar/upfront-pricing"
+        canonicalUrl="https://servicetitanhacks.com/webinar/price-conversation"
         ogImage={`${window.location.origin}${heroImage}`}
       />
 

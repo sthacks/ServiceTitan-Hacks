@@ -149,6 +149,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       '/pages/servicetitan-hacks-products': '/apps',
       '/collections/free-resources': '/resources',
       '/bundles/servicetitan-hacks-all-access-pass': '/all-access',
+      '/webinar/upfront-pricing': '/webinar/price-conversation',
     };
 
     // Redirect old partner/products pages to new URLs

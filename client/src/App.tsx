@@ -130,7 +130,7 @@ function Router() {
       <Route path="/partner-portal/accept-invite" component={PartnerPortalAcceptInvite} />
       <Route path="/webinar/invisible-labor-market" component={WebinarLandingPage} />
       <Route path="/webinar/stop-spreadsheet-payroll" component={WinkPayrollWebinar} />
-      <Route path="/webinar/upfront-pricing" component={ContractorCommerceWebinar} />
+      <Route path="/webinar/price-conversation" component={ContractorCommerceWebinar} />
       <Route path="/webinar/membership-retention" component={SmartACWebinar} />
       <Route path="/webinar/equipment-pricing" component={EquipmentPricingWebinar} />
       <Route path="/webinar/equipment-pricing-replay" component={EquipmentPricingReplay} />

@@ -249,7 +249,7 @@ export const metadata: Record<string, PageMetadata> = {
     description: "A live operator-to-operator conversation on how small timing changes dramatically increase membership close rates. Most HVAC shops already have the demand—they're losing conversions because the membership conversation happens at the wrong moment.",
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
-  "/webinar/upfront-pricing": {
+  "/webinar/price-conversation": {
     title: "The Price Conversation That Happens Before They Call You | ServiceTitan Hacks",
     description: "A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation.",
     ogImage: "https://servicetitanhacks.com/og-upfront-pricing-webinar.png",

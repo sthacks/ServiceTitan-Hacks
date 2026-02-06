@@ -59,7 +59,7 @@ const events: Event[] = [
     timezone: "ET",
     type: "webinar",
     image: contractorCommerceImage,
-    link: "/webinar/upfront-pricing",
+    link: "/webinar/price-conversation",
     status: "upcoming",
     hosts: ["Bill Brown", "Contractor Commerce"]
   },
