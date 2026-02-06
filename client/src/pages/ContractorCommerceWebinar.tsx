@@ -15,19 +15,19 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import heroImage from "@assets/contractor_commerce_(5)_1770387076667.png";
 
 const config = {
-  webinarTitle: "Upfront Pricing Without Losing Control",
-  webinarFullTitle: "Upfront HVAC Pricing Without Losing Control",
-  webinarSubtitle: "Capture after-hours demand with AI-assisted online buying and human-controlled guardrails - without risking your reputation.",
-  webinarDate: "February 11th, 2026",
+  webinarTitle: "The Price Conversation That Happens Before They Call You",
+  webinarFullTitle: "The Price Conversation That Happens Before They Call You",
+  webinarSubtitle: "Most homeowners decide how they feel about price before they ever call a contractor. Not because they want the cheapest option, but because they want certainty, context, and reassurance before inviting someone into their home.",
+  webinarDate: "February 18th, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
-  hostBio: "Helps contractors fix operational bottlenecks. Trained 1,000+ businesses.",
-  guestName: "Online Buying Expert",
+  hostBio: "Helps contractors fix operational bottlenecks. Trained 1,000+ businesses on ServiceTitan optimization and growth strategies.",
+  guestName: "Contractor Commerce",
   guestTitle: "Contractor Commerce",
-  guestBio: "Specialist in guided online buying for HVAC contractors.",
-  heroNote: "This is NOT a DIY tutorial or a sales-heavy pitch.",
+  guestBio: "Helping HVAC contractors give homeowners the pricing clarity they need, without losing control of the conversation.",
+  heroNote: "This is not a webinar about posting your price book online. It is not about racing to the bottom. It is not about replacing sales conversations.",
 };
 
 const learningCards = [
