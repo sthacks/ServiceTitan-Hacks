@@ -349,7 +349,7 @@ export default function SmartACWebinar() {
       <section id="speakers" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Meet Your Hosts</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="bg-white/5 border-white/10 text-center p-8">
               <img 
                 src={hostImage} 
@@ -368,17 +368,6 @@ export default function SmartACWebinar() {
               <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
               <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
               <p className="text-white/60 text-sm">{config.guestBio}</p>
-            </Card>
-            <Card className="bg-white/5 border-white/10 text-center p-8">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
-                <img 
-                  src={smartACLogo} 
-                  alt={config.smartACName}
-                  className="w-16 h-16 object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1">{config.smartACName}</h3>
-              <p className="text-white/60 text-sm">{config.smartACBio}</p>
             </Card>
           </div>
         </div>
