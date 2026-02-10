@@ -13,6 +13,7 @@ import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import heroImage from "@assets/smartac_(10)_1769010027066.png";
+import guestHeadshot from "@assets/739A6B30-76D4-4771-871E-9D491F92DEC7_1770736596836.jpeg";
 
 const config = {
   webinarTitle: "Stop Rebuying Your Own Customers",
@@ -362,9 +363,11 @@ export default function SmartACWebinar() {
               <p className="text-white/60 text-sm">{config.hostBio}</p>
             </Card>
             <Card className="bg-white/5 border-white/10 text-center p-8">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
-                <Calendar className="h-10 w-10 text-[#ED254E]" />
-              </div>
+              <img 
+                src={guestHeadshot} 
+                alt={config.guestName}
+                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
               <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
               <p className="text-white/60 text-sm">{config.guestBio}</p>
