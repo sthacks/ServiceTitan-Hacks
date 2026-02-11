@@ -46,7 +46,7 @@ const events: Event[] = [
     type: "webinar",
     image: smartACWebinarImage,
     link: "/webinar/membership-retention",
-    replayLink: "/webinar/membership-retention",
+    replayLink: "/webinar/membership-retention-replay",
     status: "past",
     hosts: ["Bill Brown", "SmartAC"]
   },

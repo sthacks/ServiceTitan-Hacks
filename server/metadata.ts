@@ -274,6 +274,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Live training showing actionable methods any service business can implement this week to find top technicians outside traditional job boards.",
     ogImage: "https://servicetitanhacks.com/og-recruiting-webinar.png",
   },
+  "/webinar/membership-retention-replay": {
+    title: "Stop Rebuying Your Own Customers | Replay",
+    description: "Watch the replay: Membership retention strategies that keep members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
+    ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
+  },
   "/webinar/recruiting-replay": {
     title: "How to Find and Recruit A-Player Technicians Not On Job Boards | Replay",
     description: "Watch the replay: Actionable methods any service business can implement to find top technicians outside traditional job boards.",
