@@ -245,8 +245,8 @@ export const metadata: Record<string, PageMetadata> = {
   
   // Webinar Pages
   "/webinar/membership-retention": {
-    title: "Stop Rebuying Your Own Customers | ServiceTitan Hacks Webinar",
-    description: "A live operator-to-operator conversation on how small timing changes dramatically increase membership close rates. Most HVAC shops already have the demand—they're losing conversions because the membership conversation happens at the wrong moment.",
+    title: "Stop Rebuying Your Own Customers | Replay Available | ServiceTitan Hacks",
+    description: "Watch the replay: David Hargrove grew from 500 to 2,000 memberships in 18 months at Kali Refrigeration. Learn the CSR scripts, tiered plans with PolyCredits, and SmartAC retention strategies he used.",
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
   "/webinar/price-conversation": {
