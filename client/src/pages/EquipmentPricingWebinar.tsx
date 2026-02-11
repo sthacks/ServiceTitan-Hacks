@@ -294,7 +294,7 @@ export default function EquipmentPricingWebinar() {
             ))}
           </div>
           
-          {/* Buying Group CTA */}
+          {/* Purchasing Platform CTA */}
           <div className="mt-12 text-center">
             <p className="text-white/70 mb-4">Ready to start saving on equipment?</p>
             <a 
@@ -302,9 +302,9 @@ export default function EquipmentPricingWebinar() {
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#ED254E] hover:bg-[#ED254E]/90 text-white font-semibold px-8 py-3 rounded-md transition-colors"
-              data-testid="link-join-buying-group"
+              data-testid="link-join-purchasing-platform"
             >
-              Join the Buying Group for Free
+              Join the Purchasing Platform for Free
             </a>
           </div>
         </div>

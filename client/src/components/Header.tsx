@@ -13,7 +13,7 @@ export default function Header() {
   const navLinks = [
     { path: "/courses", label: "Courses" },
     { path: "/apps", label: "Apps" },
-    { path: "/purchasing-platform", label: "Buying Group" },
+    { path: "/purchasing-platform", label: "Purchasing Platform" },
     { path: "/partners", label: "Partners" },
     { path: "/events", label: "Events" },
     { path: "/resources", label: "Free Stuff" },
