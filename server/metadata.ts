@@ -105,8 +105,8 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-contact.png",
   },
   "/purchasing-platform": {
-    title: "Join the Equipment Buying Group",
-    description: "Stop overpaying for equipment. Access big-player pricing on HVAC and plumbing supplies through our group.",
+    title: "Join the HVAC Equipment Purchasing Platform",
+    description: "Stop overpaying for equipment. Access big-player pricing on HVAC and plumbing supplies through our platform.",
     ogImage: "https://servicetitanhacks.com/og-purchasing-platform.png",
   },
   "/apps": {

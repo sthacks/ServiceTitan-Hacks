@@ -86,8 +86,8 @@ export default function PurchasingPlatform() {
         email: data.email,
         company: data.companyWebsite,
         message: `Phone: ${data.phone}\nCompany Website: ${data.companyWebsite}\nContractor License #: ${data.contractorLicense}\nIssuing Authority: ${data.issuingAuthority}`,
-        role: "Equipment Buying Group Inquiry",
-        consent: "Equipment Buying Group Contact Form"
+        role: "HVAC Equipment Purchasing Platform Inquiry",
+        consent: "HVAC Equipment Purchasing Platform Contact Form"
       });
     },
     onSuccess: () => {
@@ -389,7 +389,7 @@ export default function PurchasingPlatform() {
               Ready to Start Saving?
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Join hundreds of contractors already buying smarter through our Equipment Buying Group.
+              Join hundreds of contractors already buying smarter through our HVAC Equipment Purchasing Platform.
             </p>
             <a href="#form">
               <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100 border-white px-8 py-6 h-auto text-lg" data-testid="button-cta-section">

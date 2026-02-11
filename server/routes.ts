@@ -375,7 +375,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         
-        // Parse name parts and equipment buying group fields from message if applicable
+        // Parse name parts and HVAC Equipment Purchasing Platform fields from message if applicable
         const nameParts = submission.name.trim().split(' ');
         const firstName = nameParts[0] || "";
         const lastName = nameParts.slice(1).join(' ') || "";
@@ -383,7 +383,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         let phoneNumber = "";
         let additionalFields: Record<string, any> = {};
         
-        if (submission.role === "Equipment Buying Group Inquiry") {
+        if (submission.role === "HVAC Equipment Purchasing Platform Inquiry") {
           // Parse structured fields from message
           const phoneMatch = submission.message.match(/Phone:\s*(.+)/);
           const websiteMatch = submission.message.match(/Company Website:\s*(.+)/);
@@ -428,16 +428,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Don't fail the request if email fails
       }
       
-      // Send confirmation email for Equipment Buying Group submissions via Google SMTP
-      if (data.role === "Equipment Buying Group Inquiry") {
+      // Send confirmation email for HVAC Equipment Purchasing Platform submissions via Google SMTP
+      if (data.role === "HVAC Equipment Purchasing Platform Inquiry") {
         try {
           const firstName = data.name.trim().split(' ')[0] || 'there';
           await sendEmail({
             to: data.email,
-            subject: "Your Equipment Buying Group Request - Pending Approval",
+            subject: "Your HVAC Equipment Purchasing Platform Request - Pending Approval",
             html: getBuyingGroupConfirmationEmail(firstName),
           });
-          console.log(`Buying group confirmation email sent to ${data.email}`);
+          console.log(`Purchasing platform confirmation email sent to ${data.email}`);
         } catch (smtpError) {
           console.error("Failed to send SMTP confirmation email:", smtpError);
           // Don't fail the request if email fails

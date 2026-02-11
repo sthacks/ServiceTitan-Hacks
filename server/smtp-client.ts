@@ -56,7 +56,7 @@ export function getBuyingGroupConfirmationEmail(firstName: string) {
         </p>
         
         <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 1.6; color: #3f3f46;">
-          Thank you for your interest in the <strong>ServiceTitan Hacks Equipment Buying Group</strong>. We've received your application and it's currently pending approval.
+          Thank you for your interest in the <strong>ServiceTitan Hacks HVAC Equipment Purchasing Platform</strong>. We've received your application and it's currently pending approval.
         </p>
         
         <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #3f3f46;">

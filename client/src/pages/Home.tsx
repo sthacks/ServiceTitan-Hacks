@@ -46,12 +46,12 @@ export default function Home() {
       alt: "ServiceTitan Hacks automation courses for contractors - AI tools training",
     },
     {
-      title: "Equipment Buying Group",
+      title: "HVAC Equipment Purchasing Platform",
       description: "100% free for Facebook Group members. Get access to pricing that the big guys get on HVAC equipment, water heaters, and tools with plumbing automation.",
       icon: ShoppingCart,
       link: "/purchasing-platform",
       image: buyingGroupImage,
-      alt: "Equipment buying group for HVAC contractors - ServiceTitan Hacks partnership",
+      alt: "HVAC Equipment Purchasing Platform for contractors - ServiceTitan Hacks partnership",
     },
     {
       title: "Apps & Products",
