@@ -1,0 +1,5330 @@
+WEBVTT
+
+00:00:02.571 --> 00:00:02.992
+Hello,
+
+00:00:03.012 --> 00:00:05.174
+this is Bill with Service Titan Hacks.
+
+00:00:05.375 --> 00:00:08.398
+Thanks for joining me and David and Andy
+
+00:00:08.458 --> 00:00:10.240
+on this fireside chat.
+
+00:00:11.663 --> 00:00:13.425
+Good morning for those on the West Coast.
+
+00:00:13.445 --> 00:00:14.907
+Good afternoon for those on the East
+
+00:00:14.928 --> 00:00:15.247
+Coast.
+
+00:00:15.728 --> 00:00:16.710
+Glad you guys are here.
+
+00:00:17.631 --> 00:00:19.413
+So we're not gonna do a demo today
+
+00:00:19.432 --> 00:00:21.015
+or anything like that or a product
+
+00:00:21.035 --> 00:00:21.635
+walkthrough.
+
+00:00:22.135 --> 00:00:23.957
+Not gonna do membership sales training.
+
+00:00:24.399 --> 00:00:26.900
+I'm just gonna talk to David with Kali
+
+00:00:26.920 --> 00:00:30.565
+Refrigeration about the struggles that
+
+00:00:30.605 --> 00:00:33.107
+we've had with memberships and the things
+
+00:00:33.148 --> 00:00:35.070
+that we've done to overcome those.
+
+00:00:35.771 --> 00:00:36.110
+You know,
+
+00:00:36.712 --> 00:00:39.255
+in my company that some months we would
+
+00:00:39.274 --> 00:00:39.816
+do really,
+
+00:00:39.856 --> 00:00:42.378
+really good on memberships and other
+
+00:00:42.418 --> 00:00:43.659
+months we would fall off.
+
+00:00:44.079 --> 00:00:47.064
+And we didn't change our membership as far
+
+00:00:47.103 --> 00:00:49.326
+as the pricing or the scripts.
+
+00:00:50.046 --> 00:00:52.128
+I just couldn't figure out exactly why.
+
+00:00:53.009 --> 00:00:54.612
+And, you know...
+
+00:00:55.548 --> 00:00:57.350
+In David's case, he told me,
+
+00:00:57.409 --> 00:00:58.210
+I was talking to him a couple of
+
+00:00:58.229 --> 00:00:58.771
+weeks ago,
+
+00:00:59.731 --> 00:01:03.593
+that SmartAC was able to help him go
+
+00:01:03.633 --> 00:01:05.114
+from five hundred to two thousand
+
+00:01:05.153 --> 00:01:06.935
+memberships in the last year and a half.
+
+00:01:07.515 --> 00:01:08.575
+So I kind of want to dig into
+
+00:01:08.615 --> 00:01:08.956
+that.
+
+00:01:09.236 --> 00:01:10.897
+First, David, thanks for coming.
+
+00:01:10.977 --> 00:01:12.457
+Thanks for joining me on the chat today.
+
+00:01:12.578 --> 00:01:14.478
+Andy, thanks for being here as well.
+
+00:01:14.938 --> 00:01:15.259
+David,
+
+00:01:15.319 --> 00:01:16.700
+give me a little bit about your
+
+00:01:16.739 --> 00:01:17.319
+background,
+
+00:01:17.359 --> 00:01:18.781
+how you got in the business and
+
+00:01:19.281 --> 00:01:19.682
+everything.
+
+00:01:20.441 --> 00:01:22.022
+Yeah, I mean, same,
+
+00:01:22.143 --> 00:01:23.063
+same as everybody else.
+
+00:01:23.082 --> 00:01:23.362
+You know,
+
+00:01:23.382 --> 00:01:25.444
+they say air conditioning doesn't,
+
+00:01:25.763 --> 00:01:27.305
+you don't choose it, it chooses you.
+
+00:01:28.626 --> 00:01:29.146
+My dad,
+
+00:01:29.305 --> 00:01:31.287
+my dad been in air conditioning for my
+
+00:01:31.307 --> 00:01:32.007
+entire life.
+
+00:01:32.046 --> 00:01:34.908
+And then he bought this company in
+
+00:01:37.435 --> 00:01:39.335
+companies, forty six years old,
+
+00:01:39.936 --> 00:01:40.596
+same as me.
+
+00:01:42.179 --> 00:01:45.281
+Since then, about twenty two,
+
+00:01:45.721 --> 00:01:46.542
+he passed away.
+
+00:01:46.621 --> 00:01:49.743
+So then I took it over and just
+
+00:01:49.784 --> 00:01:53.427
+been really focused on customer retention,
+
+00:01:53.606 --> 00:01:56.269
+customer focused like maintenance
+
+00:01:56.289 --> 00:01:58.069
+contracts, keeping those customers,
+
+00:01:58.611 --> 00:01:59.712
+not letting them die,
+
+00:02:00.072 --> 00:02:02.274
+not letting them go elsewhere,
+
+00:02:02.313 --> 00:02:03.635
+looking for somewhere else.
+
+00:02:04.254 --> 00:02:04.995
+You know,
+
+00:02:05.036 --> 00:02:06.456
+the climate's changed a little bit.
+
+00:02:06.477 --> 00:02:07.798
+Back in the day when my dad ran
+
+00:02:07.858 --> 00:02:09.359
+it, it was, you know, just go out,
+
+00:02:09.378 --> 00:02:09.799
+fix it.
+
+00:02:10.299 --> 00:02:11.539
+Customer's going to call you back.
+
+00:02:11.800 --> 00:02:13.181
+Phone book, everybody was there.
+
+00:02:14.062 --> 00:02:14.842
+They find you.
+
+00:02:15.122 --> 00:02:17.544
+And I just saw it shifting.
+
+00:02:18.344 --> 00:02:19.645
+We had maintenance contracts.
+
+00:02:19.665 --> 00:02:20.445
+We didn't have a ton.
+
+00:02:20.506 --> 00:02:22.828
+We weren't a big maintenance company.
+
+00:02:22.867 --> 00:02:24.549
+We were just going to take care of
+
+00:02:24.568 --> 00:02:26.050
+the customer, do what we're supposed to,
+
+00:02:26.471 --> 00:02:27.311
+and they'll call you back.
+
+00:02:28.372 --> 00:02:28.771
+You know,
+
+00:02:28.792 --> 00:02:30.633
+with the shift for Google and everything
+
+00:02:30.734 --> 00:02:31.074
+else,
+
+00:02:32.560 --> 00:02:35.182
+Everyone's Googling air conditioning, AI,
+
+00:02:36.024 --> 00:02:37.125
+all the smart devices.
+
+00:02:37.145 --> 00:02:39.067
+You can ask your smart device who to
+
+00:02:39.106 --> 00:02:39.967
+call, where to call.
+
+00:02:39.987 --> 00:02:41.248
+They give you a recommendation.
+
+00:02:41.288 --> 00:02:46.133
+So if I can use technology to keep
+
+00:02:46.174 --> 00:02:48.796
+that customer in my back pocket or on
+
+00:02:48.836 --> 00:02:50.718
+your phone, I'm right there.
+
+00:02:50.758 --> 00:02:51.740
+Easy to click.
+
+00:02:51.780 --> 00:02:53.001
+They push the button.
+
+00:02:53.040 --> 00:02:53.521
+They got me.
+
+00:02:54.657 --> 00:02:58.198
+and just making that shift to customer
+
+00:02:58.217 --> 00:03:01.777
+retention has helped us go from basically
+
+00:03:01.818 --> 00:03:03.338
+zero to full speed.
+
+00:03:04.058 --> 00:03:04.299
+I mean,
+
+00:03:04.318 --> 00:03:06.818
+we sell maintenance contracts every day.
+
+00:03:07.239 --> 00:03:08.679
+Customers call in, Google,
+
+00:03:08.739 --> 00:03:10.719
+wherever it's coming from, you know,
+
+00:03:10.740 --> 00:03:11.560
+the girls up front,
+
+00:03:11.599 --> 00:03:13.939
+that's what they're focused on.
+
+00:03:14.379 --> 00:03:15.501
+Even though they're not a customer,
+
+00:03:15.520 --> 00:03:16.961
+they're calling with a specific thing,
+
+00:03:17.721 --> 00:03:19.741
+they call, they, hey,
+
+00:03:19.760 --> 00:03:21.102
+we got this maintenance contract,
+
+00:03:21.141 --> 00:03:22.442
+we can keep this from happening in the
+
+00:03:22.461 --> 00:03:22.842
+future.
+
+00:03:24.645 --> 00:03:27.110
+And we install the smart AC product.
+
+00:03:27.129 --> 00:03:28.692
+So you talk to them about it.
+
+00:03:28.752 --> 00:03:30.314
+Your CSRs talk to them about it.
+
+00:03:30.754 --> 00:03:31.817
+As soon as they reach out in the
+
+00:03:31.856 --> 00:03:32.277
+first place,
+
+00:03:32.298 --> 00:03:34.060
+they have kind of like a script and
+
+00:03:34.080 --> 00:03:34.820
+everything like that.
+
+00:03:35.409 --> 00:03:37.532
+yeah yeah i mean normal stuff answer the
+
+00:03:37.551 --> 00:03:40.794
+phone thanks for calling um what's going
+
+00:03:40.915 --> 00:03:42.918
+on kind of get the feel for where
+
+00:03:42.937 --> 00:03:44.239
+they're at what they're doing especially
+
+00:03:44.258 --> 00:03:45.860
+if the first time callers try to get
+
+00:03:45.900 --> 00:03:49.403
+all the information and um you know
+
+00:03:49.424 --> 00:03:50.664
+because especially if they came in through
+
+00:03:50.705 --> 00:03:53.807
+google if i can capitalize on that spend
+
+00:03:54.468 --> 00:03:56.050
+you know that's a lot of money nowadays
+
+00:03:56.091 --> 00:03:57.711
+that we're having to spend to get those
+
+00:03:58.073 --> 00:03:59.493
+those people to call us from
+
+00:04:00.975 --> 00:04:02.356
+And then we got a whole script.
+
+00:04:03.557 --> 00:04:05.079
+I have tiered maintenance plans,
+
+00:04:05.098 --> 00:04:06.901
+so I don't try to discriminate against,
+
+00:04:08.301 --> 00:04:09.081
+don't want to do it.
+
+00:04:09.502 --> 00:04:11.663
+We have maintenance plans that don't have
+
+00:04:11.723 --> 00:04:12.405
+SmartAC,
+
+00:04:12.425 --> 00:04:15.326
+but if I can capture them and keep
+
+00:04:15.347 --> 00:04:18.288
+them into my sales funnel and keep the
+
+00:04:18.348 --> 00:04:20.331
+customers where I get to go back,
+
+00:04:20.891 --> 00:04:22.512
+keep contact with those customers,
+
+00:04:24.173 --> 00:04:26.095
+we capture them and just keep them.
+
+00:04:28.048 --> 00:04:31.329
+Would you say that most people choose the
+
+00:04:31.449 --> 00:04:33.831
+SmartAC plan with the sensors,
+
+00:04:34.230 --> 00:04:36.232
+or do you always just offer the plan
+
+00:04:36.271 --> 00:04:36.951
+with the sensors,
+
+00:04:36.971 --> 00:04:39.632
+or you do the app only?
+
+00:04:40.454 --> 00:04:41.434
+No, we do.
+
+00:04:43.654 --> 00:04:47.175
+Most of my plans are like our mid-tier.
+
+00:04:47.216 --> 00:04:47.475
+Yeah.
+
+00:04:47.815 --> 00:04:49.617
+That's where most everybody falls into,
+
+00:04:50.416 --> 00:04:52.718
+and they like it because, I mean,
+
+00:04:53.017 --> 00:04:54.199
+I was looking at it earlier on our
+
+00:04:54.218 --> 00:04:54.759
+dashboard.
+
+00:04:54.778 --> 00:04:55.559
+I mean,
+
+00:04:55.579 --> 00:04:57.279
+they can book through Service Titan.
+
+00:04:57.300 --> 00:04:57.480
+They can
+
+00:04:59.536 --> 00:05:01.519
+anybody, they click it, it's done.
+
+00:05:02.158 --> 00:05:04.680
+We do have older clientele that don't like
+
+00:05:04.721 --> 00:05:05.362
+technology.
+
+00:05:05.382 --> 00:05:06.583
+They're like, I don't want that.
+
+00:05:06.642 --> 00:05:08.024
+I don't want you looking at my system.
+
+00:05:08.124 --> 00:05:08.785
+That's fine.
+
+00:05:08.824 --> 00:05:09.345
+That's great.
+
+00:05:09.605 --> 00:05:10.766
+Hey, we can still take care of you.
+
+00:05:11.586 --> 00:05:14.108
+But the fact that we're right there on
+
+00:05:14.129 --> 00:05:16.531
+your phone, they can click in there,
+
+00:05:16.550 --> 00:05:18.192
+they can text, they can chat with us,
+
+00:05:19.093 --> 00:05:21.194
+order filters, maintenance,
+
+00:05:21.855 --> 00:05:23.797
+even if it's broke,
+
+00:05:23.817 --> 00:05:25.077
+they can schedule it right there at their
+
+00:05:25.098 --> 00:05:25.559
+convenience.
+
+00:05:25.579 --> 00:05:25.738
+If it's
+
+00:05:33.408 --> 00:05:36.810
+do you guys um use the virtual maintenance
+
+00:05:36.891 --> 00:05:38.110
+or do you always go out and do
+
+00:05:38.170 --> 00:05:41.033
+visits uh we've we've done a few of
+
+00:05:41.052 --> 00:05:44.656
+the virtuals um some of the customers
+
+00:05:44.776 --> 00:05:46.997
+would try not to get too techy in
+
+00:05:47.038 --> 00:05:49.238
+the you can get really techy you're
+
+00:05:49.259 --> 00:05:50.439
+looking at all this data and you're
+
+00:05:50.459 --> 00:05:52.560
+looking at this and you're like try to
+
+00:05:52.600 --> 00:05:54.783
+keep it where a customer can
+
+00:05:58.512 --> 00:05:59.872
+We've done a few here and there.
+
+00:06:00.634 --> 00:06:02.293
+Usually we still go out and look just
+
+00:06:02.314 --> 00:06:04.113
+because we like to in Texas,
+
+00:06:04.875 --> 00:06:06.855
+drain lines are our nightmare.
+
+00:06:07.194 --> 00:06:09.115
+So yes, we have water sensors.
+
+00:06:09.136 --> 00:06:10.576
+We have all that stuff on the system
+
+00:06:10.615 --> 00:06:11.596
+where we get alerts,
+
+00:06:12.555 --> 00:06:14.896
+but we still like to keep tabs on
+
+00:06:15.276 --> 00:06:18.117
+is the system still like drain lines are
+
+00:06:18.137 --> 00:06:18.838
+staying clear.
+
+00:06:18.858 --> 00:06:19.877
+Everything's staying clear.
+
+00:06:19.997 --> 00:06:21.278
+And just to check on the sensors.
+
+00:06:21.338 --> 00:06:21.579
+I mean,
+
+00:06:22.038 --> 00:06:23.939
+you never know if an animal gets in
+
+00:06:23.959 --> 00:06:25.560
+the attic, knock something loose,
+
+00:06:25.639 --> 00:06:26.300
+move something.
+
+00:06:27.060 --> 00:06:28.262
+Or the customer themselves.
+
+00:06:28.283 --> 00:06:29.446
+They get up in the attic and they're
+
+00:06:29.466 --> 00:06:30.247
+like, what's this?
+
+00:06:30.507 --> 00:06:31.571
+And take it.
+
+00:06:31.591 --> 00:06:33.915
+I've had customers call me and I don't
+
+00:06:33.935 --> 00:06:34.877
+know where that sensor went.
+
+00:06:34.898 --> 00:06:36.783
+I'm like, we'll come find it.
+
+00:06:40.374 --> 00:06:41.314
+The virtuals are good.
+
+00:06:41.355 --> 00:06:42.757
+You can get on there and just tell
+
+00:06:42.776 --> 00:06:43.497
+the customer, hey,
+
+00:06:43.538 --> 00:06:44.678
+everything's working great.
+
+00:06:45.300 --> 00:06:46.701
+We're watching the system.
+
+00:06:48.362 --> 00:06:50.125
+Nothing's going on out of the ordinary.
+
+00:06:50.144 --> 00:06:51.586
+It looks like you run the temperature
+
+00:06:51.807 --> 00:06:53.108
+roughly at these temperatures,
+
+00:06:53.168 --> 00:06:53.790
+whatever it is.
+
+00:06:54.651 --> 00:06:56.492
+You can see the return air fluctuation
+
+00:06:56.552 --> 00:06:59.937
+temperatures and get a good idea of where
+
+00:06:59.956 --> 00:07:00.997
+they run the system.
+
+00:07:02.064 --> 00:07:02.245
+Yeah,
+
+00:07:02.285 --> 00:07:05.249
+so those sensors were a lot more technical
+
+00:07:05.370 --> 00:07:06.490
+than I thought.
+
+00:07:07.232 --> 00:07:08.634
+They were a lot better than I thought.
+
+00:07:08.694 --> 00:07:11.398
+So when I was looking for a solution,
+
+00:07:11.817 --> 00:07:13.880
+what I was trying to do is prevent
+
+00:07:13.980 --> 00:07:17.826
+truck rolls on new systems we'd installed.
+
+00:07:18.547 --> 00:07:20.509
+So as we got better at sales,
+
+00:07:20.588 --> 00:07:21.829
+we would gosh,
+
+00:07:21.850 --> 00:07:24.130
+we got our average tickets up to fifteen
+
+00:07:24.170 --> 00:07:24.932
+thousand dollars.
+
+00:07:24.971 --> 00:07:27.112
+The customer heard about every single
+
+00:07:27.252 --> 00:07:28.975
+option, every add on that we had,
+
+00:07:29.074 --> 00:07:30.016
+all the IQ.
+
+00:07:30.536 --> 00:07:31.877
+So we'd install the system.
+
+00:07:31.916 --> 00:07:32.997
+We do a great job.
+
+00:07:33.038 --> 00:07:35.019
+We do a great quality audit and check
+
+00:07:35.158 --> 00:07:35.358
+out.
+
+00:07:36.060 --> 00:07:38.161
+And then we come out six months later
+
+00:07:39.081 --> 00:07:43.064
+And my experienced techs would want to try
+
+00:07:43.103 --> 00:07:44.764
+to sell them something because they made
+
+00:07:44.805 --> 00:07:45.264
+commission.
+
+00:07:45.504 --> 00:07:47.605
+And customers were like really turned off
+
+00:07:47.625 --> 00:07:48.107
+by that.
+
+00:07:48.247 --> 00:07:48.846
+They were like,
+
+00:07:50.355 --> 00:07:50.576
+You know,
+
+00:07:50.615 --> 00:07:52.817
+they had heard everything that we offered
+
+00:07:52.997 --> 00:07:54.797
+at that point and they either bought it
+
+00:07:54.817 --> 00:07:55.416
+or they didn't.
+
+00:07:55.757 --> 00:07:56.596
+So I didn't feel like there was a
+
+00:07:56.637 --> 00:07:59.197
+lot of opportunity, you know,
+
+00:07:59.338 --> 00:08:00.978
+within that six months, one year,
+
+00:08:00.999 --> 00:08:02.038
+maybe even two years.
+
+00:08:02.079 --> 00:08:02.999
+And we were up north,
+
+00:08:03.139 --> 00:08:05.300
+so I didn't have to worry in Ohio
+
+00:08:05.620 --> 00:08:06.480
+about, you know,
+
+00:08:06.920 --> 00:08:08.620
+water and flooding and all that all the
+
+00:08:08.660 --> 00:08:10.901
+time like we do down in Florida.
+
+00:08:11.994 --> 00:08:16.255
+And also my experienced techs did not like
+
+00:08:16.315 --> 00:08:17.975
+doing new system tune-ups either.
+
+00:08:18.136 --> 00:08:20.036
+So I was searching on the market for
+
+00:08:20.057 --> 00:08:22.458
+a solution that I could monitor the
+
+00:08:22.497 --> 00:08:23.598
+systems remotely,
+
+00:08:24.098 --> 00:08:26.778
+give the customer the peace of mind and
+
+00:08:27.500 --> 00:08:29.139
+know that their system was operating good,
+
+00:08:29.160 --> 00:08:30.380
+but didn't have to go out and try
+
+00:08:30.420 --> 00:08:32.422
+to sell them something to make money.
+
+00:08:32.481 --> 00:08:36.462
+So we started out doing it with just
+
+00:08:36.582 --> 00:08:38.663
+every new system just got a smart AC.
+
+00:08:39.360 --> 00:08:39.659
+That was it.
+
+00:08:39.679 --> 00:08:39.899
+Yeah.
+
+00:08:39.940 --> 00:08:40.081
+Yeah.
+
+00:08:40.140 --> 00:08:41.361
+I mean, we put those on, you're right.
+
+00:08:41.402 --> 00:08:43.062
+You know, technician,
+
+00:08:43.143 --> 00:08:44.323
+if you need something for somebody to do,
+
+00:08:44.344 --> 00:08:46.426
+you don't want to sell your seasoned
+
+00:08:46.466 --> 00:08:48.506
+technician because obviously it costs too
+
+00:08:48.547 --> 00:08:48.787
+much.
+
+00:08:49.288 --> 00:08:49.508
+Yeah.
+
+00:08:49.548 --> 00:08:50.849
+And then he goes out there and he's
+
+00:08:50.869 --> 00:08:51.570
+like, man, I got to,
+
+00:08:51.669 --> 00:08:53.331
+this unit's like two months old,
+
+00:08:53.370 --> 00:08:54.871
+six months old, not even a year old.
+
+00:08:54.932 --> 00:08:56.894
+Why am I doing a tune-up?
+
+00:08:56.953 --> 00:08:59.775
+And that does on the new systems with
+
+00:09:00.356 --> 00:09:01.658
+the smart AC, it's like,
+
+00:09:02.018 --> 00:09:03.259
+we can just log in.
+
+00:09:03.519 --> 00:09:04.740
+Hey, the unit's working fine.
+
+00:09:05.260 --> 00:09:06.422
+Send the customer a message.
+
+00:09:07.815 --> 00:09:07.894
+Uh,
+
+00:09:07.914 --> 00:09:09.615
+send them a video or a message and
+
+00:09:09.655 --> 00:09:10.937
+say, Hey, everything's working great.
+
+00:09:11.297 --> 00:09:14.099
+No, no issues unless they, you know,
+
+00:09:14.119 --> 00:09:15.539
+sometimes we'll get feedback.
+
+00:09:15.580 --> 00:09:17.520
+Hey, this room's hot or this room's cold,
+
+00:09:17.860 --> 00:09:19.601
+which is great because sometimes you don't
+
+00:09:20.022 --> 00:09:21.243
+get all that feedback either,
+
+00:09:21.302 --> 00:09:25.426
+but it helps with the customer, uh,
+
+00:09:25.466 --> 00:09:26.346
+knows that you care.
+
+00:09:26.986 --> 00:09:27.647
+You're watching,
+
+00:09:28.126 --> 00:09:29.187
+you just didn't sell them something and
+
+00:09:29.227 --> 00:09:29.488
+leave.
+
+00:09:30.631 --> 00:09:30.932
+Yeah.
+
+00:09:31.152 --> 00:09:31.413
+Right.
+
+00:09:31.452 --> 00:09:32.133
+That makes sense.
+
+00:09:32.693 --> 00:09:34.695
+So let's talk about that.
+
+00:09:35.936 --> 00:09:38.437
+That five hundred to two thousand
+
+00:09:38.697 --> 00:09:39.519
+memberships.
+
+00:09:40.058 --> 00:09:41.000
+So how long was that?
+
+00:09:41.120 --> 00:09:42.041
+How long did it take you to get
+
+00:09:42.061 --> 00:09:43.062
+to that level?
+
+00:09:44.722 --> 00:09:47.024
+We're creeping up on it about a year
+
+00:09:47.044 --> 00:09:48.765
+and a half right now.
+
+00:09:49.025 --> 00:09:50.287
+Getting there.
+
+00:09:51.187 --> 00:09:53.789
+And it just goes back to really focusing,
+
+00:09:54.931 --> 00:09:57.552
+going from just fixing it and leaving it.
+
+00:09:58.975 --> 00:10:01.081
+versus staying and taking care of the
+
+00:10:01.101 --> 00:10:03.288
+customer and making sure that they
+
+00:10:03.368 --> 00:10:03.950
+understand.
+
+00:10:04.832 --> 00:10:05.595
+I mean, my biggest one,
+
+00:10:05.615 --> 00:10:06.918
+the easiest one for everyone,
+
+00:10:07.158 --> 00:10:07.379
+even in
+
+00:10:10.759 --> 00:10:13.820
+don't run your car forever and not change
+
+00:10:13.840 --> 00:10:15.640
+the oil or not change the tires or
+
+00:10:15.660 --> 00:10:16.821
+not change the air filter.
+
+00:10:17.761 --> 00:10:19.221
+So we kind of break it down like
+
+00:10:19.241 --> 00:10:19.543
+that.
+
+00:10:20.523 --> 00:10:22.224
+This is going to monitor the system.
+
+00:10:22.703 --> 00:10:25.225
+You got your service engine light on your
+
+00:10:25.245 --> 00:10:26.205
+dash and your car.
+
+00:10:26.245 --> 00:10:27.546
+This is kind of the same thing,
+
+00:10:28.206 --> 00:10:30.287
+except you actually have an experienced
+
+00:10:30.506 --> 00:10:32.288
+air conditioning company watching your
+
+00:10:32.327 --> 00:10:33.008
+system for you.
+
+00:10:33.815 --> 00:10:36.037
+So if you're away at work,
+
+00:10:36.957 --> 00:10:38.219
+don't know the system's broke,
+
+00:10:38.399 --> 00:10:40.961
+we're able to look and see.
+
+00:10:41.020 --> 00:10:41.841
+And they like that.
+
+00:10:41.902 --> 00:10:43.763
+They like the fact that we're watching and
+
+00:10:43.783 --> 00:10:44.543
+paying attention.
+
+00:10:44.703 --> 00:10:47.566
+Now, we fine tune some stuff.
+
+00:10:47.586 --> 00:10:49.226
+Some customers will call them and say,
+
+00:10:49.246 --> 00:10:50.327
+hey, we're getting these alerts.
+
+00:10:50.368 --> 00:10:51.249
+Is everything OK?
+
+00:10:52.029 --> 00:10:52.950
+Yeah, everything's fine.
+
+00:10:53.150 --> 00:10:53.350
+OK,
+
+00:10:53.390 --> 00:10:54.631
+we just wanted to check in and make
+
+00:10:54.652 --> 00:10:55.011
+sure.
+
+00:10:55.773 --> 00:10:56.974
+We'll dial in the system,
+
+00:10:57.014 --> 00:10:58.914
+make adjustments as we need to the next
+
+00:10:58.934 --> 00:10:59.515
+time we're out.
+
+00:11:01.836 --> 00:11:04.337
+but just really going in and making sure
+
+00:11:04.357 --> 00:11:07.179
+the customer understands that the air
+
+00:11:07.200 --> 00:11:07.940
+conditioning system,
+
+00:11:08.259 --> 00:11:09.461
+you gotta take care of it.
+
+00:11:09.480 --> 00:11:10.221
+They're expensive.
+
+00:11:10.981 --> 00:11:11.682
+They're just not,
+
+00:11:11.701 --> 00:11:13.102
+they're not cheap like they used to be.
+
+00:11:13.123 --> 00:11:14.364
+They're getting more and more and more
+
+00:11:14.423 --> 00:11:16.585
+expensive, more technical,
+
+00:11:17.566 --> 00:11:19.787
+and they just need to be taken care
+
+00:11:19.846 --> 00:11:19.907
+of.
+
+00:11:20.734 --> 00:11:21.835
+And they don't last as long,
+
+00:11:22.134 --> 00:11:23.355
+especially if you don't take care of them.
+
+00:11:23.375 --> 00:11:23.774
+I mean,
+
+00:11:24.615 --> 00:11:26.157
+God bless them that they don't last as
+
+00:11:26.216 --> 00:11:26.456
+long.
+
+00:11:26.616 --> 00:11:27.876
+It's good for business.
+
+00:11:28.898 --> 00:11:30.458
+I looked at one yesterday.
+
+00:11:30.499 --> 00:11:33.000
+It was three years old and I'm like.
+
+00:11:35.817 --> 00:11:37.298
+They don't make them like this anymore.
+
+00:11:37.799 --> 00:11:38.600
+Yeah.
+
+00:11:38.701 --> 00:11:39.041
+I mean,
+
+00:11:39.301 --> 00:11:40.423
+as long as we take care of it
+
+00:11:40.442 --> 00:11:41.464
+and do all the monitoring,
+
+00:11:41.484 --> 00:11:43.446
+that rolls right into maintenance.
+
+00:11:43.505 --> 00:11:45.729
+It's important days and days it's
+
+00:11:45.788 --> 00:11:46.369
+installed.
+
+00:11:47.309 --> 00:11:49.153
+So you can buy the most expensive unit
+
+00:11:49.212 --> 00:11:49.533
+out there.
+
+00:11:49.552 --> 00:11:50.934
+If you don't put it in and maintain
+
+00:11:50.975 --> 00:11:51.796
+it, it's not going to last.
+
+00:11:53.785 --> 00:11:54.145
+You think,
+
+00:11:55.606 --> 00:11:57.847
+so you have this script that your CSR
+
+00:11:57.888 --> 00:11:58.227
+say,
+
+00:11:58.427 --> 00:12:02.149
+and then your techs go out and do
+
+00:12:02.169 --> 00:12:04.412
+the service call and they kind of take
+
+00:12:04.451 --> 00:12:06.253
+it from there and they have,
+
+00:12:06.373 --> 00:12:08.234
+I'm sure some sort of scripting that they
+
+00:12:08.274 --> 00:12:08.894
+say about it.
+
+00:12:09.653 --> 00:12:10.394
+Do you think that,
+
+00:12:11.075 --> 00:12:13.837
+the majority of the memberships are sold
+
+00:12:13.878 --> 00:12:15.399
+before the techs even get there?
+
+00:12:15.860 --> 00:12:18.222
+Like the CSR have enough interest?
+
+00:12:18.783 --> 00:12:19.004
+Yeah,
+
+00:12:19.043 --> 00:12:21.186
+my girls up front are rock solid at
+
+00:12:21.287 --> 00:12:21.447
+it.
+
+00:12:21.726 --> 00:12:23.428
+I mean, just like everybody,
+
+00:12:23.609 --> 00:12:25.871
+you spit for maintenance contracts.
+
+00:12:40.100 --> 00:12:41.520
+You get discounted service calls,
+
+00:12:41.541 --> 00:12:42.481
+discounted repairs.
+
+00:12:42.501 --> 00:12:45.524
+So if we can capture that up front,
+
+00:12:46.004 --> 00:12:48.426
+because same goes to said, you know,
+
+00:12:48.446 --> 00:12:49.807
+your seasoned tech doesn't want to go do
+
+00:12:49.827 --> 00:12:52.730
+a maintenance call on a new system.
+
+00:12:52.850 --> 00:12:54.910
+Seasoned tech don't really like selling
+
+00:12:54.931 --> 00:12:56.091
+maintenance contracts either.
+
+00:12:56.131 --> 00:12:57.133
+They like to fix stuff.
+
+00:12:57.673 --> 00:12:58.014
+Yeah.
+
+00:12:58.333 --> 00:13:00.095
+They don't like doing anything, man,
+
+00:13:00.115 --> 00:13:00.275
+you know?
+
+00:13:02.192 --> 00:13:03.994
+But then I get the gratification of
+
+00:13:04.455 --> 00:13:07.177
+selling and fixing the unit.
+
+00:13:08.057 --> 00:13:11.200
+And daily good maintenance is busy work,
+
+00:13:11.279 --> 00:13:12.701
+even though it gets you back into the
+
+00:13:12.741 --> 00:13:14.702
+house and keeps you.
+
+00:13:15.104 --> 00:13:16.104
+It does keep you busy,
+
+00:13:16.745 --> 00:13:17.806
+but it keeps you in front of that
+
+00:13:17.846 --> 00:13:20.107
+customer so that you can go fix it
+
+00:13:20.148 --> 00:13:22.009
+later.
+
+00:13:22.068 --> 00:13:23.110
+Yeah, for sure.
+
+00:13:23.129 --> 00:13:23.770
+That makes sense.
+
+00:13:24.370 --> 00:13:25.392
+So the girls are front.
+
+00:13:32.403 --> 00:13:34.604
+before the tech even sees the customer.
+
+00:13:35.065 --> 00:13:36.024
+Do you spiff the,
+
+00:13:36.144 --> 00:13:37.365
+the girls for selling them too?
+
+00:13:38.726 --> 00:13:39.447
+Yeah.
+
+00:13:39.506 --> 00:13:41.427
+So I bet that probably was a big
+
+00:13:41.467 --> 00:13:43.009
+change when you started doing that or have
+
+00:13:43.028 --> 00:13:43.929
+you always done it?
+
+00:13:44.009 --> 00:13:45.030
+We've always done it.
+
+00:13:45.051 --> 00:13:47.491
+I gave them a little bit more than,
+
+00:13:47.772 --> 00:13:48.913
+than what we did before.
+
+00:13:49.373 --> 00:13:50.714
+And then, um,
+
+00:13:50.734 --> 00:13:52.115
+just because I wanted to make a big
+
+00:13:52.154 --> 00:13:52.575
+push.
+
+00:13:53.216 --> 00:13:53.755
+Yeah.
+
+00:13:53.816 --> 00:13:55.976
+Or maintenance, uh, you know, keeping,
+
+00:13:56.317 --> 00:13:56.957
+keeping these,
+
+00:13:57.238 --> 00:13:58.578
+keeping these going and growing that
+
+00:13:58.619 --> 00:13:59.198
+database.
+
+00:14:00.340 --> 00:14:00.440
+Um,
+
+00:14:05.990 --> 00:14:06.971
+I forgot what I was going to say.
+
+00:14:06.991 --> 00:14:08.152
+That's all good, man.
+
+00:14:08.172 --> 00:14:08.631
+That makes sense.
+
+00:14:08.652 --> 00:14:10.692
+So I wanted to go over something as
+
+00:14:10.751 --> 00:14:13.592
+far as lifetime value goes.
+
+00:14:13.633 --> 00:14:17.234
+So I think that in this industry that
+
+00:14:17.594 --> 00:14:20.474
+when we look at customer acquisition
+
+00:14:20.514 --> 00:14:20.894
+costs,
+
+00:14:20.933 --> 00:14:23.674
+which we pay a lot of money to
+
+00:14:23.735 --> 00:14:25.975
+get into someone's home to get a new
+
+00:14:26.034 --> 00:14:26.855
+customer, right?
+
+00:14:27.676 --> 00:14:27.936
+David,
+
+00:14:27.975 --> 00:14:29.196
+what do you think you pay for a
+
+00:14:29.235 --> 00:14:29.816
+new customer?
+
+00:14:30.922 --> 00:14:31.302
+Oh man,
+
+00:14:31.381 --> 00:14:33.803
+it used to be like three fifty.
+
+00:14:33.884 --> 00:14:36.904
+So I think with everything now, it's more.
+
+00:14:36.985 --> 00:14:37.245
+I mean,
+
+00:14:37.306 --> 00:14:38.645
+I think you're four or five hundred
+
+00:14:38.686 --> 00:14:41.148
+dollars per customer just to get the phone
+
+00:14:41.168 --> 00:14:41.548
+to ring.
+
+00:14:43.034 --> 00:14:43.335
+Yeah.
+
+00:14:43.596 --> 00:14:43.936
+So, I mean,
+
+00:14:43.975 --> 00:14:45.957
+you go out and you do that first
+
+00:14:46.018 --> 00:14:47.198
+appointment, right?
+
+00:14:47.938 --> 00:14:51.042
+And you kind of, what I found is,
+
+00:14:51.221 --> 00:14:52.964
+and I did this myself when I was
+
+00:14:52.984 --> 00:14:54.365
+spending a lot of money on marketing.
+
+00:14:54.384 --> 00:14:55.725
+I'm sure you spend a lot of money
+
+00:14:55.765 --> 00:14:56.586
+on marketing.
+
+00:14:57.528 --> 00:14:59.210
+I see that nice logo there.
+
+00:14:59.450 --> 00:15:00.770
+Yeah, it used to be old and bland,
+
+00:15:00.791 --> 00:15:03.013
+but we've spun that around.
+
+00:15:06.635 --> 00:15:08.857
+is that you on the that's actually my
+
+00:15:08.878 --> 00:15:11.640
+dad that's your dad oh yeah we we
+
+00:15:11.681 --> 00:15:13.001
+wanted to do something a little different
+
+00:15:13.201 --> 00:15:15.403
+and a lot of people in the community
+
+00:15:15.443 --> 00:15:20.328
+knew who he was and we got rebranded
+
+00:15:20.688 --> 00:15:22.270
+he did a great job and i get
+
+00:15:22.291 --> 00:15:24.413
+phone calls all the time hey i like
+
+00:15:24.432 --> 00:15:25.774
+what you do with the truck it looks
+
+00:15:25.793 --> 00:15:27.235
+just like your dad the people that knew
+
+00:15:27.275 --> 00:15:27.735
+they're like i don't
+
+00:15:33.972 --> 00:15:34.552
+That's awesome.
+
+00:15:34.893 --> 00:15:36.014
+The branding looks good.
+
+00:15:36.214 --> 00:15:37.134
+And yeah,
+
+00:15:37.153 --> 00:15:39.294
+but you spend four hundred and fifty,
+
+00:15:39.355 --> 00:15:41.655
+five hundred dollars to get into someone's
+
+00:15:41.696 --> 00:15:43.876
+home or is that just to just to
+
+00:15:43.937 --> 00:15:46.356
+get a qualified lead that you then have
+
+00:15:46.376 --> 00:15:47.618
+an opportunity to book?
+
+00:15:48.577 --> 00:15:48.998
+Yeah.
+
+00:15:49.018 --> 00:15:50.298
+I mean, Google leads,
+
+00:15:50.418 --> 00:15:52.639
+depending on time of the year there for
+
+00:15:52.659 --> 00:15:54.299
+a while, they were getting up there crazy.
+
+00:15:55.581 --> 00:15:57.081
+My marketing guy told me the other day,
+
+00:15:57.140 --> 00:16:00.962
+we're running some new some new stuff for
+
+00:16:01.003 --> 00:16:01.722
+like zero for sale.
+
+00:16:05.239 --> 00:16:08.123
+being better at a lower spend than some
+
+00:16:08.163 --> 00:16:13.729
+of my other generic just just uh ad
+
+00:16:14.090 --> 00:16:15.812
+you know your branding ads that i run
+
+00:16:15.912 --> 00:16:19.495
+yeah and uh i think just to get
+
+00:16:19.535 --> 00:16:20.717
+on the ring just to get the phone
+
+00:16:20.758 --> 00:16:22.759
+to ring i'm around four four hundred fifty
+
+00:16:22.799 --> 00:16:24.663
+dollars just just to get the phone to
+
+00:16:24.682 --> 00:16:24.842
+ring
+
+00:16:25.793 --> 00:16:26.914
+through Google.
+
+00:16:28.674 --> 00:16:30.096
+So that's why I get mad too when
+
+00:16:30.115 --> 00:16:32.476
+the guys go out and they at least
+
+00:16:32.557 --> 00:16:34.639
+don't get a maintenance contract out of
+
+00:16:34.658 --> 00:16:34.739
+it.
+
+00:16:34.818 --> 00:16:41.101
+You should have walked away with at least
+
+00:16:41.121 --> 00:16:41.282
+that.
+
+00:16:41.322 --> 00:16:44.764
+I used to look at marketing as far
+
+00:16:44.803 --> 00:16:46.303
+as like getting in the home,
+
+00:16:46.865 --> 00:16:47.904
+getting an appointment.
+
+00:16:48.426 --> 00:16:50.407
+I would look at the revenue that I
+
+00:16:50.447 --> 00:16:52.648
+got from that appointment
+
+00:16:53.840 --> 00:16:56.620
+as the ROI on the spend, right?
+
+00:16:56.640 --> 00:16:58.601
+So I go out and I sell a
+
+00:16:58.642 --> 00:17:00.582
+thousand dollars and I spent eight hundred
+
+00:17:00.623 --> 00:17:01.383
+to get in the home.
+
+00:17:01.802 --> 00:17:03.104
+I'd be like, well, this is a waste,
+
+00:17:03.403 --> 00:17:03.624
+right?
+
+00:17:03.703 --> 00:17:04.943
+I don't want to do this anymore.
+
+00:17:05.304 --> 00:17:06.505
+But then I thought, you know,
+
+00:17:06.545 --> 00:17:08.945
+the way that a software company looks at
+
+00:17:09.026 --> 00:17:10.486
+it and the way bigger companies look at
+
+00:17:10.546 --> 00:17:12.207
+it is they look at their customer
+
+00:17:12.267 --> 00:17:13.166
+acquisition cost.
+
+00:17:13.227 --> 00:17:14.867
+How much money do I have to spend
+
+00:17:14.907 --> 00:17:16.848
+to get a paying customer?
+
+00:17:17.528 --> 00:17:21.070
+And then how long do I have the
+
+00:17:21.111 --> 00:17:21.550
+customer?
+
+00:17:21.570 --> 00:17:23.332
+What's their lifetime value?
+
+00:17:23.653 --> 00:17:23.932
+Right.
+
+00:17:24.432 --> 00:17:26.314
+And so I put together,
+
+00:17:26.354 --> 00:17:27.434
+I'm going to share this with you if
+
+00:17:27.454 --> 00:17:27.835
+that's cool.
+
+00:17:27.855 --> 00:17:28.575
+All right.
+
+00:17:28.615 --> 00:17:29.215
+Put together.
+
+00:17:29.236 --> 00:17:29.715
+Can you see it?
+
+00:17:29.756 --> 00:17:30.036
+Okay.
+
+00:17:30.056 --> 00:17:30.155
+Yep.
+
+00:17:31.532 --> 00:17:31.613
+Okay,
+
+00:17:31.873 --> 00:17:34.074
+I put together this customer revenue
+
+00:17:34.114 --> 00:17:34.634
+tracker.
+
+00:17:35.034 --> 00:17:37.674
+And what I did was,
+
+00:17:38.315 --> 00:17:41.695
+all I needed for this was the customer
+
+00:17:41.875 --> 00:17:43.676
+ID from Service Titan.
+
+00:17:43.696 --> 00:17:45.757
+So I got this data from my Service
+
+00:17:45.797 --> 00:17:47.097
+Titan before I sold my company.
+
+00:17:47.678 --> 00:17:50.558
+Customer ID, the job value,
+
+00:17:50.598 --> 00:17:52.239
+like the total revenue from the job,
+
+00:17:52.719 --> 00:17:55.160
+and then the completed date of the job.
+
+00:17:55.720 --> 00:17:57.260
+And so I had maybe like...
+
+00:17:58.080 --> 00:18:00.303
+seven years of data in there and I
+
+00:18:00.343 --> 00:18:01.604
+put in my cost per lead.
+
+00:18:01.644 --> 00:18:02.664
+And so for you,
+
+00:18:02.704 --> 00:18:03.806
+I just put in five hundred.
+
+00:18:03.945 --> 00:18:06.607
+And then what is your booking rate?
+
+00:18:07.409 --> 00:18:10.090
+And so your customer acquisition costs six
+
+00:18:10.111 --> 00:18:12.393
+hundred and twenty five dollars to get in
+
+00:18:12.432 --> 00:18:12.874
+the door.
+
+00:18:12.933 --> 00:18:13.253
+Right.
+
+00:18:13.994 --> 00:18:15.855
+And so I had all of these jobs
+
+00:18:15.895 --> 00:18:18.878
+and I found out that within one month
+
+00:18:18.999 --> 00:18:19.739
+of having
+
+00:18:20.782 --> 00:18:23.844
+customer a new customer i got eleven
+
+00:18:23.884 --> 00:18:26.566
+hundred dollars on average from those
+
+00:18:26.605 --> 00:18:29.086
+customers now there were some customers
+
+00:18:29.126 --> 00:18:31.567
+that were eighty nine dollar diagnostics
+
+00:18:31.667 --> 00:18:33.367
+only and i never worked for them again
+
+00:18:33.828 --> 00:18:35.910
+there were some on the other end that
+
+00:18:36.069 --> 00:18:38.431
+turned into twenty five thousand dollar
+
+00:18:38.471 --> 00:18:41.291
+system sale right so this is just totally
+
+00:18:41.352 --> 00:18:43.373
+blended across all of those
+
+00:18:44.192 --> 00:18:45.573
+And then I started to look, I said,
+
+00:18:45.633 --> 00:18:45.773
+well,
+
+00:18:45.794 --> 00:18:47.973
+I wonder how much more money those
+
+00:18:48.013 --> 00:18:51.775
+customers get or give me over their life,
+
+00:18:52.076 --> 00:18:52.336
+right?
+
+00:18:52.375 --> 00:18:53.996
+So after two months,
+
+00:18:54.556 --> 00:18:55.457
+how much do I get?
+
+00:18:55.497 --> 00:18:57.876
+And obviously it wasn't tons after two
+
+00:18:57.916 --> 00:18:59.417
+months because usually you do the work for
+
+00:18:59.438 --> 00:18:59.518
+them,
+
+00:18:59.538 --> 00:19:00.857
+you don't see them for a little while.
+
+00:19:01.337 --> 00:19:02.818
+But as we start to go out,
+
+00:19:04.759 --> 00:19:06.799
+I noticed that the lifetime value of the
+
+00:19:06.839 --> 00:19:09.681
+customer obviously increased, right?
+
+00:19:09.934 --> 00:19:10.135
+Right.
+
+00:19:10.717 --> 00:19:11.597
+So right here,
+
+00:19:11.618 --> 00:19:13.803
+when I was looking at that eleven hundred
+
+00:19:13.843 --> 00:19:14.423
+dollars,
+
+00:19:15.226 --> 00:19:16.729
+if I looked back and I just put
+
+00:19:16.788 --> 00:19:18.692
+in my gross profit margin.
+
+00:19:19.829 --> 00:19:22.010
+it wouldn't really even make sense to
+
+00:19:22.211 --> 00:19:23.951
+spend six hundred and twenty five dollars
+
+00:19:23.990 --> 00:19:25.672
+on a customer if you were going to
+
+00:19:25.692 --> 00:19:28.011
+have them for one month.
+
+00:19:28.172 --> 00:19:28.412
+Right.
+
+00:19:28.491 --> 00:19:29.192
+And one visit.
+
+00:19:29.492 --> 00:19:30.512
+But as we kept them,
+
+00:19:30.732 --> 00:19:31.873
+here was our break even.
+
+00:19:31.972 --> 00:19:32.913
+And as you can see,
+
+00:19:33.354 --> 00:19:34.673
+it went longer and longer.
+
+00:19:34.733 --> 00:19:35.574
+And what that was,
+
+00:19:35.614 --> 00:19:38.315
+is that was our members that we went
+
+00:19:38.355 --> 00:19:41.375
+to every six months or every year that
+
+00:19:41.395 --> 00:19:44.616
+would eventually buy a replacement system,
+
+00:19:44.656 --> 00:19:45.896
+which was that, you know,
+
+00:19:45.916 --> 00:19:47.797
+that big that big chunk of money.
+
+00:19:48.218 --> 00:19:48.417
+So
+
+00:19:49.998 --> 00:19:50.438
+What's that?
+
+00:19:50.959 --> 00:19:52.220
+I said, that's what you're chasing.
+
+00:19:52.779 --> 00:19:54.280
+Yeah, yeah, for sure.
+
+00:19:54.401 --> 00:19:55.161
+And I mean,
+
+00:19:55.240 --> 00:19:59.624
+I think that and I have that calculator
+
+00:19:59.683 --> 00:20:01.905
+I can share, share with you guys.
+
+00:20:02.385 --> 00:20:04.267
+Let me close that down.
+
+00:20:04.846 --> 00:20:05.548
+Get it in there.
+
+00:20:06.394 --> 00:20:07.673
+right that's great bill i'm glad you
+
+00:20:07.693 --> 00:20:09.835
+shared that that's yeah that's exactly
+
+00:20:09.855 --> 00:20:11.976
+what we're seeing that maturity aspect
+
+00:20:12.496 --> 00:20:15.817
+everyone's chasing roi very um i'd say
+
+00:20:15.836 --> 00:20:18.678
+aggressively but the reframing that you
+
+00:20:18.698 --> 00:20:21.439
+just did is so important it's that because
+
+00:20:21.519 --> 00:20:24.279
+that over a two year and three year
+
+00:20:24.319 --> 00:20:27.080
+period yeah if returns come back we're
+
+00:20:27.121 --> 00:20:28.761
+running some analysis on david's account
+
+00:20:29.281 --> 00:20:30.583
+um this week and looking at and he's
+
+00:20:30.603 --> 00:20:31.522
+about eighteen months in
+
+00:20:32.182 --> 00:20:33.782
+And he's got great leading indicators of
+
+00:20:33.803 --> 00:20:35.743
+where everything's headed on sell-through
+
+00:20:35.763 --> 00:20:37.743
+rate, job bookings, all that.
+
+00:20:38.824 --> 00:20:40.845
+But I literally made the statement to him,
+
+00:20:41.345 --> 00:20:43.625
+it's about account maturity at every
+
+00:20:43.664 --> 00:20:44.244
+location.
+
+00:20:44.846 --> 00:20:46.705
+And so you have to be great at
+
+00:20:46.726 --> 00:20:47.645
+retention doing that.
+
+00:20:47.766 --> 00:20:49.546
+But that retention over time,
+
+00:20:50.047 --> 00:20:52.507
+we see it's a real compounding effect for
+
+00:20:52.527 --> 00:20:53.467
+your entire membership base.
+
+00:20:53.826 --> 00:20:55.228
+If you're converting at a higher rate,
+
+00:20:55.347 --> 00:20:56.028
+which David is,
+
+00:20:56.048 --> 00:20:57.367
+he's doing a fantastic job on that.
+
+00:20:57.989 --> 00:21:00.693
+His sell-through rate's two X on his smart
+
+00:21:00.713 --> 00:21:01.715
+plans versus legacy.
+
+00:21:02.416 --> 00:21:04.221
+And his retention has been fantastic.
+
+00:21:04.280 --> 00:21:06.124
+And so those two things combined,
+
+00:21:06.404 --> 00:21:07.507
+that CLV is great, man.
+
+00:21:07.586 --> 00:21:08.910
+That's a really cool chart, buddy.
+
+00:21:08.930 --> 00:21:09.530
+Pull it up.
+
+00:21:09.997 --> 00:21:10.497
+Yeah, thanks.
+
+00:21:10.517 --> 00:21:12.898
+I appreciate it.
+
+00:21:13.019 --> 00:21:15.320
+I talked to other contractors who always
+
+00:21:15.361 --> 00:21:17.123
+wanted to quit their marketing efforts
+
+00:21:17.143 --> 00:21:18.903
+because they didn't see the ROI fast
+
+00:21:18.943 --> 00:21:19.305
+enough.
+
+00:21:19.424 --> 00:21:21.546
+And I just thought about it like, man,
+
+00:21:21.566 --> 00:21:24.148
+if you buy a stock,
+
+00:21:24.429 --> 00:21:26.611
+do you really expect a thirty day return
+
+00:21:26.891 --> 00:21:28.471
+or you're getting rid of the stock?
+
+00:21:29.772 --> 00:21:31.295
+How long if I put six hundred and
+
+00:21:31.315 --> 00:21:32.695
+twenty five dollars out there,
+
+00:21:33.096 --> 00:21:35.038
+how long can I wait before it's returned
+
+00:21:35.057 --> 00:21:37.380
+to me and still like the marketing
+
+00:21:37.420 --> 00:21:37.681
+channel?
+
+00:21:37.701 --> 00:21:40.163
+So what I put together that that
+
+00:21:40.202 --> 00:21:41.964
+calculator is very simple, right?
+
+00:21:42.065 --> 00:21:43.685
+It doesn't have like your specific
+
+00:21:43.746 --> 00:21:44.767
+marketing channels.
+
+00:21:45.208 --> 00:21:47.710
+It doesn't have all of the residential
+
+00:21:47.750 --> 00:21:48.631
+versus commercial.
+
+00:21:48.691 --> 00:21:51.173
+So I've seen the calculators that you guys
+
+00:21:51.212 --> 00:21:51.753
+put together.
+
+00:21:51.794 --> 00:21:54.616
+It's obviously a lot more in depth than
+
+00:21:54.636 --> 00:21:54.916
+that.
+
+00:21:55.537 --> 00:21:57.338
+But I just wanted something simple that
+
+00:21:57.839 --> 00:22:01.182
+Service Titan companies could easily
+
+00:22:01.303 --> 00:22:02.983
+upload into a system and check it out.
+
+00:22:03.023 --> 00:22:04.486
+But you guys have,
+
+00:22:05.247 --> 00:22:06.548
+can you kind of tell me a little
+
+00:22:06.567 --> 00:22:09.349
+bit about how your analysis works?
+
+00:22:09.871 --> 00:22:10.290
+Sure.
+
+00:22:10.330 --> 00:22:13.534
+With LTV and membership retention and
+
+00:22:13.554 --> 00:22:13.855
+everything?
+
+00:22:13.875 --> 00:22:14.035
+Sure.
+
+00:22:14.275 --> 00:22:16.116
+Yeah, well, I think you nailed it.
+
+00:22:16.297 --> 00:22:18.380
+And then it's about the time span that
+
+00:22:18.420 --> 00:22:19.320
+you're reviewing it.
+
+00:22:19.480 --> 00:22:21.143
+So the way we look at it is
+
+00:22:21.864 --> 00:22:23.204
+when we first work with somebody,
+
+00:22:23.224 --> 00:22:24.246
+we always try to make sure that they've
+
+00:22:24.266 --> 00:22:25.768
+got legacy benchmarks in place.
+
+00:22:26.347 --> 00:22:27.869
+And so sometimes they do,
+
+00:22:27.890 --> 00:22:29.132
+sometimes they don't have the complexity.
+
+00:22:29.152 --> 00:22:29.531
+And if not,
+
+00:22:29.551 --> 00:22:30.853
+we try to help put that together because
+
+00:22:30.873 --> 00:22:32.895
+we want to know where we're starting and
+
+00:22:32.915 --> 00:22:34.317
+want to identify where the key areas we're
+
+00:22:34.336 --> 00:22:35.077
+trying to improve on.
+
+00:22:36.055 --> 00:22:37.796
+And then right out of the gate,
+
+00:22:38.096 --> 00:22:39.096
+we're really looking at,
+
+00:22:39.537 --> 00:22:41.757
+are you doing the operational activities
+
+00:22:42.178 --> 00:22:43.738
+that lead to true change?
+
+00:22:44.199 --> 00:22:45.659
+So like David said,
+
+00:22:45.898 --> 00:22:47.440
+we increased our commission plan a little
+
+00:22:47.519 --> 00:22:49.260
+bit to drive a little incentive that you
+
+00:22:49.280 --> 00:22:51.301
+would not believe how important those
+
+00:22:51.342 --> 00:22:51.862
+things are.
+
+00:22:52.382 --> 00:22:53.903
+Because a renewed sense of interest from
+
+00:22:53.923 --> 00:22:56.182
+the employees drives a lot of engagement.
+
+00:22:56.462 --> 00:22:57.222
+And right out of the gate,
+
+00:22:57.242 --> 00:22:58.344
+you're setting the right path.
+
+00:22:59.503 --> 00:23:00.604
+So we look at things like that.
+
+00:23:00.644 --> 00:23:02.005
+We look at the sensor.
+
+00:23:02.065 --> 00:23:03.325
+We call it verified install rate.
+
+00:23:03.365 --> 00:23:04.605
+Is it going in where you can actually
+
+00:23:04.645 --> 00:23:05.625
+see data from the system?
+
+00:23:05.645 --> 00:23:07.105
+Because the better the data is,
+
+00:23:07.326 --> 00:23:08.106
+the better the insights,
+
+00:23:08.126 --> 00:23:09.346
+the more likely you're going to be able
+
+00:23:09.386 --> 00:23:11.207
+to go or not go to the home
+
+00:23:11.287 --> 00:23:12.468
+to save truck rolls or go when you
+
+00:23:12.488 --> 00:23:12.988
+want the revenue.
+
+00:23:13.627 --> 00:23:15.329
+um so we kind of put together what
+
+00:23:15.349 --> 00:23:17.511
+was a list of like operational uh
+
+00:23:17.571 --> 00:23:20.214
+indicators um that you're doing the right
+
+00:23:20.315 --> 00:23:22.155
+activities you structured the plan the
+
+00:23:22.175 --> 00:23:23.597
+right way people are aligned and you're
+
+00:23:23.617 --> 00:23:25.519
+doing the right things and then over time
+
+00:23:25.559 --> 00:23:27.801
+we have like benchmark hurdles so let's
+
+00:23:27.821 --> 00:23:29.103
+say after six months you look back and
+
+00:23:29.123 --> 00:23:30.584
+we look at some basic things like how
+
+00:23:30.604 --> 00:23:32.846
+is your revenue per ticket change um how's
+
+00:23:32.865 --> 00:23:34.928
+your truck roll per home um like are
+
+00:23:34.948 --> 00:23:36.670
+you continuing to go the right way and
+
+00:23:36.710 --> 00:23:38.211
+are the numbers starting to add up
+
+00:23:39.152 --> 00:23:41.673
+We can't put a really, I'd say,
+
+00:23:41.792 --> 00:23:43.393
+meaningful, complicated,
+
+00:23:43.532 --> 00:23:47.795
+full membership P&L ROI together until
+
+00:23:47.815 --> 00:23:49.494
+you've got about two years of data.
+
+00:23:49.575 --> 00:23:51.576
+But what we can do every step along
+
+00:23:51.596 --> 00:23:52.016
+the way,
+
+00:23:52.296 --> 00:23:54.155
+look at the activities that lead towards
+
+00:23:54.175 --> 00:23:54.396
+that.
+
+00:23:54.777 --> 00:23:55.777
+And we've got customers that have been
+
+00:23:55.797 --> 00:23:57.457
+there long enough that we can build
+
+00:23:57.798 --> 00:24:00.478
+literally a line by line, complete P&L,
+
+00:24:00.498 --> 00:24:01.959
+their entire membership program and tell
+
+00:24:01.979 --> 00:24:03.699
+them exactly what they're making,
+
+00:24:03.979 --> 00:24:04.859
+what they were doing before,
+
+00:24:04.880 --> 00:24:05.720
+what they're making now.
+
+00:24:06.579 --> 00:24:08.861
+and the exact to the cent dollar value
+
+00:24:08.881 --> 00:24:10.040
+that SmartIC has brought to them.
+
+00:24:10.781 --> 00:24:12.843
+But that takes time because as you pointed
+
+00:24:12.863 --> 00:24:12.982
+out,
+
+00:24:14.343 --> 00:24:15.844
+most of your revenue isn't returned in
+
+00:24:15.864 --> 00:24:16.284
+year one.
+
+00:24:16.523 --> 00:24:18.704
+When you think about how this transition
+
+00:24:18.744 --> 00:24:20.425
+happens, they called you to fix something.
+
+00:24:20.726 --> 00:24:22.145
+And if your people did their job,
+
+00:24:22.586 --> 00:24:23.926
+they just did a great service,
+
+00:24:23.967 --> 00:24:25.428
+a great repair or a great replacement,
+
+00:24:25.448 --> 00:24:26.347
+that thing's running well.
+
+00:24:26.988 --> 00:24:28.669
+The chances of you being back to fix
+
+00:24:28.709 --> 00:24:30.028
+something on that system in that first
+
+00:24:30.088 --> 00:24:31.230
+year are actually pretty low.
+
+00:24:31.730 --> 00:24:32.210
+Yeah, right.
+
+00:24:32.269 --> 00:24:35.071
+Where you do get the opportunity is having
+
+00:24:35.092 --> 00:24:36.553
+a water sensor or something in there
+
+00:24:36.893 --> 00:24:38.773
+because those things can change rapidly.
+
+00:24:38.814 --> 00:24:39.875
+They have nothing to do with the actual
+
+00:24:40.194 --> 00:24:41.776
+performance, the delta T of the system.
+
+00:24:42.435 --> 00:24:42.916
+But really,
+
+00:24:43.217 --> 00:24:45.157
+we start to see that tipping point and
+
+00:24:45.178 --> 00:24:46.659
+in that eighteen to twenty four months,
+
+00:24:47.138 --> 00:24:49.180
+that's when the repeat revenue starts.
+
+00:24:49.299 --> 00:24:50.240
+And then in year three,
+
+00:24:50.340 --> 00:24:53.462
+like it's a big job.
+
+00:24:53.502 --> 00:24:55.364
+So you think that someone to ask you,
+
+00:24:55.443 --> 00:24:55.723
+Andy,
+
+00:24:56.023 --> 00:24:56.183
+do
+
+00:24:57.478 --> 00:25:00.361
+Contractors come to you like looking to
+
+00:25:00.580 --> 00:25:01.922
+improve their memberships.
+
+00:25:02.082 --> 00:25:03.442
+Is that kind of how they find you
+
+00:25:04.403 --> 00:25:05.365
+on the membership side?
+
+00:25:05.384 --> 00:25:07.007
+Is it more about the sensors?
+
+00:25:07.067 --> 00:25:08.907
+What kind of what kind of things you
+
+00:25:08.948 --> 00:25:10.990
+think introduced that conversation?
+
+00:25:12.290 --> 00:25:13.752
+It's absolutely evolved over time.
+
+00:25:14.073 --> 00:25:17.635
+We created a platform that's a hardware
+
+00:25:17.655 --> 00:25:21.118
+software product mix to help overall
+
+00:25:21.278 --> 00:25:22.621
+customer engagement, customer attention.
+
+00:25:23.536 --> 00:25:26.498
+what's evolved over time is we realized
+
+00:25:26.518 --> 00:25:28.160
+there was a gap in the market about
+
+00:25:28.299 --> 00:25:31.082
+true knowledge of customer buying
+
+00:25:31.122 --> 00:25:33.503
+practices and customer psychology uh
+
+00:25:33.703 --> 00:25:36.346
+customer experience and use of data and
+
+00:25:36.385 --> 00:25:38.528
+how to operationalize some of those things
+
+00:25:38.728 --> 00:25:40.869
+into having a better program that's more
+
+00:25:40.910 --> 00:25:43.211
+profitable so our business is kind of
+
+00:25:43.270 --> 00:25:45.032
+split right now half of it is all
+
+00:25:45.053 --> 00:25:46.453
+the technology and the cool stuff that we
+
+00:25:46.493 --> 00:25:48.955
+make but a huge part of it is
+
+00:25:48.976 --> 00:25:50.557
+the consulting services that we bring
+
+00:25:51.877 --> 00:25:53.719
+from the time somebody signs a contract
+
+00:25:53.818 --> 00:25:55.038
+and we don't we don't charge for any
+
+00:25:55.058 --> 00:25:56.559
+of that stuff that's all part of it
+
+00:25:56.619 --> 00:25:58.080
+but we realized if we didn't help the
+
+00:25:58.101 --> 00:26:00.161
+customer activate these things and bring
+
+00:26:00.181 --> 00:26:02.201
+that knowledge base share best practices
+
+00:26:02.241 --> 00:26:04.722
+create benchmarks and drive a real focus
+
+00:26:04.823 --> 00:26:07.223
+on the program then it didn't get done
+
+00:26:07.324 --> 00:26:08.585
+in the way that was possible
+
+00:26:09.284 --> 00:26:09.824
+Yeah.
+
+00:26:09.864 --> 00:26:12.326
+So we figure out our best chance for
+
+00:26:12.365 --> 00:26:15.308
+success was to make them successful at
+
+00:26:15.328 --> 00:26:15.669
+something.
+
+00:26:15.769 --> 00:26:16.169
+Quite honestly,
+
+00:26:16.189 --> 00:26:17.509
+they could pay somebody else to come in
+
+00:26:17.549 --> 00:26:18.691
+and do tell them a lot of the
+
+00:26:18.711 --> 00:26:19.291
+same things.
+
+00:26:19.711 --> 00:26:21.153
+We just do it as coupled with a
+
+00:26:21.173 --> 00:26:22.733
+part of our thing so that to try
+
+00:26:22.773 --> 00:26:23.355
+and make it easier.
+
+00:26:24.416 --> 00:26:26.159
+So when you go back to the data
+
+00:26:26.219 --> 00:26:29.241
+side of it, do you, gosh,
+
+00:26:29.301 --> 00:26:31.924
+I would imagine a lot of contractors don't
+
+00:26:31.944 --> 00:26:33.546
+have great historical data.
+
+00:26:33.686 --> 00:26:35.407
+So do you help them like clean that
+
+00:26:35.508 --> 00:26:36.308
+up or anything?
+
+00:26:36.328 --> 00:26:37.390
+Because, man,
+
+00:26:37.450 --> 00:26:39.573
+I've seen so many contractors service
+
+00:26:39.613 --> 00:26:41.835
+Titan and it's just, it's like,
+
+00:26:41.914 --> 00:26:43.696
+I don't think I can really get valuable
+
+00:26:43.737 --> 00:26:44.597
+data out of this.
+
+00:26:44.897 --> 00:26:45.157
+Right.
+
+00:26:45.218 --> 00:26:48.220
+Especially if it's imported from a legacy
+
+00:26:48.259 --> 00:26:48.720
+system.
+
+00:26:48.839 --> 00:26:51.221
+So is there a way to help contractors
+
+00:26:51.280 --> 00:26:53.221
+get that so they can kind of understand
+
+00:26:53.241 --> 00:26:54.563
+where they are on the baseline?
+
+00:26:54.982 --> 00:26:55.703
+Yeah, for sure.
+
+00:26:55.864 --> 00:26:56.023
+Yeah.
+
+00:26:56.104 --> 00:26:58.345
+If it's if we don't have the knowledge
+
+00:26:58.384 --> 00:27:00.425
+in-house and we know the service side
+
+00:27:00.445 --> 00:27:00.806
+pretty well,
+
+00:27:00.846 --> 00:27:02.567
+but we are we are not service side
+
+00:27:02.606 --> 00:27:02.948
+integrators.
+
+00:27:02.968 --> 00:27:03.607
+We're not experts.
+
+00:27:04.008 --> 00:27:05.910
+So we've actually partnered with these
+
+00:27:06.230 --> 00:27:07.851
+success organizations and service
+
+00:27:07.871 --> 00:27:10.614
+integrators that will will pay for them to
+
+00:27:10.634 --> 00:27:12.315
+come in and do benchmark audits and set
+
+00:27:12.355 --> 00:27:13.675
+up like the initial benchmarking.
+
+00:27:14.497 --> 00:27:15.577
+And then we also pay for them to
+
+00:27:15.597 --> 00:27:17.700
+do the prelaunch audit to go make sure
+
+00:27:17.740 --> 00:27:18.720
+that everything's set up from an
+
+00:27:18.740 --> 00:27:19.601
+accounting standpoint,
+
+00:27:19.661 --> 00:27:20.961
+operational tagging, all that.
+
+00:27:21.323 --> 00:27:22.923
+So that when the program actually launches
+
+00:27:22.943 --> 00:27:23.443
+and runs,
+
+00:27:23.924 --> 00:27:25.925
+you can track it right and you can
+
+00:27:25.965 --> 00:27:28.208
+actually look at the operational
+
+00:27:28.228 --> 00:27:29.269
+activities and make sure everything's
+
+00:27:29.308 --> 00:27:29.890
+going the right way.
+
+00:27:30.410 --> 00:27:32.029
+Because you're right.
+
+00:27:34.050 --> 00:27:36.932
+Service Titan can be truly wonderful and
+
+00:27:36.971 --> 00:27:39.592
+it can be truly frustrating depending on
+
+00:27:39.612 --> 00:27:41.573
+the level of expertise you have in-house
+
+00:27:41.673 --> 00:27:43.813
+or that you've paid for or how you're
+
+00:27:43.833 --> 00:27:44.932
+set up.
+
+00:27:45.012 --> 00:27:46.034
+Yeah, for sure.
+
+00:27:46.334 --> 00:27:46.594
+I mean,
+
+00:27:46.993 --> 00:27:48.314
+that's probably why the Service Titan
+
+00:27:48.354 --> 00:27:50.414
+Hacks group exists and has ten thousand
+
+00:27:50.454 --> 00:27:51.095
+members, right?
+
+00:27:52.275 --> 00:27:54.076
+A little bit of the frustration that comes
+
+00:27:54.115 --> 00:27:54.596
+behind it.
+
+00:27:54.655 --> 00:27:58.676
+It's a behemoth and a lot of time
+
+00:27:58.717 --> 00:27:59.416
+is invested in
+
+00:28:00.176 --> 00:28:02.337
+uh by contractors to try to understand it
+
+00:28:02.518 --> 00:28:05.097
+right and get it get it optimized so
+
+00:28:05.458 --> 00:28:07.838
+that's nice that you that you help
+
+00:28:07.878 --> 00:28:09.618
+contractors with the service titan through
+
+00:28:09.659 --> 00:28:12.380
+that third party and really help them
+
+00:28:12.500 --> 00:28:14.980
+understand the membership programs i mean
+
+00:28:15.060 --> 00:28:17.381
+i never gosh i think that the way
+
+00:28:17.401 --> 00:28:19.201
+that i came up with my membership program
+
+00:28:19.221 --> 00:28:19.701
+is went
+
+00:28:20.342 --> 00:28:21.303
+How was that?
+
+00:28:21.323 --> 00:28:23.263
+I just looked at my competitor's website,
+
+00:28:23.364 --> 00:28:24.965
+saw what the features were and said,
+
+00:28:25.145 --> 00:28:26.287
+all right, we'll do it like that.
+
+00:28:26.707 --> 00:28:28.488
+And I just got killed on it.
+
+00:28:28.708 --> 00:28:29.769
+I just got killed on it.
+
+00:28:29.788 --> 00:28:31.210
+And you know what?
+
+00:28:31.250 --> 00:28:32.490
+You go back to it, David,
+
+00:28:33.071 --> 00:28:36.674
+where you spiff the ladies on the phone.
+
+00:28:36.795 --> 00:28:37.734
+I never did that.
+
+00:28:37.815 --> 00:28:40.257
+It was such a bad idea not to
+
+00:28:40.297 --> 00:28:40.718
+do that.
+
+00:28:40.738 --> 00:28:42.558
+Like you said,
+
+00:28:42.598 --> 00:28:44.621
+your first maintenance contracts were just
+
+00:28:44.701 --> 00:28:45.040
+looking.
+
+00:28:45.060 --> 00:28:46.281
+That's how we were too.
+
+00:28:46.301 --> 00:28:47.843
+We just pulled something out of thin air
+
+00:28:47.863 --> 00:28:48.564
+and was like, hey,
+
+00:28:48.584 --> 00:28:49.684
+let's see if this works.
+
+00:28:49.765 --> 00:28:49.865
+And
+
+00:28:50.825 --> 00:28:53.171
+And when we partnered with SmartAC and
+
+00:28:53.672 --> 00:28:55.096
+they gave us a whole new way to
+
+00:28:55.115 --> 00:28:56.680
+look at it and they helped us build
+
+00:28:56.759 --> 00:28:57.480
+out everything.
+
+00:28:57.521 --> 00:28:59.085
+And then I'm like, okay, well then let's,
+
+00:29:00.215 --> 00:29:02.317
+let's go and then building out the spiffs
+
+00:29:02.396 --> 00:29:03.917
+and the guys get spiffs,
+
+00:29:03.958 --> 00:29:04.939
+the girls get spiffs.
+
+00:29:04.979 --> 00:29:06.900
+So it's whoever sells it, gets it.
+
+00:29:08.760 --> 00:29:09.201
+And it's,
+
+00:29:09.280 --> 00:29:10.902
+it was a complete game changer the way
+
+00:29:10.942 --> 00:29:12.123
+they, they look at it.
+
+00:29:12.423 --> 00:29:13.983
+Smart AC looks at it a little different
+
+00:29:14.365 --> 00:29:16.586
+than what we do as contractors.
+
+00:29:16.625 --> 00:29:19.207
+So they've been great to work with helping
+
+00:29:19.247 --> 00:29:21.009
+us figure it all out and getting it
+
+00:29:21.068 --> 00:29:24.170
+all lined out and then help behind the
+
+00:29:24.210 --> 00:29:24.471
+scenes.
+
+00:29:24.510 --> 00:29:25.991
+If we have issues with it, it's,
+
+00:29:26.872 --> 00:29:29.614
+it's been, you know, we have our lady,
+
+00:29:29.653 --> 00:29:29.993
+we call,
+
+00:29:35.942 --> 00:29:36.757
+be done, she's on it.
+
+00:29:37.994 --> 00:29:39.596
+Do you have the integration with
+
+00:29:39.615 --> 00:29:40.636
+ServiceTitan set up?
+
+00:29:41.616 --> 00:29:42.218
+Yeah, yeah.
+
+00:29:42.238 --> 00:29:43.318
+So we can go in.
+
+00:29:43.338 --> 00:29:44.538
+That's what I was looking at earlier.
+
+00:29:45.099 --> 00:29:48.001
+So when the customer goes into the app
+
+00:29:48.041 --> 00:29:50.603
+and then they book the call through the
+
+00:29:50.643 --> 00:29:51.903
+SmartAC app,
+
+00:29:52.605 --> 00:29:55.066
+it automatically books straight over into
+
+00:29:55.105 --> 00:29:55.707
+ServiceTitan.
+
+00:29:56.106 --> 00:29:58.469
+So it's populated in there and ready to
+
+00:29:58.528 --> 00:29:58.788
+go.
+
+00:29:58.888 --> 00:30:00.130
+So all we have to do is just
+
+00:30:00.150 --> 00:30:02.490
+confirm it, make sure everything's there,
+
+00:30:02.751 --> 00:30:04.313
+and schedule it.
+
+00:30:07.994 --> 00:30:09.455
+nerds, stuff like that,
+
+00:30:09.856 --> 00:30:13.019
+it automatically moves those into Service
+
+00:30:13.039 --> 00:30:16.222
+Titan so that in the mornings, the CSRs,
+
+00:30:16.242 --> 00:30:19.145
+they see all those and they reaching out
+
+00:30:19.185 --> 00:30:19.967
+to those customers.
+
+00:30:20.652 --> 00:30:22.452
+Kind of like drops in as a booking
+
+00:30:22.492 --> 00:30:23.993
+notification, like a web.
+
+00:30:24.894 --> 00:30:26.296
+Middle of the night, whatever,
+
+00:30:26.455 --> 00:30:27.616
+even like I was saying earlier,
+
+00:30:27.636 --> 00:30:28.217
+the customer,
+
+00:30:28.237 --> 00:30:29.798
+if they go in and book it, it's,
+
+00:30:29.938 --> 00:30:31.358
+it's automatically dropped in.
+
+00:30:31.459 --> 00:30:33.299
+They don't have to go to smart AC
+
+00:30:33.359 --> 00:30:35.461
+dashboard and get all that,
+
+00:30:35.582 --> 00:30:36.722
+drag it over here.
+
+00:30:36.962 --> 00:30:38.963
+It's just moves right in.
+
+00:30:39.785 --> 00:30:41.465
+And then you have all your info is
+
+00:30:41.506 --> 00:30:42.026
+already there.
+
+00:30:42.666 --> 00:30:44.567
+You have the branded app or is it
+
+00:30:44.587 --> 00:30:45.407
+the smart AC one?
+
+00:30:45.468 --> 00:30:46.888
+Or is it the one that's branded with
+
+00:30:46.909 --> 00:30:47.769
+your logo on it?
+
+00:30:48.615 --> 00:30:50.037
+It's got our logo and everything.
+
+00:30:50.057 --> 00:30:50.297
+Yeah.
+
+00:30:51.739 --> 00:30:51.979
+Yeah.
+
+00:30:52.019 --> 00:30:52.880
+It's pretty cool, man.
+
+00:30:52.920 --> 00:30:53.921
+I felt,
+
+00:30:53.941 --> 00:30:56.924
+I felt like talking about the marketing
+
+00:30:56.964 --> 00:30:57.425
+side of it.
+
+00:30:57.526 --> 00:30:59.768
+I mean, yeah, now you're in their phone.
+
+00:30:59.969 --> 00:31:02.531
+You actually take up real estate on their
+
+00:31:02.551 --> 00:31:02.852
+phone.
+
+00:31:03.472 --> 00:31:05.474
+So you're right there every day.
+
+00:31:05.734 --> 00:31:06.777
+They look at through their phone.
+
+00:31:06.836 --> 00:31:07.237
+If, if,
+
+00:31:08.310 --> 00:31:10.335
+it's there and they just click it and
+
+00:31:10.355 --> 00:31:10.855
+you're done.
+
+00:31:10.875 --> 00:31:12.961
+So there's no more ad spend for that
+
+00:31:13.000 --> 00:31:15.946
+customer to call through Google or
+
+00:31:16.086 --> 00:31:18.070
+Facebook or wherever you're advertising,
+
+00:31:18.111 --> 00:31:19.554
+Yelp, all that stuff.
+
+00:31:20.201 --> 00:31:22.804
+you guys um use like the push
+
+00:31:22.844 --> 00:31:25.346
+notifications for sending out maintenance
+
+00:31:25.385 --> 00:31:28.008
+reminders or specials or anything like
+
+00:31:28.028 --> 00:31:29.328
+that or do you kind of just use
+
+00:31:29.368 --> 00:31:31.810
+it more as a way that the customer
+
+00:31:31.851 --> 00:31:33.811
+communicates back to you when they have an
+
+00:31:33.852 --> 00:31:36.993
+issue a lot of it is customer coming
+
+00:31:37.034 --> 00:31:40.557
+to us um we'll use it for you
+
+00:31:40.576 --> 00:31:42.479
+know to to try to trigger if we
+
+00:31:42.519 --> 00:31:43.980
+need to get a hold of that customer
+
+00:31:45.540 --> 00:31:46.942
+Service Titan takes a lot of care of
+
+00:31:46.981 --> 00:31:47.882
+a lot of that stuff,
+
+00:31:47.922 --> 00:31:49.482
+like maintenance reminders and stuff.
+
+00:31:49.522 --> 00:31:50.942
+We have all that set up with emails
+
+00:31:51.383 --> 00:31:51.963
+via there.
+
+00:31:52.003 --> 00:31:56.424
+But if the customers aren't responding or
+
+00:31:56.484 --> 00:31:58.465
+receptive to all of our avenues,
+
+00:31:59.086 --> 00:32:02.166
+then we'll use everything to try to get
+
+00:32:02.186 --> 00:32:02.607
+them in there.
+
+00:32:02.627 --> 00:32:03.968
+Because you always get the phone calls
+
+00:32:04.008 --> 00:32:04.387
+where, hey,
+
+00:32:04.468 --> 00:32:07.028
+I never got this or you never did
+
+00:32:07.068 --> 00:32:07.489
+this.
+
+00:32:08.109 --> 00:32:11.411
+So we try to eliminate all that the
+
+00:32:11.431 --> 00:32:11.891
+best we can.
+
+00:32:14.799 --> 00:32:16.559
+Do you have your techs install them or
+
+00:32:16.579 --> 00:32:18.080
+do you have the installers install them
+
+00:32:18.121 --> 00:32:18.901
+like the sensors?
+
+00:32:19.361 --> 00:32:20.682
+So we leave it all to the techs.
+
+00:32:21.521 --> 00:32:22.563
+So the technicians,
+
+00:32:22.663 --> 00:32:25.284
+they keep the kits on their trucks.
+
+00:32:25.304 --> 00:32:29.125
+She keeps like four or five kits on
+
+00:32:29.185 --> 00:32:29.786
+every truck.
+
+00:32:31.886 --> 00:32:33.446
+So the service guys will go out on
+
+00:32:33.527 --> 00:32:35.268
+new systems, service guys go out,
+
+00:32:35.627 --> 00:32:36.608
+commission the system,
+
+00:32:36.628 --> 00:32:37.729
+make sure it's all working like it's
+
+00:32:37.749 --> 00:32:39.109
+supposed to, install that.
+
+00:32:40.211 --> 00:32:44.476
+uh install the smart ac get the customer
+
+00:32:44.496 --> 00:32:46.438
+to download the app walk them through the
+
+00:32:46.498 --> 00:32:48.621
+entire setup so they'll make sure that
+
+00:32:48.641 --> 00:32:50.403
+they can log into the app make sure
+
+00:32:50.423 --> 00:32:52.625
+they set it up make sure they understand
+
+00:32:52.644 --> 00:32:56.148
+how to use it before they leave yeah
+
+00:32:56.368 --> 00:32:58.392
+for sure that makes sense um
+
+00:32:59.320 --> 00:33:01.622
+So one of the things that we used
+
+00:33:01.662 --> 00:33:03.583
+to do in our membership, again,
+
+00:33:03.623 --> 00:33:05.463
+this was just copy and paste from our
+
+00:33:05.523 --> 00:33:06.265
+competitors.
+
+00:33:07.585 --> 00:33:09.767
+We would give a two hundred and fifty
+
+00:33:09.807 --> 00:33:13.689
+dollars off of a replacement AC or furnace
+
+00:33:13.808 --> 00:33:15.809
+and five hundred dollars off a replacement
+
+00:33:16.009 --> 00:33:16.910
+full system.
+
+00:33:17.490 --> 00:33:18.770
+But then when I went to Smart AC,
+
+00:33:18.790 --> 00:33:20.451
+there's another thing I didn't know.
+
+00:33:20.692 --> 00:33:23.253
+They have these credits that a customer
+
+00:33:23.273 --> 00:33:24.894
+would build up in their app.
+
+00:33:25.674 --> 00:33:28.316
+And so SmartAC helped me figure out how
+
+00:33:28.355 --> 00:33:31.816
+to convert that dollar amount into credits
+
+00:33:32.316 --> 00:33:32.896
+in the app.
+
+00:33:33.416 --> 00:33:36.176
+And how do you use those credits?
+
+00:33:36.436 --> 00:33:37.877
+We call them polycredits.
+
+00:33:38.337 --> 00:33:38.778
+What's that?
+
+00:33:39.218 --> 00:33:40.577
+We call them polycredits.
+
+00:33:40.958 --> 00:33:41.278
+Yeah.
+
+00:33:41.538 --> 00:33:43.939
+And so you'll get a bonus,
+
+00:33:44.098 --> 00:33:44.979
+sign up bonus,
+
+00:33:45.338 --> 00:33:48.779
+depending on which level you sign up for.
+
+00:33:49.599 --> 00:33:51.541
+and then every month that you're on the
+
+00:33:51.602 --> 00:33:54.244
+on the program you get x amount of
+
+00:33:54.546 --> 00:33:57.989
+of points to that and so the app
+
+00:33:58.009 --> 00:34:01.112
+keeps up with everything app service titan
+
+00:34:01.313 --> 00:34:02.933
+actually integrates in there too so we can
+
+00:34:02.953 --> 00:34:04.435
+go in their service titan and see their
+
+00:34:04.455 --> 00:34:07.558
+account balance there too oh it's pretty
+
+00:34:07.578 --> 00:34:08.721
+neat um
+
+00:34:10.224 --> 00:34:12.525
+So what we do is any service over
+
+00:34:12.565 --> 00:34:13.485
+five hundred dollars,
+
+00:34:14.186 --> 00:34:16.606
+we let the customer use those credits for
+
+00:34:16.666 --> 00:34:18.806
+anything, whether it's duct cleaning,
+
+00:34:19.766 --> 00:34:23.068
+IAQ products, new system, whatever it be.
+
+00:34:23.728 --> 00:34:25.847
+Like right now, we're running ads for,
+
+00:34:25.987 --> 00:34:26.168
+you know,
+
+00:34:26.208 --> 00:34:28.208
+dryer vent cleaning with all the winter
+
+00:34:28.248 --> 00:34:31.009
+time, everybody running their clothes,
+
+00:34:31.048 --> 00:34:33.170
+heavy loads of clothes, doing dryer vents.
+
+00:34:33.210 --> 00:34:34.429
+We've had people, hey,
+
+00:34:34.449 --> 00:34:35.869
+can I use my credits for that?
+
+00:34:36.349 --> 00:34:36.791
+That's fine.
+
+00:34:37.010 --> 00:34:38.610
+Let's use them.
+
+00:34:39.637 --> 00:34:41.798
+makes them you're giving something back to
+
+00:34:41.818 --> 00:34:44.000
+them yeah instead of just discounting
+
+00:34:44.039 --> 00:34:46.322
+stuff hey if you buy from me i'll
+
+00:34:46.342 --> 00:34:50.204
+give you these uh but it accumulates up
+
+00:34:50.684 --> 00:34:52.766
+i've had some customers go in and spend
+
+00:34:53.748 --> 00:34:56.909
+thousands more dollars with me because
+
+00:34:57.210 --> 00:34:58.731
+they had a two hundred and fifty dollar
+
+00:34:58.751 --> 00:35:01.413
+credit bonus you know they'll spend two or
+
+00:35:01.432 --> 00:35:03.775
+three thousand dollars and use the two
+
+00:35:03.795 --> 00:35:06.177
+hundred and fifty so i mean like a
+
+00:35:06.217 --> 00:35:07.697
+gift card right they almost feel like they
+
+00:35:07.757 --> 00:35:08.599
+have to use it
+
+00:35:09.221 --> 00:35:09.440
+Right.
+
+00:35:09.501 --> 00:35:09.900
+Yeah.
+
+00:35:09.960 --> 00:35:10.221
+Yeah.
+
+00:35:10.460 --> 00:35:13.222
+And then along with that, you know,
+
+00:35:13.722 --> 00:35:14.842
+on our top tier plan,
+
+00:35:14.882 --> 00:35:20.164
+we also offer filter credits so they get
+
+00:35:20.443 --> 00:35:21.923
+X amount of dollars.
+
+00:35:22.583 --> 00:35:24.304
+They can they can order their filters.
+
+00:35:24.324 --> 00:35:25.885
+You can order your filters at any time
+
+00:35:25.905 --> 00:35:26.565
+through the app.
+
+00:35:27.664 --> 00:35:30.085
+But we give them a discount on the
+
+00:35:30.126 --> 00:35:30.905
+filters as well.
+
+00:35:33.449 --> 00:35:34.170
+Yeah, that's right.
+
+00:35:34.570 --> 00:35:36.090
+So it keeps them from going to Home
+
+00:35:36.110 --> 00:35:38.971
+Depot or Lowe's and going down the filter
+
+00:35:39.072 --> 00:35:40.452
+aisle because we all know who's standing
+
+00:35:40.492 --> 00:35:41.791
+at the end of the filter aisle is
+
+00:35:42.331 --> 00:35:44.733
+the Home Depot AC salesman trying to sell.
+
+00:35:46.213 --> 00:35:46.913
+Yeah,
+
+00:35:46.972 --> 00:35:49.414
+with a nine dollar ninety five cent tune
+
+00:35:49.474 --> 00:35:49.614
+up.
+
+00:35:49.773 --> 00:35:51.653
+Right.
+
+00:35:51.693 --> 00:35:53.755
+Somebody posted that and I was like nine
+
+00:35:53.775 --> 00:35:54.014
+dollars.
+
+00:35:54.054 --> 00:35:54.335
+Yeah.
+
+00:35:55.155 --> 00:35:55.416
+It's like,
+
+00:35:55.456 --> 00:35:56.677
+I got to get this high out here.
+
+00:35:56.697 --> 00:35:56.876
+Right.
+
+00:35:56.916 --> 00:36:00.079
+I want to see what his conversion rate
+
+00:36:00.159 --> 00:36:00.360
+is.
+
+00:36:00.420 --> 00:36:00.661
+Right.
+
+00:36:01.541 --> 00:36:02.461
+Yeah.
+
+00:36:02.902 --> 00:36:04.344
+Everybody gets one no matter what.
+
+00:36:04.364 --> 00:36:05.125
+Right.
+
+00:36:05.224 --> 00:36:06.206
+Yeah.
+
+00:36:06.286 --> 00:36:06.445
+Yeah.
+
+00:36:06.465 --> 00:36:09.188
+Those credits are pretty good idea.
+
+00:36:09.228 --> 00:36:09.449
+Do you,
+
+00:36:09.588 --> 00:36:13.333
+do you still give discounts on the front
+
+00:36:13.413 --> 00:36:13.552
+end?
+
+00:36:13.572 --> 00:36:14.713
+Like when they purchased the,
+
+00:36:15.514 --> 00:36:17.235
+the maintenance plan the smart ac or do
+
+00:36:17.275 --> 00:36:19.818
+you um just give the deal with the
+
+00:36:19.898 --> 00:36:21.518
+on the credit side if that makes sense
+
+00:36:21.559 --> 00:36:23.440
+so so the it's the monthly they can
+
+00:36:23.480 --> 00:36:25.581
+pay all up front if they want to
+
+00:36:25.702 --> 00:36:27.463
+monthly payments and then it's just that
+
+00:36:27.483 --> 00:36:30.085
+flat and then you know for any repairs
+
+00:36:30.125 --> 00:36:31.945
+or anything we have discounts built in
+
+00:36:32.246 --> 00:36:35.947
+ours is a discount on repairs um and
+
+00:36:35.967 --> 00:36:37.389
+then they get a sign up bonus so
+
+00:36:37.409 --> 00:36:40.190
+if there's any major repairs that's there
+
+00:36:41.052 --> 00:36:42.713
+for really for first-time customers that
+
+00:36:42.733 --> 00:36:43.914
+are calling you with a problem
+
+00:36:44.813 --> 00:36:46.514
+and they sign up with your maintenance,
+
+00:36:46.554 --> 00:36:49.016
+you give them the sign up bonus and
+
+00:36:49.036 --> 00:36:51.778
+the different things to show them and get
+
+00:36:51.798 --> 00:36:54.199
+them moving on the plan and lock that
+
+00:36:54.239 --> 00:36:54.900
+customer in.
+
+00:36:56.322 --> 00:36:57.541
+When you switched over to this,
+
+00:36:57.561 --> 00:37:00.664
+did you change your plans at all or
+
+00:37:00.985 --> 00:37:02.686
+were they kind of the same?
+
+00:37:03.284 --> 00:37:05.746
+um we changed them a little bit our
+
+00:37:05.786 --> 00:37:07.586
+pricing actually went up we're actually
+
+00:37:07.626 --> 00:37:10.208
+more expensive than we were before which
+
+00:37:11.048 --> 00:37:12.650
+everybody was kind of like we can't go
+
+00:37:12.730 --> 00:37:15.891
+up people are you know complaining of the
+
+00:37:15.931 --> 00:37:18.072
+price already and there are other people
+
+00:37:18.112 --> 00:37:21.233
+in my area that do it cheaper yeah
+
+00:37:21.574 --> 00:37:22.034
+and i'm like
+
+00:37:22.931 --> 00:37:23.932
+we have a better product.
+
+00:37:24.313 --> 00:37:24.634
+We're better.
+
+00:37:24.653 --> 00:37:25.835
+You're always going to have that though,
+
+00:37:25.855 --> 00:37:26.014
+right?
+
+00:37:26.034 --> 00:37:27.456
+There's always somebody who'll do it
+
+00:37:27.516 --> 00:37:27.858
+cheaper,
+
+00:37:27.918 --> 00:37:29.199
+even though it's not the same thing.
+
+00:37:29.760 --> 00:37:31.302
+Yeah, it's a better product.
+
+00:37:31.362 --> 00:37:31.902
+It's better.
+
+00:37:32.123 --> 00:37:33.405
+We're a little bit more expensive,
+
+00:37:33.465 --> 00:37:35.007
+but there's more bells and whistles.
+
+00:37:35.768 --> 00:37:37.250
+And, you know,
+
+00:37:37.269 --> 00:37:39.291
+like on our top tier plan,
+
+00:37:42.833 --> 00:37:43.954
+You talked about it.
+
+00:37:44.215 --> 00:37:46.737
+I knew that dog would start barking.
+
+00:37:46.938 --> 00:37:47.418
+I knew it.
+
+00:37:47.898 --> 00:37:51.201
+You talked about it.
+
+00:37:51.240 --> 00:37:52.382
+On our top tier plan,
+
+00:37:52.503 --> 00:37:56.846
+we offer lifetime repairs on lifetime
+
+00:37:56.885 --> 00:37:57.867
+warranty on repairs.
+
+00:38:00.409 --> 00:38:01.990
+As long as they stay on plan,
+
+00:38:02.670 --> 00:38:04.952
+if you pay me to change a condenser
+
+00:38:04.972 --> 00:38:05.594
+fan motor,
+
+00:38:06.815 --> 00:38:08.416
+you'll never pay for that fan motor again
+
+00:38:08.456 --> 00:38:10.217
+as long as you stay on our maintenance
+
+00:38:10.237 --> 00:38:10.338
+plan.
+
+00:38:11.487 --> 00:38:12.989
+Even if it goes out five years from
+
+00:38:13.048 --> 00:38:15.269
+now, you know, we'll change it free,
+
+00:38:15.590 --> 00:38:16.130
+parts and labor.
+
+00:38:16.170 --> 00:38:19.311
+As long as you didn't miss any repairs,
+
+00:38:19.693 --> 00:38:21.313
+any monthly payments.
+
+00:38:22.014 --> 00:38:23.153
+Yeah, that makes sense.
+
+00:38:23.173 --> 00:38:23.655
+What happens,
+
+00:38:25.536 --> 00:38:26.715
+do you like go back and get the
+
+00:38:26.755 --> 00:38:28.496
+sensors if they miss the payments or...
+
+00:38:32.556 --> 00:38:34.338
+You haven't had a lot of cancellations.
+
+00:38:35.478 --> 00:38:36.139
+We've had a few.
+
+00:38:36.259 --> 00:38:37.059
+People move.
+
+00:38:37.300 --> 00:38:38.541
+People do different things.
+
+00:38:39.420 --> 00:38:42.083
+I try to get the new homeowners
+
+00:38:42.123 --> 00:38:44.125
+information, try to make it transferable.
+
+00:38:44.784 --> 00:38:44.885
+Hey,
+
+00:38:44.905 --> 00:38:47.967
+we'll just let the new homeowners have it
+
+00:38:48.588 --> 00:38:50.168
+just to keep up with them.
+
+00:38:51.530 --> 00:38:53.811
+I've had a few.
+
+00:38:54.431 --> 00:38:56.373
+We do have a cancellation fee.
+
+00:38:56.793 --> 00:38:58.235
+Mm-hmm.
+
+00:39:00.891 --> 00:39:02.211
+So at that point, I'm like,
+
+00:39:02.853 --> 00:39:04.054
+just let me have my gear back.
+
+00:39:04.594 --> 00:39:05.494
+No questions asked.
+
+00:39:05.514 --> 00:39:06.295
+Let me come get it.
+
+00:39:06.436 --> 00:39:08.476
+We won't pressure you in anything.
+
+00:39:08.557 --> 00:39:11.980
+We mutually agree to part ways.
+
+00:39:12.521 --> 00:39:13.342
+Go get the equipment.
+
+00:39:13.362 --> 00:39:14.262
+We'll bring it back.
+
+00:39:15.262 --> 00:39:16.704
+And I think we figured out a way
+
+00:39:16.744 --> 00:39:18.686
+to just repurpose the equipment.
+
+00:39:18.726 --> 00:39:23.110
+We'll clear it all out and redistribute it
+
+00:39:23.130 --> 00:39:23.769
+somewhere else.
+
+00:39:23.829 --> 00:39:25.271
+As long as everything's working and we got
+
+00:39:25.311 --> 00:39:25.911
+everything there.
+
+00:39:25.931 --> 00:39:27.032
+Yeah.
+
+00:39:27.768 --> 00:39:28.887
+I hate that.
+
+00:39:28.947 --> 00:39:30.608
+I've even gone to the point where some
+
+00:39:30.648 --> 00:39:31.809
+people have like, well,
+
+00:39:31.829 --> 00:39:33.548
+we didn't really use it or we didn't
+
+00:39:33.568 --> 00:39:34.208
+see the value.
+
+00:39:34.228 --> 00:39:34.730
+And I'm like, hey,
+
+00:39:34.750 --> 00:39:36.329
+keep it for another year for free.
+
+00:39:36.550 --> 00:39:38.030
+Let's just try it.
+
+00:39:38.050 --> 00:39:39.990
+Because I mean,
+
+00:39:40.030 --> 00:39:42.331
+at least then I'm still with that
+
+00:39:42.371 --> 00:39:42.751
+customer.
+
+00:39:42.831 --> 00:39:43.610
+I didn't lose them.
+
+00:39:44.871 --> 00:39:46.992
+I know you're going to lose that money,
+
+00:39:47.052 --> 00:39:49.813
+but I'd rather play long term.
+
+00:39:49.932 --> 00:39:51.072
+Like we talked about earlier,
+
+00:39:51.152 --> 00:39:53.313
+I want to keep them for years,
+
+00:39:53.414 --> 00:39:54.173
+two or three years.
+
+00:39:54.534 --> 00:39:55.514
+I want to stay long term.
+
+00:39:56.226 --> 00:39:57.266
+Yeah.
+
+00:39:57.346 --> 00:39:59.847
+And I think about that, like when I,
+
+00:40:00.047 --> 00:40:02.648
+so I added plumbing to my HVAC company,
+
+00:40:03.449 --> 00:40:04.048
+let's see,
+
+00:40:04.088 --> 00:40:06.489
+when I was maybe eight years in and
+
+00:40:06.570 --> 00:40:08.130
+I looked at it and I was like,
+
+00:40:08.951 --> 00:40:11.052
+man, if I would have had more members,
+
+00:40:11.112 --> 00:40:13.413
+that would have been a great plumbing
+
+00:40:13.572 --> 00:40:14.793
+opportunities right there.
+
+00:40:14.853 --> 00:40:15.273
+Now, I mean,
+
+00:40:15.353 --> 00:40:17.134
+I had the list of customers that I
+
+00:40:17.153 --> 00:40:18.715
+could reach out to,
+
+00:40:18.815 --> 00:40:20.615
+but when they're a member,
+
+00:40:20.675 --> 00:40:23.376
+it's a totally different feeling, right?
+
+00:40:23.436 --> 00:40:24.898
+Or a totally different relationship you
+
+00:40:24.918 --> 00:40:25.197
+have.
+
+00:40:27.980 --> 00:40:29.721
+Then your lifetime value of the customer
+
+00:40:29.760 --> 00:40:31.583
+increases because you add water heaters
+
+00:40:31.623 --> 00:40:33.324
+and all their plumbing and underground and
+
+00:40:33.364 --> 00:40:33.804
+everything.
+
+00:40:34.284 --> 00:40:37.128
+So that graph that I showed just goes
+
+00:40:37.367 --> 00:40:41.291
+up at a serious rate to do multiple
+
+00:40:41.411 --> 00:40:41.831
+trades.
+
+00:40:41.891 --> 00:40:43.413
+So that's, again,
+
+00:40:43.773 --> 00:40:46.096
+why the retention is so important.
+
+00:40:46.833 --> 00:40:47.994
+Well, that's why I've talked to you.
+
+00:40:48.014 --> 00:40:49.815
+You could take extra water sensors and add
+
+00:40:49.835 --> 00:40:50.416
+them onto it.
+
+00:40:50.436 --> 00:40:51.556
+You can put them in the water heater
+
+00:40:51.617 --> 00:40:51.896
+pans.
+
+00:40:51.916 --> 00:40:53.237
+You can put them under kitchen sinks.
+
+00:40:53.257 --> 00:40:54.418
+You can put them anywhere that there's
+
+00:40:54.478 --> 00:40:57.619
+water or had been water issues.
+
+00:40:57.639 --> 00:40:58.260
+Yeah.
+
+00:40:58.280 --> 00:40:59.061
+When you label them,
+
+00:40:59.440 --> 00:41:01.483
+if you've got plumbing, plumbing business,
+
+00:41:01.543 --> 00:41:02.862
+or the customer just wants to know,
+
+00:41:04.023 --> 00:41:04.423
+got that,
+
+00:41:04.463 --> 00:41:07.266
+or even if you're in freeze areas there,
+
+00:41:07.346 --> 00:41:07.865
+you know, the, the,
+
+00:41:08.266 --> 00:41:09.606
+the sensors will tell you it's about to
+
+00:41:09.626 --> 00:41:10.467
+freeze in the attic.
+
+00:41:11.445 --> 00:41:12.545
+We got a lot of it at first
+
+00:41:12.606 --> 00:41:13.905
+until we dialed it in and we're like,
+
+00:41:13.925 --> 00:41:14.505
+what are these?
+
+00:41:15.007 --> 00:41:16.746
+And then we first got on it and
+
+00:41:16.786 --> 00:41:18.708
+we're like, oh, that's what that is.
+
+00:41:18.748 --> 00:41:19.849
+We don't need that down here.
+
+00:41:19.889 --> 00:41:22.050
+I mean, we don't, temperatures dropping,
+
+00:41:22.110 --> 00:41:25.070
+but it wasn't that important for the
+
+00:41:25.090 --> 00:41:25.550
+customers.
+
+00:41:25.570 --> 00:41:26.391
+They were getting alerts.
+
+00:41:26.411 --> 00:41:26.952
+We're like, okay,
+
+00:41:26.972 --> 00:41:28.873
+we'll tweak it and get rid of that.
+
+00:41:29.512 --> 00:41:31.554
+But that's, I mean, added value.
+
+00:41:31.753 --> 00:41:33.295
+We can tell you if it's a vacation
+
+00:41:33.355 --> 00:41:34.735
+home, hey, it's getting cold down here.
+
+00:41:35.175 --> 00:41:36.175
+Your pipes are going to freeze.
+
+00:41:37.409 --> 00:41:38.190
+Yeah, for sure.
+
+00:41:38.429 --> 00:41:39.992
+Well, where's your company located?
+
+00:41:40.032 --> 00:41:41.172
+You probably don't have a lot of that.
+
+00:41:41.213 --> 00:41:42.153
+You said you're in Texas.
+
+00:41:42.173 --> 00:41:44.034
+No, we're in Houston.
+
+00:41:44.096 --> 00:41:45.657
+I'm about an hour south of Houston,
+
+00:41:45.697 --> 00:41:48.199
+but I do go into Houston for stuff.
+
+00:41:48.500 --> 00:41:49.800
+We're down on the coast.
+
+00:41:50.342 --> 00:41:51.483
+Houston, Galveston.
+
+00:41:52.063 --> 00:41:53.324
+We're to the left of Galveston,
+
+00:41:53.344 --> 00:41:56.387
+straight down Lake Jackson, Freeport.
+
+00:41:56.907 --> 00:41:57.809
+Clueda's home base.
+
+00:41:59.297 --> 00:42:00.978
+Yeah, that's awesome.
+
+00:42:01.077 --> 00:42:02.659
+So yeah, I'm in South Florida,
+
+00:42:02.699 --> 00:42:03.619
+but my AC,
+
+00:42:03.739 --> 00:42:05.798
+my heating and AC company was in Columbus,
+
+00:42:05.858 --> 00:42:06.278
+Ohio.
+
+00:42:06.378 --> 00:42:07.780
+So didn't have, like I said,
+
+00:42:07.800 --> 00:42:09.039
+didn't have to worry about the water
+
+00:42:09.139 --> 00:42:09.980
+issues up there.
+
+00:42:10.500 --> 00:42:11.360
+There was plumbing issues,
+
+00:42:11.400 --> 00:42:14.780
+but there wasn't all of these air handlers
+
+00:42:14.800 --> 00:42:16.920
+that were leaking water all into the drain
+
+00:42:16.940 --> 00:42:18.922
+plant drain pan like they have down here.
+
+00:42:19.101 --> 00:42:22.762
+So I see so many comments in our
+
+00:42:22.902 --> 00:42:24.802
+community Facebook group about that.
+
+00:42:26.322 --> 00:42:27.884
+And so I just think like, hey,
+
+00:42:27.963 --> 00:42:29.403
+smart AC would have sent out an alert
+
+00:42:29.423 --> 00:42:31.545
+and you can get- You almost have to
+
+00:42:31.585 --> 00:42:34.646
+have in our climate, Florida, Texas,
+
+00:42:35.726 --> 00:42:38.586
+a sheet rocker on payroll.
+
+00:42:38.626 --> 00:42:41.367
+Sometimes, not only for water,
+
+00:42:41.387 --> 00:42:44.048
+but just guys accidentally hitting the
+
+00:42:44.068 --> 00:42:46.349
+sheet rock, being clumsy in a hurry.
+
+00:42:47.523 --> 00:42:49.083
+running thermostat wire,
+
+00:42:49.224 --> 00:42:51.585
+falling through ceilings, you know,
+
+00:42:56.150 --> 00:42:57.550
+I fell through a few.
+
+00:42:57.570 --> 00:42:57.791
+Have you?
+
+00:42:57.811 --> 00:42:57.990
+Yeah.
+
+00:42:58.010 --> 00:42:58.851
+It's not funny, but yeah.
+
+00:42:58.871 --> 00:42:59.112
+Awesome.
+
+00:42:59.132 --> 00:43:04.856
+So yeah, man, I'm, you know,
+
+00:43:04.896 --> 00:43:06.898
+that's great that you're able to grow your
+
+00:43:06.938 --> 00:43:07.798
+memberships like that.
+
+00:43:07.818 --> 00:43:09.000
+I'm sure it's really going to be,
+
+00:43:09.480 --> 00:43:11.400
+it's really been awesome for your business
+
+00:43:11.481 --> 00:43:13.443
+and keep it up and everything.
+
+00:43:13.722 --> 00:43:14.463
+And, uh,
+
+00:43:15.579 --> 00:43:17.460
+If any of the listeners want to learn
+
+00:43:17.481 --> 00:43:19.541
+a little bit more about SmartAC and how
+
+00:43:19.561 --> 00:43:19.963
+it works,
+
+00:43:20.023 --> 00:43:21.784
+I'm going to send you guys a link
+
+00:43:21.804 --> 00:43:22.503
+through the email,
+
+00:43:22.523 --> 00:43:25.405
+everybody that was on the call today live
+
+00:43:25.646 --> 00:43:27.226
+and everyone that registered.
+
+00:43:27.766 --> 00:43:29.228
+And Andy,
+
+00:43:29.447 --> 00:43:31.909
+when they put their information into that,
+
+00:43:32.030 --> 00:43:33.451
+what does SmartAC do?
+
+00:43:33.490 --> 00:43:34.451
+What are you guys going to give them
+
+00:43:34.650 --> 00:43:35.152
+or show them?
+
+00:43:37.150 --> 00:43:37.831
+That's a good question.
+
+00:43:37.851 --> 00:43:40.532
+I probably should have aligned with my
+
+00:43:40.592 --> 00:43:41.434
+marketing team for this.
+
+00:43:41.813 --> 00:43:42.335
+So it depends.
+
+00:43:42.755 --> 00:43:45.358
+If it's a link to our landing page,
+
+00:43:45.617 --> 00:43:47.018
+there'll be an area where they can book
+
+00:43:47.679 --> 00:43:48.300
+directly through that.
+
+00:43:48.340 --> 00:43:49.481
+They can book a demo and one of
+
+00:43:49.501 --> 00:43:50.422
+our people will get on with them.
+
+00:43:51.322 --> 00:43:52.965
+If it's just the information, they say,
+
+00:43:53.045 --> 00:43:53.885
+I'm interested in learning more,
+
+00:43:53.925 --> 00:43:55.867
+then it'll be one of our account
+
+00:43:55.887 --> 00:43:57.048
+executives that will reach out and
+
+00:43:57.489 --> 00:43:59.070
+Talk to them and just do a little
+
+00:43:59.090 --> 00:44:01.313
+discovery and say what interested you or
+
+00:44:01.434 --> 00:44:02.474
+what's the state of your business?
+
+00:44:02.494 --> 00:44:03.996
+What are your primary concerns and pain
+
+00:44:04.036 --> 00:44:04.358
+points?
+
+00:44:05.039 --> 00:44:06.840
+Because everyone's different, right?
+
+00:44:07.201 --> 00:44:09.985
+I'll talk to someone really in thirty
+
+00:44:10.025 --> 00:44:10.846
+minutes that will say,
+
+00:44:11.045 --> 00:44:12.047
+I can't sell memberships.
+
+00:44:12.088 --> 00:44:13.088
+My conversion is terrible,
+
+00:44:13.108 --> 00:44:13.690
+but they love me.
+
+00:44:14.190 --> 00:44:15.851
+And then the very next call will be,
+
+00:44:16.271 --> 00:44:17.311
+I'm amazing at selling them,
+
+00:44:17.331 --> 00:44:19.393
+but I'm losing fifty percent every twelve
+
+00:44:19.414 --> 00:44:20.094
+to eighteen months.
+
+00:44:20.114 --> 00:44:20.273
+Right.
+
+00:44:20.755 --> 00:44:21.875
+Everybody's got a different thing.
+
+00:44:21.894 --> 00:44:24.036
+And so it's a part of that discovery
+
+00:44:24.056 --> 00:44:25.657
+to say, what can we help you with?
+
+00:44:26.938 --> 00:44:27.679
+And yeah,
+
+00:44:27.699 --> 00:44:30.621
+each business is in a different place.
+
+00:44:30.681 --> 00:44:31.001
+Perfect.
+
+00:44:31.061 --> 00:44:32.503
+I'm going to I'm going to pull these
+
+00:44:32.523 --> 00:44:34.744
+comments up on screen if you guys can
+
+00:44:34.844 --> 00:44:35.425
+see them.
+
+00:44:36.144 --> 00:44:38.206
+Let me kind of minimize this.
+
+00:44:38.226 --> 00:44:41.748
+OK, here we go.
+
+00:44:43.242 --> 00:44:44.923
+All right, so here's what we got.
+
+00:44:47.465 --> 00:44:48.427
+Go through some of those.
+
+00:44:48.766 --> 00:44:50.007
+So Christina asks,
+
+00:44:50.047 --> 00:44:52.989
+is SmartAC an actual system or is this
+
+00:44:53.010 --> 00:44:55.532
+a feature that's added to new unit
+
+00:44:55.572 --> 00:44:56.233
+installs?
+
+00:44:57.293 --> 00:44:57.413
+Andy,
+
+00:44:57.532 --> 00:44:59.514
+do you want to answer that for Christina?
+
+00:44:59.534 --> 00:44:59.693
+Sure.
+
+00:45:00.114 --> 00:45:00.514
+Yeah,
+
+00:45:00.634 --> 00:45:03.994
+it's a complete independent hardware and
+
+00:45:04.054 --> 00:45:05.255
+software platform.
+
+00:45:06.036 --> 00:45:07.916
+It's a set of sensors that get added.
+
+00:45:08.715 --> 00:45:10.056
+It can be added to any home.
+
+00:45:10.097 --> 00:45:11.617
+It doesn't matter the OEM or the
+
+00:45:11.637 --> 00:45:12.257
+thermostat.
+
+00:45:12.277 --> 00:45:14.077
+It takes about ten to fifteen minutes for
+
+00:45:14.097 --> 00:45:15.217
+a technician to put it in place.
+
+00:45:15.277 --> 00:45:16.659
+No tools, no wiring, super easy.
+
+00:45:17.239 --> 00:45:19.041
+um and then all of that data comes
+
+00:45:19.061 --> 00:45:21.382
+back to us via the cloud we process
+
+00:45:21.422 --> 00:45:23.403
+it all and the interactions between us and
+
+00:45:23.423 --> 00:45:25.065
+the homeowner the homeowner contractor all
+
+00:45:25.106 --> 00:45:27.246
+that is taken care of through our back-end
+
+00:45:27.286 --> 00:45:29.068
+architecture and our software and then
+
+00:45:29.309 --> 00:45:30.789
+contractors get an enterprise dashboard
+
+00:45:30.829 --> 00:45:32.070
+separately that they can look at all the
+
+00:45:32.090 --> 00:45:34.233
+details they don't have to all of our
+
+00:45:34.253 --> 00:45:35.634
+stuff integrates directly into service
+
+00:45:35.653 --> 00:45:37.255
+titan for operational workflow
+
+00:45:38.016 --> 00:45:39.898
+um so we it is a separate thing
+
+00:45:40.199 --> 00:45:41.380
+but we try to make it so you
+
+00:45:41.420 --> 00:45:42.782
+don't actually have to do anything
+
+00:45:42.822 --> 00:45:44.463
+differently than the way you know operate
+
+00:45:44.483 --> 00:45:46.326
+the business every day which is you know
+
+00:45:46.425 --> 00:45:49.309
+book calls and run service awesome let's
+
+00:45:51.251 --> 00:45:52.273
+see here so
+
+00:45:53.737 --> 00:45:54.677
+Wes asked,
+
+00:45:54.737 --> 00:45:56.478
+what do you spiff them for selling a
+
+00:45:56.538 --> 00:45:56.878
+plan?
+
+00:45:57.079 --> 00:45:58.679
+So yeah, David,
+
+00:45:58.699 --> 00:45:59.699
+what do they get when they sell?
+
+00:45:59.719 --> 00:46:02.001
+I mean, the minimum plan is twenty bucks.
+
+00:46:03.101 --> 00:46:04.601
+The top plan is twenty five.
+
+00:46:04.981 --> 00:46:06.202
+So it's not it's not a ton,
+
+00:46:06.643 --> 00:46:09.103
+but it's it's enough to change the hourly
+
+00:46:09.143 --> 00:46:09.864
+rate for an hour.
+
+00:46:10.425 --> 00:46:10.744
+For me,
+
+00:46:10.764 --> 00:46:12.947
+it doesn't take that much to install.
+
+00:46:12.967 --> 00:46:13.547
+It's easy.
+
+00:46:13.967 --> 00:46:15.489
+It's just a short discussion.
+
+00:46:16.349 --> 00:46:17.731
+One of the things we like to do
+
+00:46:17.771 --> 00:46:19.753
+when we first start working on a new
+
+00:46:19.793 --> 00:46:20.152
+launch,
+
+00:46:20.494 --> 00:46:21.855
+we do what's called a quick start bonus.
+
+00:46:21.875 --> 00:46:23.396
+That's paid directly from Smart AC to the
+
+00:46:23.416 --> 00:46:23.936
+technicians,
+
+00:46:24.416 --> 00:46:25.818
+where we'll actually double that rate.
+
+00:46:26.639 --> 00:46:27.739
+And we do that for some period of
+
+00:46:27.760 --> 00:46:28.000
+time,
+
+00:46:28.179 --> 00:46:31.262
+to really motivate the tech to get used
+
+00:46:31.302 --> 00:46:32.643
+to the new technology and the change,
+
+00:46:32.664 --> 00:46:33.985
+because there's some different change.
+
+00:46:34.085 --> 00:46:35.346
+You have to say a few different things
+
+00:46:35.385 --> 00:46:36.746
+on site and take ten to fifteen minutes
+
+00:46:36.766 --> 00:46:37.248
+to install it.
+
+00:46:37.947 --> 00:46:39.949
+But that motivation really gets them
+
+00:46:39.989 --> 00:46:40.449
+comfortable.
+
+00:46:41.329 --> 00:46:42.510
+And then one of the things we do
+
+00:46:42.751 --> 00:46:44.532
+over time is when we share the economics,
+
+00:46:44.572 --> 00:46:45.052
+we say, look,
+
+00:46:45.311 --> 00:46:46.793
+you're currently spiffing on this amount.
+
+00:46:47.373 --> 00:46:48.373
+You could double that.
+
+00:46:48.653 --> 00:46:49.954
+And it doesn't make a meaningful
+
+00:46:50.014 --> 00:46:52.076
+difference in your overall program profit.
+
+00:46:52.996 --> 00:46:54.556
+But if it makes a meaningful difference in
+
+00:46:54.597 --> 00:46:55.396
+their motivation.
+
+00:46:55.617 --> 00:46:55.858
+Right.
+
+00:46:55.998 --> 00:46:57.697
+And so that's where it's all about dialing
+
+00:46:57.737 --> 00:46:59.639
+that in and figuring out what drives
+
+00:47:00.500 --> 00:47:00.800
+people.
+
+00:47:00.860 --> 00:47:01.019
+Right.
+
+00:47:01.039 --> 00:47:02.440
+And so it could be five dollars in
+
+00:47:02.460 --> 00:47:04.121
+some cases or, you know, twenty dollars.
+
+00:47:04.722 --> 00:47:04.961
+Yeah.
+
+00:47:05.583 --> 00:47:07.003
+Some of my guys, some of my guys,
+
+00:47:07.023 --> 00:47:09.525
+when we went through that and they did
+
+00:47:09.565 --> 00:47:10.065
+pretty well,
+
+00:47:10.306 --> 00:47:12.608
+they got a thousand dollars or more.
+
+00:47:12.847 --> 00:47:13.427
+Some of the guys.
+
+00:47:14.108 --> 00:47:15.068
+So it was good.
+
+00:47:15.088 --> 00:47:16.349
+It kept them motivated.
+
+00:47:17.490 --> 00:47:18.032
+It's perfect.
+
+00:47:18.092 --> 00:47:18.311
+Yeah.
+
+00:47:19.387 --> 00:47:20.306
+Teresa asked,
+
+00:47:20.807 --> 00:47:23.367
+can you share the script your CSRs use?
+
+00:47:23.407 --> 00:47:25.648
+So I don't know if you have one,
+
+00:47:25.728 --> 00:47:26.630
+probably not with you.
+
+00:47:26.650 --> 00:47:28.570
+Yeah, I can get one.
+
+00:47:29.771 --> 00:47:31.050
+They have copies of them up there.
+
+00:47:31.070 --> 00:47:32.512
+They got a whole book they keep beside
+
+00:47:32.532 --> 00:47:34.351
+them and she flips over to it when
+
+00:47:34.411 --> 00:47:36.032
+she does that, got it tabbed out,
+
+00:47:36.092 --> 00:47:38.054
+little binder for all the different things
+
+00:47:38.074 --> 00:47:38.634
+that she has.
+
+00:47:38.653 --> 00:47:39.974
+And she keeps it open to that,
+
+00:47:39.994 --> 00:47:41.675
+but I can get it together,
+
+00:47:41.695 --> 00:47:42.054
+get it to you.
+
+00:47:47.625 --> 00:47:48.445
+A lot of comments.
+
+00:47:48.465 --> 00:47:49.385
+Thanks for all the comments.
+
+00:47:49.445 --> 00:47:56.648
+Wes did share a link here to SmartAC,
+
+00:47:57.027 --> 00:47:59.268
+to that demo where you can get more
+
+00:47:59.327 --> 00:47:59.909
+information.
+
+00:47:59.929 --> 00:48:01.509
+All right, perfect.
+
+00:48:01.528 --> 00:48:04.530
+Does anybody else have any other questions
+
+00:48:04.869 --> 00:48:06.429
+that we haven't answered?
+
+00:48:07.630 --> 00:48:08.210
+Anything else?
+
+00:48:09.771 --> 00:48:11.311
+I have a question for David.
+
+00:48:12.365 --> 00:48:14.788
+how how long from the time you said
+
+00:48:14.847 --> 00:48:16.309
+i want to do this till you were
+
+00:48:16.369 --> 00:48:17.331
+up and running what was that
+
+00:48:17.351 --> 00:48:20.833
+implementation period like oh man uh i
+
+00:48:20.853 --> 00:48:23.918
+think y'all had me when i said let's
+
+00:48:23.938 --> 00:48:26.559
+do it i was up and running in
+
+00:48:26.579 --> 00:48:26.820
+a week
+
+00:48:28.077 --> 00:48:30.679
+fast well and it helped too i mean
+
+00:48:30.699 --> 00:48:34.019
+y'all are close to me fortunately um right
+
+00:48:34.039 --> 00:48:37.541
+there in houston um but uh yeah i
+
+00:48:37.581 --> 00:48:38.621
+think we were up and running on a
+
+00:48:38.641 --> 00:48:40.943
+week did the whole uh setup i think
+
+00:48:40.963 --> 00:48:43.023
+it took us longer really just to dial
+
+00:48:43.083 --> 00:48:46.405
+in the uh the the new maintenance plans
+
+00:48:47.085 --> 00:48:49.686
+it took a few days um and then
+
+00:48:49.846 --> 00:48:49.945
+uh
+
+00:48:52.574 --> 00:48:54.875
+got everything together, did a webinar,
+
+00:48:55.335 --> 00:48:56.036
+a Zoom meeting,
+
+00:48:56.215 --> 00:48:57.275
+just to get all the guys up to
+
+00:48:57.315 --> 00:48:57.635
+speed.
+
+00:48:58.336 --> 00:49:01.757
+And then it was pretty painless.
+
+00:49:02.038 --> 00:49:03.659
+It was pretty easy once you got all
+
+00:49:03.679 --> 00:49:05.460
+the guys on board with what was going
+
+00:49:05.480 --> 00:49:06.699
+to happen, how it was going to work.
+
+00:49:08.380 --> 00:49:09.641
+unfortunately i went through a couple
+
+00:49:09.742 --> 00:49:12.385
+other painful uh monitoring programs i
+
+00:49:12.405 --> 00:49:15.947
+won't mention and uh finally finally made
+
+00:49:15.967 --> 00:49:18.588
+my way to smart ac and so they
+
+00:49:18.628 --> 00:49:19.710
+they already had some negative
+
+00:49:19.730 --> 00:49:21.311
+connotations they were just like man
+
+00:49:21.371 --> 00:49:23.833
+really you're doing this again we're the
+
+00:49:23.873 --> 00:49:26.074
+last two didn't work i'm like i promise
+
+00:49:27.155 --> 00:49:29.577
+we got it let's go like if this
+
+00:49:29.617 --> 00:49:32.599
+work we won't do it anymore and um
+
+00:49:32.740 --> 00:49:34.521
+it's been great ever since uh
+
+00:49:35.728 --> 00:49:37.891
+Even though everyone's been on board.
+
+00:49:37.952 --> 00:49:39.373
+So once they got past that,
+
+00:49:40.215 --> 00:49:41.336
+I had to fight that a little bit
+
+00:49:41.356 --> 00:49:41.878
+at the beginning,
+
+00:49:41.898 --> 00:49:44.842
+but y'all had us up and running in
+
+00:49:44.862 --> 00:49:47.327
+about a week, say really strong two weeks,
+
+00:49:47.606 --> 00:49:49.190
+but you can be up and running in
+
+00:49:49.210 --> 00:49:50.532
+a week if everything's ready to roll.
+
+00:49:52.072 --> 00:49:52.773
+Perfect.
+
+00:49:52.793 --> 00:49:54.652
+Took me a little bit longer than that
+
+00:49:54.773 --> 00:49:55.293
+to do it,
+
+00:49:55.333 --> 00:49:57.974
+but I went back and forth on changing
+
+00:49:58.054 --> 00:50:00.333
+the plans because I wasn't really
+
+00:50:01.255 --> 00:50:03.074
+confident in the plans we offered.
+
+00:50:03.155 --> 00:50:05.235
+And so I asked SmartAC,
+
+00:50:05.355 --> 00:50:07.576
+what's the best practice that you have for
+
+00:50:07.596 --> 00:50:08.115
+plans?
+
+00:50:08.275 --> 00:50:09.396
+And the ones that they showed me,
+
+00:50:09.436 --> 00:50:10.936
+the different options were different than
+
+00:50:10.956 --> 00:50:11.556
+what I had.
+
+00:50:12.016 --> 00:50:13.436
+So I think I took a little bit
+
+00:50:13.476 --> 00:50:15.496
+too long picking what our plans were going
+
+00:50:15.516 --> 00:50:17.396
+to be and how the credits were going
+
+00:50:17.416 --> 00:50:18.356
+to work and everything.
+
+00:50:18.416 --> 00:50:19.918
+So I could see where you could get
+
+00:50:19.958 --> 00:50:21.438
+it going a little bit faster than that.
+
+00:50:21.902 --> 00:50:22.864
+I just was kind of, we,
+
+00:50:22.963 --> 00:50:25.146
+we did have some tiered plans before,
+
+00:50:25.626 --> 00:50:27.286
+but we didn't really push the tiered plans
+
+00:50:27.306 --> 00:50:28.387
+because they weren't really,
+
+00:50:29.469 --> 00:50:30.710
+they weren't really offering anything
+
+00:50:30.849 --> 00:50:32.992
+extra ordinary like we do now.
+
+00:50:33.831 --> 00:50:36.253
+So it was easy to just adapt the
+
+00:50:36.293 --> 00:50:39.597
+tiering and, but yeah.
+
+00:50:39.677 --> 00:50:41.077
+And then we were able to go pick
+
+00:50:41.137 --> 00:50:41.659
+up, you know,
+
+00:50:42.378 --> 00:50:43.539
+aside from shipping and stuff,
+
+00:50:43.579 --> 00:50:44.561
+we were able just to go up and
+
+00:50:44.581 --> 00:50:46.463
+grab what we needed and get it back
+
+00:50:46.543 --> 00:50:47.764
+here in a timely manner.
+
+00:50:47.804 --> 00:50:49.164
+So we had them on hand pretty quick.
+
+00:50:50.099 --> 00:50:53.182
+I forgot when y'all came out,
+
+00:50:53.242 --> 00:50:55.806
+but maybe a month or two after one
+
+00:50:55.826 --> 00:50:58.228
+of your tech guys came out and actually
+
+00:50:58.427 --> 00:51:00.130
+did some ride-alongs to make sure we were
+
+00:51:00.170 --> 00:51:00.690
+all okay.
+
+00:51:01.311 --> 00:51:02.052
+They all liked that.
+
+00:51:02.092 --> 00:51:03.092
+They thought it was cool that they
+
+00:51:03.132 --> 00:51:07.097
+actually came out and did some one-on-one
+
+00:51:08.177 --> 00:51:10.721
+showing the guys best practices and how to
+
+00:51:10.740 --> 00:51:10.981
+do it.
+
+00:51:12.608 --> 00:51:13.548
+Appreciate that.
+
+00:51:13.568 --> 00:51:14.768
+We're, you know, we're still early enough.
+
+00:51:14.809 --> 00:51:15.250
+We got to,
+
+00:51:15.269 --> 00:51:16.489
+we got to prove our worth, man.
+
+00:51:16.550 --> 00:51:17.471
+So we're happy.
+
+00:51:17.550 --> 00:51:17.971
+I mean,
+
+00:51:17.990 --> 00:51:19.211
+we love it when people let us on
+
+00:51:19.271 --> 00:51:19.532
+site.
+
+00:51:19.672 --> 00:51:20.833
+I mean, we learn, you know,
+
+00:51:20.873 --> 00:51:22.333
+we learn as much as I'm sure that
+
+00:51:22.574 --> 00:51:23.755
+the technicians learn about the product.
+
+00:51:24.795 --> 00:51:25.235
+Yeah.
+
+00:51:25.275 --> 00:51:25.536
+Yeah.
+
+00:51:25.615 --> 00:51:25.695
+Yeah.
+
+00:51:25.715 --> 00:51:26.277
+I mean, yeah.
+
+00:51:32.079 --> 00:51:32.719
+So Philip asks,
+
+00:51:32.760 --> 00:51:34.541
+is there a way to market this in
+
+00:51:34.581 --> 00:51:35.822
+an email campaign?
+
+00:51:36.302 --> 00:51:38.123
+Is there a way to allow the clients
+
+00:51:38.164 --> 00:51:39.824
+to self-checkout?
+
+00:51:39.864 --> 00:51:41.927
+So you want to,
+
+00:51:41.967 --> 00:51:43.427
+who wants to take that?
+
+00:51:43.487 --> 00:51:44.409
+Andy, you want to take that?
+
+00:51:44.429 --> 00:51:46.949
+Yeah, so it's a great question.
+
+00:51:47.130 --> 00:51:50.092
+And with the emergence of a lot of
+
+00:51:50.112 --> 00:51:53.956
+the AI outbound or AI agentic text message
+
+00:51:55.077 --> 00:51:55.976
+related interactions,
+
+00:51:56.097 --> 00:51:57.978
+we're starting to see that become a lot
+
+00:51:58.039 --> 00:51:58.920
+more popular trend.
+
+00:52:00.007 --> 00:52:02.050
+where we're actually driving people
+
+00:52:02.090 --> 00:52:05.692
+through the engagement process in the very
+
+00:52:05.731 --> 00:52:07.333
+beginning without a human involved.
+
+00:52:07.833 --> 00:52:09.293
+So I would say historically,
+
+00:52:09.954 --> 00:52:11.036
+it hasn't been strong.
+
+00:52:11.396 --> 00:52:13.938
+There have been some companies that will
+
+00:52:13.958 --> 00:52:15.778
+help you put e-commerce sites up where you
+
+00:52:15.798 --> 00:52:18.159
+can buy membership over the phone or over
+
+00:52:18.400 --> 00:52:18.760
+the internet.
+
+00:52:19.340 --> 00:52:22.362
+um not great adoption rates because
+
+00:52:22.402 --> 00:52:25.262
+sometimes it takes a person uh or a
+
+00:52:25.382 --> 00:52:27.744
+ai to to do a little bit of
+
+00:52:27.764 --> 00:52:29.764
+back and forth as to why it's so
+
+00:52:29.824 --> 00:52:33.706
+valuable um but yeah i'd say that i
+
+00:52:33.726 --> 00:52:35.347
+would venture to say that by the end
+
+00:52:35.387 --> 00:52:37.827
+of this year that will probably be one
+
+00:52:37.887 --> 00:52:41.590
+of the the biggest changes um in the
+
+00:52:41.710 --> 00:52:43.590
+industry is you're going to see a lot
+
+00:52:43.630 --> 00:52:43.931
+more
+
+00:52:45.030 --> 00:52:47.992
+agent-based outbound engagement where less
+
+00:52:48.052 --> 00:52:49.793
+humans are involved in the process,
+
+00:52:50.173 --> 00:52:51.695
+but you're reaching a transaction.
+
+00:52:53.235 --> 00:52:56.458
+We use an AI after hours and the
+
+00:52:56.637 --> 00:52:57.719
+AI will,
+
+00:52:57.998 --> 00:52:59.739
+if they're a new customer or anything,
+
+00:52:59.940 --> 00:53:01.380
+don't have a maintenance contract,
+
+00:53:01.581 --> 00:53:04.842
+it will offer for them.
+
+00:53:05.204 --> 00:53:07.045
+It won't actually book it or do any
+
+00:53:07.065 --> 00:53:07.565
+of the things,
+
+00:53:07.585 --> 00:53:09.146
+but it'll offer it and give a little
+
+00:53:09.166 --> 00:53:11.347
+bit of an explanation and then it'll dump
+
+00:53:11.367 --> 00:53:13.688
+that info into Service Titan for the next
+
+00:53:13.728 --> 00:53:13.929
+day.
+
+00:53:15.208 --> 00:53:18.356
+for the CSR to bring it back up
+
+00:53:18.476 --> 00:53:19.300
+that they were interested.
+
+00:53:26.902 --> 00:53:28.143
+So we've got another question.
+
+00:53:29.744 --> 00:53:30.403
+This is for Andy.
+
+00:53:30.423 --> 00:53:33.264
+Do you guys have example tiered
+
+00:53:33.304 --> 00:53:34.204
+maintenance plans?
+
+00:53:34.784 --> 00:53:35.144
+You know what?
+
+00:53:35.224 --> 00:53:37.846
+I remember you showed me some examples
+
+00:53:38.226 --> 00:53:38.865
+when I first started.
+
+00:53:39.065 --> 00:53:40.286
+Yeah, we do.
+
+00:53:41.067 --> 00:53:41.947
+Absolutely, we do.
+
+00:53:42.086 --> 00:53:45.248
+But I will always say one size doesn't
+
+00:53:45.288 --> 00:53:46.288
+fit all because
+
+00:53:47.668 --> 00:53:48.349
+To David's point,
+
+00:53:48.690 --> 00:53:50.452
+you have to know how to present a
+
+00:53:50.512 --> 00:53:51.114
+tiered plan.
+
+00:53:51.614 --> 00:53:53.958
+If your techs are not good at walking
+
+00:53:53.978 --> 00:53:55.179
+through good, better, best,
+
+00:53:55.840 --> 00:53:57.704
+or telling that homeowner a value
+
+00:53:57.724 --> 00:53:58.545
+differentiation,
+
+00:53:58.985 --> 00:54:00.628
+then you can actually muddle it up with
+
+00:54:00.648 --> 00:54:01.268
+tiered plans.
+
+00:54:02.090 --> 00:54:04.010
+he said so it really needs to fit
+
+00:54:04.050 --> 00:54:06.492
+the skill set um the ladies he's got
+
+00:54:06.552 --> 00:54:08.393
+up front can talk through that well
+
+00:54:08.434 --> 00:54:10.135
+because they were doing it previously but
+
+00:54:10.195 --> 00:54:11.876
+now they have better differentiation if
+
+00:54:11.896 --> 00:54:13.418
+you've never done a tier plan you're going
+
+00:54:13.438 --> 00:54:15.358
+from non-tiered to tiered it's important
+
+00:54:15.378 --> 00:54:18.021
+to look at that talk through that but
+
+00:54:18.141 --> 00:54:19.902
+um but yeah we've got we've got examples
+
+00:54:19.922 --> 00:54:20.643
+for single plan
+
+00:54:21.483 --> 00:54:23.882
+uh for two and for three and and
+
+00:54:23.943 --> 00:54:25.884
+we want to know how your team is
+
+00:54:25.903 --> 00:54:27.463
+set up and make sure that it's going
+
+00:54:27.483 --> 00:54:30.784
+to launch with success and know that we
+
+00:54:30.804 --> 00:54:32.744
+make you may scrap it sixty days in
+
+00:54:32.784 --> 00:54:34.804
+and be like tier's not working we need
+
+00:54:34.824 --> 00:54:36.425
+to go back to a single right that's
+
+00:54:36.485 --> 00:54:38.565
+okay like that's part of the iteration of
+
+00:54:38.626 --> 00:54:40.465
+getting better but it's about doing
+
+00:54:40.485 --> 00:54:41.907
+intentionally tracking it and making sure
+
+00:54:41.927 --> 00:54:43.206
+that you're you know making meaningful
+
+00:54:43.226 --> 00:54:46.686
+progress would you say most contractors do
+
+00:54:47.186 --> 00:54:49.668
+multi-tier plans rather than a single one
+
+00:54:49.708 --> 00:54:50.387
+from what you've seen
+
+00:54:51.170 --> 00:54:53.831
+um man i i probably not i would
+
+00:54:53.891 --> 00:54:57.773
+say i get as many single this is
+
+00:54:57.793 --> 00:54:59.574
+what we do one plan as we do
+
+00:54:59.594 --> 00:55:02.197
+um you know the two or the three
+
+00:55:02.237 --> 00:55:06.480
+plans i would uh it's a hard hard
+
+00:55:06.500 --> 00:55:08.581
+press to point to a lot of success
+
+00:55:08.601 --> 00:55:10.762
+for people that go more than three it
+
+00:55:10.782 --> 00:55:12.583
+starts to become very complicated when you
+
+00:55:12.623 --> 00:55:12.884
+start
+
+00:55:13.523 --> 00:55:14.965
+you know layering on even more and more
+
+00:55:14.985 --> 00:55:16.065
+and more you have to try and find
+
+00:55:16.106 --> 00:55:18.628
+reasons why tier six is different than
+
+00:55:18.648 --> 00:55:21.471
+tier one you know but um but i'd
+
+00:55:21.490 --> 00:55:24.353
+say it's uh yeah it's probably an even
+
+00:55:24.432 --> 00:55:26.695
+split you know a third single third two
+
+00:55:26.735 --> 00:55:28.697
+a third three like and just depending on
+
+00:55:29.277 --> 00:55:30.518
+um the nature of the business if you're
+
+00:55:30.677 --> 00:55:32.079
+hvac only if you're hvac and plumbing or
+
+00:55:32.099 --> 00:55:33.721
+you've got electrical like there's you
+
+00:55:33.740 --> 00:55:35.021
+know again there's some nuances there um
+
+00:55:35.461 --> 00:55:37.423
+but that's what we do every day as
+
+00:55:37.463 --> 00:55:38.304
+we work to get us to
+
+00:55:39.105 --> 00:55:40.126
+figure those things out and try to
+
+00:55:40.166 --> 00:55:42.527
+represent some examples that we think will
+
+00:55:42.567 --> 00:55:44.929
+be best for how you will succeed in
+
+00:55:44.949 --> 00:55:45.329
+the market.
+
+00:55:48.630 --> 00:55:48.931
+Awesome.
+
+00:55:48.971 --> 00:55:50.092
+So Teresa has a question.
+
+00:55:50.211 --> 00:55:52.052
+Are your tier plans related to the number
+
+00:55:52.112 --> 00:55:55.974
+of units that the customer has?
+
+00:55:56.295 --> 00:55:56.956
+No.
+
+00:55:57.016 --> 00:55:59.436
+Number of units, it's the same price.
+
+00:55:59.496 --> 00:56:00.498
+If you're going to charge them twenty
+
+00:56:00.518 --> 00:56:01.239
+dollars a month,
+
+00:56:01.878 --> 00:56:03.579
+it's twenty dollars a month for each unit.
+
+00:56:04.320 --> 00:56:08.503
+The tiering is do you want, you know,
+
+00:56:08.543 --> 00:56:08.583
+do
+
+00:56:13.038 --> 00:56:15.300
+warranty versus not lifetime warranty ad
+
+00:56:15.480 --> 00:56:17.862
+one no maintenance call no call out fees
+
+00:56:17.902 --> 00:56:20.764
+versus a discounted call out fee so it's
+
+00:56:21.164 --> 00:56:23.567
+really customize it however you want to
+
+00:56:23.606 --> 00:56:26.568
+you can do it that way i i
+
+00:56:26.608 --> 00:56:29.771
+don't mine's typically benefits and
+
+00:56:29.791 --> 00:56:32.373
+features yeah that makes sense
+
+00:56:37.822 --> 00:56:39.362
+So yeah, Stephanie,
+
+00:56:40.322 --> 00:56:42.744
+you can add the sensors for plumbing also.
+
+00:56:43.063 --> 00:56:45.125
+And so you can add more sensors than
+
+00:56:45.224 --> 00:56:46.646
+normally come in the kit, right?
+
+00:56:46.666 --> 00:56:47.686
+So they come with,
+
+00:56:48.067 --> 00:56:49.947
+each kit comes with a supply and return.
+
+00:56:51.974 --> 00:56:54.996
+temperature and humidity sensor in one
+
+00:56:55.115 --> 00:56:59.197
+unit and then a leak detection sensor.
+
+00:56:59.237 --> 00:57:01.139
+But you can buy separate leak detection
+
+00:57:01.860 --> 00:57:04.402
+sensors, right?
+
+00:57:04.422 --> 00:57:04.521
+Yeah,
+
+00:57:04.541 --> 00:57:06.443
+you can buy more leak detectors and you
+
+00:57:06.463 --> 00:57:09.385
+can buy more supply sensors too because
+
+00:57:09.405 --> 00:57:11.806
+you can do them on zone systems.
+
+00:57:12.525 --> 00:57:13.887
+You can have them on different zones in
+
+00:57:13.907 --> 00:57:14.246
+the house.
+
+00:57:14.266 --> 00:57:16.869
+Awesome.
+
+00:57:16.889 --> 00:57:17.148
+Great.
+
+00:57:17.268 --> 00:57:17.789
+Thanks for that.
+
+00:57:19.130 --> 00:57:21.532
+all right so we're coming up on our
+
+00:57:21.592 --> 00:57:24.235
+time here thank you for all the questions
+
+00:57:24.956 --> 00:57:26.838
+andy and david thanks for joining me today
+
+00:57:27.077 --> 00:57:29.780
+it was great talking to you and i
+
+00:57:29.800 --> 00:57:32.503
+will send this replay out and i will
+
+00:57:32.543 --> 00:57:34.505
+also send out some of the answers to
+
+00:57:34.525 --> 00:57:36.827
+these questions so you guys have them and
+
+00:57:36.847 --> 00:57:39.269
+i appreciate you guys joining me today all
+
+00:57:39.309 --> 00:57:41.331
+right yeah for sure have a good one
+
