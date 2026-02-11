@@ -17,6 +17,7 @@ interface GatedReplayProps {
   canonicalUrl: string;
   youtubeEmbedUrl: string;
   webinarSlug: string;
+  children?: React.ReactNode;
 }
 
 export default function GatedReplay({
@@ -27,6 +28,7 @@ export default function GatedReplay({
   canonicalUrl,
   youtubeEmbedUrl,
   webinarSlug,
+  children,
 }: GatedReplayProps) {
   const [unlocked, setUnlocked] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -152,6 +154,12 @@ export default function GatedReplay({
           </div>
         )}
       </div>
+
+      {children && (
+        <div className="container mx-auto px-4 max-w-6xl">
+          {children}
+        </div>
+      )}
     </div>
   );
 }
