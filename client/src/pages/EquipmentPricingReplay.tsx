@@ -19,7 +19,7 @@ export default function EquipmentPricingReplay() {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/204lbDm68Fo?si=wtIixNf78GDyQpAI"
+            src="https://www.youtube.com/embed/RlffDnKEO8s"
             title="How Contractors Buy Equipment Like Private Equity"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
