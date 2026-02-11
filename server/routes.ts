@@ -150,6 +150,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       '/collections/free-resources': '/resources',
       '/bundles/servicetitan-hacks-all-access-pass': '/all-access',
       '/webinar/upfront-pricing': '/webinar/price-conversation',
+      '/equipment-buying-group': '/purchasing-platform',
     };
 
     // Redirect old partner/products pages to new URLs
