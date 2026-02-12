@@ -429,15 +429,16 @@ export default function Events() {
                           </p>
                         </div>
                         <div className="mt-6">
-                          <Button 
-                            size="lg" 
-                            className="gap-2" 
-                            data-testid={`button-replay-${event.id}`}
-                            onClick={() => handleReplayClick(event.replayLink || event.link, event.title)}
-                          >
-                            <Play className="h-4 w-4" />
-                            Get the Replay
-                          </Button>
+                          <Link href={event.replayLink || event.link}>
+                            <Button 
+                              size="lg" 
+                              className="gap-2" 
+                              data-testid={`button-replay-${event.id}`}
+                            >
+                              <Play className="h-4 w-4" />
+                              Get the Replay
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </div>
