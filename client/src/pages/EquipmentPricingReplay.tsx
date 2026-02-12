@@ -1,4 +1,5 @@
 import GatedReplay from "@/components/GatedReplay";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -6,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CheckCircle2, TrendingDown, Users, DollarSign, ShieldCheck, ShoppingCart, BarChart3 } from "lucide-react";
+import { CheckCircle2, TrendingDown, Users, DollarSign, ShieldCheck, ShoppingCart, BarChart3, ArrowRight } from "lucide-react";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import guestImage from "@assets/IMG_0501_1769885893056.jpeg";
@@ -91,6 +92,14 @@ export default function EquipmentPricingReplay() {
       webinarSlug="/webinar/equipment-pricing-replay"
       gated={false}
     >
+      <div className="flex justify-center mt-8 mb-4">
+        <a href="https://servicetitanhacks.com/purchasing-platform">
+          <Button size="lg" className="gap-2 bg-[#ED254E] text-white border-[#ED254E]" data-testid="button-purchasing-platform">
+            Get Access to the Purchasing Platform
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </a>
+      </div>
       <div className="mt-16 space-y-20">
         <section>
           <p className="text-center text-sm text-white/50 mb-6">Presented By</p>
