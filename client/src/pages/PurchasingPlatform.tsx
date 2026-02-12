@@ -21,6 +21,7 @@ export default function PurchasingPlatform() {
     email: "",
     phone: "",
     companyWebsite: "",
+    companyName: "",
     contractorLicense: "",
     issuingAuthority: ""
   });
@@ -85,7 +86,7 @@ export default function PurchasingPlatform() {
         name: `${data.firstName} ${data.lastName}`,
         email: data.email,
         company: data.companyWebsite,
-        message: `Phone: ${data.phone}\nCompany Website: ${data.companyWebsite}\nContractor License #: ${data.contractorLicense}\nIssuing Authority: ${data.issuingAuthority}`,
+        message: `Phone: ${data.phone}\nCompany Website: ${data.companyWebsite}\nCompany Name: ${data.companyName}\nContractor License #: ${data.contractorLicense}\nIssuing Authority: ${data.issuingAuthority}`,
         role: "HVAC Equipment Purchasing Platform Inquiry",
         consent: "HVAC Equipment Purchasing Platform Contact Form"
       });
@@ -95,7 +96,7 @@ export default function PurchasingPlatform() {
         title: "Access Request Received!",
         description: "We'll get back to you within 24 hours with access details.",
       });
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", companyWebsite: "", contractorLicense: "", issuingAuthority: "" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", companyWebsite: "", companyName: "", contractorLicense: "", issuingAuthority: "" });
     },
     onError: () => {
       toast({
@@ -480,6 +481,21 @@ export default function PurchasingPlatform() {
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="yourcompany.com"
                         data-testid="input-website"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.companyName}
+                        onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Your company name"
+                        data-testid="input-company-name"
                       />
                     </div>
 

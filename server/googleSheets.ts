@@ -86,7 +86,7 @@ async function getOrCreateSpreadsheet(): Promise<string> {
     range: 'Leads!A1',
     valueInputOption: 'RAW',
     requestBody: {
-      values: [['Submitted At', 'First Name', 'Last Name', 'Email', 'Phone', 'Company Website', 'Contractor License #', 'Issuing Authority']],
+      values: [['Submitted At', 'First Name', 'Last Name', 'Email', 'Phone', 'Company Website', 'Company Name', 'Contractor License #', 'Issuing Authority']],
     },
   });
 
@@ -99,6 +99,7 @@ export async function appendPurchasingPlatformLead(data: {
   email: string;
   phone: string;
   companyWebsite: string;
+  companyName: string;
   contractorLicense: string;
   issuingAuthority: string;
 }) {
@@ -118,6 +119,7 @@ export async function appendPurchasingPlatformLead(data: {
           data.email,
           data.phone,
           data.companyWebsite,
+          data.companyName,
           data.contractorLicense,
           data.issuingAuthority,
         ]],

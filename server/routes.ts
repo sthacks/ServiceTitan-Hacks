@@ -389,12 +389,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Parse structured fields from message
           const phoneMatch = submission.message.match(/Phone:\s*(.+)/);
           const websiteMatch = submission.message.match(/Company Website:\s*(.+)/);
+          const companyNameMatch = submission.message.match(/Company Name:\s*(.+)/);
           const licenseMatch = submission.message.match(/Contractor License #:\s*(.+)/);
           const authorityMatch = submission.message.match(/Issuing Authority:\s*(.+)/);
           
           phoneNumber = phoneMatch ? phoneMatch[1].trim() : "";
           additionalFields = {
             companyWebsite: websiteMatch ? websiteMatch[1].trim() : null,
+            companyName: companyNameMatch ? companyNameMatch[1].trim() : null,
             contractorLicense: licenseMatch ? licenseMatch[1].trim() : null,
             issuingAuthority: authorityMatch ? authorityMatch[1].trim() : null
           };
@@ -434,6 +436,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (data.role === "HVAC Equipment Purchasing Platform Inquiry") {
         const phoneMatch = data.message.match(/Phone:\s*(.+)/);
         const websiteMatch = data.message.match(/Company Website:\s*(.+)/);
+        const companyNameMatch = data.message.match(/Company Name:\s*(.+)/);
         const licenseMatch = data.message.match(/Contractor License #:\s*(.+)/);
         const authorityMatch = data.message.match(/Issuing Authority:\s*(.+)/);
         const parsedParts = data.name.trim().split(' ');
@@ -444,6 +447,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           email: data.email,
           phone: phoneMatch ? phoneMatch[1].trim() : "",
           companyWebsite: websiteMatch ? websiteMatch[1].trim() : "",
+          companyName: companyNameMatch ? companyNameMatch[1].trim() : "",
           contractorLicense: licenseMatch ? licenseMatch[1].trim() : "",
           issuingAuthority: authorityMatch ? authorityMatch[1].trim() : "",
         });
