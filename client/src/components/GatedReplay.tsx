@@ -17,6 +17,7 @@ interface GatedReplayProps {
   canonicalUrl: string;
   youtubeEmbedUrl: string;
   webinarSlug: string;
+  gated?: boolean;
   children?: React.ReactNode;
 }
 
@@ -28,9 +29,10 @@ export default function GatedReplay({
   canonicalUrl,
   youtubeEmbedUrl,
   webinarSlug,
+  gated = true,
   children,
 }: GatedReplayProps) {
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(!gated);
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const { toast } = useToast();

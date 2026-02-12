@@ -89,6 +89,7 @@ export default function EquipmentPricingReplay() {
       canonicalUrl="https://servicetitanhacks.com/webinar/equipment-pricing-replay"
       youtubeEmbedUrl="https://www.youtube.com/embed/RlffDnKEO8s"
       webinarSlug="/webinar/equipment-pricing-replay"
+      gated={false}
     >
       <div className="mt-16 space-y-20">
         <section>
