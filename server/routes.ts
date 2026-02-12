@@ -13,6 +13,7 @@ import Stripe from "stripe";
 import path from "path";
 import fs from "fs";
 import { addOrUpdateSubscriber, getCampaignReports, getAggregateStats, getListGrowth, isMailchimpConfigured } from "./mailchimp";
+import { appendPurchasingPlatformLead } from "./googleSheets";
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
@@ -429,6 +430,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Don't fail the request if email fails
       }
       
+      // Append to Google Sheet for HVAC Equipment Purchasing Platform submissions
+      if (data.role === "HVAC Equipment Purchasing Platform Inquiry") {
+        const phoneMatch = data.message.match(/Phone:\s*(.+)/);
+        const websiteMatch = data.message.match(/Company Website:\s*(.+)/);
+        const licenseMatch = data.message.match(/Contractor License #:\s*(.+)/);
+        const authorityMatch = data.message.match(/Issuing Authority:\s*(.+)/);
+        const parsedParts = data.name.trim().split(' ');
+
+        appendPurchasingPlatformLead({
+          firstName: parsedParts[0] || "",
+          lastName: parsedParts.slice(1).join(' ') || "",
+          email: data.email,
+          phone: phoneMatch ? phoneMatch[1].trim() : "",
+          companyWebsite: websiteMatch ? websiteMatch[1].trim() : "",
+          contractorLicense: licenseMatch ? licenseMatch[1].trim() : "",
+          issuingAuthority: authorityMatch ? authorityMatch[1].trim() : "",
+        });
+      }
+
       // Send confirmation email for HVAC Equipment Purchasing Platform submissions via Google SMTP
       if (data.role === "HVAC Equipment Purchasing Platform Inquiry") {
         try {
