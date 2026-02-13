@@ -529,6 +529,23 @@ export default function PurchasingPlatform() {
                       />
                     </div>
 
+                    <div className="flex items-start gap-2">
+                      <input
+                        type="checkbox"
+                        required
+                        id="terms-agreement"
+                        data-testid="input-terms-agreement"
+                        className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                      />
+                      <label htmlFor="terms-agreement" className="text-sm text-muted-foreground">
+                        I agree to the{" "}
+                        <a href="https://www.purchasingplatform.com/terms-of-membership" target="_blank" rel="noopener noreferrer" className="text-primary underline">Terms of Membership</a>,{" "}
+                        <a href="https://www.purchasingplatform.com/terms" target="_blank" rel="noopener noreferrer" className="text-primary underline">Terms of Use</a>{" "}
+                        &amp;{" "}
+                        <a href="https://www.purchasingplatform.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary underline">Privacy Policy</a>
+                      </label>
+                    </div>
+
                     <Button
                       type="submit"
                       className="w-full"
