@@ -288,7 +288,7 @@ export const metadata: Record<string, PageMetadata> = {
   // Blog Posts - Additional
   "/blog/why-phonetap-exists": {
     title: "Why PhoneTap Exists",
-    description: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why I built PhoneTap.",
+    description: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when my co-founders and I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why we built PhoneTap.",
     ogImage: "https://servicetitanhacks.com/og-phonetap-csrs.png",
     ogType: "article",
   },

@@ -32,7 +32,7 @@ const blogPosts: BlogPost[] = [
   {
     id: "12",
     title: "Why PhoneTap Exists",
-    excerpt: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why I built PhoneTap.",
+    excerpt: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when my co-founders and I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why we built PhoneTap.",
     author: "Bill Brown",
     date: "February 16, 2026",
     readTime: "7 min read",
@@ -345,23 +345,23 @@ const blogPostContent: Record<string, JSX.Element> = {
       </ul>
 
       <p>
-        I listened to real call recordings.
+        I listened to real call recordings. So did my co-founders.
       </p>
 
       <p>
-        What I heard did not match the numbers.
+        What we heard did not match the numbers.
       </p>
 
       <p>
-        Different CSRs had very different results. But when I listened to the calls, the classifications often did not make sense.
+        Different CSRs had very different results. But when we listened to the calls, the classifications often did not make sense.
       </p>
 
       <p>
-        Even with call playback, I could only review one call at a time.
+        Even with call playback, we could only review one call at a time.
       </p>
 
       <p>
-        So I built a simple tool that:
+        So we built a simple tool that:
       </p>
 
       <ul className="list-disc pl-6 space-y-2">
@@ -371,15 +371,15 @@ const blogPostContent: Record<string, JSX.Element> = {
       </ul>
 
       <p>
-        Now I could read calls quickly.
+        Now we could read calls quickly.
       </p>
 
       <p>
-        I reviewed thousands of transcripts.
+        Together, we reviewed thousands of transcripts.
       </p>
 
       <p>
-        For each call, I wrote down:
+        For each call, we wrote down:
       </p>
 
       <ul className="list-disc pl-6 space-y-2">
@@ -389,7 +389,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       </ul>
 
       <p>
-        Across multiple companies handling thousands of calls, accuracy was only about 50 to 60 percent.
+        Across multiple companies handling thousands of calls, we found accuracy was only about 50 to 60 percent.
       </p>
 
       <p>
@@ -411,7 +411,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Why AI Makes a Difference</h2>
 
       <p>
-        For the last few years, I have spent several hours a day working with AI and refining call analysis.
+        For the last few years, my co-founders and I have spent several hours a day working with AI and refining call analysis.
       </p>
 
       <p>
@@ -425,7 +425,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       </ul>
 
       <p>
-        PhoneTap was built to answer those questions clearly.
+        We built PhoneTap to answer those questions clearly.
       </p>
 
       <p>
@@ -451,7 +451,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Understanding Lost Revenue</h2>
 
       <p>
-        An unbooked call is not just a number.
+        We knew an unbooked call is not just a number.
       </p>
 
       <p>
