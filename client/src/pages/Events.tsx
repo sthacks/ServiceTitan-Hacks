@@ -13,7 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import smartACWebinarImage from "@assets/smartac_(9)_1769011910928.png";
-import contractorCommerceImage from "@assets/contractor_commerce_(6)_1770386913313.png";
+import contractorCommerceImage from "@assets/contractor commerce (7).png";
 import winkWebinarImage from "@assets/wink_(2)_1769014863023.png";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 import equipmentPricingImage from "@assets/webinar_image_1769885730082.png";
