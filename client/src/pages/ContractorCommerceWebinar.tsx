@@ -222,20 +222,18 @@ export default function ContractorCommerceWebinar() {
             </p>
             <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
             <CountdownTimer targetDate={eventDate} />
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-              <a
-                href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="bg-[#ED254E] hover:bg-[#ED254E]/90"
-                  data-testid="button-hero-register"
-                >
-                  Reserve My Spot (Replay Included)
-                </Button>
-              </a>
+            <div className="mt-8 w-full max-w-3xl mx-auto" data-testid="registration-embed">
+              <div style={{ width: "100%", height: "0px", position: "relative", paddingBottom: "56.25%" }}>
+                <iframe
+                  src="https://streamyard.com/watch/emDx2wqcRWM8?embed=true"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  style={{ width: "100%", height: "100%", position: "absolute", left: "0px", top: "0px", overflow: "hidden" }}
+                  title="Webinar Registration"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -365,18 +363,14 @@ export default function ContractorCommerceWebinar() {
           <p className="text-white/80 mb-8">
             Good. This fireside chat is for you. Join the conversation about homeowner psychology, trust, and staying in consideration without losing control.
           </p>
-          <a
-            href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#top">
             <Button
               size="lg"
               variant="secondary"
-              className="bg-white text-[#ED254E] hover:bg-white/90"
+              className="bg-white text-[#ED254E]"
               data-testid="button-bottom-cta"
             >
-              Register for the Webinar
+              Register Above
             </Button>
           </a>
         </div>
