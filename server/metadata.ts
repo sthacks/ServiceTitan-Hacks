@@ -250,7 +250,7 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
   "/webinar/price-conversation": {
-    title: "The Price Conversation That Happens Before They Call You | ServiceTitan Hacks",
+    title: "Should Contractors Put Pricing Online in 2026? | ServiceTitan Hacks",
     description: "A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation.",
     ogImage: "https://servicetitanhacks.com/og-upfront-pricing-webinar.png",
   },

@@ -15,8 +15,8 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import heroImage from "@assets/contractor_commerce_(5)_1770387076667.png";
 
 const config = {
-  webinarTitle: "The Price Conversation That Happens Before They Call You",
-  webinarFullTitle: "The Price Conversation That Happens Before They Call You",
+  webinarTitle: "Should Contractors Put Pricing Online in 2026?",
+  webinarFullTitle: "Should Contractors Put Pricing Online in 2026?",
   webinarSubtitle: "Most homeowners decide how they feel about price before they ever call a contractor. Not because they want the cheapest option, but because they want certainty, context, and reassurance before inviting someone into their home.",
   webinarDate: "February 24th, 2026",
   webinarTime: "2:00 PM",
@@ -210,7 +210,7 @@ export default function ContractorCommerceWebinar() {
           <div className="mb-8">
             <img 
               src={heroImage} 
-              alt="The Price Conversation That Happens Before They Call You - Live Fireside Chat - Tue Feb 24 02:00 PM ET"
+              alt="Should Contractors Put Pricing Online in 2026? - Live Fireside Chat - Tue Feb 24 02:00 PM ET"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl"
               data-testid="img-hero"
             />

@@ -52,7 +52,7 @@ const events: Event[] = [
   },
   {
     id: "3",
-    title: "The Price Conversation That Happens Before They Call You",
+    title: "Should Contractors Put Pricing Online in 2026?",
     description: "A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation.",
     date: "Tuesday, February 24, 2026",
     eventDateTime: new Date("2026-02-24T14:00:00-05:00"),
