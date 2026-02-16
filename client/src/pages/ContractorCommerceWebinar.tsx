@@ -18,7 +18,7 @@ const config = {
   webinarTitle: "The Price Conversation That Happens Before They Call You",
   webinarFullTitle: "The Price Conversation That Happens Before They Call You",
   webinarSubtitle: "Most homeowners decide how they feel about price before they ever call a contractor. Not because they want the cheapest option, but because they want certainty, context, and reassurance before inviting someone into their home.",
-  webinarDate: "February 18th, 2026",
+  webinarDate: "February 24th, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
   hostName: "Bill Brown",
@@ -152,7 +152,7 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
 
 export default function ContractorCommerceWebinar() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const eventDate = new Date("2026-02-18T14:00:00-05:00");
+  const eventDate = new Date("2026-02-24T14:00:00-05:00");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -210,7 +210,7 @@ export default function ContractorCommerceWebinar() {
           <div className="mb-8">
             <img 
               src={heroImage} 
-              alt="The Price Conversation That Happens Before They Call You - Live Fireside Chat - Wed Feb 18 02:00 PM ET"
+              alt="The Price Conversation That Happens Before They Call You - Live Fireside Chat - Tue Feb 24 02:00 PM ET"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl"
               data-testid="img-hero"
             />
