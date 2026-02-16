@@ -26,6 +26,17 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "12",
+    title: "Why PhoneTap Exists",
+    excerpt: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why I built PhoneTap.",
+    author: "Bill Brown",
+    date: "February 16, 2026",
+    readTime: "7 min read",
+    category: "Call Center",
+    image: "/og-phonetap-csrs.png",
+    slug: "why-phonetap-exists"
+  },
+  {
     id: "11",
     title: "PhoneTAP Was Built for CSRs. Here Is Why That Matters.",
     excerpt: "For most of my career in HVAC, I misunderstood one of the most important roles in the company: the customer service representative. CSRs are not a back office function—they are the gateway to revenue.",

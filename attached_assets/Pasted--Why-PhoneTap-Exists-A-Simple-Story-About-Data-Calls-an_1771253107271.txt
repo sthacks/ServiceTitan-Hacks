@@ -1,0 +1,208 @@
+# Why PhoneTap Exists
+
+## A Simple Story About Data, Calls, and Knowing the Truth
+
+In 2020, I started running my HVAC company remotely.
+
+In 2022, we switched to **ServiceTitan**.
+
+Like many contractors, I quickly learned something:
+
+ServiceTitan is powerful. But if you do not fully understand it, it will not help you the way you expect.
+
+There are many fields, settings, and reports working behind the scenes. If the data going in is wrong, the reports coming out will also be wrong.
+
+When you manage a company from a distance, you must trust your numbers. I could not rely on walking into the office to see what was happening. I had to rely on data.
+
+So I made it my job to understand:
+
+* Every important field
+* Every dashboard
+* Every call metric
+* Every report
+
+Before I could make good decisions, I had to make sure the data was correct.
+
+---
+
+## Bad Data Is Worse Than No Data
+
+Many owners say they want to make data-driven decisions.
+
+That is good. But only if the data is accurate.
+
+Bad data is worse than guessing.
+
+Why?
+
+Because bad data gives you confidence in the wrong direction.
+
+You think you are making smart decisions. But you are not.
+
+At first, I checked the basics:
+
+* Payments were marked complete
+* Jobs were closed correctly
+* Recalls were tied to jobs
+* Commissions made sense
+
+Then I looked at call center metrics.
+
+That is where the problem showed up.
+
+---
+
+## The Call Numbers Were Not Right
+
+I started reviewing:
+
+* Total calls
+* Booked calls
+* Unbooked calls
+* Booking percentage
+* Abandoned calls
+* Call reasons
+
+I listened to real call recordings.
+
+What I heard did not match the numbers.
+
+Different CSRs had very different results. But when I listened to the calls, the classifications often did not make sense.
+
+Even with call playback, I could only review one call at a time.
+
+So I built a simple tool that:
+
+* Pulled the recording
+* Transcribed the call
+* Turned it into readable text
+
+Now I could read calls quickly.
+
+I reviewed thousands of transcripts.
+
+For each call, I wrote down:
+
+* What it should have been classified as
+* What it was classified as
+* If it was unbooked, why
+
+Across multiple companies handling thousands of calls, accuracy was only about 50 to 60 percent.
+
+That means almost half the calls were labeled wrong.
+
+Some companies even had managers who listened and reclassified calls. Those were still inconsistent.
+
+The issue was not effort. It was nuance. Calls are complex. People get tired. Standards drift over time.
+
+Call classification is a perfect job for AI.
+
+---
+
+## Why AI Makes a Difference
+
+For the last few years, I have spent several hours a day working with AI and refining call analysis.
+
+The goal was simple:
+
+* Was this call a real opportunity?
+* Was it booked?
+* If not, why?
+
+PhoneTap was built to answer those questions clearly.
+
+PhoneTap:
+
+* Analyzes every call
+* Determines what really happened
+* Identifies if it was a true booking opportunity
+* Explains why it was not booked
+* Syncs corrected data back into ServiceTitan
+
+When your call data is accurate, your reports become useful.
+
+You can coach better.
+You can train better.
+You can manage better.
+
+---
+
+## Understanding Lost Revenue
+
+An unbooked call is not just a number.
+
+It is potential revenue.
+
+But how much?
+
+Some new customers spend $100.
+Some spend $1,000.
+Some spend $20,000.
+
+And many keep spending over time.
+
+So we built a Lost Revenue Dashboard.
+
+PhoneTap looks at your real ServiceTitan history to calculate:
+
+* What a new customer is worth in 30 days
+* In 60 days
+* In 6 months
+* In 1 year
+
+We remove extreme outliers so the numbers stay realistic.
+
+Now, when you see an unbooked call, you also see an estimated dollar amount tied to it.
+
+It is no longer just a missed call.
+It is a clear financial impact.
+
+---
+
+## Tracking Recovered Revenue
+
+We also track what happens next.
+
+If a call was unbooked, did the customer later:
+
+* Call back?
+* Respond to an outbound call?
+* Book through text?
+* Submit a web form?
+
+PhoneTap checks for that.
+
+You can see:
+
+* Revenue that was at risk
+* Revenue that was recovered
+* The real reasons customers did not book
+
+This gives you the full picture.
+
+---
+
+## The Real Why
+
+PhoneTap exists because contractors deserve accurate numbers.
+
+You should not have to guess.
+
+You should not have to rely on flawed reports.
+
+You should not make decisions based on bad classifications.
+
+When your data is accurate, everything changes:
+
+* Better coaching
+* Better hiring decisions
+* Better marketing tracking
+* Better forecasting
+
+Accuracy comes first.
+
+Then insight.
+
+Then action.
+
+That is why PhoneTap exists.

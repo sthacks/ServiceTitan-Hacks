@@ -30,6 +30,18 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: "12",
+    title: "Why PhoneTap Exists",
+    excerpt: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why I built PhoneTap.",
+    author: "Bill Brown",
+    date: "February 16, 2026",
+    readTime: "7 min read",
+    category: "Call Center",
+    image: "/og-phonetap-csrs.png",
+    slug: "why-phonetap-exists",
+    ogImage: "https://servicetitanhacks.com/og-phonetap-csrs.png"
+  },
+  {
     id: "11",
     title: "PhoneTAP Was Built for CSRs. Here Is Why That Matters.",
     excerpt: "For most of my career in HVAC, I misunderstood one of the most important roles in the company: the customer service representative. CSRs are not a back office function—they are the gateway to revenue.",
@@ -231,6 +243,341 @@ function SalesCoachPromptBox() {
 
 // Full article content
 const blogPostContent: Record<string, JSX.Element> = {
+  "why-phonetap-exists": (
+    <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
+      <p className="lead">
+        In 2020, I started running my HVAC company remotely.
+      </p>
+
+      <p>
+        In 2022, we switched to <strong>ServiceTitan</strong>.
+      </p>
+
+      <p>
+        Like many contractors, I quickly learned something:
+      </p>
+
+      <p>
+        ServiceTitan is powerful. But if you do not fully understand it, it will not help you the way you expect.
+      </p>
+
+      <p>
+        There are many fields, settings, and reports working behind the scenes. If the data going in is wrong, the reports coming out will also be wrong.
+      </p>
+
+      <p>
+        When you manage a company from a distance, you must trust your numbers. I could not rely on walking into the office to see what was happening. I had to rely on data.
+      </p>
+
+      <p>
+        So I made it my job to understand:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Every important field</li>
+        <li>Every dashboard</li>
+        <li>Every call metric</li>
+        <li>Every report</li>
+      </ul>
+
+      <p>
+        Before I could make good decisions, I had to make sure the data was correct.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Bad Data Is Worse Than No Data</h2>
+
+      <p>
+        Many owners say they want to make data-driven decisions.
+      </p>
+
+      <p>
+        That is good. But only if the data is accurate.
+      </p>
+
+      <p>
+        Bad data is worse than guessing.
+      </p>
+
+      <p>
+        Why?
+      </p>
+
+      <p>
+        Because bad data gives you confidence in the wrong direction.
+      </p>
+
+      <p>
+        You think you are making smart decisions. But you are not.
+      </p>
+
+      <p>
+        At first, I checked the basics:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Payments were marked complete</li>
+        <li>Jobs were closed correctly</li>
+        <li>Recalls were tied to jobs</li>
+        <li>Commissions made sense</li>
+      </ul>
+
+      <p>
+        Then I looked at call center metrics.
+      </p>
+
+      <p>
+        That is where the problem showed up.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">The Call Numbers Were Not Right</h2>
+
+      <p>
+        I started reviewing:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Total calls</li>
+        <li>Booked calls</li>
+        <li>Unbooked calls</li>
+        <li>Booking percentage</li>
+        <li>Abandoned calls</li>
+        <li>Call reasons</li>
+      </ul>
+
+      <p>
+        I listened to real call recordings.
+      </p>
+
+      <p>
+        What I heard did not match the numbers.
+      </p>
+
+      <p>
+        Different CSRs had very different results. But when I listened to the calls, the classifications often did not make sense.
+      </p>
+
+      <p>
+        Even with call playback, I could only review one call at a time.
+      </p>
+
+      <p>
+        So I built a simple tool that:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Pulled the recording</li>
+        <li>Transcribed the call</li>
+        <li>Turned it into readable text</li>
+      </ul>
+
+      <p>
+        Now I could read calls quickly.
+      </p>
+
+      <p>
+        I reviewed thousands of transcripts.
+      </p>
+
+      <p>
+        For each call, I wrote down:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>What it should have been classified as</li>
+        <li>What it was classified as</li>
+        <li>If it was unbooked, why</li>
+      </ul>
+
+      <p>
+        Across multiple companies handling thousands of calls, accuracy was only about 50 to 60 percent.
+      </p>
+
+      <p>
+        That means almost half the calls were labeled wrong.
+      </p>
+
+      <p>
+        Some companies even had managers who listened and reclassified calls. Those were still inconsistent.
+      </p>
+
+      <p>
+        The issue was not effort. It was nuance. Calls are complex. People get tired. Standards drift over time.
+      </p>
+
+      <p>
+        Call classification is a perfect job for AI.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Why AI Makes a Difference</h2>
+
+      <p>
+        For the last few years, I have spent several hours a day working with AI and refining call analysis.
+      </p>
+
+      <p>
+        The goal was simple:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Was this call a real opportunity?</li>
+        <li>Was it booked?</li>
+        <li>If not, why?</li>
+      </ul>
+
+      <p>
+        PhoneTap was built to answer those questions clearly.
+      </p>
+
+      <p>
+        PhoneTap:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Analyzes every call</li>
+        <li>Determines what really happened</li>
+        <li>Identifies if it was a true booking opportunity</li>
+        <li>Explains why it was not booked</li>
+        <li>Syncs corrected data back into ServiceTitan</li>
+      </ul>
+
+      <p>
+        When your call data is accurate, your reports become useful.
+      </p>
+
+      <p>
+        You can coach better. You can train better. You can manage better.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Understanding Lost Revenue</h2>
+
+      <p>
+        An unbooked call is not just a number.
+      </p>
+
+      <p>
+        It is potential revenue.
+      </p>
+
+      <p>
+        But how much?
+      </p>
+
+      <p>
+        Some new customers spend $100. Some spend $1,000. Some spend $20,000.
+      </p>
+
+      <p>
+        And many keep spending over time.
+      </p>
+
+      <p>
+        So we built a Lost Revenue Dashboard.
+      </p>
+
+      <p>
+        PhoneTap looks at your real ServiceTitan history to calculate:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>What a new customer is worth in 30 days</li>
+        <li>In 60 days</li>
+        <li>In 6 months</li>
+        <li>In 1 year</li>
+      </ul>
+
+      <p>
+        We remove extreme outliers so the numbers stay realistic.
+      </p>
+
+      <p>
+        Now, when you see an unbooked call, you also see an estimated dollar amount tied to it.
+      </p>
+
+      <p>
+        It is no longer just a missed call. It is a clear financial impact.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">Tracking Recovered Revenue</h2>
+
+      <p>
+        We also track what happens next.
+      </p>
+
+      <p>
+        If a call was unbooked, did the customer later:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Call back?</li>
+        <li>Respond to an outbound call?</li>
+        <li>Book through text?</li>
+        <li>Submit a web form?</li>
+      </ul>
+
+      <p>
+        PhoneTap checks for that.
+      </p>
+
+      <p>
+        You can see:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Revenue that was at risk</li>
+        <li>Revenue that was recovered</li>
+        <li>The real reasons customers did not book</li>
+      </ul>
+
+      <p>
+        This gives you the full picture.
+      </p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4 font-heading">The Real Why</h2>
+
+      <p>
+        PhoneTap exists because contractors deserve accurate numbers.
+      </p>
+
+      <p>
+        You should not have to guess.
+      </p>
+
+      <p>
+        You should not have to rely on flawed reports.
+      </p>
+
+      <p>
+        You should not make decisions based on bad classifications.
+      </p>
+
+      <p>
+        When your data is accurate, everything changes:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Better coaching</li>
+        <li>Better hiring decisions</li>
+        <li>Better marketing tracking</li>
+        <li>Better forecasting</li>
+      </ul>
+
+      <p>
+        Accuracy comes first.
+      </p>
+
+      <p>
+        Then insight.
+      </p>
+
+      <p>
+        Then action.
+      </p>
+
+      <p>
+        That is why PhoneTap exists.
+      </p>
+    </div>
+  ),
   "phonetap-built-for-csrs": (
     <div className="prose prose-lg max-w-none text-black [&_p]:text-black [&_li]:text-black [&_h2]:text-black [&_h3]:text-black">
       <p className="lead">
@@ -2623,7 +2970,7 @@ export default function BlogPost() {
           )}
 
           {/* PhoneTAP Waitlist CTA - only show on PhoneTAP article */}
-          {post.slug === "phonetap-built-for-csrs" && (
+          {(post.slug === "phonetap-built-for-csrs" || post.slug === "why-phonetap-exists") && (
             <div className="mt-12">
               <PhoneTapWaitlistCTA />
             </div>

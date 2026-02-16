@@ -286,6 +286,12 @@ export const metadata: Record<string, PageMetadata> = {
   },
   
   // Blog Posts - Additional
+  "/blog/why-phonetap-exists": {
+    title: "Why PhoneTap Exists",
+    description: "In 2020, I started running my HVAC company remotely. I had to rely on data. But when I dug into call center metrics, the numbers didn't match reality. Call classification accuracy was only 50 to 60 percent. That's why I built PhoneTap.",
+    ogImage: "https://servicetitanhacks.com/og-phonetap-csrs.png",
+    ogType: "article",
+  },
   "/blog/phonetap-built-for-csrs": {
     title: "PhoneTAP Was Built for CSRs. Here Is Why That Matters.",
     description: "For most of my career in HVAC, I misunderstood one of the most important roles in the company: the customer service representative. CSRs are not a back office function—they are the gateway to revenue.",
