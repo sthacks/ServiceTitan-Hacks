@@ -171,9 +171,9 @@ export default function ContractorCommerceWebinar() {
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO
-        title={`${config.webinarTitle} | Free Live Training`}
-        description="A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation."
-        keywords="contractor pricing, online pricing, HVAC pricing, homeowner psychology, price transparency, contractor commerce, ServiceTitan"
+        title="Should Contractors Put Pricing Online in 2026? Fireside Chat"
+        description="Fireside chat with contractors and experts on online pricing, AI search, and staying in control without commoditizing your service."
+        keywords="contractor pricing, online pricing, HVAC pricing, AI search, price transparency, contractor commerce, ServiceTitan"
         canonicalUrl="https://servicetitanhacks.com/webinar/price-conversation"
         ogImage={`${window.location.origin}${heroImage}`}
       />
@@ -184,18 +184,14 @@ export default function ContractorCommerceWebinar() {
           <span className="font-medium">Free Live Webinar</span>
           <span className="hidden sm:inline">|</span>
           <span>{config.webinarDate} at {config.webinarTime} {config.timezone}</span>
-          <a
-            href="https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5ODVlZmZjYzdlYzJiNGQ0YjNiN2NiNCIsInByb2plY3RJZCI6IjY5ODVlZmZjYmMyOTg3MGJiYzU5NDFjNiJ9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#top">
             <Button
               size="sm"
               variant="secondary"
-              className="bg-white text-[#ED254E] hover:bg-white/90"
+              className="bg-white text-[#ED254E]"
               data-testid="button-announcement-cta"
             >
-              Reserve My Spot
+              Register Free
             </Button>
           </a>
         </div>
@@ -218,7 +214,7 @@ export default function ContractorCommerceWebinar() {
             <p className="text-xl text-white/70 mb-6 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>
-            <p className="text-sm text-white/50 italic mb-6">{config.heroNote}</p>
+            <p className="text-sm text-white/50 italic mb-6">This is not a webinar about posting your price book online. It is not about racing to the bottom. It is not about replacing sales conversations.</p>
             <CountdownTimer targetDate={eventDate} />
             <div className="mt-8 w-full max-w-3xl mx-auto" data-testid="registration-embed">
               <div style={{ width: "100%", height: "0px", position: "relative", paddingBottom: "56.25%" }}>
@@ -286,8 +282,8 @@ export default function ContractorCommerceWebinar() {
           <div className="space-y-4">
             {agenda.map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
-                <div className="w-20 flex-shrink-0">
-                  <span className="text-[#ED254E] font-mono font-bold">{item.time}</span>
+                <div className="w-8 flex-shrink-0">
+                  <span className="text-[#ED254E] font-mono font-bold">{item.time}.</span>
                 </div>
                 <div className="flex-1 pb-4 border-b border-white/10 last:border-0">
                   <span className="text-white/80">{item.topic}</span>
@@ -298,32 +294,48 @@ export default function ContractorCommerceWebinar() {
         </div>
       </section>
 
-      {/* Meet Your Hosts */}
+      {/* Your Hosts */}
       <section id="speakers" className="py-16 md:py-24 px-4">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Your Hosts</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-white/5 border-white/10 text-center p-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-white/5 border-white/10 text-center p-6">
               <img 
                 src={hostImage} 
-                alt={config.hostName}
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                alt="Bill Brown"
+                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-xl font-bold text-white mb-1">{config.hostName}</h3>
-              <p className="text-[#ED254E] text-sm mb-4">{config.hostTitle}</p>
-              <p className="text-white/60 text-sm">{config.hostBio}</p>
+              <h3 className="text-lg font-bold text-white mb-1">Bill Brown</h3>
+              <p className="text-[#ED254E] text-sm mb-3">Host</p>
+              <p className="text-white/60 text-xs">Former HVAC owner and founder of ServiceTitan Hacks. Bill hosts contractor-to-contractor conversations on what is changing in home services.</p>
             </Card>
-            <Card className="bg-white/5 border-white/10 text-center p-8">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
+            <Card className="bg-white/5 border-white/10 text-center p-6">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
                 <img 
                   src={contractorCommerceLogo} 
-                  alt={config.guestName}
-                  className="w-16 h-16 object-contain"
+                  alt="Paul Redman"
+                  className="w-14 h-14 object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
-              <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
-              <p className="text-white/60 text-sm">{config.guestBio}</p>
+              <h3 className="text-lg font-bold text-white mb-1">Paul Redman</h3>
+              <p className="text-[#ED254E] text-sm mb-3">President, Contractor Commerce</p>
+              <p className="text-white/60 text-xs">President of Contractor Commerce. Paul focuses on how contractors can use controlled transparency to build trust and improve lead quality.</p>
+            </Card>
+            <Card className="bg-white/5 border-white/10 text-center p-6">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
+                <Calendar className="h-8 w-8 text-[#ED254E]" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">Brad Felix</h3>
+              <p className="text-[#ED254E] text-sm mb-3">AI Expert</p>
+              <p className="text-white/60 text-xs">AI expert. Brad breaks down how AI search and automated answers shape early customer expectations before a call happens.</p>
+            </Card>
+            <Card className="bg-white/5 border-white/10 text-center p-6">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
+                <Calendar className="h-8 w-8 text-[#ED254E]" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">Contractor Guest</h3>
+              <p className="text-[#ED254E] text-sm mb-3">TBA</p>
+              <p className="text-white/60 text-xs">Contractor perspective. Real-world wins, mistakes, and lessons from the field. Name to be announced.</p>
             </Card>
           </div>
         </div>
@@ -356,10 +368,10 @@ export default function ContractorCommerceWebinar() {
       <section className="py-16 md:py-24 px-4 bg-[#ED254E]">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Have Strong Opinions About Online Pricing?
+            Still on the fence about pricing online?
           </h2>
           <p className="text-white/80 mb-8">
-            Good. This fireside chat is for you. Join the conversation about homeowner psychology, trust, and staying in consideration without losing control.
+            Join the fireside chat and hear multiple perspectives before you decide.
           </p>
           <a href="#top">
             <Button
@@ -368,7 +380,7 @@ export default function ContractorCommerceWebinar() {
               className="bg-white text-[#ED254E]"
               data-testid="button-bottom-cta"
             >
-              Register Above
+              Register Free
             </Button>
           </a>
         </div>

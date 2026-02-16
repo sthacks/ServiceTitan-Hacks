@@ -250,8 +250,8 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
   "/webinar/price-conversation": {
-    title: "Should Contractors Put Pricing Online in 2026? | ServiceTitan Hacks",
-    description: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",
+    title: "Should Contractors Put Pricing Online in 2026? Fireside Chat | ServiceTitan Hacks",
+    description: "Fireside chat with contractors and experts on online pricing, AI search, and staying in control without commoditizing your service.",
     ogImage: "https://servicetitanhacks.com/og-upfront-pricing-webinar.png",
   },
   "/webinar/stop-spreadsheet-payroll": {
