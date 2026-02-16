@@ -12,7 +12,7 @@ import SEO from "@/components/SEO";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
-import heroImage from "@assets/contractor_commerce_(5)_1770387076667.png";
+import heroImage from "@assets/contractor commerce (7).png";
 
 const config = {
   webinarTitle: "Should Contractors Put Pricing Online in 2026?",
