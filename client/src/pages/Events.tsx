@@ -53,7 +53,7 @@ const events: Event[] = [
   {
     id: "3",
     title: "Should Contractors Put Pricing Online in 2026?",
-    description: "A candid fireside chat about homeowner psychology, trust, and how contractors can stay in consideration without losing control of the conversation, their margins, or their reputation.",
+    description: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",
     date: "Tuesday, February 24, 2026",
     eventDateTime: new Date("2026-02-24T14:00:00-05:00"),
     time: "2:00 PM",

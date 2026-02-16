@@ -17,7 +17,7 @@ import heroImage from "@assets/contractor_commerce_(5)_1770387076667.png";
 const config = {
   webinarTitle: "Should Contractors Put Pricing Online in 2026?",
   webinarFullTitle: "Should Contractors Put Pricing Online in 2026?",
-  webinarSubtitle: "Most homeowners decide how they feel about price before they ever call a contractor. Not because they want the cheapest option, but because they want certainty, context, and reassurance before inviting someone into their home.",
+  webinarSubtitle: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",
   webinarDate: "February 24th, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
