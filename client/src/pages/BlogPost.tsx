@@ -4,7 +4,6 @@ import { Copy, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import PhoneTapWaitlistCTA from "@/components/PhoneTapWaitlistCTA";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import serviceTitanDashboardImage from "@assets/32492017-1_1762522874097.jpg";
@@ -2589,8 +2588,16 @@ export default function BlogPost() {
 
           {/* PhoneTAP Waitlist CTA - only show on PhoneTAP article */}
           {post.slug === "why-phonetap-exists" && (
-            <div className="mt-12">
-              <PhoneTapWaitlistCTA />
+            <div className="mt-12 p-8 bg-primary/5 border border-primary/20 rounded-md text-center">
+              <h3 className="text-2xl font-bold mb-3 font-heading">Want to see PhoneTap in action?</h3>
+              <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+                Learn how PhoneTap uses AI to classify every call, uncover lost revenue, and give your team the accurate data they need.
+              </p>
+              <a href="https://phonetap.ai" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" data-testid="button-phonetap-learn-more">
+                  Learn More at PhoneTap.ai
+                </Button>
+              </a>
             </div>
           )}
 
