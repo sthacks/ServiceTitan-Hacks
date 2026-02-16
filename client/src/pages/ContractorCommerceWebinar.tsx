@@ -17,75 +17,73 @@ import heroImage from "@assets/contractor_commerce_(5)_1770387076667.png";
 const config = {
   webinarTitle: "Should Contractors Put Pricing Online in 2026?",
   webinarFullTitle: "Should Contractors Put Pricing Online in 2026?",
-  webinarSubtitle: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",
+  webinarSubtitle: "Customers are asking AI what HVAC systems cost before they ever call. Join a candid fireside chat on whether pricing belongs online, and how to stay in control without commoditizing your business.",
   webinarDate: "February 24th, 2026",
   webinarTime: "2:00 PM",
   timezone: "ET",
-  hostName: "Bill Brown",
-  hostTitle: "Founder, ServiceTitan Hacks",
-  hostBio: "Helps contractors fix operational bottlenecks. Trained 1,000+ businesses on ServiceTitan optimization and growth strategies.",
-  guestName: "Contractor Commerce",
-  guestTitle: "Contractor Commerce",
-  guestBio: "Helping HVAC contractors give homeowners the pricing clarity they need, without losing control of the conversation.",
-  heroNote: "This is not a webinar about posting your price book online. It is not about racing to the bottom. It is not about replacing sales conversations.",
 };
 
 const learningCards = [
   { 
-    title: "Why Homeowners Research Price First", 
-    description: "Understand why customers look for pricing before calling, even when every job is different, and what that means for your business." 
+    title: "Why Homeowners Ask About Price First", 
+    description: "Most customers want a range to reduce uncertainty before they talk to anyone." 
   },
   { 
-    title: "Silent Disqualification", 
-    description: "How the absence of pricing creates invisible lead loss that contractors never see, and how to stop it." 
+    title: "AI Search and Early Price Expectations", 
+    description: "AI tools summarize cost answers using public info, which can shape the shortlist before calls." 
   },
   { 
-    title: "Transparency vs. Commoditization", 
-    description: "The critical difference between price transparency and price commoditization, and why most attempts at online pricing get it wrong." 
+    title: "Transparency vs Commoditization", 
+    description: "There is a difference between sharing ranges and turning your service into a commodity." 
   },
   { 
-    title: "Controlled Pricing in Practice", 
-    description: "What controlled pricing looks like in the real world, including what it should and should not be used for." 
+    title: "Why Most Online Pricing Attempts Fail", 
+    description: "Static pricing pages often create confusion, ghosting, and bad-fit leads." 
   },
   { 
-    title: "Avoiding the Wrong Behavior", 
-    description: "Why posting prices without a system attracts the wrong customers and undermines your sales process." 
+    title: "Controlled Transparency", 
+    description: "How to show price ranges with guardrails, assumptions, and clear next steps." 
   },
   { 
     title: "Staying in Consideration", 
-    description: "How to stay in the homeowner's consideration set without losing control of the conversation, your margins, or your reputation." 
+    description: "How pricing affects trust and whether you get the call in the first place." 
   },
 ];
 
 const agenda = [
-  { time: "2:00 PM", topic: "Why homeowners research price before calling, even when every job is different." },
-  { time: "2:10 PM", topic: "How the absence of pricing creates silent disqualification contractors never see." },
-  { time: "2:20 PM", topic: "Why posting prices without a system attracts the wrong behavior." },
-  { time: "2:30 PM", topic: "The difference between price transparency and price commoditization." },
-  { time: "2:40 PM", topic: "What controlled pricing looks like in the real world, and what it should not be used for." },
-  { time: "2:50 PM", topic: "Q&A - Bring your opinions. This conversation is for you." },
+  { time: "1", topic: "The real question: should contractors put pricing online in 2026?" },
+  { time: "2", topic: "What customers decide about price before they ever call." },
+  { time: "3", topic: "How AI search influences early expectations without you seeing it." },
+  { time: "4", topic: "Why most online pricing fails (and what to do instead)." },
+  { time: "5", topic: "What \"controlled transparency\" looks like in practice (ranges, guardrails, assumptions)." },
+  { time: "6", topic: "How to avoid commoditization while still building trust." },
+  { time: "7", topic: "Q&A: bring your strongest objections." },
 ];
 
 const faqs = [
   {
     question: "Is this a sales pitch for online pricing software?",
-    answer: "No. This is a candid fireside chat between contractors about homeowner psychology, trust, and how pricing conversations really work. We talk openly about what works, what doesn't, and what to avoid.",
+    answer: "No. This is a fireside chat about the real tradeoffs. If you want to explore tools after, that is optional.",
   },
   {
     question: "I have strong opinions about online pricing. Is this for me?",
-    answer: "Especially if you do. This conversation is designed for contractors who think critically about how they present pricing. Bring your perspective.",
+    answer: "Yes. We are addressing the real objections and what customers do before they call.",
   },
   {
     question: "Is this really free?",
-    answer: "Yes. It is a strategic conversation for the industry, not a gated product demo.",
+    answer: "Yes. Registration is free.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes, all registrants receive the recording.",
+    answer: "If a replay is available, we will email it to registrants after the event. Live attendance is best for Q&A.",
   },
   {
-    question: "What if I can't make it live?",
-    answer: "Register anyway to get the replay.",
+    question: "What if every job is different?",
+    answer: "We agree. This is why we are talking about ranges, assumptions, and guardrails, not exact quotes.",
+  },
+  {
+    question: "Will you cover AI search and visibility?",
+    answer: "Yes. We will explain how AI answers can influence early expectations and why that matters for the pricing conversation.",
   },
 ];
 

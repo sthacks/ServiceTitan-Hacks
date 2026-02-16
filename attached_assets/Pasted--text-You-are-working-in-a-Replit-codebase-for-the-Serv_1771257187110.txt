@@ -1,0 +1,151 @@
+```text
+You are working in a Replit codebase for the ServiceTitanHacks webinar landing page shown in the attached screenshot PDF (2 pages). Update ONLY copy and a few small UI labels. Do not redesign layout, colors, spacing, or components. Keep the same structure: hero section with image, short description, countdown, embedded registration form card, "What We'll Talk About" cards, "What We'll Cover" list, "Your Hosts", FAQ accordion, and bottom CTA banner. Reference: landing page screenshot PDF page 1 and page 2. :contentReference[oaicite:0]{index=0}
+
+GOAL
+Reframe the landing page around the question:
+"Should contractors put pricing online in 2026?"
+Tie it to AI search and the reality that the pricing conversation happens before the phone rings, without promising outcomes or using hype.
+
+GLOBAL COPY RULES
+- Do not use absolute claims like "guaranteed", "always", "never".
+- Do not claim "AI will exclude you" as a certainty. Use probability language like "can", "often", "more likely".
+- Do not mention "after-hours lead capture" as the primary reason for online pricing.
+- Keep reading level around 8th grade.
+- Keep tone candid, contractor-to-contractor.
+- Avoid long paragraphs. Use short lines and bullets.
+
+1) HERO SECTION (top of page)
+Update the main headline and subheadline.
+
+Replace hero headline with:
+"Should Contractors Put Pricing Online in 2026?"
+
+Replace hero supporting text (1 to 2 sentences) with:
+"Customers are asking AI what HVAC systems cost before they ever call. Join a candid fireside chat on whether pricing belongs online, and how to stay in control without commoditizing your business."
+
+If there is a small tag above the headline like "LIVE FIRESIDE CHAT", keep it.
+
+2) REGISTRATION CARD (the form area)
+The form card headline currently appears to repeat the title. Update it to a clearer CTA.
+
+Set form card title to:
+"Save Your Seat"
+
+Set the small date/time line below it (if present) to:
+"Wed, Feb 18, 2026 at 1:00 PM ET"
+(If the time is already set in code, keep it consistent and only adjust label formatting.)
+
+Update the submit button label (if it currently says something generic) to:
+"Register Free"
+
+3) "WHAT WE'LL TALK ABOUT" (card grid)
+Keep the same number of cards and layout. Update the card titles and descriptions to align with the new framing.
+
+Use these six cards (title + 1 sentence description each):
+
+Card 1 title: "Why Homeowners Ask About Price First"
+Description: "Most customers want a range to reduce uncertainty before they talk to anyone."
+
+Card 2 title: "AI Search and Early Price Expectations"
+Description: "AI tools summarize cost answers using public info, which can shape the shortlist before calls."
+
+Card 3 title: "Transparency vs Commoditization"
+Description: "There is a difference between sharing ranges and turning your service into a commodity."
+
+Card 4 title: "Why Most Online Pricing Attempts Fail"
+Description: "Static pricing pages often create confusion, ghosting, and bad-fit leads."
+
+Card 5 title: "Controlled Transparency"
+Description: "How to show price ranges with guardrails, assumptions, and clear next steps."
+
+Card 6 title: "Staying in Consideration"
+Description: "How pricing affects trust and whether you get the call in the first place."
+
+4) "WHAT WE'LL COVER" (bullet list)
+Replace the bullet list with these items (keep the same styling and numbering if present):
+
+1. The real question: should contractors put pricing online in 2026?
+2. What customers decide about price before they ever call.
+3. How AI search influences early expectations without you seeing it.
+4. Why most online pricing fails (and what to do instead).
+5. What "controlled transparency" looks like in practice (ranges, guardrails, assumptions).
+6. How to avoid commoditization while still building trust.
+7. Q&A: bring your strongest objections.
+
+5) "YOUR HOSTS" SECTION
+IMPORTANT: There are 3 guests plus the host. Update this section to show:
+- Host: Bill Brown
+- Guest 1: Paul Redman (President of Contractor Commerce)
+- Guest 2: Brad Felix (AI Expert)
+- Guest 3: Contractor Guest (placeholder)
+
+Do not change the visual layout style. If the current UI supports only 2 cards, extend it to support 4 cards using the same card component and spacing pattern (no redesign, just repeat the card grid).
+
+Update only the short blurbs under each name (and titles if present). Use these blurbs:
+
+Host (Bill Brown) blurb:
+"Former HVAC owner and founder of ServiceTitan Hacks. Bill hosts contractor-to-contractor conversations on what is changing in home services."
+
+Guest 1 (Paul Redman) blurb:
+"President of Contractor Commerce. Paul focuses on how contractors can use controlled transparency to build trust and improve lead quality."
+
+Guest 2 (Brad Felix) blurb:
+"AI expert. Brad breaks down how AI search and automated answers shape early customer expectations before a call happens."
+
+Guest 3 (Contractor Guest placeholder) blurb:
+"Contractor perspective. Real-world wins, mistakes, and lessons from the field. Name to be announced."
+
+If there is an image/avatar system:
+- Keep existing images for Bill and Paul if they already exist.
+- If Brad does not have an image, use a neutral placeholder avatar.
+- For Contractor Guest placeholder, use a neutral placeholder avatar.
+
+6) FAQ SECTION
+Keep the same accordion UI. Update or ensure these questions exist in this order, with short answers:
+
+FAQ 1 Q: "Is this a sales pitch for online pricing software?"
+A: "No. This is a fireside chat about the real tradeoffs. If you want to explore tools after, that is optional."
+
+FAQ 2 Q: "I have strong opinions about online pricing. Is this for me?"
+A: "Yes. We are addressing the real objections and what customers do before they call."
+
+FAQ 3 Q: "Is this really free?"
+A: "Yes. Registration is free."
+
+FAQ 4 Q: "Will there be a replay?"
+A: "If a replay is available, we will email it to registrants after the event. Live attendance is best for Q&A."
+
+FAQ 5 Q: "What if every job is different?"
+A: "We agree. This is why we are talking about ranges, assumptions, and guardrails, not exact quotes."
+
+FAQ 6 Q: "Will you cover AI search and visibility?"
+A: "Yes. We will explain how AI answers can influence early expectations and why that matters for the pricing conversation."
+
+7) BOTTOM CTA BANNER (red section)
+Update the headline and button label.
+
+Banner headline:
+"Still on the fence about pricing online?"
+Banner subtext (1 sentence):
+"Join the fireside chat and hear multiple perspectives before you decide."
+Button label:
+"Register Free"
+
+8) SEO / META (if present)
+Update page title and meta description:
+
+HTML title tag:
+"Should Contractors Put Pricing Online in 2026? Fireside Chat"
+
+Meta description (max 160 chars):
+"Fireside chat with contractors and experts on online pricing, AI search, and staying in control without commoditizing your service."
+
+9) VALIDATION
+- Run through the page to ensure no copy overflows on mobile.
+- Confirm all instances of the old hero headline are replaced.
+- Confirm date/time display remains consistent across hero, form card, and any sticky header.
+- Confirm Hosts section displays 4 cards and renders correctly on mobile.
+
+Deliverable:
+Commit the changes and provide a summary of which files were edited and where each copy block lives (component names or file paths).
+```
