@@ -12,6 +12,7 @@ import SEO from "@/components/SEO";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
+import paulImage from "@assets/paul_1771342691914.jpeg";
 import heroImage from "@assets/contractor commerce (7).png";
 
 const config = {
@@ -310,13 +311,11 @@ export default function ContractorCommerceWebinar() {
               <p className="text-white/60 text-xs">Former HVAC owner and founder of ServiceTitan Hacks. Bill hosts contractor-to-contractor conversations on what is changing in home services.</p>
             </Card>
             <Card className="bg-white/5 border-white/10 text-center p-6">
-              <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
-                <img 
-                  src={contractorCommerceLogo} 
-                  alt="Paul Redman"
-                  className="w-14 h-14 object-contain"
-                />
-              </div>
+              <img 
+                src={paulImage} 
+                alt="Paul Redman"
+                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-lg font-bold text-white mb-1">Paul Redman</h3>
               <p className="text-[#ED254E] text-sm mb-3">President, Contractor Commerce</p>
               <p className="text-white/60 text-xs">President of Contractor Commerce. Paul focuses on how contractors can use controlled transparency to build trust and improve lead quality.</p>
