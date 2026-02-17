@@ -13,6 +13,7 @@ import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import paulImage from "@assets/paul_1771342691914.jpeg";
+import bradImage from "@assets/brad_1771342758998.jpeg";
 import heroImage from "@assets/contractor commerce (7).png";
 
 const config = {
@@ -321,9 +322,11 @@ export default function ContractorCommerceWebinar() {
               <p className="text-white/60 text-xs">President of Contractor Commerce. Paul focuses on how contractors can use controlled transparency to build trust and improve lead quality.</p>
             </Card>
             <Card className="bg-white/5 border-white/10 text-center p-6">
-              <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-[#ED254E]/20 flex items-center justify-center">
-                <Calendar className="h-8 w-8 text-[#ED254E]" />
-              </div>
+              <img 
+                src={bradImage} 
+                alt="Brad Felix"
+                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-lg font-bold text-white mb-1">Brad Felix</h3>
               <p className="text-[#ED254E] text-sm mb-3">AI Expert</p>
               <p className="text-white/60 text-xs">AI expert. Brad breaks down how AI search and automated answers shape early customer expectations before a call happens.</p>
