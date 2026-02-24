@@ -252,7 +252,7 @@ export const metadata: Record<string, PageMetadata> = {
   "/webinar/price-conversation": {
     title: "Should Contractors Put Pricing Online in 2026? Fireside Chat | ServiceTitan Hacks",
     description: "Fireside chat with contractors and experts on online pricing, AI search, and staying in control without commoditizing your service.",
-    ogImage: "https://servicetitanhacks.com/og-upfront-pricing-webinar.png",
+    ogImage: "https://servicetitanhacks.com/og-price-conversation-webinar.png",
   },
   "/webinar/stop-spreadsheet-payroll": {
     title: "Stop the Spreadsheet Payroll Nightmare | ServiceTitan Hacks Webinar",
