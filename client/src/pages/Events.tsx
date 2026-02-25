@@ -390,7 +390,7 @@ export default function Events() {
               <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
                 Past Events
               </h2>
-              <div className="grid gap-10">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {pastEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-past-event-${event.id}`}>
                     {event.youtubeId ? (
