@@ -63,7 +63,8 @@ const events: Event[] = [
     type: "webinar",
     image: contractorCommerceImage,
     link: "/webinar/price-conversation",
-    status: "upcoming",
+    youtubeId: "42z4bkyhxDw",
+    status: "past",
     hosts: ["Bill Brown", "Contractor Commerce"]
   },
   {
