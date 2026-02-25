@@ -30,6 +30,7 @@ interface Event {
   image: string;
   link: string;
   replayLink?: string;
+  youtubeId?: string;
   status: "upcoming" | "live" | "past";
   hosts: string[];
 }
@@ -47,6 +48,7 @@ const events: Event[] = [
     image: smartACWebinarImage,
     link: "/webinar/membership-retention",
     replayLink: "/webinar/membership-retention-replay",
+    youtubeId: "pqDJ-t6lOgw",
     status: "past",
     hosts: ["Bill Brown", "SmartAC"]
   },
@@ -90,6 +92,7 @@ const events: Event[] = [
     image: equipmentPricingImage,
     link: "/webinar/equipment-pricing",
     replayLink: "/webinar/equipment-pricing-replay",
+    youtubeId: "RlffDnKEO8s",
     status: "past",
     hosts: ["Bill Brown", "Norris Ayvazian"]
   },
@@ -105,6 +108,7 @@ const events: Event[] = [
     image: webinarHeroImage,
     link: "/webinar/invisible-labor-market",
     replayLink: "/webinar/recruiting-replay",
+    youtubeId: "XlDbXdANfx4",
     status: "past",
     hosts: ["Bill Brown", "Andre Nordon"]
   }
@@ -386,59 +390,52 @@ export default function Events() {
               <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ fontFamily: 'Oxygen, sans-serif' }}>
                 Past Events
               </h2>
-              <div className="grid gap-8">
+              <div className="grid gap-10">
                 {pastEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden" data-testid={`card-past-event-${event.id}`}>
-                    <div className="md:flex">
-                      <Link href={event.replayLink || event.link} className="md:w-2/5 overflow-hidden relative block cursor-pointer group aspect-video">
+                    {event.youtubeId ? (
+                      <div className="aspect-video w-full">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${event.youtubeId}`}
+                          title={event.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                          data-testid={`iframe-youtube-${event.id}`}
+                        />
+                      </div>
+                    ) : (
+                      <div className="aspect-video w-full overflow-hidden relative">
                         <img
                           src={event.image}
                           alt={event.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                          <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
-                            <Play className="h-8 w-8 text-primary fill-primary" />
-                          </div>
+                      </div>
+                    )}
+                    <div className="p-6 md:p-8">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary uppercase tracking-wider">
+                          <EventTypeIcon type={event.type} />
+                          {event.type}
+                        </span>
+                        <EventStatusBadge status={event.status} />
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+                        {event.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        {event.description}
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4" />
+                          <span>{event.date}</span>
                         </div>
-                      </Link>
-                      <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
-                        <div>
-                          <div className="flex flex-wrap items-center gap-3 mb-4">
-                            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary uppercase tracking-wider">
-                              <EventTypeIcon type={event.type} />
-                              {event.type}
-                            </span>
-                            <EventStatusBadge status={event.status} />
-                          </div>
-                          <h3 className="text-xl md:text-2xl font-bold mb-3" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-                            {event.title}
-                          </h3>
-                          <p className="text-muted-foreground mb-4">
-                            {event.description}
-                          </p>
-                          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                            <div className="flex items-center gap-2">
-                              <Calendar className="h-4 w-4" />
-                              <span>{event.date}</span>
-                            </div>
-                          </div>
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-medium">Hosted by:</span> {event.hosts.join(" & ")}
-                          </p>
-                        </div>
-                        <div className="mt-6">
-                          <Link href={event.replayLink || event.link}>
-                            <Button 
-                              size="lg" 
-                              className="gap-2" 
-                              data-testid={`button-replay-${event.id}`}
-                            >
-                              <Play className="h-4 w-4" />
-                              Get the Replay
-                            </Button>
-                          </Link>
+                        <div className="flex items-center gap-2">
+                          <Users className="h-4 w-4" />
+                          <span>{event.hosts.join(" & ")}</span>
                         </div>
                       </div>
                     </div>
