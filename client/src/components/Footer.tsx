@@ -17,7 +17,7 @@ export default function Footer() {
     { path: "/partners", label: "Partners" },
     { path: "/apps", label: "Apps" },
     { path: "/courses", label: "Courses" },
-    { path: "/webinar/invisible-labor-market", label: "Free Webinar" },
+    { path: "/events", label: "Events" },
     { path: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
   ];
 

@@ -1,4 +1,4 @@
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route, useLocation, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -57,14 +57,7 @@ import Admin from "@/pages/Admin";
 import PartnerPortal from "@/pages/PartnerPortal";
 import PartnerPortalAdmin from "@/pages/PartnerPortalAdmin";
 import PartnerPortalAcceptInvite from "@/pages/PartnerPortalAcceptInvite";
-import WebinarLandingPage from "@/pages/WebinarLandingPage";
 import WinkPayrollWebinar from "@/pages/WinkPayrollWebinar";
-import ContractorCommerceWebinar from "@/pages/ContractorCommerceWebinar";
-import SmartACWebinar from "@/pages/SmartACWebinar";
-import EquipmentPricingWebinar from "@/pages/EquipmentPricingWebinar";
-import EquipmentPricingReplay from "@/pages/EquipmentPricingReplay";
-import RecruitingWebinarReplay from "@/pages/RecruitingWebinarReplay";
-import MembershipRetentionReplay from "@/pages/MembershipRetentionReplay";
 import Events from "@/pages/Events";
 import NotFound from "@/pages/not-found";
 
@@ -129,14 +122,14 @@ function Router() {
       <Route path="/partner-portal" component={PartnerPortal} />
       <Route path="/partner-portal/admin" component={PartnerPortalAdmin} />
       <Route path="/partner-portal/accept-invite" component={PartnerPortalAcceptInvite} />
-      <Route path="/webinar/invisible-labor-market" component={WebinarLandingPage} />
+      <Route path="/webinar/invisible-labor-market"><Redirect to="/events" /></Route>
       <Route path="/webinar/stop-spreadsheet-payroll" component={WinkPayrollWebinar} />
-      <Route path="/webinar/price-conversation" component={ContractorCommerceWebinar} />
-      <Route path="/webinar/membership-retention" component={SmartACWebinar} />
-      <Route path="/webinar/equipment-pricing" component={EquipmentPricingWebinar} />
-      <Route path="/webinar/equipment-pricing-replay" component={EquipmentPricingReplay} />
-      <Route path="/webinar/recruiting-replay" component={RecruitingWebinarReplay} />
-      <Route path="/webinar/membership-retention-replay" component={MembershipRetentionReplay} />
+      <Route path="/webinar/price-conversation"><Redirect to="/events" /></Route>
+      <Route path="/webinar/membership-retention"><Redirect to="/events" /></Route>
+      <Route path="/webinar/equipment-pricing"><Redirect to="/events" /></Route>
+      <Route path="/webinar/equipment-pricing-replay"><Redirect to="/events" /></Route>
+      <Route path="/webinar/recruiting-replay"><Redirect to="/events" /></Route>
+      <Route path="/webinar/membership-retention-replay"><Redirect to="/events" /></Route>
       <Route path="/events" component={Events} />
       <Route component={NotFound} />
     </Switch>
