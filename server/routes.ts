@@ -2511,6 +2511,7 @@ ${JSON.stringify(jsonData, null, 2)}
       { url: "/dashboard-course", priority: "0.8", changefreq: "monthly" },
       { url: "/fix-ugly-forms-course", priority: "0.8", changefreq: "monthly" },
       { url: "/webinar/stop-spreadsheet-payroll", priority: "0.8", changefreq: "weekly" },
+      { url: "/webinar/referral-gap", priority: "0.8", changefreq: "weekly" },
       { url: "/resources", priority: "0.7", changefreq: "weekly" },
       { url: "/podcast", priority: "0.7", changefreq: "weekly" },
       { url: "/smartac-roi-calculator", priority: "0.7", changefreq: "monthly" },

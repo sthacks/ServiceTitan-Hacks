@@ -17,6 +17,7 @@ import contractorCommerceImage from "@assets/contractor commerce (7).png";
 import winkWebinarImage from "@assets/wink_(2)_1769014863023.png";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
 import equipmentPricingImage from "@assets/webinar_image_1769885730082.png";
+import referProHeroImage from "@assets/Screenshot_2026-03-05_at_3.32.42_PM_1772813613621.png";
 
 interface Event {
   id: string;
@@ -68,18 +69,18 @@ const events: Event[] = [
     hosts: ["Bill Brown", "Contractor Commerce"]
   },
   {
-    id: "2",
-    title: "Stop the Spreadsheet Payroll Nightmare",
-    description: "Learn how to automate your commissions and produce payroll-ready reports without replacing your current payroll provider.",
-    date: "Wednesday, March 11, 2026",
-    eventDateTime: new Date("2026-03-11T14:00:00-05:00"),
+    id: "6",
+    title: "The 83% Referral Gap: Why Good Reviews Are Not Enough",
+    description: "83% of customers say they're willing to refer their contractor. Yet most receive very few actual referrals. Learn why referrals don't happen automatically—and how to build a system that consistently turns satisfied customers into new business.",
+    date: "Tuesday, March 31, 2026",
+    eventDateTime: new Date("2026-03-31T14:00:00-04:00"),
     time: "2:00 PM",
     timezone: "EST",
     type: "webinar",
-    image: winkWebinarImage,
-    link: "/webinar/stop-spreadsheet-payroll",
+    image: referProHeroImage,
+    link: "/webinar/referral-gap",
     status: "upcoming",
-    hosts: ["Bill Brown", "Wink Toolbox"]
+    hosts: ["Bill Brown", "Murphy Nadauld"]
   },
   {
     id: "5",
