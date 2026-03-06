@@ -24,7 +24,7 @@ const config = {
   webinarDate: "March 31st, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
-  streamYardEmbedUrl: "https://streamyard.com/watch/nxM94wBBJusm?embed=true",
+  streamYardEmbedUrl: "https://streamyard.com/watch/9vBwFi4HEtek?embed=true",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Helped 1,000+ contractors optimize operations and fix bottlenecks using AI and automation.",
