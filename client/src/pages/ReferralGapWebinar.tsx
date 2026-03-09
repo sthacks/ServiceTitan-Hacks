@@ -24,7 +24,7 @@ const config = {
   webinarDate: "March 31st, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
-  streamYardEmbedUrl: "https://streamyard.com/watch/9vBwFi4HEtek?embed=true",
+  registrationUrl: "https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YWVjM2M1YzMxZjU5NTA2ZGZlYjYyYyIsInByb2plY3RJZCI6IjY5YWVjM2M1NTU5MDU0MTlkYjA2YWEzZSJ9",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Helped 1,000+ contractors optimize operations and fix bottlenecks using AI and automation.",
@@ -87,34 +87,26 @@ const faqs = [
   },
 ];
 
-function RegistrationForm({ className = "" }: { className?: string }) {
-  const [iframeLoaded, setIframeLoaded] = useState(false);
-
+function RegistrationCard({ className = "" }: { className?: string }) {
   return (
-    <div className={className}>
-      <div className="w-full relative" style={{ minHeight: "600px", height: "auto" }}>
-        {!iframeLoaded && (
-          <div
-            className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-lg"
-            data-testid="loading-registration"
-          >
-            <div className="text-center">
-              <div className="animate-spin w-8 h-8 border-2 border-[#ED254E] border-t-transparent rounded-full mx-auto mb-3" />
-              <p className="text-white/60 text-sm">Loading registration...</p>
-            </div>
-          </div>
-        )}
-        <iframe
-          src={config.streamYardEmbedUrl}
-          width="100%"
-          frameBorder={0}
-          allow="autoplay; fullscreen"
-          className="w-full min-h-[600px] md:min-h-[500px] rounded-lg"
-          title="Webinar Registration"
-          data-testid="iframe-streamyard-registration"
-          onLoad={() => setIframeLoaded(true)}
-        />
-      </div>
+    <div className={`text-center bg-white/5 border border-white/10 rounded-lg p-10 ${className}`} data-testid="registration-card">
+      <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+        Reserve Your Spot
+      </h3>
+      <p className="text-white/60 mb-8 max-w-md mx-auto">
+        {config.webinarDate} &nbsp;·&nbsp; {config.webinarTime} {config.timezone}<br />
+        Free live webinar — replay included for all registrants.
+      </p>
+      <a
+        href={config.registrationUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-testid="link-registration"
+      >
+        <Button size="lg" className="bg-[#ED254E] hover:bg-[#ED254E]/90 text-white px-10">
+          Register Now
+        </Button>
+      </a>
     </div>
   );
 }
@@ -175,8 +167,6 @@ export default function ReferralGapWebinar() {
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  const scrollToSection = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -193,15 +183,16 @@ export default function ReferralGapWebinar() {
           <span className="font-medium">Free Live Webinar</span>
           <span className="hidden sm:inline">|</span>
           <span>{config.webinarDate} at {config.webinarTime} {config.timezone}</span>
-          <Button
-            size="sm"
-            variant="secondary"
-            className="bg-white text-[#ED254E] hover:bg-white/90"
-            onClick={() => scrollToSection("register")}
-            data-testid="button-announcement-cta"
-          >
-            Reserve My Spot
-          </Button>
+          <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="sm"
+              variant="secondary"
+              className="bg-white text-[#ED254E] hover:bg-white/90"
+              data-testid="button-announcement-cta"
+            >
+              Reserve My Spot
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -226,19 +217,20 @@ export default function ReferralGapWebinar() {
             </p>
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
-              <Button
-                size="lg"
-                className="bg-[#ED254E] hover:bg-[#ED254E]/90"
-                onClick={() => scrollToSection("register")}
-                data-testid="button-hero-register"
-              >
-                Reserve My Spot
-              </Button>
+              <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="bg-[#ED254E] hover:bg-[#ED254E]/90"
+                  data-testid="button-hero-register"
+                >
+                  Reserve My Spot
+                </Button>
+              </a>
             </div>
           </div>
 
-          <div id="register" className="max-w-4xl mx-auto">
-            <RegistrationForm />
+          <div className="max-w-4xl mx-auto">
+            <RegistrationCard />
           </div>
         </div>
       </section>
@@ -428,15 +420,16 @@ export default function ReferralGapWebinar() {
           <p className="text-white/80 mb-8">
             Join us live and leave with a clear plan to turn satisfied customers into a consistent source of new business.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-white text-[#ED254E] hover:bg-white/90"
-            onClick={() => scrollToSection("register")}
-            data-testid="button-bottom-cta"
-          >
-            Register for the Webinar
-          </Button>
+          <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-white text-[#ED254E] hover:bg-white/90"
+              data-testid="button-bottom-cta"
+            >
+              Register for the Webinar
+            </Button>
+          </a>
         </div>
       </section>
 
