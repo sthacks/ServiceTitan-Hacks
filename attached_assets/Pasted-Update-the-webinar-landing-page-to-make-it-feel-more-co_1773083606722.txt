@@ -1,0 +1,201 @@
+Update the webinar landing page to make it feel more conversational, practical, and trust-building, and less like a polished sales funnel.
+
+Overall goal:
+This page should feel like an invitation to a smart live discussion, not a product pitch. Keep it professional and conversion-focused, but reduce the "sales webinar" feel. The tone should be practical, direct, and educational.
+
+Use these rules across the page:
+- Reduce repetitive CTA pressure
+- Use more natural, conversational copy
+- Emphasize that this is a live discussion
+- Keep Refer Pro visible, but do not make the page feel like a software demo funnel
+- Preserve the existing design quality and brand styling where possible
+- Maintain mobile responsiveness
+- Do not break the registration form functionality
+
+Make the following edits:
+
+1. HERO SECTION
+
+Keep the hero image, but make the headline and subheadline consistent with the page messaging.
+
+Replace the main headline/subheadline area with:
+
+Eyebrow:
+Free Live Fireside Chat
+
+Headline:
+The 83% Referral Gap
+
+Subheadline:
+A practical conversation on why happy customers do not automatically turn into referrals, and what contractors can do about it.
+
+Details line:
+March 31, 2026 | 2:00 PM EST
+Free live webinar + replay for registrants
+
+Primary CTA button:
+Save My Spot
+
+If there is a second signup card or duplicate reserve-your-spot block near the top, remove it. Keep only one strong CTA in the hero area.
+
+If there is a countdown timer, it can remain, but it should not visually overpower the main message.
+
+2. INTRO / ABOUT SECTION
+
+Rename the section from anything like "About This Webinar" to:
+
+About This Conversation
+
+Replace the body copy with:
+
+Most contractors know referrals matter. What many do not have is a system for turning satisfied customers into actual new business.
+
+In this live conversation, Bill Brown from ServiceTitan Hacks and Murphy Nadauld, founder of Refer Pro, will break down why referrals often get missed, where the gaps happen after the job is complete, and what a more repeatable referral process can look like.
+
+This is not meant to be a high-pressure sales webinar. It is a practical discussion for contractors who want more word-of-mouth business without relying on chance.
+
+3. "WHAT YOU'LL LEARN" SECTION
+
+If there is a section called "What You'll Learn" or similar, rename it to:
+
+What We'll Talk Through
+
+Replace the bullets/cards with these points:
+
+- Why good reviews and good referrals are not the same thing
+- Where referral opportunities usually get lost after the job
+- Why most companies do not get as many referrals as they think they should
+- What a simple, repeatable referral process can look like
+- How contractors can better track whether referrals are actually producing revenue
+
+Make sure this section reads like a discussion outline, not a marketing promise.
+
+4. "WHAT YOU'LL WALK AWAY WITH" SECTION
+
+If this section exists, keep the concept but soften the phrasing.
+
+Rename it to:
+What You Should Leave With
+
+Use 4 concise cards or bullets:
+- A clearer view of the gap between reviews and referrals
+- A better understanding of where referrals get lost
+- A simple framework for thinking about referral ROI
+- Practical ideas for building a more repeatable referral process
+
+5. PRODUCT / DEMO SECTION
+
+There is likely a section like "See How It Works" with product visuals.
+
+This section is making the page feel too much like a software funnel.
+
+Change it as follows:
+- Rename the section to: A Quick Look at How Refer Pro Approaches It
+- Add a short intro above the visuals:
+
+If you are curious how Murphy and the Refer Pro team think about referral automation in practice, we will share a quick look during the conversation as well.
+
+- Visually de-emphasize this section slightly so it supports the event instead of dominating the page
+- Keep the visuals, but make this feel supplemental, not central
+- If this section appears too early on the page, move it lower, ideally below the host section
+
+6. AGENDA SECTION
+
+If there is a timeline or webinar agenda section, rename it to:
+
+What We'll Cover Live
+
+Replace the items with:
+- Why referrals do not happen automatically, even when customers are happy
+- The difference between a review and a referral
+- Where contractors lose referral opportunities in the customer journey
+- What a better referral system can look like after the job
+- Live Q&A with Bill Brown and Murphy Nadauld
+
+Make it feel like a real discussion, not a webinar script.
+
+7. HOST SECTION
+
+Keep the hosts section, but revise the bios to be shorter and more human.
+
+Bill Brown bio:
+Bill Brown is the founder of ServiceTitan Hacks and helps contractors improve operations through systems, automation, and practical technology.
+
+Murphy Nadauld bio:
+Murphy Nadauld is the founder of Refer Pro, a platform built to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.
+
+Do not describe Murphy as an operator or contractor.
+
+If there is a short line introducing the hosts, use:
+Bill Brown and Murphy Nadauld will break down the referral problem in a practical, straightforward conversation focused on what contractors can actually do to improve results.
+
+8. FAQ SECTION
+
+Revise the FAQ to reduce friction and make the event feel safer and more educational.
+
+Use these FAQs and answers:
+
+Q: Is this webinar free?
+A: Yes. Registration is free.
+
+Q: Will there be a replay?
+A: Yes. Everyone who registers will receive the replay.
+
+Q: Is this just a sales presentation?
+A: No. This is designed to be a practical conversation about how referrals really work in home service businesses, with examples and takeaways contractors can use.
+
+Q: Do I need to use Refer Pro to get value from this?
+A: No. The session is meant to help contractors think more clearly about referral systems in general.
+
+Q: Can I ask questions live?
+A: Yes. We will leave time for Q&A.
+
+9. FINAL CTA SECTION
+
+If there is a final CTA like "Ready to Close the Referral Gap?" replace it.
+
+Use:
+
+Headline:
+Join the Conversation
+
+Body:
+Learn why referrals often fall through the cracks, and leave with a clearer picture of what a better referral process can look like.
+
+Button:
+Save My Spot
+
+This section should feel invitational, not like a hard close.
+
+10. DESIGN / UX IMPROVEMENTS
+
+Make these visual changes where appropriate:
+- Reduce the number of bright CTA panels or repeated signup blocks
+- Use more whitespace between sections
+- Keep the current look and feel, but make the layout feel calmer and less dense
+- Make sure pink/red accent colors are used intentionally, not on every section
+- Preserve strong typography and polish
+- Ensure mobile layout still looks clean and easy to scan
+
+11. HEADLINE CONSISTENCY
+
+Use this as the primary title system throughout the page:
+The 83% Referral Gap
+
+Do not mix it with multiple competing versions unless one is clearly used as a subheadline.
+
+Preferred supporting line:
+A practical conversation on why happy customers do not automatically turn into referrals, and what contractors can do about it.
+
+12. IMPORTANT
+
+Do not rebuild the page from scratch unless necessary.
+Edit the existing page structure and components where possible.
+Preserve the existing registration flow, date, form handling, and styling system.
+Focus on tone, hierarchy, section naming, copy, and reducing the sales-page feel.
+
+After making changes:
+- Review the page top to bottom for consistency
+- Ensure no old conflicting headlines remain
+- Ensure there is only one primary CTA in the hero
+- Ensure the overall tone feels more like an educational conversation than a product pitch
