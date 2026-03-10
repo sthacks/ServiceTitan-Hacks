@@ -1,0 +1,204 @@
+Update the existing webinar landing page to reposition the event as a fireside conversation between Bill Brown and a real contractor using Refer Pro. The page should feel operator-focused and educational, not like a SaaS sales funnel. My audience (ServiceTitan contractors) has high resistance to sales presentations, so the structure should prioritize a contractor story and practical discussion.
+
+Do NOT rebuild the page. Modify the existing sections and layout. Preserve the current visual design, color scheme, and responsive behavior.
+
+GOAL OF THE PAGE
+The webinar should be framed as:
+1. Bill interviewing a contractor about referrals
+2. Practical workflow and lessons
+3. Murphy Nadauld joining to explain how technology supports the process
+
+The contractor conversation must feel like the centerpiece of the event.
+
+------------------------------------------------
+
+SECTION 1 – HERO
+
+Keep the hero image but modify the supporting text.
+
+Headline:
+The 83% Referral Gap
+
+Subheadline:
+Why Most Contractors Leave Referral Revenue on the Table
+
+Add a new supporting line below the subheadline:
+
+A live conversation with a ServiceTitan contractor who built referrals into their workflow and what actually works after the job is finished.
+
+Add a smaller line below:
+
+Featuring Bill Brown (ServiceTitan Hacks), a ServiceTitan contractor using Refer Pro, and Murphy Nadauld (Refer Pro)
+
+Keep:
+• Date
+• Time
+• CTA button
+• Countdown timer
+
+Reduce visual clutter if there are duplicate CTA blocks. Only one main CTA should appear in the hero.
+
+CTA text should remain:
+Save My Spot
+
+------------------------------------------------
+
+SECTION 2 – ABOUT THIS CONVERSATION
+
+Rename the section to:
+
+About This Conversation
+
+Replace the body text with:
+
+Most contractors know referrals matter.
+
+What many companies do not have is a consistent system for turning satisfied customers into actual new business.
+
+In this fireside conversation, Bill Brown from ServiceTitan Hacks will sit down with a contractor who has built referrals into their workflow and discuss what actually works in the field.
+
+They will talk through where referrals usually get lost, what changed in the contractor’s process, and what results they started to see.
+
+Murphy Nadauld, founder of Refer Pro, will also join the discussion to explain how technology can support a more repeatable referral process.
+
+This is not a sales webinar. It is a practical conversation about what contractors are actually doing today.
+
+------------------------------------------------
+
+SECTION 3 – WHAT WE'LL TALK THROUGH
+
+Keep the existing section but replace the bullet points with:
+
+• Why good reviews and good referrals are not the same thing  
+• Where referral opportunities usually get lost after the job  
+• What one contractor changed in their process to generate more referrals  
+• What a simple, repeatable referral workflow can look like  
+• How contractors can measure whether referrals are actually producing revenue  
+
+This section should read like topics for a discussion, not marketing promises.
+
+------------------------------------------------
+
+SECTION 4 – WHAT YOU SHOULD LEAVE WITH
+
+Keep the card layout but update the copy.
+
+Card 1:
+A clearer view of the referral gap  
+Why happy customers do not automatically turn into referrals.
+
+Card 2:
+Where referrals actually break down  
+The moments after the job where most opportunities disappear.
+
+Card 3:
+A contractor’s real workflow  
+What one ServiceTitan contractor is actually doing today.
+
+Card 4:
+Ideas you can test immediately  
+Practical changes that can increase referral activity.
+
+------------------------------------------------
+
+SECTION 5 – WHAT WE'LL COVER LIVE
+
+Replace the current timeline-style agenda with a conversation flow:
+
+• Why referrals do not happen automatically  
+• The difference between reviews and referrals  
+• What changed for our contractor guest  
+• What a better referral process can look like  
+• Live Q&A with Bill Brown and guests
+
+------------------------------------------------
+
+SECTION 6 – MEET YOUR HOSTS
+
+Modify this section to include THREE cards instead of two.
+
+Layout order:
+1. Bill Brown
+2. Contractor Guest
+3. Murphy Nadauld
+
+Bill Brown card:
+Bill Brown is the founder of ServiceTitan Hacks and helps contractors improve operations through systems, automation, and practical technology.
+
+Contractor Guest card (placeholder):
+Title: Contractor Guest (TBD)
+
+Description:
+A ServiceTitan contractor currently using Refer Pro will join the conversation to share how referrals work inside their business, what changed in their workflow, and what results they have seen.
+
+Use a placeholder avatar or silhouette image labeled "Contractor Guest – To Be Announced".
+
+Murphy Nadauld card:
+Murphy Nadauld is the founder of Refer Pro, a platform designed to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.
+
+------------------------------------------------
+
+SECTION 7 – REFER PRO SECTION
+
+Keep the product visuals but soften the framing.
+
+Rename the section:
+
+A Quick Look at How Refer Pro Supports Referral Systems
+
+Intro text:
+
+During the conversation we will briefly show how Refer Pro supports contractors who want a more consistent referral process.
+
+This will not be a product demo. We will simply show how some companies are using automation to help capture referrals after the job.
+
+The goal is to keep this section secondary to the contractor conversation.
+
+------------------------------------------------
+
+SECTION 8 – FAQ
+
+Add a new FAQ item:
+
+Question:
+Who is the contractor speaking?
+
+Answer:
+We are inviting a ServiceTitan contractor currently using Refer Pro to share their experience. The guest will be announced before the webinar.
+
+Keep the other FAQs but ensure the tone is educational and not sales-oriented.
+
+------------------------------------------------
+
+SECTION 9 – FINAL CTA
+
+Keep the section title:
+
+Join the Conversation
+
+Replace the body text with:
+
+Join a practical discussion about why referrals often fall through the cracks and how contractors are starting to build more consistent referral systems.
+
+CTA button:
+Save My Spot
+
+------------------------------------------------
+
+VISUAL IMPROVEMENTS
+
+• Maintain the current black/red theme
+• Reduce repeated bright CTA blocks
+• Ensure strong spacing between sections
+• Keep the hero image dominant
+• Add a subtle label near the hero that says:
+
+Real Contractor Case Discussion
+
+------------------------------------------------
+
+IMPORTANT
+
+Do not break the current form submission or registration flow.
+
+Focus on copy updates, section framing, and adding the contractor guest placeholder to shift the page from a SaaS pitch to a contractor conversation.

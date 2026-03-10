@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronUp, CheckCircle2 } from "lucide-react";
+import { ChevronUp, CheckCircle2, UserCircle2 } from "lucide-react";
 import SEO from "@/components/SEO";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import referProLogo from "@assets/rp-full-color-horizontal-light_1772813582705.png";
@@ -19,7 +19,9 @@ import rewardsScreenshot from "@assets/Screenshot_2026-03-05_at_3.31.49_PM_17728
 
 const config = {
   webinarTitle: "The 83% Referral Gap",
-  webinarSubtitle: "A practical conversation on why happy customers do not automatically turn into referrals, and what contractors can do about it.",
+  webinarSubtitle: "Why Most Contractors Leave Referral Revenue on the Table",
+  webinarSupportingLine: "A live conversation with a ServiceTitan contractor who built referrals into their workflow and what actually works after the job is finished.",
+  webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), a ServiceTitan contractor using Refer Pro, and Murphy Nadauld (Refer Pro)",
   webinarDate: "March 31, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
@@ -29,33 +31,49 @@ const config = {
   hostBio: "Bill Brown is the founder of ServiceTitan Hacks and helps contractors improve operations through systems, automation, and practical technology.",
   guestName: "Murphy Nadauld",
   guestTitle: "Founder, Refer Pro",
-  guestBio: "Murphy Nadauld is the founder of Refer Pro, a platform built to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.",
+  guestBio: "Murphy Nadauld is the founder of Refer Pro, a platform designed to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.",
 };
 
 const talkPoints = [
   "Why good reviews and good referrals are not the same thing",
   "Where referral opportunities usually get lost after the job",
-  "Why most companies do not get as many referrals as they think they should",
-  "What a simple, repeatable referral process can look like",
-  "How contractors can better track whether referrals are actually producing revenue",
+  "What one contractor changed in their process to generate more referrals",
+  "What a simple, repeatable referral workflow can look like",
+  "How contractors can measure whether referrals are actually producing revenue",
 ];
 
 const takeaways = [
-  { title: "A clearer view of the gap", description: "Understand the real difference between reviews and referrals and why that gap exists." },
-  { title: "Where referrals get lost", description: "A better understanding of exactly where in the customer journey referral opportunities disappear." },
-  { title: "A framework for referral ROI", description: "A simple way to think about whether your referral efforts are actually producing revenue." },
-  { title: "Ideas you can act on", description: "Practical starting points for building a more repeatable referral process at your company." },
+  {
+    title: "A clearer view of the referral gap",
+    description: "Why happy customers do not automatically turn into referrals.",
+  },
+  {
+    title: "Where referrals actually break down",
+    description: "The moments after the job where most opportunities disappear.",
+  },
+  {
+    title: "A contractor's real workflow",
+    description: "What one ServiceTitan contractor is actually doing today.",
+  },
+  {
+    title: "Ideas you can test immediately",
+    description: "Practical changes that can increase referral activity.",
+  },
 ];
 
 const agenda = [
-  { time: "0:00", topic: "Why referrals do not happen automatically, even when customers are happy" },
-  { time: "0:15", topic: "The difference between a review and a referral" },
-  { time: "0:30", topic: "Where contractors lose referral opportunities in the customer journey" },
-  { time: "0:45", topic: "What a better referral system can look like after the job" },
-  { time: "1:00", topic: "Live Q&A with Bill Brown and Murphy Nadauld" },
+  { topic: "Why referrals do not happen automatically" },
+  { topic: "The difference between reviews and referrals" },
+  { topic: "What changed for our contractor guest" },
+  { topic: "What a better referral process can look like" },
+  { topic: "Live Q&A with Bill Brown and guests" },
 ];
 
 const faqs = [
+  {
+    question: "Who is the contractor speaking?",
+    answer: "We are inviting a ServiceTitan contractor currently using Refer Pro to share their experience. The guest will be announced before the webinar.",
+  },
   {
     question: "Is this webinar free?",
     answer: "Yes. Registration is free.",
@@ -91,7 +109,7 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
-      expired: false
+      expired: false,
     };
   }
 
@@ -108,9 +126,9 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
     <div className="flex gap-3 justify-center my-6" data-testid="countdown-timer">
       {[
         { label: "Days", value: timeLeft.days.toString() },
-        { label: "Hours", value: timeLeft.hours.toString().padStart(2, '0') },
-        { label: "Min", value: timeLeft.minutes.toString().padStart(2, '0') },
-        { label: "Sec", value: timeLeft.seconds.toString().padStart(2, '0') },
+        { label: "Hours", value: timeLeft.hours.toString().padStart(2, "0") },
+        { label: "Min", value: timeLeft.minutes.toString().padStart(2, "0") },
+        { label: "Sec", value: timeLeft.seconds.toString().padStart(2, "0") },
       ].map(({ label, value }) => (
         <div key={label} className="text-center">
           <div className="bg-white/10 rounded-lg px-4 py-3 min-w-[70px]">
@@ -139,7 +157,7 @@ export default function ReferralGapWebinar() {
     <div className="min-h-screen bg-black text-white">
       <SEO
         title="The 83% Referral Gap | Free Live Fireside Chat"
-        description="A practical conversation on why happy customers do not automatically turn into referrals, and what contractors can do about it. Free live event March 31, 2026."
+        description="A live conversation with a ServiceTitan contractor about why referrals often fall through the cracks and what contractors can do about it. Free, March 31, 2026."
         keywords="contractor referrals, referral program, ServiceTitan referrals, HVAC referrals, ReferPro, contractor marketing"
         canonicalUrl="https://servicetitanhacks.com/webinar/referral-gap"
       />
@@ -166,30 +184,39 @@ export default function ReferralGapWebinar() {
       {/* Hero Section */}
       <section className="py-8 md:py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="mb-8">
+          <div className="mb-8 relative">
             <img
               src={heroImage}
-              alt="The 83% Referral Gap - Live Fireside Chat with ReferPro"
+              alt="The 83% Referral Gap - Live Fireside Chat"
               className="w-full h-auto rounded-lg"
               data-testid="img-hero"
             />
+            <span className="absolute top-4 left-4 bg-black/60 text-white/80 text-xs font-medium px-3 py-1 rounded-md tracking-wide">
+              Real Contractor Case Discussion
+            </span>
           </div>
 
           <div className="text-center mb-12">
             <p className="text-[#ED254E] text-sm font-semibold uppercase tracking-widest mb-3">
               Free Live Fireside Chat
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold mb-5" style={{ fontFamily: 'Oxygen, sans-serif' }}>
+            <h1 className="text-3xl md:text-5xl font-bold mb-3" style={{ fontFamily: "Oxygen, sans-serif" }}>
               {config.webinarTitle}
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-4">
+            <p className="text-xl md:text-2xl text-white/80 font-medium mb-4">
               {config.webinarSubtitle}
             </p>
-            <p className="text-white/50 text-sm mb-2">
+            <p className="text-white/65 max-w-2xl mx-auto mb-3 leading-relaxed">
+              {config.webinarSupportingLine}
+            </p>
+            <p className="text-white/45 text-sm max-w-xl mx-auto mb-2">
+              {config.webinarFeaturing}
+            </p>
+            <p className="text-white/45 text-sm mb-1">
               {config.webinarDate} &nbsp;|&nbsp; {config.webinarTime} {config.timezone}
             </p>
-            <p className="text-white/50 text-sm mb-6">
-              Free live webinar + replay for registrants
+            <p className="text-white/45 text-sm mb-4">
+              Free live event + replay for all registrants
             </p>
             <CountdownTimer targetDate={eventDate} />
             <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
@@ -219,7 +246,7 @@ export default function ReferralGapWebinar() {
             <span className="hidden sm:block text-2xl text-white/30">+</span>
             <img
               src={referProLogo}
-              alt="ReferPro"
+              alt="Refer Pro"
               className="h-10 object-contain"
               data-testid="img-referpro-logo"
             />
@@ -232,14 +259,21 @@ export default function ReferralGapWebinar() {
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">About This Conversation</h2>
           <div className="text-white/75 text-lg space-y-5 leading-relaxed">
+            <p>Most contractors know referrals matter.</p>
             <p>
-              Most contractors know referrals matter. What many do not have is a system for turning satisfied customers into actual new business.
+              What many companies do not have is a consistent system for turning satisfied customers into actual new business.
             </p>
             <p>
-              In this live conversation, Bill Brown from ServiceTitan Hacks and Murphy Nadauld, founder of Refer Pro, will break down why referrals often get missed, where the gaps happen after the job is complete, and what a more repeatable referral process can look like.
+              In this fireside conversation, Bill Brown from ServiceTitan Hacks will sit down with a contractor who has built referrals into their workflow and discuss what actually works in the field.
             </p>
             <p>
-              This is not meant to be a high-pressure sales webinar. It is a practical discussion for contractors who want more word-of-mouth business without relying on chance.
+              They will talk through where referrals usually get lost, what changed in the contractor's process, and what results they started to see.
+            </p>
+            <p>
+              Murphy Nadauld, founder of Refer Pro, will also join the discussion to explain how technology can support a more repeatable referral process.
+            </p>
+            <p>
+              This is not a sales webinar. It is a practical conversation about what contractors are actually doing today.
             </p>
           </div>
         </div>
@@ -281,29 +315,26 @@ export default function ReferralGapWebinar() {
       <section id="agenda" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What We'll Cover Live</h2>
-          <div className="space-y-4">
+          <ul className="space-y-4">
             {agenda.map((item, i) => (
-              <div key={i} className="flex gap-4 items-start">
-                <div className="w-16 flex-shrink-0">
-                  <span className="text-[#ED254E] font-mono font-bold">{item.time}</span>
-                </div>
-                <div className="flex-1 pb-4 border-b border-white/10 last:border-0">
-                  <span className="text-white/80">{item.topic}</span>
-                </div>
-              </div>
+              <li key={i} className="flex items-start gap-4 pb-4 border-b border-white/10 last:border-0">
+                <span className="text-[#ED254E] font-bold text-lg leading-none mt-0.5">{i + 1}.</span>
+                <span className="text-white/80 text-lg">{item.topic}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* Meet Your Hosts */}
       <section id="speakers" className="py-16 md:py-24 px-4 bg-white/5">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Meet Your Hosts</h2>
-          <p className="text-center text-white/60 mb-12 max-w-2xl mx-auto">
-            Bill Brown and Murphy Nadauld will break down the referral problem in a practical, straightforward conversation focused on what contractors can actually do to improve results.
+          <p className="text-center text-white/55 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Bill Brown and Murphy Nadauld will be joined by a ServiceTitan contractor for a practical, straightforward conversation focused on what contractors can actually do to improve referral results.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Bill Brown */}
             <Card className="bg-white/5 border-white/10 text-center p-8">
               <img
                 src={hostImage}
@@ -315,6 +346,23 @@ export default function ReferralGapWebinar() {
               <p className="text-[#ED254E] text-sm mb-4">{config.hostTitle}</p>
               <p className="text-white/60 text-sm leading-relaxed">{config.hostBio}</p>
             </Card>
+
+            {/* Contractor Guest */}
+            <Card className="bg-white/5 border-white/10 text-center p-8">
+              <div
+                className="w-24 h-24 rounded-full mx-auto mb-4 bg-white/10 flex items-center justify-center"
+                data-testid="img-contractor-guest-placeholder"
+              >
+                <UserCircle2 className="w-14 h-14 text-white/30" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-1">Contractor Guest</h3>
+              <p className="text-[#ED254E] text-sm mb-4">Contractor Guest (TBD)</p>
+              <p className="text-white/60 text-sm leading-relaxed">
+                A ServiceTitan contractor currently using Refer Pro will join the conversation to share how referrals work inside their business, what changed in their workflow, and what results they have seen.
+              </p>
+            </Card>
+
+            {/* Murphy Nadauld */}
             <Card className="bg-white/5 border-white/10 text-center p-8">
               <img
                 src={murphyImage}
@@ -330,27 +378,32 @@ export default function ReferralGapWebinar() {
         </div>
       </section>
 
-      {/* A Quick Look at How Refer Pro Approaches It */}
+      {/* A Quick Look at How Refer Pro Supports Referral Systems */}
       <section className="py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">A Quick Look at How Refer Pro Approaches It</h2>
-          <p className="text-center text-white/55 mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
-            If you are curious how Murphy and the Refer Pro team think about referral automation in practice, we will share a quick look during the conversation as well.
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
+            A Quick Look at How Refer Pro Supports Referral Systems
+          </h2>
+          <p className="text-center text-white/55 mb-3 max-w-2xl mx-auto text-sm leading-relaxed">
+            During the conversation we will briefly show how Refer Pro supports contractors who want a more consistent referral process.
+          </p>
+          <p className="text-center text-white/45 mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
+            This will not be a product demo. We will simply show how some companies are using automation to help capture referrals after the job.
           </p>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img
                 src={productScreenshot}
-                alt="ReferPro referral interface on mobile"
-                className="rounded-lg w-full max-w-sm mx-auto opacity-90"
+                alt="Refer Pro referral interface on mobile"
+                className="rounded-lg w-full max-w-sm mx-auto opacity-85"
                 data-testid="img-product-screenshot"
               />
             </div>
             <div>
               <img
                 src={rewardsScreenshot}
-                alt="ReferPro rewards redemption portal"
-                className="rounded-lg w-full opacity-90"
+                alt="Refer Pro rewards redemption portal"
+                className="rounded-lg w-full opacity-85"
                 data-testid="img-rewards-screenshot"
               />
             </div>
@@ -384,11 +437,9 @@ export default function ReferralGapWebinar() {
       {/* Final CTA */}
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Join the Conversation
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the Conversation</h2>
           <p className="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
-            Learn why referrals often fall through the cracks, and leave with a clearer picture of what a better referral process can look like.
+            Join a practical discussion about why referrals often fall through the cracks and how contractors are starting to build more consistent referral systems.
           </p>
           <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
             <Button
