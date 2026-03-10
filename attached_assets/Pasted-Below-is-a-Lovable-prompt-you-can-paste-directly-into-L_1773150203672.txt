@@ -1,0 +1,236 @@
+Below is a **Lovable prompt you can paste directly into Lovable** to generate the webinar landing page.
+It mirrors the **structure and tone of your existing webinar page layout** from the PDF you uploaded (hero → overview → discussion topics → takeaways → hosts → demo → FAQ → register). 
+
+The language is intentionally **educational and conversational rather than sales-focused**, since your audience has high resistance to marketing.
+
+---
+
+# Lovable Prompt
+
+Create a **webinar landing page for ServiceTitan Hacks** following the exact structure and layout of the existing webinar page template.
+
+Design style:
+
+* Dark background
+* Minimal, modern design
+* Red accent color (#ED254E)
+* Simple typography
+* Clean sections with generous spacing
+* Avoid marketing hype language
+* Tone should feel like a **practical contractor conversation**, not a sales pitch
+
+This is a **live fireside chat style webinar**.
+
+---
+
+# Hero Section
+
+Badge above headline:
+
+LIVE FIRESIDE CHAT
+
+Headline:
+
+The Incentive Plan Problem
+Why Most Contractor Bonus Plans Fail
+
+Subheadline:
+
+A practical conversation about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos.
+
+Date banner:
+
+Wednesday, April 14 | 2:00 PM EST
+
+Primary CTA button:
+
+Save My Seat
+
+CTA link:
+
+[https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YjAxZjc3ODgwNjllYjk1YTJlZTA1MyIsInByb2plY3RJZCI6IjY5YjAxZjc3MWJiOWQxOTdlNjJiY2MxOCJ9](https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YjAxZjc3ODgwNjllYjk1YTJlZTA1MyIsInByb2plY3RJZCI6IjY5YjAxZjc3MWJiOWQxOTdlNjJiY2MxOCJ9)
+
+Hero background image:
+
+Two people sitting in a studio having a casual conversation (fireside chat podcast style).
+
+---
+
+# Section: About This Conversation
+
+Title:
+
+About This Conversation
+
+Body text:
+
+Most contractors want their technicians to think like owners.
+
+But building a compensation plan that actually motivates people without creating confusion or resentment is harder than it sounds.
+
+In this fireside chat, Bill Brown from ServiceTitan Hacks sits down with Ryan Shank from ShareWillow to talk about:
+
+* why many contractor bonus plans fail
+* why profit sharing can change company culture
+* how to structure incentives that your team actually understands
+
+This will not be a sales presentation.
+
+It is a practical discussion about how contractors can create incentive systems that align the team around the success of the business.
+
+ShareWillow was created to help companies design and manage incentive plans that reward employees based on company performance and measurable goals. ([GetApp][1])
+
+---
+
+# Section: What We'll Talk Through
+
+Title:
+
+What We'll Talk Through
+
+Bullet points:
+
+• Why most technician bonus plans eventually break down
+• The difference between commissions, bonuses, and profit sharing
+• Why transparency matters when building incentive plans
+• How contractors can structure incentives around company goals
+• What happens when employees start thinking like owners
+
+---
+
+# Section: What You Should Leave With
+
+Title:
+
+What You Should Leave With
+
+Four cards:
+
+Card 1
+A clearer understanding of why many incentive plans fail.
+
+Card 2
+A framework for designing a profit-sharing model.
+
+Card 3
+Examples of how contractors structure incentives for service teams.
+
+Card 4
+Ideas for motivating employees without creating complicated pay structures.
+
+Profit sharing programs reward employees based on company performance, helping align individual incentives with overall business success. ([ShareWillow][2])
+
+---
+
+# Section: What We'll Cover Live
+
+Timeline style list:
+
+0:00
+Why incentive plans often fail in the trades
+
+0:10
+The psychology of ownership and employee motivation
+
+0:20
+Examples of contractor profit-sharing structures
+
+0:35
+How incentive formulas are typically structured
+
+0:45
+Open discussion and Q&A
+
+---
+
+# Section: Meet Your Hosts
+
+Two cards.
+
+Bill Brown
+
+Founder of ServiceTitan Hacks.
+
+Bill previously owned and scaled a residential HVAC company and now focuses on helping contractors improve operations using technology, automation, and better systems.
+
+Ryan Shank
+
+Founder of ShareWillow.
+
+Ryan created ShareWillow after seeing how difficult it was for companies to design and manage profit-sharing and incentive plans without complicated spreadsheets or consultants. ([ShareWillow][3])
+
+---
+
+# Section: A Quick Look at ShareWillow
+
+Title:
+
+A Quick Look at ShareWillow
+
+Short paragraph:
+
+ShareWillow is a platform that helps companies design, launch, and manage employee incentive plans and profit-sharing programs.
+
+It allows businesses to create payout formulas, track milestones, and provide employees with transparent dashboards showing progress toward incentive payouts. ([ShareWillow][4])
+
+Display:
+
+Mockup image of the software dashboard.
+
+Keep this section informational, not promotional.
+
+---
+
+# Section: Frequently Asked Questions
+
+Accordion style.
+
+Questions:
+
+Is this a sales webinar?
+
+No. This is a conversation about how incentive plans work in real contractor businesses.
+
+Will there be a replay?
+
+Yes. Everyone who registers will receive the recording.
+
+Do I need to use ShareWillow?
+
+No. The goal is to share practical ideas contractors can apply regardless of the software they use.
+
+Can I ask questions live?
+
+Yes. We will have time for audience questions during the discussion.
+
+---
+
+# Final CTA Section
+
+Title:
+
+Join the Conversation
+
+Text:
+
+If you're thinking about incentive plans, technician bonuses, or profit sharing in your company, this conversation should give you a clearer perspective.
+
+Reserve your seat and join us live.
+
+Button:
+
+Save My Seat
+
+Link:
+
+[https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YjAxZjc3ODgwNjllYjk1YTJlZTA1MyIsInByb2plY3RJZCI6IjY5YjAxZjc3MWJiOWQxOTdlNjJiY2MxOCJ9](https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YjAxZjc3ODgwNjllYjk1YTJlZTA1MyIsInByb2plY3RJZCI6IjY5YjAxZjc3MWJiOWQxOTdlNjJiY2MxOCJ9)
+
+---
+
+If you want, I can also create a **much stronger headline + topic angle** that will likely **increase registrations from your contractor audience**.
+Right now the topic is good, but it could be **much more curiosity-driven**, which usually doubles webinar registrations.
+
+[1]: https://www.getapp.com/hr-employee-management-software/a/sharewillow/?utm_source=chatgpt.com "ShareWillow 2025 Pricing, Features, Reviews & Alternatives"
+[2]: https://www.sharewillow.com/blog/profit-sharing?utm_source=chatgpt.com "What is Profit Sharing? How it Works, Examples, and More"
+[3]: https://www.sharewillow.com/about?utm_source=chatgpt.com "About ShareWillow"
+[4]: https://www.sharewillow.com/?utm_source=chatgpt.com "ShareWillow - Incentive Plans Made Simple"
