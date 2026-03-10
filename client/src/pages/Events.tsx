@@ -66,6 +66,20 @@ const events: Event[] = [
     hosts: ["Bill Brown", "Murphy Nadauld"]
   },
   {
+    id: "8",
+    title: "What Your Missed Calls Are Actually Costing You",
+    description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Bill Brown walks through a live PhoneTap demonstration using real ServiceTitan call data.",
+    date: "Wednesday, March 18, 2026",
+    eventDateTime: new Date("2026-03-18T14:00:00-04:00"),
+    time: "2:00 PM",
+    timezone: "EST",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinar/phonetap",
+    status: "upcoming",
+    hosts: ["Bill Brown"]
+  },
+  {
     id: "3",
     title: "Should Contractors Put Pricing Online in 2026?",
     description: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",

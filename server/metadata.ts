@@ -279,6 +279,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Watch the replay: Membership retention strategies that keep members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
+  "/webinar/phonetap": {
+    title: "What Your Missed Calls Are Actually Costing You | PhoneTap Live Webinar",
+    description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Live demo March 18, 2026.",
+    ogImage: "https://servicetitanhacks.com/og-phonetap-webinar.png",
+  },
   "/webinar/incentive-plan-problem": {
     title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail | Free Live Fireside Chat",
     description: "A practical conversation about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Free live event April 14, 2026.",
