@@ -1,0 +1,153 @@
+**Lovable Prompt: PhoneTap Webinar Landing Page**
+
+Build a clean, high-trust webinar landing page for a **ServiceTitan Hacks community event** promoting a live discussion about **PhoneTap**, an AI system that analyzes inbound calls for home service companies.
+
+The audience is **ServiceTitan contractors and operators**. They are skeptical of sales pitches and respond best to **practical demonstrations, real data, and operational insights**. The page should feel **educational and analytical, not promotional**.
+
+Use **ServiceTitan Hacks brand style**:
+
+* Primary color: red (#ED254E)
+* Secondary: black / dark gray
+* Clean, modern SaaS layout
+* Minimal marketing hype
+
+The goal of the page is **to get contractors to register for the live webinar**.
+
+Embed this registration link clearly throughout the page:
+[https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YWVlNzY4ZGUyMTJjMjllYWI0NDhmOSIsInByb2plY3RJZCI6IjY5YWVlNzY4MzE0NDMwNWU4MmY1OTU1YyJ9](https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YWVlNzY4ZGUyMTJjMjllYWI0NDhmOSIsInByb2plY3RJZCI6IjY5YWVlNzY4MzE0NDMwNWU4MmY1OTU1YyJ9)
+
+Webinar details:
+Title: **What Your Missed Calls Are Actually Costing You**
+Host: Bill Brown (ServiceTitan Hacks)
+Product Discussed: PhoneTap
+Date: **March 18, 2026**
+Time: **2:00 PM EST**
+Format: **Live demonstration + real call analysis**
+
+---
+
+## Page Structure
+
+### Hero Section
+
+Headline:
+**What Your Missed Calls Are Actually Costing You**
+
+Subheadline:
+Most contractors track booked jobs. Very few know how much revenue they are losing from inbound calls that never turn into appointments.
+
+In this live session, Bill Brown will walk through how PhoneTap analyzes real inbound calls from ServiceTitan and identifies missed revenue opportunities.
+
+CTA Button:
+**Register for the Live Webinar**
+
+Display:
+March 18, 2026
+2:00 PM EST
+Live on Riverside
+
+---
+
+### Section: Why This Matters
+
+Short explanation written for contractors.
+
+Example content:
+
+Most shops track leads and booked jobs. But very few actually analyze what happens inside their inbound calls.
+
+Questions most owners cannot answer:
+
+* How many inbound calls never get booked?
+* How many callers hang up before reaching a CSR?
+* How often does a CSR miss a booking opportunity?
+* How much revenue is hiding inside those calls?
+
+PhoneTap analyzes inbound call recordings and surfaces the answers.
+
+This webinar will show how it works using real contractor data.
+
+---
+
+### Section: What You Will See
+
+Bullet list:
+
+During this session you will see:
+
+* How PhoneTap connects to ServiceTitan call recordings
+* How AI classifies call outcomes (booked, missed opportunity, voicemail, etc.)
+* How lost revenue is calculated from real call data
+* Examples of missed booking opportunities
+* How contractors are using this data to improve booking rates
+
+This is a **live walkthrough of the system**, not a sales presentation.
+
+---
+
+### Section: Who This Is For
+
+Bullet list:
+
+This session is designed for:
+
+* HVAC contractors using ServiceTitan
+* Owners who want to increase booking rates
+* Operations managers responsible for call center performance
+* Companies receiving 500+ inbound calls per month
+
+If you rely on inbound calls for revenue, this will likely surface insights you have never seen before.
+
+---
+
+### Section: About the Host
+
+Bill Brown
+Founder of ServiceTitan Hacks
+
+Brief bio:
+
+Bill Brown is a former HVAC company owner who scaled his business to over $3M in revenue and landed on the Inc. 5000 list. Today he runs ServiceTitan Hacks, a community focused on helping contractors improve operations using automation, integrations, and AI tools.
+
+He built PhoneTap to answer a simple question contractors struggle with:
+
+**What actually happens inside our inbound calls?**
+
+---
+
+### Section: Register
+
+Short text:
+
+Reserve your spot for the live session.
+
+Button:
+**Register for the Webinar**
+
+Embed the Riverside registration link again.
+
+Display event details again:
+
+March 18, 2026
+2:00 PM EST
+Free Live Webinar
+
+---
+
+### Design Notes for Lovable
+
+* Dark SaaS style layout
+* Red highlight color (#ED254E)
+* Large readable fonts
+* Minimal clutter
+* Use icons for bullet points
+* Include a subtle background pattern or gradient in dark gray/black
+* Sticky register button in header
+
+Avoid:
+
+* hype language
+* countdown timers
+* aggressive marketing copy
+
+Tone should feel **educational and analytical**, consistent with the ServiceTitan Hacks audience.

@@ -38,37 +38,6 @@ interface Event {
 
 const events: Event[] = [
   {
-    id: "4",
-    title: "Stop Rebuying Your Own Customers",
-    description: "Discover the specialist retention layer that keeps members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
-    date: "Wednesday, February 11, 2026",
-    eventDateTime: new Date("2026-02-11T14:00:00-05:00"),
-    time: "2:00 PM",
-    timezone: "ET",
-    type: "webinar",
-    image: smartACWebinarImage,
-    link: "/webinar/membership-retention",
-    replayLink: "/webinar/membership-retention-replay",
-    youtubeId: "pqDJ-t6lOgw",
-    status: "past",
-    hosts: ["Bill Brown", "SmartAC"]
-  },
-  {
-    id: "3",
-    title: "Should Contractors Put Pricing Online in 2026?",
-    description: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",
-    date: "Tuesday, February 24, 2026",
-    eventDateTime: new Date("2026-02-24T14:00:00-05:00"),
-    time: "2:00 PM",
-    timezone: "ET",
-    type: "webinar",
-    image: contractorCommerceImage,
-    link: "/webinar/price-conversation",
-    youtubeId: "42z4bkyhxDw",
-    status: "past",
-    hosts: ["Bill Brown", "Contractor Commerce"]
-  },
-  {
     id: "7",
     title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail",
     description: "A practical fireside chat about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Featuring Bill Brown and Ryan Shank from ShareWillow.",
@@ -95,6 +64,37 @@ const events: Event[] = [
     link: "/webinar/referral-gap",
     status: "upcoming",
     hosts: ["Bill Brown", "Murphy Nadauld"]
+  },
+  {
+    id: "3",
+    title: "Should Contractors Put Pricing Online in 2026?",
+    description: "Customers are asking AI what HVAC systems cost before they ever call you. In this fireside chat, we debate whether contractors should put pricing online in 2026 and how to stay in control without commoditizing the business.",
+    date: "Tuesday, February 24, 2026",
+    eventDateTime: new Date("2026-02-24T14:00:00-05:00"),
+    time: "2:00 PM",
+    timezone: "ET",
+    type: "webinar",
+    image: contractorCommerceImage,
+    link: "/webinar/price-conversation",
+    youtubeId: "42z4bkyhxDw",
+    status: "past",
+    hosts: ["Bill Brown", "Contractor Commerce"]
+  },
+  {
+    id: "4",
+    title: "Stop Rebuying Your Own Customers",
+    description: "Discover the specialist retention layer that keeps members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
+    date: "Wednesday, February 11, 2026",
+    eventDateTime: new Date("2026-02-11T14:00:00-05:00"),
+    time: "2:00 PM",
+    timezone: "ET",
+    type: "webinar",
+    image: smartACWebinarImage,
+    link: "/webinar/membership-retention",
+    replayLink: "/webinar/membership-retention-replay",
+    youtubeId: "pqDJ-t6lOgw",
+    status: "past",
+    hosts: ["Bill Brown", "SmartAC"]
   },
   {
     id: "5",
