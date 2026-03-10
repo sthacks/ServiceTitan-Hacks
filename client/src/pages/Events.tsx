@@ -69,6 +69,20 @@ const events: Event[] = [
     hosts: ["Bill Brown", "Contractor Commerce"]
   },
   {
+    id: "7",
+    title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail",
+    description: "A practical fireside chat about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Featuring Bill Brown and Ryan Shank from ShareWillow.",
+    date: "Wednesday, April 14, 2026",
+    eventDateTime: new Date("2026-04-14T14:00:00-04:00"),
+    time: "2:00 PM",
+    timezone: "EST",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinar/incentive-plan-problem",
+    status: "upcoming",
+    hosts: ["Bill Brown", "Ryan Shank"]
+  },
+  {
     id: "6",
     title: "The 83% Referral Gap: Why Good Reviews Are Not Enough",
     description: "83% of customers say they're willing to refer their contractor. Yet most receive very few actual referrals. Learn why referrals don't happen automatically—and how to build a system that consistently turns satisfied customers into new business.",

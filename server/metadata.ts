@@ -279,6 +279,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Watch the replay: Membership retention strategies that keep members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
+  "/webinar/incentive-plan-problem": {
+    title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail | Free Live Fireside Chat",
+    description: "A practical conversation about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Free live event April 14, 2026.",
+    ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
+  },
   "/webinar/recruiting-replay": {
     title: "How to Find and Recruit A-Player Technicians Not On Job Boards | Replay",
     description: "Watch the replay: Actionable methods any service business can implement to find top technicians outside traditional job boards.",
