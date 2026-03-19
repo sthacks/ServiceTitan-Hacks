@@ -283,3 +283,11 @@
 .rver__actions {
   text-align: center !important;
 }
+
+.rver__card {
+  background-color: #ffffff !important;
+  padding: 25px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  color: #000000 !important;
+}
