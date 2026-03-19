@@ -135,19 +135,7 @@ function RiversideWebinarForm({ instanceId }: { instanceId: string }) {
     document.addEventListener("riverside:registrationSuccess", handleSuccess);
     document.addEventListener("riverside:registrationFailure", handleFailure);
 
-    const container = document.getElementById(containerId);
-    const observer = new MutationObserver(() => {
-      const titleEl = container?.querySelector(".rver__title");
-      if (titleEl && titleEl.textContent !== "Register") {
-        titleEl.textContent = "Register";
-      }
-    });
-    if (container) {
-      observer.observe(container, { childList: true, subtree: true });
-    }
-
     return () => {
-      observer.disconnect();
       document.removeEventListener("riverside:registrationSuccess", handleSuccess);
       document.removeEventListener("riverside:registrationFailure", handleFailure);
       if (document.body.contains(script)) {
