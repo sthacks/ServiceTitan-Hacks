@@ -15,8 +15,7 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import murphyImage from "@assets/A160356D-F7F8-4337-B209-46F269E2B49A_1_105_c_1772813613622.jpeg";
 import jonathanImage from "@assets/Screenshot_2026-03-17_at_8.40.04_AM_(1)_1773935361805.png";
 import heroImage from "@assets/ReferPro_(2)_1772815536588.png";
-import productScreenshot from "@assets/Screenshot_2026-03-05_at_2.36.01_PM_1772813613620.png";
-import rewardsScreenshot from "@assets/Screenshot_2026-03-05_at_3.31.49_PM_1772813613621.png";
+import referProScreenshot from "@assets/referpro_(5)_1773935521074.png";
 
 const config = {
   webinarTitle: "The 83% Referral Gap",
@@ -392,23 +391,13 @@ export default function ReferralGapWebinar() {
           <p className="text-center text-white/45 mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
             This will not be a product demo. We will simply show how some companies are using automation to help capture referrals after the job.
           </p>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <img
-                src={productScreenshot}
-                alt="Refer Pro referral interface on mobile"
-                className="rounded-lg w-full max-w-sm mx-auto opacity-85"
-                data-testid="img-product-screenshot"
-              />
-            </div>
-            <div>
-              <img
-                src={rewardsScreenshot}
-                alt="Refer Pro rewards redemption portal"
-                className="rounded-lg w-full opacity-85"
-                data-testid="img-rewards-screenshot"
-              />
-            </div>
+          <div className="flex justify-center">
+            <img
+              src={referProScreenshot}
+              alt="Refer Pro platform overview showing referral tracking and analytics"
+              className="rounded-lg w-full max-w-2xl opacity-90"
+              data-testid="img-product-screenshot"
+            />
           </div>
         </div>
       </section>
