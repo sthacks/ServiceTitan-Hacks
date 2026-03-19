@@ -99,6 +99,62 @@ const faqs = [
   },
 ];
 
+function RiversideWebinarForm({ instanceId }: { instanceId: string }) {
+  const containerId = `riverside-webinar-form-${instanceId}`;
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.riverside.fm/rs-webinar-form/loader.js";
+    script.async = true;
+    script.setAttribute("data-api-base", "https://riverside.com");
+    script.setAttribute("data-event-id", "69aec3c5c31f59506dfeb62c");
+    script.setAttribute("data-target", `#${containerId}`);
+    script.setAttribute("crossorigin", "anonymous");
+    document.body.appendChild(script);
+
+    const handleSuccess = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      const webinarLink = customEvent.detail && customEvent.detail.webinarLink;
+      const formContainer = document.getElementById(containerId);
+      if (formContainer && webinarLink) {
+        formContainer.innerHTML = `
+          <div style="text-align: center; padding: 20px;">
+            <p style="margin-bottom: 16px;">You are registered to a webinar</p>
+            <a href="${webinarLink}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">Join webinar</a>
+          </div>
+        `;
+      }
+    };
+
+    const handleFailure = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      const errorMessage = customEvent.detail && customEvent.detail.message;
+      console.error("Registration failed:", errorMessage || "Unknown error");
+    };
+
+    document.addEventListener("riverside:registrationSuccess", handleSuccess);
+    document.addEventListener("riverside:registrationFailure", handleFailure);
+
+    return () => {
+      document.removeEventListener("riverside:registrationSuccess", handleSuccess);
+      document.removeEventListener("riverside:registrationFailure", handleFailure);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, [containerId]);
+
+  return (
+    <div
+      id={containerId}
+      className="text-white/60 text-sm"
+      data-testid={`riverside-form-${instanceId}`}
+    >
+      Loading...
+    </div>
+  );
+}
+
 function CountdownTimer({ targetDate }: { targetDate: Date }) {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -171,14 +227,14 @@ export default function ReferralGapWebinar() {
           <span className="font-medium">Free Live Fireside Chat</span>
           <span className="hidden sm:inline">|</span>
           <span>{config.webinarDate} at {config.webinarTime} {config.timezone}</span>
-          <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
+          <a href="#riverside-webinar-form-hero">
             <Button
               size="sm"
               variant="secondary"
               className="bg-white text-[#ED254E] hover:bg-white/90"
               data-testid="button-announcement-cta"
             >
-              Save My Spot
+              Register Now
             </Button>
           </a>
         </div>
@@ -222,15 +278,9 @@ export default function ReferralGapWebinar() {
               Free live event + replay for all registrants
             </p>
             <CountdownTimer targetDate={eventDate} />
-            <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-[#ED254E] hover:bg-[#ED254E]/90 px-10"
-                data-testid="button-hero-register"
-              >
-                Save My Spot
-              </Button>
-            </a>
+            <div className="mt-6 max-w-md mx-auto">
+              <RiversideWebinarForm instanceId="hero" />
+            </div>
           </div>
         </div>
       </section>
@@ -429,15 +479,9 @@ export default function ReferralGapWebinar() {
           <p className="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
             Join a practical discussion about why referrals often fall through the cracks and how contractors are starting to build more consistent referral systems.
           </p>
-          <a href={config.registrationUrl} target="_blank" rel="noopener noreferrer">
-            <Button
-              size="lg"
-              className="bg-[#ED254E] hover:bg-[#ED254E]/90 text-white px-10"
-              data-testid="button-bottom-cta"
-            >
-              Save My Spot
-            </Button>
-          </a>
+          <div className="max-w-md mx-auto">
+            <RiversideWebinarForm instanceId="cta" />
+          </div>
         </div>
       </section>
 
