@@ -281,7 +281,7 @@ export const metadata: Record<string, PageMetadata> = {
   },
   "/webinar/phonetap": {
     title: "What Your Missed Calls Are Actually Costing You | PhoneTap Live Webinar",
-    description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Live demo March 18, 2026.",
+    description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Live demo April 8, 2026.",
     ogImage: "https://servicetitanhacks.com/og-phonetap-webinar.png",
   },
   "/webinar/incentive-plan-problem": {

@@ -8,7 +8,7 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 
 const config = {
   webinarTitle: "What Your Missed Calls Are Actually Costing You",
-  webinarDate: "March 18, 2026",
+  webinarDate: "Wednesday, April 8, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
   registrationUrl:
