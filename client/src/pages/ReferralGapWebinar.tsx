@@ -20,7 +20,7 @@ import referProScreenshot from "@assets/referpro_(5)_1773935521074.png";
 const config = {
   webinarTitle: "The 83% Referral Gap",
   webinarSubtitle: "Why Most Contractors Leave Referral Revenue on the Table",
-  webinarSupportingLine: "A live conversation with a ServiceTitan contractor who built referrals into their workflow and what actually works after the job is finished.",
+  webinarSupportingLine: "A live conversation with a ServiceTitan contractor about what changed in his referral process, what actually worked, and how Refer Pro supports the workflow behind it.",
   webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), Jonathan Brewster (Aqua Clear), and Murphy Nadauld (Refer Pro)",
   webinarDate: "March 31, 2026",
   webinarTime: "2:00 PM",
@@ -31,7 +31,7 @@ const config = {
   hostBio: "Bill Brown is the founder of ServiceTitan Hacks and helps contractors improve operations through systems, automation, and practical technology.",
   contractorGuestName: "Jonathan Brewster",
   contractorGuestTitle: "Owner, Aqua Clear",
-  contractorGuestBio: "Jonathan Brewster is the owner of Aqua Clear, a ServiceTitan-powered home service company. He joins the conversation to share how referrals work inside his business and what changed in his workflow after building a more intentional referral process.",
+  contractorGuestBio: "Jonathan Brewster is the owner of Aqua Clear and will share what changed in his referral process, how his team uses Refer Pro, and what has worked in the real world.",
   guestName: "Murphy Nadauld",
   guestTitle: "Founder, Refer Pro",
   guestBio: "Murphy Nadauld is the founder of Refer Pro, a platform designed to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.",
@@ -40,9 +40,9 @@ const config = {
 const talkPoints = [
   "Why good reviews and good referrals are not the same thing",
   "Where referral opportunities usually get lost after the job",
-  "What one contractor changed in their process to generate more referrals",
+  "What Jonathan changed in his process to generate more referrals",
   "What a simple, repeatable referral workflow can look like",
-  "How contractors can measure whether referrals are actually producing revenue",
+  "How contractors can better track whether referrals are actually producing revenue",
 ];
 
 const takeaways = [
@@ -56,7 +56,7 @@ const takeaways = [
   },
   {
     title: "A contractor's real workflow",
-    description: "What one ServiceTitan contractor is actually doing today.",
+    description: "What Jonathan is actually doing today inside his business.",
   },
   {
     title: "Ideas you can test immediately",
@@ -65,17 +65,17 @@ const takeaways = [
 ];
 
 const agenda = [
-  { topic: "Why referrals do not happen automatically" },
-  { topic: "The difference between reviews and referrals" },
-  { topic: "What changed for our contractor guest" },
-  { topic: "What a better referral process can look like" },
-  { topic: "Live Q&A with Bill Brown and guests" },
+  { topic: "Why referrals do not happen automatically, even when customers are happy" },
+  { topic: "What Jonathan changed in his process" },
+  { topic: "The difference between reviews and real referral systems" },
+  { topic: "Where referral opportunities get lost after the job" },
+  { topic: "Live Q&A with Bill, Jonathan, and Murphy" },
 ];
 
 const faqs = [
   {
     question: "Who is the contractor speaking?",
-    answer: "We are inviting a ServiceTitan contractor currently using Refer Pro to share their experience. The guest will be announced before the webinar.",
+    answer: "Jonathan Brewster of Aqua Clear will join the conversation to share what changed in his referral process, how his team uses Refer Pro, and what has worked in the real world.",
   },
   {
     question: "Is this webinar free?",
@@ -267,10 +267,7 @@ export default function ReferralGapWebinar() {
               What many companies do not have is a consistent system for turning satisfied customers into actual new business.
             </p>
             <p>
-              In this fireside conversation, Bill Brown from ServiceTitan Hacks will sit down with a contractor who has built referrals into their workflow and discuss what actually works in the field.
-            </p>
-            <p>
-              They will talk through where referrals usually get lost, what changed in the contractor's process, and what results they started to see.
+              In this fireside conversation, Bill Brown from ServiceTitan Hacks will sit down with contractor guest Jonathan Brewster to discuss what actually changed in his referral process, what worked in the field, and where referral opportunities usually get lost after the job.
             </p>
             <p>
               Murphy Nadauld, founder of Refer Pro, will also join the discussion to explain how technology can support a more repeatable referral process.
@@ -332,9 +329,9 @@ export default function ReferralGapWebinar() {
       {/* Meet Your Hosts */}
       <section id="speakers" className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Meet Your Hosts</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Meet the Conversation Guests</h2>
           <p className="text-center text-white/55 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Bill Brown and Murphy Nadauld are joined by Jonathan Brewster of Aqua Clear for a practical, straightforward conversation focused on what contractors can actually do to improve referral results.
+            Bill Brown will lead a practical conversation with contractor guest Jonathan Brewster about what changed in his referral process, what actually worked, and where Refer Pro fits into that workflow.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {/* Bill Brown */}
@@ -379,29 +376,6 @@ export default function ReferralGapWebinar() {
         </div>
       </section>
 
-      {/* A Quick Look at How Refer Pro Supports Referral Systems */}
-      <section className="py-16 md:py-20 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-            A Quick Look at How Refer Pro Supports Referral Systems
-          </h2>
-          <p className="text-center text-white/55 mb-3 max-w-2xl mx-auto text-sm leading-relaxed">
-            During the conversation we will briefly show how Refer Pro supports contractors who want a more consistent referral process.
-          </p>
-          <p className="text-center text-white/45 mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
-            This will not be a product demo. We will simply show how some companies are using automation to help capture referrals after the job.
-          </p>
-          <div className="flex justify-center">
-            <img
-              src={referProScreenshot}
-              alt="Refer Pro platform overview showing referral tracking and analytics"
-              className="rounded-lg w-full max-w-2xl opacity-90"
-              data-testid="img-product-screenshot"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-3xl">
@@ -425,8 +399,31 @@ export default function ReferralGapWebinar() {
         </div>
       </section>
 
+      {/* How Refer Pro Fits Into the Discussion */}
+      <section className="py-12 md:py-16 px-4">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-xl md:text-2xl font-semibold text-center mb-3 text-white/80">
+            How Refer Pro Fits Into the Discussion
+          </h2>
+          <p className="text-center text-white/45 mb-2 max-w-xl mx-auto text-sm leading-relaxed">
+            During the conversation, we will briefly show how Refer Pro supports contractors who want a more consistent referral process.
+          </p>
+          <p className="text-center text-white/35 mb-8 max-w-xl mx-auto text-sm leading-relaxed">
+            This will not be a product demo. We will simply show how some companies are using automation to help capture referrals after the job.
+          </p>
+          <div className="flex justify-center">
+            <img
+              src={referProScreenshot}
+              alt="Refer Pro platform overview"
+              className="rounded-lg w-full max-w-md opacity-75"
+              data-testid="img-product-screenshot"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the Conversation</h2>
           <p className="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">

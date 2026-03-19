@@ -1,0 +1,230 @@
+Edit the existing webinar landing page to make it feel more like a true fireside chat and less like a sponsored software presentation. Do NOT rebuild the page. Modify the current layout, copy, and hierarchy while preserving the design system, responsiveness, and registration flow.
+
+PRIMARY GOAL
+This page should position the webinar as:
+- a practical conversation
+- led by Bill Brown
+- centered on a real contractor story
+- with Refer Pro presented as supporting context, not the main event
+
+My audience is made up of contractors with high sales resistance. If the page feels like it is mainly selling Refer Pro, signup and engagement will drop.
+
+GENERAL GUIDELINES
+- Keep the current black/red visual theme
+- Preserve the existing hero image and page structure where possible
+- Do not break the registration form or CTA behavior
+- Make the contractor feel like the featured guest
+- Demote Refer Pro visually and structurally so it feels secondary
+- Maintain high design quality and mobile responsiveness
+
+--------------------------------------------------
+1. HERO SECTION
+--------------------------------------------------
+
+Keep the hero image and main title.
+
+Use this structure:
+
+Eyebrow:
+Free Live Fireside Chat
+
+Headline:
+The 83% Referral Gap
+
+Subheadline:
+Why Most Contractors Leave Referral Revenue on the Table
+
+Replace the supporting line with:
+A live conversation with a ServiceTitan contractor about what changed in his referral process, what actually worked, and how Refer Pro supports the workflow behind it.
+
+Keep the line with date/time and replay availability.
+
+Add a small badge or text label under the hero area:
+Featuring a real contractor case discussion
+
+Keep only one main hero CTA:
+Save My Spot
+
+If there are duplicate signup prompts near the top, remove them.
+
+--------------------------------------------------
+2. ABOUT THIS CONVERSATION
+--------------------------------------------------
+
+Keep the section title:
+About This Conversation
+
+Use this exact copy:
+
+Most contractors know referrals matter.
+
+What many companies do not have is a consistent system for turning satisfied customers into actual new business.
+
+In this fireside conversation, Bill Brown from ServiceTitan Hacks will sit down with contractor guest Jonathan Brewster to discuss what actually changed in his referral process, what worked in the field, and where referral opportunities usually get lost after the job.
+
+Murphy Nadauld, founder of Refer Pro, will also join the discussion to explain how technology can support a more repeatable referral process.
+
+This is not a sales webinar. It is a practical conversation about what contractors are actually doing today.
+
+--------------------------------------------------
+3. WHAT WE'LL TALK THROUGH
+--------------------------------------------------
+
+Keep the current section layout but replace the bullets/cards with:
+
+- Why good reviews and good referrals are not the same thing
+- Where referral opportunities usually get lost after the job
+- What Jonathan changed in his process to generate more referrals
+- What a simple, repeatable referral workflow can look like
+- How contractors can better track whether referrals are actually producing revenue
+
+This section should feel like discussion topics, not marketing promises.
+
+--------------------------------------------------
+4. WHAT YOU SHOULD LEAVE WITH
+--------------------------------------------------
+
+Keep the card layout but replace the copy with:
+
+Card 1 title:
+A clearer view of the referral gap
+Card 1 text:
+Why happy customers do not automatically turn into referrals.
+
+Card 2 title:
+Where referrals actually break down
+Card 2 text:
+The moments after the job where most opportunities disappear.
+
+Card 3 title:
+A contractor's real workflow
+Card 3 text:
+What Jonathan is actually doing today inside his business.
+
+Card 4 title:
+Ideas you can test immediately
+Card 4 text:
+Practical changes that can increase referral activity.
+
+--------------------------------------------------
+5. WHAT WE'LL COVER LIVE
+--------------------------------------------------
+
+Keep the section but make it sound less like a formal agenda.
+
+Replace with:
+
+- Why referrals do not happen automatically, even when customers are happy
+- What Jonathan changed in his process
+- The difference between reviews and real referral systems
+- Where referral opportunities get lost after the job
+- Live Q&A with Bill, Jonathan, and Murphy
+
+--------------------------------------------------
+6. HOST / GUEST SECTION
+--------------------------------------------------
+
+This section currently likely over-centers Bill and Murphy. Fix that.
+
+Rename the section from:
+Meet Your Hosts
+
+To:
+Meet the Conversation Guests
+
+Change the intro line above the cards to:
+Bill Brown will lead a practical conversation with contractor guest Jonathan Brewster about what changed in his referral process, what actually worked, and where Refer Pro fits into that workflow.
+
+Use a 3-card layout in this order:
+1. Bill Brown
+2. Jonathan Brewster
+3. Murphy Nadauld
+
+Bill Brown card:
+Bill Brown is the founder of ServiceTitan Hacks and helps contractors improve operations through systems, automation, and practical technology.
+
+Jonathan Brewster card:
+Jonathan Brewster is the owner of Aqua Star and will share what changed in his referral process, how his team uses Refer Pro, and what has worked in the real world.
+
+Murphy Nadauld card:
+Murphy Nadauld is the founder of Refer Pro, a platform designed to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.
+
+Important:
+Jonathan should feel like the featured guest, not an add-on.
+
+--------------------------------------------------
+7. REFER PRO SECTION
+--------------------------------------------------
+
+This section currently feels too prominent and too product-demo oriented.
+
+Change the title from anything like:
+A Quick Look at How Refer Pro Supports Referral Systems
+
+To:
+How Refer Pro Fits Into the Discussion
+
+Replace the intro text with:
+During the conversation, we will briefly show how Refer Pro supports contractors who want a more consistent referral process.
+
+This will not be a product demo. We will simply show how some companies are using automation to help capture referrals after the job.
+
+Very important visual changes:
+- Reduce the size and visual dominance of the product image by around 30 to 40 percent
+- If the section includes visible metrics or anything that looks like a big software dashboard pitch, soften or minimize that content
+- Make this section feel supplemental, not featured
+- If possible, move this section below the FAQ and above the final CTA
+- If moving it is difficult, keep it where it is but visually de-emphasize it compared to the conversation and guest sections
+
+--------------------------------------------------
+8. FAQ SECTION
+--------------------------------------------------
+
+Keep the current FAQ section, but add this question if it is not already there:
+
+Question:
+Who is the contractor speaking?
+
+Answer:
+Jonathan Brewster of Aqua Star will join the conversation to share what changed in his referral process, how his team uses Refer Pro, and what has worked in the real world.
+
+Also make sure the FAQ tone is practical and reassuring, not salesy.
+
+--------------------------------------------------
+9. FINAL CTA
+--------------------------------------------------
+
+Keep the title:
+Join the Conversation
+
+Replace the body text with:
+Join a practical discussion about why referrals often fall through the cracks and how contractors are starting to build more consistent referral systems.
+
+Keep the CTA button:
+Save My Spot
+
+Do not turn this into a hard close.
+
+--------------------------------------------------
+10. VISUAL HIERARCHY / UX TUNING
+--------------------------------------------------
+
+Make these supporting improvements:
+- Reduce the visual prominence of promotional/sponsor-style sections
+- Use more whitespace between sections if needed
+- Make the contractor guest section stand out slightly more than the Refer Pro section
+- Keep the overall page calm, premium, and discussion-oriented
+- Ensure page 1 feels like an event invite
+- Ensure page 2 feels like a guest/conversation page
+- Ensure page 3 feels like a low-pressure registration close
+
+--------------------------------------------------
+11. FINAL QA CHECK
+--------------------------------------------------
+
+After edits:
+- Make sure the page clearly feels like a fireside chat
+- Make sure Jonathan Brewster is clearly the featured practitioner
+- Make sure Murphy and Refer Pro are supporting the discussion, not dominating it
+- Make sure no leftover copy makes this sound like a product webinar
+- Make sure the page helps reduce sales resistance, not trigger it
