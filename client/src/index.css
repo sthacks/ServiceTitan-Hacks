@@ -284,6 +284,11 @@
   text-align: center !important;
 }
 
+.rver__title {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
 .rver__card {
   background-color: #ffffff !important;
   padding: 25px !important;
