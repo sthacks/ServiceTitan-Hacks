@@ -1,0 +1,131 @@
+Update the existing webinar landing page with a small round of refinement edits. Do NOT rebuild the page. Keep the current layout, design style, color palette, responsiveness, and registration flow. Focus only on improving the copy and content hierarchy so the page feels even more like a practical fireside chat and even less like a software webinar.
+
+PRIMARY GOAL
+This page is already close. These edits should:
+- make the contractor guest feel more central
+- improve headline consistency
+- make the hero easier to scan
+- reduce any remaining product-webinar feel
+- improve signup conversion with clearer, lower-pressure language
+
+IMPORTANT
+Do not change:
+- structure unless needed for moving small text elements
+- CTA functionality
+- form embed behavior
+- overall visual identity
+
+--------------------------------------------------
+1. FIX THE FORM TITLE TO MATCH THE PAGE
+--------------------------------------------------
+
+Somewhere in the signup/embed section, the form title still says:
+"The 83% Referral Gap: Why Good Reviews Are Not Enough"
+
+Update it so it matches the page framing.
+
+Preferred replacement:
+The 83% Referral Gap: Why Most Contractors Leave Referral Revenue on the Table
+
+If the embed only allows a shorter heading, use:
+Save Your Spot for The 83% Referral Gap
+
+Important:
+The phrase "Why Good Reviews Are Not Enough" should no longer appear anywhere on the page.
+
+--------------------------------------------------
+2. TIGHTEN THE HERO SUPPORTING COPY
+--------------------------------------------------
+
+Keep the hero headline and subheadline, but replace the smaller supporting paragraph under the hero with this exact line:
+
+A live conversation with a ServiceTitan contractor about what changed in his referral process, what actually worked, and how Refer Pro supports the workflow behind it.
+
+This line should be easy to scan and not feel dense.
+
+--------------------------------------------------
+3. ADD A SMALL TRUST-BUILDING BADGE / LINE NEAR THE HERO
+--------------------------------------------------
+
+Add a small line or badge near the hero, under the main copy or near the CTA area:
+
+Featuring a real contractor case discussion
+
+This should be subtle, not flashy. It should reinforce the contractor-first nature of the event.
+
+--------------------------------------------------
+4. REFRAME THE GUEST INTRO SO JONATHAN FEELS MORE CENTRAL
+--------------------------------------------------
+
+In the guest/host section, update the intro line above the speaker cards to this exact copy:
+
+Bill Brown will lead a practical conversation with contractor guest Jonathan Brewster about what changed in his referral process, what actually worked, and where Refer Pro fits into that workflow.
+
+This section should make Jonathan feel like the featured practitioner, not just one of several equal speakers.
+
+--------------------------------------------------
+5. SHORTEN "WHAT YOU SHOULD LEAVE WITH" CARD COPY
+--------------------------------------------------
+
+Keep the same section and card layout, but shorten the card text so the section scans faster.
+
+Use these simpler card titles and minimal/no body copy if needed:
+
+Card 1:
+A clearer view of the referral gap
+
+Card 2:
+Where referrals break down
+
+Card 3:
+A contractor's real workflow
+
+Card 4:
+Ideas you can test immediately
+
+If body copy is required for the design, keep it very short and secondary.
+
+--------------------------------------------------
+6. SOFTEN THE REFER PRO VISUAL SECTION SLIGHTLY
+--------------------------------------------------
+
+Keep the section title:
+How Refer Pro Fits Into the Discussion
+
+Keep the section on the page, but reduce any remaining product-demo feel.
+
+Make these refinements:
+- slightly reduce the size or visual dominance of the product graphic if possible
+- ensure the image feels supplemental, not like the main attraction
+- keep the supporting text calm and practical
+- avoid anything that makes this look like a software showcase
+
+Do not remove the section, just make sure it remains secondary to the contractor conversation.
+
+--------------------------------------------------
+7. ADD A BETTER BRIDGE ABOVE THE SIGNUP FORM
+--------------------------------------------------
+
+In the final signup area, keep the heading:
+Join the Conversation
+
+Add or replace the small supporting line above the form with:
+
+Register below to attend live or get the replay afterward.
+
+This should feel practical and low pressure.
+
+--------------------------------------------------
+8. FINAL CONTENT QA
+--------------------------------------------------
+
+After making these edits, review the page and ensure:
+
+- "Why Good Reviews Are Not Enough" is gone everywhere
+- the hero is easy to scan
+- Jonathan Brewster clearly feels like the featured practitioner
+- Refer Pro feels like supporting context, not the main point
+- the page still feels like a fireside chat, not a sponsored demo
+- the signup section matches the rest of the page in tone
+
+Make only the targeted edits above. Do not over-redesign the page.

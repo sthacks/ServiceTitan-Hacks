@@ -102,7 +102,7 @@ const events: Event[] = [
   },
   {
     id: "6",
-    title: "The 83% Referral Gap: Why Good Reviews Are Not Enough",
+    title: "The 83% Referral Gap: Why Most Contractors Leave Referral Revenue on the Table",
     description: "83% of customers say they're willing to refer their contractor. Yet most receive very few actual referrals. Learn why referrals don't happen automatically—and how to build a system that consistently turns satisfied customers into new business.",
     date: "Tuesday, March 31, 2026",
     eventDateTime: new Date("2026-03-31T14:00:00-04:00"),

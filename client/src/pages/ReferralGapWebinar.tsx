@@ -46,22 +46,10 @@ const talkPoints = [
 ];
 
 const takeaways = [
-  {
-    title: "A clearer view of the referral gap",
-    description: "Why happy customers do not automatically turn into referrals.",
-  },
-  {
-    title: "Where referrals actually break down",
-    description: "The moments after the job where most opportunities disappear.",
-  },
-  {
-    title: "A contractor's real workflow",
-    description: "What Jonathan is actually doing today inside his business.",
-  },
-  {
-    title: "Ideas you can test immediately",
-    description: "Practical changes that can increase referral activity.",
-  },
+  { title: "A clearer view of the referral gap", description: "" },
+  { title: "Where referrals break down", description: "" },
+  { title: "A contractor's real workflow", description: "" },
+  { title: "Ideas you can test immediately", description: "" },
 ];
 
 const agenda = [
@@ -135,9 +123,21 @@ function RiversideWebinarForm({ instanceId }: { instanceId: string }) {
     document.addEventListener("riverside:registrationSuccess", handleSuccess);
     document.addEventListener("riverside:registrationFailure", handleFailure);
 
+    const container = document.getElementById(containerId);
+    const observer = new MutationObserver(() => {
+      const titleEl = container?.querySelector(".rver__title");
+      if (titleEl && titleEl.textContent?.includes("Why Good Reviews Are Not Enough")) {
+        titleEl.textContent = "Save Your Spot for The 83% Referral Gap";
+      }
+    });
+    if (container) {
+      observer.observe(container, { childList: true, subtree: true });
+    }
+
     return () => {
       document.removeEventListener("riverside:registrationSuccess", handleSuccess);
       document.removeEventListener("riverside:registrationFailure", handleFailure);
+      observer.disconnect();
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
@@ -351,9 +351,8 @@ export default function ReferralGapWebinar() {
           <div className="grid sm:grid-cols-2 gap-6">
             {takeaways.map((item, i) => (
               <Card key={i} className="bg-white/5 border-white/10">
-                <CardContent className="pt-6">
-                  <h3 className="text-base font-semibold mb-2 text-white">{item.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
+                <CardContent className="pt-6 pb-6">
+                  <h3 className="text-base font-semibold text-white">{item.title}</h3>
                 </CardContent>
               </Card>
             ))}
@@ -465,7 +464,7 @@ export default function ReferralGapWebinar() {
             <img
               src={referProScreenshot}
               alt="Refer Pro platform overview"
-              className="rounded-lg w-full max-w-md opacity-75"
+              className="rounded-lg w-full max-w-sm opacity-70"
               data-testid="img-product-screenshot"
             />
           </div>
@@ -477,7 +476,7 @@ export default function ReferralGapWebinar() {
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the Conversation</h2>
           <p className="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
-            Join a practical discussion about why referrals often fall through the cracks and how contractors are starting to build more consistent referral systems.
+            Register below to attend live or get the replay afterward.
           </p>
           <div className="max-w-md mx-auto">
             <RiversideWebinarForm instanceId="cta" />
