@@ -274,3 +274,8 @@
     inset: -1px;
   }
 }
+
+/* Riverside webinar form overrides */
+.rver__label {
+  text-align: left !important;
+}
