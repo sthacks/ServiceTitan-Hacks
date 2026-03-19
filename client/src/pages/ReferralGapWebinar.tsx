@@ -7,12 +7,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronUp, CheckCircle2, UserCircle2 } from "lucide-react";
+import { ChevronUp, CheckCircle2 } from "lucide-react";
 import SEO from "@/components/SEO";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import referProLogo from "@assets/rp-full-color-horizontal-light_1772813582705.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import murphyImage from "@assets/A160356D-F7F8-4337-B209-46F269E2B49A_1_105_c_1772813613622.jpeg";
+import jonathanImage from "@assets/Screenshot_2026-03-17_at_8.40.04_AM_(1)_1773935361805.png";
 import heroImage from "@assets/ReferPro_(2)_1772815536588.png";
 import productScreenshot from "@assets/Screenshot_2026-03-05_at_2.36.01_PM_1772813613620.png";
 import rewardsScreenshot from "@assets/Screenshot_2026-03-05_at_3.31.49_PM_1772813613621.png";
@@ -21,7 +22,7 @@ const config = {
   webinarTitle: "The 83% Referral Gap",
   webinarSubtitle: "Why Most Contractors Leave Referral Revenue on the Table",
   webinarSupportingLine: "A live conversation with a ServiceTitan contractor who built referrals into their workflow and what actually works after the job is finished.",
-  webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), a ServiceTitan contractor using Refer Pro, and Murphy Nadauld (Refer Pro)",
+  webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), Jonathan Brewster (Aqua Clear), and Murphy Nadauld (Refer Pro)",
   webinarDate: "March 31, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
@@ -29,6 +30,9 @@ const config = {
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Bill Brown is the founder of ServiceTitan Hacks and helps contractors improve operations through systems, automation, and practical technology.",
+  contractorGuestName: "Jonathan Brewster",
+  contractorGuestTitle: "Owner, Aqua Clear",
+  contractorGuestBio: "Jonathan Brewster is the owner of Aqua Clear, a ServiceTitan-powered home service company. He joins the conversation to share how referrals work inside his business and what changed in his workflow after building a more intentional referral process.",
   guestName: "Murphy Nadauld",
   guestTitle: "Founder, Refer Pro",
   guestBio: "Murphy Nadauld is the founder of Refer Pro, a platform designed to help service businesses automate referral outreach, improve tracking, and create a more consistent referral process.",
@@ -331,7 +335,7 @@ export default function ReferralGapWebinar() {
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Meet Your Hosts</h2>
           <p className="text-center text-white/55 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Bill Brown and Murphy Nadauld will be joined by a ServiceTitan contractor for a practical, straightforward conversation focused on what contractors can actually do to improve referral results.
+            Bill Brown and Murphy Nadauld are joined by Jonathan Brewster of Aqua Clear for a practical, straightforward conversation focused on what contractors can actually do to improve referral results.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {/* Bill Brown */}
@@ -347,19 +351,17 @@ export default function ReferralGapWebinar() {
               <p className="text-white/60 text-sm leading-relaxed">{config.hostBio}</p>
             </Card>
 
-            {/* Contractor Guest */}
+            {/* Jonathan Brewster */}
             <Card className="bg-white/5 border-white/10 text-center p-8">
-              <div
-                className="w-24 h-24 rounded-full mx-auto mb-4 bg-white/10 flex items-center justify-center"
-                data-testid="img-contractor-guest-placeholder"
-              >
-                <UserCircle2 className="w-14 h-14 text-white/30" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1">Contractor Guest</h3>
-              <p className="text-[#ED254E] text-sm mb-4">Contractor Guest (TBD)</p>
-              <p className="text-white/60 text-sm leading-relaxed">
-                A ServiceTitan contractor currently using Refer Pro will join the conversation to share how referrals work inside their business, what changed in their workflow, and what results they have seen.
-              </p>
+              <img
+                src={jonathanImage}
+                alt={config.contractorGuestName}
+                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                data-testid="img-contractor-guest"
+              />
+              <h3 className="text-xl font-bold text-white mb-1">{config.contractorGuestName}</h3>
+              <p className="text-[#ED254E] text-sm mb-4">{config.contractorGuestTitle}</p>
+              <p className="text-white/60 text-sm leading-relaxed">{config.contractorGuestBio}</p>
             </Card>
 
             {/* Murphy Nadauld */}
