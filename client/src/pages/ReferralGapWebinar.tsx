@@ -15,7 +15,7 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import murphyImage from "@assets/A160356D-F7F8-4337-B209-46F269E2B49A_1_105_c_1772813613622.jpeg";
 import jonathanImage from "@assets/Screenshot_2026-03-17_at_8.40.04_AM_(1)_1773935361805.png";
 import heroImage from "@assets/ReferPro_(2)_1772815536588.png";
-import referProScreenshot from "@assets/referpro_(5)_1773935521074.png";
+import referProScreenshot from "@assets/ReferPro (6).png";
 
 const config = {
   webinarTitle: "The 83% Referral Gap",
