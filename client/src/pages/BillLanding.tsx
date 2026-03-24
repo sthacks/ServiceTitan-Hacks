@@ -1,6 +1,6 @@
 import SEO from "@/components/SEO";
 import { ArrowRight, Users, Calendar, Wrench, Key } from "lucide-react";
-import billPhoto from "@assets/red_shirt_round_1767651554251.png";
+import billPhoto from "@assets/647706816_34729460389978511_260123712305313039_n (1).jpg";
 import sthLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 
 const paths = [
