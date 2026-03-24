@@ -82,7 +82,7 @@ export default function BillLanding() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-white/50 mb-2">
-            <span>9,500+ contractors</span>
+            <span>Over 10,000 contractors</span>
             <span className="text-white/25">·</span>
             <span>100+ free tutorials</span>
             <span className="text-white/25">·</span>
