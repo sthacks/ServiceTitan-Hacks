@@ -268,9 +268,6 @@ export default function ReferralGapWebinar() {
             <p className="text-white/65 max-w-2xl mx-auto mb-3 leading-relaxed">
               {config.webinarSupportingLine}
             </p>
-            <p className="text-white/45 text-sm max-w-xl mx-auto mb-2">
-              {config.webinarFeaturing}
-            </p>
             <p className="text-white/45 text-sm mb-1">
               {config.webinarDate} &nbsp;|&nbsp; {config.webinarTime} {config.timezone}
             </p>
