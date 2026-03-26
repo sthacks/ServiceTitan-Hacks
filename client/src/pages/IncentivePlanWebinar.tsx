@@ -14,7 +14,7 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import shareWillowLogo from "@assets/sharewillow_logo_1774534288734.png";
 import ryanShankImage from "@assets/channels4_profile_1774537058812.jpg";
 import jarodSmithImage from "@assets/jarod-smith-DA-thda3_1774537143521.jpeg";
-import heroPromoImage from "@assets/sharewillow1_1774540493240.png";
+import heroPromoImage from "@assets/sharewillow1_(1)_1774540582965.png";
 
 const config = {
   webinarTitle: "Why Most Technician Incentive Plans Fall Apart",
