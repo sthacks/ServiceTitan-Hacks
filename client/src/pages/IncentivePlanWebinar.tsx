@@ -21,7 +21,7 @@ const config = {
   webinarSubtitle: "And what a 10-truck drain cleaning company did instead",
   webinarSupportingLine:
     "One contractor switched to a 20% performance pay model, cut payroll admin from a full day to under an hour a week, and watched a 19-year-old tech hit a $186,000 annualized run rate in under six months. This is a conversation about how they built that system and what most contractors get wrong before they even start.",
-  webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), Jared Smith (Clogbusters), and Ryan Shank (ShareWillow)",
+  webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), Jarod Smith (Clogbusters), and Ryan Shank (ShareWillow)",
   webinarDate: "Wednesday, April 14, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
@@ -151,7 +151,7 @@ export default function IncentivePlanWebinar() {
     <div className="min-h-screen bg-black text-white">
       <SEO
         title="Why Most Technician Incentive Plans Fall Apart | Free Live Fireside Chat"
-        description="A 10-truck contractor cut payroll admin by 90% and built a 20% performance pay model. Bill Brown, Jared Smith (Clogbusters), and Ryan Shank (ShareWillow) break down what works. Free April 14, 2026."
+        description="A 10-truck contractor cut payroll admin by 90% and built a 20% performance pay model. Bill Brown, Jarod Smith (Clogbusters), and Ryan Shank (ShareWillow) break down what works. Free April 14, 2026."
         keywords="contractor bonus plans, performance pay, technician incentives, ServiceTitan, profit sharing, ShareWillow, Clogbusters"
         canonicalUrl="https://servicetitanhacks.com/webinar/incentive-plan-problem"
       />
@@ -247,7 +247,7 @@ export default function IncentivePlanWebinar() {
               The problem is that most incentive plans create confusion instead of motivation. Techs do not understand how their pay is calculated. Owners spend hours every week running the numbers by hand. And when a plan is too complicated to explain, it stops driving behavior.
             </p>
             <p>
-              In this fireside chat, Bill Brown sits down with Jared Smith from Clogbusters and Ryan Shank from ShareWillow to talk through what actually works, why most bonus structures break down, and how to build a pay model your team understands and competes inside of.
+              In this fireside chat, Bill Brown sits down with Jarod Smith from Clogbusters and Ryan Shank from ShareWillow to talk through what actually works, why most bonus structures break down, and how to build a pay model your team understands and competes inside of.
             </p>
             <p>This is not a sales presentation.</p>
             <p>
