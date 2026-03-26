@@ -130,8 +130,8 @@ const events: Event[] = [
   },
   {
     id: "7",
-    title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail",
-    description: "A practical fireside chat about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Featuring Bill Brown and Ryan Shank from ShareWillow.",
+    title: "Why Most Technician Incentive Plans Fall Apart",
+    description: "A practical fireside chat with a contractor who cut payroll admin by 90% and built a 20% performance pay model across 10 trucks. Featuring Bill Brown (ServiceTitan Hacks), Jarod Smith (Clogbusters), and Ryan Shank (ShareWillow).",
     date: "Wednesday, April 14, 2026",
     eventDateTime: new Date("2026-04-14T14:00:00-04:00"),
     time: "2:00 PM",
@@ -140,7 +140,7 @@ const events: Event[] = [
     image: webinarHeroImage,
     link: "/webinar/incentive-plan-problem",
     status: "upcoming",
-    hosts: ["Bill Brown", "Ryan Shank"]
+    hosts: ["Bill Brown", "Jarod Smith", "Ryan Shank"]
   }
 ];
 
