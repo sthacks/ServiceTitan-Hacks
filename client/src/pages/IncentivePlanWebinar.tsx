@@ -14,6 +14,7 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import shareWillowLogo from "@assets/sharewillow_logo_1774534288734.png";
 import ryanShankImage from "@assets/channels4_profile_1774537058812.jpg";
 import jarodSmithImage from "@assets/jarod-smith-DA-thda3_1774537143521.jpeg";
+import heroPromoImage from "@assets/sharewillow1_1774540493240.png";
 
 const config = {
   webinarTitle: "Why Most Technician Incentive Plans Fall Apart",
@@ -177,6 +178,12 @@ export default function IncentivePlanWebinar() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl text-center">
+          <img
+            src={heroPromoImage}
+            alt="Why Most Technician Incentive Plans Fall Apart — Live Fireside Chat"
+            className="w-full max-w-2xl mx-auto rounded-xl mb-8 shadow-lg"
+            data-testid="img-hero-promo"
+          />
           <p className="text-[#ED254E] text-sm font-semibold uppercase tracking-widest mb-4">
             Live Fireside Chat
           </p>
