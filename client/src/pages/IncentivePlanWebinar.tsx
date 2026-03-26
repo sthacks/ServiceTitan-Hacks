@@ -12,6 +12,7 @@ import SEO from "@/components/SEO";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import shareWillowLogo from "@assets/sharewillow_logo_1774534288734.png";
+import ryanShankImage from "@assets/channels4_profile_1774537058812.jpg";
 
 const config = {
   webinarTitle: "Why Most Technician Incentive Plans Fall Apart",
@@ -333,12 +334,12 @@ export default function IncentivePlanWebinar() {
             </Card>
             {/* Sponsor Guest */}
             <Card className="bg-white/5 border-white/10 text-center p-8">
-              <div
-                className="w-24 h-24 rounded-full mx-auto mb-4 bg-white/10 flex items-center justify-center"
-                data-testid="img-guest-placeholder"
-              >
-                <span className="text-3xl font-bold text-white/40">RS</span>
-              </div>
+              <img
+                src={ryanShankImage}
+                alt={config.guestName}
+                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                data-testid="img-guest"
+              />
               <p className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-2">Sponsor</p>
               <h3 className="text-xl font-bold text-white mb-1">{config.guestName}</h3>
               <p className="text-[#ED254E] text-sm mb-4">{config.guestTitle}</p>
