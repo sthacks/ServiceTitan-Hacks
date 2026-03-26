@@ -11,6 +11,7 @@ import { ChevronUp, CheckCircle2, LayoutDashboard } from "lucide-react";
 import SEO from "@/components/SEO";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
+import shareWillowLogo from "@assets/sharewillow_logo_1774534288734.png";
 
 const config = {
   webinarTitle: "The Incentive Plan Problem",
@@ -220,9 +221,12 @@ export default function IncentivePlanWebinar() {
               data-testid="img-sth-logo"
             />
             <span className="hidden sm:block text-2xl text-white/30">+</span>
-            <span className="text-white/70 text-xl font-semibold tracking-wide" data-testid="text-sharewillow-logo">
-              ShareWillow
-            </span>
+            <img
+              src={shareWillowLogo}
+              alt="ShareWillow"
+              className="h-10 object-contain"
+              data-testid="img-sharewillow-logo"
+            />
           </div>
         </div>
       </section>
