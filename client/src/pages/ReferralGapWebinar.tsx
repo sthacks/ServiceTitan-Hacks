@@ -219,6 +219,7 @@ export default function ReferralGapWebinar() {
         description="A live conversation with a ServiceTitan contractor about why referrals often fall through the cracks and what contractors can do about it. Free, March 31, 2026."
         keywords="contractor referrals, referral program, ServiceTitan referrals, HVAC referrals, ReferPro, contractor marketing"
         canonicalUrl="https://servicetitanhacks.com/webinar/referral-gap"
+        ogImage="https://servicetitanhacks.com/og-referral-gap-webinar.png"
       />
 
       {/* Announcement Bar */}

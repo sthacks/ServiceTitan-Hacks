@@ -284,6 +284,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Live demo April 8, 2026.",
     ogImage: "https://servicetitanhacks.com/og-phonetap-webinar.png",
   },
+  "/webinar/referral-gap": {
+    title: "The 83% Referral Gap | Free Live Fireside Chat",
+    description: "A live conversation with a ServiceTitan contractor about why referrals often fall through the cracks and what contractors can do about it. Free, March 31, 2026.",
+    ogImage: "https://servicetitanhacks.com/og-referral-gap-webinar.png",
+  },
   "/webinar/incentive-plan-problem": {
     title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail | Free Live Fireside Chat",
     description: "A practical conversation about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Free live event April 14, 2026.",
