@@ -1,0 +1,212 @@
+Create a new website page for my existing site titled "ServiceTitan Automation Services".
+
+Important:
+- Use the existing site-wide brand standards, colors, typography, spacing, button styles, header, footer, and design system already established in this project.
+- Do not invent a new design language.
+- Match the visual quality and layout polish of the rest of the site.
+- The page should feel credible, practical, modern, and built for serious home service operators.
+- This page should be fully responsive across desktop, tablet, and mobile.
+- Keep the layout clean, easy to scan, and conversion-focused.
+- The main CTA throughout the page is: "Book a Strategy Call"
+
+Page goal:
+Create a service page that positions me as the trusted expert for ServiceTitan automation services for home service companies. The purpose is to get contractors to book a strategy call.
+
+Tone:
+- Direct
+- Professional
+- Practical
+- No hype
+- No fluff
+- Written for contractors and operators
+
+Page title / H1:
+ServiceTitan Automation Services
+
+Supporting subtitle under H1:
+Forms, workflows, integrations, and implementation for home service companies
+
+Hero section:
+- Strong H1: "ServiceTitan Automation Services"
+- Subheadline: "We help contractors improve operations with ServiceTitan, including forms, plus Zapier, Make, Google Sheets, and AI so your team saves time, reduces manual work, and runs more efficiently."
+- Primary CTA button: "Book a Strategy Call"
+- Optional secondary trust line under CTA: "Built for real home service companies using ServiceTitan"
+
+Section 1:
+Heading: "Built for ServiceTitan shops that want better systems"
+
+Body copy:
+"If your team is still doing too much manual work, chasing down information, updating spreadsheets by hand, or relying on people to remember every step, you do not have a people problem. You have a workflow problem.
+
+We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI."
+
+Add a short visual bullet list of outcomes:
+- Reduce manual admin work
+- Improve visibility across the business
+- Automate repetitive tasks
+- Clean up broken workflows
+- Connect the tools you already use
+- Build systems that scale without adding more chaos
+
+Section 2:
+Heading: "What we do"
+
+Subheading: "Practical automation and workflow implementation"
+
+Intro copy:
+"We help home service companies design and implement better systems around ServiceTitan.
+
+That can include improving forms, automating workflows, connecting platforms, cleaning up reporting, and building processes that reduce manual work."
+
+Display these as clean service cards or a structured grid:
+- ServiceTitan forms setup and optimization
+- ServiceTitan + Zapier setup
+- Custom Zap creation
+- Make.com workflow builds
+- Google Sheets reporting automations
+- AI-powered workflow implementation
+- Notification and follow-up automations
+- Job and customer data workflows
+- Ongoing support and optimization
+
+Section 3:
+Heading: "Common problems we solve"
+
+Intro copy:
+"Most contractors know they have inefficiencies, but they are not always sure where the breakdown is happening."
+
+Display these in a readable list or card grid:
+- Forms that are not set up correctly
+- Forms that technicians are not using consistently
+- Missing or messy field data
+- Disconnected systems that do not talk to each other
+- Office staff wasting time on repetitive tasks
+- Inconsistent follow-up
+- Delayed internal communication
+- Messy reporting
+- Manual data entry
+- Workflows that depend too much on one employee
+
+Section 4:
+Heading: "Examples of what we can help implement"
+
+Use a strong card grid, checklist layout, or icon list for these:
+- Set up or improve ServiceTitan forms
+- Create technician-friendly forms that collect the right data
+- Trigger workflows after a form is submitted
+- Automatically send ServiceTitan data into Google Sheets
+- Create job summary cleanup workflows
+- Route leads and notifications to the right people
+- Build custom reporting workflows
+- Connect forms, email, spreadsheets, and ServiceTitan
+- Set up AI-assisted summaries and process automations
+
+Section 5:
+Heading: "Why work with me"
+
+This section should feel like a strong credibility block, not a generic about section.
+
+Include a stat-style layout or highlighted credibility row for:
+- 25 years in home services
+- 5,000+ automations built
+- 12 years owning and operating an HVAC and plumbing company
+- Founder of ServiceTitan Hacks
+- Founder of PhoneTap
+
+Then include this body copy:
+"I have spent 25 years in home services and 12 years owning and operating an HVAC and plumbing company.
+
+Over the years, I have built more than 5,000 automations and worked extensively with ServiceTitan, workflows, reporting, forms, integrations, and process improvement.
+
+I am also the founder of ServiceTitan Hacks and PhoneTap, where I help contractors use technology, automation, and AI in ways that are practical and useful in the real world.
+
+This is not theory. It is built from real experience in the trades, real operational challenges, and real implementation work."
+
+Section 6:
+Heading: "How it works"
+
+Create a clean 4-step section with visual separation between each step.
+
+Step 1:
+Title: "Book a strategy call"
+Text: "We review your current workflows, bottlenecks, tools, and goals."
+
+Step 2:
+Title: "Get a plan"
+Text: "We identify the best opportunities for automation and recommend the right approach."
+
+Step 3:
+Title: "Implement the work"
+Text: "If it makes sense to move forward, we can build the workflow for you."
+
+Step 4:
+Title: "Add support if needed"
+Text: "For companies that want continued help, ongoing support may be available."
+
+Include CTA button below steps:
+"Book a Strategy Call"
+
+Section 7:
+Heading: "What to expect on the strategy call"
+
+Intro copy:
+"On the strategy call, we will look at:"
+
+Use a clean bullet layout:
+- Your current ServiceTitan setup
+- Forms, workflows, and reporting gaps
+- Bottlenecks and inefficiencies
+- Areas that could be automated
+- What should be handled with ServiceTitan, Zapier, Make, Sheets, AI, or not automated at all
+- Whether it makes sense to move into implementation
+
+Closing line:
+"This call is designed to give you clarity, not a sales pitch."
+
+Add CTA button:
+"Book a Strategy Call"
+
+Final CTA section:
+Create a strong closing section near the bottom of the page.
+
+Heading:
+"Ready to improve your workflows?"
+
+Body:
+"If your team is wasting time, dealing with avoidable friction, or missing opportunities because your systems are not connected properly, book a strategy call.
+
+We will look at where you are now, where the bottlenecks are, and what it would take to fix them."
+
+Button:
+"Book a Strategy Call"
+
+Design and UX requirements:
+- Use strong visual hierarchy
+- Break up text into digestible sections
+- Avoid large dense text blocks
+- Use spacing generously
+- Use cards, grids, dividers, and section backgrounds where appropriate
+- Make the page feel premium and practical, not flashy
+- Keep CTA placement consistent throughout the page
+- Ensure mobile responsiveness is handled carefully
+- Make sure headings, spacing, and card stacking work well on small screens
+- Do not let the page feel too text-heavy
+- Add subtle visual polish and interaction where appropriate, but keep it professional
+
+Technical requirements:
+- Add this page into the existing site routing/navigation structure
+- Make sure the page follows the existing reusable component patterns where possible
+- Keep code clean and production-ready
+- Use semantic HTML structure
+- Ensure accessibility best practices for headings, buttons, contrast, and spacing
+
+SEO:
+- SEO title: "ServiceTitan Automation Services | ServiceTitan Hacks"
+- Meta description: "Done-for-you ServiceTitan forms, workflows, integrations, and automations for home service companies. Book a strategy call."
+- URL slug: /servicetitan-automation-services
+
+Output:
+- Create the page
+- Add all sections
+- Use the exact page copy above unless small edits are needed for layout/readability
+- Make it look like a natural part of the existing website, not a standalone mockup
