@@ -487,6 +487,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // ServiceTitan Automation Services inquiry form
+  app.post("/api/automation-services-inquiry", async (req, res) => {
+    try {
+      const schema = z.object({
+        firstName: z.string().min(1, "First name is required"),
+        lastName: z.string().min(1, "Last name is required"),
+        company: z.string().min(1, "Company is required"),
+        phone: z.string().min(1, "Phone number is required"),
+        email: z.string().email("Valid email is required"),
+        interests: z.array(z.string()).min(1, "Please select at least one area of interest"),
+      });
+
+      const data = schema.parse(req.body);
+
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+
+        const jsonPayload = {
+          site_source: "Replit-ServiceTitan-Hacks",
+          url_source: "AUTOMATION_SERVICES_INQUIRY",
+          formName: "ServiceTitan Automation Services Inquiry",
+          firstName: data.firstName,
+          lastName: data.lastName,
+          phoneNumber: data.phone,
+          email: data.email,
+          submittedAt: new Date().toISOString(),
+          company: data.company,
+          interests: data.interests,
+        };
+
+        const jsonData = JSON.stringify(jsonPayload, null, 2);
+
+        await client.emails.send({
+          from: fromEmail,
+          to: "bill@st-hacks.com",
+          replyTo: data.email,
+          subject: `New Strategy Call Request: ${data.firstName} ${data.lastName} — ${data.company}`,
+          html: `<pre style="font-family: monospace; background-color: #f4f4f5; padding: 20px; border-radius: 8px; white-space: pre-wrap;">${jsonData}</pre>`,
+        });
+      } catch (emailError) {
+        console.error("Failed to send automation services inquiry email:", emailError);
+      }
+
+      res.status(201).json({ message: "Request submitted successfully." });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const validationError = fromZodError(error);
+        return res.status(400).json({ message: validationError.message });
+      }
+      console.error("Automation services inquiry error:", error);
+      res.status(500).json({ message: "Failed to submit request. Please try again." });
+    }
+  });
+
   // Get all contact submissions (for admin purposes)
   app.get("/api/contact", async (req, res) => {
     try {

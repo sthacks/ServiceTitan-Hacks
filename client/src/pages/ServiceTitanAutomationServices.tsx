@@ -1,8 +1,15 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import {
   CheckCircle2,
   ArrowRight,
@@ -16,14 +23,11 @@ import {
   TrendingUp,
   AlertCircle,
   Users,
-  Clock,
   Database,
   GitBranch,
   MessageSquare,
   RefreshCw,
 } from "lucide-react";
-
-const STRATEGY_CALL_URL = "/contact";
 
 const outcomes = [
   "Reduce manual admin work",
@@ -110,14 +114,213 @@ const callExpectations = [
   "Whether it makes sense to move into implementation",
 ];
 
-function CTAButton({ label = "Book a Strategy Call", className = "" }: { label?: string; className?: string }) {
+const interestOptions = [
+  "ServiceTitan forms setup and optimization",
+  "ServiceTitan + Zapier setup",
+  "Make.com workflow builds",
+  "Google Sheets reporting automations",
+  "AI-powered workflow implementation",
+  "Notification and follow-up automations",
+  "Job and customer data workflows",
+  "Ongoing support and optimization",
+  "Not sure — I want a strategy call first",
+];
+
+function ScrollCTAButton() {
   return (
-    <a href={STRATEGY_CALL_URL} data-testid="button-cta-strategy-call">
-      <Button size="lg" className={`gap-2 ${className}`}>
-        {label}
+    <button
+      onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
+      data-testid="button-cta-scroll"
+    >
+      <Button size="lg" className="gap-2">
+        Book a Strategy Call
         <ArrowRight className="w-4 h-4" />
       </Button>
-    </a>
+    </button>
+  );
+}
+
+function StrategyCallForm() {
+  const { toast } = useToast();
+  const [honeypot, setHoneypot] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    company: "",
+    phone: "",
+    email: "",
+  });
+  const [interests, setInterests] = useState<string[]>([]);
+
+  const mutation = useMutation({
+    mutationFn: async (payload: typeof formData & { interests: string[] }) => {
+      const res = await apiRequest("POST", "/api/automation-services-inquiry", payload);
+      return res.json();
+    },
+    onSuccess: () => {
+      setSubmitted(true);
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Something went wrong",
+        description: error.message || "Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const toggleInterest = (option: string) => {
+    setInterests((prev) =>
+      prev.includes(option) ? prev.filter((i) => i !== option) : [...prev, option]
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (honeypot) return;
+
+    const { firstName, lastName, company, phone, email } = formData;
+
+    if (!firstName || !lastName || !company || !phone || !email) {
+      toast({
+        title: "Missing fields",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (interests.length === 0) {
+      toast({
+        title: "Select an area of interest",
+        description: "Please check at least one option below.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    mutation.mutate({ ...formData, interests });
+  };
+
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center text-center py-12 gap-4" data-testid="form-success-state">
+        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+          <CheckCircle2 className="w-7 h-7 text-primary" />
+        </div>
+        <h3 className="text-xl font-semibold">Request received</h3>
+        <p className="text-muted-foreground max-w-sm">
+          We will be in touch shortly to schedule your strategy call.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5" data-testid="form-strategy-call">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="firstName">First Name *</Label>
+          <Input
+            id="firstName"
+            value={formData.firstName}
+            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+            data-testid="input-inquiry-firstname"
+          />
+        </div>
+        <div>
+          <Label htmlFor="lastName">Last Name *</Label>
+          <Input
+            id="lastName"
+            value={formData.lastName}
+            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+            data-testid="input-inquiry-lastname"
+          />
+        </div>
+      </div>
+
+      <div>
+        <Label htmlFor="company">Company *</Label>
+        <Input
+          id="company"
+          value={formData.company}
+          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+          data-testid="input-inquiry-company"
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="phone">Phone Number *</Label>
+        <Input
+          id="phone"
+          type="tel"
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          data-testid="input-inquiry-phone"
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="email">Email *</Label>
+        <Input
+          id="email"
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          data-testid="input-inquiry-email"
+        />
+      </div>
+
+      <div>
+        <Label className="mb-3 block">How can we help you? *</Label>
+        <div className="space-y-2.5" data-testid="checklist-interests">
+          {interestOptions.map((option) => (
+            <div key={option} className="flex items-start gap-3">
+              <Checkbox
+                id={`interest-${option}`}
+                checked={interests.includes(option)}
+                onCheckedChange={() => toggleInterest(option)}
+                data-testid={`checkbox-interest-${option.toLowerCase().replace(/\s+/g, "-").slice(0, 30)}`}
+              />
+              <Label htmlFor={`interest-${option}`} className="text-sm font-normal leading-snug cursor-pointer">
+                {option}
+              </Label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        style={{ position: "absolute", left: "-9999px" }}
+        tabIndex={-1}
+        autoComplete="off"
+      />
+
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full gap-2"
+        disabled={mutation.isPending}
+        data-testid="button-inquiry-submit"
+      >
+        {mutation.isPending ? "Submitting..." : "Request a Strategy Call"}
+        {!mutation.isPending && <ArrowRight className="w-4 h-4" />}
+      </Button>
+    </form>
   );
 }
 
@@ -149,7 +352,7 @@ export default function ServiceTitanAutomationServices() {
             <p className="text-sm text-white/40 mb-8">
               Forms, workflows, integrations, and implementation for home service companies
             </p>
-            <CTAButton />
+            <ScrollCTAButton />
             <p className="mt-4 text-xs text-white/35">
               Built for real home service companies using ServiceTitan
             </p>
@@ -323,7 +526,7 @@ export default function ServiceTitanAutomationServices() {
                 </div>
               ))}
             </div>
-            <CTAButton />
+            <ScrollCTAButton />
           </div>
         </section>
 
@@ -345,28 +548,47 @@ export default function ServiceTitanAutomationServices() {
             <p className="text-muted-foreground mb-8 font-medium">
               This call is designed to give you clarity, not a sales pitch.
             </p>
-            <CTAButton />
+            <ScrollCTAButton />
           </div>
         </section>
 
-        {/* ── Final CTA ── */}
-        <section className="py-20 md:py-28 bg-primary text-white" data-testid="section-final-cta">
-          <div className="mx-auto max-w-3xl px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              Ready to improve your workflows?
-            </h2>
-            <p className="text-white/85 leading-relaxed mb-10 text-lg">
-              If your team is wasting time, dealing with avoidable friction, or missing opportunities because your systems are not connected properly, book a strategy call. We will look at where you are now, where the bottlenecks are, and what it would take to fix them.
-            </p>
-            <a href={STRATEGY_CALL_URL} data-testid="button-final-cta">
-              <Button
-                size="lg"
-                className="gap-2 bg-white text-primary border-white hover:bg-white/90"
-              >
-                Book a Strategy Call
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </a>
+        {/* ── Final CTA + Form ── */}
+        <section
+          id="strategy-call-form"
+          className="py-20 md:py-28 bg-background border-t border-border"
+          data-testid="section-final-cta"
+        >
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+              {/* Left — copy */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+                  Get Started
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+                  Ready to improve your workflows?
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  If your team is wasting time, dealing with avoidable friction, or missing opportunities because your systems are not connected properly, fill out the form to request a strategy call.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We will look at where you are now, where the bottlenecks are, and what it would take to fix them.
+                </p>
+              </div>
+
+              {/* Right — form */}
+              <Card data-testid="card-inquiry-form">
+                <CardContent className="p-6 md:p-8">
+                  <h3 className="text-xl font-semibold mb-1">Request a Strategy Call</h3>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    Fill out the form and we will be in touch to schedule a time.
+                  </p>
+                  <StrategyCallForm />
+                </CardContent>
+              </Card>
+
+            </div>
           </div>
         </section>
 
