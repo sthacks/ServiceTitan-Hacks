@@ -29,6 +29,11 @@ A middleware injects page-specific meta tags for social media crawlers and stati
 ### Podcast RSS Feed Integration
 An automated system synchronizes podcast episodes from servicetitanhacks.podbean.com daily using `node-cron`. Episodes are stored in a PostgreSQL database (podcast_episodes table), preventing duplicates via GUID, and are exposed via a public API endpoint for the frontend.
 
+### ServiceTitan Automation Services Page
+A dedicated service/landing page at `/servicetitan-automation-services` targeting home service contractors. The page positions the site owner as a ServiceTitan automation expert and drives "Book a Strategy Call" conversions. Includes sections: Hero, Built for ServiceTitan shops, What we do (service cards grid), Common problems we solve, Examples of what we can help implement, Why work with me (stats + credibility), How it works (4-step process), What to expect on the strategy call, and a final CTA.
+
+**SEO**: Title "ServiceTitan Automation Services | ServiceTitan Hacks", meta description "Done-for-you ServiceTitan forms, workflows, integrations, and automations for home service companies. Book a strategy call."
+
 ### Partner Portal System
 A comprehensive partner portal enables partners to view campaign performance, content calendars, subscription details, and upload brand assets. The system uses a hierarchical user structure:
 - **Master Admin** (Bill): Can see all partner companies, create new companies, invite account admins, and enter campaign metrics
