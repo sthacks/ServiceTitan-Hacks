@@ -1,0 +1,43 @@
+"Please update the copy and content hierarchy of the ServiceTitan Automation Services page to make it more conversion-focused and emotionally resonant for home service business owners. Follow these specific edits:
+
+1. Hero Section:
+
+Headline: Change 'ServiceTitan Automation Services' to 'Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations.'
+
+Sub-headline: Update to: 'Stop fighting your software. We build the systems that let your team focus on customers while we handle the data—helping you scale without the chaos.'
+
+2. The 'Problem' Section (Built for ServiceTitan shops):
+
+Body Text: Keep the 'workflow problem' line, but add a bulleted list titled 'Does this sound like your shop?' with these points:
+
+You’re paying high-level staff to do manual data entry.
+
+Your reporting is a mess because technicians skip or miss form fields.
+
+You have a 'Monday Morning Spreadsheet Scramble' to find your actual profit numbers.
+
+3. Outcomes Section:
+
+Update the bullet points to be more vivid:
+
+'Reduce manual admin work' -> 'Eliminate repetitive data entry and clerical burnout.'
+
+'Improve visibility' -> 'Real-time profit tracking without waiting for end-of-month reports.'
+
+'Clean up broken workflows' -> 'Build guardrails so your team can't fail, even on their busiest days.'
+
+4. Authority/Founder Section:
+
+Format as a blockquote or a 'Letter from the Founder' style:
+
+Copy: 'I spent 12 years owning an HVAC and plumbing company. I didn’t build these 5,000+ automations because I love tech—I built them because I needed my life back. I’m a contractor who figured out how to make ServiceTitan work for the shop, not the other way around.'
+
+5. Call to Action (CTA):
+
+Primary Button: Change 'Book a Strategy Call' to 'Find My Automation Gaps.'
+
+Micro-copy: Add a small note below the buttons that says: 'No sales pitch. Just a technical deep dive into your current setup.'
+
+6. Formatting:
+
+Ensure key phrases like 'Real-time profit', '5,000+ automations', and 'Workflow problem' are bolded to make the page scannable for busy owners."

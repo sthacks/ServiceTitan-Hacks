@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { Textarea } from "@/components/ui/textarea";
 import {
   CheckCircle2,
   ArrowRight,
@@ -123,7 +124,6 @@ const interestOptions = [
   "Notification and follow-up automations",
   "Job and customer data workflows",
   "Ongoing support and optimization",
-  "Not sure — I want a strategy call first",
 ];
 
 function ScrollCTAButton() {
@@ -152,11 +152,11 @@ function StrategyCallForm() {
     email: "",
   });
   const [interests, setInterests] = useState<string[]>([]);
+  const [message, setMessage] = useState("");
 
   const mutation = useMutation({
-    mutationFn: async (payload: typeof formData & { interests: string[] }) => {
-      const res = await apiRequest("POST", "/api/automation-services-inquiry", payload);
-      return res.json();
+    mutationFn: async (payload: typeof formData & { interests: string[]; message: string }) => {
+      await apiRequest("POST", "/api/automation-services-inquiry", payload);
     },
     onSuccess: () => {
       setSubmitted(true);
@@ -200,16 +200,7 @@ function StrategyCallForm() {
       return;
     }
 
-    if (interests.length === 0) {
-      toast({
-        title: "Select an area of interest",
-        description: "Please check at least one option below.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    mutation.mutate({ ...formData, interests });
+    mutation.mutate({ ...formData, interests, message });
   };
 
   if (submitted) {
@@ -233,6 +224,7 @@ function StrategyCallForm() {
           <Label htmlFor="firstName">First Name *</Label>
           <Input
             id="firstName"
+            name="firstName"
             value={formData.firstName}
             onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
             data-testid="input-inquiry-firstname"
@@ -242,6 +234,7 @@ function StrategyCallForm() {
           <Label htmlFor="lastName">Last Name *</Label>
           <Input
             id="lastName"
+            name="lastName"
             value={formData.lastName}
             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
             data-testid="input-inquiry-lastname"
@@ -253,6 +246,7 @@ function StrategyCallForm() {
         <Label htmlFor="company">Company *</Label>
         <Input
           id="company"
+          name="company"
           value={formData.company}
           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
           data-testid="input-inquiry-company"
@@ -263,6 +257,7 @@ function StrategyCallForm() {
         <Label htmlFor="phone">Phone Number *</Label>
         <Input
           id="phone"
+          name="phone"
           type="tel"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -274,6 +269,7 @@ function StrategyCallForm() {
         <Label htmlFor="email">Email *</Label>
         <Input
           id="email"
+          name="email"
           type="email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -282,7 +278,7 @@ function StrategyCallForm() {
       </div>
 
       <div>
-        <Label className="mb-3 block">How can we help you? *</Label>
+        <Label className="mb-3 block">What are you interested in? <span className="text-muted-foreground font-normal">(optional)</span></Label>
         <div className="space-y-2.5" data-testid="checklist-interests">
           {interestOptions.map((option) => (
             <div key={option} className="flex items-start gap-3">
@@ -298,6 +294,18 @@ function StrategyCallForm() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div>
+        <Label htmlFor="message">How can we help you? <span className="text-muted-foreground font-normal">(optional)</span></Label>
+        <Textarea
+          id="message"
+          rows={4}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Tell us about your current setup, goals, or any specific challenges you're running into."
+          data-testid="textarea-inquiry-message"
+        />
       </div>
 
       <input

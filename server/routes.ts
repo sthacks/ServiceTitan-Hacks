@@ -496,7 +496,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         company: z.string().min(1, "Company is required"),
         phone: z.string().min(1, "Phone number is required"),
         email: z.string().email("Valid email is required"),
-        interests: z.array(z.string()).min(1, "Please select at least one area of interest"),
+        interests: z.array(z.string()).optional().default([]),
+        message: z.string().optional().default(""),
       });
 
       const data = schema.parse(req.body);
@@ -515,6 +516,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           submittedAt: new Date().toISOString(),
           company: data.company,
           interests: data.interests,
+          message: data.message || "",
         };
 
         const jsonData = JSON.stringify(jsonPayload, null, 2);
