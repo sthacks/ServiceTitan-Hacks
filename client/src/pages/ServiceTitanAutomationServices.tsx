@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -30,11 +30,11 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const outcomes = [
-  "Reduce manual admin work",
-  "Improve visibility across the business",
+const outcomes: ReactNode[] = [
+  "Eliminate repetitive data entry and clerical burnout.",
+  <><strong>Real-time profit</strong> tracking without waiting for end-of-month reports.</>,
   "Automate repetitive tasks",
-  "Clean up broken workflows",
+  "Build guardrails so your team can't fail, even on their busiest days.",
   "Connect the tools you already use",
   "Build systems that scale without adding more chaos",
 ];
@@ -128,15 +128,37 @@ const interestOptions = [
 
 function ScrollCTAButton() {
   return (
-    <button
-      onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
-      data-testid="button-cta-scroll"
-    >
-      <Button size="lg" className="gap-2">
-        Book a Strategy Call
+    <div className="flex flex-col items-start gap-2">
+      <Button
+        size="lg"
+        className="gap-2"
+        onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
+        data-testid="button-cta-scroll"
+      >
+        Find My Automation Gaps.
         <ArrowRight className="w-4 h-4" />
       </Button>
-    </button>
+      <p className="text-xs text-muted-foreground">No sales pitch. Just a technical deep dive into your current setup.</p>
+    </div>
+  );
+}
+
+function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <Button
+        size="lg"
+        className="gap-2"
+        onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
+        data-testid="button-cta-scroll-centered"
+      >
+        Find My Automation Gaps.
+        <ArrowRight className="w-4 h-4" />
+      </Button>
+      <p className={`text-xs ${dark ? "text-white/50" : "text-muted-foreground"}`}>
+        No sales pitch. Just a technical deep dive into your current setup.
+      </p>
+    </div>
   );
 }
 
@@ -352,16 +374,15 @@ export default function ServiceTitanAutomationServices() {
               Done-for-You Implementation
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
-              ServiceTitan Automation Services
+              Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations.
             </h1>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-4 max-w-3xl mx-auto">
-              We help contractors improve operations with ServiceTitan, including forms, plus Zapier, Make, Google Sheets, and AI so your team saves time, reduces manual work, and runs more efficiently.
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
+              Stop fighting your software. We build the systems that let your team focus on customers while we handle the data—helping you scale without the chaos.
             </p>
-            <p className="text-sm text-white/40 mb-8">
-              Forms, workflows, integrations, and implementation for home service companies
-            </p>
-            <ScrollCTAButton />
-            <p className="mt-4 text-xs text-white/35">
+            <div className="flex justify-center">
+              <ScrollCTAButtonCentered dark />
+            </div>
+            <p className="mt-6 text-xs text-white/35">
               Built for real home service companies using ServiceTitan
             </p>
           </div>
@@ -375,9 +396,22 @@ export default function ServiceTitanAutomationServices() {
                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
                   Built for ServiceTitan shops that want better systems
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  If your team is still doing too much manual work, chasing down information, updating spreadsheets by hand, or relying on people to remember every step, you do not have a people problem. You have a workflow problem.
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  If your team is still doing too much manual work, chasing down information, updating spreadsheets by hand, or relying on people to remember every step, you do not have a people problem. You have a <strong className="text-foreground">workflow problem</strong>.
                 </p>
+                <p className="font-semibold mb-3">Does this sound like your shop?</p>
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "You're paying high-level staff to do manual data entry.",
+                    "Your reporting is a mess because technicians skip or miss form fields.",
+                    "You have a 'Monday Morning Spreadsheet Scramble' to find your actual profit numbers.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                      <AlertCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
                 <p className="text-muted-foreground leading-relaxed">
                   We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI.
                 </p>
@@ -498,18 +532,14 @@ export default function ServiceTitanAutomationServices() {
               ))}
             </div>
             <div className="max-w-3xl">
-              <p className="text-white/75 leading-relaxed mb-4">
-                I have spent 25 years in home services and 12 years owning and operating an HVAC and plumbing company.
-              </p>
-              <p className="text-white/75 leading-relaxed mb-4">
-                Over the years, I have built more than 5,000 automations and worked extensively with ServiceTitan, workflows, reporting, forms, integrations, and process improvement.
-              </p>
-              <p className="text-white/75 leading-relaxed mb-4">
-                I am also the founder of ServiceTitan Hacks and PhoneTap, where I help contractors use technology, automation, and AI in ways that are practical and useful in the real world.
-              </p>
-              <p className="text-white/75 leading-relaxed">
-                This is not theory. It is built from real experience in the trades, real operational challenges, and real implementation work.
-              </p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">A note from the founder</p>
+              <blockquote className="border-l-2 border-primary pl-6">
+                <p className="text-white/80 text-lg leading-relaxed italic mb-4">
+                  "I spent 12 years owning an HVAC and plumbing company. I didn't build these{" "}
+                  <strong className="text-white not-italic">5,000+ automations</strong> because I love tech—I built them because I needed my life back. I'm a contractor who figured out how to make ServiceTitan work for the shop, not the other way around."
+                </p>
+                <cite className="text-white/50 text-sm not-italic">— Bill Brown, Founder of ServiceTitan Hacks &amp; PhoneTap</cite>
+              </blockquote>
             </div>
           </div>
         </section>
