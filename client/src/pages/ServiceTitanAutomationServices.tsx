@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import makeComLogo from "@assets/idQDXetN8-_1775222049551_1775222603732.jpeg";
 import serviceTitanLogo from "@assets/ext-600_(1)_1775222745615.png";
+import zapierLogo from "@assets/images_(1)_1775222845172.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -450,6 +451,7 @@ export default function ServiceTitanAutomationServices() {
                 const Icon = service.icon;
                 const isMakeCom = service.label === "Make.com workflow builds";
                 const isServiceTitan = service.label === "ServiceTitan forms setup and optimization";
+                const isZapier = service.label === "Custom Zap creation";
                 return (
                   <Card key={i} data-testid={`card-service-${i}`}>
                     <CardContent className="p-5 flex items-start gap-4">
@@ -464,6 +466,12 @@ export default function ServiceTitanAutomationServices() {
                           <img
                             src={serviceTitanLogo}
                             alt="ServiceTitan"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : isZapier ? (
+                          <img
+                            src={zapierLogo}
+                            alt="Zapier"
                             className="w-full h-full object-cover"
                           />
                         ) : (
