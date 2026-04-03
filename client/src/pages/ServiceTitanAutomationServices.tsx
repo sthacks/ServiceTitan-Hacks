@@ -3,6 +3,7 @@ import makeComLogo from "@assets/idQDXetN8-_1775222049551_1775222603732.jpeg";
 import serviceTitanLogo from "@assets/ext-600_(1)_1775222745615.png";
 import zapierLogo from "@assets/images_(1)_1775222845172.png";
 import googleSheetsLogo from "@assets/images_(2)_1775222885868.png";
+import founderPhoto from "@assets/slack_1775223018179.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -567,15 +568,24 @@ export default function ServiceTitanAutomationServices() {
                 </div>
               ))}
             </div>
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">A note from the founder</p>
-              <blockquote className="border-l-2 border-primary pl-6">
-                <p className="text-white/80 text-lg leading-relaxed italic mb-4">
-                  "I spent 12 years owning an HVAC and plumbing company. I didn't build these{" "}
-                  <strong className="text-white not-italic">5,000+ automations</strong> because I love tech—I built them because I needed my life back. I'm a contractor who figured out how to make ServiceTitan work for the shop, not the other way around."
-                </p>
-                <cite className="text-white/50 text-sm not-italic">— Bill Brown, Founder of ServiceTitan Hacks &amp; PhoneTap</cite>
-              </blockquote>
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+              <div className="flex-1">
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">A note from the founder</p>
+                <blockquote className="border-l-2 border-primary pl-6">
+                  <p className="text-white/80 text-lg leading-relaxed italic mb-4">
+                    "I spent 12 years owning an HVAC and plumbing company. I didn't build these{" "}
+                    <strong className="text-white not-italic">5,000+ automations</strong> because I love tech—I built them because I needed my life back. I'm a contractor who figured out how to make ServiceTitan work for the shop, not the other way around."
+                  </p>
+                  <cite className="text-white/50 text-sm not-italic">— Bill Brown, Founder of ServiceTitan Hacks &amp; PhoneTap</cite>
+                </blockquote>
+              </div>
+              <div className="flex-shrink-0 w-48 md:w-56">
+                <img
+                  src={founderPhoto}
+                  alt="Bill Brown, Founder"
+                  className="w-full rounded-md object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
