@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import serviceTitanLogo from "@assets/idQDXetN8-_1775222049551_1775222175755.jpeg";
+import makeComLogo from "@assets/idQDXetN8-_1775222049551_1775222603732.jpeg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -447,11 +447,22 @@ export default function ServiceTitanAutomationServices() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-testid="grid-services">
               {services.map((service, i) => {
                 const Icon = service.icon;
+                const isMakeCom = service.label === "Make.com workflow builds";
                 return (
                   <Card key={i} data-testid={`card-service-${i}`}>
                     <CardContent className="p-5 flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
+                      <div className="flex-shrink-0 w-10 h-10 rounded-md overflow-hidden">
+                        {isMakeCom ? (
+                          <img
+                            src={makeComLogo}
+                            alt="Make.com"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-primary" />
+                          </div>
+                        )}
                       </div>
                       <p className="font-medium leading-snug pt-1">{service.label}</p>
                     </CardContent>
@@ -495,22 +506,21 @@ export default function ServiceTitanAutomationServices() {
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-testid="grid-implementations">
-              {implementations.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 p-5 rounded-md border border-border bg-background"
-                  data-testid={`implementation-item-${i}`}
-                >
-                  <div className="flex-shrink-0 w-9 h-9 rounded-md overflow-hidden">
-                    <img
-                      src={serviceTitanLogo}
-                      alt="ServiceTitan"
-                      className="w-full h-full object-cover"
-                    />
+              {implementations.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 p-5 rounded-md border border-border bg-background"
+                    data-testid={`implementation-item-${i}`}
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <p className="text-sm font-medium leading-snug pt-1">{item.label}</p>
                   </div>
-                  <p className="text-sm font-medium leading-snug pt-1">{item.label}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
