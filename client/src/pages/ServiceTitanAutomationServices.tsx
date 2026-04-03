@@ -4,6 +4,7 @@ import serviceTitanLogo from "@assets/ext-600_(1)_1775222745615.png";
 import zapierLogo from "@assets/images_(1)_1775222845172.png";
 import googleSheetsLogo from "@assets/images_(2)_1775222885868.png";
 import founderPhoto from "@assets/slack_1775223018179.png";
+import chatGptLogo from "@assets/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector_1775223039104.jpg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -455,6 +456,7 @@ export default function ServiceTitanAutomationServices() {
                 const isServiceTitan = service.label === "ServiceTitan forms setup and optimization";
                 const isZapier = service.label === "Custom Zap creation";
                 const isGoogleSheets = service.label === "Google Sheets reporting automations";
+                const isChatGpt = service.label === "AI-powered workflow implementation";
                 return (
                   <Card key={i} data-testid={`card-service-${i}`}>
                     <CardContent className="p-5 flex items-start gap-4">
@@ -481,6 +483,12 @@ export default function ServiceTitanAutomationServices() {
                           <img
                             src={googleSheetsLogo}
                             alt="Google Sheets"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : isChatGpt ? (
+                          <img
+                            src={chatGptLogo}
+                            alt="ChatGPT"
                             className="w-full h-full object-cover"
                           />
                         ) : (
