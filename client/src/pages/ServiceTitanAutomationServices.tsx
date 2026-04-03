@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import makeComLogo from "@assets/idQDXetN8-_1775222049551_1775222603732.jpeg";
+import serviceTitanLogo from "@assets/ext-600_(1)_1775222745615.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -448,6 +449,7 @@ export default function ServiceTitanAutomationServices() {
               {services.map((service, i) => {
                 const Icon = service.icon;
                 const isMakeCom = service.label === "Make.com workflow builds";
+                const isServiceTitan = service.label === "ServiceTitan forms setup and optimization";
                 return (
                   <Card key={i} data-testid={`card-service-${i}`}>
                     <CardContent className="p-5 flex items-start gap-4">
@@ -456,6 +458,12 @@ export default function ServiceTitanAutomationServices() {
                           <img
                             src={makeComLogo}
                             alt="Make.com"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : isServiceTitan ? (
+                          <img
+                            src={serviceTitanLogo}
+                            alt="ServiceTitan"
                             className="w-full h-full object-cover"
                           />
                         ) : (
