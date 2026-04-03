@@ -1,10 +1,5 @@
 import { useState, type ReactNode } from "react";
-import makeComLogo from "@assets/idQDXetN8-_1775222049551_1775222603732.jpeg";
-import serviceTitanLogo from "@assets/ext-600_(1)_1775222745615.png";
-import zapierLogo from "@assets/images_(1)_1775222845172.png";
-import googleSheetsLogo from "@assets/images_(2)_1775222885868.png";
 import founderPhoto from "@assets/slack_1775223018179.png";
-import chatGptLogo from "@assets/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector_1775223039104.jpg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -452,50 +447,11 @@ export default function ServiceTitanAutomationServices() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-testid="grid-services">
               {services.map((service, i) => {
                 const Icon = service.icon;
-                const isMakeCom = service.label === "Make.com workflow builds";
-                const isServiceTitan = service.label === "ServiceTitan forms setup and optimization";
-                const isZapier = service.label === "Custom Zap creation";
-                const isGoogleSheets = service.label === "Google Sheets reporting automations";
-                const isChatGpt = service.label === "AI-powered workflow implementation";
                 return (
                   <Card key={i} data-testid={`card-service-${i}`}>
                     <CardContent className="p-5 flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-md overflow-hidden">
-                        {isMakeCom ? (
-                          <img
-                            src={makeComLogo}
-                            alt="Make.com"
-                            className="w-full h-full object-cover"
-                          />
-                        ) : isServiceTitan ? (
-                          <img
-                            src={serviceTitanLogo}
-                            alt="ServiceTitan"
-                            className="w-full h-full object-cover"
-                          />
-                        ) : isZapier ? (
-                          <img
-                            src={zapierLogo}
-                            alt="Zapier"
-                            className="w-full h-full object-cover"
-                          />
-                        ) : isGoogleSheets ? (
-                          <img
-                            src={googleSheetsLogo}
-                            alt="Google Sheets"
-                            className="w-full h-full object-cover"
-                          />
-                        ) : isChatGpt ? (
-                          <img
-                            src={chatGptLogo}
-                            alt="ChatGPT"
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                            <Icon className="w-5 h-5 text-primary" />
-                          </div>
-                        )}
+                      <div className="flex-shrink-0 w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-primary" />
                       </div>
                       <p className="font-medium leading-snug pt-1">{service.label}</p>
                     </CardContent>
