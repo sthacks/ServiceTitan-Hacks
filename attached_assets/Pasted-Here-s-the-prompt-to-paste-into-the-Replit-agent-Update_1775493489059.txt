@@ -1,0 +1,45 @@
+Here's the prompt to paste into the Replit agent:
+
+---
+
+**Update the copy on the `/servicetitan-automation-services` page with the following changes:**
+
+**1. "$250" — reduce repetition**
+- Keep "$250" in the hero CTA button text only ("Book a $250 Strategy Call")
+- Keep the subtext line directly under the hero CTA: "$250 credited toward your project if you move forward." — this should appear in the hero section only
+- Change ALL other CTA buttons on the page to read: "Book a Strategy Call →" (remove "$250" from button text)
+- Remove the duplicate "$250 credited toward your project" subtext lines that appear under the "How it works" CTA and anywhere else it repeats
+- In the "What you get in the strategy call" section heading, change it to: "What you get in the strategy call" (remove "$250")
+- In the "How it works" Step 01 heading, change it to: "Book a strategy call" (remove "$250")
+- In the final bullet of the "What you get" section, the line "If you move forward with implementation, the full $250 is credited toward your project" — keep this line since it's the only place in that section that mentions price, but it should be the only remaining mention besides the hero button and subtext
+- In the form disclaimer below the form fields, change it to: "This is a paid strategy session. If we move forward with implementation, the fee is credited toward your project." (remove specific dollar amounts)
+
+**2. Merge the redundant pain-point sections**
+- Remove the "Common problems we help with" section entirely — its content (disconnected systems, manual data entry, messy reporting, workflows depending on one person, missing field data) is already covered in the "Built for ServiceTitan shops tired of manual workarounds" section above it
+- Do not move any content from it — just delete the section
+
+**3. Cut the "Examples of what we implement" section**
+- Remove the entire "Examples of what we implement" section and its grid of items — this content overlaps heavily with "What we can build for your business" directly above it
+- Do not move any content from it — just delete the section
+
+**4. Trim the "Get Started" section**
+- The "Get Started" section (above the form) currently has a heading, a subheading, and two body paragraphs
+- Keep the heading: "Let's talk about your shop"
+- Replace all body copy in that section with a single line: "Fill out the form and we'll be in touch to schedule a time."
+- Remove the two paragraphs that re-explain the strategy call process (that's already covered in "How it works")
+
+**5. Fix the "How it works" Step 04 language**
+- Change Step 04 body text from: "For companies that want continued help, ongoing support may be available." to: "For shops that want continued help, we offer ongoing support packages."
+
+**6. Trim the "What you get in the strategy call" body text**
+- Change the intro sentence from: "This is a focused working session designed to help you clarify the problem, talk through the current need, and determine the best path forward." to: "This is a focused working session to understand your situation and map the best path forward."
+- Change the final bullet from: "A determination of whether it makes sense to move into implementation" to: "A clear recommendation on whether and how to move forward"
+
+**7. Fix the hero section copy flow**
+- The line "A focused strategy session to understand your needs and map out the right solution." currently sits between the subheadline and the CTA button — move it to appear directly above the CTA button as a lead-in to the button action, not as part of the main hero description
+
+**8. Standardize voice — "we" vs "me/I"**
+- The page uses "we" and "our" throughout, but the section heading reads "Why work with me" — change this heading to: "Why work with us"
+- Leave the founder quote block using "I" — first-person quotes are fine
+
+**Do not change any design, layout, colors, or functionality. Copy changes only. After making all changes, verify the page compiles and renders correctly.**
