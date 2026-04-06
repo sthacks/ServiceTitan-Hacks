@@ -132,32 +132,32 @@ const stats = [
 const steps = [
   {
     number: "01",
-    title: "Book a strategy call",
-    text: "We review your current setup, workflows, bottlenecks, and goals.",
+    title: "Book a $250 strategy call",
+    text: "We talk through your current need, workflow issue, or automation goal.",
   },
   {
     number: "02",
     title: "Get a plan",
-    text: "We identify the best opportunities and recommend the right approach for your shop.",
+    text: "We identify the best solution path and outline what comes next.",
   },
   {
     number: "03",
     title: "Implement the work",
-    text: "If it makes sense to move forward, we build the workflow for you.",
+    text: "If it makes sense to move forward, we can build the workflow for you.",
   },
   {
     number: "04",
     title: "Add support if needed",
-    text: "For ongoing help, continued support is available after the engagement.",
+    text: "For companies that want continued help, ongoing support may be available.",
   },
 ];
 
 const callExpectations = [
-  "A clearer picture of where your workflow is breaking down",
-  "The best opportunities for automation in your business",
-  "Which tools make sense and which do not",
-  "A practical recommendation for next steps",
-  "Whether it makes sense to move forward with implementation",
+  "A conversation about the workflow, forms, reporting, or automation issue you want help with",
+  "Guidance on the best way to solve it",
+  "Recommendations on what tools or approach make the most sense",
+  "A clearer idea of project scope and next steps",
+  "A determination of whether it makes sense to move into implementation",
 ];
 
 const interestOptions = [
@@ -180,10 +180,10 @@ function ScrollCTAButton() {
         onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
         data-testid="button-cta-scroll"
       >
-        Book a Strategy Call
+        Book a $250 Strategy Call
         <ArrowRight className="w-4 h-4" />
       </Button>
-      <p className="text-xs text-muted-foreground">No sales pitch, just a technical deep dive into your current setup.</p>
+      <p className="text-xs text-muted-foreground">$250 credited toward your project if you move forward.</p>
     </div>
   );
 }
@@ -197,11 +197,11 @@ function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
         onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
         data-testid="button-cta-scroll-centered"
       >
-        Book a Strategy Call
+        Book a $250 Strategy Call
         <ArrowRight className="w-4 h-4" />
       </Button>
       <p className={`text-xs ${dark ? "text-white/50" : "text-muted-foreground"}`}>
-        No sales pitch, just a technical deep dive into your current setup.
+        $250 credited toward your project if you move forward.
       </p>
     </div>
   );
@@ -385,6 +385,9 @@ function StrategyCallForm() {
         autoComplete="off"
       />
 
+      <p className="text-xs text-muted-foreground">
+        This is a paid strategy session ($250). If we move forward with implementation, the $250 is applied to your project.
+      </p>
       <Button
         type="submit"
         size="lg"
@@ -392,7 +395,7 @@ function StrategyCallForm() {
         disabled={mutation.isPending}
         data-testid="button-inquiry-submit"
       >
-        {mutation.isPending ? "Submitting..." : "Book a Strategy Call"}
+        {mutation.isPending ? "Submitting..." : "Book a $250 Strategy Call"}
         {!mutation.isPending && <ArrowRight className="w-4 h-4" />}
       </Button>
     </form>
@@ -423,6 +426,9 @@ export default function ServiceTitanAutomationServices() {
             </h1>
             <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
               Stop fighting your software. We build the systems that reduce manual work, connect your tools, and help your team run more efficiently.
+            </p>
+            <p className="text-sm text-white/60 mb-5">
+              A focused strategy session to understand your needs and map out the right solution.
             </p>
             <div className="flex justify-center">
               <ScrollCTAButtonCentered dark />
@@ -632,9 +638,11 @@ export default function ServiceTitanAutomationServices() {
         <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-strategy-call">
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              What to expect from the strategy call
+              What you get in the $250 strategy call
             </h2>
-            <p className="text-muted-foreground mb-8">In about 30 minutes, you will walk away with:</p>
+            <p className="text-muted-foreground mb-8">
+              This is a focused working session designed to help you clarify the problem, talk through the current need, and determine the best path forward.
+            </p>
             <ul className="space-y-3 mb-10" data-testid="list-call-expectations">
               {callExpectations.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -644,7 +652,7 @@ export default function ServiceTitanAutomationServices() {
               ))}
             </ul>
             <p className="text-muted-foreground mb-8 font-medium">
-              This call is designed to give you clarity, not a sales pitch.
+              If you move forward with implementation, the full $250 is credited toward your project.
             </p>
             <ScrollCTAButton />
           </div>
@@ -668,17 +676,20 @@ export default function ServiceTitanAutomationServices() {
                   Let's talk about your shop
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  If your team is wasting time on manual work, dealing with avoidable friction, or missing opportunities because your tools are not connected, fill out the form to book a strategy call.
+                  If you need help solving a ServiceTitan workflow, forms, reporting, or automation issue, this is the best place to start.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  On the strategy call, we will talk through what you need, identify the best solution path, and determine what it would take to implement it.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We will look at where you are now, where the gaps are, and what it would take to fix them.
+                  If we move forward with the project, your $250 is credited toward the work.
                 </p>
               </div>
 
               {/* Right — form */}
               <Card data-testid="card-inquiry-form">
                 <CardContent className="p-6 md:p-8">
-                  <h3 className="text-xl font-semibold mb-1">Book a Strategy Call</h3>
+                  <h3 className="text-xl font-semibold mb-1">Book a $250 Strategy Call</h3>
                   <p className="text-sm text-muted-foreground mb-6">
                     Fill out the form and we will be in touch to schedule a time.
                   </p>

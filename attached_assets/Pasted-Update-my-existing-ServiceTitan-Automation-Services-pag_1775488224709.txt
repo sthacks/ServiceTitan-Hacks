@@ -1,0 +1,210 @@
+Update my existing "ServiceTitan Automation Services" page copy to reflect that the strategy call is a paid call, not a free discovery call.
+
+Important:
+- This is a copy update only, not a redesign.
+- Keep the existing page layout, design system, spacing, structure, styling, and components unless a small text layout adjustment is needed for readability.
+- Keep the page focused on converting qualified contractors and home service companies into booked paid strategy calls.
+- Keep the tone direct, practical, professional, and clear.
+- Do not introduce hype, fluff, or vague marketing language.
+- Do not make the page longer unless absolutely necessary.
+- Do not use em dashes.
+- Keep the offer aligned with the actual service:
+  - ServiceTitan forms
+  - Zapier automations
+  - Make.com workflows
+  - Google Sheets reporting
+  - AI-powered workflows
+  - notifications and follow-up
+  - job and customer data workflows
+  - ongoing support
+
+Core offer update:
+The page should clearly communicate that the strategy call costs $250, and that the $250 is credited toward the project if the client moves forward.
+
+Very important:
+Do NOT position the strategy call as:
+- a full audit
+- a full review of all ServiceTitan workflows
+- a technical deep dive into their entire setup
+- a full bottleneck analysis
+
+That is not what the call is.
+
+The strategy call should be positioned as:
+- a focused working session
+- designed to understand their current need
+- talk through the specific workflow, forms, reporting, or automation issue they want help with
+- identify the best solution path
+- determine next steps
+- determine whether it makes sense to move into implementation
+
+Global CTA updates:
+Replace all CTA button copy that currently implies a free call with:
+"Book a $250 Strategy Call"
+
+Where appropriate, add supporting helper text under CTA buttons:
+"$250 credited toward your project if you move forward."
+
+Hero section updates:
+Keep the main headline:
+"Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations."
+
+Update the hero subheadline to:
+"Stop fighting your software. We build the systems that reduce manual work, connect your tools, and help your team run more efficiently."
+
+Keep one main CTA button:
+"Book a $250 Strategy Call"
+
+Under the CTA button, add this helper text:
+"$250 credited toward your project if you move forward."
+
+Also add one short supporting line near the CTA area:
+"A focused strategy session to understand your needs and map out the right solution."
+
+First section:
+Keep the heading:
+"Built for ServiceTitan shops tired of manual workarounds"
+
+Keep the section focused on helping the right buyer self-identify.
+
+Suggested body copy:
+"If your team is still re-entering data, chasing down missing information, updating spreadsheets by hand, or relying on people to remember every step, the problem is not your people. It is your workflow.
+
+We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI."
+
+Keep or tighten the self-identification bullets:
+- Your team is re-entering data between ServiceTitan, spreadsheets, and other tools
+- Technicians are missing form fields and office staff are chasing down information
+- You do not trust your reporting because too much of the process is manual
+- You know parts of your workflow should be automated, but they are not
+- Important tasks still depend too much on someone remembering to do them
+
+Services section:
+Keep the heading:
+"What we can build for your business"
+
+Keep the intro concise:
+"Each engagement is scoped around the tools and workflows that make the most sense for your business."
+
+Keep the service categories, but do not over-expand them:
+- ServiceTitan Forms
+- Zapier Automations
+- Make.com Workflows
+- Google Sheets Reporting
+- AI-Powered Workflows
+- Notifications & Follow-Up
+- Job & Customer Data
+- Ongoing Support
+
+Common problems section:
+Keep it short and practical.
+
+Keep only the strongest items:
+- Disconnected systems that do not talk to each other
+- Office staff wasting time on repetitive tasks
+- Missing or messy field data
+- Messy reporting
+- Manual data entry
+- Workflows that depend too much on one employee
+
+Examples section:
+Keep this section because it makes the offer tangible.
+
+Retain practical examples like:
+- Set up or improve ServiceTitan forms
+- Create technician-friendly forms that collect the right data
+- Trigger workflows after a form is submitted
+- Automatically send ServiceTitan data into Google Sheets
+- Create job summary cleanup workflows
+- Route leads and notifications to the right people
+- Build custom reporting workflows
+- Connect forms, email, spreadsheets, and ServiceTitan
+- Set up AI-assisted summaries and process automations
+
+Why work with me section:
+Keep this section mostly intact.
+
+Keep the credibility stats:
+- 25 years in home services
+- 5,000+ automations built
+- 12 years owning an HVAC & plumbing company
+- Founder of ServiceTitan Hacks & PhoneTap
+
+Keep the founder note, but tighten only if needed for readability.
+
+How it works section:
+Keep the 4-step process:
+1. Book a strategy call
+2. Get a plan
+3. Implement the work
+4. Add support if needed
+
+Update the wording so it reflects the paid call model.
+
+Recommended copy:
+Step 1: "Book a $250 strategy call" - "We talk through your current need, workflow issue, or automation goal."
+Step 2: "Get a plan" - "We identify the best solution path and outline what comes next."
+Step 3: "Implement the work" - "If it makes sense to move forward, we can build the workflow for you."
+Step 4: "Add support if needed" - "For companies that want continued help, ongoing support may be available."
+
+Use CTA button:
+"Book a $250 Strategy Call"
+
+Helper text under CTA:
+"$250 credited toward your project if you move forward."
+
+Strategy call section:
+This section must be rewritten so it clearly matches the actual scope of the call.
+
+Change the heading to:
+"What you get in the $250 strategy call"
+
+Use this body direction:
+"This is a focused working session designed to help you clarify the problem, talk through the current need, and determine the best path forward."
+
+Use bullets like:
+- A conversation about the workflow, forms, reporting, or automation issue you want help with
+- Guidance on the best way to solve it
+- Recommendations on what tools or approach make the most sense
+- A clearer idea of project scope and next steps
+- A determination of whether it makes sense to move into implementation
+
+Closing line:
+"If you move forward with implementation, the full $250 is credited toward your project."
+
+Add CTA button:
+"Book a $250 Strategy Call"
+
+Helper text under CTA:
+"$250 credited toward your project if you move forward."
+
+Final CTA / form section:
+Keep the existing form layout and service-interest checkboxes.
+
+Rewrite the left-side copy to better match the paid strategy call model.
+
+Use this direction:
+"If you need help solving a ServiceTitan workflow, forms, reporting, or automation issue, this is the best place to start.
+
+On the strategy call, we will talk through what you need, identify the best solution path, and determine what it would take to implement it.
+
+If we move forward with the project, your $250 is credited toward the work."
+
+Update form-related CTA language:
+- Replace "Request a Strategy Call" or any free-call phrasing with "Book a $250 Strategy Call"
+- If helpful, add a short line above or near the form submit button:
+"This is a paid strategy session. If we move forward with implementation, the $250 is applied to your project."
+
+Global copy rules:
+- Remove any wording that suggests a free discovery call
+- Remove any wording that suggests a full audit or full system review
+- Keep the page honest about the actual scope of the paid call
+- Make each section distinct and non-redundant
+- Keep the page conversion-focused and easy to scan
+- Use specific language instead of vague consulting language
+
+Output requirements:
+- Update the existing page directly
+- Preserve existing design and section order unless a very small adjustment improves clarity
+- Keep the page production-ready
+- Make sure the paid strategy call positioning is clear in the hero, process section, strategy call section, and form section
