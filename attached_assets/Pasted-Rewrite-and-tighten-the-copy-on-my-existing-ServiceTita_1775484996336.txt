@@ -1,0 +1,225 @@
+Rewrite and tighten the copy on my existing "ServiceTitan Automation Services" page to improve conversion for booked strategy calls.
+
+Important:
+- Keep the existing design system, layout structure, styling, spacing, components, and overall page architecture unless a small copy/layout adjustment is needed for readability.
+- This is a copy optimization pass, not a redesign.
+- Keep the page focused on booking strategy calls from contractors and home service companies that want ServiceTitan automation services.
+- Do not make the page longer.
+- Make the copy more efficient, less repetitive, and more conversion-focused.
+- Preserve the overall tone: direct, practical, professional, no hype, no fluff.
+- Write for contractors, operators, and home service business owners.
+- Keep all copy aligned with the current offer: ServiceTitan forms, Zapier, Make, Google Sheets, AI workflows, follow-up automations, customer/job data workflows, and ongoing support.
+
+Primary goal:
+Get more qualified visitors to book a strategy call.
+
+Primary CTA language:
+Use one consistent CTA across the page:
+"Book a Strategy Call"
+
+Secondary helper text under CTA buttons:
+"No sales pitch, just a technical deep dive into your current setup."
+
+Core instruction:
+The page currently has some repetition across the hero, early problem section, common problems section, and strategy call section. Rewrite it so each section has a distinct job:
+
+- Hero = outcome and value proposition
+- First section = help the right visitor self-identify
+- Services section = show what kinds of systems we build
+- Common problems section = brief problem recognition only
+- Examples section = make the offer tangible
+- Why work with me = trust and credibility
+- How it works = explain the process
+- Strategy call section = explain what the prospect gets from the call
+- Final CTA/form section = encourage action
+
+Make the revised page tighter and more persuasive by removing redundant phrasing around:
+- manual work
+- broken workflows
+- disconnected systems
+- automation opportunities
+- strategy call value
+
+Specific rewrite instructions by section:
+
+1. Hero section
+Keep the main headline:
+"Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations."
+
+Rewrite the subheadline to be tighter and clearer:
+"Stop fighting your software. We build the systems that reduce manual work, connect your tools, and help your team run more efficiently."
+
+Keep one primary CTA button:
+"Book a Strategy Call"
+
+Keep the supporting microcopy under the button:
+"No sales pitch, just a technical deep dive into your current setup."
+
+2. First section
+Current role:
+This section should help the right buyer quickly recognize themselves.
+
+Keep the heading idea but sharpen it. Change the heading to:
+"Built for ServiceTitan shops tired of manual workarounds"
+
+Rewrite the body so it is concise and specific.
+
+Suggested body direction:
+"If your team is still re-entering data, chasing down missing information, updating spreadsheets by hand, or relying on people to remember every step, the problem is not your people. It is your workflow.
+
+We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI."
+
+Replace broad generic outcome bullets with more specific self-identification bullets:
+- Your team is re-entering data between ServiceTitan, spreadsheets, and other tools
+- Technicians are missing form fields and office staff are chasing down information
+- You do not trust your reporting because too much of the process is manual
+- You know parts of your workflow should be automated, but they are not
+- Important tasks still depend too much on someone remembering to do them
+
+Keep the "Outcomes you can expect" column, but tighten it if needed so it does not repeat the left side too much.
+
+3. Services section
+Rename the heading from:
+"The Systems We Build."
+to:
+"What we can build for your business"
+
+Keep the introductory sentence concise and practical.
+
+Suggested intro:
+"Each engagement is scoped around the tools and workflows that make the most sense for your business."
+
+Keep the existing service categories, but tighten the supporting bullets so they are clean, practical, and easy to scan.
+
+Maintain these categories:
+- ServiceTitan Forms
+- Zapier Automations
+- Make.com Workflows
+- Google Sheets Reporting
+- AI-Powered Workflows
+- Notifications & Follow-Up
+- Job & Customer Data
+- Ongoing Support
+
+Do not over-explain each one. Keep each card concise.
+
+4. Common problems section
+Shorten this section. It is currently too list-heavy and partially repetitive.
+
+Keep the heading:
+"Common problems we solve"
+
+Keep only the strongest 5 to 6 items:
+- Disconnected systems that do not talk to each other
+- Office staff wasting time on repetitive tasks
+- Missing or messy field data
+- Messy reporting
+- Manual data entry
+- Workflows that depend too much on one employee
+
+Remove weaker or redundant items unless they materially improve clarity.
+
+5. Examples section
+Keep this section because it makes the offer tangible.
+
+Keep the heading, but make sure the content feels concrete and practical.
+
+Retain example items like:
+- Set up or improve ServiceTitan forms
+- Create technician-friendly forms that collect the right data
+- Trigger workflows after a form is submitted
+- Automatically send ServiceTitan data into Google Sheets
+- Create job summary cleanup workflows
+- Route leads and notifications to the right people
+- Build custom reporting workflows
+- Connect forms, email, spreadsheets, and ServiceTitan
+- Set up AI-assisted summaries and process automations
+
+Tighten wording where needed for scanability.
+
+6. Why work with me
+Keep this section mostly intact because it is strong.
+
+Keep the credibility stats:
+- 25 years in home services
+- 5,000+ automations built
+- 12 years owning an HVAC & plumbing company
+- Founder of ServiceTitan Hacks & PhoneTap
+
+Keep the founder note, but lightly tighten it for clarity and flow if needed.
+
+Goal of this section:
+Build trust and differentiate me from generic consultants.
+
+7. How it works
+Keep the 4-step structure:
+- Book a strategy call
+- Get a plan
+- Implement the work
+- Add support if needed
+
+Tighten the step copy so each line is clean and easy to scan.
+
+Use CTA button text:
+"Book a Strategy Call"
+
+Keep the helper text under the button:
+"No sales pitch, just a technical deep dive into your current setup."
+
+8. Strategy call section
+This section currently overlaps too much with "How it works."
+
+Change the heading from:
+"What to expect on the strategy call"
+to:
+"What you will leave the strategy call with"
+
+Rewrite this section so it focuses on takeaways, not process repetition.
+
+Use intro copy like:
+"On the call, we will look at your current setup and identify the best opportunities to improve it."
+
+Use bullets focused on value:
+- A clearer picture of where your workflow is breaking down
+- The best opportunities for automation in your business
+- Which tools make sense and which do not
+- A practical recommendation for next steps
+- Whether it makes sense to move forward with implementation
+
+Keep the CTA button:
+"Book a Strategy Call"
+
+Keep the helper text under the button:
+"No sales pitch, just a technical deep dive into your current setup."
+
+9. Final CTA/form section
+Keep the structure with left-side copy and right-side form.
+
+Rewrite the left-side copy to be stronger and more direct.
+
+Use this direction:
+"If your team is wasting time, dealing with avoidable friction, or relying on manual workarounds to keep things moving, this call is the best place to start.
+
+We will look at your current setup, identify the biggest breakdowns, and determine what it would take to fix them."
+
+Keep the form fields and service-interest checkboxes.
+
+Change the submit button copy to:
+"Book a Strategy Call"
+
+Global copy rules:
+- Remove redundancy across sections
+- Keep sentences tight
+- Prefer specific language over vague business language
+- Avoid filler phrases
+- Avoid hype
+- Do not use em dashes
+- Do not introduce new services or claims
+- Do not weaken clarity in an effort to sound clever
+- Keep everything aligned with booking qualified strategy calls
+
+Output requirements:
+- Rewrite the page copy directly in the page
+- Preserve existing section order unless a very minor adjustment improves readability
+- Keep the current design and component structure intact
+- Make the page feel tighter, clearer, and more conversion-focused

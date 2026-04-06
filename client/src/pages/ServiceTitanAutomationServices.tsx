@@ -27,11 +27,11 @@ import {
 } from "lucide-react";
 
 const outcomes: ReactNode[] = [
-  "Scale without headcount: Eliminate manual data entry and clerical burnout.",
-  <><strong>Real-time profit</strong> tracking without waiting for end-of-month reports.</>,
-  "Build guardrails so your team can't fail, even on their busiest days.",
-  "Connect the tools you already use",
-  "Build systems that scale without adding more chaos",
+  "Reduce manual re-entry and wasted admin time.",
+  <><strong>Real-time reporting</strong> you can actually trust.</>,
+  "Workflows that run without someone having to remember every step.",
+  "Connected tools that pass data between systems automatically.",
+  "A foundation that scales with your business.",
 ];
 
 const systems = [
@@ -102,16 +102,24 @@ const systems = [
 ];
 
 const problems = [
-  "Forms that are not set up correctly",
-  "Forms that technicians are not using consistently",
-  "Missing or messy field data",
   "Disconnected systems that do not talk to each other",
   "Office staff wasting time on repetitive tasks",
-  "Inconsistent follow-up",
-  "Delayed internal communication",
+  "Missing or messy field data",
   "Messy reporting",
   "Manual data entry",
   "Workflows that depend too much on one employee",
+];
+
+const implementations = [
+  "Set up or improve ServiceTitan forms",
+  "Create technician-friendly forms that collect the right data",
+  "Trigger workflows after a form is submitted",
+  "Automatically send ServiceTitan data into Google Sheets",
+  "Create job summary cleanup workflows",
+  "Route leads and notifications to the right people",
+  "Build custom reporting workflows",
+  "Connect forms, email, spreadsheets, and ServiceTitan",
+  "Set up AI-assisted summaries and process automations",
 ];
 
 const stats = [
@@ -125,30 +133,31 @@ const steps = [
   {
     number: "01",
     title: "Book a strategy call",
-    text: "We review your current workflows, bottlenecks, tools, and goals.",
+    text: "We review your current setup, workflows, bottlenecks, and goals.",
   },
   {
     number: "02",
     title: "Get a plan",
-    text: "We identify the best opportunities for automation and recommend the right approach.",
+    text: "We identify the best opportunities and recommend the right approach for your shop.",
   },
   {
     number: "03",
     title: "Implement the work",
-    text: "If it makes sense to move forward, we can build the workflow for you.",
+    text: "If it makes sense to move forward, we build the workflow for you.",
   },
   {
     number: "04",
     title: "Add support if needed",
-    text: "For companies that want continued help, ongoing support may be available.",
+    text: "For ongoing help, continued support is available after the engagement.",
   },
 ];
 
 const callExpectations = [
-  "A full audit of your current ServiceTitan setup, forms, and reporting gaps.",
-  "Areas that could be automated",
-  "What should be handled with ServiceTitan, Zapier, Make, Sheets, AI, or not automated at all",
-  "Whether it makes sense to move into implementation",
+  "A clearer picture of where your workflow is breaking down",
+  "The best opportunities for automation in your business",
+  "Which tools make sense and which do not",
+  "A practical recommendation for next steps",
+  "Whether it makes sense to move forward with implementation",
 ];
 
 const interestOptions = [
@@ -171,10 +180,10 @@ function ScrollCTAButton() {
         onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
         data-testid="button-cta-scroll"
       >
-        Find My Automation Gaps.
+        Book a Strategy Call
         <ArrowRight className="w-4 h-4" />
       </Button>
-      <p className="text-xs text-muted-foreground">No sales pitch. Just a technical deep dive into your current setup.</p>
+      <p className="text-xs text-muted-foreground">No sales pitch, just a technical deep dive into your current setup.</p>
     </div>
   );
 }
@@ -188,11 +197,11 @@ function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
         onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
         data-testid="button-cta-scroll-centered"
       >
-        Find My Automation Gaps.
+        Book a Strategy Call
         <ArrowRight className="w-4 h-4" />
       </Button>
       <p className={`text-xs ${dark ? "text-white/50" : "text-muted-foreground"}`}>
-        No sales pitch. Just a technical deep dive into your current setup.
+        No sales pitch, just a technical deep dive into your current setup.
       </p>
     </div>
   );
@@ -383,7 +392,7 @@ function StrategyCallForm() {
         disabled={mutation.isPending}
         data-testid="button-inquiry-submit"
       >
-        {mutation.isPending ? "Submitting..." : "Request a Strategy Call"}
+        {mutation.isPending ? "Submitting..." : "Book a Strategy Call"}
         {!mutation.isPending && <ArrowRight className="w-4 h-4" />}
       </Button>
     </form>
@@ -413,7 +422,7 @@ export default function ServiceTitanAutomationServices() {
               Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations.
             </h1>
             <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Stop fighting your software. We build the systems that let your team focus on customers while we handle the data—helping you scale without the chaos.
+              Stop fighting your software. We build the systems that reduce manual work, connect your tools, and help your team run more efficiently.
             </p>
             <div className="flex justify-center">
               <ScrollCTAButtonCentered dark />
@@ -430,16 +439,21 @@ export default function ServiceTitanAutomationServices() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                  Built for ServiceTitan shops that want better systems
+                  Built for ServiceTitan shops tired of manual workarounds
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  If your team is still doing too much manual work, chasing down information, updating spreadsheets by hand, or relying on people to remember every step, you do not have a people problem. You have a <strong className="text-foreground">workflow problem</strong>.
+                  If your team is still re-entering data, chasing down missing information, updating spreadsheets by hand, or relying on people to remember every step, the problem is not your people. It is your <strong className="text-foreground">workflow</strong>.
                 </p>
-                <p className="font-semibold mb-3">Does this sound like your shop?</p>
-                <ul className="space-y-3 mb-6">
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI.
+                </p>
+                <ul className="space-y-3">
                   {[
-                    "You're paying high-level staff to do manual data entry.",
-                    "You have a 'Monday Morning Spreadsheet Scramble' to find your actual profit numbers.",
+                    "Your team is re-entering data between ServiceTitan, spreadsheets, and other tools",
+                    "Technicians are missing form fields and office staff are chasing down information",
+                    "You do not trust your reporting because too much of the process is manual",
+                    "You know parts of your workflow should be automated, but they are not",
+                    "Important tasks still depend too much on someone remembering to do them",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-muted-foreground">
                       <AlertCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
@@ -447,9 +461,6 @@ export default function ServiceTitanAutomationServices() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-muted-foreground leading-relaxed">
-                  We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI.
-                </p>
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
@@ -472,9 +483,9 @@ export default function ServiceTitanAutomationServices() {
         <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-systems">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">The Systems We Build.</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">What we can build for your business</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Each engagement is scoped around the tools that make the most sense for your shop. Here's what we can implement.
+                Each engagement is scoped around the tools and workflows that make the most sense for your business.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-systems">
@@ -509,9 +520,9 @@ export default function ServiceTitanAutomationServices() {
         <section className="py-16 md:py-24 bg-background border-t border-border" data-testid="section-problems">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-2xl mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Common problems we solve</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Common problems we help with</h2>
               <p className="text-muted-foreground">
-                Most contractors know they have inefficiencies, but they are not always sure where the breakdown is happening.
+                Most contractors know they have inefficiencies. Here is where we typically find the biggest opportunities.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3" data-testid="grid-problems">
@@ -526,6 +537,30 @@ export default function ServiceTitanAutomationServices() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Section 4: Examples of Implementation ── */}
+        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-implementations">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="max-w-2xl mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Examples of what we implement</h2>
+              <p className="text-muted-foreground">
+                These are the kinds of systems we build most often for ServiceTitan shops.
+              </p>
+            </div>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3" data-testid="list-implementations">
+              {implementations.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 p-4 rounded-md border border-border bg-background"
+                  data-testid={`implementation-item-${i}`}
+                >
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-sm leading-snug">{item}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -597,9 +632,9 @@ export default function ServiceTitanAutomationServices() {
         <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-strategy-call">
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              What to expect on the strategy call
+              What to expect from the strategy call
             </h2>
-            <p className="text-muted-foreground mb-8">On the strategy call, we will look at:</p>
+            <p className="text-muted-foreground mb-8">In about 30 minutes, you will walk away with:</p>
             <ul className="space-y-3 mb-10" data-testid="list-call-expectations">
               {callExpectations.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -630,20 +665,20 @@ export default function ServiceTitanAutomationServices() {
                   Get Started
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                  Ready to improve your workflows?
+                  Let's talk about your shop
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  If your team is wasting time, dealing with avoidable friction, or missing opportunities because your systems are not connected properly, fill out the form to request a strategy call.
+                  If your team is wasting time on manual work, dealing with avoidable friction, or missing opportunities because your tools are not connected, fill out the form to book a strategy call.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We will look at where you are now, where the bottlenecks are, and what it would take to fix them.
+                  We will look at where you are now, where the gaps are, and what it would take to fix them.
                 </p>
               </div>
 
               {/* Right — form */}
               <Card data-testid="card-inquiry-form">
                 <CardContent className="p-6 md:p-8">
-                  <h3 className="text-xl font-semibold mb-1">Request a Strategy Call</h3>
+                  <h3 className="text-xl font-semibold mb-1">Book a Strategy Call</h3>
                   <p className="text-sm text-muted-foreground mb-6">
                     Fill out the form and we will be in touch to schedule a time.
                   </p>
