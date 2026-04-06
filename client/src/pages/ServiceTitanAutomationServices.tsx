@@ -20,36 +20,85 @@ import {
   BarChart3,
   Bell,
   Bot,
-  Link2,
   Settings,
-  TrendingUp,
   AlertCircle,
-  Users,
   Database,
-  GitBranch,
-  MessageSquare,
   RefreshCw,
 } from "lucide-react";
 
 const outcomes: ReactNode[] = [
-  "Eliminate repetitive data entry and clerical burnout.",
+  "Scale without headcount: Eliminate manual data entry and clerical burnout.",
   <><strong>Real-time profit</strong> tracking without waiting for end-of-month reports.</>,
-  "Automate repetitive tasks",
   "Build guardrails so your team can't fail, even on their busiest days.",
   "Connect the tools you already use",
   "Build systems that scale without adding more chaos",
 ];
 
-const services = [
-  { icon: FileText, label: "ServiceTitan forms setup and optimization" },
-  { icon: Zap, label: "ServiceTitan + Zapier setup" },
-  { icon: GitBranch, label: "Custom Zap creation" },
-  { icon: Settings, label: "Make.com workflow builds" },
-  { icon: BarChart3, label: "Google Sheets reporting automations" },
-  { icon: Bot, label: "AI-powered workflow implementation" },
-  { icon: Bell, label: "Notification and follow-up automations" },
-  { icon: Database, label: "Job and customer data workflows" },
-  { icon: RefreshCw, label: "Ongoing support and optimization" },
+const systems = [
+  {
+    icon: FileText,
+    title: "ServiceTitan Forms",
+    examples: [
+      "Create tech-friendly data collection that techs actually use.",
+      "Trigger automatic workflows on submission.",
+    ],
+  },
+  {
+    icon: Zap,
+    title: "Zapier Automations",
+    examples: [
+      "Build multi-step automations between ServiceTitan and other tools.",
+      "Auto-trigger follow-up sequences after job completion.",
+    ],
+  },
+  {
+    icon: Settings,
+    title: "Make.com Workflows",
+    examples: [
+      "Handle complex conditional logic that Zapier can't.",
+      "Build branching workflows for dispatch, billing, and follow-up.",
+    ],
+  },
+  {
+    icon: BarChart3,
+    title: "Google Sheets Reporting",
+    examples: [
+      "Auto-populate live revenue and job dashboards.",
+      "Pull ServiceTitan data for end-of-day profitability reports.",
+    ],
+  },
+  {
+    icon: Bot,
+    title: "AI-Powered Workflows",
+    examples: [
+      "Set up AI-assisted job summaries and call notes.",
+      "Auto-categorize customer requests and route them appropriately.",
+    ],
+  },
+  {
+    icon: Bell,
+    title: "Notifications & Follow-Up",
+    examples: [
+      "Send automated technician ETAs to customers.",
+      "Route inbound leads to the right CSR instantly.",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Job & Customer Data",
+    examples: [
+      "Keep job records clean and consistently filled out.",
+      "Sync customer data across platforms without manual entry.",
+    ],
+  },
+  {
+    icon: RefreshCw,
+    title: "Ongoing Support",
+    examples: [
+      "Troubleshoot and fix broken automations as your setup evolves.",
+      "Optimize existing workflows as your business grows.",
+    ],
+  },
 ];
 
 const problems = [
@@ -63,18 +112,6 @@ const problems = [
   "Messy reporting",
   "Manual data entry",
   "Workflows that depend too much on one employee",
-];
-
-const implementations = [
-  { icon: FileText, label: "Set up or improve ServiceTitan forms" },
-  { icon: Users, label: "Create technician-friendly forms that collect the right data" },
-  { icon: Zap, label: "Trigger workflows after a form is submitted" },
-  { icon: BarChart3, label: "Automatically send ServiceTitan data into Google Sheets" },
-  { icon: Settings, label: "Create job summary cleanup workflows" },
-  { icon: MessageSquare, label: "Route leads and notifications to the right people" },
-  { icon: TrendingUp, label: "Build custom reporting workflows" },
-  { icon: Link2, label: "Connect forms, email, spreadsheets, and ServiceTitan" },
-  { icon: Bot, label: "Set up AI-assisted summaries and process automations" },
 ];
 
 const stats = [
@@ -108,9 +145,7 @@ const steps = [
 ];
 
 const callExpectations = [
-  "Your current ServiceTitan setup",
-  "Forms, workflows, and reporting gaps",
-  "Bottlenecks and inefficiencies",
+  "A full audit of your current ServiceTitan setup, forms, and reporting gaps.",
   "Areas that could be automated",
   "What should be handled with ServiceTitan, Zapier, Make, Sheets, AI, or not automated at all",
   "Whether it makes sense to move into implementation",
@@ -404,7 +439,6 @@ export default function ServiceTitanAutomationServices() {
                 <ul className="space-y-3 mb-6">
                   {[
                     "You're paying high-level staff to do manual data entry.",
-                    "Your reporting is a mess because technicians skip or miss form fields.",
                     "You have a 'Monday Morning Spreadsheet Scramble' to find your actual profit numbers.",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-muted-foreground">
@@ -434,26 +468,35 @@ export default function ServiceTitanAutomationServices() {
           </div>
         </section>
 
-        {/* ── Section 2: What we do ── */}
-        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-services">
+        {/* ── Section 2: The Systems We Build ── */}
+        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-systems">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">What we do</h2>
-              <p className="text-primary font-medium mb-4">Practical automation and workflow implementation</p>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">The Systems We Build.</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We help home service companies design and implement better systems around ServiceTitan. That can include improving forms, automating workflows, connecting platforms, cleaning up reporting, and building processes that reduce manual work.
+                Each engagement is scoped around the tools that make the most sense for your shop. Here's what we can implement.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-testid="grid-services">
-              {services.map((service, i) => {
-                const Icon = service.icon;
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-systems">
+              {systems.map((system, i) => {
+                const Icon = system.icon;
                 return (
-                  <Card key={i} data-testid={`card-service-${i}`}>
-                    <CardContent className="p-5 flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
+                  <Card key={i} data-testid={`card-system-${i}`}>
+                    <CardContent className="p-5">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
+                          <Icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <h3 className="font-semibold">{system.title}</h3>
                       </div>
-                      <p className="font-medium leading-snug pt-1">{service.label}</p>
+                      <ul className="space-y-1.5">
+                        {system.examples.map((ex, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{ex}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </CardContent>
                   </Card>
                 );
@@ -486,34 +529,6 @@ export default function ServiceTitanAutomationServices() {
           </div>
         </section>
 
-        {/* ── Section 4: Examples ── */}
-        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-implementations">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="max-w-2xl mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-                Examples of what we can help implement
-              </h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-testid="grid-implementations">
-              {implementations.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 p-5 rounded-md border border-border bg-background"
-                    data-testid={`implementation-item-${i}`}
-                  >
-                    <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <p className="text-sm font-medium leading-snug pt-1">{item.label}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* ── Section 5: Why work with me ── */}
         <section className="py-16 md:py-24 bg-black text-white" data-testid="section-credibility">
           <div className="mx-auto max-w-7xl px-6">
@@ -524,7 +539,7 @@ export default function ServiceTitanAutomationServices() {
               {stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="border border-white/10 rounded-md p-6"
+                  className={`rounded-md p-6 ${stat.label === "Automations Built" ? "border border-primary/60 bg-primary/5" : "border border-white/10"}`}
                   data-testid={`stat-item-${i}`}
                 >
                   <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
