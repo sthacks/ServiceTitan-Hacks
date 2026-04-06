@@ -7,7 +7,6 @@ import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
 import winkLogo from "@assets/logos.zip - 6_1762022633613.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
-import dataturkLogo from "@assets/cropped-cropped-dataturk_logo_250x51-1-1.png_1765215830855.webp";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,7 +35,6 @@ export default function Footer() {
     { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
     { name: "Polycam", logo: polycamLogo, slug: "polycam" },
     { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },
-    { name: "DataTurk", logo: dataturkLogo, slug: "dataturk" },
   ];
 
   return (

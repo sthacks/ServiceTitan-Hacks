@@ -1,0 +1,34 @@
+To help you streamline this page in Replit (assuming you are using a standard HTML/CSS/JS or React setup), you should focus on **consolidation**. 
+
+The goal of the edits below is to remove the "Information Density" issue by merging the repetitive "What we do" and "Examples" sections into a single, high-impact **"Solutions Gallery."**
+
+### The Replit Edit Prompt
+
+Copy and paste this into your Replit AI chat or use it as a guide for your manual edits:
+
+---
+
+> **Task: Consolidate and Streamline the ServiceTitan Automation Services Page**
+>
+> 1. **Merge Sections:** Combine the "What We Do" section and the "Examples of implementation" section into a single section titled **"The Systems We Build."** >    * Use a **Grid Layout** (3 columns on desktop, 1 on mobile).
+>    * Each card in the grid should feature a Tool Logo (ServiceTitan, Zapier, Make, etc.), a concise title, and 2-3 specific "Example" bullet points underneath.
+>    * *Example Card:* **Title:** ServiceTitan Forms. **Bullets:** Create tech-friendly data collection; Trigger automatic workflows on submission.
+>
+> 2. **Reduce Bullet Redundancy:** >    * In the "Outcomes" section, merge "Eliminate repetitive data entry" and "Automate repetitive tasks" into one bullet: **"Scale without headcount: Eliminate manual data entry and clerical burnout."**
+>    * In the "Does this sound like your shop?" section, remove the technical bullets about "missing field data" and keep only the emotional/business pain points (e.g., the "Monday Morning Spreadsheet Scramble").
+>
+> 3. **Visual Polish:**
+>    * Change the background color or add a light border to the **"Why work with me"** section to make the "5,000+ Automations" stat pop visually.
+>    * Ensure the **"Find My Automation Gaps"** buttons are consistent in color and padding across the entire page.
+>
+> 4. **Strategy Call Section:** >    * Shorten the "What to expect" list. Combine the first three points into: **"A full audit of your current ServiceTitan setup, forms, and reporting gaps."**
+
+---
+
+### Why these specific edits work:
+
+* **The "Solutions Gallery" approach:** By merging the two sections, you show the *tools* you use and the *results* they produce simultaneously. This eliminates the reader having to see the Zapier logo twice in two different scrolls.
+* **Cognitive Load:** By moving technical "missing data" points down to the Solutions area and keeping the "Pain" area focused on business problems (profit, time, chaos), you hook the owner emotionally before explaining the technical fix.
+* **The "Rule of Three":** Shortening the "What to expect" list to 3-4 high-impact points makes the strategy call feel like a "quick win" rather than a homework assignment.
+
+**Would you like me to generate the specific HTML/Tailwind code for that new "Solutions Gallery" grid?**
