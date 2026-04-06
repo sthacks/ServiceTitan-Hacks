@@ -149,6 +149,7 @@ const interestOptions = [
   "AI-powered workflow implementation",
   "Notification and follow-up automations",
   "Job and customer data workflows",
+  "Custom Dashboards",
   "Ongoing support and optimization",
 ];
 
