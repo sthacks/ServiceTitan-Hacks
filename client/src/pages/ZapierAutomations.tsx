@@ -30,101 +30,121 @@ import {
   FileText,
 } from "lucide-react";
 
-const zapierExamples = [
+const zapierGroups = [
   {
-    icon: Mail,
-    title: "Job Completion Email",
-    bullets: [
-      "Automatically send a thank-you email when a job is marked complete in ServiceTitan.",
-      "Trigger follow-up messaging sequences without anyone on your team having to remember.",
+    label: "Job Lifecycle",
+    examples: [
+      {
+        icon: Mail,
+        title: "Job Completion Email",
+        bullets: [
+          "Automatically send a thank-you email when a job is marked complete in ServiceTitan.",
+          "Trigger follow-up messaging sequences without anyone on your team having to remember.",
+        ],
+      },
+      {
+        icon: FileSpreadsheet,
+        title: "Job Data to Google Sheets",
+        bullets: [
+          "When a job is booked or completed, automatically add a row to a Google Sheet.",
+          "Capture job details, revenue, technician, and customer info without manual entry.",
+        ],
+      },
+      {
+        icon: RefreshCw,
+        title: "Unsold Estimate Follow-Up",
+        bullets: [
+          "When an estimate remains unsold after a set number of days, trigger a follow-up email or internal task.",
+          "Recover revenue that would otherwise be forgotten without manual tracking.",
+        ],
+      },
     ],
   },
   {
-    icon: Star,
-    title: "Review Request Follow-Up",
-    bullets: [
-      "Send a review request via SMS or email 2 days after a job is closed.",
-      "Route the request to the right review platform based on job type or location.",
+    label: "Customer Communication",
+    examples: [
+      {
+        icon: MessageSquare,
+        title: "Technician ETA Text",
+        bullets: [
+          "When a technician is dispatched, auto-send the customer an SMS with an estimated arrival time.",
+          "Reduce inbound calls and improve the customer experience with zero extra effort.",
+        ],
+      },
+      {
+        icon: Star,
+        title: "Review Request Follow-Up",
+        bullets: [
+          "Send a review request via SMS or email 2 days after a job is closed.",
+          "Route the request to the right review platform based on job type or location.",
+        ],
+      },
+      {
+        icon: Users,
+        title: "New Customer Welcome Sequence",
+        bullets: [
+          "When a new customer is created in ServiceTitan, send a welcome email and add them to your email list.",
+          "Start the relationship right with automated, consistent communication.",
+        ],
+      },
+      {
+        icon: Zap,
+        title: "Membership Renewal Reminder",
+        bullets: [
+          "When a membership is approaching expiration, trigger a reminder sequence to the customer.",
+          "Reduce churn and keep recurring revenue on track without manual follow-up.",
+        ],
+      },
     ],
   },
   {
-    icon: FileSpreadsheet,
-    title: "Job Data to Google Sheets",
-    bullets: [
-      "When a job is booked or completed, automatically add a row to a Google Sheet.",
-      "Capture job details, revenue, technician, and customer info without manual entry.",
+    label: "Lead & Sales",
+    examples: [
+      {
+        icon: UserCheck,
+        title: "Lead to ServiceTitan Customer",
+        bullets: [
+          "When a new lead submits a web form, automatically create a customer and job in ServiceTitan.",
+          "Eliminate manual data entry and get leads into your workflow instantly.",
+        ],
+      },
+      {
+        icon: DollarSign,
+        title: "High-Value Job Alert",
+        bullets: [
+          "When a job is booked over a certain revenue threshold, alert the owner via text or email.",
+          "Stay on top of large opportunities and make sure nothing falls through the cracks.",
+        ],
+      },
     ],
   },
   {
-    icon: UserCheck,
-    title: "Lead to ServiceTitan Customer",
-    bullets: [
-      "When a new lead submits a web form, automatically create a customer and job in ServiceTitan.",
-      "Eliminate manual data entry and get leads into your workflow instantly.",
-    ],
-  },
-  {
-    icon: MessageSquare,
-    title: "Technician ETA Text",
-    bullets: [
-      "When a technician is dispatched, auto-send the customer an SMS with an estimated arrival time.",
-      "Reduce inbound calls and improve the customer experience with zero extra effort.",
-    ],
-  },
-  {
-    icon: Bell,
-    title: "Job Status Change Alert",
-    bullets: [
-      "Notify the office team via Slack or email when a job status changes to a specific value.",
-      "Keep dispatch, billing, and management informed without anyone having to check the system.",
-    ],
-  },
-  {
-    icon: FileText,
-    title: "Form Submission to Sheet",
-    bullets: [
-      "When a ServiceTitan form is submitted in the field, push the data to a Google Sheet in real time.",
-      "Capture technician notes, equipment data, and job details automatically.",
-    ],
-  },
-  {
-    icon: BarChart3,
-    title: "Daily Revenue Summary",
-    bullets: [
-      "Every morning, pull the previous day's job data from ServiceTitan and send a summary report.",
-      "Get key numbers like revenue, jobs completed, and open estimates in your inbox before 8am.",
-    ],
-  },
-  {
-    icon: DollarSign,
-    title: "High-Value Job Alert",
-    bullets: [
-      "When a job is booked over a certain revenue threshold, alert the owner via text or email.",
-      "Stay on top of large opportunities and make sure nothing falls through the cracks.",
-    ],
-  },
-  {
-    icon: RefreshCw,
-    title: "Unsold Estimate Follow-Up",
-    bullets: [
-      "When an estimate remains unsold after a set number of days, trigger a follow-up email or internal task.",
-      "Recover revenue that would otherwise be forgotten without manual tracking.",
-    ],
-  },
-  {
-    icon: Users,
-    title: "New Customer Welcome Sequence",
-    bullets: [
-      "When a new customer is created in ServiceTitan, send a welcome email and add them to your email list.",
-      "Start the relationship right with automated, consistent communication.",
-    ],
-  },
-  {
-    icon: Zap,
-    title: "Membership Renewal Reminder",
-    bullets: [
-      "When a membership is approaching expiration, trigger a reminder sequence to the customer.",
-      "Reduce churn and keep recurring revenue on track without manual follow-up.",
+    label: "Team Alerts & Reporting",
+    examples: [
+      {
+        icon: Bell,
+        title: "Job Status Change Alert",
+        bullets: [
+          "Notify the office team via Slack or email when a job status changes to a specific value.",
+          "Keep dispatch, billing, and management informed without anyone having to check the system.",
+        ],
+      },
+      {
+        icon: FileText,
+        title: "Form Submission to Sheet",
+        bullets: [
+          "When a ServiceTitan form is submitted in the field, push the data to a Google Sheet in real time.",
+          "Capture technician notes, equipment data, and job details automatically.",
+        ],
+      },
+      {
+        icon: BarChart3,
+        title: "Daily Revenue Summary",
+        bullets: [
+          "Every morning, pull the previous day's job data from ServiceTitan and send a summary report.",
+          "Get key numbers like revenue, jobs completed, and open estimates in your inbox before 8am.",
+        ],
+      },
     ],
   },
 ];
@@ -445,30 +465,40 @@ export default function ZapierAutomations() {
                 These are real workflows we implement for home service companies. Each one eliminates a manual step your team currently has to remember.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-zapier-examples">
-              {zapierExamples.map((example, i) => {
-                const Icon = example.icon;
-                return (
-                  <Card key={i} data-testid={`card-zapier-example-${i}`}>
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
-                          <Icon className="w-4 h-4 text-primary" />
-                        </div>
-                        <h3 className="font-semibold">{example.title}</h3>
-                      </div>
-                      <ul className="space-y-1.5">
-                        {example.bullets.map((bullet, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+            <div className="space-y-12" data-testid="grid-zapier-examples">
+              {zapierGroups.map((group, gi) => (
+                <div key={gi} data-testid={`group-zapier-${gi}`}>
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-primary mb-5">
+                    {group.label}
+                  </h3>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {group.examples.map((example, i) => {
+                      const Icon = example.icon;
+                      const globalIndex = zapierGroups.slice(0, gi).reduce((acc, g) => acc + g.examples.length, 0) + i;
+                      return (
+                        <Card key={i} data-testid={`card-zapier-example-${globalIndex}`}>
+                          <CardContent className="p-5">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
+                                <Icon className="w-4 h-4 text-primary" />
+                              </div>
+                              <h4 className="font-semibold">{example.title}</h4>
+                            </div>
+                            <ul className="space-y-1.5">
+                              {example.bullets.map((bullet, j) => (
+                                <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                                  <span>{bullet}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
