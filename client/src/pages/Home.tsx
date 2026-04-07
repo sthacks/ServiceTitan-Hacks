@@ -11,7 +11,7 @@ import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
-import servicesImage from "@assets/ChatGPT_Image_Apr_7,_2026,_08_08_54_AM_1775564122878.png";
+import servicesImage from "@assets/1072722_custom_site_themes_id_wPQ226FHSzWW8kg7Kz2o_31639583-3__1775564469964.jpg";
 import blogImage from "@assets/32563772-1_1762708907799.jpg";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
