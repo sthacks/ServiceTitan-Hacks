@@ -178,7 +178,7 @@ function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
         onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
         data-testid="button-cta-scroll-centered"
       >
-        Book a $250 Strategy Call
+        Book a Discovery Call
         <ArrowRight className="w-4 h-4" />
       </Button>
       <p className={`text-xs ${dark ? "text-white/50" : "text-muted-foreground"}`}>
@@ -376,7 +376,7 @@ function StrategyCallForm() {
         disabled={mutation.isPending}
         data-testid="button-inquiry-submit"
       >
-        {mutation.isPending ? "Submitting..." : "Book a $250 Strategy Call"}
+        {mutation.isPending ? "Submitting..." : "Book a Discovery Call"}
         {!mutation.isPending && <ArrowRight className="w-4 h-4" />}
       </Button>
     </form>
@@ -627,7 +627,7 @@ export default function ServiceTitanAutomationServices() {
               {/* Right — form */}
               <Card data-testid="card-inquiry-form">
                 <CardContent className="p-6 md:p-8">
-                  <h3 className="text-xl font-semibold mb-1">Book a $250 Strategy Call</h3>
+                  <h3 className="text-xl font-semibold mb-1">Book a Discovery Call</h3>
                   <p className="text-sm text-muted-foreground mb-6">
                     Fill out the form and we will be in touch to schedule a time.
                   </p>
