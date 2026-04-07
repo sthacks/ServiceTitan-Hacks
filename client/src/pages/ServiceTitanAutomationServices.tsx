@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import founderPhoto from "@assets/slack_1775223018179.png";
+import zapierLogo from "@assets/zapier-logo.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -26,7 +27,8 @@ import {
 
 const services = [
   {
-    icon: Zap,
+    icon: null,
+    logo: zapierLogo,
     title: "Zapier Automations",
     description:
       "Multi-step automations between ServiceTitan and your other tools. Auto-trigger follow-ups, sync data, and eliminate re-entry.",
@@ -367,6 +369,7 @@ export default function ServiceTitanAutomationServices() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-services">
               {services.map((service, i) => {
                 const Icon = service.icon;
+                const logo = "logo" in service ? (service as any).logo : null;
                 const inner = (
                   <Card
                     key={i}
@@ -374,9 +377,17 @@ export default function ServiceTitanAutomationServices() {
                     data-testid={`card-service-${i}`}
                   >
                     <CardContent className="p-6 flex flex-col gap-4 h-full">
-                      <div className="flex-shrink-0 w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
-                      </div>
+                      {logo ? (
+                        <img
+                          src={logo}
+                          alt={service.title}
+                          className="h-8 w-auto object-contain object-left"
+                        />
+                      ) : (
+                        <div className="flex-shrink-0 w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center">
+                          {Icon && <Icon className="w-5 h-5 text-primary" />}
+                        </div>
+                      )}
                       <div className="flex-1">
                         <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
