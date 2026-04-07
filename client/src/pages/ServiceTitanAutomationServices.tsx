@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import founderPhoto from "@assets/slack_1775223018179.png";
-import zapierLogo from "@assets/zapier-logo.png";
-import makeLogo from "@assets/make-logo.png";
-import stLogo from "@assets/st-logo.png";
+import iconZapier from "@assets/zapier_1775569178686.png";
+import iconMake from "@assets/make.com_1775569178686.png";
+import iconServiceTitan from "@assets/servicetitan_1775569178686.png";
+import iconSheets from "@assets/google_sheets_1775569178686.png";
+import iconAI from "@assets/chatgpt_1775569178685.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -19,18 +21,13 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   CheckCircle2,
   ArrowRight,
-  Zap,
-  FileText,
-  BarChart3,
-  Bot,
-  Settings,
   RefreshCw,
 } from "lucide-react";
 
 const services = [
   {
     icon: null,
-    logo: zapierLogo,
+    logo: iconZapier,
     title: "Zapier Automations",
     description:
       "Multi-step automations between ServiceTitan and your other tools. Auto-trigger follow-ups, sync data, and eliminate re-entry.",
@@ -38,7 +35,7 @@ const services = [
   },
   {
     icon: null,
-    logo: stLogo,
+    logo: iconServiceTitan,
     title: "ServiceTitan Forms",
     description:
       "Tech-friendly data collection your field team actually fills out, with automated workflows triggered on submission.",
@@ -46,21 +43,23 @@ const services = [
   },
   {
     icon: null,
-    logo: makeLogo,
+    logo: iconMake,
     title: "Make.com Workflows",
     description:
       "Complex conditional logic Zapier cannot handle. Branching workflows for dispatch, billing, and follow-up.",
     href: null,
   },
   {
-    icon: BarChart3,
+    icon: null,
+    logo: iconSheets,
     title: "Google Sheets Reporting",
     description:
       "Live revenue dashboards and end-of-day profitability reports that pull directly from ServiceTitan. No manual entry.",
     href: null,
   },
   {
-    icon: Bot,
+    icon: null,
+    logo: iconAI,
     title: "AI-Powered Workflows",
     description:
       "AI-assisted job summaries, call notes, and auto-categorization that routes customer requests to the right person.",
@@ -385,7 +384,7 @@ export default function ServiceTitanAutomationServices() {
                         <img
                           src={logo}
                           alt={service.title}
-                          className="h-16 w-auto object-contain object-left"
+                          className="w-11 h-11 rounded-md object-cover flex-shrink-0"
                         />
                       ) : (
                         <div className="flex-shrink-0 w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center">
