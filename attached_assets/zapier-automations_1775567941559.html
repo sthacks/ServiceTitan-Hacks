@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zapier Automations for ServiceTitan | ServiceTitan Hacks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f5f5f5;
+  --bg-dark: #1a1a1a;
+  --bg-dark-2: #222222;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --text-inverse: #ffffff;
+  --accent: #E8365D;
+  --accent-hover: #d12a4f;
+  --border: #e5e5e5;
+  --font: 'Inter', -apple-system, sans-serif;
+}
+
+body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; font-size: 16px; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav {
+  background: var(--bg-dark);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-inverse);
+  font-weight: 700;
+  font-size: 18px;
+}
+.nav-logo .hacks {
+  color: var(--accent);
+  font-weight: 800;
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: -4px;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { color: #ccc; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+.nav-cta { color: #ccc; font-size: 14px; font-weight: 500; }
+@media (max-width: 900px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero {
+  background: var(--bg-dark);
+  padding: 60px 24px 80px;
+  text-align: center;
+  color: var(--text-inverse);
+}
+.hero-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+.hero-back:hover { color: var(--accent); }
+.hero-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #aaa;
+  max-width: 540px;
+  margin: 0 auto 12px;
+  line-height: 1.6;
+}
+.hero-punch {
+  font-size: 15px;
+  color: #ccc;
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+/* AUTOMATIONS */
+.automations {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.automations-header { margin-bottom: 48px; }
+.automations-header h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.automations-header p {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+.category-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  margin-top: 48px;
+}
+.category-label:first-of-type { margin-top: 0; }
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 1fr));
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.auto-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+}
+.auto-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.auto-card-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.auto-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.auto-card ul {
+  list-style: none;
+  padding: 0;
+}
+.auto-card li {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.auto-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+}
+
+/* HOW IT WORKS */
+.how {
+  padding: 80px 24px;
+  background: var(--bg-alt);
+}
+.how-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.how h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 56px;
+}
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.how-step { text-align: center; }
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.how-step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.how-step p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+@media (max-width: 700px) { .how-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .how-steps { grid-template-columns: 1fr; } }
+
+/* FORM SECTION */
+.form-section {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.form-section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+.form-left h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.form-left p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.form-box {
+  background: var(--bg-alt);
+  border-radius: 10px;
+  padding: 32px;
+}
+.form-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.form-box .form-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--font);
+  background: var(--bg);
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-submit {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--accent-hover); }
+@media (max-width: 700px) {
+  .form-section-inner { grid-template-columns: 1fr; gap: 32px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* CTA BAR */
+.cta-bar {
+  padding: 64px 24px;
+  background: var(--bg-dark);
+  text-align: center;
+  color: var(--text-inverse);
+}
+.cta-bar h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.cta-bar p {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 28px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--bg-dark-2);
+  padding: 56px 24px 32px;
+  color: #999;
+  font-size: 13px;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+.footer-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-inverse);
+  margin-bottom: 10px;
+}
+.footer-brand .hacks {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: -2px;
+}
+.footer-tagline { color: #777; font-size: 14px; line-height: 1.5; }
+.footer h4 {
+  color: var(--text-inverse);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul a { color: #888; font-size: 14px; transition: color 0.2s; }
+.footer ul a:hover { color: var(--text-inverse); }
+.footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #666;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <span>ServiceTitan<br><span class="hacks">HACKS</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Courses</a></li>
+    <li><a href="#" class="active">Automations</a></li>
+    <li><a href="#">Purchasing Platform</a></li>
+    <li><a href="#">Partners</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Free Stuff</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">All-Access Pass</a></li>
+  </ul>
+  <a href="#" class="nav-cta">&#8594; Login</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <a href="#" class="hero-back">&#8592; Back to Automations</a>
+  <div class="hero-label">Zapier + ServiceTitan</div>
+  <h1>Connect ServiceTitan to Everything with Custom Zapier Automations</h1>
+  <p class="hero-sub">We build Zapier workflows that automate the repetitive tasks between ServiceTitan and your other tools.</p>
+  <p class="hero-punch">Stop re-entering data. Stop chasing follow-ups. Let Zapier handle it.</p>
+  <a href="#contact" class="btn-primary">Book a Strategy Call &#8594;</a>
+</section>
+
+<!-- AUTOMATIONS CATALOG -->
+<section class="automations">
+  <div class="automations-header">
+    <h2>Zapier automations we build for ServiceTitan shops</h2>
+    <p>Real workflows we have implemented for home service companies. Each one eliminates a manual step your team currently has to remember.</p>
+  </div>
+
+  <!-- JOB LIFECYCLE -->
+  <div class="category-label">Job Lifecycle</div>
+  <div class="auto-grid">
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="22" height="18" rx="3" stroke="#E8365D" stroke-width="1.5"/><path d="M3 10h22" stroke="#E8365D" stroke-width="1.5"/><path d="M8 15h8M8 18h5" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Job Completion Email</h3>
+      </div>
+      <ul>
+        <li>Auto-send a thank-you email when a job is marked complete in ServiceTitan.</li>
+        <li>Trigger follow-up messaging sequences without anyone having to remember.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="22" height="18" rx="2" stroke="#E8365D" stroke-width="1.5"/><path d="M3 10h22M10 5v18M18 5v18" stroke="#E8365D" stroke-width="1.5"/></svg></div>
+        <h3>Job Data to Google Sheets</h3>
+      </div>
+      <ul>
+        <li>When a job is booked or completed, automatically add a row to a Google Sheet.</li>
+        <li>Capture job details, revenue, technician, and customer info without manual entry.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 6v8l5 4" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="10" stroke="#E8365D" stroke-width="1.5"/></svg></div>
+        <h3>Unsold Estimate Follow-Up</h3>
+      </div>
+      <ul>
+        <li>When an estimate remains unsold after a set number of days, trigger a follow-up email or internal task.</li>
+        <li>Recover revenue that would otherwise be forgotten.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CUSTOMER COMMUNICATION -->
+  <div class="category-label">Customer Communication</div>
+  <div class="auto-grid">
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="7" y="3" width="14" height="22" rx="3" stroke="#E8365D" stroke-width="1.5"/><path d="M12 21h4" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Technician ETA Text</h3>
+      </div>
+      <ul>
+        <li>When a tech is dispatched, auto-send the customer an SMS with an estimated arrival time.</li>
+        <li>Reduce inbound calls and improve the customer experience with real-time updates.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4l3 6h7l-5.5 4.5 2 7L14 17l-6.5 4.5 2-7L4 10h7z" stroke="#E8365D" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3>Review Request Follow-Up</h3>
+      </div>
+      <ul>
+        <li>Send a review request via SMS or email 2 days after a job is closed.</li>
+        <li>Route the request to the right review platform based on job type or location.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 22V10l8-6 8 6v12a2 2 0 01-2 2H8a2 2 0 01-2-2z" stroke="#E8365D" stroke-width="1.5"/><path d="M11 24v-8h6v8" stroke="#E8365D" stroke-width="1.5"/></svg></div>
+        <h3>New Customer Welcome Sequence</h3>
+      </div>
+      <ul>
+        <li>When a new customer is created in ServiceTitan, send a welcome email and add them to your email list.</li>
+        <li>Start the relationship right with automated, consistent communication.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M19 4v4M9 4v4M4 11h20M4 8a2 2 0 012-2h16a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="#E8365D" stroke-width="1.5"/></svg></div>
+        <h3>Membership Renewal Reminder</h3>
+      </div>
+      <ul>
+        <li>When a membership is approaching expiration, trigger a reminder sequence to the customer.</li>
+        <li>Reduce churn and keep recurring revenue on track without manual follow-up.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LEAD & SALES -->
+  <div class="category-label">Lead &amp; Sales</div>
+  <div class="auto-grid">
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="#E8365D" stroke-width="1.5"/><path d="M6 23c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Lead to ServiceTitan Customer</h3>
+      </div>
+      <ul>
+        <li>When a new lead submits a web form, automatically create a customer and job in ServiceTitan.</li>
+        <li>Eliminate manual data entry and get leads into ServiceTitan instantly.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4v20M4 14h20" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/><path d="M8 8l12 12M20 8L8 20" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><circle cx="14" cy="14" r="4" stroke="#E8365D" stroke-width="1.5"/></svg></div>
+        <h3>High-Value Job Alert</h3>
+      </div>
+      <ul>
+        <li>When a job is booked over a certain revenue threshold, alert the owner via text or email.</li>
+        <li>Stay on top of large opportunities and make sure nothing falls through the cracks.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ALERTS & REPORTING -->
+  <div class="category-label">Alerts &amp; Reporting</div>
+  <div class="auto-grid">
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M10 22a2 2 0 104 0M14 6a6 6 0 016 6c0 3-1 5-2 7H8c-1-2-2-4-2-7a6 6 0 016-6z" stroke="#E8365D" stroke-width="1.5"/><path d="M12 3h4" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Job Status Change Alert</h3>
+      </div>
+      <ul>
+        <li>Notify the office team via Slack or email when a job status changes to a specific value.</li>
+        <li>Keep dispatch, billing, and management informed without anyone checking the system.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20l6-6 4 4 10-10" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 8h6v6" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Form Submission to Sheet</h3>
+      </div>
+      <ul>
+        <li>When a ServiceTitan form is submitted in the field, push the data to a Google Sheet in real time.</li>
+        <li>Capture technician notes, equipment data, and job details automatically.</li>
+      </ul>
+    </div>
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="2" stroke="#E8365D" stroke-width="1.5"/><path d="M8 14h4M8 18h8M8 10h12" stroke="#E8365D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Daily Revenue Summary</h3>
+      </div>
+      <ul>
+        <li>Every morning, pull the previous day's job data from ServiceTitan and send a summary report.</li>
+        <li>Get revenue, jobs completed, and open estimates in your inbox before 8am.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="how-inner">
+    <h2>How it works</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-number">01</div>
+        <h3>Book a strategy call</h3>
+        <p>We talk through your current ServiceTitan setup and what you want to automate.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">02</div>
+        <h3>Map your workflows</h3>
+        <p>We identify which tools you use and design the right Zapier triggers and actions.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">03</div>
+        <h3>Build and test</h3>
+        <p>We build the Zaps, connect your accounts, and test each workflow before handoff.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">04</div>
+        <h3>Ongoing support</h3>
+        <p>For shops that want continued help, we offer ongoing support packages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="form-section" id="contact">
+  <div class="form-section-inner">
+    <div class="form-left">
+      <h2>Let's talk about your Zapier setup</h2>
+      <p>Fill out the form and we will be in touch to schedule a time.</p>
+    </div>
+    <div class="form-box">
+      <h3>Book a Strategy Call</h3>
+      <p class="form-sub">Tell us what you are working with and we will take it from there.</p>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company *</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" required>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" required>
+        </div>
+        <div class="form-group">
+          <label>How can we help? (optional)</label>
+          <textarea placeholder="Tell us about your current Zapier setup, goals, or any specific workflows you want to automate."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Book a Strategy Call &#8594;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-bar">
+  <h2>Ready to automate your ServiceTitan workflows?</h2>
+  <p>We will map the right Zaps for your shop and build them for you.</p>
+  <a href="#contact" class="btn-primary">Book a Strategy Call &#8594;</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">ServiceTitan<br><span class="hacks">HACKS</span></div>
+      <p class="footer-tagline">AI and automations for ServiceTitan contractors.<br>Grow smarter, automate faster, win more jobs.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Apps</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">All Access Pass</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Podcast</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 ServiceTitan Hacks. All rights reserved.</span>
+    <span>Privacy &middot; SMS Privacy &middot; SMS Terms &middot; Sitemap</span>
+  </div>
+</footer>
+
+</body>
+</html>

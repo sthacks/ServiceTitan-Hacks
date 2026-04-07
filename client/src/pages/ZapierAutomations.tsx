@@ -38,8 +38,8 @@ const zapierGroups = [
         icon: Mail,
         title: "Job Completion Email",
         bullets: [
-          "Automatically send a thank-you email when a job is marked complete in ServiceTitan.",
-          "Trigger follow-up messaging sequences without anyone on your team having to remember.",
+          "Auto-send a thank-you email when a job is marked complete in ServiceTitan.",
+          "Trigger follow-up messaging sequences without anyone having to remember.",
         ],
       },
       {
@@ -55,7 +55,7 @@ const zapierGroups = [
         title: "Unsold Estimate Follow-Up",
         bullets: [
           "When an estimate remains unsold after a set number of days, trigger a follow-up email or internal task.",
-          "Recover revenue that would otherwise be forgotten without manual tracking.",
+          "Recover revenue that would otherwise be forgotten.",
         ],
       },
     ],
@@ -67,8 +67,8 @@ const zapierGroups = [
         icon: MessageSquare,
         title: "Technician ETA Text",
         bullets: [
-          "When a technician is dispatched, auto-send the customer an SMS with an estimated arrival time.",
-          "Reduce inbound calls and improve the customer experience with zero extra effort.",
+          "When a tech is dispatched, auto-send the customer an SMS with an estimated arrival time.",
+          "Reduce inbound calls and improve the customer experience with real-time updates.",
         ],
       },
       {
@@ -105,7 +105,7 @@ const zapierGroups = [
         title: "Lead to ServiceTitan Customer",
         bullets: [
           "When a new lead submits a web form, automatically create a customer and job in ServiceTitan.",
-          "Eliminate manual data entry and get leads into your workflow instantly.",
+          "Eliminate manual data entry and get leads into ServiceTitan instantly.",
         ],
       },
       {
@@ -119,14 +119,14 @@ const zapierGroups = [
     ],
   },
   {
-    label: "Team Alerts & Reporting",
+    label: "Alerts & Reporting",
     examples: [
       {
         icon: Bell,
         title: "Job Status Change Alert",
         bullets: [
           "Notify the office team via Slack or email when a job status changes to a specific value.",
-          "Keep dispatch, billing, and management informed without anyone having to check the system.",
+          "Keep dispatch, billing, and management informed without anyone checking the system.",
         ],
       },
       {
@@ -142,7 +142,7 @@ const zapierGroups = [
         title: "Daily Revenue Summary",
         bullets: [
           "Every morning, pull the previous day's job data from ServiceTitan and send a summary report.",
-          "Get key numbers like revenue, jobs completed, and open estimates in your inbox before 8am.",
+          "Get revenue, jobs completed, and open estimates in your inbox before 8am.",
         ],
       },
     ],
@@ -167,7 +167,7 @@ const steps = [
   },
   {
     number: "04",
-    title: "Add support if needed",
+    title: "Ongoing support",
     text: "For shops that want continued help, we offer ongoing support packages.",
   },
 ];
@@ -182,25 +182,6 @@ const interestOptions = [
   "Custom Dashboards",
   "Ongoing support and optimization",
 ];
-
-function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <Button
-        size="lg"
-        className="gap-2"
-        onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
-        data-testid="button-cta-scroll-centered"
-      >
-        Book a $250 Strategy Call
-        <ArrowRight className="w-4 h-4" />
-      </Button>
-      <p className={`text-xs ${dark ? "text-white/50" : "text-muted-foreground"}`}>
-        $250 credited toward your project if you move forward.
-      </p>
-    </div>
-  );
-}
 
 function ScrollCTAButton() {
   return (
@@ -354,7 +335,9 @@ function StrategyCallForm() {
       </div>
 
       <div>
-        <Label className="mb-3 block">What are you interested in? <span className="text-muted-foreground font-normal">(optional)</span></Label>
+        <Label className="mb-3 block">
+          What are you interested in? <span className="text-muted-foreground font-normal">(optional)</span>
+        </Label>
         <div className="space-y-2.5" data-testid="checklist-interests">
           {interestOptions.map((option) => (
             <div key={option} className="flex items-start gap-3">
@@ -373,7 +356,9 @@ function StrategyCallForm() {
       </div>
 
       <div>
-        <Label htmlFor="message">How can we help you? <span className="text-muted-foreground font-normal">(optional)</span></Label>
+        <Label htmlFor="message">
+          How can we help? <span className="text-muted-foreground font-normal">(optional)</span>
+        </Label>
         <Textarea
           id="message"
           rows={4}
@@ -394,9 +379,6 @@ function StrategyCallForm() {
         autoComplete="off"
       />
 
-      <p className="text-xs text-muted-foreground">
-        This is a paid strategy session. If we move forward with implementation, the fee is credited toward your project.
-      </p>
       <Button
         type="submit"
         size="lg"
@@ -404,7 +386,7 @@ function StrategyCallForm() {
         disabled={mutation.isPending}
         data-testid="button-inquiry-submit"
       >
-        {mutation.isPending ? "Submitting..." : "Book a $250 Strategy Call"}
+        {mutation.isPending ? "Submitting..." : "Book a Strategy Call"}
         {!mutation.isPending && <ArrowRight className="w-4 h-4" />}
       </Button>
     </form>
@@ -415,7 +397,7 @@ export default function ZapierAutomations() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Zapier Automations | ServiceTitan Hacks"
+        title="Zapier Automations for ServiceTitan | ServiceTitan Hacks"
         description="Done-for-you Zapier automations for ServiceTitan contractors. We build multi-step workflows that connect ServiceTitan to your email, CRM, Sheets, and more."
         keywords="ServiceTitan Zapier, Zapier ServiceTitan integration, ServiceTitan automation, Zapier workflows for contractors, home service automation"
         canonicalUrl="https://servicetitanhacks.com/servicetitan-automation-services/zapier"
@@ -428,7 +410,10 @@ export default function ZapierAutomations() {
         <section className="bg-black text-white py-20 md:py-28" data-testid="section-hero">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <Link href="/servicetitan-automation-services">
-              <span className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white/80 transition-colors cursor-pointer mb-6" data-testid="link-breadcrumb-parent">
+              <span
+                className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white/80 transition-colors cursor-pointer mb-6"
+                data-testid="link-breadcrumb-parent"
+              >
                 <ArrowLeft className="w-3 h-3" />
                 Back to Automations
               </span>
@@ -437,32 +422,27 @@ export default function ZapierAutomations() {
               Zapier + ServiceTitan
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
-              Connect ServiceTitan to Everything with Custom Zapier Automations.
+              Connect ServiceTitan to Everything with Custom Zapier Automations
             </h1>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
-              We build multi-step Zapier workflows that automate the repetitive tasks between ServiceTitan and the tools your team already uses.
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-3 max-w-2xl mx-auto">
+              We build Zapier workflows that automate the repetitive tasks between ServiceTitan and your other tools.
             </p>
-            <div className="flex flex-col items-center gap-3">
-              <p className="text-sm text-white/60">
-                A focused strategy session to understand your current setup and map out the right automations.
-              </p>
-              <ScrollCTAButtonCentered dark />
-            </div>
-            <p className="mt-6 text-xs text-white/35">
-              Built for real home service companies using ServiceTitan
+            <p className="text-base text-white/50 mb-10">
+              Stop re-entering data. Stop chasing follow-ups. Let Zapier handle it.
             </p>
+            <ScrollCTAButton />
           </div>
         </section>
 
-        {/* ── Section 1: What we can build ── */}
+        {/* ── Automations catalog ── */}
         <section className="py-16 md:py-24 bg-background" data-testid="section-zapier-examples">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-2xl mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">
-                Specific Zapier automations we build for ServiceTitan shops
+                Zapier automations we build for ServiceTitan shops
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                These are real workflows we implement for home service companies. Each one eliminates a manual step your team currently has to remember.
+                Real workflows we have implemented for home service companies. Each one eliminates a manual step your team currently has to remember.
               </p>
             </div>
             <div className="space-y-12" data-testid="grid-zapier-examples">
@@ -474,7 +454,8 @@ export default function ZapierAutomations() {
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {group.examples.map((example, i) => {
                       const Icon = example.icon;
-                      const globalIndex = zapierGroups.slice(0, gi).reduce((acc, g) => acc + g.examples.length, 0) + i;
+                      const globalIndex =
+                        zapierGroups.slice(0, gi).reduce((acc, g) => acc + g.examples.length, 0) + i;
                       return (
                         <Card key={i} data-testid={`card-zapier-example-${globalIndex}`}>
                           <CardContent className="p-5">
@@ -503,7 +484,7 @@ export default function ZapierAutomations() {
           </div>
         </section>
 
-        {/* ── Section 2: How it works ── */}
+        {/* ── How it works ── */}
         <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-how-it-works">
           <div className="mx-auto max-w-7xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12">How it works</h2>
@@ -511,7 +492,10 @@ export default function ZapierAutomations() {
               {steps.map((step, i) => (
                 <div key={i} className="relative" data-testid={`step-item-${i}`}>
                   {i < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border z-0" style={{ width: "calc(100% - 2.5rem)", left: "calc(100% - 1rem)" }} />
+                    <div
+                      className="hidden lg:block absolute top-8 left-full h-px bg-border z-0"
+                      style={{ width: "calc(100% - 2.5rem)", left: "calc(100% - 1rem)" }}
+                    />
                   )}
                   <div className="relative z-10">
                     <div className="w-14 h-14 rounded-md bg-primary/10 flex items-center justify-center mb-4">
@@ -527,40 +511,10 @@ export default function ZapierAutomations() {
           </div>
         </section>
 
-        {/* ── Section 3: What you get in the strategy call ── */}
-        <section className="py-16 md:py-24 bg-background border-t border-border" data-testid="section-strategy-call">
-          <div className="mx-auto max-w-4xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              What you get in the strategy call
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              This is a focused working session to understand your situation and map the best path forward.
-            </p>
-            <ul className="space-y-3 mb-10" data-testid="list-call-expectations">
-              {[
-                "A conversation about which workflows you want to automate and what tools you already use",
-                "Guidance on how to connect ServiceTitan to those tools with Zapier",
-                "Recommendations on the right triggers, actions, and structure for each Zap",
-                "A clearer idea of project scope and what it would take to implement",
-                "A clear recommendation on whether and how to move forward",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-muted-foreground mb-8 font-medium">
-              If you move forward with implementation, the full $250 is credited toward your project.
-            </p>
-            <ScrollCTAButton />
-          </div>
-        </section>
-
-        {/* ── Final CTA + Form ── */}
+        {/* ── CTA + Form ── */}
         <section
           id="strategy-call-form"
-          className="py-20 md:py-28 bg-card border-t border-border"
+          className="py-20 md:py-28 bg-background border-t border-border"
           data-testid="section-final-cta"
         >
           <div className="mx-auto max-w-7xl px-6">
@@ -571,7 +525,7 @@ export default function ZapierAutomations() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
                   Get Started
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
                   Let's talk about your Zapier setup
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -582,9 +536,9 @@ export default function ZapierAutomations() {
               {/* Right — form */}
               <Card data-testid="card-inquiry-form">
                 <CardContent className="p-6 md:p-8">
-                  <h3 className="text-xl font-semibold mb-1">Book a $250 Strategy Call</h3>
+                  <h3 className="text-xl font-semibold mb-1">Book a Strategy Call</h3>
                   <p className="text-sm text-muted-foreground mb-6">
-                    Fill out the form and we will be in touch to schedule a time.
+                    Tell us what you are working with and we will take it from there.
                   </p>
                   <StrategyCallForm />
                 </CardContent>
