@@ -300,6 +300,18 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-recruiting-webinar.png",
   },
   
+  // Automation Services Pages
+  "/servicetitan-automation-services": {
+    title: "Custom ServiceTitan Automations for Your Shop | ServiceTitan Hacks",
+    description: "Done-for-you Zapier, Make.com, Google Sheets, Forms, and AI automations built specifically for ServiceTitan. Book a free strategy call.",
+    ogImage: "https://servicetitanhacks.com/og-zapier-automations.png",
+  },
+  "/servicetitan-automation-services/zapier": {
+    title: "ServiceTitan Zapier Automations | ServiceTitan Hacks",
+    description: "Connect ServiceTitan to 5,000+ apps with custom Zapier automations. Eliminate data re-entry, auto-trigger follow-ups, and sync your tools — done for you.",
+    ogImage: "https://servicetitanhacks.com/og-zapier-automations.png",
+  },
+
   // Blog Posts - Additional
   "/blog/why-phonetap-exists": {
     title: "Why PhoneTap Exists",

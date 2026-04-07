@@ -397,10 +397,11 @@ export default function ZapierAutomations() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Zapier Automations for ServiceTitan | ServiceTitan Hacks"
-        description="Done-for-you Zapier automations for ServiceTitan contractors. We build multi-step workflows that connect ServiceTitan to your email, CRM, Sheets, and more."
+        title="ServiceTitan Zapier Automations | ServiceTitan Hacks"
+        description="Connect ServiceTitan to 5,000+ apps with custom Zapier automations. Eliminate data re-entry, auto-trigger follow-ups, and sync your tools — done for you."
         keywords="ServiceTitan Zapier, Zapier ServiceTitan integration, ServiceTitan automation, Zapier workflows for contractors, home service automation"
         canonicalUrl="https://servicetitanhacks.com/servicetitan-automation-services/zapier"
+        ogImage="https://servicetitanhacks.com/og-zapier-automations.png"
       />
       <Header />
 

@@ -335,10 +335,11 @@ export default function ServiceTitanAutomationServices() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Automation Services | ServiceTitan Hacks"
-        description="Done-for-you ServiceTitan automations, forms, workflows, and integrations for home service companies. Book a strategy call."
+        title="Custom ServiceTitan Automations for Your Shop | ServiceTitan Hacks"
+        description="Done-for-you Zapier, Make.com, Google Sheets, Forms, and AI automations built specifically for ServiceTitan. Book a free strategy call."
         keywords="ServiceTitan automation, ServiceTitan forms, Zapier ServiceTitan, Make.com ServiceTitan, home service automation, ServiceTitan integrations"
         canonicalUrl="https://servicetitanhacks.com/servicetitan-automation-services"
+        ogImage="https://servicetitanhacks.com/og-zapier-automations.png"
       />
       <Header />
 
