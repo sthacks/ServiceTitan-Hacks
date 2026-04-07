@@ -39,7 +39,7 @@ export default function Home() {
   };
   const mainSections = [
     {
-      title: "Services",
+      title: "Automations",
       description: "Done-for-you ServiceTitan automation implementation. We build the forms, workflows, and reporting systems your shop needs to run more efficiently.",
       icon: Settings,
       link: "/servicetitan-automation-services",
