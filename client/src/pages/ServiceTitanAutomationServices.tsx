@@ -381,7 +381,7 @@ export default function ServiceTitanAutomationServices() {
                         <img
                           src={logo}
                           alt={service.title}
-                          className="h-8 w-auto object-contain object-left"
+                          className="h-16 w-auto object-contain object-left"
                         />
                       ) : (
                         <div className="flex-shrink-0 w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center">
