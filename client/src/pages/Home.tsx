@@ -6,7 +6,7 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
-import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText } from "lucide-react";
+import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText, Settings } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
@@ -37,6 +37,14 @@ export default function Home() {
     }
   };
   const mainSections = [
+    {
+      title: "Services",
+      description: "Done-for-you ServiceTitan automation implementation. We build the forms, workflows, and reporting systems your shop needs to run more efficiently.",
+      icon: Settings,
+      link: "/servicetitan-automation-services",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
+      alt: "ServiceTitan automation services - done-for-you workflow and forms implementation",
+    },
     {
       title: "Courses",
       description: "Learn to automate, optimize, and scale your home service business with practical, hands-on courses on ServiceTitan automation and HVAC AI.",
