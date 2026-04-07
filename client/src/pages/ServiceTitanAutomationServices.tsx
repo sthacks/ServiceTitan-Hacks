@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
 import founderPhoto from "@assets/slack_1775223018179.png";
 import Header from "@/components/Header";
@@ -19,128 +19,84 @@ import {
   Zap,
   FileText,
   BarChart3,
-  Bell,
   Bot,
   Settings,
-  AlertCircle,
-  Database,
   RefreshCw,
 } from "lucide-react";
 
-
-const outcomes: ReactNode[] = [
-  "Reduce manual re-entry and wasted admin time.",
-  <><strong>Real-time reporting</strong> you can actually trust.</>,
-  "Workflows that run without someone having to remember every step.",
-  "Connected tools that pass data between systems automatically.",
-  "A foundation that scales with your business.",
-];
-
-const systems = [
-  {
-    icon: FileText,
-    title: "ServiceTitan Forms",
-    examples: [
-      "Create tech-friendly data collection that techs actually use.",
-      "Trigger automatic workflows on submission.",
-    ],
-  },
+const services = [
   {
     icon: Zap,
     title: "Zapier Automations",
-    examples: [
-      "Build multi-step automations between ServiceTitan and other tools.",
-      "Auto-trigger follow-up sequences after job completion.",
-    ],
-    link: { href: "/servicetitan-automation-services/zapier", label: "See Zapier examples" },
+    description:
+      "Multi-step automations between ServiceTitan and your other tools. Auto-trigger follow-ups, sync data, and eliminate re-entry.",
+    href: "/servicetitan-automation-services/zapier",
+  },
+  {
+    icon: FileText,
+    title: "ServiceTitan Forms",
+    description:
+      "Tech-friendly data collection your field team actually fills out, with automated workflows triggered on submission.",
+    href: null,
   },
   {
     icon: Settings,
     title: "Make.com Workflows",
-    examples: [
-      "Handle complex conditional logic that Zapier can't.",
-      "Build branching workflows for dispatch, billing, and follow-up.",
-    ],
+    description:
+      "Complex conditional logic Zapier cannot handle. Branching workflows for dispatch, billing, and follow-up.",
+    href: null,
   },
   {
     icon: BarChart3,
     title: "Google Sheets Reporting",
-    examples: [
-      "Auto-populate live revenue and job dashboards.",
-      "Pull ServiceTitan data for end-of-day profitability reports.",
-    ],
+    description:
+      "Live revenue dashboards and end-of-day profitability reports that pull directly from ServiceTitan. No manual entry.",
+    href: null,
   },
   {
     icon: Bot,
     title: "AI-Powered Workflows",
-    examples: [
-      "Set up AI-assisted job summaries and call notes.",
-      "Auto-categorize customer requests and route them appropriately.",
-    ],
-  },
-  {
-    icon: Bell,
-    title: "Notifications & Follow-Up",
-    examples: [
-      "Send automated technician ETAs to customers.",
-      "Route inbound leads to the right CSR instantly.",
-    ],
-  },
-  {
-    icon: Database,
-    title: "Job & Customer Data",
-    examples: [
-      "Keep job records clean and consistently filled out.",
-      "Sync customer data across platforms without manual entry.",
-    ],
+    description:
+      "AI-assisted job summaries, call notes, and auto-categorization that routes customer requests to the right person.",
+    href: null,
   },
   {
     icon: RefreshCw,
     title: "Ongoing Support",
-    examples: [
-      "Troubleshoot and fix broken automations as your setup evolves.",
-      "Optimize existing workflows as your business grows.",
-    ],
+    description:
+      "Troubleshoot broken automations, optimize existing workflows, and add new ones as your business grows.",
+    href: null,
   },
 ];
-
 
 const stats = [
   { value: "25", label: "Years in Home Services" },
   { value: "5,000+", label: "Automations Built" },
   { value: "12", label: "Years Owning an HVAC & Plumbing Company" },
-  { value: "2", label: "Founder: ServiceTitan Hacks & PhoneTap" },
+  { value: "2x", label: "Founder: ServiceTitan Hacks & PhoneTap" },
 ];
 
 const steps = [
   {
     number: "01",
     title: "Book a strategy call",
-    text: "We talk through your current need, workflow issue, or automation goal.",
+    text: "We talk through your workflow issue or automation goal.",
   },
   {
     number: "02",
     title: "Get a plan",
-    text: "We identify the best solution path and outline what comes next.",
+    text: "We identify the best solution and outline what comes next.",
   },
   {
     number: "03",
-    title: "Implement the work",
-    text: "If it makes sense to move forward, we can build the workflow for you.",
+    title: "We build it",
+    text: "If it makes sense to move forward, we build the workflow for you.",
   },
   {
     number: "04",
-    title: "Add support if needed",
-    text: "For shops that want continued help, we offer ongoing support packages.",
+    title: "Ongoing support",
+    text: "For shops that want continued help, we offer support packages.",
   },
-];
-
-const callExpectations = [
-  "A conversation about the workflow, forms, reporting, or automation issue you want help with",
-  "Guidance on the best way to solve it",
-  "Recommendations on what tools or approach make the most sense",
-  "A clearer idea of project scope and next steps",
-  "A clear recommendation on whether and how to move forward",
 ];
 
 const interestOptions = [
@@ -155,6 +111,12 @@ const interestOptions = [
   "Ongoing support and optimization",
 ];
 
+const trustPoints = [
+  "100% risk-free",
+  "No heavy sales pitch",
+  "Just ServiceTitan experts",
+];
+
 function ScrollCTAButton() {
   return (
     <Button
@@ -166,25 +128,6 @@ function ScrollCTAButton() {
       Book a Strategy Call
       <ArrowRight className="w-4 h-4" />
     </Button>
-  );
-}
-
-function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <Button
-        size="lg"
-        className="gap-2"
-        onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
-        data-testid="button-cta-scroll-centered"
-      >
-        Book a Discovery Call
-        <ArrowRight className="w-4 h-4" />
-      </Button>
-      <p className={`text-xs ${dark ? "text-white/50" : "text-muted-foreground"}`}>
-        $250 credited toward your project if you move forward.
-      </p>
-    </div>
   );
 }
 
@@ -376,7 +319,7 @@ function StrategyCallForm() {
         disabled={mutation.isPending}
         data-testid="button-inquiry-submit"
       >
-        {mutation.isPending ? "Submitting..." : "Book a Discovery Call"}
+        {mutation.isPending ? "Submitting..." : "Book a Strategy Call"}
         {!mutation.isPending && <ArrowRight className="w-4 h-4" />}
       </Button>
     </form>
@@ -388,7 +331,7 @@ export default function ServiceTitanAutomationServices() {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="ServiceTitan Automation Services | ServiceTitan Hacks"
-        description="Done-for-you ServiceTitan forms, workflows, integrations, and automations for home service companies. Book a strategy call."
+        description="Done-for-you ServiceTitan automations, forms, workflows, and integrations for home service companies. Book a strategy call."
         keywords="ServiceTitan automation, ServiceTitan forms, Zapier ServiceTitan, Make.com ServiceTitan, home service automation, ServiceTitan integrations"
         canonicalUrl="https://servicetitanhacks.com/servicetitan-automation-services"
       />
@@ -403,209 +346,123 @@ export default function ServiceTitanAutomationServices() {
               Done-for-You Implementation
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
-              Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations.
+              Custom ServiceTitan Automations for Your Shop
             </h1>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Stop fighting your software. We build the systems that reduce manual work, connect your tools, and help your team run more efficiently.
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+              We build the workflows, forms, reporting, and integrations that eliminate manual work and keep your team running efficiently.
             </p>
-            <div className="flex flex-col items-center gap-3">
-              <p className="text-sm text-white/60">
-                A focused strategy session to understand your needs and map out the right solution.
-              </p>
-              <ScrollCTAButtonCentered dark />
-            </div>
-            <p className="mt-6 text-xs text-white/35">
-              Built for real home service companies using ServiceTitan
-            </p>
+            <ScrollCTAButton />
           </div>
         </section>
 
-        {/* ── Section 1: Built for ServiceTitan shops ── */}
-        <section className="py-16 md:py-24 bg-background" data-testid="section-built-for">
+        {/* ── What we build ── */}
+        <section className="py-16 md:py-24 bg-background" data-testid="section-services">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                  Built for ServiceTitan shops tired of manual workarounds
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  If your team is still re-entering data, chasing down missing information, updating spreadsheets by hand, or relying on people to remember every step, the problem is not your people. It is your <strong className="text-foreground">workflow</strong>.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Your team is re-entering data between ServiceTitan, spreadsheets, and other tools",
-                    "Technicians are missing form fields and office staff are chasing down information",
-                    "You do not trust your reporting because too much of the process is manual",
-                    "You know parts of your workflow should be automated, but they are not",
-                    "Important tasks still depend too much on someone remembering to do them",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                      <AlertCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-                  Outcomes you can expect
-                </p>
-                <ul className="space-y-3" data-testid="list-outcomes">
-                  {outcomes.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 2: The Systems We Build ── */}
-        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-systems">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">What we can build for your business</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Each engagement is scoped around the tools and workflows that make the most sense for your business.
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">What we build</h2>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Each engagement is scoped to the tools and workflows that make the most sense for your business.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-systems">
-              {systems.map((system, i) => {
-                const Icon = system.icon;
-                return (
-                  <Card key={i} data-testid={`card-system-${i}`}>
-                    <CardContent className="p-5 flex flex-col gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
-                          <Icon className="w-4 h-4 text-primary" />
-                        </div>
-                        <h3 className="font-semibold">{system.title}</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-services">
+              {services.map((service, i) => {
+                const Icon = service.icon;
+                const inner = (
+                  <Card
+                    key={i}
+                    className={service.href ? "hover-elevate transition-shadow cursor-pointer" : ""}
+                    data-testid={`card-service-${i}`}
+                  >
+                    <CardContent className="p-6 flex flex-col gap-4 h-full">
+                      <div className="flex-shrink-0 w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-primary" />
                       </div>
-                      <ul className="space-y-1.5">
-                        {system.examples.map((ex, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{ex}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      {"link" in system && system.link && (
-                        <Link href={system.link.href}>
-                          <span
-                            className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors cursor-pointer mt-1"
-                            data-testid={`link-system-detail-${i}`}
-                          >
-                            {system.link.label}
-                            <ArrowRight className="w-3 h-3" />
-                          </span>
-                        </Link>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                      </div>
+                      {service.href && (
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary" data-testid={`link-service-${i}`}>
+                          Learn more
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
                       )}
                     </CardContent>
                   </Card>
+                );
+
+                return service.href ? (
+                  <Link key={i} href={service.href}>
+                    {inner}
+                  </Link>
+                ) : (
+                  inner
                 );
               })}
             </div>
           </div>
         </section>
 
-        {/* ── Section 5: Why work with us ── */}
-        <section className="py-16 md:py-24 bg-black text-white" data-testid="section-credibility">
+        {/* ── Stats ── */}
+        <section className="py-16 bg-black" data-testid="section-stats">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10">
-              Why work with us
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14" data-testid="grid-stats">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center" data-testid="grid-stats">
               {stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className={`rounded-md p-6 ${stat.label === "Automations Built" ? "border border-primary/60 bg-primary/5" : "border border-white/10"}`}
-                  data-testid={`stat-item-${i}`}
-                >
-                  <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
+                <div key={i} data-testid={`stat-item-${i}`}>
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</p>
                   <p className="text-sm text-white/60 leading-snug">{stat.label}</p>
                 </div>
               ))}
             </div>
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+          </div>
+        </section>
+
+        {/* ── Founder ── */}
+        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-founder">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start">
               <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">A note from the founder</p>
-                <blockquote className="border-l-2 border-primary pl-6">
-                  <p className="text-white/80 text-lg leading-relaxed italic mb-4">
-                    "I spent 12 years owning an HVAC and plumbing company. I didn't build these{" "}
-                    <strong className="text-white not-italic">5,000+ automations</strong> because I love tech—I built them because I needed my life back. I'm a contractor who figured out how to make ServiceTitan work for the shop, not the other way around."
-                  </p>
-                  <cite className="text-white/50 text-sm not-italic">— Bill Brown, Founder of ServiceTitan Hacks &amp; PhoneTap</cite>
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-5">A note from the founder</p>
+                <blockquote className="text-lg leading-relaxed text-foreground mb-6">
+                  "I spent 12 years owning an HVAC and plumbing company. I didn't build these{" "}
+                  <strong>5,000+ automations</strong> because I love tech. I built them because I needed my life back. I'm a contractor who figured out how to make ServiceTitan work for the shop, not the other way around."
                 </blockquote>
+                <p className="font-semibold text-sm">Bill Brown</p>
+                <p className="text-sm text-muted-foreground">Founder, ServiceTitan Hacks &amp; PhoneTap</p>
               </div>
-              <div className="flex-shrink-0 w-48 md:w-56">
+              <div className="flex-shrink-0">
                 <img
                   src={founderPhoto}
                   alt="Bill Brown, Founder"
-                  className="w-full rounded-md object-cover"
+                  className="w-40 h-40 rounded-full object-cover"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── Section 6: How it works ── */}
+        {/* ── How it works ── */}
         <section className="py-16 md:py-24 bg-background border-t border-border" data-testid="section-how-it-works">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12">How it works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">How it works</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" data-testid="grid-steps">
               {steps.map((step, i) => (
-                <div key={i} className="relative" data-testid={`step-item-${i}`}>
-                  {i < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border z-0" style={{ width: "calc(100% - 2.5rem)", left: "calc(100% - 1rem)" }} />
-                  )}
-                  <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-md bg-primary/10 flex items-center justify-center mb-4">
-                      <span className="text-xl font-bold text-primary">{step.number}</span>
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
+                <div key={i} className="text-center" data-testid={`step-item-${i}`}>
+                  <div className="w-14 h-14 rounded-md bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                    <span className="text-xl font-bold text-primary">{step.number}</span>
                   </div>
+                  <h3 className="font-semibold text-base mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
                 </div>
               ))}
             </div>
-            <ScrollCTAButton />
           </div>
         </section>
 
-        {/* ── Section 7: What to expect ── */}
-        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-strategy-call">
-          <div className="mx-auto max-w-4xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              What you get in the strategy call
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              This is a focused working session to understand your situation and map the best path forward.
-            </p>
-            <ul className="space-y-3 mb-10" data-testid="list-call-expectations">
-              {callExpectations.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-muted-foreground mb-8 font-medium">
-              If you move forward with implementation, the full $250 is credited toward your project.
-            </p>
-            <ScrollCTAButton />
-          </div>
-        </section>
-
-        {/* ── Final CTA + Form ── */}
+        {/* ── CTA + Form ── */}
         <section
           id="strategy-call-form"
-          className="py-20 md:py-28 bg-background border-t border-border"
+          className="py-20 md:py-28 bg-card border-t border-border"
           data-testid="section-final-cta"
         >
           <div className="mx-auto max-w-7xl px-6">
@@ -616,18 +473,26 @@ export default function ServiceTitanAutomationServices() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
                   Get Started
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                  Let's talk about your shop
+                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+                  Ready to fix your workflows?
                 </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Fill out the form and we will be in touch to schedule a time.
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  A focused strategy session to understand your needs and map out the right solutions.
                 </p>
+                <ul className="space-y-3">
+                  {trustPoints.map((point, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-foreground">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Right — form */}
               <Card data-testid="card-inquiry-form">
                 <CardContent className="p-6 md:p-8">
-                  <h3 className="text-xl font-semibold mb-1">Book a Discovery Call</h3>
+                  <h3 className="text-xl font-semibold mb-1">Book a Strategy Call</h3>
                   <p className="text-sm text-muted-foreground mb-6">
                     Fill out the form and we will be in touch to schedule a time.
                   </p>
