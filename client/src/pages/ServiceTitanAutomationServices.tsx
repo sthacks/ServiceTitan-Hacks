@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import founderPhoto from "@assets/slack_1775223018179.png";
 import zapierLogo from "@assets/zapier-logo.png";
 import makeLogo from "@assets/make-logo.png";
+import stLogo from "@assets/st-logo.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -36,7 +37,8 @@ const services = [
     href: "/servicetitan-automation-services/zapier",
   },
   {
-    icon: FileText,
+    icon: null,
+    logo: stLogo,
     title: "ServiceTitan Forms",
     description:
       "Tech-friendly data collection your field team actually fills out, with automated workflows triggered on submission.",
