@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import founderPhoto from "@assets/slack_1775223018179.png";
 import zapierLogo from "@assets/zapier-logo.png";
+import makeLogo from "@assets/make-logo.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -42,7 +43,8 @@ const services = [
     href: null,
   },
   {
-    icon: Settings,
+    icon: null,
+    logo: makeLogo,
     title: "Make.com Workflows",
     description:
       "Complex conditional logic Zapier cannot handle. Branching workflows for dispatch, billing, and follow-up.",
