@@ -1,6 +1,5 @@
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
-import founderPhoto from "@assets/slack_1775223018179.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -16,117 +15,135 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   CheckCircle2,
   ArrowRight,
+  ArrowLeft,
   Zap,
-  FileText,
-  BarChart3,
+  Mail,
+  MessageSquare,
+  FileSpreadsheet,
   Bell,
-  Bot,
-  Settings,
-  AlertCircle,
-  Database,
+  UserCheck,
+  BarChart3,
+  Star,
+  Users,
+  DollarSign,
   RefreshCw,
+  FileText,
 } from "lucide-react";
 
-
-const outcomes: ReactNode[] = [
-  "Reduce manual re-entry and wasted admin time.",
-  <><strong>Real-time reporting</strong> you can actually trust.</>,
-  "Workflows that run without someone having to remember every step.",
-  "Connected tools that pass data between systems automatically.",
-  "A foundation that scales with your business.",
-];
-
-const systems = [
+const zapierExamples = [
   {
-    icon: FileText,
-    title: "ServiceTitan Forms",
-    examples: [
-      "Create tech-friendly data collection that techs actually use.",
-      "Trigger automatic workflows on submission.",
+    icon: Mail,
+    title: "Job Completion Email",
+    bullets: [
+      "Automatically send a thank-you email when a job is marked complete in ServiceTitan.",
+      "Trigger follow-up messaging sequences without anyone on your team having to remember.",
     ],
   },
   {
-    icon: Zap,
-    title: "Zapier Automations",
-    examples: [
-      "Build multi-step automations between ServiceTitan and other tools.",
-      "Auto-trigger follow-up sequences after job completion.",
-    ],
-    link: { href: "/servicetitan-automation-services/zapier", label: "See Zapier examples" },
-  },
-  {
-    icon: Settings,
-    title: "Make.com Workflows",
-    examples: [
-      "Handle complex conditional logic that Zapier can't.",
-      "Build branching workflows for dispatch, billing, and follow-up.",
+    icon: Star,
+    title: "Review Request Follow-Up",
+    bullets: [
+      "Send a review request via SMS or email 2 days after a job is closed.",
+      "Route the request to the right review platform based on job type or location.",
     ],
   },
   {
-    icon: BarChart3,
-    title: "Google Sheets Reporting",
-    examples: [
-      "Auto-populate live revenue and job dashboards.",
-      "Pull ServiceTitan data for end-of-day profitability reports.",
+    icon: FileSpreadsheet,
+    title: "Job Data to Google Sheets",
+    bullets: [
+      "When a job is booked or completed, automatically add a row to a Google Sheet.",
+      "Capture job details, revenue, technician, and customer info without manual entry.",
     ],
   },
   {
-    icon: Bot,
-    title: "AI-Powered Workflows",
-    examples: [
-      "Set up AI-assisted job summaries and call notes.",
-      "Auto-categorize customer requests and route them appropriately.",
+    icon: UserCheck,
+    title: "Lead to ServiceTitan Customer",
+    bullets: [
+      "When a new lead submits a web form, automatically create a customer and job in ServiceTitan.",
+      "Eliminate manual data entry and get leads into your workflow instantly.",
+    ],
+  },
+  {
+    icon: MessageSquare,
+    title: "Technician ETA Text",
+    bullets: [
+      "When a technician is dispatched, auto-send the customer an SMS with an estimated arrival time.",
+      "Reduce inbound calls and improve the customer experience with zero extra effort.",
     ],
   },
   {
     icon: Bell,
-    title: "Notifications & Follow-Up",
-    examples: [
-      "Send automated technician ETAs to customers.",
-      "Route inbound leads to the right CSR instantly.",
+    title: "Job Status Change Alert",
+    bullets: [
+      "Notify the office team via Slack or email when a job status changes to a specific value.",
+      "Keep dispatch, billing, and management informed without anyone having to check the system.",
     ],
   },
   {
-    icon: Database,
-    title: "Job & Customer Data",
-    examples: [
-      "Keep job records clean and consistently filled out.",
-      "Sync customer data across platforms without manual entry.",
+    icon: FileText,
+    title: "Form Submission to Sheet",
+    bullets: [
+      "When a ServiceTitan form is submitted in the field, push the data to a Google Sheet in real time.",
+      "Capture technician notes, equipment data, and job details automatically.",
+    ],
+  },
+  {
+    icon: BarChart3,
+    title: "Daily Revenue Summary",
+    bullets: [
+      "Every morning, pull the previous day's job data from ServiceTitan and send a summary report.",
+      "Get key numbers like revenue, jobs completed, and open estimates in your inbox before 8am.",
+    ],
+  },
+  {
+    icon: DollarSign,
+    title: "High-Value Job Alert",
+    bullets: [
+      "When a job is booked over a certain revenue threshold, alert the owner via text or email.",
+      "Stay on top of large opportunities and make sure nothing falls through the cracks.",
     ],
   },
   {
     icon: RefreshCw,
-    title: "Ongoing Support",
-    examples: [
-      "Troubleshoot and fix broken automations as your setup evolves.",
-      "Optimize existing workflows as your business grows.",
+    title: "Unsold Estimate Follow-Up",
+    bullets: [
+      "When an estimate remains unsold after a set number of days, trigger a follow-up email or internal task.",
+      "Recover revenue that would otherwise be forgotten without manual tracking.",
     ],
   },
-];
-
-
-const stats = [
-  { value: "25", label: "Years in Home Services" },
-  { value: "5,000+", label: "Automations Built" },
-  { value: "12", label: "Years Owning an HVAC & Plumbing Company" },
-  { value: "2", label: "Founder: ServiceTitan Hacks & PhoneTap" },
+  {
+    icon: Users,
+    title: "New Customer Welcome Sequence",
+    bullets: [
+      "When a new customer is created in ServiceTitan, send a welcome email and add them to your email list.",
+      "Start the relationship right with automated, consistent communication.",
+    ],
+  },
+  {
+    icon: Zap,
+    title: "Membership Renewal Reminder",
+    bullets: [
+      "When a membership is approaching expiration, trigger a reminder sequence to the customer.",
+      "Reduce churn and keep recurring revenue on track without manual follow-up.",
+    ],
+  },
 ];
 
 const steps = [
   {
     number: "01",
     title: "Book a strategy call",
-    text: "We talk through your current need, workflow issue, or automation goal.",
+    text: "We talk through your current ServiceTitan setup and what you want to automate.",
   },
   {
     number: "02",
-    title: "Get a plan",
-    text: "We identify the best solution path and outline what comes next.",
+    title: "Map your workflows",
+    text: "We identify which tools you use and design the right Zapier triggers and actions.",
   },
   {
     number: "03",
-    title: "Implement the work",
-    text: "If it makes sense to move forward, we can build the workflow for you.",
+    title: "Build and test",
+    text: "We build the Zaps, connect your accounts, and test each workflow before handoff.",
   },
   {
     number: "04",
@@ -135,39 +152,16 @@ const steps = [
   },
 ];
 
-const callExpectations = [
-  "A conversation about the workflow, forms, reporting, or automation issue you want help with",
-  "Guidance on the best way to solve it",
-  "Recommendations on what tools or approach make the most sense",
-  "A clearer idea of project scope and next steps",
-  "A clear recommendation on whether and how to move forward",
-];
-
 const interestOptions = [
-  "ServiceTitan forms setup and optimization",
   "ServiceTitan + Zapier setup",
-  "Make.com workflow builds",
+  "Job completion workflows",
+  "Review request automation",
+  "Lead routing to ServiceTitan",
   "Google Sheets reporting automations",
-  "AI-powered workflow implementation",
   "Notification and follow-up automations",
-  "Job and customer data workflows",
   "Custom Dashboards",
   "Ongoing support and optimization",
 ];
-
-function ScrollCTAButton() {
-  return (
-    <Button
-      size="lg"
-      className="gap-2"
-      onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
-      data-testid="button-cta-scroll"
-    >
-      Book a Strategy Call
-      <ArrowRight className="w-4 h-4" />
-    </Button>
-  );
-}
 
 function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
   return (
@@ -185,6 +179,20 @@ function ScrollCTAButtonCentered({ dark = false }: { dark?: boolean }) {
         $250 credited toward your project if you move forward.
       </p>
     </div>
+  );
+}
+
+function ScrollCTAButton() {
+  return (
+    <Button
+      size="lg"
+      className="gap-2"
+      onClick={() => document.getElementById("strategy-call-form")?.scrollIntoView({ behavior: "smooth" })}
+      data-testid="button-cta-scroll"
+    >
+      Book a Strategy Call
+      <ArrowRight className="w-4 h-4" />
+    </Button>
   );
 }
 
@@ -351,7 +359,7 @@ function StrategyCallForm() {
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Tell us about your current setup, goals, or any specific challenges you're running into."
+          placeholder="Tell us about your current Zapier setup, goals, or any specific workflows you want to automate."
           data-testid="textarea-inquiry-message"
         />
       </div>
@@ -383,14 +391,14 @@ function StrategyCallForm() {
   );
 }
 
-export default function ServiceTitanAutomationServices() {
+export default function ZapierAutomations() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Automation Services | ServiceTitan Hacks"
-        description="Done-for-you ServiceTitan forms, workflows, integrations, and automations for home service companies. Book a strategy call."
-        keywords="ServiceTitan automation, ServiceTitan forms, Zapier ServiceTitan, Make.com ServiceTitan, home service automation, ServiceTitan integrations"
-        canonicalUrl="https://servicetitanhacks.com/servicetitan-automation-services"
+        title="ServiceTitan Zapier Automations | ServiceTitan Hacks"
+        description="Done-for-you Zapier automations for ServiceTitan contractors. We build multi-step workflows that connect ServiceTitan to your email, CRM, Sheets, and more."
+        keywords="ServiceTitan Zapier, Zapier ServiceTitan integration, ServiceTitan automation, Zapier workflows for contractors, home service automation"
+        canonicalUrl="https://servicetitanhacks.com/servicetitan-automation-services/zapier"
       />
       <Header />
 
@@ -399,18 +407,24 @@ export default function ServiceTitanAutomationServices() {
         {/* ── Hero ── */}
         <section className="bg-black text-white py-20 md:py-28" data-testid="section-hero">
           <div className="mx-auto max-w-4xl px-6 text-center">
+            <Link href="/servicetitan-automation-services">
+              <span className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white/80 transition-colors cursor-pointer mb-6" data-testid="link-breadcrumb-parent">
+                <ArrowLeft className="w-3 h-3" />
+                Back to Automations
+              </span>
+            </Link>
             <p className="text-primary text-xs font-semibold uppercase tracking-widest mb-4">
-              Done-for-You Implementation
+              Zapier + ServiceTitan
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
-              Reclaim 20+ Hours of Admin Time Every Week with Custom ServiceTitan Automations.
+              Connect ServiceTitan to Everything with Custom Zapier Automations.
             </h1>
             <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Stop fighting your software. We build the systems that reduce manual work, connect your tools, and help your team run more efficiently.
+              We build multi-step Zapier workflows that automate the repetitive tasks between ServiceTitan and the tools your team already uses.
             </p>
             <div className="flex flex-col items-center gap-3">
               <p className="text-sm text-white/60">
-                A focused strategy session to understand your needs and map out the right solution.
+                A focused strategy session to understand your current setup and map out the right automations.
               </p>
               <ScrollCTAButtonCentered dark />
             </div>
@@ -420,92 +434,37 @@ export default function ServiceTitanAutomationServices() {
           </div>
         </section>
 
-        {/* ── Section 1: Built for ServiceTitan shops ── */}
-        <section className="py-16 md:py-24 bg-background" data-testid="section-built-for">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                  Built for ServiceTitan shops tired of manual workarounds
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  If your team is still re-entering data, chasing down missing information, updating spreadsheets by hand, or relying on people to remember every step, the problem is not your people. It is your <strong className="text-foreground">workflow</strong>.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  We help home service companies build better systems around ServiceTitan using forms, Zapier, Make, Google Sheets, and AI.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Your team is re-entering data between ServiceTitan, spreadsheets, and other tools",
-                    "Technicians are missing form fields and office staff are chasing down information",
-                    "You do not trust your reporting because too much of the process is manual",
-                    "You know parts of your workflow should be automated, but they are not",
-                    "Important tasks still depend too much on someone remembering to do them",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                      <AlertCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-                  Outcomes you can expect
-                </p>
-                <ul className="space-y-3" data-testid="list-outcomes">
-                  {outcomes.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 2: The Systems We Build ── */}
-        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-systems">
+        {/* ── Section 1: What we can build ── */}
+        <section className="py-16 md:py-24 bg-background" data-testid="section-zapier-examples">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">What we can build for your business</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">
+                Specific Zapier automations we build for ServiceTitan shops
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Each engagement is scoped around the tools and workflows that make the most sense for your business.
+                These are real workflows we implement for home service companies. Each one eliminates a manual step your team currently has to remember.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-systems">
-              {systems.map((system, i) => {
-                const Icon = system.icon;
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="grid-zapier-examples">
+              {zapierExamples.map((example, i) => {
+                const Icon = example.icon;
                 return (
-                  <Card key={i} data-testid={`card-system-${i}`}>
-                    <CardContent className="p-5 flex flex-col gap-3">
-                      <div className="flex items-center gap-3">
+                  <Card key={i} data-testid={`card-zapier-example-${i}`}>
+                    <CardContent className="p-5">
+                      <div className="flex items-center gap-3 mb-3">
                         <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center">
                           <Icon className="w-4 h-4 text-primary" />
                         </div>
-                        <h3 className="font-semibold">{system.title}</h3>
+                        <h3 className="font-semibold">{example.title}</h3>
                       </div>
                       <ul className="space-y-1.5">
-                        {system.examples.map((ex, j) => (
+                        {example.bullets.map((bullet, j) => (
                           <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{ex}</span>
+                            <span>{bullet}</span>
                           </li>
                         ))}
                       </ul>
-                      {"link" in system && system.link && (
-                        <Link href={system.link.href}>
-                          <span
-                            className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors cursor-pointer mt-1"
-                            data-testid={`link-system-detail-${i}`}
-                          >
-                            {system.link.label}
-                            <ArrowRight className="w-3 h-3" />
-                          </span>
-                        </Link>
-                      )}
                     </CardContent>
                   </Card>
                 );
@@ -514,48 +473,8 @@ export default function ServiceTitanAutomationServices() {
           </div>
         </section>
 
-        {/* ── Section 5: Why work with us ── */}
-        <section className="py-16 md:py-24 bg-black text-white" data-testid="section-credibility">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10">
-              Why work with us
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14" data-testid="grid-stats">
-              {stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className={`rounded-md p-6 ${stat.label === "Automations Built" ? "border border-primary/60 bg-primary/5" : "border border-white/10"}`}
-                  data-testid={`stat-item-${i}`}
-                >
-                  <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
-                  <p className="text-sm text-white/60 leading-snug">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-              <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">A note from the founder</p>
-                <blockquote className="border-l-2 border-primary pl-6">
-                  <p className="text-white/80 text-lg leading-relaxed italic mb-4">
-                    "I spent 12 years owning an HVAC and plumbing company. I didn't build these{" "}
-                    <strong className="text-white not-italic">5,000+ automations</strong> because I love tech—I built them because I needed my life back. I'm a contractor who figured out how to make ServiceTitan work for the shop, not the other way around."
-                  </p>
-                  <cite className="text-white/50 text-sm not-italic">— Bill Brown, Founder of ServiceTitan Hacks &amp; PhoneTap</cite>
-                </blockquote>
-              </div>
-              <div className="flex-shrink-0 w-48 md:w-56">
-                <img
-                  src={founderPhoto}
-                  alt="Bill Brown, Founder"
-                  className="w-full rounded-md object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 6: How it works ── */}
-        <section className="py-16 md:py-24 bg-background border-t border-border" data-testid="section-how-it-works">
+        {/* ── Section 2: How it works ── */}
+        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-how-it-works">
           <div className="mx-auto max-w-7xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12">How it works</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" data-testid="grid-steps">
@@ -578,8 +497,8 @@ export default function ServiceTitanAutomationServices() {
           </div>
         </section>
 
-        {/* ── Section 7: What to expect ── */}
-        <section className="py-16 md:py-24 bg-card border-t border-border" data-testid="section-strategy-call">
+        {/* ── Section 3: What you get in the strategy call ── */}
+        <section className="py-16 md:py-24 bg-background border-t border-border" data-testid="section-strategy-call">
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               What you get in the strategy call
@@ -588,7 +507,13 @@ export default function ServiceTitanAutomationServices() {
               This is a focused working session to understand your situation and map the best path forward.
             </p>
             <ul className="space-y-3 mb-10" data-testid="list-call-expectations">
-              {callExpectations.map((item, i) => (
+              {[
+                "A conversation about which workflows you want to automate and what tools you already use",
+                "Guidance on how to connect ServiceTitan to those tools with Zapier",
+                "Recommendations on the right triggers, actions, and structure for each Zap",
+                "A clearer idea of project scope and what it would take to implement",
+                "A clear recommendation on whether and how to move forward",
+              ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-foreground">{item}</span>
@@ -605,7 +530,7 @@ export default function ServiceTitanAutomationServices() {
         {/* ── Final CTA + Form ── */}
         <section
           id="strategy-call-form"
-          className="py-20 md:py-28 bg-background border-t border-border"
+          className="py-20 md:py-28 bg-card border-t border-border"
           data-testid="section-final-cta"
         >
           <div className="mx-auto max-w-7xl px-6">
@@ -617,7 +542,7 @@ export default function ServiceTitanAutomationServices() {
                   Get Started
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                  Let's talk about your shop
+                  Let's talk about your Zapier setup
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Fill out the form and we will be in touch to schedule a time.

@@ -64,6 +64,7 @@ import PhoneTapWebinar from "@/pages/PhoneTapWebinar";
 import Events from "@/pages/Events";
 import BillLanding from "@/pages/BillLanding";
 import ServiceTitanAutomationServices from "@/pages/ServiceTitanAutomationServices";
+import ZapierAutomations from "@/pages/ZapierAutomations";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -140,6 +141,7 @@ function Router() {
       <Route path="/webinar/membership-retention-replay"><Redirect to="/events" /></Route>
       <Route path="/events" component={Events} />
       <Route path="/bill" component={BillLanding} />
+      <Route path="/servicetitan-automation-services/zapier" component={ZapierAutomations} />
       <Route path="/servicetitan-automation-services" component={ServiceTitanAutomationServices} />
       <Route component={NotFound} />
     </Switch>
