@@ -11,6 +11,7 @@ import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
+import servicesImage from "@assets/ChatGPT_Image_Apr_7,_2026,_08_08_54_AM_1775564122878.png";
 import blogImage from "@assets/32563772-1_1762708907799.jpg";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
@@ -42,7 +43,7 @@ export default function Home() {
       description: "Done-for-you ServiceTitan automation implementation. We build the forms, workflows, and reporting systems your shop needs to run more efficiently.",
       icon: Settings,
       link: "/servicetitan-automation-services",
-      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
+      image: servicesImage,
       alt: "ServiceTitan automation services - done-for-you workflow and forms implementation",
     },
     {
