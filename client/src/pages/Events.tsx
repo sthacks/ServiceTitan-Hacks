@@ -117,8 +117,8 @@ const events: Event[] = [
   },
   {
     id: "7",
-    title: "Why Most Technician Incentive Plans Fall Apart",
-    description: "A practical fireside chat with a contractor who cut payroll admin by 90% and built a 20% performance pay model across 10 trucks. Featuring Bill Brown (ServiceTitan Hacks), Jarod Smith (Clogbusters), and Ryan Shank (ShareWillow).",
+    title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail",
+    description: "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business. Featuring Bill Brown, Ryan Shank (ShareWillow), and Ron, owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing.",
     date: "Wednesday, April 14, 2026",
     eventDateTime: new Date("2026-04-14T14:00:00-04:00"),
     time: "2:00 PM",

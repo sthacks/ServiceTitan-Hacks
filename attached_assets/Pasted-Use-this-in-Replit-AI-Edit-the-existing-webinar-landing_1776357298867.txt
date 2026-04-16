@@ -1,0 +1,173 @@
+Use this in Replit AI:
+
+Edit the existing webinar landing page at /webinar/incentive-plan-problem.
+
+Do not rebuild the page from scratch.
+Do not change the overall layout, styling system, spacing rhythm, navbar, footer, or CTA behavior.
+Keep the current visual design, dark theme, and overall section order.
+This is an edit of the existing page content and supporting visuals only.
+
+Primary goal:
+Update the page so it reflects the new webinar setup:
+- Ron is now the contractor guest instead of the prior customer/case study angle
+- Ron is the owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland
+- The tone must stay practical, conversational, and non-salesy
+- This should feel like a fireside chat for skeptical contractors, not a product pitch
+
+Important:
+Do not overstate claims or invent results for Ron.
+Do not imply any unverified metrics, revenue improvements, or business outcomes.
+Position Ron as a real contractor operator bringing firsthand perspective, not as a quantified case study unless the page already contains approved numbers that are explicitly marked and easily swappable later.
+
+Make these content changes:
+
+1) Hero section
+Replace the current hero copy with:
+Eyebrow:
+LIVE FIRESIDE CHAT
+
+Headline:
+The Incentive Plan Problem
+Why Most Contractor Bonus Plans Fail
+
+Subheadline:
+A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.
+
+Add a short featured line under the subheadline:
+Featuring Bill Brown, Ryan Shank, and Ron [leave last name editable if not already known], owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.
+
+Keep the main CTA button and registration behavior intact.
+Button text should stay simple, like:
+Save My Seat
+
+2) Hero supporting visual
+Update any supporting hero text or image caption so it reflects:
+- Bill Brown
+- Ryan Shank
+- Ron as the contractor guest
+If there is a speaker area or badges, update those accordingly.
+Do not use hype language.
+
+3) About / Overview section
+Rewrite this section so it says, in substance:
+Most contractors want their team to think like owners.
+But most bonus or incentive plans eventually break down because they are confusing, inconsistent, or not trusted by the team.
+In this fireside chat, Bill Brown from ServiceTitan Hacks sits down with Ryan Shank from ShareWillow and Ron, a contractor running One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland, to talk through what incentive plans look like in the real world.
+This is a practical discussion, not a sales presentation.
+
+Keep the writing tight and readable.
+No corporate jargon.
+
+4) Discussion topics / bullets section
+Replace the existing bullets with these ideas:
+- Why most contractor bonus plans fail
+- What actually changes technician behavior
+- The difference between theory and what works in the field
+- How incentive plans affect efficiency, callbacks, trust, and culture
+- What contractors get wrong when they roll this out
+- What a real operator thinks about implementing this in an actual business
+
+5) Add or update a "real contractor perspective" section
+If a similar section already exists, rewrite it.
+If not, add one in the same style as the rest of the page.
+
+Section title:
+Hear it from a contractor actually doing it
+
+Body copy:
+Most webinars on compensation stay theoretical.
+This conversation includes a contractor running two established home service brands.
+Ron will bring the operator perspective: what these plans look like in the field, what contractors worry about, what teams respond to, and what owners need to think through before making changes.
+
+Keep this grounded and not promotional.
+
+6) Speaker / host cards
+Update the speaker section to include:
+
+Bill Brown
+Founder of ServiceTitan Hacks.
+Former HVAC business owner focused on helping contractors improve operations with better systems, automation, and practical ideas.
+
+Ryan Shank
+Founder of ShareWillow.
+Works with businesses on structuring incentive and performance-based compensation systems.
+
+Ron [editable last name]
+Owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.
+Bringing the real contractor/operator perspective to the conversation.
+
+Keep card styling consistent with the current design.
+
+7) Product / platform section
+If the current page has a ShareWillow section, soften it.
+Do not remove it entirely unless it breaks layout.
+Rewrite it so it feels informational, not salesy.
+
+Suggested direction:
+A quick look at how ShareWillow supports businesses that want more structure, visibility, and consistency around incentive plans.
+
+Avoid:
+- aggressive feature selling
+- exaggerated claims
+- heavy CTA language
+
+8) FAQ section
+Update FAQ copy to feel more natural and aligned with this event.
+
+Use these FAQs:
+Q: Is this a sales webinar?
+A: No. This is a practical conversation about incentive plans, technician pay, and what contractors should think through before making changes.
+
+Q: Will there be a replay?
+A: Yes. Everyone who registers will receive the replay.
+
+Q: Do I need to use ShareWillow to get value from this?
+A: No. The goal is to help contractors think more clearly about how incentive plans work in the real world.
+
+Q: Will there be time for questions?
+A: Yes. We plan to leave time for audience questions during the live session.
+
+9) Final CTA section
+Rewrite the closing CTA section to be low-pressure.
+
+Suggested title:
+Join the Conversation
+
+Suggested body:
+If you have ever thought about changing how your team is paid, this conversation should give you a clearer way to think about it.
+
+Keep the CTA button simple:
+Save My Seat
+
+10) Tone and writing rules
+Apply these rules sitewide on this page:
+- non-salesy
+- contractor-friendly
+- practical
+- short paragraphs
+- no hype
+- no buzzwords
+- no exaggerated promises
+- no fake urgency
+- no claims that cannot be verified
+- no em dashes
+- use straight apostrophes and quotes only
+
+11) SEO / metadata
+Update page title and meta description to match the new positioning.
+
+Suggested title tag:
+The Incentive Plan Problem | ServiceTitan Hacks Webinar
+
+Suggested meta description:
+A fireside chat on contractor incentive plans with Bill Brown, Ryan Shank, and Ron from One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.
+
+12) Final QA
+Before finishing:
+- make sure all references to the old customer/case study angle are removed or updated
+- make sure Ron appears in the right places
+- make sure the page still looks visually identical in structure and quality
+- make sure no broken spacing or layout issues were introduced
+- make sure the copy feels like a real conversation, not a pitch
+
+If you want, I can also give you a second Replit prompt just for tightening the copy after the first edit is done.

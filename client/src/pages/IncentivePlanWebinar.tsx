@@ -17,11 +17,11 @@ import jarodSmithImage from "@assets/jarod-smith-DA-thda3_1774537143521.jpeg";
 import heroPromoImage from "@assets/sharewillow1_(1)_1774540582965.png";
 
 const config = {
-  webinarTitle: "Why Most Technician Incentive Plans Fall Apart",
-  webinarSubtitle: "And what a 10-truck drain cleaning company did instead",
+  webinarTitle: "The Incentive Plan Problem",
+  webinarSubtitle: "Why Most Contractor Bonus Plans Fail",
   webinarSupportingLine:
-    "One contractor switched to a 20% performance pay model, cut payroll admin from a full day to under an hour a week, and watched a 19-year-old tech hit a $186,000 annualized run rate in under six months. This is a conversation about how they built that system and what most contractors get wrong before they even start.",
-  webinarFeaturing: "Featuring Bill Brown (ServiceTitan Hacks), Jarod Smith (Clogbusters), and Ryan Shank (ShareWillow)",
+    "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
+  webinarFeaturing: "Featuring Bill Brown, Ryan Shank, and Ron, owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.",
   webinarDate: "Wednesday, April 14, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
@@ -30,63 +30,63 @@ const config = {
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Bill previously owned and scaled a residential HVAC company and now works with home service contractors across the country on operations, systems, and team performance. He hosts this conversation and keeps it grounded in what actually works in the field.",
-  contractorName: "Jarod Smith",
-  contractorTitle: "Owner, Clogbusters | Des Moines, Iowa",
-  contractorBio: "Jarod runs a 10-truck drain cleaning operation and has built one of the more unusual cultures in the trades. Every number gets posted. Every tech knows where they stand. His pay model is 20% performance-based, and he believes most contractors are underpaying their best people without realizing it.",
+  contractorName: "Ron",
+  contractorTitle: "Owner, One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing | Ocean City, Maryland",
+  contractorBio: "Ron runs two established home service brands and brings the operator perspective to this conversation: what incentive plans look like in the field, what contractors worry about, how teams actually respond, and what owners need to think through before making changes.",
   guestName: "Ryan Shank",
   guestTitle: "Founder, ShareWillow",
   guestBio:
-    "Ryan built ShareWillow after watching how difficult it was for service companies to manage performance pay without spreadsheets or outside consultants. He will provide context on how contractors typically structure these plans and where the common breakdowns happen.",
+    "Ryan works with businesses on structuring incentive and performance-based compensation systems. He will provide context on how contractors typically approach these plans and where common breakdowns happen.",
 };
 
 const talkPoints = [
-  "Why most technician bonus plans eventually stop working",
-  "The difference between commissions, bonuses, and profit sharing",
-  "How Clogbusters structured performance pay across 10 trucks",
-  "What happens to team culture when you post the numbers publicly",
-  "How to build an incentive plan your techs can actually track themselves",
-  "What changes when employees have skin in the game",
+  "Why most contractor bonus plans fail",
+  "What actually changes technician behavior",
+  "The difference between theory and what works in the field",
+  "How incentive plans affect efficiency, callbacks, trust, and culture",
+  "What contractors get wrong when they roll this out",
+  "What a real operator thinks about implementing this in an actual business",
 ];
 
 const takeaways = [
   {
-    title: "A clear picture of why your current plan may not be doing what you think it is",
-    description: "The common patterns that cause incentive plans to create confusion or resentment instead of motivation.",
+    title: "A clearer picture of why incentive plans break down",
+    description: "The common patterns that cause bonus plans to create confusion or resentment instead of motivation.",
   },
   {
-    title: "A real-world model to look at",
-    description: "How Clogbusters built a 20% performance pay structure that runs with almost no manual admin.",
+    title: "An operator's honest take",
+    description: "Ron will share what running two home service brands has taught him about what teams actually respond to.",
   },
   {
-    title: "A framework for tying pay to the numbers that matter",
-    description: "Revenue, reviews, memberships, and other KPIs your team can actually control.",
+    title: "A framework for thinking about pay structure",
+    description: "How to connect compensation to the numbers your team can actually influence and track.",
   },
   {
-    title: "Practical ideas you can act on without rebuilding your whole comp structure",
-    description: "Small changes that increase engagement and accountability before you touch anything else.",
+    title: "Practical questions to ask before you change anything",
+    description: "What to think through before touching your current comp structure so you do not create new problems.",
   },
 ];
 
 const faqs = [
   {
     question: "Is this a sales webinar?",
-    answer: "No. The conversation is focused on incentive plan design and contractor experience. ShareWillow is the sponsor and will be mentioned, but this is not a product demo or pitch.",
+    answer: "No. This is a practical conversation about incentive plans, technician pay, and what contractors should think through before making changes.",
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes. Everyone who registers gets access to the replay.",
+    answer: "Yes. Everyone who registers will receive the replay.",
   },
   {
     question: "Do I need to use ShareWillow to get value from this?",
-    answer: "No. The discussion covers pay philosophy, plan structure, and team culture. Those topics apply regardless of what tools you use.",
+    answer: "No. The goal is to help contractors think more clearly about how incentive plans work in the real world.",
   },
   {
-    question: "Can I ask questions live?",
-    answer: "Yes. We will open Q&A at the end of the session.",
+    question: "Will there be time for questions?",
+    answer: "Yes. We plan to leave time for audience questions during the live session.",
   },
   {
     question: "Who is this for?",
-    answer: "Owners, GMs, and operators in HVAC, plumbing, electrical, and other home service trades who are thinking about technician pay, retention, or team performance.",
+    answer: "Owners and operators in HVAC, plumbing, electrical, and other home service trades who are thinking about technician pay, retention, or team culture.",
   },
 ];
 
@@ -150,9 +150,9 @@ export default function IncentivePlanWebinar() {
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO
-        title="Why Most Technician Incentive Plans Fall Apart | Free Live Fireside Chat"
-        description="A 10-truck contractor cut payroll admin by 90% and built a 20% performance pay model. Bill Brown, Jarod Smith (Clogbusters), and Ryan Shank (ShareWillow) break down what works. Free April 14, 2026."
-        keywords="contractor bonus plans, performance pay, technician incentives, ServiceTitan, profit sharing, ShareWillow, Clogbusters"
+        title="The Incentive Plan Problem | ServiceTitan Hacks Webinar"
+        description="A fireside chat on contractor incentive plans with Bill Brown, Ryan Shank, and Ron from One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland."
+        keywords="contractor bonus plans, performance pay, technician incentives, ServiceTitan, profit sharing, ShareWillow"
         canonicalUrl="https://servicetitanhacks.com/webinar/incentive-plan-problem"
       />
 
@@ -221,12 +221,11 @@ export default function IncentivePlanWebinar() {
       {/* Proof Points Bar */}
       <section className="py-10 px-4 bg-white/5 border-t border-b border-white/10">
         <div className="container mx-auto max-w-4xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             {[
-              { stat: "20%", label: "Performance-based pay model" },
-              { stat: "90%", label: "Less time on payroll admin" },
-              { stat: "$186K", label: "Annualized run rate, 19-year-old tech" },
-              { stat: "<1 hr", label: "Payroll processing per week" },
+              { stat: "Free", label: "Live event, no cost to attend" },
+              { stat: "3", label: "Experienced voices in the room" },
+              { stat: "Replay", label: "Included for all registrants" },
             ].map(({ stat, label }) => (
               <div key={stat}>
                 <div className="text-3xl font-bold text-[#ED254E] mb-1">{stat}</div>
@@ -242,17 +241,14 @@ export default function IncentivePlanWebinar() {
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">About This Conversation</h2>
           <div className="text-white/75 text-lg space-y-5 leading-relaxed">
-            <p>Most owners want their techs to think like owners.</p>
+            <p>Most contractors want their team to think like owners.</p>
             <p>
-              The problem is that most incentive plans create confusion instead of motivation. Techs do not understand how their pay is calculated. Owners spend hours every week running the numbers by hand. And when a plan is too complicated to explain, it stops driving behavior.
+              But most bonus or incentive plans eventually break down because they are confusing, inconsistent, or not trusted by the team.
             </p>
             <p>
-              In this fireside chat, Bill Brown sits down with Jarod Smith from Clogbusters and Ryan Shank from ShareWillow to talk through what actually works, why most bonus structures break down, and how to build a pay model your team understands and competes inside of.
+              In this fireside chat, Bill Brown from ServiceTitan Hacks sits down with Ryan Shank from ShareWillow and Ron, a contractor running One Hour Heating &amp; Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland, to talk through what incentive plans look like in the real world.
             </p>
-            <p>This is not a sales presentation.</p>
-            <p>
-              It is a practical conversation between contractors and people who work with contractors every day.
-            </p>
+            <p>This is a practical discussion, not a sales presentation.</p>
           </div>
         </div>
       </section>
@@ -311,6 +307,20 @@ export default function IncentivePlanWebinar() {
         </div>
       </section>
 
+      {/* Contractor Perspective */}
+      <section className="py-16 md:py-20 px-4">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Hear it from a contractor actually doing it</h2>
+          <div className="text-white/75 text-lg space-y-5 leading-relaxed">
+            <p>Most webinars on compensation stay theoretical.</p>
+            <p>
+              This conversation includes a contractor running two established home service brands. Ron will bring the operator perspective: what these plans look like in the field, what contractors worry about, what teams respond to, and what owners need to think through before making changes.
+            </p>
+            <p>This is not promotional. It is a real conversation about how this works in practice.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Who's Joining the Conversation */}
       <section id="speakers" className="py-16 md:py-24 px-4 bg-white/5">
         <div className="container mx-auto max-w-4xl">
@@ -319,12 +329,12 @@ export default function IncentivePlanWebinar() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Contractor Guest - Featured */}
             <Card className="bg-white/5 border-white/20 text-center p-8 md:col-span-1 ring-1 ring-[#ED254E]/30">
-              <img
-                src={jarodSmithImage}
-                alt={config.contractorName}
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              <div
+                className="w-24 h-24 rounded-full mx-auto mb-4 bg-white/10 flex items-center justify-center"
                 data-testid="img-contractor-guest"
-              />
+              >
+                <span className="text-3xl font-bold text-white/70">R</span>
+              </div>
               <p className="text-[#ED254E] text-xs font-semibold uppercase tracking-widest mb-2">Contractor Guest</p>
               <h3 className="text-xl font-bold text-white mb-1">{config.contractorName}</h3>
               <p className="text-[#ED254E] text-sm mb-4">{config.contractorTitle}</p>
@@ -369,7 +379,7 @@ export default function IncentivePlanWebinar() {
             className="h-7 object-contain mx-auto mb-6"
           />
           <p className="text-white/60 text-base leading-relaxed max-w-xl mx-auto">
-            ShareWillow helps service companies design, launch, and manage employee incentive plans and profit-sharing programs without complicated spreadsheets or outside consultants. It automates commission calculations, tracks spiffs and milestones, and gives techs a real-time view of their own earnings. ShareWillow has worked with more than 300 service businesses.
+            A quick look at how ShareWillow supports businesses that want more structure, visibility, and consistency around incentive plans. ShareWillow works with service companies on designing and managing performance-based pay without relying on manual spreadsheets.
           </p>
         </div>
       </section>

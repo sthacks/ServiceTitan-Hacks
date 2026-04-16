@@ -290,8 +290,8 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-referral-gap-webinar.png",
   },
   "/webinar/incentive-plan-problem": {
-    title: "The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail | Free Live Fireside Chat",
-    description: "A practical conversation about technician incentives, profit sharing, and how contractors can motivate teams without creating payroll chaos. Free live event April 14, 2026.",
+    title: "The Incentive Plan Problem | ServiceTitan Hacks Webinar",
+    description: "A fireside chat on contractor incentive plans with Bill Brown, Ryan Shank, and Ron from One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.",
     ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
   "/webinar/recruiting-replay": {
