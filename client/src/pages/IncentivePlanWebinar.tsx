@@ -22,7 +22,7 @@ const config = {
   webinarSupportingLine:
     "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
   webinarFeaturing: "Featuring Bill Brown, Ryan Shank, and Ron, owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.",
-  webinarDate: "Wednesday, April 14, 2026",
+  webinarDate: "Tuesday, April 21, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
   registrationUrl: "https://streamyard.com/watch/mBjWG2WcSfZ6",
@@ -136,7 +136,7 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
 
 export default function IncentivePlanWebinar() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const eventDate = new Date("2026-04-14T14:00:00-04:00");
+  const eventDate = new Date("2026-04-21T14:00:00-04:00");
 
   useEffect(() => {
     const handleScroll = () => setShowBackToTop(window.scrollY > 600);
