@@ -13,7 +13,7 @@ import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import shareWillowLogo from "@assets/sharewillow_logo_1774534288734.png";
 import ryanShankImage from "@assets/channels4_profile_1774537058812.jpg";
-import jarodSmithImage from "@assets/jarod-smith-DA-thda3_1774537143521.jpeg";
+import ronImage from "@assets/ron_williams_1776371779028.jpg";
 import heroPromoImage from "@assets/sharewillow1_(1)_1774540582965.png";
 
 const config = {
@@ -328,12 +328,12 @@ export default function IncentivePlanWebinar() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Contractor Guest - Featured */}
             <Card className="bg-white/5 border-white/20 text-center p-8 md:col-span-1 ring-1 ring-[#ED254E]/30">
-              <div
-                className="w-24 h-24 rounded-full mx-auto mb-4 bg-white/10 flex items-center justify-center"
+              <img
+                src={ronImage}
+                alt={config.contractorName}
+                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                 data-testid="img-contractor-guest"
-              >
-                <span className="text-3xl font-bold text-white/70">R</span>
-              </div>
+              />
               <p className="text-[#ED254E] text-xs font-semibold uppercase tracking-widest mb-2">Contractor Guest</p>
               <h3 className="text-xl font-bold text-white mb-1">{config.contractorName}</h3>
               <p className="text-[#ED254E] text-sm mb-4">{config.contractorTitle}</p>
