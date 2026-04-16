@@ -246,7 +246,7 @@ export default function IncentivePlanWebinar() {
               But most bonus or incentive plans eventually break down because they are confusing, inconsistent, or not trusted by the team.
             </p>
             <p>
-              In this fireside chat, Bill Brown from ServiceTitan Hacks sits down with Ryan Shank from ShareWillow and Ron, a contractor running One Hour Heating &amp; Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland, to talk through what incentive plans look like in the real world.
+              In this fireside chat, Bill Brown from ServiceTitan Hacks sits down with Ryan Shank from ShareWillow and Ron Williams, a contractor running One Hour Heating &amp; Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland, to talk through what incentive plans look like in the real world.
             </p>
             <p>This is a practical discussion, not a sales presentation.</p>
           </div>
