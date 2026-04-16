@@ -112,7 +112,7 @@ const events: Event[] = [
     type: "webinar",
     image: referProHeroImage,
     link: "/webinar/referral-gap",
-    status: "upcoming",
+    status: "past",
     hosts: ["Bill Brown", "Murphy Nadauld"]
   },
   {
