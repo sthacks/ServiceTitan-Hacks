@@ -16,7 +16,7 @@ import smartACWebinarImage from "@assets/smartac_(9)_1769011910928.png";
 import contractorCommerceImage from "@assets/contractor commerce (7).png";
 import winkWebinarImage from "@assets/wink_(2)_1769014863023.png";
 import webinarHeroImage from "@assets/switchy_images_(9)_1767654151254.png";
-import incentivePlanImage from "@assets/sharewillow1_(1)_1774540582965.png";
+import incentivePlanImage from "@assets/ChatGPT_Image_Apr_16,_2026,_04_43_06_PM_1776372204837.png";
 import equipmentPricingImage from "@assets/webinar_image_1769885730082.png";
 import referProHeroImage from "@assets/ReferPro_(2)_1772815536588.png";
 

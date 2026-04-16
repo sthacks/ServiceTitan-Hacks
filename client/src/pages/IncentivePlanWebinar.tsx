@@ -14,7 +14,7 @@ import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import shareWillowLogo from "@assets/sharewillow_logo_1774534288734.png";
 import ryanShankImage from "@assets/channels4_profile_1774537058812.jpg";
 import ronImage from "@assets/ron_williams_1776371779028.jpg";
-import heroPromoImage from "@assets/sharewillow1_(1)_1774540582965.png";
+import heroPromoImage from "@assets/ChatGPT_Image_Apr_16,_2026,_04_43_06_PM_1776372204837.png";
 
 const config = {
   webinarTitle: "The Incentive Plan Problem",
