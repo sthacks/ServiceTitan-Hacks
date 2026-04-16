@@ -291,7 +291,7 @@ export const metadata: Record<string, PageMetadata> = {
   },
   "/webinar/incentive-plan-problem": {
     title: "The Incentive Plan Problem | ServiceTitan Hacks Webinar",
-    description: "A fireside chat on contractor incentive plans with Bill Brown, Ryan Shank, and Ron from One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.",
+    description: "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
     ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
   "/webinar/recruiting-replay": {
