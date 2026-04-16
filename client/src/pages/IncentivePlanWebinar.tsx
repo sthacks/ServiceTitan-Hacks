@@ -21,7 +21,7 @@ const config = {
   webinarSubtitle: "Why Most Contractor Bonus Plans Fail",
   webinarSupportingLine:
     "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
-  webinarFeaturing: "Featuring Bill Brown, Ryan Shank, and Ron, owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.",
+  webinarFeaturing: "Featuring Bill Brown, Ryan Shank, and Ron Williams, owner of One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing in Ocean City, Maryland.",
   webinarDate: "Tuesday, April 21, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
@@ -29,7 +29,7 @@ const config = {
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Bill previously owned and scaled a residential HVAC company and now works with home service contractors across the country on operations, systems, and team performance. He hosts this conversation and keeps it grounded in what actually works in the field.",
-  contractorName: "Ron",
+  contractorName: "Ron Williams",
   contractorTitle: "Owner, One Hour Heating & Air Conditioning and Benjamin Franklin Plumbing | Ocean City, Maryland",
   contractorBio: "Ron runs two established home service brands and brings the operator perspective to this conversation: what incentive plans look like in the field, what contractors worry about, how teams actually respond, and what owners need to think through before making changes.",
   guestName: "Ryan Shank",
