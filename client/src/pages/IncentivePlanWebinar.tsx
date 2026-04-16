@@ -25,8 +25,7 @@ const config = {
   webinarDate: "Wednesday, April 14, 2026",
   webinarTime: "2:00 PM",
   timezone: "EST",
-  registrationUrl:
-    "https://riverside.com/webinar/registration/eyJzbHVnIjoiYmlsbC1icm93bnMtc3R1ZGlvLVZNTmdnIiwiZXZlbnRJZCI6IjY5YjAxZjc3ODgwNjllYjk1YTJlZTA1MyIsInByb2plY3RJZCI6IjY5YjAxZjc3MWJiOWQxOTdlNjJiY2MxOCJ9",
+  registrationUrl: "https://streamyard.com/watch/mBjWG2WcSfZ6",
   hostName: "Bill Brown",
   hostTitle: "Founder, ServiceTitan Hacks",
   hostBio: "Bill previously owned and scaled a residential HVAC company and now works with home service contractors across the country on operations, systems, and team performance. He hosts this conversation and keeps it grounded in what actually works in the field.",
