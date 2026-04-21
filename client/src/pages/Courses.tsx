@@ -111,60 +111,62 @@ export default function Courses() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {courses.map((course, index) => (
-              <Card key={index} className="hover-elevate flex flex-col">
-                <CardHeader className="p-0">
-                  <div className="aspect-video overflow-hidden rounded-t-lg bg-muted">
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge className={getLevelColor(course.level)} data-testid={`badge-level-${course.level.toLowerCase()}`}>
-                      {course.level}
-                    </Badge>
-                    {course.rating && (
-                      <div className="flex items-center gap-1 text-sm">
-                        <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-                        <span className="font-semibold">{course.rating}</span>
-                        <span className="text-muted-foreground">({course.reviews})</span>
-                      </div>
-                    )}
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold font-heading mb-3 line-clamp-2">
-                    {course.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">
-                    {course.description}
-                  </p>
-                  
-                  <div className="flex items-center justify-between gap-4 mt-auto">
-                    <div className="text-2xl font-bold text-primary">
-                      {course.price}
+              <a
+                key={index}
+                href={course.url}
+                target={course.url.startsWith('http') ? "_blank" : undefined}
+                rel={course.url.startsWith('http') ? "noopener noreferrer" : undefined}
+                data-testid={`link-course-${index}`}
+                className="block"
+              >
+                <Card className="hover-elevate flex flex-col h-full cursor-pointer">
+                  <CardHeader className="p-0">
+                    <div className="aspect-video overflow-hidden rounded-t-lg bg-muted">
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                    <a
-                      href={course.url}
-                      target={course.url.startsWith('http') ? "_blank" : undefined}
-                      rel={course.url.startsWith('http') ? "noopener noreferrer" : undefined}
-                      data-testid={`link-course-${index}`}
-                    >
-                      <Button className="gap-2">
+                  </CardHeader>
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge className={getLevelColor(course.level)} data-testid={`badge-level-${course.level.toLowerCase()}`}>
+                        {course.level}
+                      </Badge>
+                      {course.rating && (
+                        <div className="flex items-center gap-1 text-sm">
+                          <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                          <span className="font-semibold">{course.rating}</span>
+                          <span className="text-muted-foreground">({course.reviews})</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <h3 className="text-xl font-semibold font-heading mb-3 line-clamp-2">
+                      {course.title}
+                    </h3>
+
+                    <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">
+                      {course.description}
+                    </p>
+
+                    <div className="flex items-center justify-between gap-4 mt-auto">
+                      <div className="text-2xl font-bold text-primary">
+                        {course.price}
+                      </div>
+                      <Button className="gap-2" tabIndex={-1}>
                         {course.url.startsWith('http') ? (
                           <>Enroll Now <ExternalLink className="h-4 w-4" /></>
                         ) : (
                           'View Course'
                         )}
                       </Button>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
 
