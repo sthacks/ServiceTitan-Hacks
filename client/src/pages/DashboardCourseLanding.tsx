@@ -324,7 +324,6 @@ export default function DashboardCourseLanding() {
                 <Card key={i} className="bg-zinc-900 border-zinc-800 p-6" data-testid={`card-testimonial-${i}`}>
                   <CardContent className="p-0 flex flex-col gap-4">
                     <Quote className="h-5 w-5 text-primary flex-shrink-0" />
-                    <p className="font-semibold text-white text-sm">{t.headline}</p>
                     <p className="text-zinc-400 text-sm leading-relaxed flex-1">{t.body}</p>
                     <p className="text-zinc-600 text-xs">{t.attribution}</p>
                   </CardContent>
