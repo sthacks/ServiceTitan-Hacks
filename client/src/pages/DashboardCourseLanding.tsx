@@ -64,7 +64,7 @@ const testimonials = [
   {
     headline: "[Review headline]",
     body: "This class is super helpful! The step-by-step directions make it super easy to accomplish your dashboard dreams!",
-    attribution: "[Name, Company]",
+    attribution: "Chris B.",
   },
   {
     headline: "[Review headline]",
