@@ -18,7 +18,7 @@ import {
   ImageIcon,
   Quote,
 } from "lucide-react";
-import billDashboardImage from "@assets/ChatGPT_Image_Apr_21,_2026,_10_48_00_AM_1776782956503.png";
+import billDashboardImage from "@assets/DIY_ServiceTitan_Dashboard_Course_1776783149232.png";
 import flowImage from "@assets/1_1776781775627.png";
 import kpiDashboardImage from "@assets/2_1776781793671.png";
 import tvDisplayImage from "@assets/3_1776781805294.png";
