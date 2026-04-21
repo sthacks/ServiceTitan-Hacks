@@ -19,7 +19,7 @@ import {
   Quote,
 } from "lucide-react";
 import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
-import processImage from "@assets/process_1776778912044.png";
+import flowImage from "@assets/flow_1776779229012.png";
 import kpiDashboardImage from "@assets/ChatGPT_Image_Apr_21,_2026,_09_42_27_AM_1776779073779.png";
 
 const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
@@ -123,7 +123,7 @@ const learnFeatures = [
     title: "Connect ServiceTitan to Google Sheets",
     description:
       "Use Zapier to automatically send report data from ServiceTitan into a Google Sheet — no manual exports.",
-    image: processImage,
+    image: flowImage,
   },
   {
     title: "Build Clean KPI Dashboards",
