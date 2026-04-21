@@ -27,6 +27,7 @@ import HiringROICalculator from "@/pages/HiringROICalculator";
 import TruckRollCalculator from "@/pages/TruckRollCalculator";
 import DashboardCourse from "@/pages/DashboardCourse";
 import DashboardCourseLanding from "@/pages/DashboardCourseLanding";
+import DashboardPreview from "@/pages/DashboardPreview";
 import DashboardCourseContent from "@/pages/DashboardCourseContent";
 import DashboardCourseCheckout from "@/pages/DashboardCourseCheckout";
 import FixUglyFormsCourse from "@/pages/FixUglyFormsCourse";
@@ -98,6 +99,7 @@ function Router() {
       <Route path="/truck-roll-calculator" component={TruckRollCalculator} />
       <Route path="/dashboard-course" component={DashboardCourse} />
       <Route path="/dashboard-course-landing" component={DashboardCourseLanding} />
+      <Route path="/dashboard-preview" component={DashboardPreview} />
       <Route path="/dashboard-course/content" component={DashboardCourseContent} />
       <Route path="/dashboard-course/checkout" component={DashboardCourseCheckout} />
       <Route path="/fix-ugly-forms-course" component={FixUglyFormsCourse} />
