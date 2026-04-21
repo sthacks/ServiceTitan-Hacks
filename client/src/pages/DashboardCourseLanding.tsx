@@ -21,7 +21,7 @@ import {
 import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
 import flowImage from "@assets/1_1776781547797.png";
 import kpiDashboardImage from "@assets/2_1776781600566.png";
-import tvDisplayImage from "@assets/ChatGPT_Image_Apr_21,_2026,_09_47_22_AM_1776779296178.png";
+import tvDisplayImage from "@assets/3_1776781618995.png";
 
 const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
 
