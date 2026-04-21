@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
 import flowImage from "@assets/1_1776781775627.png";
-import kpiDashboardImage from "@assets/2_1776781600566.png";
+import kpiDashboardImage from "@assets/2_1776781793671.png";
 import tvDisplayImage from "@assets/3_1776781618995.png";
 
 const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
