@@ -21,6 +21,7 @@ import {
 import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
 import flowImage from "@assets/flow_1776779229012.png";
 import kpiDashboardImage from "@assets/ChatGPT_Image_Apr_21,_2026,_09_42_27_AM_1776779073779.png";
+import tvDisplayImage from "@assets/ChatGPT_Image_Apr_21,_2026,_09_47_22_AM_1776779296178.png";
 
 const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
 
@@ -135,7 +136,7 @@ const learnFeatures = [
     title: "Display on Any Office TV",
     description:
       "Get your dashboard live on a TV in your office — no developers, no expensive software, no IT team needed.",
-    image: "https://import.cdn.thinkific.com/1072722/RYzu5KS6Sb2KuHWBfVvp_Dashboard%20Example%20(1).png",
+    image: tvDisplayImage,
   },
 ];
 
