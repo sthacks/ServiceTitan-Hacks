@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
 import processImage from "@assets/process_1776778912044.png";
+import kpiDashboardImage from "@assets/ChatGPT_Image_Apr_21,_2026,_09_42_27_AM_1776779073779.png";
 
 const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
 
@@ -128,7 +129,7 @@ const learnFeatures = [
     title: "Build Clean KPI Dashboards",
     description:
       "Create professional dashboards for technician performance, sales, estimates, and installs using Looker Studio.",
-    image: "https://import.cdn.thinkific.com/1072722/oG04g0LZQsiIf0jePvPc_Dashboard%20Example%20(1).png",
+    image: kpiDashboardImage,
   },
   {
     title: "Display on Any Office TV",
