@@ -57,7 +57,7 @@ const dashboardCards = [
 
 const testimonials = [
   {
-    headline: "[Review headline]",
+    headline: "Service Titan Hacks Dashboard for the WIN!!",
     body: "[Review text goes here — replace this with a real quote from a contractor who completed the course.]",
     attribution: "[Name, Company]",
   },
