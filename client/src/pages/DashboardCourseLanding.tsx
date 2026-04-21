@@ -311,10 +311,7 @@ export default function DashboardCourseLanding() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3 text-center">
               What contractors are saying
             </h2>
-            <p className="text-center text-zinc-500 mb-12 text-sm">
-              [Replace placeholder cards with real reviews from course students]
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 mt-12">
               {testimonials.map((t, i) => (
                 <Card key={i} className="bg-zinc-900 border-zinc-800 p-6" data-testid={`card-testimonial-${i}`}>
                   <CardContent className="p-0 flex flex-col gap-4">
