@@ -18,7 +18,6 @@ import {
   ImageIcon,
   Quote,
 } from "lucide-react";
-import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
 import flowImage from "@assets/1_1776781775627.png";
 import kpiDashboardImage from "@assets/2_1776781793671.png";
 import tvDisplayImage from "@assets/3_1776781805294.png";
@@ -222,15 +221,6 @@ export default function DashboardCourseLanding() {
               </div>
 
             </div>
-
-            {/* Full-width dashboard preview */}
-            <img
-              src={heroImage}
-              alt="ServiceTitan TV dashboard showing Technician Performance metrics in a conference room"
-              className="w-full h-auto rounded-lg mt-10"
-              loading="eager"
-              data-testid="img-hero-dashboard"
-            />
 
             {/* Course meta strip */}
             <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
