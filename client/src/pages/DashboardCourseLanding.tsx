@@ -174,7 +174,7 @@ export default function DashboardCourseLanding() {
         {/* ── Hero ─────────────────────────────────────────────── */}
         <section className="py-16 md:py-20 bg-background">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="grid lg:grid-cols-2 gap-10 md:gap-14 items-start">
+            <div className="grid lg:grid-cols-[3fr_5fr] gap-10 md:gap-14 items-start">
 
               {/* Left: copy */}
               <div>
