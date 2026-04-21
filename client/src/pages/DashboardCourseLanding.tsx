@@ -288,7 +288,7 @@ export default function DashboardCourseLanding() {
             <div className="grid md:grid-cols-3 gap-8 mb-14">
               {learnFeatures.map((feature, i) => (
                 <Card key={i} className="bg-zinc-950 border-zinc-800 overflow-hidden">
-                  <div className="aspect-[4/3] bg-zinc-900 overflow-hidden">
+                  <div className="aspect-[3/2] bg-zinc-900 overflow-hidden">
                     <img
                       src={feature.image}
                       alt={`${feature.title} — dashboard course screenshot`}
