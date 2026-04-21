@@ -19,7 +19,7 @@ import {
   Quote,
 } from "lucide-react";
 import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
-import flowImage from "@assets/1_1776781547797.png";
+import flowImage from "@assets/1_1776781775627.png";
 import kpiDashboardImage from "@assets/2_1776781600566.png";
 import tvDisplayImage from "@assets/3_1776781618995.png";
 
