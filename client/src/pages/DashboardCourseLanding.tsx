@@ -15,7 +15,6 @@ import {
   LayoutList,
   CheckCircle,
   XCircle,
-  ImageIcon,
   Quote,
 } from "lucide-react";
 import billDashboardImage from "@assets/DIY_ServiceTitan_Dashboard_Course_1776783149232.png";
@@ -40,20 +39,6 @@ const whatYouGetItems = [
   "Works with HVAC, plumbing, electrical, and other trades",
 ];
 
-const dashboardCards = [
-  {
-    title: "Technician performance dashboard",
-    description: "See revenue, jobs, and averages per tech at a glance.",
-  },
-  {
-    title: "CSR and call center dashboard",
-    description: "Track call volume, booking rate, and CSR activity in real time.",
-  },
-  {
-    title: "Office TV scoreboard",
-    description: "Keep the whole team aligned with live numbers on the wall.",
-  },
-];
 
 const testimonials = [
   {
@@ -228,37 +213,6 @@ export default function DashboardCourseLanding() {
               </div>
               <span>Step-by-step video walkthroughs</span>
               <span>Dashboard template included</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ── See what you can build ───────────────────────────── */}
-        <section className="py-16 bg-zinc-950 text-white">
-          <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3 text-center">
-              See what you can build
-            </h2>
-            <p className="text-center text-zinc-400 mb-12 max-w-xl mx-auto">
-              These are the kinds of dashboards you will walk away with — live, on a TV, updating automatically.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {dashboardCards.map((card, i) => (
-                <Card key={i} className="bg-zinc-900 border-zinc-800 overflow-hidden">
-                  <div
-                    className="aspect-[16/9] bg-zinc-800 flex flex-col items-center justify-center gap-3 border-b border-zinc-700"
-                    data-testid={`placeholder-dashboard-${i}`}
-                  >
-                    <ImageIcon className="h-8 w-8 text-zinc-600" />
-                    <p className="text-xs text-zinc-600 px-4 text-center">
-                      [Replace with real dashboard screenshot]
-                    </p>
-                  </div>
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-white mb-1">{card.title}</h3>
-                    <p className="text-sm text-zinc-400">{card.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
