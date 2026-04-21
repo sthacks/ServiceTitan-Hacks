@@ -59,7 +59,7 @@ const testimonials = [
   {
     headline: "Service Titan Hacks Dashboard for the WIN!!",
     body: "Service Titan Dashboard is an absolute game-changer! I rarely write reviews, but I felt compelled to share my experience with this one. As someone with limited technical expertise, I was skeptical about my ability to build a dashboard that met my specific needs. However, this step-by-step, easily understandable course proved to be a lifesaver. Not only did I successfully build the dashboard, but it exceeded my expectations.",
-    attribution: "[Name, Company]",
+    attribution: "Phil R.",
   },
   {
     headline: "[Review headline]",
