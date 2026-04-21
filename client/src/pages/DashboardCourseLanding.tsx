@@ -63,7 +63,7 @@ const testimonials = [
   },
   {
     headline: "[Review headline]",
-    body: "[Review text goes here — replace this with a real quote from a contractor who completed the course.]",
+    body: "This class is super helpful! The step-by-step directions make it super easy to accomplish your dashboard dreams!",
     attribution: "[Name, Company]",
   },
   {
