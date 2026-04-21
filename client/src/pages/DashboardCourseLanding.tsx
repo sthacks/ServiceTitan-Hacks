@@ -18,6 +18,8 @@ import {
   ImageIcon,
   Quote,
 } from "lucide-react";
+import heroImage from "@assets/ServiceTitan Dashboard Course_1763229089687.png";
+import processImage from "@assets/process_1776778912044.png";
 
 const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
 
@@ -120,7 +122,7 @@ const learnFeatures = [
     title: "Connect ServiceTitan to Google Sheets",
     description:
       "Use Zapier to automatically send report data from ServiceTitan into a Google Sheet — no manual exports.",
-    image: "https://import.cdn.thinkific.com/1072722/fKfCYCRZQfyF09gZPTqr_Zapier%20Config.png",
+    image: processImage,
   },
   {
     title: "Build Clean KPI Dashboards",
@@ -219,8 +221,17 @@ export default function DashboardCourseLanding() {
 
             </div>
 
+            {/* Full-width dashboard preview */}
+            <img
+              src={heroImage}
+              alt="ServiceTitan TV dashboard showing Technician Performance metrics in a conference room"
+              className="w-full h-auto rounded-lg mt-10"
+              loading="eager"
+              data-testid="img-hero-dashboard"
+            />
+
             {/* Course meta strip */}
-            <div className="flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-border text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-primary" />
                 <span>2 Chapters</span>
