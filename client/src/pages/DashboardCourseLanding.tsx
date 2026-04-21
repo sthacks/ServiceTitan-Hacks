@@ -18,6 +18,7 @@ import {
   ImageIcon,
   Quote,
 } from "lucide-react";
+import billDashboardImage from "@assets/ChatGPT_Image_Apr_21,_2026,_10_48_00_AM_1776782956503.png";
 import flowImage from "@assets/1_1776781775627.png";
 import kpiDashboardImage from "@assets/2_1776781793671.png";
 import tvDisplayImage from "@assets/3_1776781805294.png";
@@ -209,16 +210,14 @@ export default function DashboardCourseLanding() {
                 </p>
               </div>
 
-              {/* Right: hero image placeholder */}
-              <div
-                className="w-full rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/30 flex flex-col items-center justify-center text-center px-6 py-16 gap-4 min-h-[360px]"
-                data-testid="placeholder-hero-image"
-              >
-                <ImageIcon className="h-10 w-10 text-muted-foreground/40" />
-                <p className="text-sm text-muted-foreground/60 leading-snug max-w-xs">
-                  [Replace with real photo of Bill pointing at dashboard on TV]
-                </p>
-              </div>
+              {/* Right: hero image */}
+              <img
+                src={billDashboardImage}
+                alt="Bill Brown pointing at a ServiceTitan Technician Performance dashboard on a TV"
+                className="w-full h-auto rounded-lg object-cover"
+                loading="eager"
+                data-testid="img-hero-bill-dashboard"
+              />
 
             </div>
 
