@@ -1,0 +1,140 @@
+Update the existing DIY ServiceTitan Dashboards landing page at servicetitanhacks.com/dashboard-course.
+
+Do not redesign the whole page. Keep the current structure, branding, dark theme, colors, and overall layout style. This should be an optimization focused on increasing conversions with stronger proof and clearer buying reasons.
+
+Goals:
+- Make the page feel more trustworthy and conversion-focused
+- Add social proof and proof of outcome
+- Make it clearer who the course is for
+- Reduce uncertainty and objections
+- Keep one primary goal: buy the course
+
+Important:
+- Keep the current price at $97
+- Keep the current course positioning as a DIY course for home service companies using ServiceTitan
+- Keep the page clean and not overly long
+- Use the existing ServiceTitan Hacks branding and style
+- Make the CTA buttons consistent and prominent
+- Do not add any fake testimonials or made-up numbers
+- Add placeholder testimonial/review cards that I can easily replace with real reviews later
+- Add placeholder image sections for real student dashboard screenshots that I can replace later
+- Add a placeholder for a real hero image of me pointing to the actual dashboard displayed on a real TV
+- The hero image placeholder must be easy to replace later with my uploaded screenshot
+
+Make these specific updates:
+
+1. Hero section
+- Keep the current hero structure, but improve the copy
+- Headline should be clearer and more outcome-driven
+- Add a stronger subheadline focused on building your own ServiceTitan dashboard system using Google Sheets, Zapier, and TVs in the office
+- Keep the $97 price visible
+- Keep a strong CTA button above the fold
+- Add a short trust line under the CTA such as:
+  "Lifetime access. DIY setup. Built for home service companies."
+- If there is room, add a small bullet list under the hero with 3 short value points:
+  - Send ServiceTitan data into Google Sheets
+  - Build clean KPI dashboards
+  - Display them on a TV in your office
+
+2. Add a hero image placeholder
+In the hero area, create a prominent image placeholder on the right side for a real photo of me pointing at the actual dashboard on an actual TV.
+
+Requirements:
+- Use a clearly labeled placeholder container
+- Label it something like:
+  [Replace with real photo of Bill pointing at dashboard on TV]
+- Style it so it fits the current page and looks polished even before the final image is added
+- Make sure the image container supports proper desktop and mobile responsiveness
+- Keep it easy to swap out later without changing the layout
+- This image should feel like proof and authenticity, not stock art
+
+3. Add a new proof section directly below the hero
+Create a new section titled:
+"See what you can build"
+
+Include 3 cards with placeholder images for dashboard screenshots.
+Each card should have:
+- a placeholder image area
+- a short title
+- one sentence of supporting text
+
+Use example titles like:
+- Technician performance dashboard
+- CSR and call center dashboard
+- Office TV scoreboard
+
+This section should visually communicate that buyers are getting a practical result, not just videos.
+
+4. Add a reviews/testimonials section
+Create a new section titled:
+"What contractors are saying"
+
+Add 3 testimonial cards with placeholder content only.
+Use obvious placeholder labels like:
+- [Review headline]
+- [Review text goes here]
+- [Name, Company]
+
+Make these easy for me to edit later.
+Style them cleanly and professionally.
+Do not invent review copy.
+
+5. Add a "Who this course is for" section
+Create a simple section with two columns or cards.
+
+Left side:
+"This course is for you if..."
+Include 4 short bullets such as:
+- You use ServiceTitan
+- You want better visibility into KPIs
+- You want to build and own your own dashboard system
+- You do not want to pay for another expensive dashboard platform
+
+Right side:
+"This course is not for you if..."
+Include 3 short bullets such as:
+- You want a done-for-you dashboard service
+- You do not want to touch setup at all
+- You are looking for custom business intelligence consulting
+
+6. Add a FAQ section near the bottom
+Create a simple accordion or clean stacked FAQ section with these questions:
+- Do I need to know Zapier?
+- Do I need to be advanced with Google Sheets?
+- Can I display these dashboards on a TV in my office?
+- How long does setup usually take?
+- Is this only for owners?
+- Do I get lifetime access?
+
+Write concise, benefit-focused answers in plain language.
+Do not overcomplicate them.
+
+7. Improve the final CTA section
+Keep the final CTA section, but make it more direct.
+Use a headline like:
+"Build your own ServiceTitan dashboard system"
+Add one short supporting sentence.
+Keep the $97 price visible.
+Use a strong CTA button.
+
+8. General UX improvements
+- Make sure spacing is clean and modern
+- Make the page more scannable
+- Improve section headings for clarity
+- Use strong visual hierarchy
+- Make mobile responsiveness solid
+- Keep load time reasonable
+- Use reusable components where possible
+
+9. Editing convenience
+Wherever reviews, screenshot placeholders, or the hero photo placeholder are added, make sure the text and images are easy to swap later.
+If the page uses a CMS, schema, or component props, structure it so these sections are easy to update without rebuilding the page.
+
+Copy direction:
+Use simple, direct language.
+Write at about an 8th grade reading level.
+Do not sound overly salesy or hypey.
+Focus on practical outcomes, clarity, and trust.
+
+Before making changes, inspect the current page and preserve anything that already works visually.
+Then implement the updates above in a way that feels like a conversion-focused improvement, not a brand new page.
