@@ -115,6 +115,7 @@ const learnFeatures = [
     description:
       "Automatically send report data from ServiceTitan into Google Sheets with Zapier. No manual exports.",
     image: flowImage,
+    alt: "ServiceTitan to Zapier to Google Sheets workflow graphic",
   },
   {
     step: "2",
@@ -122,6 +123,7 @@ const learnFeatures = [
     description:
       "Create dashboards for technician performance, sales, estimates, and installs using Google Sheets and Looker Studio.",
     image: kpiDashboardImage,
+    alt: "Example KPI dashboard for ServiceTitan home service companies",
   },
   {
     step: "3",
@@ -129,6 +131,7 @@ const learnFeatures = [
     description:
       "Put your dashboard on a TV in your office so your whole team can see the numbers all day.",
     image: tvDisplayImage,
+    alt: "Dashboard display on an office TV for home service teams",
   },
 ];
 
@@ -156,28 +159,67 @@ export default function DashboardCourseLanding() {
 
   const courseSchema = {
     "@context": "https://schema.org",
-    "@type": "Course",
-    name: "DIY ServiceTitan Dashboards",
-    description:
-      "Build an automated TV dashboard with live ServiceTitan data. 15 lessons, 2 chapters. Perfect for HVAC, plumbing, electrical shops.",
-    provider: {
-      "@type": "Organization",
-      name: "ServiceTitan Hacks",
-    },
-    offers: {
-      "@type": "Offer",
-      price: "97",
-      priceCurrency: "USD",
-    },
+    "@graph": [
+      {
+        "@type": "Course",
+        name: "DIY ServiceTitan Dashboards",
+        description:
+          "A step-by-step DIY course for home service companies. Learn how to send ServiceTitan data into Google Sheets, build KPI dashboards, and display them live on a TV in your office.",
+        url: "https://servicetitanhacks.com/dashboard-course",
+        provider: {
+          "@type": "Organization",
+          name: "ServiceTitan Hacks",
+          url: "https://servicetitanhacks.com",
+        },
+        instructor: {
+          "@type": "Person",
+          name: "Bill Brown",
+        },
+        offers: {
+          "@type": "Offer",
+          price: "97",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: "https://servicetitanhacks.thinkific.com/enroll/3344256",
+        },
+        hasCourseInstance: {
+          "@type": "CourseInstance",
+          courseMode: "online",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://servicetitanhacks.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Courses",
+            item: "https://servicetitanhacks.com/courses",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "DIY ServiceTitan Dashboards",
+            item: "https://servicetitanhacks.com/dashboard-course",
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="DIY ServiceTitan Dashboards Course"
-        description="Build your own live, TV-ready dashboards for ServiceTitan. Track KPIs, sales, installs and more in real time for your home service company."
-        keywords="TV dashboard course, ServiceTitan dashboard, automated reporting, KPI dashboard, home service"
-        canonicalUrl="https://servicetitanhacks.com/dashboard-course-landing"
+        title="DIY ServiceTitan Dashboards Course | Build KPI Dashboards for ServiceTitan"
+        description="Learn how to send ServiceTitan data into Google Sheets, build KPI dashboards, and display them on a TV in your office with this DIY step-by-step course."
+        keywords="ServiceTitan dashboards, KPI dashboard, ServiceTitan Google Sheets, contractor dashboard, home service dashboard, office TV dashboard, ServiceTitan course"
+        canonicalUrl="https://servicetitanhacks.com/dashboard-course"
         ogImage="https://servicetitanhacks.com/og-dashboard-course.png"
         schemaData={courseSchema}
       />
@@ -270,7 +312,7 @@ export default function DashboardCourseLanding() {
                   <div className="aspect-[2/1] bg-zinc-900 overflow-hidden flex-shrink-0">
                     <img
                       src={feature.image}
-                      alt={`${feature.title} — dashboard course screenshot`}
+                      alt={feature.alt}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
