@@ -4,6 +4,9 @@ declare global {
   }
 }
 
+const currentPageUrl = () =>
+  typeof window !== "undefined" ? window.location.href : undefined;
+
 export const trackPixelEvent = (event: string, params?: Record<string, unknown>) => {
   if (typeof window === "undefined" || typeof window.fbq !== "function") return;
   window.fbq("track", event, params);
@@ -14,6 +17,8 @@ export const trackCustomPixelEvent = (event: string, params?: Record<string, unk
   window.fbq("trackCustom", event, params);
 };
 
+// PageView is fired exclusively by GTM — do not call this from app code.
+// Kept here only as a reference; the analytics hook no longer calls it.
 export const trackPixelPageView = () => {
   trackPixelEvent("PageView");
 };
@@ -25,20 +30,23 @@ export const trackViewContent = (params: {
   value: number;
   currency: string;
 }) => {
-  trackPixelEvent("ViewContent", params);
+  trackPixelEvent("ViewContent", {
+    ...params,
+    page_url: currentPageUrl(),
+  });
 };
 
+// On CTA click: fires one custom CheckoutButtonClick event only.
+// Lead and InitiateCheckout are NOT fired from website code.
+// If GTM fires InitiateCheckout via an outbound-link trigger, disable that trigger in GTM.
 export const trackCTAClick = (placement: "hero" | "footer") => {
-  trackPixelEvent("Lead", {
-    content_name: "DIY ServiceTitan Dashboards",
-    content_category: "Course",
-    value: 97,
-    currency: "USD",
-    content_ids: ["dashboard-course-3344256"],
-  });
   trackCustomPixelEvent("CheckoutButtonClick", {
     placement,
     content_name: "DIY ServiceTitan Dashboards",
+    value: 97,
+    currency: "USD",
+    content_ids: ["dashboard-course-3344256"],
+    page_url: currentPageUrl(),
   });
 };
 
