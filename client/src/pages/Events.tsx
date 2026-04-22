@@ -126,7 +126,8 @@ const events: Event[] = [
     type: "webinar",
     image: incentivePlanImage,
     link: "/webinar/incentive-plan-problem",
-    status: "upcoming",
+    youtubeId: "78IuakQeaDA",
+    status: "past",
     hosts: ["Bill Brown", "Ron Williams", "Ryan Shank"]
   }
 ];
