@@ -137,17 +137,6 @@ const learnFeatures = [
 
 export default function DashboardCourseLanding() {
   useEffect(() => {
-    if (!document.getElementById("thinkific-product-embed")) {
-      const script = document.createElement("script");
-      script.id = "thinkific-product-embed";
-      script.type = "text/javascript";
-      script.src =
-        "https://assets.thinkific.com/js/embeds/product-cards-client.min.js";
-      document.body.appendChild(script);
-    }
-  }, []);
-
-  useEffect(() => {
     trackViewContent({
       content_name: "DIY ServiceTitan Dashboards",
       content_category: "Course",
