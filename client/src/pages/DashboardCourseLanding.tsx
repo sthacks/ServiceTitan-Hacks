@@ -21,6 +21,7 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import billDashboardImage from "@assets/DIY_ServiceTitan_Dashboard_Course_1776783149232.png";
+import billHeadshotImage from "@assets/Facebook_Cover_Photo_(3762_x_1365_px).png_1776861539792.png";
 import flowImage from "@assets/1_1776781775627.png";
 import kpiDashboardImage from "@assets/2_1776781793671.png";
 import tvDisplayImage from "@assets/3_1776781805294.png";
@@ -371,7 +372,7 @@ export default function DashboardCourseLanding() {
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-shrink-0">
                 <img
-                  src="https://s3.amazonaws.com/thinkific-import/1072722/TZI7fi85RWmx6RdKN13O_Headshot%20Circle.png"
+                  src={billHeadshotImage}
                   alt="Bill Brown — ServiceTitan Hacks founder and course instructor"
                   className="w-52 h-52 rounded-full object-cover shadow-xl"
                   loading="lazy"
