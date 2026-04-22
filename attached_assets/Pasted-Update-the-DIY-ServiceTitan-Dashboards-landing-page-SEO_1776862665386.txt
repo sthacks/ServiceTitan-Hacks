@@ -1,0 +1,150 @@
+Update the DIY ServiceTitan Dashboards landing page SEO settings and on-page SEO elements for servicetitanhacks.com/dashboard-course.
+
+Do not redesign the page. Do not change the visual layout unless needed for SEO structure. Focus only on SEO-related improvements for this landing page.
+
+Main goal:
+Improve the page's search relevance, click-through rate, and basic technical SEO for people searching for ServiceTitan dashboards, ServiceTitan KPI dashboards, contractor dashboards, and ServiceTitan Google Sheets reporting.
+
+Important context:
+- This is a sales page for a paid course called DIY ServiceTitan Dashboards
+- The audience is home service companies using ServiceTitan
+- The course teaches people how to send ServiceTitan data into Google Sheets, build KPI dashboards, and display them on a TV in the office
+- Keep the copy natural and readable
+- Do not keyword stuff
+- Keep branding intact
+- Use plain, direct language
+
+Make these exact SEO updates:
+
+1. Set the page title
+Use this exact SEO title tag, or something extremely close if character limits require a slight adjustment:
+
+DIY ServiceTitan Dashboards Course | Build KPI Dashboards for ServiceTitan
+
+Guidelines:
+- Keep the title around 50-60 characters if possible
+- Front-load the main keyword phrase
+- Include brand only if it still fits cleanly
+
+2. Set the meta description
+Use this exact meta description, or a very close version if character limits require it:
+
+Learn how to send ServiceTitan data into Google Sheets, build KPI dashboards, and display them on a TV in your office with this DIY step-by-step course.
+
+Guidelines:
+- Keep it around 150-160 characters if possible
+- Make it compelling for search users
+- Do not use hypey language
+- Do not use quotation marks
+
+3. Set the canonical URL
+Set the canonical URL for this page to the production landing page URL:
+https://servicetitanhacks.com/dashboard-course
+
+If the actual live URL differs, use the correct production URL instead.
+
+4. Ensure the page has one clear H1
+Make sure there is only one H1 on the page.
+
+Preferred H1:
+Build Your Own ServiceTitan Dashboard System
+
+Do not create multiple competing H1 tags.
+
+5. Improve heading hierarchy
+Review the page and make sure headings follow a clean structure:
+- one H1
+- section titles as H2
+- subsection headings as H3 if needed
+
+Do not skip levels unnecessarily.
+
+6. Add Open Graph metadata
+Set social sharing metadata for Facebook and LinkedIn.
+
+Use:
+- og:title: DIY ServiceTitan Dashboards Course | Build KPI Dashboards for ServiceTitan
+- og:description: Learn how to send ServiceTitan data into Google Sheets, build KPI dashboards, and display them on a TV in your office with this DIY step-by-step course.
+- og:type: website
+- og:url: use the canonical landing page URL
+- og:image: use the main landing page hero image or a dedicated social sharing image if one exists
+
+If needed, recommend the ideal OG image dimensions and wire up the current best available image.
+
+7. Add Twitter/X metadata
+Set Twitter card metadata:
+- twitter:card = summary_large_image
+- twitter:title = same as SEO title or a close variant
+- twitter:description = same as meta description or a close variant
+- twitter:image = same main share image used in Open Graph
+
+8. Add image alt text
+Review key images on the page and add descriptive alt text.
+
+Use natural alt text such as:
+- Bill Brown pointing at a ServiceTitan dashboard displayed on an office TV
+- ServiceTitan to Zapier to Google Sheets workflow graphic
+- Example KPI dashboard for ServiceTitan home service companies
+- Dashboard display on an office TV for home service teams
+
+Do not stuff keywords unnaturally.
+
+9. Add structured data
+Add clean JSON-LD structured data to the page if appropriate.
+
+Preferred schema:
+- Course schema for the DIY ServiceTitan Dashboards course
+- Organization schema for ServiceTitan Hacks
+- Breadcrumb schema if the site structure supports it
+
+Use only accurate information already known from the page.
+Do not invent ratings, reviews, prices, or course details that are not clearly present.
+
+Suggested course fields if available:
+- course name
+- description
+- provider = ServiceTitan Hacks
+- course URL
+- instructor if already shown on page
+
+10. Improve on-page keyword relevance naturally
+Review the visible copy and make sure the page naturally includes relevant phrases such as:
+- ServiceTitan dashboards
+- KPI dashboard
+- ServiceTitan Google Sheets
+- contractor dashboard
+- home service dashboard
+- office TV dashboard
+
+Do not overuse them.
+Do not make the copy awkward.
+Keep the page conversion-focused first and SEO-friendly second.
+
+11. Check indexability
+Verify that:
+- the page is not blocked by noindex
+- robots settings are correct
+- the canonical does not point elsewhere by mistake
+- the page can be indexed in production
+
+12. Check technical basics
+Verify:
+- page title and meta description render in production
+- OG tags render correctly
+- canonical renders correctly
+- important content is present in the page HTML or is otherwise crawlable
+- no major SEO issues are caused by client-side rendering
+
+If the site is React or client-rendered, make sure SEO-critical metadata is still rendered properly in production.
+
+13. Keep it maintainable
+Implement SEO in the cleanest way for this codebase.
+If there is an SEO component, metadata helper, route-level head config, or framework-native metadata system, use that instead of hardcoding tags in a messy way.
+
+After making updates, provide a concise summary of:
+- final title tag
+- final meta description
+- canonical URL
+- Open Graph image being used
+- structured data added
+- any remaining SEO issues I should know about

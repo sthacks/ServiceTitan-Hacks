@@ -1,0 +1,91 @@
+Review the Meta Pixel setup on this Replit website landing page and verify that the website-side tracking is configured correctly for the DIY ServiceTitan Dashboards sales page.
+
+Important context:
+- This page is the sales page on my website, built in Replit
+- The checkout happens on Thinkific after the CTA button click
+- I need to make sure the website side of the Meta Pixel setup is correct before the user leaves my site
+- Do not edit anything yet until you inspect the current implementation and report what is already in place
+- Then fix any issues you find
+
+What I need you to check on the website side:
+
+1. Confirm Meta Pixel base code is installed correctly
+- Check whether the Meta Pixel base code is present on the landing page
+- Check whether it loads only once
+- Check whether the correct Pixel ID is being used
+- Check whether the pixel loads in production, not just in development
+- Check whether the base code is placed in the correct global location so it fires reliably
+
+2. Confirm PageView fires correctly
+- Verify that the landing page fires a PageView event when loaded
+- Make sure it is not duplicated
+- Make sure it is not blocked by the current code structure
+- Make sure it works in the deployed site, not just local preview
+
+3. Check whether ViewContent is implemented
+- Verify whether a ViewContent event is firing on the DIY Dashboard course landing page
+- If it is not implemented, add it
+- The ViewContent event should be specific to this course landing page
+- Include useful parameters if appropriate, such as content_name, content_category, content_ids, value, and currency
+- Use real values for this course where appropriate
+- Keep the implementation clean and standards-based
+
+4. Track CTA clicks to checkout
+- I want to know whether visitors click from the landing page to the Thinkific checkout
+- Check whether the CTA button click currently fires any Meta event
+- If not, add a clean event for the CTA click before redirecting to Thinkific
+- Use a reasonable event such as Lead or a custom event like CheckoutButtonClick if that makes more sense
+- Make sure the event fires before navigation
+- If there are multiple CTA buttons on the page, make sure all primary checkout CTA buttons are tracked consistently
+- Include a parameter that identifies button placement if possible, such as hero, middle, or final CTA
+
+5. Check for support of UTM persistence
+- Review whether UTM parameters are preserved or passed through when the user clicks from the landing page to the Thinkific checkout
+- If not currently handled, recommend or implement a clean way to preserve UTMs in the checkout URL if possible
+- At minimum, make sure the CTA links can contain UTM parameters properly
+
+6. Check for duplicate tracking or conflicts
+- Inspect whether there are any duplicate Meta scripts, duplicate event fires, or conflicting analytics implementations
+- Check whether the page might be firing multiple PageView or ViewContent events due to rerenders, route handling, or component mounting behavior
+- Fix any duplicate or conflicting behavior
+
+7. Verify SPA or client-side routing behavior if relevant
+- If this page is part of a React or other client-rendered app, confirm that pixel events still fire correctly on page load
+- If route-based tracking is needed, implement it correctly
+- Avoid firing duplicate events during rerenders
+
+8. Add a simple test/debug method
+- Add a temporary console log or lightweight debug helper if needed so I can confirm the relevant Meta events are being triggered from the website side
+- Keep this easy to remove later
+- Do not leave messy debug code
+
+9. Report findings clearly
+After inspecting the code, give me a concise report with:
+- what is currently set up correctly
+- what was missing or broken
+- what you changed
+- what I still need to verify manually in Meta Events Manager or Pixel Helper
+
+10. Keep implementation clean
+- Do not redesign the landing page
+- Do not change the copy or layout unless absolutely necessary for tracking hooks
+- Keep the tracking code organized and maintainable
+- If possible, centralize Meta Pixel helper functions instead of scattering raw calls everywhere
+
+What success looks like:
+- PageView fires once on landing page load
+- ViewContent fires once on the DIY Dashboard landing page
+- CTA clicks to Thinkific checkout are tracked cleanly
+- No duplicate pixel firing
+- Pixel setup works on the deployed website
+- I get a clear summary of what is configured and what still needs to be tested on the Meta side
+
+Before making changes:
+- inspect the current codebase thoroughly
+- identify where the pixel is installed
+- identify how CTA buttons are wired
+- identify whether the site is static, React-based, or otherwise client-rendered
+
+After making changes:
+- summarize the exact implementation
+- tell me the exact events that should fire on the website side before the user reaches Thinkific

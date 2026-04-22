@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { trackViewContent, trackCTAClick, buildCheckoutUrl } from "@/lib/pixel";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -143,6 +144,16 @@ export default function DashboardCourseLanding() {
     }
   }, []);
 
+  useEffect(() => {
+    trackViewContent({
+      content_name: "DIY ServiceTitan Dashboards",
+      content_category: "Course",
+      content_ids: ["dashboard-course-3344256"],
+      value: 97,
+      currency: "USD",
+    });
+  }, []);
+
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -201,6 +212,11 @@ export default function DashboardCourseLanding() {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="button-enroll-hero"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      trackCTAClick("hero");
+                      window.open(buildCheckoutUrl(ENROLL_URL), "_blank", "noopener,noreferrer");
+                    }}
                   >
                     <Button size="lg" className="gap-2">
                       Get Instant Access <ExternalLink className="h-4 w-4" />
@@ -435,6 +451,11 @@ export default function DashboardCourseLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-enroll-footer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackCTAClick("footer");
+                  window.open(buildCheckoutUrl(ENROLL_URL), "_blank", "noopener,noreferrer");
+                }}
               >
                 <Button size="lg" className="gap-2 text-base px-8">
                   Get Instant Access <ExternalLink className="h-4 w-4" />
