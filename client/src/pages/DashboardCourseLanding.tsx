@@ -17,6 +17,8 @@ import {
   CheckCircle,
   XCircle,
   Quote,
+  Video,
+  LayoutDashboard,
 } from "lucide-react";
 import billDashboardImage from "@assets/DIY_ServiceTitan_Dashboard_Course_1776783149232.png";
 import flowImage from "@assets/1_1776781775627.png";
@@ -27,28 +29,32 @@ const ENROLL_URL = "https://servicetitanhacks.thinkific.com/enroll/3344256";
 
 const heroValuePoints = [
   "Send ServiceTitan data into Google Sheets automatically",
-  "Build clean KPI dashboards your whole team can read",
-  "Display them on a TV in your office — updated every 15 minutes",
+  "Build clean KPI dashboards your team can actually use",
+  "Display them on a TV in your office with automatic refreshes",
+];
+
+const proofItems = [
+  { icon: BookOpen, label: "2 Chapters" },
+  { icon: LayoutList, label: "15 Lessons" },
+  { icon: Video, label: "Step-by-step video walkthroughs" },
+  { icon: LayoutDashboard, label: "Dashboard template included" },
 ];
 
 const whatYouGetItems = [
   "Lifetime access — no subscriptions",
   "One-time payment of $97",
-  "Looker Studio dashboard template included",
-  "Dashboards refresh automatically every ~15 minutes",
-  "Step-by-step videos and interactive walkthroughs",
+  "Dashboard template included",
+  "Step-by-step videos and walkthroughs",
+  "Dashboards refresh automatically about every 15 minutes",
   "Works with HVAC, plumbing, electrical, and other trades",
 ];
 
-
 const testimonials = [
   {
-    headline: "[Review headline]",
     body: "This class is super helpful! The step-by-step directions make it super easy to accomplish your dashboard dreams!",
     attribution: "Chris P.",
   },
   {
-    headline: "Service Titan Hacks Dashboard for the WIN!!",
     body: "Service Titan Dashboard is an absolute game-changer! I rarely write reviews, but I felt compelled to share my experience with this one. As someone with limited technical expertise, I was skeptical about my ability to build a dashboard that met my specific needs. However, this step-by-step, easily understandable course proved to be a lifesaver. Not only did I successfully build the dashboard, but it exceeded my expectations.",
     attribution: "Phil R.",
   },
@@ -56,14 +62,14 @@ const testimonials = [
 
 const forYouPoints = [
   "You use ServiceTitan",
-  "You want better visibility into KPIs without another monthly platform",
+  "You want better visibility into KPIs",
   "You want to build and own your own dashboard system",
-  "You are comfortable doing a bit of setup with step-by-step guidance",
+  "You are comfortable following a step-by-step setup process",
 ];
 
 const notForYouPoints = [
   "You want a done-for-you dashboard service",
-  "You do not want to touch any setup at all",
+  "You do not want to touch setup at all",
   "You are looking for custom business intelligence consulting",
 ];
 
@@ -71,27 +77,27 @@ const faqs = [
   {
     question: "Do I need to know Zapier?",
     answer:
-      "No prior Zapier experience required. The course walks you through building the Zap step by step. If you can follow instructions, you can set this up.",
+      "No. You do not need any prior Zapier experience. The course walks you through building the Zap step by step. If you can follow instructions, you can set this up.",
   },
   {
     question: "Do I need to be advanced with Google Sheets?",
     answer:
-      "No. You need basic familiarity — knowing how to open a sheet and navigate cells is enough. The course handles everything else.",
+      "No. Basic comfort with Google Sheets is enough — knowing how to open a spreadsheet and navigate cells is all you need to start. The course handles everything else in a practical, approachable way.",
   },
   {
     question: "Can I display these dashboards on a TV in my office?",
     answer:
-      "Yes. That is the whole point. The course shows you exactly how to get a live, auto-updating dashboard on any TV in your office.",
+      "Yes. That is the whole point. The course shows you exactly how to get a live, auto-updating dashboard onto any TV in your office using a simple browser-based setup.",
   },
   {
     question: "How long does setup usually take?",
     answer:
-      "Most people complete the core setup in a few hours. The full course is about 15 lessons and you can work through it at your own pace.",
+      "Most people complete the core setup in a few hours. The full course is 15 lessons and you can work through it at your own pace. It is designed to be practical and efficient.",
   },
   {
     question: "Is this only for owners?",
     answer:
-      "No. Office managers, operations leads, and anyone responsible for reporting can get value from this. If you want better data visibility, this course is for you.",
+      "No. Office managers, operations leads, and anyone responsible for reporting can get real value from this. If you want better data visibility for your team, this course is for you.",
   },
   {
     question: "Do I get lifetime access?",
@@ -102,26 +108,40 @@ const faqs = [
 
 const learnFeatures = [
   {
+    step: "1",
     title: "Connect ServiceTitan to Google Sheets",
     description:
-      "Use Zapier to automatically send report data from ServiceTitan into a Google Sheet — no manual exports.",
+      "Automatically send report data from ServiceTitan into Google Sheets with Zapier. No manual exports.",
     image: flowImage,
   },
   {
+    step: "2",
     title: "Build Clean KPI Dashboards",
     description:
-      "Create professional dashboards for technician performance, sales, estimates, and installs using Looker Studio.",
+      "Create dashboards for technician performance, sales, estimates, and installs using Google Sheets and Looker Studio.",
     image: kpiDashboardImage,
   },
   {
+    step: "3",
     title: "Display on Any Office TV",
     description:
-      "Get your dashboard live on a TV in your office — no developers, no expensive software, no IT team needed.",
+      "Put your dashboard on a TV in your office so your whole team can see the numbers all day.",
     image: tvDisplayImage,
   },
 ];
 
 export default function DashboardCourseLanding() {
+  useEffect(() => {
+    if (!document.getElementById("thinkific-product-embed")) {
+      const script = document.createElement("script");
+      script.id = "thinkific-product-embed";
+      script.type = "text/javascript";
+      script.src =
+        "https://assets.thinkific.com/js/embeds/product-cards-client.min.js";
+      document.body.appendChild(script);
+    }
+  }, []);
+
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -153,19 +173,19 @@ export default function DashboardCourseLanding() {
       <main className="flex-1">
 
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="py-16 md:py-20 bg-background">
+        <section className="py-16 md:py-24 bg-background">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="grid lg:grid-cols-[3fr_5fr] gap-10 md:gap-14 items-start">
+            <div className="grid lg:grid-cols-[3fr_5fr] gap-10 md:gap-16 items-center">
 
               {/* Left: copy */}
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4 leading-tight">
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-5 leading-tight">
                   Build Your Own ServiceTitan Dashboard System
                 </h1>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  A step-by-step DIY course for home service companies. Connect ServiceTitan to Google Sheets with Zapier, build KPI dashboards in Looker Studio, and display live numbers on a TV in your office — for $97.
+                <p className="text-lg text-muted-foreground mb-7 leading-relaxed">
+                  A step-by-step DIY course for home service companies. Learn how to send ServiceTitan data into Google Sheets, build clean KPI dashboards, and display them live on a TV in your office.
                 </p>
-                <ul className="space-y-2 mb-8">
+                <ul className="space-y-3 mb-8">
                   {heroValuePoints.map((point, i) => (
                     <li key={i} className="flex items-start gap-3 text-base">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -195,39 +215,42 @@ export default function DashboardCourseLanding() {
               <img
                 src={billDashboardImage}
                 alt="Bill Brown pointing at a ServiceTitan Technician Performance dashboard on a TV"
-                className="w-full h-auto rounded-lg object-cover"
+                className="w-full h-auto rounded-xl object-cover shadow-lg"
                 loading="eager"
                 data-testid="img-hero-bill-dashboard"
               />
 
             </div>
+          </div>
+        </section>
 
-            {/* Course meta strip */}
-            <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <BookOpen className="h-4 w-4 text-primary" />
-                <span>2 Chapters</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <LayoutList className="h-4 w-4 text-primary" />
-                <span>15 Lessons</span>
-              </div>
-              <span>Step-by-step video walkthroughs</span>
-              <span>Dashboard template included</span>
+        {/* ── Proof bar ────────────────────────────────────────── */}
+        <section className="py-6 bg-zinc-950 border-y border-zinc-800">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+              {proofItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-zinc-400">
+                  <item.icon className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span>{item.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* ── What You'll Learn ────────────────────────────────── */}
-        <section className="py-16 bg-black text-white">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
+        <section className="py-20 bg-black text-white">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-center">
               What You'll Learn
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 mb-14">
+            <p className="text-center text-zinc-400 mb-14 max-w-xl mx-auto">
+              Three steps. One complete dashboard system your whole team can see every day.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {learnFeatures.map((feature, i) => (
-                <Card key={i} className="bg-zinc-950 border-zinc-800 overflow-hidden">
-                  <div className="aspect-[2/1] bg-zinc-900 overflow-hidden">
+                <Card key={i} className="bg-zinc-950 border-zinc-800 overflow-hidden flex flex-col">
+                  <div className="aspect-[16/9] bg-zinc-900 overflow-hidden flex-shrink-0">
                     <img
                       src={feature.image}
                       alt={`${feature.title} — dashboard course screenshot`}
@@ -235,10 +258,15 @@ export default function DashboardCourseLanding() {
                       loading="lazy"
                     />
                   </div>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-lg font-semibold font-heading mb-2 text-white">
-                      {feature.title}
-                    </h3>
+                  <CardContent className="p-7 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="w-7 h-7 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                        {feature.step}
+                      </span>
+                      <h3 className="text-base font-semibold font-heading text-white leading-snug">
+                        {feature.title}
+                      </h3>
+                    </div>
                     <p className="text-zinc-400 text-sm leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -246,13 +274,13 @@ export default function DashboardCourseLanding() {
             </div>
 
             {/* What You Get */}
-            <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold font-heading mb-6 text-center">What You Get</h3>
-              <div className="grid sm:grid-cols-2 gap-3">
+            <div className="max-w-3xl mx-auto bg-zinc-950 border border-zinc-800 rounded-xl p-8">
+              <h3 className="text-2xl font-bold font-heading mb-6 text-center text-white">What You Get</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
                 {whatYouGetItems.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-zinc-300 text-sm">{item}</span>
+                    <span className="text-zinc-300 text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -261,18 +289,21 @@ export default function DashboardCourseLanding() {
         </section>
 
         {/* ── Testimonials ─────────────────────────────────────── */}
-        <section className="py-16 bg-zinc-950 text-white">
-          <div className="mx-auto max-w-6xl px-6">
+        <section className="py-20 bg-zinc-950 text-white">
+          <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3 text-center">
               What contractors are saying
             </h2>
-            <div className="grid md:grid-cols-2 gap-6 mt-12">
+            <p className="text-center text-zinc-500 mb-12 text-sm">
+              Real feedback from contractors who bought and used the course.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
               {testimonials.map((t, i) => (
-                <Card key={i} className="bg-zinc-900 border-zinc-800 p-6" data-testid={`card-testimonial-${i}`}>
-                  <CardContent className="p-0 flex flex-col gap-4">
-                    <Quote className="h-5 w-5 text-primary flex-shrink-0" />
-                    <p className="text-zinc-400 text-sm leading-relaxed flex-1">{t.body}</p>
-                    <p className="text-zinc-600 text-xs">{t.attribution}</p>
+                <Card key={i} className="bg-zinc-900 border-zinc-800 p-8" data-testid={`card-testimonial-${i}`}>
+                  <CardContent className="p-0 flex flex-col gap-5">
+                    <Quote className="h-8 w-8 text-primary flex-shrink-0" />
+                    <p className="text-zinc-200 text-base leading-relaxed flex-1">{t.body}</p>
+                    <p className="text-zinc-500 text-sm font-medium">— {t.attribution}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -281,18 +312,20 @@ export default function DashboardCourseLanding() {
         </section>
 
         {/* ── Who It's For ─────────────────────────────────────── */}
-        <section className="py-16 bg-black text-white">
+        <section className="py-20 bg-black text-white">
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
               Is this course right for you?
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-zinc-950 border-zinc-800 p-8">
                 <CardContent className="p-0">
-                  <h3 className="text-lg font-bold mb-5 text-white">This course is for you if&hellip;</h3>
-                  <ul className="space-y-3">
+                  <h3 className="text-base font-bold mb-6 text-primary uppercase tracking-wide">
+                    This course is for you if&hellip;
+                  </h3>
+                  <ul className="space-y-4">
                     {forYouPoints.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
+                      <li key={i} className="flex items-start gap-3 text-sm text-zinc-300 leading-relaxed">
                         <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                         {point}
                       </li>
@@ -302,10 +335,12 @@ export default function DashboardCourseLanding() {
               </Card>
               <Card className="bg-zinc-950 border-zinc-800 p-8">
                 <CardContent className="p-0">
-                  <h3 className="text-lg font-bold mb-5 text-white">This course is not for you if&hellip;</h3>
-                  <ul className="space-y-3">
+                  <h3 className="text-base font-bold mb-6 text-zinc-500 uppercase tracking-wide">
+                    This course is not for you if&hellip;
+                  </h3>
+                  <ul className="space-y-4">
                     {notForYouPoints.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-zinc-400">
+                      <li key={i} className="flex items-start gap-3 text-sm text-zinc-400 leading-relaxed">
                         <XCircle className="h-4 w-4 text-zinc-600 flex-shrink-0 mt-0.5" />
                         {point}
                       </li>
@@ -318,20 +353,20 @@ export default function DashboardCourseLanding() {
         </section>
 
         {/* ── About the Course ─────────────────────────────────── */}
-        <section className="py-16 bg-primary text-primary-foreground">
-          <div className="mx-auto max-w-5xl px-6">
+        <section className="py-20 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-4xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">About the Course</h2>
             <p className="text-lg text-primary-foreground/90 leading-relaxed mb-4">
-              This step-by-step course shows you how to create real, visual dashboards that your whole team can see — right on a TV in your office.
+              This course shows you how to create real, visual dashboards your team can see every day — right on a TV in your office.
             </p>
             <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              You will learn how to send ServiceTitan data to Google Sheets using Zapier, build clean dashboards for KPIs, sales, estimates, and installs, and display your dashboard on a TV screen — no developers, no fancy tools, no ongoing fees. Your dashboards update automatically about every 15 minutes.
+              You will learn how to send ServiceTitan data into Google Sheets using Zapier, build clean KPI dashboards for sales, estimates, installs, and technician performance, and display them on a TV screen — no developers, no expensive software. Your dashboards update automatically about every 15 minutes.
             </p>
           </div>
         </section>
 
         {/* ── Instructor ───────────────────────────────────────── */}
-        <section className="py-16 bg-black text-white">
+        <section className="py-20 bg-black text-white">
           <div className="mx-auto max-w-5xl px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-shrink-0">
@@ -347,8 +382,11 @@ export default function DashboardCourseLanding() {
                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-5">
                   Meet Your Instructor
                 </h2>
+                <p className="text-base text-zinc-300 leading-relaxed mb-4">
+                  With over 25 years in the trades and a proven track record of building, scaling, and optimizing home service businesses, Bill brings real-world experience to every lesson.
+                </p>
                 <p className="text-base text-zinc-300 leading-relaxed">
-                  With over 25 years in the trades and a proven track record of building, scaling, and optimizing home service businesses, Bill brings real-world experience and actionable strategies to every lesson. Whether you're looking to streamline operations, boost revenue, or implement cutting-edge tools like AI, Bill's hands-on guidance will help you get there faster — with confidence.
+                  Whether you want better visibility, cleaner reporting, or a dashboard your team can actually use — this course shows you how to build it yourself.
                 </p>
               </div>
             </div>
@@ -356,7 +394,7 @@ export default function DashboardCourseLanding() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────── */}
-        <section className="py-16 bg-zinc-950 text-white">
+        <section className="py-20 bg-zinc-950 text-white">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center">
               Frequently asked questions
@@ -368,10 +406,10 @@ export default function DashboardCourseLanding() {
                   value={`faq-${i}`}
                   className="bg-zinc-900 border border-zinc-800 rounded-lg px-6"
                 >
-                  <AccordionTrigger className="text-left text-white hover:no-underline py-4 text-base">
+                  <AccordionTrigger className="text-left text-white hover:no-underline py-5 text-base font-medium">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-zinc-400 pb-4 text-sm leading-relaxed">
+                  <AccordionContent className="text-zinc-400 pb-5 text-sm leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -381,28 +419,28 @@ export default function DashboardCourseLanding() {
         </section>
 
         {/* ── Final CTA ────────────────────────────────────────── */}
-        <section className="py-20 bg-black text-white">
-          <div className="mx-auto max-w-3xl px-6 text-center">
+        <section className="py-24 bg-black text-white">
+          <div className="mx-auto max-w-2xl px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
               Build your own ServiceTitan dashboard system
             </h2>
-            <p className="text-zinc-400 mb-8 max-w-xl mx-auto leading-relaxed">
+            <p className="text-zinc-400 mb-10 leading-relaxed">
               One payment. Lifetime access. Start seeing your numbers on the wall this week.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="text-4xl font-bold text-primary">$97</div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-5">
+              <div className="text-5xl font-bold text-primary">$97</div>
               <a
                 href={ENROLL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-enroll-footer"
               >
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2 text-base px-8">
                   Get Instant Access <ExternalLink className="h-4 w-4" />
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-zinc-600 mt-4">
+            <p className="text-sm text-zinc-600">
               Lifetime access. DIY setup. Built for home service companies.
             </p>
           </div>

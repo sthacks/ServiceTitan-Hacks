@@ -1,0 +1,261 @@
+Edit the existing DIY ServiceTitan Dashboards landing page at servicetitanhacks.com/dashboard-course.
+
+Do not redesign the entire page from scratch. Keep the current dark ServiceTitan Hacks branding, color palette, general layout style, and the current page structure. This is a conversion-focused refinement.
+
+Main goal:
+Increase purchases of the DIY ServiceTitan Dashboards course by making the page clearer, more credible, more visual, and more action-oriented.
+
+Important context:
+- Price stays at $97
+- This is a DIY course for home service companies using ServiceTitan
+- The page should sell the course, then send people to the Thinkific checkout link
+- The Thinkific checkout will handle the transaction, so this page should focus on persuasion and clarity
+- Keep the page relatively short and easy to scan
+- Keep the existing dark theme and current brand style
+- Do not add fake claims, fake numbers, or fake testimonials
+- Use the real testimonial content already on the page, but improve how it is displayed
+- Keep the CTA button linking to the Thinkific checkout page
+- Use plain, direct copy at about an 8th grade reading level
+- Avoid hypey or overly salesy language
+
+What needs improvement right now:
+- The hero copy is decent but still too generic
+- The hero image should feel more like proof and less like a promo graphic
+- The "What You'll Learn" section is good, but the copy can be tighter and more benefit-driven
+- The testimonials section needs stronger formatting and better hierarchy
+- The "Is this course right for you?" section needs stronger copy and clearer contrast between who it is for and not for
+- The FAQ section should do more objection handling
+- The final CTA should be stronger and more direct
+- The page overall needs a little more visual polish, spacing consistency, and stronger section hierarchy
+- Every major section should move the visitor toward clicking the checkout CTA
+
+Make these exact updates:
+
+1. Hero section
+Keep the current two-column hero layout with copy on the left and image on the right.
+
+Update the hero copy to something closer to this structure:
+
+Headline:
+Build Your Own ServiceTitan Dashboard System
+
+Subheadline:
+A step-by-step DIY course for home service companies. Learn how to send ServiceTitan data into Google Sheets, build clean KPI dashboards, and display them live on a TV in your office.
+
+Bullet points:
+- Send ServiceTitan data into Google Sheets automatically
+- Build clean KPI dashboards your team can actually use
+- Display them on a TV in your office with automatic refreshes
+
+Price:
+Keep $97 highly visible
+
+CTA button:
+Keep one main CTA button in the hero
+Button text should be something direct like:
+Get Instant Access
+
+Trust line under CTA:
+Lifetime access. DIY setup. Built for home service companies.
+
+Hero image:
+Replace the current promo-style course graphic with the real photo of Bill pointing at the dashboard on the TV.
+Use the cleaned-up real image that has better lighting and natural teeth whitening.
+This image should feel authentic and credible, not like a flashy ad.
+Make sure it displays well on desktop and mobile.
+Use rounded corners and subtle polish so it feels premium.
+
+2. Add a short proof bar directly under the hero
+Add a slim horizontal section below the hero with 3-4 short proof or clarity items.
+
+Use something like:
+- 2 Chapters
+- 15 Lessons
+- Step-by-step video walkthroughs
+- Dashboard template included
+
+Style it cleanly and make it easy to scan.
+
+3. Improve the "What You'll Learn" section
+Keep the 3-card layout.
+
+Use these cards and make the copy tighter:
+
+Card 1:
+Title: Connect ServiceTitan to Google Sheets
+Body: Automatically send report data from ServiceTitan into Google Sheets with Zapier. No manual exports.
+
+Card 2:
+Title: Build Clean KPI Dashboards
+Body: Create dashboards for technician performance, sales, estimates, and installs using Google Sheets and Looker Studio.
+
+Card 3:
+Title: Display on Any Office TV
+Body: Put your dashboard on a TV in your office so your team can see the numbers all day.
+
+Use the three visuals already created:
+- ServiceTitan -> Zapier -> Google Sheets image
+- Build Clean KPI Dashboards image
+- Display on Any Office TV image
+
+Make all three cards consistent in height, spacing, border radius, and text treatment.
+Improve typography so the titles and descriptions are easier to read.
+Make sure the section feels like a 3-step process, not just a row of random cards.
+
+4. Improve the "What You Get" section
+Keep this section, but tighten the wording and make it more visually useful.
+
+Use bullets like:
+- Lifetime access - no subscriptions
+- One-time payment of $97
+- Dashboard template included
+- Step-by-step videos and walkthroughs
+- Dashboards refresh automatically about every 15 minutes
+- Works with HVAC, plumbing, electrical, and other trades
+
+Make the spacing better and use icons consistently.
+
+5. Upgrade the testimonial section
+Keep the section title:
+What contractors are saying
+
+Use the two real testimonials already on the page.
+Do not invent any new testimonials.
+
+Improve the testimonial card design:
+- bigger quote styling
+- stronger hierarchy
+- better line spacing
+- slightly larger text
+- clearer author name and company line
+- more padding
+- slightly more contrast
+
+If possible, add a very short supporting line above the cards, such as:
+Real feedback from contractors who bought and used the course.
+
+Do not overcrowd the section.
+
+6. Improve the "Is this course right for you?" section
+Keep the two-card layout, but rewrite the copy to be clearer and stronger.
+
+Left card title:
+This course is for you if...
+
+Bullets:
+- You use ServiceTitan
+- You want better visibility into KPIs
+- You want to build and own your own dashboard system
+- You are comfortable following a step-by-step setup process
+
+Right card title:
+This course is not for you if...
+
+Bullets:
+- You want a done-for-you dashboard service
+- You do not want to touch setup at all
+- You are looking for custom business intelligence consulting
+
+Make this section easier to scan and visually balanced.
+
+7. Rewrite the "About the Course" section
+Keep the section, but make the copy tighter and more readable.
+
+Use something like:
+
+This course shows you how to create real, visual dashboards your team can see every day - right on a TV in your office.
+
+You will learn how to send ServiceTitan data into Google Sheets using Zapier, build clean KPI dashboards for sales, estimates, installs, and technician performance, and display them on a TV screen without needing developers or expensive software.
+
+Your dashboards update automatically about every 15 minutes.
+
+Do not make this section too long.
+
+8. Improve the instructor section
+Keep Bill's headshot and instructor section, but tighten the copy.
+
+Use something like:
+
+With over 25 years in the trades and a proven track record of building, scaling, and optimizing home service businesses, Bill brings real-world experience to every lesson.
+
+Whether you want better visibility, cleaner reporting, or a dashboard your team can actually use, this course shows you how to build it yourself.
+
+Make this section feel credible and concise.
+
+9. Rewrite the FAQ answers to handle real objections
+Keep the same FAQ questions, but improve the answers so they are clearer and more confidence-building.
+
+Questions:
+- Do I need to know Zapier?
+- Do I need to be advanced with Google Sheets?
+- Can I display these dashboards on a TV in my office?
+- How long does setup usually take?
+- Is this only for owners?
+- Do I get lifetime access?
+
+Suggested answer direction:
+- No, you do not need to be an expert. The course walks you through it step by step.
+- No, you do not need to be advanced in Google Sheets. Basic comfort helps, but the course is built to be practical and approachable.
+- Yes, the dashboards can be displayed on a TV in your office using a browser-based setup.
+- Setup time depends on your pace, but the course is designed to help you build this in a practical, step-by-step way.
+- No, this is not only for owners. Office managers and team members can use it too.
+- Yes, your purchase includes lifetime access.
+
+Keep the accordion style, but make the answers stronger and more useful.
+
+10. Strengthen the final CTA section
+Keep the final CTA section near the bottom, but make it more direct and cleaner.
+
+Headline:
+Build your own ServiceTitan dashboard system
+
+Subheadline:
+One payment. Lifetime access. Start seeing your numbers on the wall this week.
+
+Price:
+Keep $97 prominent
+
+CTA button:
+Get Instant Access
+
+Make this section visually stronger so it clearly feels like the final conversion point.
+
+11. Reduce distractions
+This page should focus on one primary action:
+Click through to the Thinkific checkout.
+
+Make sure CTA buttons all go to the Thinkific checkout link.
+Do not add extra outbound distractions in the body content.
+Do not bury the CTA.
+
+12. Improve visual consistency
+Make the following design refinements across the page:
+- Better spacing between sections
+- More consistent card sizing
+- More consistent border radius and shadows
+- Stronger heading hierarchy
+- Better mobile responsiveness
+- Better readability of white text on dark backgrounds
+- Cleaner alignment and padding
+- Slightly larger text where sections currently feel too small
+
+13. Editing convenience
+Structure the page so these are easy to replace later if needed:
+- hero image
+- course visuals in the 3-card learn section
+- testimonials
+- FAQ copy
+- checkout URL
+
+Use reusable components or clearly separated content objects if the project structure allows.
+
+Before making edits:
+- inspect the current page and preserve what already works
+- do not remove the current branding or the dark visual style
+- do not turn this into a generic course page
+- do not overdesign it
+- do not add fake scarcity, fake stats, or fake reviews
+
+After editing:
+- keep the page lean, credible, and conversion-focused
+- make it feel like a polished sales page that hands off directly into Thinkific checkout
