@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { trackPageView } from "@/lib/analytics";
 
-// Meta Pixel PageView is handled entirely by GTM.
+// Meta Pixel PageView is fired once by the base pixel snippet in index.html.
 // This hook only fires Google Analytics page views on SPA route changes.
 export const useAnalytics = () => {
   const [location] = useLocation();

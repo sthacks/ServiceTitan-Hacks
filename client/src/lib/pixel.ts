@@ -17,8 +17,8 @@ export const trackCustomPixelEvent = (event: string, params?: Record<string, unk
   window.fbq("trackCustom", event, params);
 };
 
-// PageView is fired exclusively by GTM — do not call this from app code.
-// Kept here only as a reference; the analytics hook no longer calls it.
+// PageView is fired once by the base pixel snippet in index.html (fbq 'track' 'PageView').
+// GTM does not fire PageView. Do not call this from app code to avoid duplicates.
 export const trackPixelPageView = () => {
   trackPixelEvent("PageView");
 };
