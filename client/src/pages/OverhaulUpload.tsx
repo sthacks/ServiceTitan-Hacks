@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle, Upload, FileSpreadsheet, Mail, AlertCircle, X } from "lucide-react";
+import { CheckCircle, Upload, FileSpreadsheet, Mail, AlertCircle, X, Search } from "lucide-react";
+import { Link } from "wouter";
 
 const MAX_SIZE_BYTES = 40 * 1024 * 1024; // 40 MB (Resend attachment limit)
 const ALLOWED_EXTS = [".xlsx", ".xls"];
@@ -118,9 +119,15 @@ export default function OverhaulUpload() {
             <p className="text-zinc-400 leading-relaxed mb-3">
               I'll send your rewritten pricebook back within 72 hours. Usually faster.
             </p>
-            <p className="text-zinc-500 text-sm">
+            <p className="text-zinc-500 text-sm mb-8">
               Questions? Reply to the confirmation email anytime.
             </p>
+            <Link href="/overhaul-status">
+              <Button variant="outline" size="sm" className="gap-2" data-testid="link-track-order">
+                <Search className="h-3 w-3" />
+                Track Your Order Status
+              </Button>
+            </Link>
           </div>
         </main>
         <Footer />

@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import multer from "multer";
 import { storage } from "./storage";
-import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPhoneTapWaitlistSchema, insertReplayAccessSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
+import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPhoneTapWaitlistSchema, insertReplayAccessSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema, insertOverhaulOrderSchema } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
@@ -3278,10 +3278,113 @@ Disallow: /admin/
         `,
       });
 
+      // Create a tracking record in the database
+      try {
+        await storage.createOverhaulOrder({
+          email,
+          firstName: null,
+          status: "received",
+          fileName,
+          downloadUrl: null,
+          notes: notes || null,
+        });
+      } catch (dbErr) {
+        console.error("[pricebook-upload] DB record creation failed (non-fatal):", dbErr);
+      }
+
       return res.status(200).json({ success: true });
     } catch (err: any) {
       console.error("[pricebook-upload] Error:", err);
       return res.status(500).json({ message: "Something went wrong. Please email bill@st-hacks.com directly." });
+    }
+  });
+
+  // ── Overhaul Order Status (public) ──────────────────────────────────────
+  app.get("/api/overhaul-status", async (req: any, res: any) => {
+    try {
+      const email = (req.query.email || "").trim().toLowerCase();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({ message: "A valid email address is required." });
+      }
+      const orders = await storage.getOverhaulOrdersByEmail(email);
+      return res.json({ orders });
+    } catch (err: any) {
+      console.error("[overhaul-status] Error:", err);
+      return res.status(500).json({ message: "Something went wrong. Please try again." });
+    }
+  });
+
+  // ── Admin: List all overhaul orders ─────────────────────────────────────
+  app.get("/api/admin/overhaul-orders", isAuthenticated, isAdmin, async (req: any, res: any) => {
+    try {
+      const orders = await storage.getAllOverhaulOrders();
+      return res.json({ orders });
+    } catch (err: any) {
+      console.error("[admin/overhaul-orders] Error:", err);
+      return res.status(500).json({ message: "Failed to fetch overhaul orders." });
+    }
+  });
+
+  // ── Admin: Update overhaul order status / download URL ──────────────────
+  app.patch("/api/admin/overhaul-orders/:id", isAuthenticated, isAdmin, async (req: any, res: any) => {
+    try {
+      const { id } = req.params;
+      const { status, downloadUrl } = req.body;
+
+      const allowedStatuses = ["received", "in_progress", "complete"];
+      if (status && !allowedStatuses.includes(status)) {
+        return res.status(400).json({ message: "Invalid status value." });
+      }
+
+      const updates: { status?: string; downloadUrl?: string | null } = {};
+      if (status !== undefined) updates.status = status;
+      if (downloadUrl !== undefined) updates.downloadUrl = downloadUrl || null;
+
+      // Fetch current order to detect status transition (prevent duplicate emails)
+      const existingOrder = await storage.getOverhaulOrderById(id);
+      if (!existingOrder) {
+        return res.status(404).json({ message: "Order not found." });
+      }
+      const wasAlreadyComplete = existingOrder.status === "complete";
+
+      const updated = await storage.updateOverhaulOrder(id, updates);
+      if (!updated) {
+        return res.status(404).json({ message: "Order not found." });
+      }
+
+      // Only send completion email on first transition to "complete" (not on repeat saves)
+      if (status === "complete" && !wasAlreadyComplete && updated.downloadUrl) {
+        try {
+          const { client, fromEmail } = await getUncachableResendClient();
+          await client.emails.send({
+            from: fromEmail,
+            to: updated.email,
+            subject: "Your Rewritten Pricebook is Ready — ServiceTitan Hacks",
+            html: `
+              <div style="font-family: sans-serif; max-width: 600px; color: #1a1a1a;">
+                <h2 style="color: #ec164d;">Your pricebook is ready.</h2>
+                <p>Good news — we've finished rewriting every description in your ServiceTitan pricebook in clear, homeowner-friendly language.</p>
+                <p>
+                  <a href="${updated.downloadUrl}" style="display:inline-block;background:#ec164d;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold;">
+                    Download Your Rewritten Pricebook
+                  </a>
+                </p>
+                <p style="color:#555;font-size:13px;">If the button doesn't work, copy and paste this link:<br>${updated.downloadUrl}</p>
+                <p>To import it back into ServiceTitan, go to <strong>Pricebook → Import</strong> and upload the file.</p>
+                <p>Questions or feedback? Just reply to this email — I personally read every reply.</p>
+                <p style="margin-top: 32px;">— Bill Brown<br>ServiceTitan Hacks</p>
+              </div>
+            `,
+          });
+        } catch (emailErr) {
+          console.error("[admin/overhaul-orders] Completion email failed (non-fatal):", emailErr);
+        }
+      }
+
+      return res.json({ order: updated });
+    } catch (err: any) {
+      console.error("[admin/overhaul-orders PATCH] Error:", err);
+      return res.status(500).json({ message: "Failed to update order." });
     }
   });
 

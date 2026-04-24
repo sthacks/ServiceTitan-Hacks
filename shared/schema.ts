@@ -388,6 +388,34 @@ export type PodcastEpisode = typeof podcastEpisodes.$inferSelect;
 export type InsertPodcastEpisode = typeof podcastEpisodes.$inferInsert;
 
 // ============================================
+// PRICEBOOK OVERHAUL ORDERS
+// ============================================
+
+export const overhaulOrders = pgTable("overhaul_orders", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email").notNull(),
+  firstName: text("first_name"),
+  status: text("status").notNull().default("received"), // "received" | "in_progress" | "complete"
+  fileName: text("file_name").notNull(),
+  downloadUrl: text("download_url"),
+  notes: text("notes"),
+  submittedAt: timestamp("submitted_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+export const insertOverhaulOrderSchema = createInsertSchema(overhaulOrders).omit({
+  id: true,
+  submittedAt: true,
+  updatedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  status: z.enum(["received", "in_progress", "complete"]).default("received"),
+});
+
+export type OverhaulOrder = typeof overhaulOrders.$inferSelect;
+export type InsertOverhaulOrder = z.infer<typeof insertOverhaulOrderSchema>;
+
+// ============================================
 // PARTNER PORTAL TABLES
 // ============================================
 

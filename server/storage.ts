@@ -31,6 +31,8 @@ import {
   type InsertReplayAccess,
   replayAccess,
   type PodcastEpisode,
+  type OverhaulOrder,
+  type InsertOverhaulOrder,
   type PartnerCompany,
   type InsertPartnerCompany,
   type PartnerUser,
@@ -53,6 +55,7 @@ import {
   hiringROISubmissions,
   phoneTapWaitlist,
   podcastEpisodes,
+  overhaulOrders,
   partnerCompanies,
   partnerUsers,
   partnerInvites,
@@ -169,6 +172,13 @@ export interface IStorage {
   createPartnerBrandAsset(asset: InsertPartnerBrandAsset): Promise<PartnerBrandAsset>;
   getPartnerBrandAssets(companyId: string): Promise<PartnerBrandAsset[]>;
   deletePartnerBrandAsset(id: string): Promise<void>;
+
+  // Overhaul Orders
+  createOverhaulOrder(order: InsertOverhaulOrder): Promise<OverhaulOrder>;
+  getOverhaulOrderById(id: string): Promise<OverhaulOrder | undefined>;
+  getOverhaulOrdersByEmail(email: string): Promise<OverhaulOrder[]>;
+  getAllOverhaulOrders(): Promise<OverhaulOrder[]>;
+  updateOverhaulOrder(id: string, updates: { status?: string; downloadUrl?: string | null }): Promise<OverhaulOrder | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -705,6 +715,35 @@ export class MemStorage implements IStorage {
 
   async deletePartnerBrandAsset(id: string): Promise<void> {
     await db.delete(partnerBrandAssets).where(sql`${partnerBrandAssets.id} = ${id}`);
+  }
+
+  async createOverhaulOrder(order: InsertOverhaulOrder): Promise<OverhaulOrder> {
+    const [newOrder] = await db.insert(overhaulOrders).values(order).returning();
+    return newOrder;
+  }
+
+  async getOverhaulOrderById(id: string): Promise<OverhaulOrder | undefined> {
+    const [order] = await db.select().from(overhaulOrders).where(sql`${overhaulOrders.id} = ${id}`);
+    return order;
+  }
+
+  async getOverhaulOrdersByEmail(email: string): Promise<OverhaulOrder[]> {
+    return await db.select().from(overhaulOrders)
+      .where(sql`lower(${overhaulOrders.email}) = lower(${email})`)
+      .orderBy(sql`${overhaulOrders.submittedAt} DESC`);
+  }
+
+  async getAllOverhaulOrders(): Promise<OverhaulOrder[]> {
+    return await db.select().from(overhaulOrders)
+      .orderBy(sql`${overhaulOrders.submittedAt} DESC`);
+  }
+
+  async updateOverhaulOrder(id: string, updates: { status?: string; downloadUrl?: string | null }): Promise<OverhaulOrder | undefined> {
+    const [updated] = await db.update(overhaulOrders)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(sql`${overhaulOrders.id} = ${id}`)
+      .returning();
+    return updated;
   }
 }
 

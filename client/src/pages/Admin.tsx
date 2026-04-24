@@ -12,10 +12,11 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, ShieldOff, Loader2 } from "lucide-react";
+import { Shield, ShieldOff, Loader2, Package } from "lucide-react";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { format } from "date-fns";
+import { Link } from "wouter";
 
 interface CoursePurchase {
   id: string;
@@ -114,11 +115,19 @@ export default function Admin() {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-6 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-primary mb-2" data-testid="heading-admin">
-            Admin Dashboard
-          </h1>
-          <p className="text-gray-400">Manage users and their permissions</p>
+        <div className="mb-8 flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <h1 className="text-4xl font-bold text-primary mb-2" data-testid="heading-admin">
+              Admin Dashboard
+            </h1>
+            <p className="text-gray-400">Manage users and their permissions</p>
+          </div>
+          <Link href="/admin/overhaul-orders">
+            <Button variant="outline" className="gap-2" data-testid="link-overhaul-orders">
+              <Package className="h-4 w-4" />
+              Pricebook Overhaul Orders
+            </Button>
+          </Link>
         </div>
 
         {usersLoading ? (
