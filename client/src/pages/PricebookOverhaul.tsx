@@ -3,52 +3,40 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  CheckCircle,
-  ArrowRight,
-  FileSpreadsheet,
-  Mail,
-  Wand2,
-  Download,
-  Upload,
-} from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import beforeImg from "@assets/before_1777040624999.png";
+import afterImg from "@assets/after_1777040624998.png";
 
-const CHECKOUT_URL = "mailto:bill@st-hacks.com?subject=Pricebook%20Overhaul%20%E2%80%94%20Reserve%20My%20Spot";
+const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
 
 const steps = [
   {
-    icon: FileSpreadsheet,
     number: "1",
     title: "Export Your Pricebook",
-    body: "Export your current pricebook from ServiceTitan as an Excel file. Takes about 30 seconds. We'll send you a one-page guide if you need it.",
+    body: "Export your current pricebook from ServiceTitan as an Excel file. Takes about 30 seconds. I'll send you a one-page guide if you need it.",
   },
   {
-    icon: Mail,
     number: "2",
     title: "Upload It to Us",
-    body: "Email your pricebook file to bill@st-hacks.com. We handle the rest.",
+    body: "Upload your pricebook file directly on our site after payment, or email it to bill@st-hacks.com. Your choice.",
   },
   {
-    icon: Wand2,
     number: "3",
     title: "We Rewrite Every Description",
     body: "Our AI reads every single item and rewrites the description in clear, confident, homeowner-friendly language. No jargon. No SKU codes. Just words your customers actually understand. We keep your pricing, codes, categories, and hours exactly as they are.",
   },
   {
-    icon: Download,
     number: "4",
     title: "You Get It Back in 72 Hours",
     body: "We email you the updated Excel file. Open it, review the new descriptions, make any edits you want.",
   },
   {
-    icon: Upload,
     number: "5",
     title: "Re-Import to ServiceTitan",
     body: "Upload the updated file back into ServiceTitan. Your entire pricebook now reads like a homeowner wrote it.",
@@ -57,7 +45,7 @@ const steps = [
 
 const whatYouGet = [
   "Every description rewritten. 50 items or 5,000 items. Flat price. No surprises.",
-  "Homeowner-friendly language. No more \"Capacitor 40/5 370V.\" Real explanations customers actually understand.",
+  'Homeowner-friendly language. No more "Capacitor 40/5 370V." Real explanations customers actually understand.',
   "Professional tone preserved. Doesn't dumb things down. Shows your expertise through clarity, not jargon.",
   "Your pricing untouched. We don't change your prices, codes, categories, or hours. Only the descriptions.",
   "Ready-to-import Excel file. Same format ServiceTitan expects. Drop it back in, you're done.",
@@ -82,11 +70,11 @@ const pricingBullets = [
 const faqs = [
   {
     q: "How big can my pricebook be?",
-    a: "Any size. We've done 200-item pricebooks and we'll happily do 10,000-item pricebooks. Flat $395.",
+    a: "Any size. We've done 200-item pricebooks and we'll happily do 10,000-item pricebooks. Flat $395 regardless.",
   },
   {
     q: "Will you change my pricing?",
-    a: "No. We only touch descriptions. Prices, codes, categories, hours, warranty info — untouched.",
+    a: "No. We only touch descriptions. Prices, codes, categories, hours, warranty info — all untouched.",
   },
   {
     q: "What if I don't like the rewrites?",
@@ -102,7 +90,7 @@ const faqs = [
   },
   {
     q: "How do I send you my pricebook?",
-    a: "After you pay, you'll get instructions to email bill@st-hacks.com with your exported file. Takes 30 seconds.",
+    a: "After you pay, you'll be redirected to an upload page on our site where you can drop your Excel file directly. Prefer email? Send it to bill@st-hacks.com instead — same result.",
   },
   {
     q: "How long does it take?",
@@ -116,7 +104,7 @@ const faqs = [
 
 export default function PricebookOverhaul() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
       <SEO
         title="ServiceTitan Pricebook Overhaul | AI-Rewritten Descriptions for Homeowners"
         description="We'll AI-rewrite every item in your ServiceTitan pricebook so every word sounds like a homeowner wrote it, not a tech. Flat $395. 72-hour delivery."
@@ -127,83 +115,126 @@ export default function PricebookOverhaul() {
       <main className="flex-1">
 
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="py-20 md:py-28 bg-black text-white">
-          <div className="mx-auto max-w-4xl px-6 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight">
+        <section className="py-20 md:py-28 bg-[#0a0a0a]">
+          <div className="mx-auto max-w-5xl px-6 text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight text-white">
               Your entire ServiceTitan pricebook, rewritten for homeowners. In 72 hours.
             </h1>
-            <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#a3a3a3] mb-12 max-w-3xl mx-auto leading-relaxed">
               Stop losing sales to descriptions like "Capacitor 40/5 370V Replacement." We'll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech.
             </p>
-            <a href={CHECKOUT_URL} data-testid="button-cta-hero">
-              <Button size="lg" className="text-base px-8 gap-2">
+
+            {/* Before / After images */}
+            <div className="flex flex-col md:flex-row gap-6 justify-center mb-6">
+              <div className="flex-1 flex justify-center md:justify-end">
+                <img
+                  src={beforeImg}
+                  alt="Before: technical pricebook description"
+                  className="w-full max-w-[560px] rounded-xl object-contain"
+                />
+              </div>
+              <div className="flex-1 flex justify-center md:justify-start">
+                <img
+                  src={afterImg}
+                  alt="After: homeowner-friendly pricebook description"
+                  className="w-full max-w-[560px] rounded-xl object-contain"
+                />
+              </div>
+            </div>
+            <p className="text-sm text-[#737373] mb-10 italic">
+              Real ServiceTitan pricebook item. Same price. Same service. Transformed description.
+            </p>
+
+            <a
+              href={CHECKOUT_URL}
+              target="_self"
+              data-testid="button-cta-hero"
+            >
+              <Button
+                size="lg"
+                className="text-base px-10 py-4 gap-2 shadow-[0_4px_24px_rgba(236,22,77,0.45)]"
+              >
                 Reserve My Overhaul — $395 <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
-            <p className="mt-3 text-sm text-zinc-500">
+            <p className="mt-4 text-sm text-[#737373]">
               Founder pricing. First 10 customers only. 7 spots left.
             </p>
           </div>
         </section>
 
         {/* ── Trust Bar ────────────────────────────────────────── */}
-        <section className="py-5 bg-zinc-950 border-y border-zinc-800">
+        <section className="py-5 bg-[#1a1a1a] border-y border-zinc-800">
           <div className="mx-auto max-w-4xl px-6 text-center">
-            <p className="text-sm text-zinc-400">
+            <p className="text-sm text-[#a3a3a3]">
               Built by <span className="text-white font-semibold">Bill Brown</span> — Founder of Paramount Heating &amp; Air ($3.5M / Inc. 5000, sold). Founder of ServiceTitan Hacks (9,500+ contractors).
             </p>
           </div>
         </section>
 
         {/* ── How It Works ─────────────────────────────────────── */}
-        <section className="py-20 bg-black text-white">
+        <section className="py-20 md:py-28 bg-[#0a0a0a]">
           <div className="mx-auto max-w-4xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-14 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-14 text-center text-white">
               How It Works
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-9">
               {steps.map((step) => (
                 <div key={step.number} className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#ec164d] flex items-center justify-center text-white font-bold text-sm">
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold font-heading mb-1 text-white">
+                    <h3 className="text-lg font-semibold font-heading mb-1.5 text-white">
                       {step.title}
                     </h3>
-                    <p className="text-zinc-400 leading-relaxed text-sm">{step.body}</p>
+                    <p className="text-[#a3a3a3] leading-relaxed text-sm">{step.body}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="mt-10 text-center text-zinc-300 font-semibold text-lg">Done.</p>
+            <p className="mt-12 text-center text-white font-semibold text-xl">Done.</p>
           </div>
         </section>
 
         {/* ── What You Get ─────────────────────────────────────── */}
-        <section className="py-20 bg-zinc-950 text-white">
+        <section className="py-20 md:py-28 bg-[#1a1a1a]">
           <div className="mx-auto max-w-4xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center text-white">
               What You Get
             </h2>
-            <div className="space-y-5 max-w-3xl mx-auto">
+            <div className="space-y-6 max-w-3xl mx-auto">
               {whatYouGet.map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-zinc-300 leading-relaxed">{item}</p>
+                  <CheckCircle className="h-5 w-5 text-[#ec164d] flex-shrink-0 mt-0.5" />
+                  <p className="text-[#a3a3a3] leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* ── Before Image Callout ──────────────────────────────── */}
+        <section className="py-20 md:py-28 bg-[#0a0a0a]">
+          <div className="mx-auto max-w-4xl px-6 text-center">
+            <img
+              src={beforeImg}
+              alt="Before: technical pricebook description"
+              className="w-full max-w-[700px] mx-auto rounded-xl object-contain mb-5"
+            />
+            <p className="text-sm text-[#a3a3a3] italic">
+              This is what your technician reads aloud at the kitchen table.
+            </p>
+          </div>
+        </section>
+
         {/* ── Why It Matters ───────────────────────────────────── */}
-        <section className="py-20 bg-black text-white">
+        <section className="py-20 md:py-28 bg-[#1a1a1a]">
           <div className="mx-auto max-w-4xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center text-white">
               Why Pricebook Descriptions Matter More Than You Think
             </h2>
-            <div className="max-w-3xl mx-auto space-y-5 text-zinc-300 leading-relaxed">
+            <div className="max-w-[700px] mx-auto space-y-5 text-[#a3a3a3] leading-relaxed">
               <p>
                 Your techs read pricebook descriptions to homeowners on every single sales call. If your descriptions sound like SKUs and part numbers, your techs sound like they're reading from a parts catalog.
               </p>
@@ -213,47 +244,47 @@ export default function PricebookOverhaul() {
               <p className="text-white font-medium">
                 When your pricebook reads like a homeowner wrote it, everything changes:
               </p>
-              <ul className="space-y-3 pl-2">
+              <ul className="space-y-3 pl-1">
                 {whyItMatters.map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                    <span>{item}</span>
+                    <CheckCircle className="h-4 w-4 text-[#ec164d] flex-shrink-0" />
+                    <span className="text-[#a3a3a3]">{item}</span>
                   </li>
                 ))}
               </ul>
               <p>
                 Most contractors know their pricebook needs work. They avoid it because rewriting 500+ items by hand takes weeks.
               </p>
-              <p className="text-white font-semibold text-lg">That's what we fix.</p>
+              <p className="text-white font-bold text-xl">That's what we fix.</p>
             </div>
           </div>
         </section>
 
-        {/* ── Pricing ──────────────────────────────────────────── */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        {/* ── Founder Pricing ──────────────────────────────────── */}
+        <section className="py-20 md:py-28 bg-[#ec164d]">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">
               Founder Pricing
             </h2>
-            <div className="text-7xl font-bold mb-2">$395</div>
-            <p className="text-primary-foreground/80 mb-8 text-sm">
+            <div className="text-[6rem] font-bold text-white leading-none mb-2">$395</div>
+            <p className="text-white/80 mb-10 text-sm">
               Flat price. Any size pricebook. First 10 customers only.
             </p>
-            <div className="flex flex-col items-center gap-3 mb-8">
+            <div className="flex flex-col items-center gap-4 mb-10">
               {pricingBullets.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary-foreground/80" />
-                  <span className="text-primary-foreground/90 text-sm">{item}</span>
+                  <CheckCircle className="h-4 w-4 flex-shrink-0 text-white/80" />
+                  <span className="text-white/90 text-sm">{item}</span>
                 </div>
               ))}
             </div>
-            <p className="text-primary-foreground/70 text-sm mb-8">
+            <p className="text-white/70 text-sm mb-10">
               After the first 10 customers, Pricebook Overhaul goes to $799.
             </p>
-            <a href={CHECKOUT_URL} data-testid="button-cta-pricing">
+            <a href={CHECKOUT_URL} target="_self" data-testid="button-cta-pricing">
               <Button
                 size="lg"
-                className="text-base px-8 gap-2 bg-black text-white hover:bg-zinc-900"
+                className="text-base px-10 gap-2 bg-black text-white border-black hover:bg-zinc-900"
               >
                 Reserve My Spot — $395 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -261,10 +292,24 @@ export default function PricebookOverhaul() {
           </div>
         </section>
 
+        {/* ── After Image Callout ───────────────────────────────── */}
+        <section className="py-20 md:py-28 bg-[#0a0a0a]">
+          <div className="mx-auto max-w-4xl px-6 text-center">
+            <img
+              src={afterImg}
+              alt="After: homeowner-friendly pricebook description"
+              className="w-full max-w-[700px] mx-auto rounded-xl object-contain mb-5"
+            />
+            <p className="text-sm text-[#a3a3a3] italic">
+              This is what your pricebook could look like by Monday.
+            </p>
+          </div>
+        </section>
+
         {/* ── FAQ ──────────────────────────────────────────────── */}
-        <section className="py-20 bg-zinc-950 text-white">
+        <section className="py-20 md:py-28 bg-[#1a1a1a]">
           <div className="mx-auto max-w-3xl px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center text-white">
               Frequently Asked Questions
             </h2>
             <Accordion type="single" collapsible className="space-y-3">
@@ -277,7 +322,7 @@ export default function PricebookOverhaul() {
                   <AccordionTrigger className="text-left text-white hover:no-underline py-5 text-base font-medium">
                     {faq.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-zinc-400 pb-5 text-sm leading-relaxed">
+                  <AccordionContent className="text-[#a3a3a3] pb-5 text-sm leading-relaxed">
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -287,24 +332,32 @@ export default function PricebookOverhaul() {
         </section>
 
         {/* ── Final CTA ────────────────────────────────────────── */}
-        <section className="py-24 bg-black text-white">
+        <section className="py-24 md:py-32 bg-[#0a0a0a]">
           <div className="mx-auto max-w-2xl px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">
               Ready to Overhaul Your Pricebook?
             </h2>
-            <p className="text-zinc-400 mb-10 leading-relaxed">
+            <p className="text-[#a3a3a3] mb-12 leading-relaxed">
               7 founder spots left. After that, price goes to $799.
             </p>
-            <a href={CHECKOUT_URL} data-testid="button-cta-final">
-              <Button size="lg" className="text-base px-8 gap-2 mb-5">
+            <a href={CHECKOUT_URL} target="_self" data-testid="button-cta-final">
+              <Button
+                size="lg"
+                className="text-base px-10 gap-2 mb-6 shadow-[0_4px_28px_rgba(236,22,77,0.45)]"
+                style={{
+                  background: "linear-gradient(135deg, #ec164d 0%, #c20f3d 100%)",
+                  border: "none",
+                  color: "white",
+                }}
+              >
                 Reserve My Spot — $395 <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
-            <p className="text-sm text-zinc-600">
+            <p className="text-sm text-[#737373]">
               Questions? Email{" "}
               <a
                 href="mailto:bill@st-hacks.com"
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-[#a3a3a3] hover:text-white transition-colors"
               >
                 bill@st-hacks.com
               </a>
@@ -312,18 +365,21 @@ export default function PricebookOverhaul() {
           </div>
         </section>
 
-        {/* ── Free Tool Footer Element ──────────────────────────── */}
-        <section className="py-10 bg-zinc-950 border-t border-zinc-800">
+        {/* ── Not ready to commit ───────────────────────────────── */}
+        <section className="py-14 bg-[#1a1a1a] border-t border-zinc-800">
           <div className="mx-auto max-w-2xl px-6 text-center">
-            <p className="text-zinc-500 text-sm mb-2">Not ready to commit?</p>
-            <p className="text-zinc-400 text-sm mb-4">
+            <p className="text-white font-semibold text-sm mb-2">Not ready to commit?</p>
+            <p className="text-[#a3a3a3] text-sm mb-6">
               Try our free single-item version first. See how we'd rewrite one of your descriptions — no sign up, no credit card.
             </p>
             <Link href="/pricebook-optimizer">
               <Button variant="outline" size="sm" className="gap-2" data-testid="button-free-tool">
-                Try the free version <ArrowRight className="h-3 w-3" />
+                Try the Free Preview <ArrowRight className="h-3 w-3" />
               </Button>
             </Link>
+            <p className="mt-4 text-xs text-[#737373] italic">
+              This is a preview of what the full Overhaul produces — for every item in your pricebook.
+            </p>
           </div>
         </section>
 
