@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, Upload, FileSpreadsheet, Mail, AlertCircle, X, Search } from "lucide-react";
 import { Link } from "wouter";
+import exportScreenshot from "@assets/Screenshot_2026-04-24_at_11.25.34_AM_1777044372083.png";
 
 const MAX_SIZE_BYTES = 40 * 1024 * 1024; // 40 MB (Resend attachment limit)
 const ALLOWED_EXTS = [".xlsx", ".xls"];
@@ -170,9 +171,21 @@ export default function OverhaulUpload() {
                 <h2 className="text-xl font-semibold font-heading mb-2">
                   Export your pricebook from ServiceTitan
                 </h2>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-2">
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">
                   In ServiceTitan, go to <span className="text-white font-medium">Pricebook → Export → Full Pricebook</span>. Save the file as Excel (.xlsx).
                 </p>
+                <a
+                  href="https://go.servicetitan.com/#/new/pricebook/dataImportExport"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mb-4"
+                >
+                  <img
+                    src={exportScreenshot}
+                    alt="ServiceTitan pricebook export screen"
+                    className="rounded-lg border border-zinc-700 w-full max-w-sm hover:border-zinc-500 transition-colors"
+                  />
+                </a>
                 <a href="mailto:bill@st-hacks.com?subject=Help%20exporting%20pricebook" className="text-sm text-primary hover:underline">
                   Need help? Email bill@st-hacks.com
                 </a>
