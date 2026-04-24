@@ -1,0 +1,62 @@
+Build a new page at /overhaul-upload with the following:
+Layout: Match the existing dark theme of the site. Same ServiceTitan Hacks branding. Pink/red accent color (#ec164d).
+Page structure (in order):
+
+Hero section with headline "You're In. Welcome aboard." and subhead "Your ServiceTitan Pricebook Overhaul is reserved. Let's get your file uploaded."
+A numbered 2-step instructional section:
+
+Step 1: "Export your pricebook from ServiceTitan"
+
+Body text: "In ServiceTitan, go to Pricebook → Export → Full Pricebook. Save the file as Excel (.xlsx)."
+Include a small helper link: "Need help? Email bill@st-hacks.com"
+
+
+Step 2: "Upload your file below"
+
+Body text: "Drop your Excel file in the box below or click to browse."
+
+
+
+
+An email verification field FIRST (before the upload works):
+
+Label: "Email you used at checkout"
+Input: email type
+Helper text: "We use this to match your file to your order."
+
+
+A file upload component below that:
+
+Accepts only .xlsx, .xls files
+Max file size: 100MB
+Shows drag-and-drop area with icon and "Drop your Excel file here, or click to browse"
+Shows filename and progress bar when uploading
+Shows success checkmark when complete
+
+
+Optional message field: "Anything I should know about your pricebook? (optional)" - textarea, 500 char max
+Submit button: "Submit My Pricebook" - pink, large, full-width on mobile
+After submission, show a success state:
+
+Large green checkmark
+"Got it. Check your email for confirmation."
+"I'll send your rewritten pricebook back within 72 hours. Usually faster."
+"Questions? Reply to the confirmation email anytime."
+
+
+
+Backend requirements:
+
+Use Supabase Storage to store uploaded files in a bucket called pricebook-uploads
+Store metadata in a Supabase table called pricebook_orders with columns: id, email, file_url, file_name, file_size, notes, created_at, status
+Set status default to "pending"
+On successful submission:
+
+Send email to bill@st-hacks.com with subject "New Pricebook Overhaul Order - [customer email]" containing the customer's email, optional notes, and a link to download the file from Supabase
+Send confirmation email to the customer's email using a simple template
+
+
+
+Access control (keep it simple):
+Don't verify against Stripe - just accept any email. Legitimate paid customers won't be gated, and if random people upload we'll just ignore those.
+Mobile: Everything must be fully responsive. Upload component should work with mobile browsers' file picker.
