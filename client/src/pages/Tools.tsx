@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import titleBg from "@assets/title-background.png";
 import phoneCallRecapImage from "@assets/Copy of Phone Call Recap Infographic (1)_1760903764548.png";
-import pricebookOptimizerImage from "@assets/before_1777039522526.png";
+import pricebookOptimizerImage from "@assets/before_(1)_1777039828390.png";
 import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png";
 
 export default function Tools() {
