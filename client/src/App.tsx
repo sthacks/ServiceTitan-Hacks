@@ -19,6 +19,7 @@ import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import PricebookOptimizer from "@/pages/PricebookOptimizer";
+import PricebookOverhaul from "@/pages/PricebookOverhaul";
 import SmartACROICalculator from "@/pages/SmartACROICalculator";
 import SmartACROICalculatorTest from "@/pages/SmartACROICalculatorTest";
 import WinkROICalculator from "@/pages/WinkROICalculator";
@@ -91,6 +92,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/pricebook-optimizer" component={PricebookOptimizer} />
+      <Route path="/pricebook-overhaul" component={PricebookOverhaul} />
       <Route path="/smartac-roi-calculator-test" component={SmartACROICalculatorTest} />
       <Route path="/smartac-roi-calculator" component={SmartACROICalculator} />
       <Route path="/wink-roi-calculator" component={WinkROICalculator} />
