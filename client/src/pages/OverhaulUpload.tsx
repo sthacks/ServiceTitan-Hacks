@@ -6,9 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle, Upload, FileSpreadsheet, Mail, AlertCircle, X, Search } from "lucide-react";
+import { CheckCircle, Upload, FileSpreadsheet, AlertCircle, X, Search } from "lucide-react";
 import { Link } from "wouter";
+
 import exportScreenshot from "@assets/Screenshot_2026-04-24_at_11.25.34_AM_1777044372083.png";
+
+function usePaymentConfirmed() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("paid") === "true" || params.has("session_id");
+}
 
 const MAX_SIZE_BYTES = 40 * 1024 * 1024; // 40 MB (Resend attachment limit)
 const ALLOWED_EXTS = [".xlsx", ".xls"];
@@ -23,6 +29,7 @@ function formatSize(bytes: number) {
 }
 
 export default function OverhaulUpload() {
+  const paymentConfirmed = usePaymentConfirmed();
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -145,6 +152,19 @@ export default function OverhaulUpload() {
       />
       <Header />
       <main className="flex-1">
+
+        {/* ── Payment confirmation banner ───────────────────────── */}
+        {paymentConfirmed && (
+          <div
+            className="flex items-center gap-3 bg-green-950/60 border-b border-green-800 px-6 py-4"
+            data-testid="banner-payment-confirmed"
+          >
+            <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+            <p className="text-green-300 text-sm font-medium">
+              Payment received! Now upload your pricebook below to get started.
+            </p>
+          </div>
+        )}
 
         {/* ── Hero ─────────────────────────────────────────────── */}
         <section className="py-16 md:py-20 bg-black text-center">
