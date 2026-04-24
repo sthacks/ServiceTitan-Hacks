@@ -12,8 +12,12 @@ import {
 import { CheckCircle, ArrowRight } from "lucide-react";
 import beforeImg from "@assets/before_1777040624999.png";
 import afterImg from "@assets/after_1777040624998.png";
+import beforeImgNew from "@assets/before_1777041107238.png";
+import afterImgNew from "@assets/after_1777041107237.png";
 
-const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
+const CHECKOUT_URL =
+  import.meta.env.VITE_STRIPE_PRICEBOOK_CHECKOUT_URL ||
+  "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
 
 const steps = [
   {
@@ -256,6 +260,36 @@ export default function PricebookOverhaul() {
                 Most contractors know their pricebook needs work. They avoid it because rewriting 500+ items by hand takes weeks.
               </p>
               <p className="text-white font-bold text-xl">That's what we fix.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── See the Difference ────────────────────────────────── */}
+        <section className="py-20 md:py-28 bg-[#0a0a0a]">
+          <div className="mx-auto max-w-5xl px-6">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-center text-white">
+              See the Difference
+            </h2>
+            <p className="text-center text-[#a3a3a3] mb-12 max-w-2xl mx-auto">
+              This is what your pricebook looks like to a homeowner before and after an overhaul.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col items-center gap-3">
+                <img
+                  src={beforeImgNew}
+                  alt="Before: vague, jargon-filled pricebook description"
+                  className="w-full rounded-md"
+                  data-testid="img-before"
+                />
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <img
+                  src={afterImgNew}
+                  alt="After: clear, homeowner-friendly pricebook description"
+                  className="w-full rounded-md"
+                  data-testid="img-after"
+                />
+              </div>
             </div>
           </div>
         </section>
