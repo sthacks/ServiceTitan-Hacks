@@ -14,6 +14,7 @@ import beforeImg from "@assets/before_1777040624999.png";
 import afterImg from "@assets/after_1777040624998.png";
 import beforeImgNew from "@assets/before_1777041107238.png";
 import afterImgNew from "@assets/after_1777041107237.png";
+import { useQuery } from "@tanstack/react-query";
 
 const CHECKOUT_URL =
   import.meta.env.VITE_STRIPE_PRICEBOOK_CHECKOUT_URL ||
@@ -106,7 +107,30 @@ const faqs = [
   },
 ];
 
+interface SpotsData {
+  totalSpots: number;
+  spotsUsed: number;
+  spotsRemaining: number;
+  founderPricingAvailable: boolean;
+}
+
 export default function PricebookOverhaul() {
+  const { data: spots } = useQuery<SpotsData>({
+    queryKey: ["/api/overhaul-spots"],
+    refetchInterval: 60000,
+  });
+
+  const spotsRemaining = spots?.spotsRemaining ?? null;
+  const founderAvailable = spots?.founderPricingAvailable ?? true;
+
+  const currentPrice = founderAvailable ? "$395" : "$799";
+  const ctaLabel = founderAvailable
+    ? `Reserve My Overhaul — $395`
+    : `Get Your Overhaul — $799`;
+  const ctaLabelShort = founderAvailable
+    ? `Reserve My Spot — $395`
+    : `Get My Spot — $799`;
+
   return (
     <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
       <SEO
@@ -158,11 +182,15 @@ export default function PricebookOverhaul() {
                 size="lg"
                 className="text-base px-10 py-4 gap-2 shadow-[0_4px_24px_rgba(236,22,77,0.45)]"
               >
-                Reserve My Overhaul — $395 <ArrowRight className="h-4 w-4" />
+                {ctaLabel} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
-            <p className="mt-4 text-sm text-[#737373]">
-              Founder pricing. First 10 customers only.
+            <p className="mt-4 text-sm text-[#737373]" data-testid="text-founder-spots-hero">
+              {founderAvailable
+                ? spotsRemaining !== null
+                  ? `Founder pricing. ${spotsRemaining} of 10 spots remaining.`
+                  : "Founder pricing. Limited spots available."
+                : "Founder pricing sold out. Standard pricing now applies."}
             </p>
           </div>
         </section>
@@ -298,11 +326,17 @@ export default function PricebookOverhaul() {
         <section className="py-20 md:py-28 bg-[#ec164d]">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">
-              Founder Pricing
+              {founderAvailable ? "Founder Pricing" : "Standard Pricing"}
             </h2>
-            <div className="text-[6rem] font-bold text-white leading-none mb-2">$395</div>
-            <p className="text-white/80 mb-10 text-sm">
-              Flat price. Any size pricebook. First 10 customers only.
+            <div className="text-[6rem] font-bold text-white leading-none mb-2" data-testid="text-price">
+              {currentPrice}
+            </div>
+            <p className="text-white/80 mb-10 text-sm" data-testid="text-founder-spots-pricing">
+              {founderAvailable
+                ? spotsRemaining !== null
+                  ? `Flat price. Any size pricebook. ${spotsRemaining} founder ${spotsRemaining === 1 ? "spot" : "spots"} remaining.`
+                  : "Flat price. Any size pricebook. Limited founder spots available."
+                : "Flat price. Any size pricebook. Founder spots are full."}
             </p>
             <div className="flex flex-col items-center gap-4 mb-10">
               {pricingBullets.map((item, i) => (
@@ -312,15 +346,17 @@ export default function PricebookOverhaul() {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mb-10">
-              After the first 10 customers, Pricebook Overhaul goes to $799.
-            </p>
+            {founderAvailable && (
+              <p className="text-white/70 text-sm mb-10">
+                After the first 10 customers, Pricebook Overhaul goes to $799.
+              </p>
+            )}
             <a href={CHECKOUT_URL} target="_self" data-testid="button-cta-pricing">
               <Button
                 size="lg"
                 className="text-base px-10 gap-2 bg-white text-[#ec164d] border-white"
               >
-                Reserve My Spot — $395 <ArrowRight className="h-4 w-4" />
+                {ctaLabelShort} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
           </div>
@@ -371,8 +407,12 @@ export default function PricebookOverhaul() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">
               Ready to Overhaul Your Pricebook?
             </h2>
-            <p className="text-[#a3a3a3] mb-12 leading-relaxed">
-              Limited founder spots available. After that, price goes to $799.
+            <p className="text-[#a3a3a3] mb-12 leading-relaxed" data-testid="text-founder-spots-cta">
+              {founderAvailable
+                ? spotsRemaining !== null
+                  ? `Only ${spotsRemaining} founder ${spotsRemaining === 1 ? "spot" : "spots"} left at $395. After that, price goes to $799.`
+                  : "Limited founder spots available at $395. After that, price goes to $799."
+                : "Founder spots are full. Standard pricing of $799 now applies."}
             </p>
             <a href={CHECKOUT_URL} target="_self" data-testid="button-cta-final">
               <Button
@@ -384,7 +424,7 @@ export default function PricebookOverhaul() {
                   color: "white",
                 }}
               >
-                Reserve My Spot — $395 <ArrowRight className="h-4 w-4" />
+                {ctaLabelShort} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
             <p className="text-sm text-[#737373]">

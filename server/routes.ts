@@ -3299,6 +3299,42 @@ Disallow: /admin/
     }
   });
 
+  // ── Overhaul Founder Spots (public) ──────────────────────────────────────
+  // spotsUsed is controlled by the admin via PUT /api/admin/overhaul-spots.
+  // Falls back to the FOUNDER_SPOTS_USED environment variable on server restart.
+  // This ensures the count is always admin-verified, never derived from public input.
+  const TOTAL_FOUNDER_SPOTS = 10;
+  let founderSpotsUsedOverride: number | null = null;
+
+  function getFounderSpotsUsed(): number {
+    if (founderSpotsUsedOverride !== null) return founderSpotsUsedOverride;
+    return Math.max(0, parseInt(process.env.FOUNDER_SPOTS_USED || "0", 10) || 0);
+  }
+
+  app.get("/api/overhaul-spots", (_req: any, res: any) => {
+    const spotsUsed = getFounderSpotsUsed();
+    const spotsRemaining = Math.max(0, TOTAL_FOUNDER_SPOTS - spotsUsed);
+    return res.json({
+      totalSpots: TOTAL_FOUNDER_SPOTS,
+      spotsUsed,
+      spotsRemaining,
+      founderPricingAvailable: spotsRemaining > 0,
+    });
+  });
+
+  // ── Admin: Update founder spots used ────────────────────────────────────
+  // Admin manually calls this after verifying each payment in Stripe.
+  app.put("/api/admin/overhaul-spots", isAuthenticated, isAdmin, (req: any, res: any) => {
+    const { spotsUsed } = req.body;
+    if (typeof spotsUsed !== "number" || !Number.isInteger(spotsUsed) || spotsUsed < 0 || spotsUsed > TOTAL_FOUNDER_SPOTS) {
+      return res.status(400).json({ message: `spotsUsed must be an integer between 0 and ${TOTAL_FOUNDER_SPOTS}.` });
+    }
+    founderSpotsUsedOverride = spotsUsed;
+    const spotsRemaining = Math.max(0, TOTAL_FOUNDER_SPOTS - spotsUsed);
+    console.log(`[admin/overhaul-spots] Updated spotsUsed to ${spotsUsed}`);
+    return res.json({ totalSpots: TOTAL_FOUNDER_SPOTS, spotsUsed, spotsRemaining, founderPricingAvailable: spotsRemaining > 0 });
+  });
+
   // ── Overhaul Order Status (public) ──────────────────────────────────────
   app.get("/api/overhaul-status", async (req: any, res: any) => {
     try {
