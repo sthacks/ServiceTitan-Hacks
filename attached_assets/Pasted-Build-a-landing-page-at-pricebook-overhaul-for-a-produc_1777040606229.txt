@@ -1,0 +1,204 @@
+Build a landing page at /pricebook-overhaul for a product called "ServiceTitan Pricebook Overhaul."
+Brand & Design System
+Brand: ServiceTitan Hacks. Logo has a black knight/shield icon with "ServiceTitan" in white and "HACKS" in red below it.
+Color palette:
+
+Primary background: #0a0a0a (rich black)
+Secondary background: #1a1a1a (dark charcoal, for section alternation)
+Accent color: #ec164d (pink/red, used for CTAs and highlights)
+Accent dark: #c20f3d (darker pink, for hover states and gradients)
+Text primary: #ffffff (white)
+Text secondary: #a3a3a3 (light gray, for subheads and captions)
+Text muted: #737373 (medium gray, for fine print)
+Success green: #10b981 (for checkmarks)
+
+Typography: Use Nunito Sans from Google Fonts. Weights: 400, 600, 700, 800, 900.
+Visual style: Alternate section backgrounds between #0a0a0a and #1a1a1a for visual rhythm. Don't make every section pure black — it causes visual fatigue on mobile. Use #ec164d as the accent color for buttons, numbered circles, and key highlights. Keep generous vertical padding between sections (80-120px on desktop, 60px on mobile).
+Page Structure (in order)
+HEADER / NAV (simple):
+
+Left: ServiceTitan Hacks logo (use uploaded logo asset)
+Right: Simple nav with "Home", "Courses", "Automations", "Partners", "Events", "Blog", "Login"
+
+HERO SECTION (background: #0a0a0a):
+
+Centered headline (H1, large, bold, white): "Your entire ServiceTitan pricebook, rewritten for homeowners. In 72 hours."
+Subhead (centered, medium gray): "Stop losing sales to descriptions like 'Capacitor 40/5 370V Replacement.' We'll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech."
+BEFORE and AFTER images side-by-side. I'm uploading these — the BEFORE image shows a ServiceTitan iPad view with a technical description, the AFTER image shows the same item with a rewritten homeowner-friendly description. Display them:
+
+Desktop: 2 columns, 50/50 split, small gap (24px) between
+Mobile: stacked, BEFORE on top, AFTER below
+Both images max-width 600px each
+
+
+Caption under the images (small, centered, medium gray): "Real ServiceTitan pricebook item. Same price. Same service. Transformed description."
+Primary CTA button below the caption:
+
+Text: "Reserve My Overhaul — $395"
+Color: #ec164d background, white text
+Large, rounded corners (8px), prominent drop shadow
+Links to: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
+
+
+Small text below button (centered, medium gray): "Founder pricing. First 10 customers only. 7 spots left."
+
+TRUST BAR (background: #1a1a1a, thin section):
+A single horizontal line of text, centered:
+"Built by Bill Brown — Founder of Paramount Heating & Air ($3.5M / Inc. 5000, sold). Founder of ServiceTitan Hacks (9,500+ contractors)."
+HOW IT WORKS SECTION (background: #0a0a0a):
+
+Heading (centered, H2): "How It Works"
+5 numbered steps, each with a red circular number badge (#ec164d background, white number) on the left, bold step title, and description below. Stack vertically on mobile, left-align the number with each step.
+
+Step 1: "Export Your Pricebook"
+"Export your current pricebook from ServiceTitan as an Excel file. Takes about 30 seconds. I'll send you a one-page guide if you need it."
+Step 2: "Upload It to Us"
+"Upload your pricebook file directly on our site after payment, or email it to bill@st-hacks.com. Your choice."
+Step 3: "We Rewrite Every Description"
+"Our AI reads every single item and rewrites the description in clear, confident, homeowner-friendly language. No jargon. No SKU codes. Just words your customers actually understand. We keep your pricing, codes, categories, and hours exactly as they are."
+Step 4: "You Get It Back in 72 Hours"
+"We email you the updated Excel file. Open it, review the new descriptions, make any edits you want."
+Step 5: "Re-Import to ServiceTitan"
+"Upload the updated file back into ServiceTitan. Your entire pricebook now reads like a homeowner wrote it."
+Below all 5 steps, a simple line: "Done."
+WHAT YOU GET SECTION (background: #1a1a1a):
+
+Heading (centered, H2): "What You Get"
+6 bullet points with pink/red checkmark icons (#ec164d):
+
+✓ Every description rewritten. 50 items or 5,000 items. Flat price. No surprises.
+✓ Homeowner-friendly language. No more "Capacitor 40/5 370V." Real explanations customers actually understand.
+✓ Professional tone preserved. Doesn't dumb things down. Shows your expertise through clarity, not jargon.
+✓ Your pricing untouched. We don't change your prices, codes, categories, or hours. Only the descriptions.
+✓ Ready-to-import Excel file. Same format ServiceTitan expects. Drop it back in, you're done.
+✓ 72-hour turnaround. Sometimes faster. Never longer.
+BEFORE IMAGE CALLOUT (background: #0a0a0a):
+
+Show the BEFORE image centered, max-width 700px
+Caption below (centered, medium gray): "This is what your technician reads aloud at the kitchen table."
+
+WHY IT MATTERS SECTION (background: #1a1a1a):
+
+Heading (centered, H2): "Why Pricebook Descriptions Matter More Than You Think"
+Body text, left-aligned within a centered max-width 700px container:
+
+"Your techs read pricebook descriptions to homeowners on every single sales call. If your descriptions sound like SKUs and part numbers, your techs sound like they're reading from a parts catalog."
+"Homeowners don't want to feel like they're being sold parts. They want to feel like they're investing in solutions."
+"When your pricebook reads like a homeowner wrote it, everything changes:"
+Indented bullet list with pink checkmarks:
+
+Your techs sound more confident
+Your close rate goes up
+Your customers feel informed, not pressured
+Your estimates look more professional
+
+"Most contractors know their pricebook needs work. They avoid it because rewriting 500+ items by hand takes weeks."
+Bold, slightly larger: "That's what we fix."
+FOUNDER PRICING SECTION (background: #ec164d pink — this section gets the solid pink background for maximum contrast):
+
+Heading (centered, H2, white): "Founder Pricing"
+Huge price number, centered, white, very large (6rem): "$395"
+Subtext (centered, white, smaller): "Flat price. Any size pricebook. First 10 customers only."
+5 bullet points with white checkmark icons:
+
+No per-item fees
+No subscription
+No hidden costs
+72-hour delivery guaranteed
+Full money-back guarantee if you're not happy
+
+
+Below bullets, small centered text (white with 70% opacity): "After the first 10 customers, Pricebook Overhaul goes to $799."
+Large CTA button (centered): "Reserve My Spot — $395"
+
+Black background, white text, rounded corners
+Links to: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
+
+
+
+AFTER IMAGE CALLOUT (background: #0a0a0a):
+
+Show the AFTER image centered, max-width 700px
+Caption below (centered, medium gray): "This is what your pricebook could look like by Monday."
+
+FAQ SECTION (background: #1a1a1a):
+
+Heading (centered, H2): "Frequently Asked Questions"
+Accordion-style collapsible questions. Each question clickable to expand/collapse the answer. Default state: all collapsed.
+
+Q: "How big can my pricebook be?"
+A: "Any size. We've done 200-item pricebooks and we'll happily do 10,000-item pricebooks. Flat $395 regardless."
+Q: "Will you change my pricing?"
+A: "No. We only touch descriptions. Prices, codes, categories, hours, warranty info — all untouched."
+Q: "What if I don't like the rewrites?"
+A: "You'll get the Excel file back before anything goes into ServiceTitan. Edit anything you want. Full money-back guarantee if it's not what you expected."
+Q: "Is this one-time or ongoing?"
+A: "One-time. You pay $395, you get your pricebook overhauled, you own the result. Re-import it and you're done."
+Q: "What about photos for each item?"
+A: "Coming soon as an add-on. For now, this is descriptions only at $395."
+Q: "How do I send you my pricebook?"
+A: "After you pay, you'll be redirected to an upload page on our site where you can drop your Excel file directly. Prefer email? Send it to bill@st-hacks.com instead — same result."
+Q: "How long does it take?"
+A: "72 hours from when we receive your file. Usually faster."
+Q: "What if my pricebook has custom categories or fields?"
+A: "We preserve everything. ServiceTitan's schema is strict — we only rewrite descriptions, nothing else changes."
+FINAL CTA SECTION (background: #0a0a0a):
+
+Heading (centered, H2): "Ready to Overhaul Your Pricebook?"
+Subhead (centered, medium gray): "7 founder spots left. After that, price goes to $799."
+Large CTA button (centered): "Reserve My Spot — $395"
+
+Pink/red gradient background (#ec164d to #c20f3d), white text
+Large, prominent drop shadow
+Links to: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
+
+
+Small text below (centered, medium gray): "Questions? Email bill@st-hacks.com"
+
+SECONDARY CTA SECTION (background: #1a1a1a, smaller section):
+
+Small heading (centered): "Not ready to commit?"
+Body (centered, medium gray): "Try our free single-item version first. See how we'd rewrite one of your descriptions — no sign up, no credit card."
+Ghost button (centered, outlined, not filled): "Try the Free Preview →"
+
+Links to: https://servicetitanhacks.com/pricebook-optimizer
+
+
+Below the button, italicized small text: "This is a preview of what the full Overhaul produces — for every item in your pricebook."
+
+FOOTER (background: #0a0a0a):
+Standard footer with:
+
+Left column: ServiceTitan Hacks logo and tagline "AI and automations for ServiceTitan contractors. Grow smarter, automate faster, win more jobs."
+Middle column (Quick Links header): Home, Partners, Apps, Courses, Events, All-Access Pass
+Right column (Resources header): Blog, Podcast, Resources, About, Contact
+Social icons: YouTube, Facebook, LinkedIn (use existing site accounts)
+Horizontal divider
+Partner logos row (centered): Wink, smartAC.com, Contractor Commerce, LiveSwitch, Polycam, Crucible
+Bottom bar: "© 2026 ServiceTitan Hacks. All rights reserved." on left; "Privacy | SMS Privacy | SMS Terms | Sitemap" on right
+
+Critical Technical Requirements
+
+Mobile-first responsive design. Test every section on a 375px wide viewport (iPhone). Text must be readable, buttons must be tappable, images must stack correctly.
+Fast loading. Optimize all images. Don't load unnecessary JavaScript.
+All CTA buttons use the same Stripe link: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
+The free preview button links to: https://servicetitanhacks.com/pricebook-optimizer
+Use Nunito Sans via Google Fonts for all text.
+Every "Reserve My Spot" button must open in the same tab (not new tab) so the Stripe redirect flow works.
+Use target="_self" on the Stripe links.
+
+Images I'm uploading
+I'm providing two images:
+
+BEFORE image — ServiceTitan iPad view showing a pricebook item titled "ODF Replace - Level 2" with a brief technical description "replace outdoor ac fan motor and fan blade". Has a red "BEFORE" badge at top and red glow border.
+AFTER image — Same item redesigned with title "Outdoor AC Fan Motor & Blade Replacement" and a full homeowner-friendly description with checkmark bullets. Has a green "AFTER" badge at top and green glow border.
+
+Use these images exactly as uploaded — don't crop, don't recolor, don't add overlays. Display them at natural aspect ratio.
+Image placement:
+
+Hero: both images side-by-side (desktop) or stacked (mobile)
+Before Image Callout section: BEFORE only, centered
+After Image Callout section: AFTER only, centered
+
+
+Final note: The page must feel confident, professional, and results-focused. This is a premium service for business owners, not a SaaS app. Avoid any "techie" or "startup" feel. Think: contractor-trusted, practical, proven.

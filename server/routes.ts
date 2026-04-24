@@ -1,5 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import multer from "multer";
 import { storage } from "./storage";
 import { insertEmailSubscriberSchema, insertContactSubmissionSchema, insertResourceLeadSchema, insertPricebookOptimizationSchema, insertCoursePurchaseSchema, insertWinkDemoSubmissionSchema, insertSmartACDemoSubmissionSchema, insertContractorCommerceDemoSubmissionSchema, insertLiveswitchDemoSubmissionSchema, insertSmartACROISubmissionSchema, insertWinkROISubmissionSchema, insertHiringROISubmissionSchema, insertPhoneTapWaitlistSchema, insertReplayAccessSchema, insertPartnerCompanySchema, insertPartnerUserSchema, insertPartnerCampaignMetricSchema, insertPartnerContentCalendarSchema, insertPartnerBrandAssetSchema } from "@shared/schema";
 import { randomUUID } from "crypto";
@@ -3200,6 +3201,88 @@ Disallow: /admin/
 
     res.header('Content-Type', 'text/plain');
     res.send(robotsTxt);
+  });
+
+  // ── Pricebook Overhaul Upload ────────────────────────────────────────────
+  const pricebookUpload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 40 * 1024 * 1024 }, // 40 MB — Resend attachment ceiling
+  });
+
+  app.post("/api/pricebook-upload", pricebookUpload.single("file"), async (req: any, res: any) => {
+    try {
+      const email = (req.body.email || "").trim().toLowerCase();
+      const notes = (req.body.notes || "").trim();
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({ message: "A valid email address is required." });
+      }
+
+      if (!req.file) {
+        return res.status(400).json({ message: "A pricebook file is required." });
+      }
+
+      const allowedTypes = [
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-excel",
+        "application/octet-stream",
+      ];
+      const fileName = req.file.originalname || "";
+      const isValidExt = /\.(xlsx|xls)$/i.test(fileName);
+      if (!isValidExt) {
+        return res.status(400).json({ message: "Only .xlsx and .xls files are accepted." });
+      }
+
+      const { client, fromEmail } = await getUncachableResendClient();
+
+      // Notify bill@st-hacks.com with the file attached
+      await client.emails.send({
+        from: fromEmail,
+        to: "bill@st-hacks.com",
+        replyTo: email,
+        subject: `New Pricebook Overhaul Order — ${email}`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px;">
+            <h2 style="color: #ec164d;">New Pricebook Overhaul Order</h2>
+            <p><strong>Customer email:</strong> ${email}</p>
+            ${notes ? `<p><strong>Notes:</strong></p><blockquote style="border-left: 3px solid #ec164d; padding-left: 12px; color: #555;">${notes}</blockquote>` : "<p><em>No additional notes provided.</em></p>"}
+            <p><strong>File:</strong> ${fileName} (${(req.file.size / 1024).toFixed(0)} KB)</p>
+            <p style="color: #888; font-size: 12px;">The pricebook file is attached below.</p>
+          </div>
+        `,
+        attachments: [
+          {
+            filename: fileName,
+            content: req.file.buffer.toString("base64"),
+          },
+        ],
+      });
+
+      // Confirmation email to the customer
+      await client.emails.send({
+        from: fromEmail,
+        to: email,
+        subject: "Your ServiceTitan Pricebook Overhaul — Received",
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; color: #1a1a1a;">
+            <h2 style="color: #ec164d;">Got it. Your pricebook is in.</h2>
+            <p>We received your ServiceTitan pricebook file. Here's what happens next:</p>
+            <ul>
+              <li>We'll AI-rewrite every description in plain, homeowner-friendly language.</li>
+              <li>Your pricing, codes, categories, and hours stay exactly as they are.</li>
+              <li>You'll get your rewritten Excel file back within <strong>72 hours</strong>. Usually faster.</li>
+            </ul>
+            <p>Questions? Just reply to this email.</p>
+            <p style="margin-top: 32px;">— Bill Brown<br>ServiceTitan Hacks</p>
+          </div>
+        `,
+      });
+
+      return res.status(200).json({ success: true });
+    } catch (err: any) {
+      console.error("[pricebook-upload] Error:", err);
+      return res.status(500).json({ message: "Something went wrong. Please email bill@st-hacks.com directly." });
+    }
   });
 
   const httpServer = createServer(app);
