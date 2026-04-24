@@ -24,16 +24,16 @@ export default function Tools() {
       image: titanDashboardsImage,
     },
     {
-      name: "Pricebook Optimizer",
-      description: "Transform technical jargon into homeowner-friendly descriptions that win more jobs.",
+      name: "ServiceTitan Pricebook Overhaul",
+      description: "We rewrite every item in your pricebook so descriptions sound like a homeowner wrote them, not a tech. Done in 72 hours.",
       benefits: [
-        "AI rewrites in plain English",
-        "Batch process entire pricebook",
-        "Export directly to ServiceTitan",
-        "Increase close rates with clarity",
+        "AI rewrites every description in plain English",
+        "Any size pricebook — flat $395",
+        "Ready-to-import Excel file returned in 72 hours",
+        "Your pricing, codes, and categories stay untouched",
       ],
       tag: "Popular",
-      link: "/pricebook-optimizer",
+      link: "/pricebook-overhaul",
       image: pricebookOptimizerImage,
     },
     {
