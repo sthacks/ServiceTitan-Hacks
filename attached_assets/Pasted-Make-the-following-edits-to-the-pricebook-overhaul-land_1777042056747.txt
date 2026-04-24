@@ -1,0 +1,39 @@
+Make the following edits to the /pricebook-overhaul landing page:
+Edit 1: Fix the "Reserve My Spot" button in the Founder Pricing section
+The button in the pink Founder Pricing section currently has a black background with white text, which is hard to see against the pink background.
+Change it to:
+
+White background (#ffffff)
+Pink text (#ec164d)
+Keep rounded corners and the right-arrow icon
+Keep hover state but have it slightly darken the background (e.g., #f5f5f5)
+Keep the existing size and padding
+
+The button should pop against the pink, not blend into it.
+Edit 2: Update the caption under the final AFTER image
+In the section showing the AFTER image near the bottom of the page (above the FAQ section), change the caption text from:
+"This is what your pricebook could look like by Monday."
+To:
+"This is what your pricebook could look like in 72 hours."
+Edit 3: Remove the "spots left" count, keep it evergreen
+In two places, remove the specific "7 spots left" number:
+Location 1 - Hero section, under the main CTA button:
+Change:
+"Founder pricing. First 10 customers only. 7 spots left."
+To:
+"Founder pricing. First 10 customers only."
+Location 2 - Final CTA section ("Ready to Overhaul Your Pricebook?"):
+Change:
+"7 founder spots left. After that, price goes to $799."
+To:
+"Limited founder spots available. After that, price goes to $799."
+Edit 4: Tighten the hero section spacing
+Reduce the vertical padding between the image caption ("Real ServiceTitan pricebook item...") and the "Reserve My Overhaul — $395" button. Currently there's too much empty space, which pushes the CTA below the fold on mobile devices.
+Target: on a 375px-wide mobile viewport, the "Reserve My Overhaul" button should be visible within the first 100vh (before any scrolling).
+Keep everything else the same
+
+Do not modify the headline, subhead, or images
+Do not change colors anywhere else
+Do not modify the How It Works, What You Get, Why It Matters, FAQ, or footer sections
+Do not change any other buttons or their links
+All CTA buttons should continue linking to: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J

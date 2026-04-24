@@ -119,25 +119,25 @@ export default function PricebookOverhaul() {
       <main className="flex-1">
 
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="py-20 md:py-28 bg-[#0a0a0a]">
+        <section className="py-10 md:py-24 bg-[#0a0a0a]">
           <div className="mx-auto max-w-5xl px-6 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight text-white">
               Your entire ServiceTitan pricebook, rewritten for homeowners. In 72 hours.
             </h1>
-            <p className="text-lg md:text-xl text-[#a3a3a3] mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#a3a3a3] mb-6 md:mb-12 max-w-3xl mx-auto leading-relaxed">
               Stop losing sales to descriptions like "Capacitor 40/5 370V Replacement." We'll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech.
             </p>
 
-            {/* Before / After images */}
-            <div className="flex flex-col md:flex-row gap-6 justify-center mb-6">
-              <div className="flex-1 flex justify-center md:justify-end">
+            {/* Before / After images — shown on desktop, hidden on mobile (appear in callout sections below) */}
+            <div className="hidden md:flex flex-row gap-6 justify-center mb-6">
+              <div className="flex-1 flex justify-end">
                 <img
                   src={beforeImg}
                   alt="Before: technical pricebook description"
                   className="w-full max-w-[560px] rounded-xl object-contain"
                 />
               </div>
-              <div className="flex-1 flex justify-center md:justify-start">
+              <div className="flex-1 flex justify-start">
                 <img
                   src={afterImg}
                   alt="After: homeowner-friendly pricebook description"
@@ -145,7 +145,7 @@ export default function PricebookOverhaul() {
                 />
               </div>
             </div>
-            <p className="text-sm text-[#737373] mb-10 italic">
+            <p className="hidden md:block text-sm text-[#737373] mb-4 italic">
               Real ServiceTitan pricebook item. Same price. Same service. Transformed description.
             </p>
 
@@ -162,7 +162,7 @@ export default function PricebookOverhaul() {
               </Button>
             </a>
             <p className="mt-4 text-sm text-[#737373]">
-              Founder pricing. First 10 customers only. 7 spots left.
+              Founder pricing. First 10 customers only.
             </p>
           </div>
         </section>
@@ -318,7 +318,7 @@ export default function PricebookOverhaul() {
             <a href={CHECKOUT_URL} target="_self" data-testid="button-cta-pricing">
               <Button
                 size="lg"
-                className="text-base px-10 gap-2 bg-black text-white border-black hover:bg-zinc-900"
+                className="text-base px-10 gap-2 bg-white text-[#ec164d] border-white"
               >
                 Reserve My Spot — $395 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -335,7 +335,7 @@ export default function PricebookOverhaul() {
               className="w-full max-w-[700px] mx-auto rounded-xl object-contain mb-5"
             />
             <p className="text-sm text-[#a3a3a3] italic">
-              This is what your pricebook could look like by Monday.
+              This is what your pricebook could look like in 72 hours.
             </p>
           </div>
         </section>
@@ -372,7 +372,7 @@ export default function PricebookOverhaul() {
               Ready to Overhaul Your Pricebook?
             </h2>
             <p className="text-[#a3a3a3] mb-12 leading-relaxed">
-              7 founder spots left. After that, price goes to $799.
+              Limited founder spots available. After that, price goes to $799.
             </p>
             <a href={CHECKOUT_URL} target="_self" data-testid="button-cta-final">
               <Button
