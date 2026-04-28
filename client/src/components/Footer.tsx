@@ -5,7 +5,6 @@ import smartACLogo from "@assets/logos.zip - smartac_1762023015702.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762022633613.png";
 import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
-import winkLogo from "@assets/logos.zip - 6_1762022633613.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
 
 export default function Footer() {
@@ -29,7 +28,6 @@ export default function Footer() {
   ];
 
   const partners = [
-    { name: "Wink Toolbox", logo: winkLogo, slug: "wink-toolbox" },
     { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
     { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },

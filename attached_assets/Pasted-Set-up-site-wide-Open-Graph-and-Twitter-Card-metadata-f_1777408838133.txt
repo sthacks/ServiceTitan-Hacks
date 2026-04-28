@@ -1,0 +1,38 @@
+Set up site-wide Open Graph and Twitter Card metadata for servicetitanhacks.com.
+
+CRITICAL: All metadata must be set up at the root layout/template level so every page automatically inherits defaults. Individual pages should be able to override defaults but never have to start from scratch.
+
+Implement the following:
+
+1. Add default Open Graph metadata to the root layout file (whatever the equivalent of _app, _document, or root layout is in this codebase):
+
+<meta name="title" content="ServiceTitan Hacks">
+<meta name="description" content="AI tools and automations for ServiceTitan contractors. Trusted by 10,000+ home service companies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="[CANONICAL_URL]">
+<meta property="og:title" content="ServiceTitan Hacks">
+<meta property="og:description" content="AI tools and automations for ServiceTitan contractors. Trusted by 10,000+ home service companies.">
+<meta property="og:image" content="https://servicetitanhacks.com/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ServiceTitan Hacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="[CANONICAL_URL]">
+<meta name="twitter:title" content="ServiceTitan Hacks">
+<meta name="twitter:description" content="AI tools and automations for ServiceTitan contractors. Trusted by 10,000+ home service companies.">
+<meta name="twitter:image" content="https://servicetitanhacks.com/og-default.png">
+<link rel="canonical" href="[CANONICAL_URL]">
+
+2. The og:url and twitter:url should auto-populate with the actual canonical URL of each page, not hardcoded to the homepage.
+
+3. Make these values overridable per-page. When I create a new page, I should be able to specify custom og:title, og:description, and og:image values that override the defaults. If no override is provided, the page uses the defaults.
+
+4. Apply this metadata structure to all existing pages so every current page on the site has working Open Graph tags. After this update, the homepage and every existing page should validate cleanly when tested at opengraph.xyz.
+
+5. Use https://servicetitanhacks.com/og-default.png as the placeholder URL for the default image. Tell me what file path I should upload the actual image to in the Replit project.
+
+CONFIRMATION QUESTIONS:
+After implementing, tell me:
+- What file path should I upload og-default.png to?
+- What is the exact code pattern I should use when adding a new page to override the default metadata?
+- Confirm which existing pages now have working OG metadata vs which still need attention.
