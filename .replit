@@ -47,7 +47,7 @@ integrations = ["resend:1.0.0", "javascript_openai_ai_integrations:1.0.0", "java
 GOOGLE_SHEET_PURCHASING_PLATFORM_ID = "13n42hD2G66AM6PEN1gRA2jn2KZjJnhr2rc3SI50w-GY"
 STRIPE_PRICEBOOK_CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J"
 VITE_STRIPE_PRICEBOOK_CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J"
-FOUNDER_SPOTS_USED = "0"
+FOUNDER_SPOTS_USED = "4"
 
 [postMerge]
 path = "scripts/post-merge.sh"
