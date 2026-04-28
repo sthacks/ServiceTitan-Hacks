@@ -446,7 +446,7 @@ export default function PricebookOverhaul() {
             <p className="text-[#a3a3a3] text-sm mb-6">
               Try our free single-item version first. See how we'd rewrite one of your descriptions — no sign up, no credit card.
             </p>
-            <Link href="/pricebook-optimizer">
+            <Link href="/pricebook-overhaul-tool">
               <Button variant="outline" size="sm" className="gap-2" data-testid="button-free-tool">
                 Try the Free Preview <ArrowRight className="h-3 w-3" />
               </Button>

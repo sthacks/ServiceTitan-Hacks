@@ -238,7 +238,7 @@ export default function PricebookOptimizer() {
         title="Pricebook Optimizer Tool for HVAC Contractors"
         description="Free AI tool to transform technical descriptions into customer-friendly language. Boost conversions and help homeowners understand your services."
         keywords="pricebook optimizer, AI pricebook, ServiceTitan pricebook, service descriptions, ChatGPT"
-        canonicalUrl="https://servicetitanhacks.com/pricebook-optimizer"
+        canonicalUrl="https://servicetitanhacks.com/pricebook-overhaul-tool"
         ogImage="https://servicetitanhacks.com/og-pricebook-optimizer.png"
       />
       <Header />
@@ -518,7 +518,7 @@ export default function PricebookOptimizer() {
                       disabled={mutation.isPending}
                       data-testid="button-submit"
                     >
-                      {mutation.isPending ? "Rewriting..." : "OPTIMIZE IT"}
+                      {mutation.isPending ? "Rewriting..." : "Rewrite Description"}
                     </Button>
                   </form>
                 </Form>

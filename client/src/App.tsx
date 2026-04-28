@@ -94,6 +94,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/pricebook-overhaul-tool" component={PricebookOptimizer} />
       <Route path="/pricebook-optimizer" component={PricebookOptimizer} />
       <Route path="/pricebook-overhaul" component={PricebookOverhaul} />
       <Route path="/overhaul-upload" component={OverhaulUpload} />
