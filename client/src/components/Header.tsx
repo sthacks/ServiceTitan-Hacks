@@ -8,13 +8,14 @@ import { useAuth } from "@/hooks/useAuth";
 const appsAndToolsLinks = [
   { path: "/pricebook-overhaul", label: "Pricebook Overhaul" },
   { path: "/servicetitan-automation-services", label: "Automations" },
-  { path: "/purchasing-platform", label: "HVAC Equipment Purchasing Platform" },
 ];
 
 const resourcesLinks = [
   { path: "/blog", label: "Blog" },
+  { path: "/podcast", label: "Podcast" },
   { path: "/events", label: "Events" },
   { path: "/partners", label: "Partners" },
+  { path: "/purchasing-platform", label: "HVAC Equipment Purchasing Platform" },
 ];
 
 function DropdownMenu({
