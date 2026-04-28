@@ -1724,6 +1724,24 @@ ServiceTitan Hacks
 
         setTimeout(async () => {
           try {
+            // Check local DB first — if they've already submitted a pricebook file they purchased
+            const existingOrders = await storage.getOverhaulOrdersByEmail(customerEmail);
+            if (existingOrders.length > 0) {
+              console.log(`[follow-up] Skipping ${customerEmail} — already has an overhaul order in DB`);
+              return;
+            }
+
+            // Check Stripe for any completed checkout session with this email
+            const sessions = await stripe.checkout.sessions.search({
+              query: `customer_details.email:"${customerEmail}" AND payment_status:"paid"`,
+              limit: 5,
+            });
+            if (sessions.data.length > 0) {
+              console.log(`[follow-up] Skipping ${customerEmail} — found ${sessions.data.length} paid Stripe session(s)`);
+              return;
+            }
+
+            console.log(`[follow-up] No purchase found for ${customerEmail} — sending follow-up`);
             const { client: followUpClient } = await getUncachableResendClient();
             await followUpClient.emails.send({
               from: "Bill Brown <bill@st-hacks.com>",
