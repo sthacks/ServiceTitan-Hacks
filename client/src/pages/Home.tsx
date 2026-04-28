@@ -6,13 +6,14 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
-import { BookOpen, Wrench, Users, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText, Settings } from "lucide-react";
+import { BookOpen, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText, Settings, FileSpreadsheet } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 import servicesImage from "@assets/1072722_custom_site_themes_id_wPQ226FHSzWW8kg7Kz2o_31639583-3__1775564469964.jpg";
 import blogImage from "@assets/32563772-1_1762708907799.jpg";
+import pricebookAfterImg from "@assets/after_1777041107237.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
@@ -39,12 +40,31 @@ export default function Home() {
   };
   const mainSections = [
     {
+      title: "All-Access Pass",
+      description: "Get unlimited access to all ServiceTitan automation courses, exclusive AI tools, premium resources, and monthly live Q&A calls.",
+      icon: Key,
+      link: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass",
+      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
+      alt: "ServiceTitan Hacks All-Access Pass - unlimited contractor courses and AI tools",
+      cta: "Get All-Access Pass",
+    },
+    {
+      title: "Pricebook Overhaul",
+      description: "Send us your ServiceTitan pricebook. In 72 hours, every description is rewritten in homeowner-friendly language. Founder pricing $395 for the first 10 customers.",
+      icon: FileSpreadsheet,
+      link: "/pricebook-overhaul",
+      image: pricebookAfterImg,
+      alt: "ServiceTitan Pricebook Overhaul - AI-rewritten homeowner-friendly descriptions",
+      cta: "Claim a Founder Spot",
+    },
+    {
       title: "Automations",
-      description: "Done-for-you ServiceTitan automation implementation. We build the forms, workflows, and reporting systems your shop needs to run more efficiently.",
+      description: "Done-for-you ServiceTitan automations: lead routing, dispatch dashboards, custom workflows, and reporting systems built for your shop.",
       icon: Settings,
       link: "/servicetitan-automation-services",
       image: servicesImage,
       alt: "ServiceTitan automation services - done-for-you workflow and forms implementation",
+      cta: "Explore Automations",
     },
     {
       title: "Courses",
@@ -53,38 +73,25 @@ export default function Home() {
       link: "/courses",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FnjPnLHZRIeoS1YalKP4j_31639205-3.jpg",
       alt: "ServiceTitan Hacks automation courses for contractors - AI tools training",
-    },
-    {
-      title: "Apps & Products",
-      description: "Discover AI tools for contractors and automation solutions designed specifically for ServiceTitan users in HVAC and plumbing businesses.",
-      icon: Wrench,
-      link: "/apps",
-      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FwPQ226FHSzWW8kg7Kz2o_31639583-3.jpg",
-      alt: "AI tools for contractors - ServiceTitan automation products and software",
-    },
-    {
-      title: "HVAC Equipment Purchasing Platform",
-      description: "100% free for Facebook Group members. Get access to pricing that the big guys get on HVAC equipment, water heaters, and tools with plumbing automation.",
-      icon: ShoppingCart,
-      link: "/purchasing-platform",
-      image: buyingGroupImage,
-      alt: "HVAC Equipment Purchasing Platform for contractors - ServiceTitan Hacks partnership",
-    },
-    {
-      title: "Partners",
-      description: "Trusted technology partners helping contractors automate, optimize, and grow their businesses with AI tools and HVAC automation.",
-      icon: Users,
-      link: "/partners",
-      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2F2byukiuSKa7LxxzyPZna_Partners.png",
-      alt: "ServiceTitan Hacks technology partners - HVAC AI and plumbing automation solutions",
+      cta: "Browse Courses",
     },
     {
       title: "Free Resources",
-      description: "Access free templates, calculators, and guides to help you get more out of ServiceTitan with automation tools for contractors.",
+      description: "Free templates, calculators, and guides built specifically for ServiceTitan contractors.",
       icon: Gift,
       link: "/resources",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FI8AAxp7ERumPFmkyYVug_31639896-1.jpg",
       alt: "Free ServiceTitan resources - contractor templates and automation guides",
+      cta: "Get Free Resources",
+    },
+    {
+      title: "HVAC Equipment Purchasing Platform",
+      description: "100% free for Facebook Group members. Get the same pricing the big shops get on HVAC equipment, water heaters, and plumbing tools.",
+      icon: ShoppingCart,
+      link: "/purchasing-platform",
+      image: buyingGroupImage,
+      alt: "HVAC Equipment Purchasing Platform for contractors - ServiceTitan Hacks partnership",
+      cta: "Access Platform",
     },
     {
       title: "Podcast",
@@ -93,6 +100,7 @@ export default function Home() {
       link: "/podcast",
       image: podcastImage,
       alt: "ServiceTitan Hacks podcast - contractor conversations on AI tools and automation",
+      cta: "Listen Now",
     },
     {
       title: "Blog",
@@ -101,14 +109,7 @@ export default function Home() {
       link: "/blog",
       image: blogImage,
       alt: "ServiceTitan Hacks blog - contractor insights on AI and automation",
-    },
-    {
-      title: "All-Access Pass",
-      description: "Get unlimited access to all ServiceTitan automation courses, exclusive AI tools, premium resources, and monthly live Q&A calls.",
-      icon: Key,
-      link: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass",
-      image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
-      alt: "ServiceTitan Hacks All-Access Pass - unlimited contractor courses and AI tools",
+      cta: "Read the Blog",
     },
   ];
 
@@ -178,7 +179,7 @@ export default function Home() {
                       </div>
                       <p className="text-muted-foreground mb-4">{section.description}</p>
                       <Button className="gap-2 w-full sm:w-auto">
-                        Explore {section.title} <ArrowRight className="h-4 w-4" />
+                        {section.cta} <ArrowRight className="h-4 w-4" />
                       </Button>
                     </CardContent>
                   </Card>

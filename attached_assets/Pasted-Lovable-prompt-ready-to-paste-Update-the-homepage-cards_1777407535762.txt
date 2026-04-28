@@ -1,0 +1,93 @@
+Lovable prompt ready to paste:
+
+---
+
+Update the homepage cards on servicetitanhacks.com. Currently the homepage has 9 product/content cards in a 2-column grid below the hero section. Make the following changes:
+
+CARDS TO REMOVE:
+
+1. Remove the "Apps & Products" card entirely (the product line is being sunset, only Pricebook Overhaul remains and gets its own dedicated card below)
+
+2. Remove the "Partners" card entirely (redundant with the "Trusted Partners in HVAC AI & Plumbing Automation" sponsor logos section that appears further down the page)
+
+CARDS TO ADD:
+
+3. Add a new card titled "Pricebook Overhaul" with the following details:
+   - Title: Pricebook Overhaul
+   - Body: Send us your ServiceTitan pricebook. In 72 hours, every description is rewritten in homeowner-friendly language. Founder pricing $395 for the first 10 customers.
+   - CTA Button: Claim a Founder Spot
+   - CTA Link: https://servicetitanhacks.com/pricebook-overhaul
+   - Image: placeholder for now (will be replaced with a BEFORE/AFTER pricebook screenshot)
+
+CARD REORDERING:
+
+Reorder the remaining cards in this priority sequence (top to bottom, left to right in the 2-column grid):
+
+Row 1:
+- All-Access Pass (left)
+- Pricebook Overhaul (right)
+
+Row 2:
+- Automations (left)
+- Courses (right)
+
+Row 3:
+- Free Resources (left)
+- HVAC Equipment Purchasing Platform (right)
+
+Row 4:
+- Podcast (left)
+- Blog (right)
+
+CARD COPY UPDATES:
+
+4. Update the HVAC Equipment Purchasing Platform card body text to:
+"100% free for Facebook Group members. Get the same pricing the big shops get on HVAC equipment, water heaters, and plumbing tools."
+
+5. Update the Free Resources card body text to:
+"Free templates, calculators, and guides built specifically for ServiceTitan contractors."
+
+6. Update the Automations card body text to:
+"Done-for-you ServiceTitan automations: lead routing, dispatch dashboards, custom workflows, and reporting systems built for your shop."
+
+KEEP UNCHANGED:
+
+- All other card titles, body copy (All-Access Pass, Courses, Podcast, Blog)
+- The hero section
+- The "Trusted Partners in HVAC AI & Plumbing Automation" logo section
+- The "Stay in the Loop" newsletter capture
+- The "Join 10,000+ ServiceTitan Contractors" community CTA section
+- The footer
+- All current images (will be replaced separately as new visuals are created)
+- The brand color #ed174e for all CTA buttons
+
+MOBILE BEHAVIOR:
+
+On mobile, cards should stack vertically in the same priority order (All-Access Pass first, then Pricebook Overhaul, then Automations, etc.).
+
+---
+
+Three things to verify after the change:
+
+1. The Pricebook Overhaul card link
+Confirm /pricebook-overhaul is the correct destination URL. If you haven't yet built a dedicated /pricebook-overhaul page (per our earlier conversation about consolidating /pricebook-optimizer and /pricebook-overhaul), the card will link to a 404 until that's done. Two options:
+
+- Option A: Build the consolidated /pricebook-overhaul page first, then update the homepage card
+- Option B: Point the card temporarily to /pricebook-optimizer (which is currently live and functional) and update later when /pricebook-overhaul is built
+
+I'd recommend Option B for speed. The Optimizer page already works and converts.
+
+2. The hero image
+The Lovable prompt doesn't touch the hero. Per my earlier note, the hero image is visually busy. If you want to simplify it later, that's a separate change. Don't bundle it into this prompt.
+
+3. Image replacement
+This prompt only handles structural changes (which cards exist, in what order, with what copy). The actual image replacement (replacing duplicate red-laptop stock with product-specific visuals) is a separate workstream. You'll need to source or create:
+
+- Before/After pricebook screenshot for Pricebook Overhaul card (you have this from the FB post)
+- ServiceTitan dashboard or workflow screenshot for Automations card
+- Learning Platform interface screenshot for Courses card
+- Recent podcast episode thumbnail for Podcast card
+- Sample of resources for Free Resources card
+- Recent blog post thumbnails for Blog card
+
+Want me to add image replacement to the prompt once you've sourced the visuals, or handle that as a separate Lovable round?
