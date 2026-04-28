@@ -11,12 +11,15 @@ interface SEOProps {
   noindex?: boolean;
 }
 
+const DEFAULT_IMAGE = "https://servicetitanhacks.com/og-default.png";
+const SITE_NAME = "ServiceTitan Hacks";
+
 export default function SEO({
   title,
   description,
   keywords,
   canonicalUrl,
-  ogImage = "https://servicetitanhacks.com/og-image.png",
+  ogImage = DEFAULT_IMAGE,
   ogType = "website",
   schemaData,
   noindex = false,
@@ -24,55 +27,53 @@ export default function SEO({
   useEffect(() => {
     document.title = title;
 
-    const updateOrCreateMeta = (name: string, content: string, property?: boolean) => {
-      const attribute = property ? "property" : "name";
-      let element = document.querySelector(`meta[${attribute}="${name}"]`);
-      
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
+    const setMeta = (attr: "name" | "property", key: string, content: string) => {
+      let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
       }
-      
-      element.setAttribute("content", content);
+      el.setAttribute("content", content);
     };
 
-    updateOrCreateMeta("description", description);
-    
+    const pageUrl = canonicalUrl || `https://servicetitanhacks.com${window.location.pathname}`;
+
+    setMeta("name", "title", title);
+    setMeta("name", "description", description);
+
     if (keywords) {
-      updateOrCreateMeta("keywords", keywords);
+      setMeta("name", "keywords", keywords);
     }
 
     if (noindex) {
-      updateOrCreateMeta("robots", "noindex, nofollow");
+      setMeta("name", "robots", "noindex, nofollow");
     } else {
-      const robotsMeta = document.querySelector('meta[name="robots"]');
-      if (robotsMeta) {
-        robotsMeta.remove();
-      }
+      document.querySelector('meta[name="robots"]')?.remove();
     }
 
-    updateOrCreateMeta("og:title", title, true);
-    updateOrCreateMeta("og:description", description, true);
-    updateOrCreateMeta("og:type", ogType, true);
-    updateOrCreateMeta("og:image", ogImage, true);
-    
-    if (canonicalUrl) {
-      updateOrCreateMeta("og:url", canonicalUrl, true);
-      
-      let canonical = document.querySelector('link[rel="canonical"]');
-      if (!canonical) {
-        canonical = document.createElement("link");
-        canonical.setAttribute("rel", "canonical");
-        document.head.appendChild(canonical);
-      }
-      canonical.setAttribute("href", canonicalUrl);
-    }
+    setMeta("property", "og:type", ogType);
+    setMeta("property", "og:url", pageUrl);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
+    setMeta("property", "og:image", ogImage);
+    setMeta("property", "og:image:width", "1200");
+    setMeta("property", "og:image:height", "630");
+    setMeta("property", "og:site_name", SITE_NAME);
 
-    updateOrCreateMeta("twitter:card", "summary_large_image");
-    updateOrCreateMeta("twitter:title", title);
-    updateOrCreateMeta("twitter:description", description);
-    updateOrCreateMeta("twitter:image", ogImage);
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:url", pageUrl);
+    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:image", ogImage);
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", pageUrl);
 
     if (schemaData) {
       let script = document.querySelector('script[type="application/ld+json"]');
@@ -83,7 +84,7 @@ export default function SEO({
       }
       script.textContent = JSON.stringify(schemaData);
     }
-  }, [title, description, keywords, canonicalUrl, ogImage, ogType, schemaData]);
+  }, [title, description, keywords, canonicalUrl, ogImage, ogType, schemaData, noindex]);
 
   return null;
 }

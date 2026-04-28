@@ -1,10 +1,17 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Privacy Policy | ServiceTitan Hacks"
+        description="Read the ServiceTitan Hacks privacy policy. Learn how we collect, use, and protect your personal information."
+        canonicalUrl="https://servicetitanhacks.com/privacy-policy"
+        noindex={true}
+      />
       <Header />
       <main className="flex-1">
         <section className="py-24 bg-background">
