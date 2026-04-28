@@ -19,7 +19,7 @@ import { CheckCircle2, Copy, Check, Loader2, ArrowRight } from "lucide-react";
 import { z } from "zod";
 import { useState, useEffect, useRef } from "react";
 
-const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
+const CHECKOUT_URL = "https://app.servicetitanhacks.com/pricebook-overhaul";
 
 const formSchema = insertPricebookOptimizationSchema.extend({
   honeypot: z.string().max(0),
