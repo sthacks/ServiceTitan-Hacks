@@ -1,0 +1,35 @@
+Update the existing pricebook optimizer page at servicetitanhacks.com/pricebook-optimizer with the following functionality:
+CURRENT BEHAVIOR:
+User fills out the form (category, current description, first name, last name, email), submits, and receives the rewritten description via email.
+NEW BEHAVIOR:
+After form submission, render the AI-rewritten description directly on the page below the form. Keep the email send intact as a backup.
+FUNCTIONAL REQUIREMENTS:
+
+Keep the existing form layout and fields exactly as they are. Do not modify the form itself.
+On form submit:
+
+Show a loading state below the form (spinner with text "Rewriting your description...")
+When the AI response returns, render the rewritten description in a clean container below the form
+Smooth scroll the user down to the result so they see it without scrolling manually
+
+
+Result container styling:
+
+Headline above the description: "Your rewritten description"
+The rewritten description rendered with proper line breaks and formatting
+Subtle background color or border to visually separate from the form
+Match the existing servicetitanhacks.com brand (clean sans-serif typography, pink accent matching the current CTA buttons)
+
+
+Below the rewritten description, add a CTA section:
+
+Headline: "This is one item. Imagine your entire pricebook rewritten."
+Subhead: "Founder pricing: $395 to overhaul your full pricebook. 6 spots left of 10."
+Primary button: "Claim a Founder Spot - $395" linking directly to: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
+Secondary text link: "Try another description" that clears only the category and description fields, keeping name and email pre-filled so users can run multiple items quickly
+
+
+Keep email capture intact. After submission, also email the rewritten description to the user with the same upgrade CTA in the email body.
+Mobile responsive: result container displays at full width on mobile, stacked below the form.
+Track form submissions and "Claim a Founder Spot" clicks separately for conversion analysis.
+Error handling: if the AI request fails, show a clear error message in the result container ("Something went wrong. Please try again or email bill@st-hacks.com") and log the error so it can be diagnosed.

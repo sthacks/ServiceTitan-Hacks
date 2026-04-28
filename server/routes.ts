@@ -1750,6 +1750,38 @@ ${JSON.stringify(jsonData, null, 2)}
             </pre>
           `,
         });
+
+        // Send rewritten description + upgrade CTA to the user
+        const firstName = optimization.firstName || "there";
+        await client.emails.send({
+          from: fromEmail,
+          to: data.email,
+          replyTo: 'bill@st-hacks.com',
+          subject: 'Your Rewritten Pricebook Description — ServiceTitan Hacks',
+          html: `
+            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #222;">
+              <p>Hey ${firstName},</p>
+              <p>Here's your AI-rewritten pricebook description for <strong>${category}</strong>:</p>
+
+              <div style="background: #f5f5f5; border-left: 4px solid #ec164d; padding: 16px 20px; border-radius: 4px; margin: 24px 0;">
+                <p style="margin: 0; line-height: 1.6; white-space: pre-line;">${optimizedDescription}</p>
+              </div>
+
+              <p>This is just one item. Imagine your entire pricebook — every description rewritten in clear, homeowner-friendly language that helps your techs build value on every call.</p>
+
+              <div style="background: #ec164d; border-radius: 6px; padding: 24px; text-align: center; margin: 32px 0;">
+                <p style="color: white; font-size: 18px; font-weight: bold; margin: 0 0 8px;">Founder Pricing: $395 for your full pricebook overhaul</p>
+                <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin: 0 0 20px;">6 spots left of 10. After that, price goes to $799.</p>
+                <a href="https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J" style="display: inline-block; background: white; color: #ec164d; font-weight: bold; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-size: 15px;">
+                  Claim a Founder Spot — $395 →
+                </a>
+              </div>
+
+              <p style="color: #666; font-size: 13px;">Questions? Reply to this email or reach me at <a href="mailto:bill@st-hacks.com" style="color: #ec164d;">bill@st-hacks.com</a></p>
+              <p style="color: #666; font-size: 13px;">— Bill Brown, ServiceTitan Hacks</p>
+            </div>
+          `,
+        });
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
         // Don't fail the request if email fails

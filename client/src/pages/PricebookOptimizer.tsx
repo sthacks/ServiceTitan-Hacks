@@ -15,9 +15,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { CheckCircle2, Copy, Check } from "lucide-react";
+import { CheckCircle2, Copy, Check, Loader2, ArrowRight } from "lucide-react";
 import { z } from "zod";
 import { useState, useEffect, useRef } from "react";
+
+const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
 
 const formSchema = insertPricebookOptimizationSchema.extend({
   honeypot: z.string().max(0),
@@ -33,8 +35,10 @@ export default function PricebookOptimizer() {
   const { toast } = useToast();
   const [showOtherCategory, setShowOtherCategory] = useState(false);
   const [result, setResult] = useState<OptimizationResult | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const resultRef = useRef<HTMLDivElement | null>(null);
   const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const howItWorksItems = [
@@ -113,18 +117,19 @@ export default function PricebookOptimizer() {
 
   const mutation = useMutation({
     mutationFn: async (data: z.infer<typeof formSchema>) => {
-      // Check honeypot
-      if (data.honeypot) {
-        throw new Error("Spam detected");
-      }
-
+      if (data.honeypot) throw new Error("Spam detected");
       const { honeypot, ...submitData } = data;
       const response = await apiRequest("POST", "/api/pricebook-optimization", submitData);
       return response.json();
     },
     onSuccess: (data: any) => {
       setFormSubmitted(true);
-      
+      setSubmitError(null);
+
+      // Track form submission
+      try { (window as any).gtag?.("event", "pricebook_optimizer_submit"); } catch {}
+      try { (window as any).fbq?.("track", "Lead"); } catch {}
+
       if (data.optimization) {
         setResult({
           optimizedDescription: data.optimization.optimizedDescription,
@@ -132,27 +137,19 @@ export default function PricebookOptimizer() {
           category: data.optimization.category,
         });
         setCopied(false);
-        
-        // Scroll to results
         setTimeout(() => {
-          document.getElementById('results-section')?.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
+          resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100);
       }
-      
-      toast({
-        title: "Success!",
-        description: "Your optimized description is ready below.",
-      });
     },
     onError: (error: any) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to submit. Please try again.",
-        variant: "destructive",
-      });
+      const msg = error.message || "Something went wrong. Please try again or email bill@st-hacks.com";
+      setSubmitError(msg);
+      setResult(null);
+      console.error("[pricebook-optimizer] submission error:", error);
+      setTimeout(() => {
+        resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
     },
   });
 
@@ -521,7 +518,7 @@ export default function PricebookOptimizer() {
                       disabled={mutation.isPending}
                       data-testid="button-submit"
                     >
-                      {mutation.isPending ? "Optimizing..." : "OPTIMIZE IT"}
+                      {mutation.isPending ? "Rewriting..." : "OPTIMIZE IT"}
                     </Button>
                   </form>
                 </Form>
@@ -530,82 +527,136 @@ export default function PricebookOptimizer() {
           </div>
         </section>
 
-        {result && (
-          <section id="results-section" className="py-16 bg-background">
+        {/* Loading state */}
+        {mutation.isPending && (
+          <section className="py-12 bg-background">
+            <div className="mx-auto max-w-3xl px-6">
+              <div className="flex flex-col items-center gap-4 text-muted-foreground" data-testid="status-loading">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                <p className="text-base font-medium">Rewriting your description...</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Results / error section */}
+        {(result || submitError) && !mutation.isPending && (
+          <section id="results-section" className="py-16 bg-background" ref={resultRef}>
             <div className="mx-auto max-w-4xl px-6">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold font-heading mb-2">Your Optimized Description</h2>
-                <p className="text-muted-foreground">Here's your homeowner-friendly pricebook description</p>
-              </div>
 
-              <div className="grid gap-6 md:grid-cols-2 mb-8">
-                <Card>
+              {submitError && (
+                <Card className="mb-8 border-destructive/50 bg-destructive/5">
                   <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-semibold text-lg">Original Description</h3>
-                      <Badge variant="outline">Before</Badge>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">{result.originalDescription}</p>
+                    <p className="text-destructive font-medium" data-testid="text-error">
+                      {submitError.includes("bill@st-hacks.com")
+                        ? submitError
+                        : "Something went wrong. Please try again or email bill@st-hacks.com"}
+                    </p>
                   </CardContent>
                 </Card>
+              )}
 
-                <Card className="border-primary/50">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-semibold text-lg text-primary">Optimized Description</h3>
-                      <Badge>After</Badge>
-                    </div>
-                    <div className="whitespace-pre-line leading-relaxed">
-                      {result.optimizedDescription}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Card className="bg-primary/5 border-primary/20">
-                <CardContent className="p-6">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div>
-                      <h3 className="font-semibold mb-1">Ready to use in ServiceTitan</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Copy this optimized description and paste it into your ServiceTitan pricebook.
-                      </p>
-                    </div>
-                    <Button 
-                      onClick={handleCopy} 
-                      size="lg"
-                      className="whitespace-nowrap"
-                      data-testid="button-copy-description"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="mr-2 h-4 w-4" />
-                          Copied!
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="mr-2 h-4 w-4" />
-                          Copy Description
-                        </>
-                      )}
-                    </Button>
+              {result && (
+                <>
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-bold font-heading mb-2" data-testid="heading-result">Your rewritten description</h2>
                   </div>
-                </CardContent>
-              </Card>
 
-              <div className="text-center mt-8">
-                <Button 
-                  variant="outline" 
-                  onClick={() => {
-                    setResult(null);
-                    form.reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  data-testid="button-optimize-another"
-                >
-                  Optimize Another Description
-                </Button>
-              </div>
+                  <div className="grid gap-6 md:grid-cols-2 mb-8">
+                    <Card>
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between mb-4 flex-wrap gap-1">
+                          <h3 className="font-semibold text-lg">Original</h3>
+                          <Badge variant="outline">Before</Badge>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line" data-testid="text-original">{result.originalDescription}</p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="border-primary/50">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between mb-4 flex-wrap gap-1">
+                          <h3 className="font-semibold text-lg text-primary">Rewritten</h3>
+                          <Badge>After</Badge>
+                        </div>
+                        <div className="whitespace-pre-line leading-relaxed" data-testid="text-optimized">
+                          {result.optimizedDescription}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+
+                  <Card className="bg-primary/5 border-primary/20 mb-6">
+                    <CardContent className="p-6">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 flex-wrap">
+                        <div>
+                          <h3 className="font-semibold mb-1">Ready to paste into ServiceTitan</h3>
+                          <p className="text-sm text-muted-foreground">
+                            Copy and paste the rewritten description directly into your pricebook.
+                          </p>
+                        </div>
+                        <Button
+                          onClick={handleCopy}
+                          size="lg"
+                          className="whitespace-nowrap"
+                          data-testid="button-copy-description"
+                        >
+                          {copied ? (
+                            <><Check className="mr-2 h-4 w-4" />Copied!</>
+                          ) : (
+                            <><Copy className="mr-2 h-4 w-4" />Copy Description</>
+                          )}
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Upgrade CTA */}
+                  <Card className="bg-primary text-primary-foreground mb-8">
+                    <CardContent className="p-8 text-center">
+                      <h3 className="text-2xl font-bold font-heading mb-2" data-testid="heading-upsell">
+                        This is one item. Imagine your entire pricebook rewritten.
+                      </h3>
+                      <p className="text-primary-foreground/80 mb-6 text-sm" data-testid="text-upsell-subhead">
+                        Founder pricing: $395 to overhaul your full pricebook. 6 spots left of 10.
+                      </p>
+                      <a
+                        href={CHECKOUT_URL}
+                        target="_self"
+                        data-testid="button-claim-founder-spot"
+                        onClick={() => {
+                          try { (window as any).gtag?.("event", "pricebook_optimizer_claim_founder"); } catch {}
+                          try { (window as any).fbq?.("track", "InitiateCheckout"); } catch {}
+                        }}
+                      >
+                        <Button
+                          size="lg"
+                          className="bg-white text-primary border-white gap-2 mb-4"
+                        >
+                          Claim a Founder Spot — $395 <ArrowRight className="h-4 w-4" />
+                        </Button>
+                      </a>
+                      <div>
+                        <button
+                          className="text-primary-foreground/70 text-sm underline underline-offset-2 hover:text-primary-foreground transition-colors"
+                          data-testid="button-try-another"
+                          onClick={() => {
+                            form.setValue("category", "");
+                            form.setValue("currentDescription", "");
+                            form.setValue("otherCategory", "");
+                            setShowOtherCategory(false);
+                            setResult(null);
+                            setSubmitError(null);
+                            document.getElementById("try-it-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }}
+                        >
+                          Try another description
+                        </button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
             </div>
           </section>
         )}
