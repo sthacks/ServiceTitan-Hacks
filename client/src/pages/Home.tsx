@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -8,17 +7,11 @@ import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
 import { BookOpen, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText, Settings, FileSpreadsheet } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
-import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 import servicesImage from "@assets/1072722_custom_site_themes_id_wPQ226FHSzWW8kg7Kz2o_31639583-3__1775564469964.jpg";
 import blogImage from "@assets/32563772-1_1762708907799.jpg";
 import pricebookAfterImg from "@assets/before_(5)_1777407931071.png";
-import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
-import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
-import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
-import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
-import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 
 export default function Home() {
   const organizationSchema = {
@@ -113,15 +106,6 @@ export default function Home() {
     },
   ];
 
-  const partners = [
-    { name: "Wink Toolbox", logo: winkLogo, slug: "wink-toolbox" },
-    { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
-    { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
-    { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
-    { name: "Polycam", logo: polycamLogo, slug: "polycam" },
-    { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
@@ -184,33 +168,6 @@ export default function Home() {
                     </CardContent>
                   </Card>
                 </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12 bg-muted">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-2xl font-bold font-heading text-center mb-8">Trusted Partners in HVAC AI & Plumbing Automation</h2>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-              {partners.map((partner, index) => (
-                <Link
-                  key={index}
-                  href={`/partners/${partner.slug}`}
-                >
-                  <span
-                    className="transition-all opacity-90 hover:opacity-100 cursor-pointer block"
-                    data-testid={`link-partner-logo-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} - ServiceTitan contractor automation partner logo`}
-                      className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-20 md:h-24' : 'h-16 md:h-20'}`}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </span>
-                </Link>
               ))}
             </div>
           </div>
