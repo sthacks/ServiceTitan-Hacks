@@ -346,7 +346,7 @@ export default function PricebookOptimizer() {
                       name="category"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Choose a category *</FormLabel>
+                          <FormLabel>What trade is this for? *</FormLabel>
                           <Select 
                             onValueChange={(value) => {
                               field.onChange(value);
@@ -367,6 +367,7 @@ export default function PricebookOptimizer() {
                               ))}
                             </SelectContent>
                           </Select>
+                          <p className="text-sm text-muted-foreground">We'll use this to tailor the rewrite to your industry.</p>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -552,9 +553,11 @@ export default function PricebookOptimizer() {
                           <h3 className="font-semibold text-lg text-primary">Rewritten</h3>
                           <Badge>After</Badge>
                         </div>
-                        <div className="whitespace-pre-line leading-relaxed" data-testid="text-optimized">
-                          {result.optimizedDescription}
-                        </div>
+                        <div
+                          className="leading-relaxed prose prose-sm max-w-none"
+                          data-testid="text-optimized"
+                          dangerouslySetInnerHTML={{ __html: result.optimizedDescription }}
+                        />
                       </CardContent>
                     </Card>
                   </div>

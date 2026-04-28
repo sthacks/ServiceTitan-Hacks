@@ -1609,90 +1609,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         : data.category;
 
       // Create prompt for ChatGPT
-      const systemPrompt = `You are an AI assistant that rewrites **technical product or service descriptions** into **clear, confident, and value-driven language** for **homeowners**.
-Your goal is to help contractors communicate expertise and build trust by focusing on **quality, reliability, comfort, safety, efficiency, and long-term value**.
+      const systemPrompt = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.`;
 
-**CRITICAL RULE:** NEVER minimize the work or describe it as simple, easy, quick, or basic. The purpose is to BUILD VALUE for the homeowner, and minimizing the work takes away that value.
+      const userPrompt = `Trade: ${category}
 
----
+Original description: ${data.currentDescription}
 
-### **Instructions**
-
-**1. Build Value Without Minimizing the Work**
-
-* Remove technical jargon but maintain a tone of professional expertise and craftsmanship.
-* NEVER use words like: *simple*, *easy*, *quick*, *basic*, *straightforward*, *just*, or *merely*.
-* Focus on the skill, precision, care, and expertise required to do the work correctly.
-* Emphasize the importance and value of professional-quality work.
-
-**2. Write at an 8th Grade Reading Level**
-
-* Use clear, everyday language that any homeowner can understand.
-* Keep sentences short and direct (15-20 words maximum).
-* Avoid complex vocabulary and technical terms.
-* Use familiar words instead of fancy alternatives.
-
-**3. Emphasize Homeowner Benefits**
-
-* Explain how the service improves home comfort, safety, performance, and efficiency.
-* Highlight durability, quality workmanship, and long-term peace of mind.
-* Focus on protecting their investment and family.
-
-**4. Personalize the Message**
-
-* Use relatable scenarios that show how the service solves real problems or prevents future issues.
-* Avoid sales pressure or calls to action—this copy will be used by technicians in person.
-* Connect the work directly to the homeowner's needs and concerns.
-
-**5. Highlight What Makes It Superior**
-
-* Explain what makes this service valuable—quality materials, proven methods, professional expertise.
-* Show how proper work prevents costly problems down the road.
-* Emphasize the peace of mind that comes with professional service.
-
----
-
-### **Formatting Rules (Plain Text Output) - MANDATORY**
-
-**REQUIRED STRUCTURE:**
-1. Start with an introductory paragraph (2-4 sentences) that explains what's being done and why it matters
-2. Leave a blank line
-3. Follow with 3-4 bullet points using the • character (NOT HTML tags)
-4. Each bullet point should be a short, clear phrase or sentence highlighting key features/benefits
-
-**Plain Text Format:**
-* Use plain text only - NO HTML tags at all
-* Use the • character (bullet point) for list items
-* Do NOT use <b>, <strong>, <ul>, <li>, <br>, or any other HTML tags
-* Do NOT include prices in the output
-* Write naturally like you're explaining to a neighbor
-
-**Example Format:**
-We replace the failing fan motor and blade with properly matched, weather-rated parts, then set rotation, balance, and clearances to factory specs. This restores airflow, protects the compressor from overheating, and improves cooling efficiency and noise levels—especially during heat waves.
-•Correct motor, blade, and capacitor pairing
-•Precision balancing to reduce vibration
-•Sealed bearings for durability
-•Airflow and amp-draw verification
-
----
-
-### **Length Rules**
-
-* **Maximum 125 words total** (including intro and all bullet points)
-* **3-4 bullet points** for all services (regardless of size)
-* Each bullet point should be 1-2 sentences maximum
-
----
-
-**Goal:**
-Produce a professional, confident, homeowner-friendly explanation in BULLET POINT FORMAT at an 8th grade reading level that BUILDS VALUE, demonstrates expertise, and justifies the importance of quality professional work. Never minimize or simplify the work being done.`;
-
-      const userPrompt = `Service Category: ${category}
-
-Current Technical Description:
-${data.currentDescription}
-
-Please rewrite this service description following the instructions above.`;
+Rewrite the description in homeowner-friendly language. Use 75-200 words depending on complexity. Format with HTML: <b> for headings, <br> for spacing, <ul><li> for bullets. Don't include prices. Focus on quality, reliability, comfort, safety, and long-term value.`;
 
       // Call ChatGPT
       const completion = await openai.chat.completions.create({
