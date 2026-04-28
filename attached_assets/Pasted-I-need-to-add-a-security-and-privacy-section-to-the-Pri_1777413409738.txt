@@ -1,0 +1,65 @@
+I need to add a security and privacy section to the Pricebook Overhaul marketing page and create a new dedicated security page.
+
+CONTEXT:
+- This is the marketing site at servicetitanhacks.com
+- The Pricebook Overhaul page is at /pricebook-overhaul
+- Customers are asking about pricebook confidentiality before they upload
+- We need short trust signals on the marketing page with a link to a full security page
+
+TASK 1: Add a trust block to /pricebook-overhaul
+
+On the existing /pricebook-overhaul page, add a compact trust block near the primary CTA (the buy button). Match the existing visual style of the page. The block should contain:
+
+- A lock icon (use a simple unicode 🔒 or an inline SVG, whichever fits the existing style)
+- One short line: "Your pricebook stays private. Encrypted storage, no AI training on your data, NDA available on request."
+- A link reading "Read our security and privacy practices" that goes to /pricebook-overhaul/security
+
+Keep the styling subtle. This is a trust signal, not a feature block. Smaller text size than the body copy, muted color, but still readable. Do not push the buy button below the fold.
+
+TASK 2: Create a new page at /pricebook-overhaul/security
+
+Create a new route and page at /pricebook-overhaul/security that uses the same site header, footer, and base styling as the rest of the marketing site.
+
+Page title: "Pricebook Overhaul: Security and Privacy"
+Meta description: "How we protect your ServiceTitan pricebook during the overhaul process. Encryption, access controls, AI data policy, file retention, and NDA availability."
+
+Page content (use proper HTML structure with h1, h2, and p tags):
+
+H1: Pricebook Overhaul: Security and Privacy
+
+Intro paragraph: Your pricebook is one of the most sensitive assets in your business. Here is exactly how we handle it.
+
+H2: File storage
+Your Excel file is uploaded over an encrypted HTTPS connection and stored in Supabase, which encrypts all files at rest using AES-256. Files are stored under per-job paths and are not visible to other customers.
+
+H2: Access
+Only the operator (Bill Brown) has admin access to customer files. Your pricebook is not shared with any third party, partner, or sponsor.
+
+H2: What gets sent to AI
+Only the Description text and the Category name from each Service item are sent to OpenAI's API for rewriting. We never send your pricing, item codes, costs, margins, labor rates, or any other business data to any AI service.
+
+H2: OpenAI's data policy
+Per OpenAI's API data usage policy (effective March 1, 2023), data submitted via the API is not used to train OpenAI models and is retained for a maximum of 30 days for abuse monitoring, then deleted.
+
+H2: File retention
+We delete your original and overhauled files from our storage within 30 days of delivery. You can request immediate deletion at any time by replying to your confirmation email.
+
+H2: NDA
+A mutual non-disclosure agreement is available on request before you upload your file. Just reply to your confirmation email or message us before purchase.
+
+H2: Payment
+Payments are processed by Stripe. We never see or store your card details.
+
+H2: Questions
+Email bill@servicetitanhacks.com.
+
+At the bottom of the page, add a "Back to Pricebook Overhaul" link that returns to /pricebook-overhaul.
+
+STYLE REQUIREMENTS:
+- Use the existing site's font stack, colors, and spacing tokens
+- Use straight quotes only, never curly quotes
+- Do not use em-dashes anywhere
+- Page should be readable on mobile (single column, comfortable line length)
+- Keep the design clean and minimal, no decorative graphics needed
+
+Do not modify any other pages, routes, or files. Show me the diff before deploying.

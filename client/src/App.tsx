@@ -20,6 +20,7 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import PricebookOptimizer from "@/pages/PricebookOptimizer";
 import PricebookOverhaul from "@/pages/PricebookOverhaul";
+import PricebookOverhaulSecurity from "@/pages/PricebookOverhaulSecurity";
 import OverhaulUpload from "@/pages/OverhaulUpload";
 import OverhaulStatus from "@/pages/OverhaulStatus";
 import AdminOverhaulOrders from "@/pages/AdminOverhaulOrders";
@@ -96,6 +97,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/pricebook-overhaul-tool" component={PricebookOptimizer} />
       <Route path="/pricebook-optimizer" component={PricebookOptimizer} />
+      <Route path="/pricebook-overhaul/security" component={PricebookOverhaulSecurity} />
       <Route path="/pricebook-overhaul" component={PricebookOverhaul} />
       <Route path="/overhaul-upload" component={OverhaulUpload} />
       <Route path="/overhaul-status" component={OverhaulStatus} />
