@@ -13,7 +13,7 @@ import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 import servicesImage from "@assets/1072722_custom_site_themes_id_wPQ226FHSzWW8kg7Kz2o_31639583-3__1775564469964.jpg";
 import blogImage from "@assets/32563772-1_1762708907799.jpg";
-import pricebookAfterImg from "@assets/after_1777041107237.png";
+import pricebookAfterImg from "@assets/before_(5)_1777407931071.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
