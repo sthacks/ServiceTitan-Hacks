@@ -184,7 +184,7 @@ export default function Header() {
                 variant="ghost"
                 size="sm"
                 className="text-white hover:text-gray-300"
-                onClick={() => (window.location.href = "/api/login")}
+                onClick={() => window.open("https://servicetitanhacks.thinkific.com/users/sign_in", "_blank")}
                 data-testid="button-login"
               >
                 <LogIn className="h-4 w-4 mr-2" />
@@ -348,7 +348,7 @@ export default function Header() {
                   <Button
                     variant="ghost"
                     className="w-full justify-start text-white hover:text-white hover:bg-white/10"
-                    onClick={() => (window.location.href = "/api/login")}
+                    onClick={() => window.open("https://servicetitanhacks.thinkific.com/users/sign_in", "_blank")}
                     data-testid="button-mobile-login"
                   >
                     <LogIn className="h-4 w-4 mr-2" />
