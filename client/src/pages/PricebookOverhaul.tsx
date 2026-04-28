@@ -16,7 +16,7 @@ import beforeImgNew from "@assets/before_1777041107238.png";
 import afterImgNew from "@assets/after_1777041107237.png";
 import { useQuery } from "@tanstack/react-query";
 
-const CHECKOUT_URL = "https://app.servicetitanhacks.com/pricebook-overhaul";
+const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
 
 const steps = [
   {

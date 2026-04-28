@@ -1706,7 +1706,7 @@ I'm running 10 founder spots at $395 flat to overhaul your entire Services tab t
 3. 72 hours later you get it back with every Service description rewritten in homeowner-friendly HTML
 4. Re-import to ServiceTitan, done
 
-Payment link: https://app.servicetitanhacks.com/pricebook-overhaul
+Payment link: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
 
 After payment, you'll get a 1-page export instruction sheet and the upload link.
 
