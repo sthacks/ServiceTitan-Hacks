@@ -254,7 +254,6 @@ export default function OverhaulUpload() {
                         onDrop={onDrop}
                         onDragOver={onDragOver}
                         onDragLeave={onDragLeave}
-                        onClick={() => fileInputRef.current?.click()}
                         className={`
                           relative border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-colors
                           ${dragging
@@ -263,11 +262,11 @@ export default function OverhaulUpload() {
                         `}
                         data-testid="dropzone-file"
                       >
-                        <Upload className="h-8 w-8 mx-auto mb-3 text-zinc-500" />
-                        <p className="text-zinc-300 text-sm font-medium mb-1">
+                        <Upload className="h-8 w-8 mx-auto mb-3 text-zinc-500 pointer-events-none" />
+                        <p className="text-zinc-300 text-sm font-medium mb-1 pointer-events-none">
                           Drop your Excel file here, or click to browse
                         </p>
-                        <p className="text-zinc-600 text-xs">.xlsx or .xls — max 40 MB</p>
+                        <p className="text-zinc-600 text-xs pointer-events-none">.xlsx or .xls — max 40 MB</p>
                         <input
                           ref={fileInputRef}
                           type="file"
