@@ -1,0 +1,60 @@
+I want to add a customer follow-up email to the pricebook optimizer form submission flow.
+
+CURRENT BEHAVIOR:
+When the form is submitted at /pricebook-optimizer, the backend sends an email notification to me with the submission JSON (firstName, lastName, email, category, currentDescription, optimizedDescription).
+
+NEW BEHAVIOR:
+After sending the notification email to me, also schedule a follow-up email to the customer (the email address from the form) to send 15-30 minutes later (random jitter in that range).
+
+REQUIREMENTS:
+
+1. Use the same email sending service that already sends the notification email. Do not add a new service.
+
+2. The follow-up email FROM address must be:
+   FROM name: Bill Brown
+   FROM address: bill@st-hacks.com
+   REPLY-TO: bill@st-hacks.com
+
+3. Send 15-30 minutes after form submission. Use a random delay in that window. setTimeout is acceptable for now, but log the scheduled send time so I can verify it fires.
+
+4. Subject line: "Saw you tested the pricebook optimizer, {firstName}"
+   If firstName is empty, fall back to: "Quick follow-up on your pricebook test"
+
+5. Email body (plain text, with line breaks preserved):
+
+Hey {firstName},
+
+Bill here from ServiceTitan Hacks. Just saw your submission come through the pricebook optimizer.
+
+Quick reason I'm reaching out: most folks who test the tool have hundreds or thousands of similar {category} descriptions sitting in their ServiceTitan pricebook. Running them one at a time isn't realistic.
+
+I just opened 10 founder spots to overhaul an entire Services tab for $395 flat. A handful are taken, a few left. Here's how it works:
+
+1. You export your pricebook from ServiceTitan as Excel
+2. Send it to me
+3. 72 hours later you get it back with every Service description rewritten in homeowner-friendly HTML formatting
+4. You re-import it, and your whole pricebook reads professionally on technician iPads and customer-facing quotes
+
+If that sounds useful, just reply to this email and I'll send the payment link plus a 1-page instruction sheet on the export.
+
+If not, no worries. The free tool is yours to use anytime: servicetitanhacks.com/pricebook-optimizer
+
+Bill Brown
+ServiceTitan Hacks
+9,500+ contractor community
+
+6. Merge field rules:
+   - If firstName is empty or null, replace "{firstName}," with "Hey," (no name)
+   - If category is empty, "Other", or null, replace "{category} " with "trade " (so it reads "your trade descriptions")
+   - Trim whitespace and newlines from email field before sending (the current submission has a trailing newline in the email field)
+
+7. Error handling:
+   - If the customer email send fails, log the error including the customer email, firstName, category, and submission timestamp
+   - Do NOT block or fail the form submission response if the customer email fails to schedule
+   - The notification email to me must still send regardless
+
+8. Add a console log when the customer email is scheduled and another when it actually sends, both including the customer email address.
+
+9. Do not change anything about the existing notification email to me. It must still arrive immediately on form submission.
+
+Show me the diff before applying changes.

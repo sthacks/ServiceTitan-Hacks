@@ -1674,40 +1674,72 @@ ${JSON.stringify(jsonData, null, 2)}
           `,
         });
 
-        // Send rewritten description + upgrade CTA to the user
-        const firstName = optimization.firstName || "there";
-        await client.emails.send({
-          from: fromEmail,
-          to: data.email,
-          replyTo: 'bill@st-hacks.com',
-          subject: 'Your Rewritten Pricebook Description — ServiceTitan Hacks',
-          html: `
-            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #222;">
-              <p>Hey ${firstName},</p>
-              <p>Here's your AI-rewritten pricebook description for <strong>${category}</strong>:</p>
-
-              <div style="background: #f5f5f5; border-left: 4px solid #ec164d; padding: 16px 20px; border-radius: 4px; margin: 24px 0;">
-                <p style="margin: 0; line-height: 1.6; white-space: pre-line;">${optimizedDescription}</p>
-              </div>
-
-              <p>This is just one item. Imagine your entire pricebook — every description rewritten in clear, homeowner-friendly language that helps your techs build value on every call.</p>
-
-              <div style="background: #ec164d; border-radius: 6px; padding: 24px; text-align: center; margin: 32px 0;">
-                <p style="color: white; font-size: 18px; font-weight: bold; margin: 0 0 8px;">Founder Pricing: $395 for your full pricebook overhaul</p>
-                <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin: 0 0 20px;">6 spots left of 10. After that, price goes to $799.</p>
-                <a href="https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J" style="display: inline-block; background: white; color: #ec164d; font-weight: bold; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-size: 15px;">
-                  Claim a Founder Spot — $395 →
-                </a>
-              </div>
-
-              <p style="color: #666; font-size: 13px;">Questions? Reply to this email or reach me at <a href="mailto:bill@st-hacks.com" style="color: #ec164d;">bill@st-hacks.com</a></p>
-              <p style="color: #666; font-size: 13px;">— Bill Brown, ServiceTitan Hacks</p>
-            </div>
-          `,
-        });
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
         // Don't fail the request if email fails
+      }
+
+      // Schedule delayed follow-up email to the customer (15–30 min random jitter)
+      try {
+        const customerEmail = data.email.trim();
+        const firstName = (optimization.firstName || "").trim();
+        const rawCategory = category || "";
+        const categoryLabel = (!rawCategory || rawCategory === "Other" || rawCategory === "OTHER")
+          ? "trade"
+          : rawCategory;
+
+        const greeting = firstName ? `Hey ${firstName},` : "Hey,";
+        const categoryMention = categoryLabel === "trade"
+          ? "trade"
+          : rawCategory;
+
+        const emailBody = `${greeting}
+
+Bill here from ServiceTitan Hacks. Just saw your submission come through the pricebook optimizer.
+
+Quick reason I'm reaching out: most folks who test the tool have hundreds or thousands of similar ${categoryMention} descriptions sitting in their ServiceTitan pricebook. Running them one at a time isn't realistic.
+
+I just opened 10 founder spots to overhaul an entire Services tab for $395 flat. A handful are taken, a few left. Here's how it works:
+
+1. You export your pricebook from ServiceTitan as Excel
+2. Send it to me
+3. 72 hours later you get it back with every Service description rewritten in homeowner-friendly HTML formatting
+4. You re-import it, and your whole pricebook reads professionally on technician iPads and customer-facing quotes
+
+If that sounds useful, just reply to this email and I'll send the payment link plus a 1-page instruction sheet on the export.
+
+If not, no worries. The free tool is yours to use anytime: servicetitanhacks.com/pricebook-optimizer
+
+Bill Brown
+ServiceTitan Hacks
+9,500+ contractor community`;
+
+        const subjectLine = firstName
+          ? `Saw you tested the pricebook optimizer, ${firstName}`
+          : "Quick follow-up on your pricebook test";
+
+        const delayMs = (15 + Math.floor(Math.random() * 16)) * 60 * 1000;
+        const sendAt = new Date(Date.now() + delayMs).toISOString();
+        console.log(`[follow-up] Scheduled for ${customerEmail} at ${sendAt} (${Math.round(delayMs / 60000)} min)`);
+
+        setTimeout(async () => {
+          try {
+            const { client: followUpClient } = await getUncachableResendClient();
+            await followUpClient.emails.send({
+              from: "Bill Brown <bill@st-hacks.com>",
+              to: customerEmail,
+              replyTo: "bill@st-hacks.com",
+              subject: subjectLine,
+              text: emailBody,
+            });
+            console.log(`[follow-up] Sent to ${customerEmail}`);
+          } catch (followUpErr: any) {
+            console.error(`[follow-up] Failed to send to ${customerEmail} (firstName: ${firstName}, category: ${rawCategory}, scheduledAt: ${sendAt}):`, followUpErr);
+          }
+        }, delayMs);
+      } catch (scheduleErr) {
+        console.error("[follow-up] Failed to schedule follow-up email:", scheduleErr);
+        // Non-fatal — form submission is unaffected
       }
       
       res.status(201).json({ 
