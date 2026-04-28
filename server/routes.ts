@@ -1695,24 +1695,24 @@ ${JSON.stringify(jsonData, null, 2)}
 
         const emailBody = `${greeting}
 
-Bill here from ServiceTitan Hacks. Just saw your submission come through the pricebook optimizer.
+Bill Brown here from ServiceTitan Hacks. Saw your submission come through the pricebook optimizer.
 
-Quick reason I'm reaching out: most folks who test the tool have hundreds or thousands of similar ${categoryMention} descriptions sitting in their ServiceTitan pricebook. Running them one at a time isn't realistic.
+You just saw what one description looks like rewritten. Most ${categoryMention} contractors have 1,500 to 3,000 of those sitting in their ServiceTitan Services tab. Doing them one at a time isn't realistic.
 
-I just opened 10 founder spots to overhaul an entire Services tab for $395 flat. A handful are taken, a few left. Here's how it works:
+I'm running 10 founder spots at $395 flat to overhaul your entire Services tab the same way. Here's how it works:
 
-1. You export your pricebook from ServiceTitan as Excel
-2. Send it to me
-3. 72 hours later you get it back with every Service description rewritten in homeowner-friendly HTML formatting
-4. You re-import it, and your whole pricebook reads professionally on technician iPads and customer-facing quotes
+1. Pay via the link below
+2. Export your pricebook from ServiceTitan as Excel and upload it
+3. 72 hours later you get it back with every Service description rewritten in homeowner-friendly HTML
+4. Re-import to ServiceTitan, done
 
-If that sounds useful, just reply to this email and I'll send the payment link plus a 1-page instruction sheet on the export.
+Payment link: https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J
 
-If not, no worries. The free tool is yours to use anytime: servicetitanhacks.com/pricebook-optimizer
+After payment, you'll get a 1-page export instruction sheet and the upload link.
 
-Bill Brown
-ServiceTitan Hacks
-9,500+ contractor community`;
+Questions? Just reply.
+
+Bill Brown`;
 
         const subjectLine = firstName
           ? `Saw you tested the pricebook optimizer, ${firstName}`
