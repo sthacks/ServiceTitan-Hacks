@@ -4,25 +4,10 @@ import ToolCard from "@/components/ToolCard";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import titleBg from "@assets/title-background.png";
-import phoneCallRecapImage from "@assets/Copy of Phone Call Recap Infographic (1)_1760903764548.png";
 import pricebookOptimizerImage from "@assets/before_(1)_1777039828390.png";
-import titanDashboardsImage from "@assets/Untitled_design_(2)_1765462149620.png";
 
 export default function Tools() {
   const tools = [
-    {
-      name: "Titan Dashboards",
-      description: "Simple, beautiful capacity dashboards that sync directly with ServiceTitan. Know if you're winning or losing at a glance.",
-      benefits: [
-        "3-day capacity view",
-        "Red-to-green dial indicators",
-        "Syncs with ServiceTitan",
-        "Built-in weather display",
-      ],
-      tag: "New",
-      link: "https://titandashboards.com",
-      image: titanDashboardsImage,
-    },
     {
       name: "ServiceTitan Pricebook Overhaul",
       description: "We rewrite every item in your pricebook so descriptions sound like a homeowner wrote them, not a tech. Done in 72 hours.",
@@ -35,19 +20,6 @@ export default function Tools() {
       tag: "Popular",
       link: "/pricebook-overhaul",
       image: pricebookOptimizerImage,
-    },
-    {
-      name: "PhoneCallRecap.ai",
-      description: "Automatically summarize customer calls and log key details to ServiceTitan.",
-      benefits: [
-        "Real-time call transcription",
-        "Action item extraction",
-        "Auto-populate ST fields",
-        "Searchable call history",
-      ],
-      tag: "New",
-      link: "https://phonecallrecap.ai/",
-      image: phoneCallRecapImage,
     },
   ];
 
