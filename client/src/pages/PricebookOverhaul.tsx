@@ -136,6 +136,7 @@ export default function PricebookOverhaul() {
         description="We'll AI-rewrite every item in your ServiceTitan pricebook so every word sounds like a homeowner wrote it, not a tech. Flat $395. 72-hour delivery."
         keywords="ServiceTitan pricebook, pricebook descriptions, homeowner-friendly pricebook, ServiceTitan AI, contractor pricebook rewrite"
         canonicalUrl="https://servicetitanhacks.com/pricebook-overhaul"
+        ogImage="https://servicetitanhacks.com/og-pricebook-overhaul.png"
       />
       <Header />
       <main className="flex-1">
