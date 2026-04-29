@@ -11,8 +11,11 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-const DEFAULT_IMAGE = "https://servicetitanhacks.com/og-default.png";
 const SITE_NAME = "ServiceTitan Hacks";
+const DEFAULT_TITLE = "ServiceTitan Hacks - AI and Automations for Home Service Contractors";
+const DEFAULT_DESCRIPTION = "AI tools for contractors. Learn ServiceTitan automation for HVAC, plumbing businesses. Free courses, tools & community. Join 9,500+ contractors.";
+const DEFAULT_IMAGE = "https://servicetitanhacks.com/og-default.png";
+const DEFAULT_URL = "https://servicetitanhacks.com/";
 
 export default function SEO({
   title,
@@ -25,8 +28,6 @@ export default function SEO({
   noindex = false,
 }: SEOProps) {
   useEffect(() => {
-    document.title = title;
-
     const setMeta = (attr: "name" | "property", key: string, content: string) => {
       let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
       if (!el) {
@@ -37,10 +38,45 @@ export default function SEO({
       el.setAttribute("content", content);
     };
 
+    const setCanonical = (href: string) => {
+      let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+      if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", "canonical");
+        document.head.appendChild(el);
+      }
+      el.setAttribute("href", href);
+    };
+
+    const applyMeta = (
+      t: string,
+      desc: string,
+      img: string,
+      url: string,
+      type: string,
+    ) => {
+      document.title = t;
+      setMeta("name", "title", t);
+      setMeta("name", "description", desc);
+      setMeta("property", "og:type", type);
+      setMeta("property", "og:url", url);
+      setMeta("property", "og:title", t);
+      setMeta("property", "og:description", desc);
+      setMeta("property", "og:image", img);
+      setMeta("property", "og:image:width", "1200");
+      setMeta("property", "og:image:height", "630");
+      setMeta("property", "og:site_name", SITE_NAME);
+      setMeta("name", "twitter:card", "summary_large_image");
+      setMeta("name", "twitter:url", url);
+      setMeta("name", "twitter:title", t);
+      setMeta("name", "twitter:description", desc);
+      setMeta("name", "twitter:image", img);
+      setCanonical(url);
+    };
+
     const pageUrl = canonicalUrl || `https://servicetitanhacks.com${window.location.pathname}`;
 
-    setMeta("name", "title", title);
-    setMeta("name", "description", description);
+    applyMeta(title, description, ogImage, pageUrl, ogType);
 
     if (keywords) {
       setMeta("name", "keywords", keywords);
@@ -52,29 +88,6 @@ export default function SEO({
       document.querySelector('meta[name="robots"]')?.remove();
     }
 
-    setMeta("property", "og:type", ogType);
-    setMeta("property", "og:url", pageUrl);
-    setMeta("property", "og:title", title);
-    setMeta("property", "og:description", description);
-    setMeta("property", "og:image", ogImage);
-    setMeta("property", "og:image:width", "1200");
-    setMeta("property", "og:image:height", "630");
-    setMeta("property", "og:site_name", SITE_NAME);
-
-    setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:url", pageUrl);
-    setMeta("name", "twitter:title", title);
-    setMeta("name", "twitter:description", description);
-    setMeta("name", "twitter:image", ogImage);
-
-    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", pageUrl);
-
     if (schemaData) {
       let script = document.querySelector('script[type="application/ld+json"]');
       if (!script) {
@@ -84,6 +97,11 @@ export default function SEO({
       }
       script.textContent = JSON.stringify(schemaData);
     }
+
+    return () => {
+      applyMeta(DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, DEFAULT_URL, "website");
+      document.querySelector('meta[name="robots"]')?.remove();
+    };
   }, [title, description, keywords, canonicalUrl, ogImage, ogType, schemaData, noindex]);
 
   return null;
