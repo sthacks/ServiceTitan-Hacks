@@ -1,0 +1,40 @@
+Update the pricebook-overhaul-tool page (route: /pricebook-overhaul-tool) with two improvements that work together for a Messenger-driven lead capture flow.
+
+CHANGE 1: Add anchor support to the form section
+
+Add id="form" to the wrapper element of the form section (the section that contains "Turn One of Your Pricebook Items Into a Homeowner-Friendly Description" heading and the input fields).
+
+This allows URLs like /pricebook-overhaul-tool#form to scroll directly to the form on page load.
+
+CHANGE 2: Pre-fill form fields from URL query parameters
+
+On page load, read these URL query parameters and pre-fill the matching form fields:
+
+- first_name parameter > First Name input field
+- last_name parameter > Last Name input field  
+- email parameter > Email input field
+- trade parameter > "What trade is this for?" dropdown (match the parameter value to the existing dropdown options: HVAC, Plumbing, Electrical, Multi-trade)
+
+IMPLEMENTATION REQUIREMENTS:
+
+1. Use vanilla JavaScript with the URLSearchParams API.
+
+2. Run the pre-fill logic on DOMContentLoaded so fields populate before the user interacts with the page.
+
+3. URL-decode parameter values (handle %20 for spaces, etc.).
+
+4. For the trade dropdown: do a case-insensitive match against the dropdown options. If the parameter value doesn't match any option, leave the dropdown unselected rather than throwing an error.
+
+5. Sanitize all parameter values before inserting (escape HTML special characters) to prevent XSS.
+
+6. If a parameter is missing from the URL, leave that field blank as it currently behaves. Do not show errors.
+
+7. Make sure existing form validation still works on the pre-filled values (don't bypass required-field checks).
+
+EXAMPLE TEST URL:
+
+After deploying, this URL should: (a) scroll directly to the form, (b) pre-fill First Name as "John", Last Name as "Smith", Email as "john@example.com", and Trade as "HVAC":
+
+/pricebook-overhaul-tool?first_name=John&last_name=Smith&email=john@example.com&trade=HVAC#form
+
+DO NOT change any other functionality on the page. Do not modify the form submission logic, the AI rewrite endpoint, the existing copy, or the styling. Only add the anchor id and the pre-fill JavaScript.

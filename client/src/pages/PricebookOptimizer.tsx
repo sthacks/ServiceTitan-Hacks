@@ -193,6 +193,35 @@ export default function PricebookOptimizer() {
     };
   }, [form.watch("email"), formSubmitted]);
 
+  // Pre-fill form fields from URL query parameters on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    // Strip HTML special characters to prevent XSS
+    const sanitize = (val: string) =>
+      val.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c] ?? c));
+
+    const firstName = params.get('first_name');
+    if (firstName) form.setValue('firstName', sanitize(firstName));
+
+    const lastName = params.get('last_name');
+    if (lastName) form.setValue('lastName', sanitize(lastName));
+
+    const email = params.get('email');
+    if (email) form.setValue('email', sanitize(email));
+
+    const trade = params.get('trade');
+    if (trade) {
+      const match = categories.find(
+        (c) => c.value.toLowerCase() === trade.toLowerCase() || c.label.toLowerCase() === trade.toLowerCase()
+      );
+      if (match) {
+        form.setValue('category', match.value);
+        if (match.value === 'OTHER') setShowOtherCategory(true);
+      }
+    }
+  }, []);
+
   const handleCopy = async () => {
     if (result?.optimizedDescription) {
       await navigator.clipboard.writeText(result.optimizedDescription);
@@ -327,6 +356,7 @@ export default function PricebookOptimizer() {
           </div>
         </section>
 
+        <div id="form" />
         <section id="try-it-form" className="py-16 bg-muted">
           <div className="mx-auto max-w-3xl px-6">
             <Card>
