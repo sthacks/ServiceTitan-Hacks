@@ -160,6 +160,18 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-all-access.png",
   },
   
+  // Pricebook Pages
+  "/pricebook-overhaul": {
+    title: "ServiceTitan Pricebook Overhaul | AI-Rewritten Descriptions for Homeowners",
+    description: "We'll AI-rewrite every item in your ServiceTitan pricebook so every word sounds like a homeowner wrote it, not a tech. Flat $395. 72-hour delivery.",
+    ogImage: "https://servicetitanhacks.com/og-pricebook-overhaul.png",
+  },
+  "/pricebook-overhaul/security": {
+    title: "Pricebook Overhaul: Security and Privacy | ServiceTitan Hacks",
+    description: "How we protect your ServiceTitan pricebook during the overhaul process. Encryption, access controls, AI data policy, file retention, and NDA availability.",
+    ogImage: "https://servicetitanhacks.com/og-pricebook-overhaul.png",
+  },
+
   // Tool Pages
   "/pricebook-optimizer": {
     title: "The Pricebook Optimizer Tool",
