@@ -11,7 +11,7 @@ import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Drop
 import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 
-const CHECKOUT_URL = "https://app.servicetitanhacks.com/pricebook-overhaul";
+const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
 
 const TRADES = [
   { value: "HVAC",         label: "HVAC",         icon: Wind },
