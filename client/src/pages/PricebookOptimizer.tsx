@@ -282,7 +282,7 @@ export default function PricebookOptimizer() {
                         data-testid={`card-sample-${idx}`}
                         onClick={() => handleSampleClick(idx)}
                         className={cn(
-                          "w-full rounded-md border px-4 py-3 text-left font-mono text-sm hover-elevate transition-colors",
+                          "w-full rounded-md border px-4 py-3 text-left font-sans text-sm hover-elevate transition-colors",
                           selectedSampleIdx === idx
                             ? "border-primary bg-primary/5"
                             : "border-border bg-card"
