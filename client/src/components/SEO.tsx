@@ -6,6 +6,7 @@ interface SEOProps {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
   schemaData?: object;
   noindex?: boolean;
@@ -23,6 +24,7 @@ export default function SEO({
   keywords,
   canonicalUrl,
   ogImage = DEFAULT_IMAGE,
+  ogImageAlt,
   ogType = "website",
   schemaData,
   noindex = false,
@@ -77,6 +79,11 @@ export default function SEO({
     const pageUrl = canonicalUrl || `https://servicetitanhacks.com${window.location.pathname}`;
 
     applyMeta(title, description, ogImage, pageUrl, ogType);
+
+    if (ogImageAlt) {
+      setMeta("property", "og:image:alt", ogImageAlt);
+      setMeta("name", "twitter:image:alt", ogImageAlt);
+    }
 
     if (keywords) {
       setMeta("name", "keywords", keywords);

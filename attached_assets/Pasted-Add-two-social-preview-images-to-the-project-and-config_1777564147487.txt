@@ -1,0 +1,81 @@
+Add two social preview images to the project and configure the meta tags to use the correct image based on context.
+
+IMAGES TO UPLOAD:
+
+I will upload two image files to the project. Place them in the public assets folder (or whatever folder serves static images in this project, likely /public/images/ or /assets/).
+
+Image 1: pricebook-tool-social-square.png
+- Dimensions: 1080x1080 pixels (1:1 aspect ratio)
+- Use case: Facebook feed posts, Instagram posts, LinkedIn feed posts when image is uploaded directly
+
+Image 2: pricebook-tool-social-horizontal.png
+- Dimensions: 1200x630 pixels (1.91:1 aspect ratio)
+- Use case: Open Graph social preview when the URL is shared on Facebook, Twitter, LinkedIn, WhatsApp, iMessage, Slack, Discord, etc.
+
+META TAG CONFIGURATION:
+
+Update the /pricebook-overhaul-tool page head section with the following meta tags. Use the HORIZONTAL image (pricebook-tool-social-horizontal.png) for all Open Graph and Twitter Card image references, since these are exclusively used for URL link previews.
+
+Replace any existing og:image or twitter:image meta tags with these:
+
+<!-- Primary Meta Tags -->
+<title>Free Tool: Rewrite Your Pricebook in Homeowner Language</title>
+<meta name="title" content="Free Tool: Rewrite Your Pricebook in Homeowner Language">
+<meta name="description" content="Pick your trade, pick a sample (or paste your own), and AI rewrites your ServiceTitan pricebook description in homeowner language. Takes 10 seconds. No signup, no credit card.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://servicetitanhacks.com/pricebook-overhaul-tool">
+<meta property="og:title" content="Free Tool: Rewrite Your Pricebook in Homeowner Language">
+<meta property="og:description" content="Pick your trade, pick a sample (or paste your own), and AI rewrites your ServiceTitan pricebook description in homeowner language. Takes 10 seconds. No signup, no credit card.">
+<meta property="og:image" content="https://servicetitanhacks.com/images/pricebook-tool-social-horizontal.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Service tech using technical jargon while homeowner stares back confused like a deer in headlights">
+<meta property="og:site_name" content="ServiceTitan Hacks">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://servicetitanhacks.com/pricebook-overhaul-tool">
+<meta property="twitter:title" content="Free Tool: Rewrite Your Pricebook in Homeowner Language">
+<meta property="twitter:description" content="Pick your trade, pick a sample (or paste your own), and AI rewrites your ServiceTitan pricebook description in homeowner language. Takes 10 seconds. No signup, no credit card.">
+<meta property="twitter:image" content="https://servicetitanhacks.com/images/pricebook-tool-social-horizontal.png">
+<meta property="twitter:image:alt" content="Service tech using technical jargon while homeowner stares back confused like a deer in headlights">
+
+IMAGE PATH NOTES:
+
+The exact path in the meta tag URLs (https://servicetitanhacks.com/images/pricebook-tool-social-horizontal.png) must match the actual hosted location of the uploaded image. Adjust the path if Replit serves static files from a different folder structure (e.g., /assets/, /static/, /public/).
+
+The image must be publicly accessible without authentication. Test by opening the full URL in an incognito browser window after upload.
+
+WHEN TO USE EACH IMAGE:
+
+The SQUARE image (1080x1080) is NOT used in any meta tags on the website. It is provided for reference and download only. Bill will use it manually when:
+- Posting to Facebook feed (uploads as image)
+- Posting to Instagram
+- Posting to LinkedIn feed
+- Any time the image is being shared as content, not as a URL preview
+
+The HORIZONTAL image (1200x630) is used in the Open Graph and Twitter Card meta tags. It will display automatically whenever someone shares the /pricebook-overhaul-tool URL on:
+- Facebook (URL paste in posts, comments, or messages)
+- Twitter/X
+- LinkedIn (URL paste)
+- WhatsApp link previews
+- iMessage link previews
+- Slack link unfurls
+- Discord embeds
+- Any platform that reads Open Graph metadata
+
+OPTIONAL: Make the square image accessible at a known URL.
+
+If easy to do, also make the square image publicly accessible at:
+https://servicetitanhacks.com/images/pricebook-tool-social-square.png
+
+This way Bill can copy the URL when needed for manual social posting workflows.
+
+VERIFICATION STEPS AFTER DEPLOYMENT:
+
+1. Confirm both image URLs return the images when opened directly in a browser
+2. Test the meta tags by viewing page source on /pricebook-overhaul-tool and confirming all og: and twitter: tags are present
+3. Ensure the meta tags are in the <head> section, not the body
+4. The image referenced in og:image must load successfully (check for 200 status, not 404)

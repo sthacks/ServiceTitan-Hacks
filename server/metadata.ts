@@ -3,6 +3,7 @@ export interface PageMetadata {
   title: string;
   description: string;
   ogImage: string;
+  ogImageAlt?: string;
   ogType?: string;
 }
 
@@ -175,7 +176,8 @@ export const metadata: Record<string, PageMetadata> = {
   "/pricebook-overhaul-tool": {
     title: "Free Tool: Rewrite Your Pricebook in Homeowner Language",
     description: "Pick your trade, pick a sample (or paste your own), and AI rewrites your ServiceTitan pricebook description in homeowner language. Takes 10 seconds. No signup, no credit card.",
-    ogImage: "https://servicetitanhacks.com/og-pricebook-tool.png",
+    ogImage: "https://servicetitanhacks.com/images/pricebook-tool-social-horizontal.png",
+    ogImageAlt: "Service tech using technical jargon while homeowner stares back confused like a deer in headlights",
   },
 
   // Tool Pages

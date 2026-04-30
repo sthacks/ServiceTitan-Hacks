@@ -70,6 +70,13 @@ function injectMetaTags(html: string, reqPath: string): string {
     .replace(
       /<meta name="twitter:image" content=".*?" \/>/,
       `<meta name="twitter:image" content="${metadata.ogImage}" />`
+    )
+    // Inject og:image:alt and twitter:image:alt before </head> when provided
+    .replace(
+      '</head>',
+      metadata.ogImageAlt
+        ? `<meta property="og:image:alt" content="${metadata.ogImageAlt}" />\n<meta name="twitter:image:alt" content="${metadata.ogImageAlt}" />\n</head>`
+        : '</head>'
     );
 }
 
