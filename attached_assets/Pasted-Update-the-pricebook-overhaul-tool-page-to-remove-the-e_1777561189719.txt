@@ -1,0 +1,88 @@
+Update the /pricebook-overhaul-tool page to remove the email capture popup and move email capture to AFTER the rewrite is displayed.
+
+REMOVE:
+
+Delete the email capture modal/popup that currently appears when the user clicks "Rewrite this sample" or "Rewrite my description." The modal should be removed entirely from the codebase, not just hidden.
+
+NEW FLOW:
+
+When the user clicks "Rewrite this sample" or "Rewrite my description":
+
+1. The button enters a loading state with text "Generating your rewrite..."
+2. The AI generates the rewrite (no email required at this step)
+3. The output displays inline on the same page, scrolling smoothly to the result
+
+OUTPUT SECTION LAYOUT:
+
+Below the form (which can collapse or stay visible), show the rewrite result in this structure:
+
+Section heading: "Here's your rewrite"
+
+Two-column comparison on desktop (stacked vertically on mobile):
+- LEFT/TOP: "Before" card showing the original description in a quoted, monospace or italic style
+- RIGHT/BOTTOM: "After" card showing the AI-rewritten version in normal styling
+
+Below the comparison, in this exact order:
+
+BLOCK 1: Email capture (inline, not a modal)
+- Container with light background or subtle border to differentiate it
+- Heading: "Want a copy emailed to you?"
+- Subtext: "We'll send the rewrite plus occasional pricebook tips. Unsubscribe anytime."
+- Single email input field with placeholder "your@email.com"
+- Submit button labeled "Email me a copy" using the brand pink/red accent color
+- Small text link below: "No thanks, skip this"
+- When email is submitted: show a success message "Sent. Check your inbox." and replace the form with the success state
+- When "No thanks, skip this" is clicked: hide this entire block
+
+BLOCK 2: Bulk overhaul CTA (always visible, regardless of email choice)
+- Heading: "Want this done on your entire pricebook?"
+- Subtext: "AI rewrites every description in your ServiceTitan pricebook. 72 hour turnaround. Flat $395."
+- Primary button: "Get the Bulk Overhaul - $395" linking to the existing checkout URL on /pricebook-overhaul
+
+BLOCK 3: Reset link
+- Small text link: "Try another rewrite" 
+- When clicked: scrolls back to the form and resets the form state to allow another sample selection or custom paste
+
+EMAIL CAPTURE BEHAVIOR:
+
+When the user submits an email in BLOCK 1:
+- Push to existing Mailchimp integration with these fields:
+  - email (the entered email)
+  - trade (from the form selection earlier)
+  - source = "pricebook_overhaul_tool"
+  - input_type = "sample" or "custom" (whichever path the user took)
+  - rewrite_input (the BEFORE description that was rewritten)
+  - timestamp
+- Tag the contact in Mailchimp as "pricebook_tool_user"
+- Send an email to the user (via Mailchimp or existing transactional email setup) containing the BEFORE and AFTER text plus a CTA link to the bulk overhaul page
+
+DO NOT GATE THE REWRITE:
+
+The user must be able to:
+- Generate the rewrite without entering an email
+- See the full BEFORE and AFTER output without entering an email
+- Click the bulk overhaul CTA without entering an email
+- Skip the email capture entirely and continue using the tool
+
+ANALYTICS:
+
+Add event tracking for these new states:
+- rewrite_generated (fires when output displays)
+- email_captured (fires when email is submitted in BLOCK 1)
+- email_skipped (fires when "No thanks, skip this" is clicked)
+- bulk_cta_clicked (fires when the BLOCK 2 button is clicked)
+- reset_clicked (fires when "Try another rewrite" is clicked)
+
+MOBILE:
+
+On screens under 640px width:
+- Stack the BEFORE and AFTER cards vertically (BEFORE on top)
+- Email capture and bulk CTA blocks remain full-width and stacked
+- Ensure no modals or popups appear at any point in the flow
+- All interactions happen inline on the same scrollable page
+
+DO NOT CHANGE:
+
+- The form section above (trade selection, sample/custom choice, sample list, custom textarea, rewrite buttons)
+- The page header, navigation, or footer
+- The site's existing styling, colors, or fonts

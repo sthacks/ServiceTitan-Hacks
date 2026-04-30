@@ -1792,12 +1792,9 @@ Bill Brown`;
   // Only requires email + trade + description (no name fields)
   app.post("/api/pricebook-tool/rewrite", async (req, res) => {
     try {
-      const { email, trade, description, inputType } = req.body;
-      if (!email || !trade || !description) {
+      const { trade, description, inputType } = req.body;
+      if (!trade || !description) {
         return res.status(400).json({ error: "Missing required fields" });
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return res.status(400).json({ error: "Invalid email address" });
       }
       if (description.trim().length < 5) {
         return res.status(400).json({ error: "Description too short" });
@@ -1831,6 +1828,20 @@ Use 75-200 words. Format with HTML: <b> for headings, <br> for line breaks, <ul>
       });
 
       const optimizedDescription = completion.choices[0]?.message?.content || "";
+      return res.json({ optimizedDescription });
+    } catch (error: any) {
+      console.error("[pricebook-tool] rewrite error:", error);
+      return res.status(500).json({ error: "Failed to generate rewrite. Please try again." });
+    }
+  });
+
+  // Email capture — called after rewrite is displayed, entirely optional
+  app.post("/api/pricebook-tool/capture-email", async (req, res) => {
+    try {
+      const { email, trade, description, inputType, rewriteOutput } = req.body;
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({ error: "Invalid email address" });
+      }
 
       // Mailchimp sync
       try {
@@ -1842,28 +1853,49 @@ Use 75-200 words. Format with HTML: <b> for headings, <br> for line breaks, <ul>
         console.error("[pricebook-tool] Mailchimp sync failed:", mcErr);
       }
 
+      // Send copy to user
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        await client.emails.send({
+          from: fromEmail,
+          to: email,
+          subject: "Your Pricebook Rewrite from ServiceTitan Hacks",
+          html: `<h2>Here's your pricebook rewrite</h2>
+<p><b>Before:</b></p>
+<blockquote style="border-left:3px solid #ccc;padding-left:12px;color:#555">${description}</blockquote>
+<p><b>After:</b></p>
+<div>${rewriteOutput}</div>
+<hr style="margin:24px 0"/>
+<p>Want every description in your pricebook rewritten like this?</p>
+<p><a href="https://servicetitanhacks.com/pricebook-overhaul" style="background:#e11d48;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold">Get the Bulk Overhaul — $395</a></p>
+<p style="color:#888;font-size:12px;margin-top:24px">ServiceTitan Hacks · <a href="https://servicetitanhacks.com/unsubscribe">Unsubscribe</a></p>`,
+        });
+      } catch (emailErr) {
+        console.error("[pricebook-tool] User email failed:", emailErr);
+      }
+
       // Notify bill@
       try {
         const { client, fromEmail } = await getUncachableResendClient();
         await client.emails.send({
           from: fromEmail,
           to: "bill@st-hacks.com",
-          subject: "New Pricebook Tool Rewrite",
-          html: `<h2>New Pricebook Tool Rewrite</h2>
+          subject: "New Pricebook Tool Email Capture",
+          html: `<h2>New Email Capture — Pricebook Tool</h2>
             <p><b>Email:</b> ${email}</p>
             <p><b>Trade:</b> ${trade}</p>
             <p><b>Input Type:</b> ${inputType || "unknown"}</p>
             <p><b>Original:</b><br>${description}</p>
-            <p><b>Rewritten:</b><br>${optimizedDescription}</p>`,
+            <p><b>Rewritten:</b><br>${rewriteOutput}</p>`,
         });
-      } catch (emailErr) {
-        console.error("[pricebook-tool] Email notify failed:", emailErr);
+      } catch (notifyErr) {
+        console.error("[pricebook-tool] Notify email failed:", notifyErr);
       }
 
-      return res.json({ optimizedDescription });
+      return res.json({ ok: true });
     } catch (error: any) {
-      console.error("[pricebook-tool] rewrite error:", error);
-      return res.status(500).json({ error: "Failed to generate rewrite. Please try again." });
+      console.error("[pricebook-tool] capture-email error:", error);
+      return res.status(500).json({ error: "Failed to capture email." });
     }
   });
 

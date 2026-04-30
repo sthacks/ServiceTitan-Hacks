@@ -5,10 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Droplets, Zap, Warehouse, Home, MoreHorizontal } from "lucide-react";
+import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Droplets, Zap, Warehouse, Home, MoreHorizontal, Mail } from "lucide-react";
 import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -68,26 +67,28 @@ function track(event: string, params?: Record<string, string | number>) {
 export default function PricebookOptimizer() {
   const { toast } = useToast();
   const resultRef = useRef<HTMLDivElement | null>(null);
+  const formRef = useRef<HTMLElement | null>(null);
 
   const [trade, setTrade] = useState("");
   const [mode, setMode] = useState<"sample" | "custom" | null>(null);
   const [selectedSampleIdx, setSelectedSampleIdx] = useState<number | null>(null);
   const [customDescription, setCustomDescription] = useState("");
-  const [email, setEmail] = useState("");
-  const [showEmailGate, setShowEmailGate] = useState(false);
   const [result, setResult] = useState<{ optimized: string; original: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+
+  // Post-result email capture state
+  const [emailInput, setEmailInput] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailSkipped, setEmailSkipped] = useState(false);
+  const [emailSubmitting, setEmailSubmitting] = useState(false);
 
   const samples = SAMPLES[trade] ?? [];
   const inputDescription =
     mode === "sample" && selectedSampleIdx !== null
       ? samples[selectedSampleIdx]
       : customDescription;
-
-  const canProceed =
-    mode === "sample" ? selectedSampleIdx !== null : customDescription.trim().length >= 5;
 
   const handleTradeChange = (val: string) => {
     setTrade(val);
@@ -108,26 +109,14 @@ export default function PricebookOptimizer() {
     track("sample_clicked", { index: idx });
   };
 
-  const handleStep3Submit = () => {
-    setShowEmailGate(true);
-  };
-
-  const handleEmailSubmit = async () => {
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast({ title: "Enter a valid email address", variant: "destructive" });
-      return;
-    }
-
-    setShowEmailGate(false);
+  const handleRewrite = async () => {
     setIsLoading(true);
     setError("");
-
     try {
       const response = await fetch("/api/pricebook-tool/rewrite", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email,
           trade,
           description: inputDescription,
           inputType: mode,
@@ -138,8 +127,7 @@ export default function PricebookOptimizer() {
       if (!response.ok) throw new Error(data.error || "Failed to get rewrite");
 
       setResult({ optimized: data.optimizedDescription, original: inputDescription });
-      track("email_submitted");
-      track("rewrite_displayed");
+      track("rewrite_generated");
 
       setTimeout(() => {
         resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -151,16 +139,49 @@ export default function PricebookOptimizer() {
     }
   };
 
+  const handleEmailCapture = async () => {
+    if (!emailInput || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput)) {
+      toast({ title: "Enter a valid email address", variant: "destructive" });
+      return;
+    }
+    setEmailSubmitting(true);
+    try {
+      await fetch("/api/pricebook-tool/capture-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: emailInput,
+          trade,
+          description: result?.original,
+          inputType: mode,
+          rewriteOutput: result?.optimized,
+        }),
+      });
+      setEmailSent(true);
+      track("email_captured");
+    } catch {
+      // silent — don't block the user
+    } finally {
+      setEmailSubmitting(false);
+    }
+  };
+
   const handleReset = () => {
     setTrade("");
     setMode(null);
     setSelectedSampleIdx(null);
     setCustomDescription("");
-    setEmail("");
+    setEmailInput("");
+    setEmailSent(false);
+    setEmailSkipped(false);
+    setEmailSubmitting(false);
     setResult(null);
     setError("");
     setCopied(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    track("reset_clicked");
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
   };
 
   const handleCopy = async () => {
@@ -183,18 +204,16 @@ export default function PricebookOptimizer() {
 
       <main className="flex-1">
         {/* ─── Hero ─────────────────────────────────────────────── */}
-        {!result && (
-          <section className="pt-12 pb-6 bg-background">
-            <div className="mx-auto max-w-2xl px-6 text-center">
-              <h1 className="text-3xl md:text-4xl font-bold font-heading mb-3">
-                See Your Pricebook Rewritten in Homeowner Language
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Pick a sample or paste your own. AI rewrites it in 10 seconds.
-              </p>
-            </div>
-          </section>
-        )}
+        <section className="pt-12 pb-6 bg-background" ref={formRef as any}>
+          <div className="mx-auto max-w-2xl px-6 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold font-heading mb-3">
+              See Your Pricebook Rewritten in Homeowner Language
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Pick a sample or paste your own. AI rewrites it in 10 seconds.
+            </p>
+          </div>
+        </section>
 
         {/* ─── Form ─────────────────────────────────────────────── */}
         {!result && !isLoading && (
@@ -299,7 +318,7 @@ export default function PricebookOptimizer() {
                     size="lg"
                     className="w-full"
                     disabled={selectedSampleIdx === null}
-                    onClick={handleStep3Submit}
+                    onClick={handleRewrite}
                     data-testid="button-rewrite-sample"
                   >
                     Rewrite this sample
@@ -325,7 +344,7 @@ export default function PricebookOptimizer() {
                     size="lg"
                     className="w-full"
                     disabled={customDescription.trim().length < 5}
-                    onClick={handleStep3Submit}
+                    onClick={handleRewrite}
                     data-testid="button-rewrite-custom"
                   >
                     Rewrite my description
@@ -346,7 +365,7 @@ export default function PricebookOptimizer() {
           <section className="py-24 bg-background">
             <div className="mx-auto max-w-2xl px-6 flex flex-col items-center gap-4 text-muted-foreground">
               <Loader2 className="h-8 w-8 animate-spin text-primary" data-testid="status-loading" />
-              <p className="text-base font-medium">Rewriting in homeowner language…</p>
+              <p className="text-base font-medium">Generating your rewrite...</p>
             </div>
           </section>
         )}
@@ -354,57 +373,117 @@ export default function PricebookOptimizer() {
         {/* ─── Result ───────────────────────────────────────────── */}
         {result && !isLoading && (
           <section ref={resultRef} className="py-12 bg-background">
-            <div className="mx-auto max-w-4xl px-6">
-              <h2 className="text-2xl md:text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-result">
-                Here's your rewrite
-              </h2>
+            <div className="mx-auto max-w-4xl px-6 space-y-10">
 
-              <div className="grid gap-6 md:grid-cols-2 mb-10">
-                {/* Before */}
-                <Card>
-                  <CardContent className="p-6">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
-                      Before
-                    </p>
-                    <p className="font-mono text-sm leading-relaxed text-foreground" data-testid="text-before">
-                      {result.original}
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* After */}
-                <Card className="border-primary/30 bg-primary/5">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                        After
+              {/* Before / After comparison */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold font-heading mb-8 text-center" data-testid="heading-result">
+                  Here's your rewrite
+                </h2>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {/* Before */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+                        Before
                       </p>
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={handleCopy}
-                        data-testid="button-copy"
-                      >
-                        {copied ? (
-                          <><Check className="h-3 w-3 mr-1" /> Copied</>
-                        ) : (
-                          <><Copy className="h-3 w-3 mr-1" /> Copy</>
-                        )}
-                      </Button>
-                    </div>
-                    <div
-                      className="text-sm leading-relaxed text-foreground prose prose-sm max-w-none"
-                      data-testid="text-after"
-                      dangerouslySetInnerHTML={{ __html: result.optimized }}
-                    />
-                  </CardContent>
-                </Card>
+                      <p className="font-mono text-sm leading-relaxed text-foreground italic" data-testid="text-before">
+                        "{result.original}"
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  {/* After */}
+                  <Card className="border-primary/30 bg-primary/5">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                          After
+                        </p>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={handleCopy}
+                          data-testid="button-copy"
+                        >
+                          {copied ? (
+                            <><Check className="h-3 w-3 mr-1" /> Copied</>
+                          ) : (
+                            <><Copy className="h-3 w-3 mr-1" /> Copy</>
+                          )}
+                        </Button>
+                      </div>
+                      <div
+                        className="text-sm leading-relaxed text-foreground prose prose-sm max-w-none"
+                        data-testid="text-after"
+                        dangerouslySetInnerHTML={{ __html: result.optimized }}
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
 
-              {/* CTA block */}
-              <div className="text-center space-y-4">
-                <p className="text-lg font-medium text-foreground">
+              {/* Block 1 — Email capture (inline, optional) */}
+              {!emailSkipped && (
+                <div className="rounded-md border bg-muted/40 px-6 py-6 space-y-4" data-testid="block-email-capture">
+                  {emailSent ? (
+                    <div className="flex items-center gap-3 text-sm" data-testid="text-email-sent">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span>Sent. Check your inbox.</span>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center gap-2">
+                        <Mail className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+                        <p className="font-semibold text-sm">Want a copy emailed to you?</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        We'll send the rewrite plus occasional pricebook tips. Unsubscribe anytime.
+                      </p>
+                      <div className="flex gap-3 flex-wrap">
+                        <Input
+                          type="email"
+                          placeholder="your@email.com"
+                          value={emailInput}
+                          onChange={(e) => setEmailInput(e.target.value)}
+                          onKeyDown={(e) => e.key === "Enter" && handleEmailCapture()}
+                          className="flex-1 min-w-48"
+                          data-testid="input-email"
+                        />
+                        <Button
+                          onClick={handleEmailCapture}
+                          disabled={emailSubmitting}
+                          data-testid="button-email-submit"
+                        >
+                          {emailSubmitting ? (
+                            <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                          ) : null}
+                          Email me a copy
+                        </Button>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEmailSkipped(true);
+                          track("email_skipped");
+                        }}
+                        className="text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+                        data-testid="button-skip-email"
+                      >
+                        No thanks, skip this
+                      </button>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {/* Block 2 — Bulk CTA */}
+              <div className="rounded-md border bg-card px-6 py-8 text-center space-y-4" data-testid="block-bulk-cta">
+                <p className="text-lg font-semibold">
                   Want this done on your entire pricebook?
+                </p>
+                <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                  AI rewrites every description in your ServiceTitan pricebook. 72-hour turnaround. Flat $395.
                 </p>
                 <Button
                   size="lg"
@@ -417,18 +496,21 @@ export default function PricebookOptimizer() {
                   Get the Bulk Overhaul — $395
                   <ExternalLink className="h-4 w-4 ml-2" />
                 </Button>
-                <div>
-                  <button
-                    type="button"
-                    onClick={handleReset}
-                    className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
-                    data-testid="button-try-another"
-                  >
-                    <RotateCcw className="inline h-3 w-3 mr-1 -mt-0.5" />
-                    Try another rewrite
-                  </button>
-                </div>
               </div>
+
+              {/* Block 3 — Reset */}
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+                  data-testid="button-try-another"
+                >
+                  <RotateCcw className="inline h-3 w-3 mr-1 -mt-0.5" />
+                  Try another rewrite
+                </button>
+              </div>
+
             </div>
           </section>
         )}
@@ -485,40 +567,6 @@ export default function PricebookOptimizer() {
           </div>
         </section>
       </main>
-
-      {/* ─── Email gate modal ─────────────────────────────────── */}
-      <Dialog open={showEmailGate} onOpenChange={setShowEmailGate}>
-        <DialogContent className="max-w-sm" data-testid="modal-email-gate">
-          <DialogHeader>
-            <DialogTitle>Where should we send the rewrite?</DialogTitle>
-            <DialogDescription>
-              We'll email you a copy so you can reference it later.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4 pt-2">
-            <Input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleEmailSubmit()}
-              autoFocus
-              data-testid="input-email"
-            />
-            <Button
-              size="lg"
-              className="w-full"
-              onClick={handleEmailSubmit}
-              data-testid="button-show-rewrite"
-            >
-              Show me the rewrite
-            </Button>
-            <p className="text-xs text-muted-foreground text-center">
-              We'll send you a copy and occasional pricebook tips. Unsubscribe anytime.
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
 
       <Footer />
     </div>
