@@ -1788,6 +1788,85 @@ Bill Brown`;
     }
   });
 
+  // Lightweight rewrite endpoint for the new pricebook-overhaul-tool flow
+  // Only requires email + trade + description (no name fields)
+  app.post("/api/pricebook-tool/rewrite", async (req, res) => {
+    try {
+      const { email, trade, description, inputType } = req.body;
+      if (!email || !trade || !description) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({ error: "Invalid email address" });
+      }
+      if (description.trim().length < 5) {
+        return res.status(400).json({ error: "Description too short" });
+      }
+
+      const openai = new OpenAI({
+        baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+        apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+      });
+
+      const systemPrompt = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.`;
+      const userPrompt = `Trade: ${trade}
+
+Original description: ${description}
+
+Rewrite this in homeowner-friendly language. Structure the response as:
+1. An opening sentence describing what we do in plain homeowner language (no jargon)
+2. A "What's included:" section with a bulleted list of 3-5 items that explain what actually happens and why it matters
+3. One optional closing "Why it matters" sentence focused on comfort, safety, reliability, or long-term value
+
+Use 75-200 words. Format with HTML: <b> for headings, <br> for line breaks, <ul><li> for bullets. Do not include prices. Focus on quality, reliability, comfort, safety, and long-term value.`;
+
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt },
+        ],
+        temperature: 0.7,
+        max_tokens: 500,
+      });
+
+      const optimizedDescription = completion.choices[0]?.message?.content || "";
+
+      // Mailchimp sync
+      try {
+        await addOrUpdateSubscriber({
+          email,
+          tags: ["pricebook_tool_user", "Pricebook Optimizer", "Tool User", "no welcome workflow"],
+        });
+      } catch (mcErr) {
+        console.error("[pricebook-tool] Mailchimp sync failed:", mcErr);
+      }
+
+      // Notify bill@
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+        await client.emails.send({
+          from: fromEmail,
+          to: "bill@st-hacks.com",
+          subject: "New Pricebook Tool Rewrite",
+          html: `<h2>New Pricebook Tool Rewrite</h2>
+            <p><b>Email:</b> ${email}</p>
+            <p><b>Trade:</b> ${trade}</p>
+            <p><b>Input Type:</b> ${inputType || "unknown"}</p>
+            <p><b>Original:</b><br>${description}</p>
+            <p><b>Rewritten:</b><br>${optimizedDescription}</p>`,
+        });
+      } catch (emailErr) {
+        console.error("[pricebook-tool] Email notify failed:", emailErr);
+      }
+
+      return res.json({ optimizedDescription });
+    } catch (error: any) {
+      console.error("[pricebook-tool] rewrite error:", error);
+      return res.status(500).json({ error: "Failed to generate rewrite. Please try again." });
+    }
+  });
+
   // Get all pricebook optimizations (for admin purposes)
   app.get("/api/pricebook-optimization", async (req, res) => {
     try {

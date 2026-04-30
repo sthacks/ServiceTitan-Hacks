@@ -1,0 +1,135 @@
+Update the existing /pricebook-overhaul-tool page. Major restructure: strip the marketing content from the top of the page and lead with the interactive form. The current "How It Works", "What You Get", and "Why It Matters" sections should be removed from above the form and either deleted or moved below it as a single collapsed section.
+
+NEW PAGE STRUCTURE (top to bottom):
+
+1. Header (existing site nav, no change)
+
+2. Hero section (compact, single screen on mobile):
+   - H1: "See Your Pricebook Rewritten in Homeowner Language"
+   - Subhead: "Pick a sample or paste your own. AI rewrites it in 10 seconds."
+   - No buttons, no images, no "How It Works" bullets above the form
+
+3. The interactive form (this is the main content, should appear immediately on page load without scrolling on desktop):
+
+   STEP 1: Trade selection
+   - Label: "What trade is this for?"
+   - Dropdown with options: HVAC, Plumbing, Electrical, Garage Door, Roofing, Other
+   - Required field
+
+   STEP 2: Sample vs. Custom (only appears after Step 1 is selected)
+   - Two large clickable cards side by side:
+     Card A: "See a sample rewrite" (with subtext: "Pick from 5 examples for your trade")
+     Card B: "Rewrite my own description" (with subtext: "Paste a description from your pricebook")
+   - If user selected "Other" in Step 1, hide Card A and auto-select Card B (no samples available for Other)
+
+   STEP 3a: Sample selection (only appears if Card A was clicked)
+   - Display 5 sample cards in a vertical stack
+   - Each card shows the BEFORE description text in a monospace or quoted style
+   - User clicks one card to select it (highlighted state)
+   - Below the cards, a button: "Rewrite this sample"
+
+   STEP 3b: Custom description input (only appears if Card B was clicked)
+   - Textarea labeled "Paste your description from ServiceTitan"
+   - Placeholder text: "The more detail you provide, the better the rewrite"
+   - Below the textarea, a button: "Rewrite my description"
+
+   STEP 4: Email gate (modal or inline form that appears after Step 3 button is clicked)
+   - Single field: Email (required)
+   - Submit button: "Show me the rewrite"
+   - Microcopy below: "We'll send you a copy and occasional pricebook tips. Unsubscribe anytime."
+
+4. Output section (replaces the form area after submission, scroll to it):
+   - H2: "Here's your rewrite"
+   - Two-column layout on desktop, stacked on mobile:
+     LEFT: "Before" card with the original description
+     RIGHT: "After" card with the AI-rewritten version
+   - Below the comparison: "Want this done on your entire pricebook?"
+   - CTA button: "Get the Bulk Overhaul - $395"
+   - Smaller link: "Try another rewrite" (resets the form)
+
+5. Below the fold (optional, can be removed entirely):
+   - A single collapsed accordion: "How does this work?"
+   - When expanded, shows the existing 5-step "How It Works" content
+   - Keep it minimal, the form is the page now
+
+6. Footer (existing footer with partner logos, no change)
+
+DATA REQUIREMENTS:
+
+Create a samples table or JSON config with this structure:
+
+samples = {
+  "HVAC": [
+    "replace outdoor ac fan motor and fan blade",
+    "clean and tune up condenser, replace capacitor",
+    "install 3 ton 16 seer heat pump system with air handler",
+    "replace blower motor on furnace, includes new run capacitor",
+    "r-410a refrigerant leak search and repair, includes 2 lbs refrigerant"
+  ],
+  "Plumbing": [
+    "replace 40 gal gas water heater",
+    "clear main sewer line with cable machine",
+    "install pressure reducing valve at main water supply",
+    "replace kitchen faucet customer supplied",
+    "repair burst pex line in wall, includes drywall access"
+  ],
+  "Electrical": [
+    "replace 200 amp main panel",
+    "install ceiling fan customer supplied",
+    "add 20 amp dedicated circuit for kitchen appliance",
+    "troubleshoot and repair tripping breaker",
+    "install whole home surge protector at main panel"
+  ],
+  "Garage Door": [
+    "replace both torsion springs on 16 ft door",
+    "install new garage door opener with wifi",
+    "replace bottom seal and weatherstripping",
+    "service and lubricate garage door, adjust tension",
+    "replace bent or damaged section of garage door panel"
+  ],
+  "Roofing": [
+    "repair active leak in valley flashing",
+    "replace 10 damaged shingles after storm",
+    "install ridge vent and seal off old box vents",
+    "replace pipe boot flashing on plumbing vent",
+    "tarp roof emergency until full repair"
+  ]
+}
+
+AI REWRITE LOGIC:
+
+Use the existing AI rewrite function and prompt that powers the current /pricebook-overhaul-tool page. Pass the selected sample (or custom input) plus the trade as inputs. The output format should be:
+- Opening sentence describing what we do in homeowner language
+- "What's included:" bulleted list of 3-5 items
+- Optional closing "Why it matters" sentence
+
+EMAIL CAPTURE:
+
+When email is submitted, push to the existing Mailchimp integration with these fields:
+- email
+- trade (from Step 1)
+- source = "pricebook_overhaul_tool"
+- input_type = "sample" or "custom"
+- timestamp
+
+Tag the contact in Mailchimp as "pricebook_tool_user".
+
+DESIGN NOTES:
+
+- Keep the existing pink/red brand color (#E91E4F or whatever the current accent is)
+- Use the existing font stack
+- Mobile first, the form should be fully usable in a Messenger in-app browser without zooming
+- Remove all decorative imagery from above the form
+- Ensure the form is fully visible above the fold on a 1366x768 desktop screen and within the first 600px on mobile
+
+ANALYTICS:
+
+Add event tracking for each step completion:
+- trade_selected (with trade value)
+- path_chosen (sample or custom)
+- sample_clicked (with sample index)
+- email_submitted
+- rewrite_displayed
+- bulk_cta_clicked
+
+Use the existing analytics setup (presumably Google Analytics or whatever is currently on the page).

@@ -172,6 +172,12 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-pricebook-overhaul.png",
   },
 
+  "/pricebook-overhaul-tool": {
+    title: "Free Pricebook Rewrite Tool | See Your Descriptions in Homeowner Language",
+    description: "Pick a sample or paste your own pricebook description. AI rewrites it in homeowner language in 10 seconds. Free tool from ServiceTitan Hacks.",
+    ogImage: "https://servicetitanhacks.com/og-pricebook-optimizer.png",
+  },
+
   // Tool Pages
   "/pricebook-optimizer": {
     title: "The Pricebook Optimizer Tool",
