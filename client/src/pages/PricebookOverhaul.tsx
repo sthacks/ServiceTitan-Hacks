@@ -148,7 +148,7 @@ export default function PricebookOverhaul() {
               Your entire ServiceTitan pricebook, rewritten for homeowners. In 72 hours.
             </h1>
             <p className="text-lg md:text-xl text-[#a3a3a3] mb-6 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-              Stop losing sales to descriptions like "Capacitor 40/5 370V Replacement." We'll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech.
+              Stop losing sales to descriptions like &quot;Capacitor 40/5 370V Replacement.&quot; We&apos;ll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech.
             </p>
 
             {/* Before / After images — shown on desktop, hidden on mobile (appear in callout sections below) */}
@@ -172,18 +172,35 @@ export default function PricebookOverhaul() {
               Real ServiceTitan pricebook item. Same price. Same service. Transformed description.
             </p>
 
-            <a
-              href={CHECKOUT_URL}
-              target="_self"
-              data-testid="button-cta-hero"
-            >
-              <Button
-                size="lg"
-                className="text-base px-10 py-4 gap-2 shadow-[0_4px_24px_rgba(236,22,77,0.45)]"
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+              <a
+                href={CHECKOUT_URL}
+                target="_self"
+                data-testid="button-cta-hero"
               >
-                {ctaLabel} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </a>
+                <Button
+                  size="lg"
+                  aria-label="Reserve pricebook overhaul for $395."
+                  className="text-base px-10 py-4 gap-2 shadow-[0_4px_24px_rgba(236,22,77,0.45)]"
+                >
+                  {ctaLabel} <ArrowRight className="h-4 w-4" />
+                </Button>
+              </a>
+              <Link href="/pricebook-overhaul-tool">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  aria-label="Try free pricebook sample tool."
+                  data-testid="button-free-sample-hero"
+                  onClick={() => {
+                    try { (window as any).gtag?.("event", "hero_free_sample_clicked"); } catch {}
+                  }}
+                  className="text-base px-10 py-4 border-primary text-primary bg-transparent"
+                >
+                  Try a Free Sample First
+                </Button>
+              </Link>
+            </div>
             <p className="mt-4 text-sm text-[#737373]" data-testid="text-founder-spots-hero">
               {founderAvailable
                 ? spotsRemaining !== null

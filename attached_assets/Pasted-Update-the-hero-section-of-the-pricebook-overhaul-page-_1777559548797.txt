@@ -1,0 +1,50 @@
+Update the hero section of the /pricebook-overhaul page. Make the following specific changes only. Do not modify any other section of the page.
+
+CHANGE 1: Replace the single CTA button with two buttons side by side.
+
+Current state: One button labeled "Reserve My Overhaul - $395" with arrow icon, centered below the "Founder pricing. 6 of 10 spots remaining." line.
+
+New state: Two buttons displayed side by side, centered, in the same location.
+
+Primary button (left):
+- Text: "Reserve My Overhaul - $395"
+- Style: Filled pink/red (existing brand accent color, same as the current button)
+- Includes the existing right-arrow icon
+- Links to the existing checkout/Stripe URL the current button uses
+
+Secondary button (right):
+- Text: "Try a Free Sample First"
+- Style: Outlined or ghost button. Transparent background, pink/red border, pink/red text. Same height and padding as primary button so they visually balance.
+- No arrow icon
+- Links to /pricebook-overhaul-tool
+
+Spacing: 16px gap between the two buttons on desktop. On mobile (under 640px width), stack the buttons vertically with the primary on top and 12px gap between them.
+
+CHANGE 2: Fix typography violations.
+
+In the hero subtitle that currently reads:
+"Stop losing sales to descriptions like 'Capacitor 40/5 370V Replacement.' We'll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech."
+
+Make these specific replacements:
+- Replace the curly opening quote and curly closing quote around "Capacitor 40/5 370V Replacement" with straight double quotes (")
+- Replace any em-dash characters in the subtitle with a comma followed by a space
+- The corrected subtitle should read: "Stop losing sales to descriptions like \"Capacitor 40/5 370V Replacement.\" We'll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech."
+
+CHANGE 3: Update the "Founder pricing" line below the buttons.
+
+Current state: "Founder pricing. 6 of 10 spots remaining."
+
+Keep this line in place but make sure it appears below both buttons, centered, with at least 16px of margin above it.
+
+WHAT NOT TO CHANGE:
+- Do not modify the H1 headline "Your entire ServiceTitan pricebook, rewritten for homeowners. In 72 hours."
+- Do not modify the before/after image cards
+- Do not modify the security/privacy line below the founder pricing
+- Do not modify the "Built by Bill Brown" credibility section
+- Do not modify any section below the hero (How It Works, What You Get, etc.)
+
+ANALYTICS:
+Add click tracking on the new "Try a Free Sample First" button. Event name: hero_free_sample_clicked. Use the existing analytics setup on the page.
+
+ACCESSIBILITY:
+Both buttons should have proper aria-labels. The primary button aria-label should be "Reserve pricebook overhaul for $395." The secondary button aria-label should be "Try free pricebook sample tool."
