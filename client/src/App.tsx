@@ -24,6 +24,7 @@ import PricebookOverhaulSecurity from "@/pages/PricebookOverhaulSecurity";
 import OverhaulUpload from "@/pages/OverhaulUpload";
 import OverhaulStatus from "@/pages/OverhaulStatus";
 import AdminOverhaulOrders from "@/pages/AdminOverhaulOrders";
+import PricebookToolAnalytics from "@/pages/PricebookToolAnalytics";
 import SmartACROICalculator from "@/pages/SmartACROICalculator";
 import SmartACROICalculatorTest from "@/pages/SmartACROICalculatorTest";
 import WinkROICalculator from "@/pages/WinkROICalculator";
@@ -102,6 +103,7 @@ function Router() {
       <Route path="/overhaul-upload" component={OverhaulUpload} />
       <Route path="/overhaul-status" component={OverhaulStatus} />
       <Route path="/admin/overhaul-orders" component={AdminOverhaulOrders} />
+      <Route path="/admin/pricebook-tool" component={PricebookToolAnalytics} />
       <Route path="/smartac-roi-calculator-test" component={SmartACROICalculatorTest} />
       <Route path="/smartac-roi-calculator" component={SmartACROICalculator} />
       <Route path="/wink-roi-calculator" component={WinkROICalculator} />

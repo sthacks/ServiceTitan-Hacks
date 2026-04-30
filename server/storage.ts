@@ -45,6 +45,8 @@ import {
   type InsertPartnerContentCalendarItem,
   type PartnerBrandAsset,
   type InsertPartnerBrandAsset,
+  pricebookToolEvents,
+  type PricebookToolEvent,
   pricebookOptimizations,
   winkDemoSubmissions,
   smartACDemoSubmissions,
@@ -91,6 +93,11 @@ export interface IStorage {
   createResourceLead(lead: InsertResourceLead): Promise<ResourceLead>;
   getAllResourceLeads(): Promise<ResourceLead[]>;
   
+  logPricebookToolEvent(event: { sessionId?: string; eventType: string; trade?: string; inputType?: string }): Promise<void>;
+  getPricebookToolEventCounts(days?: number): Promise<Record<string, number>>;
+  getPricebookToolTradeBreakdown(days?: number): Promise<Record<string, number>>;
+  getPricebookToolDailyVolume(days?: number): Promise<Array<{ date: string; rewrites: number; pageViews: number }>>;
+
   createPricebookOptimization(optimization: InsertPricebookOptimization): Promise<PricebookOptimization>;
   getAllPricebookOptimizations(): Promise<PricebookOptimization[]>;
   upsertPricebookOptimization(email: string, optimization: InsertPricebookOptimization): Promise<PricebookOptimization>;
@@ -317,6 +324,64 @@ export class MemStorage implements IStorage {
 
   async getAllResourceLeads(): Promise<ResourceLead[]> {
     return Array.from(this.resourceLeads.values());
+  }
+
+  async logPricebookToolEvent(event: { sessionId?: string; eventType: string; trade?: string; inputType?: string }): Promise<void> {
+    await db.insert(pricebookToolEvents).values({
+      sessionId: event.sessionId ?? null,
+      eventType: event.eventType,
+      trade: event.trade ?? null,
+      inputType: event.inputType ?? null,
+    });
+  }
+
+  async getPricebookToolEventCounts(days = 30): Promise<Record<string, number>> {
+    const rows = await db.execute<{ event_type: string; cnt: string }>(sql`
+      SELECT event_type, COUNT(*) as cnt
+      FROM pricebook_tool_events
+      WHERE created_at >= NOW() - INTERVAL '${sql.raw(String(days))} days'
+      GROUP BY event_type
+    `);
+    const counts: Record<string, number> = {};
+    for (const row of rows.rows) {
+      counts[row.event_type] = Number(row.cnt);
+    }
+    return counts;
+  }
+
+  async getPricebookToolTradeBreakdown(days = 30): Promise<Record<string, number>> {
+    const rows = await db.execute<{ trade: string; cnt: string }>(sql`
+      SELECT trade, COUNT(*) as cnt
+      FROM pricebook_tool_events
+      WHERE event_type = 'rewrite_generated'
+        AND trade IS NOT NULL
+        AND created_at >= NOW() - INTERVAL '${sql.raw(String(days))} days'
+      GROUP BY trade
+      ORDER BY cnt DESC
+    `);
+    const breakdown: Record<string, number> = {};
+    for (const row of rows.rows) {
+      breakdown[row.trade] = Number(row.cnt);
+    }
+    return breakdown;
+  }
+
+  async getPricebookToolDailyVolume(days = 30): Promise<Array<{ date: string; rewrites: number; pageViews: number }>> {
+    const rows = await db.execute<{ date: string; rewrites: string; page_views: string }>(sql`
+      SELECT
+        TO_CHAR(created_at, 'YYYY-MM-DD') as date,
+        COUNT(*) FILTER (WHERE event_type = 'rewrite_generated') as rewrites,
+        COUNT(*) FILTER (WHERE event_type = 'page_view') as page_views
+      FROM pricebook_tool_events
+      WHERE created_at >= NOW() - INTERVAL '${sql.raw(String(days))} days'
+      GROUP BY date
+      ORDER BY date ASC
+    `);
+    return rows.rows.map(row => ({
+      date: row.date,
+      rewrites: Number(row.rewrites),
+      pageViews: Number(row.page_views),
+    }));
   }
 
   async createPricebookOptimization(insertOptimization: InsertPricebookOptimization): Promise<PricebookOptimization> {

@@ -61,6 +61,15 @@ export const resourceLeads = pgTable("resource_leads", {
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
 });
 
+export const pricebookToolEvents = pgTable("pricebook_tool_events", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  sessionId: text("session_id"),
+  eventType: text("event_type").notNull(),
+  trade: text("trade"),
+  inputType: text("input_type"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
 export const pricebookOptimizations = pgTable("pricebook_optimizations", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   category: text("category").notNull(),
@@ -366,6 +375,7 @@ export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type ResourceLead = typeof resourceLeads.$inferSelect;
 export type InsertResourceLead = z.infer<typeof insertResourceLeadSchema>;
+export type PricebookToolEvent = typeof pricebookToolEvents.$inferSelect;
 export type PricebookOptimization = typeof pricebookOptimizations.$inferSelect;
 export type InsertPricebookOptimization = z.infer<typeof insertPricebookOptimizationSchema>;
 export type WinkDemoSubmission = typeof winkDemoSubmissions.$inferSelect;

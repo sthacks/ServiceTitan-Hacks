@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Droplets, Zap, Warehouse, Home, MoreHorizontal, Mail } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
@@ -60,14 +60,35 @@ const SAMPLES: Record<string, string[]> = {
   ],
 };
 
+// Stable session ID for this page visit (groups events together)
+function getSessionId(): string {
+  let id = sessionStorage.getItem("pb_tool_sid");
+  if (!id) {
+    id = Math.random().toString(36).slice(2) + Date.now().toString(36);
+    sessionStorage.setItem("pb_tool_sid", id);
+  }
+  return id;
+}
+
 function track(event: string, params?: Record<string, string | number>) {
   try { (window as any).gtag?.("event", event, params); } catch { /* ignore */ }
+}
+
+function logEvent(eventType: string, extra?: { trade?: string; inputType?: string }) {
+  const sessionId = getSessionId();
+  fetch("/api/pricebook-tool/event", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ sessionId, eventType, ...extra }),
+  }).catch(() => { /* fire-and-forget */ });
 }
 
 export default function PricebookOptimizer() {
   const { toast } = useToast();
   const resultRef = useRef<HTMLDivElement | null>(null);
   const formRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => { logEvent("page_view"); }, []);
 
   const [trade, setTrade] = useState("");
   const [mode, setMode] = useState<"sample" | "custom" | null>(null);
@@ -96,12 +117,14 @@ export default function PricebookOptimizer() {
     setSelectedSampleIdx(null);
     setCustomDescription("");
     track("trade_selected", { trade: val });
+    logEvent("trade_selected", { trade: val });
   };
 
   const handleModeSelect = (m: "sample" | "custom") => {
     setMode(m);
     setSelectedSampleIdx(null);
     track("path_chosen", { path: m });
+    logEvent("path_chosen", { inputType: m });
   };
 
   const handleSampleClick = (idx: number) => {
@@ -128,6 +151,7 @@ export default function PricebookOptimizer() {
 
       setResult({ optimized: data.optimizedDescription, original: inputDescription });
       track("rewrite_generated");
+      logEvent("rewrite_generated", { trade, inputType: mode ?? undefined });
 
       setTimeout(() => {
         resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -159,6 +183,7 @@ export default function PricebookOptimizer() {
       });
       setEmailSent(true);
       track("email_captured");
+      logEvent("email_captured", { trade });
     } catch {
       // silent — don't block the user
     } finally {
@@ -179,6 +204,7 @@ export default function PricebookOptimizer() {
     setError("");
     setCopied(false);
     track("reset_clicked");
+    logEvent("reset_clicked");
     setTimeout(() => {
       formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 50);
@@ -466,6 +492,7 @@ export default function PricebookOptimizer() {
                         onClick={() => {
                           setEmailSkipped(true);
                           track("email_skipped");
+                          logEvent("email_skipped", { trade });
                         }}
                         className="text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
                         data-testid="button-skip-email"
@@ -489,6 +516,7 @@ export default function PricebookOptimizer() {
                   size="lg"
                   onClick={() => {
                     track("bulk_cta_clicked");
+                    logEvent("bulk_cta_clicked", { trade });
                     window.open(CHECKOUT_URL, "_blank");
                   }}
                   data-testid="button-bulk-cta"

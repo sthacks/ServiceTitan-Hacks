@@ -1788,6 +1788,35 @@ Bill Brown`;
     }
   });
 
+  // Public event logger for the pricebook tool — fire-and-forget, no auth
+  app.post("/api/pricebook-tool/event", async (req, res) => {
+    try {
+      const { sessionId, eventType, trade, inputType } = req.body;
+      if (!eventType) return res.status(400).json({ error: "eventType required" });
+      await storage.logPricebookToolEvent({ sessionId, eventType, trade, inputType });
+      return res.json({ ok: true });
+    } catch (err) {
+      console.error("[pricebook-tool] event log error:", err);
+      return res.status(500).json({ error: "Failed to log event" });
+    }
+  });
+
+  // Admin analytics for the pricebook tool
+  app.get("/api/admin/pricebook-tool/analytics", isAdmin, async (req, res) => {
+    try {
+      const days = Number(req.query.days) || 30;
+      const [counts, tradeBreakdown, dailyVolume] = await Promise.all([
+        storage.getPricebookToolEventCounts(days),
+        storage.getPricebookToolTradeBreakdown(days),
+        storage.getPricebookToolDailyVolume(days),
+      ]);
+      return res.json({ counts, tradeBreakdown, dailyVolume });
+    } catch (err) {
+      console.error("[pricebook-tool] analytics error:", err);
+      return res.status(500).json({ error: "Failed to fetch analytics" });
+    }
+  });
+
   // Lightweight rewrite endpoint for the new pricebook-overhaul-tool flow
   // Only requires email + trade + description (no name fields)
   app.post("/api/pricebook-tool/rewrite", async (req, res) => {
