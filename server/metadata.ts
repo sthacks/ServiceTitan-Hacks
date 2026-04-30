@@ -173,8 +173,8 @@ export const metadata: Record<string, PageMetadata> = {
   },
 
   "/pricebook-overhaul-tool": {
-    title: "Free Pricebook Rewrite Tool | See Your Descriptions in Homeowner Language",
-    description: "Pick a sample or paste your own pricebook description. AI rewrites it in homeowner language in 10 seconds. Free tool from ServiceTitan Hacks.",
+    title: "Free Tool: Rewrite Your Pricebook in Homeowner Language",
+    description: "Pick your trade, pick a sample (or paste your own), and AI rewrites your ServiceTitan pricebook description in homeowner language. Takes 10 seconds. No signup, no credit card.",
     ogImage: "https://servicetitanhacks.com/og-pricebook-optimizer.png",
   },
 
