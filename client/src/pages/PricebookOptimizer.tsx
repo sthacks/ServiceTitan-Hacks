@@ -5,17 +5,23 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Droplets, Zap, Warehouse, Home, MoreHorizontal } from "lucide-react";
 import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const CHECKOUT_URL = "https://app.servicetitanhacks.com/pricebook-overhaul";
 
-const TRADES = ["HVAC", "Plumbing", "Electrical", "Garage Door", "Roofing", "Other"];
+const TRADES = [
+  { value: "HVAC",         label: "HVAC",         icon: Wind },
+  { value: "Plumbing",     label: "Plumbing",      icon: Droplets },
+  { value: "Electrical",   label: "Electrical",    icon: Zap },
+  { value: "Garage Door",  label: "Garage Door",   icon: Warehouse },
+  { value: "Roofing",      label: "Roofing",       icon: Home },
+  { value: "Other",        label: "Other",         icon: MoreHorizontal },
+];
 
 const SAMPLES: Record<string, string[]> = {
   HVAC: [
@@ -196,22 +202,30 @@ export default function PricebookOptimizer() {
             <div className="mx-auto max-w-2xl px-6 space-y-8">
 
               {/* Step 1 — Trade */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium" htmlFor="trade-select">
+              <div className="space-y-3">
+                <p className="text-sm font-medium">
                   What trade is this for? <span className="text-destructive">*</span>
-                </label>
-                <Select onValueChange={handleTradeChange} value={trade}>
-                  <SelectTrigger id="trade-select" data-testid="select-trade" className="w-full">
-                    <SelectValue placeholder="Select a trade" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {TRADES.map((t) => (
-                      <SelectItem key={t} value={t} data-testid={`option-trade-${t}`}>
-                        {t}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                </p>
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                  {TRADES.map(({ value, label, icon: Icon }) => (
+                    <button
+                      key={value}
+                      type="button"
+                      data-testid={`radio-trade-${value.replace(" ", "-")}`}
+                      onClick={() => handleTradeChange(value)}
+                      aria-pressed={trade === value}
+                      className={cn(
+                        "flex flex-col items-center gap-2 py-4 px-2 rounded-md border transition-colors hover-elevate",
+                        trade === value
+                          ? "border-primary bg-primary/5 text-primary"
+                          : "border-border bg-card text-muted-foreground"
+                      )}
+                    >
+                      <Icon className="h-6 w-6 flex-shrink-0" />
+                      <span className="text-xs font-medium leading-tight text-center">{label}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Step 2 — Mode selection */}
