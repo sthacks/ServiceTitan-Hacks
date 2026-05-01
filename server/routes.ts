@@ -711,7 +711,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 <p style="margin-top: 30px;">
                   <strong>Want to learn more?</strong><br>
                   Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
-                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                  and join 10,800+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
                 </p>
                 <p style="margin-top: 30px; color: #666; font-size: 14px;">
                   Questions? Reply to this email anytime!<br>
@@ -758,7 +758,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 <p style="margin-top: 30px;">
                   <strong>Ready to dive deeper?</strong><br>
                   Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
-                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                  and join 10,800+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
                 </p>
                 <p style="margin-top: 30px; color: #666; font-size: 14px;">
                   Questions? Reply to this email anytime!<br>
@@ -805,7 +805,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 <p style="margin-top: 30px;">
                   <strong>Want more process improvement tools?</strong><br>
                   Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
-                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                  and join 10,800+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
                 </p>
                 <p style="margin-top: 30px; color: #666; font-size: 14px;">
                   Questions? Reply to this email anytime!<br>
@@ -852,7 +852,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 <p style="margin-top: 30px;">
                   <strong>Want more sales and pricing strategies?</strong><br>
                   Check out our <a href="https://servicetitanhacks.com/resources" style="color: #ED254E;">free resources</a> 
-                  and join 9,500+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
+                  and join 10,800+ contractors in our <a href="https://go.st-hacks.cc/servicetitanhacks" style="color: #ED254E;">Facebook community</a>.
                 </p>
                 <p style="margin-top: 30px; color: #666; font-size: 14px;">
                   Questions? Reply to this email anytime!<br>

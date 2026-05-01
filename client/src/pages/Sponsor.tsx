@@ -36,7 +36,7 @@ function useIntersectionTracking(ref: React.RefObject<Element>, sectionName: str
 }
 
 const stats = [
-  { value: "10,700", label: "Total members" },
+  { value: "10,800+", label: "Total members" },
   { value: "1,800", label: "Email subscribers (45% open rate)" },
   { value: "63,000", label: "YouTube views to date" },
   { value: "22,000", label: "Monthly website visitors" },
@@ -203,7 +203,7 @@ export default function Sponsor() {
     <div className="min-h-screen flex flex-col" style={{ background: "#0A0A0A", color: "#fff" }}>
       <SEO
         title="Sponsorship — ServiceTitan Hacks"
-        description="Direct sponsorship access to 10,700 ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community."
+        description="Direct sponsorship access to 10,800+ ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community."
         canonicalUrl="https://servicetitanhacks.com/sponsor"
         ogImage="https://servicetitanhacks.com/og-home.png"
       />
@@ -227,7 +227,7 @@ export default function Sponsor() {
             className="font-medium leading-tight mb-6"
             style={{ fontSize: "clamp(32px, 5vw, 48px)", color: "#fff" }}
           >
-            Direct access to 10,700 ServiceTitan contractors
+            Direct access to 10,800+ ServiceTitan contractors
           </h1>
           <p
             className="mb-10 max-w-xl mx-auto"

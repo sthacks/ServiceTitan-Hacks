@@ -169,7 +169,7 @@ export const metadata: Record<string, PageMetadata> = {
   // Sponsorship
   "/sponsor": {
     title: "Sponsorship — ServiceTitan Hacks",
-    description: "Direct sponsorship access to 10,700 ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community.",
+    description: "Direct sponsorship access to 10,800+ ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community.",
     ogImage: "https://servicetitanhacks.com/og-home.png",
   },
 

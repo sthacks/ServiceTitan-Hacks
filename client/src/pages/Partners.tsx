@@ -168,7 +168,7 @@ export default function Partners() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold font-heading mb-4">Interested in Partnering with Us?</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Reach 9,500+ verified ServiceTitan contractors who trust our platform. Learn about our sponsorship opportunities and how we can help grow your business.
+                  Reach 10,800+ verified ServiceTitan contractors who trust our platform. Learn about our sponsorship opportunities and how we can help grow your business.
                 </p>
                 <Link href="/sponsors">
                   <Button size="lg" data-testid="link-become-sponsor">

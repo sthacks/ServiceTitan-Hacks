@@ -7,7 +7,7 @@ const paths = [
   {
     icon: Users,
     label: "Join the Free Community",
-    description: "9,500+ contractors sharing tips, wins, and ServiceTitan strategies.",
+    description: "10,800+ contractors sharing tips, wins, and ServiceTitan strategies.",
     cta: "Join Free on Facebook",
     href: "https://go.st-hacks.cc/servicetitanhacks",
     external: true,
@@ -47,7 +47,7 @@ export default function BillLanding() {
     <div className="min-h-screen bg-black text-white">
       <SEO
         title="Bill Brown | ServiceTitan Hacks"
-        description="Bill Brown helps HVAC and home service contractors grow smarter using AI, automation, and ServiceTitan. Join 9,500+ contractors in the free community."
+        description="Bill Brown helps HVAC and home service contractors grow smarter using AI, automation, and ServiceTitan. Join 10,800+ contractors in the free community."
         canonicalUrl="https://servicetitanhacks.com/bill"
       />
 

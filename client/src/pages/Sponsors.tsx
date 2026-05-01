@@ -11,7 +11,7 @@ export default function Sponsors() {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Become a Sponsor | ServiceTitan Hacks"
-        description="Partner with ServiceTitan Hacks to reach 9,500+ verified ServiceTitan users. Access engaged contractors and decision-makers through our trusted platform."
+        description="Partner with ServiceTitan Hacks to reach 10,800+ verified ServiceTitan users. Access engaged contractors and decision-makers through our trusted platform."
         keywords="ServiceTitan sponsorship, contractor marketing, HVAC advertising, plumbing marketing, home service sponsorship"
         canonicalUrl="https://servicetitanhacks.com/sponsors"
       />
@@ -29,7 +29,7 @@ export default function Sponsors() {
               <Card>
                 <CardContent className="p-6 text-center">
                   <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-primary mb-2">9,500+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">10,800+</div>
                   <div className="text-sm text-muted-foreground">Verified ServiceTitan Users</div>
                 </CardContent>
               </Card>

@@ -222,7 +222,7 @@ export default function PricebookOverhaul() {
         <section className="py-5 bg-[#1a1a1a] border-y border-zinc-800">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <p className="text-sm text-[#a3a3a3]">
-              Built by <span className="text-white font-semibold">Bill Brown</span> — Founder of Paramount Heating &amp; Air ($3.5M / Inc. 5000, sold). Founder of ServiceTitan Hacks (9,500+ contractors).
+              Built by <span className="text-white font-semibold">Bill Brown</span> — Founder of Paramount Heating &amp; Air ($3.5M / Inc. 5000, sold). Founder of ServiceTitan Hacks (10,800+ contractors).
             </p>
           </div>
         </section>
