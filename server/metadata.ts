@@ -166,6 +166,13 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-all-access.png",
   },
   
+  // Sponsorship
+  "/sponsor": {
+    title: "Sponsorship — ServiceTitan Hacks",
+    description: "Direct sponsorship access to 10,700 ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
+  },
+
   // Pricebook Pages
   "/pricebook-overhaul": {
     title: "ServiceTitan Pricebook Overhaul | AI-Rewritten Descriptions for Homeowners",

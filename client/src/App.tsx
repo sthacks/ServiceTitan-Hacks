@@ -72,6 +72,7 @@ import Events from "@/pages/Events";
 import BillLanding from "@/pages/BillLanding";
 import ServiceTitanAutomationServices from "@/pages/ServiceTitanAutomationServices";
 import ZapierAutomations from "@/pages/ZapierAutomations";
+import Sponsor from "@/pages/Sponsor";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -131,6 +132,7 @@ function Router() {
       <Route path="/partners/contractor-commerce/book-demo" component={ContractorCommerceBookDemo} />
       <Route path="/partners/:slug" component={PartnerDetail} />
       <Route path="/giveaway" component={Giveaway} />
+      <Route path="/sponsor" component={Sponsor} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/sms-privacy-policy" component={SMSPrivacyPolicy} />
       <Route path="/sms-terms-conditions" component={SMSTermsConditions} />

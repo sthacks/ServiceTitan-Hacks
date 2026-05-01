@@ -2718,6 +2718,7 @@ Use 75-200 words. Format with HTML: <b> for headings, <br> for line breaks, <ul>
       { url: "/courses", priority: "0.9", changefreq: "weekly" },
       { url: "/all-access", priority: "0.9", changefreq: "weekly" },
       { url: "/pricebook-overhaul-tool", priority: "0.9", changefreq: "weekly" },
+      { url: "/sponsor", priority: "0.8", changefreq: "monthly" },
       { url: "/pricebook-overhaul", priority: "0.8", changefreq: "monthly" },
       // Service/product pages
       { url: "/servicetitan-automation-services", priority: "0.8", changefreq: "monthly" },
