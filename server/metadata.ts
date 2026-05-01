@@ -141,22 +141,22 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-blog.png",
   },
   "/partners": {
-    title: "Our Trusted Technology Partners",
-    description: "Meet the best-in-class integration partners we trust to help you automate and optimize your ServiceTitan workflow.",
+    title: "Our Trusted Technology Sponsors",
+    description: "Meet the best-in-class integration sponsors we trust to help you automate and optimize your ServiceTitan workflow.",
     ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
   "/partners/smartac": {
-    title: "SmartAC | ServiceTitan Hacks Partner",
+    title: "SmartAC | ServiceTitan Hacks Sponsor",
     description: "SmartAC provides remote HVAC monitoring that reduces truck rolls and increases membership retention. Comfort without concern.",
     ogImage: "https://servicetitanhacks.com/og-smartac-partner.png",
   },
   "/partners/wink-toolbox": {
-    title: "Wink Toolbox | ServiceTitan Hacks Partner",
+    title: "Wink Toolbox | ServiceTitan Hacks Sponsor",
     description: "Back-office AI automation that delivers immediate, measurable returns. Stop buying hype—start building your profitability engine.",
     ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
   },
   "/partners/contractor-commerce": {
-    title: "Contractor Commerce | ServiceTitan Hacks Partner",
+    title: "Contractor Commerce | ServiceTitan Hacks Sponsor",
     description: "Built by contractors, for contractors. Online HVAC system pricing and sales tools that let homeowners shop on their terms.",
     ogImage: "https://servicetitanhacks.com/og-contractor-commerce-partner.jpg",
   },

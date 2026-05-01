@@ -21,8 +21,8 @@ export default function PropertyComProposal() {
   return (
     <div className="min-h-screen bg-black" style={{ fontFamily: 'Inter, sans-serif' }}>
       <SEO 
-        title="Partnership Proposal - Property.com | ServiceTitan Hacks"
-        description="Private partnership proposal for Kevin Cook and Property.com"
+        title="Sponsorship Proposal - Property.com | ServiceTitan Hacks"
+        description="Private sponsorship proposal for Kevin Cook and Property.com"
         noindex={true}
       />
       
@@ -55,7 +55,7 @@ export default function PropertyComProposal() {
             className="bg-[#ec164d] hover:bg-[#c20f3d] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200"
             data-testid="button-view-options"
           >
-            View Partnership Options
+            View Sponsorship Options
           </button>
         </div>
       </section>
@@ -181,7 +181,7 @@ export default function PropertyComProposal() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Partnership Options
+              Sponsorship Options
             </h2>
             <p className="text-[#7c7c7c] text-lg">
               Choose the level of visibility and lead generation that fits your goals.

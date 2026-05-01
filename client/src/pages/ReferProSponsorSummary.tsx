@@ -6,8 +6,8 @@ export default function ReferProSponsorSummary() {
   return (
     <div className="min-h-screen bg-[#09090b]">
       <SEO 
-        title="Partner Summary: ReferPro | ServiceTitan Hacks"
-        description="Private recap and partnership options for ReferPro"
+        title="Sponsor Summary: ReferPro | ServiceTitan Hacks"
+        description="Private recap and sponsorship options for ReferPro"
         noindex={true}
       />
       
@@ -24,9 +24,9 @@ export default function ReferProSponsorSummary() {
             />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-            Partner Summary: ReferPro
+            Sponsor Summary: ReferPro
           </h1>
-          <p className="text-xl text-gray-400">Private recap and partnership options</p>
+          <p className="text-xl text-gray-400">Private recap and sponsorship options</p>
         </div>
 
         {/* Call Details */}
@@ -69,11 +69,11 @@ export default function ReferProSponsorSummary() {
           </CardContent>
         </Card>
 
-        {/* Partner Goals */}
+        {/* Sponsor Goals */}
         <Card className="mb-8 bg-[#1a1b20] border-gray-800">
           <CardHeader>
             <CardTitle className="text-2xl text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Partner Goals Discussed
+              Sponsor Goals Discussed
             </CardTitle>
           </CardHeader>
           <CardContent className="text-white space-y-3">
@@ -194,13 +194,13 @@ export default function ReferProSponsorSummary() {
         <Card className="mb-8 bg-[#1a1b20] border-gray-800">
           <CardHeader>
             <CardTitle className="text-2xl text-white" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-              Partnership Options
+              Sponsorship Options
             </CardTitle>
           </CardHeader>
           <CardContent className="text-white space-y-6">
-            {/* Diamond Partner */}
+            {/* Diamond Sponsor */}
             <div className="border-l-4 border-[#ED254E] pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Diamond Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Diamond Sponsor</h3>
               <p className="text-2xl font-bold text-[#ED254E] mb-3">$13,900 per month</p>
               <ul className="space-y-1 text-gray-300 mb-4">
                 <li>Weekly cross-channel coverage (Facebook, Email, YouTube, Podcast Episode + YouTube Shorts, Website)</li>
@@ -220,9 +220,9 @@ export default function ReferProSponsorSummary() {
               </a>
             </div>
 
-            {/* Elite Partner */}
+            {/* Elite Sponsor */}
             <div className="border-l-4 border-[#C1121F] pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Elite Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Elite Sponsor</h3>
               <p className="text-2xl font-bold text-[#C1121F] mb-3">$9,600 per month</p>
               <ul className="space-y-1 text-gray-300 mb-4">
                 <li>Weekly Facebook and email features</li>
@@ -241,9 +241,9 @@ export default function ReferProSponsorSummary() {
               </a>
             </div>
 
-            {/* Featured Partner */}
+            {/* Featured Sponsor */}
             <div className="border-l-4 border-gray-400 pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Featured Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Featured Sponsor</h3>
               <p className="text-2xl font-bold text-gray-300 mb-3">$5,700 per month</p>
               <ul className="space-y-1 text-gray-300 mb-4">
                 <li>Two Facebook posts per month</li>

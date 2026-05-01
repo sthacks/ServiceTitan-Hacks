@@ -9,7 +9,7 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Contact ServiceTitan Hacks"
-        description="Get in touch with ServiceTitan Hacks for sponsorships, tools, courses, partnerships or media inquiries."
+        description="Get in touch with ServiceTitan Hacks for sponsorships, tools, courses, or media inquiries."
         keywords="contact ServiceTitan Hacks, support, help"
         canonicalUrl="https://servicetitanhacks.com/contact"
         ogImage="https://servicetitanhacks.com/og-contact.png"
@@ -28,7 +28,7 @@ export default function Contact() {
                   Contact Us
                 </h1>
                 <p className="text-xl text-gray-300">
-                  Have a question, partnership inquiry, or custom project in mind? We're here to help.
+                  Have a question, sponsorship inquiry, or custom project in mind? We're here to help.
                 </p>
               </div>
             </div>

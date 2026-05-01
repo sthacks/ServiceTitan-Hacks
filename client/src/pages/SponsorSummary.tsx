@@ -124,30 +124,30 @@ export default function SponsorSummary() {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-white space-y-6">
-            {/* Diamond Partner */}
+            {/* Diamond Sponsor */}
             <div className="border-l-4 border-[#ED254E] pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Diamond Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Diamond Sponsor</h3>
               <p className="text-2xl font-bold text-[#ED254E] mb-2">$13,900 per month</p>
               <p>Weekly cross channel coverage, retargeting ads on Meta and YouTube, category exclusivity</p>
             </div>
 
-            {/* Elite Partner */}
+            {/* Elite Sponsor */}
             <div className="border-l-4 border-[#C1121F] pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Elite Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Elite Sponsor</h3>
               <p className="text-2xl font-bold text-[#C1121F] mb-2">$9,600 per month</p>
               <p>Weekly Facebook and email features, category exclusivity, 8 to 10 qualified leads per month</p>
             </div>
 
-            {/* Featured Partner */}
+            {/* Featured Sponsor */}
             <div className="border-l-4 border-gray-400 pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Featured Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Featured Sponsor</h3>
               <p className="text-2xl font-bold text-gray-300 mb-2">$5,700 per month</p>
               <p>Two Facebook posts per month, monthly email, quarterly reporting</p>
             </div>
 
-            {/* Community Partner */}
+            {/* Community Sponsor */}
             <div className="border-l-4 border-gray-600 pl-4">
-              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Community Partner</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Oxygen, sans-serif' }}>Community Sponsor</h3>
               <p className="text-2xl font-bold text-gray-400 mb-2">$3,500 per month</p>
               <p>One Facebook post per month, quarterly email, website placement</p>
             </div>

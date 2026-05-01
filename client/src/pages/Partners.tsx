@@ -73,9 +73,9 @@ export default function Partners() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="ServiceTitan Hacks Sponsors and Partners"
-        description="Explore trusted partners for ServiceTitan users, including AI tools, automations, dashboards and contractor-focused solutions."
-        keywords="ServiceTitan partners, integrations, HVAC tools, contractor software"
+        title="ServiceTitan Hacks Sponsors"
+        description="Explore trusted sponsors for ServiceTitan users, including AI tools, automations, dashboards and contractor-focused solutions."
+        keywords="ServiceTitan sponsors, integrations, HVAC tools, contractor software"
         canonicalUrl="https://servicetitanhacks.com/partners"
         ogImage="https://servicetitanhacks.com/og-partners.png"
       />
@@ -89,10 +89,10 @@ export default function Partners() {
           <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="max-w-3xl mx-auto mb-8 text-center">
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-white">
-                ServiceTitan Hacks Partners
+                ServiceTitan Hacks Sponsors
               </h1>
               <p className="text-xl text-gray-300">
-                Trusted tools and technology partners helping contractors automate, optimize, and grow their home service businesses.
+                Trusted tools and technology sponsors helping contractors automate, optimize, and grow their home service businesses.
               </p>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Partners() {
           <div className="mb-12 max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold font-heading mb-4 text-center">Tools that save time, cut mistakes, and help you grow</h2>
             <p className="text-lg text-muted-foreground mb-6 text-center">
-              These partner tools were picked because they solve real problems for ServiceTitan contractors. Each one helps your team work faster, book more jobs, and reduce busy work in the office and the field.
+              These sponsor tools were picked because they solve real problems for ServiceTitan contractors. Each one helps your team work faster, book more jobs, and reduce busy work in the office and the field.
             </p>
             
             <div className="bg-muted/30 rounded-lg p-6">
@@ -126,7 +126,7 @@ export default function Partners() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-3xl font-bold font-heading mb-8 text-center">Our Partners</h2>
+            <h2 className="text-3xl font-bold font-heading mb-8 text-center">Our Sponsors</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {partners.map((partner, index) => (
                 <Link 
@@ -166,7 +166,7 @@ export default function Partners() {
           <div className="text-center">
             <Card className="bg-primary/5 border-primary/20 max-w-3xl mx-auto">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold font-heading mb-4">Interested in Partnering with Us?</h3>
+                <h3 className="text-2xl font-semibold font-heading mb-4">Interested in Sponsoring with Us?</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Reach 10,800+ verified ServiceTitan contractors who trust our platform. Learn about our sponsorship opportunities and how we can help grow your business.
                 </p>

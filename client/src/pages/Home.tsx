@@ -83,7 +83,7 @@ export default function Home() {
       icon: ShoppingCart,
       link: "/purchasing-platform",
       image: buyingGroupImage,
-      alt: "HVAC Equipment Purchasing Platform for contractors - ServiceTitan Hacks partnership",
+      alt: "HVAC Equipment Purchasing Platform for contractors - ServiceTitan Hacks sponsorship",
       cta: "Access Platform",
     },
     {

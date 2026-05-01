@@ -12,7 +12,7 @@ export default function Footer() {
 
   const quickLinks = [
     { path: "/", label: "Home" },
-    { path: "/partners", label: "Partners" },
+    { path: "/partners", label: "Sponsors" },
     { path: "/apps", label: "Apps" },
     { path: "/courses", label: "Courses" },
     { path: "/events", label: "Events" },
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Partners</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Sponsors</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center justify-center mb-8">
             {partners.map((partner, index) => (
               <Link

@@ -14,7 +14,7 @@ const resourcesLinks = [
   { path: "/blog", label: "Blog" },
   { path: "/podcast", label: "Podcast" },
   { path: "/events", label: "Events" },
-  { path: "/partners", label: "Partners" },
+  { path: "/partners", label: "Sponsors" },
   { path: "/purchasing-platform", label: "HVAC Equipment Purchasing Platform" },
 ];
 

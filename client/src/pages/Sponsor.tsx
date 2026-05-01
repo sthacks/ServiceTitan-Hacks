@@ -444,7 +444,7 @@ export default function Sponsor() {
             Sponsorship tiers
           </h2>
           <p className="mb-14" style={{ color: "#888", fontSize: "16px" }}>
-            Four levels of partnership. Pricing discussed on the strategy call.
+            Four levels of sponsorship. Pricing discussed on the strategy call.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {tiers.map((tier) => (
