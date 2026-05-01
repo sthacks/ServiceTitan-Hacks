@@ -2489,6 +2489,33 @@ export default function BlogPost() {
       ? post.image 
       : `https://servicetitanhacks.com${post.image}`);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": ogImageUrl,
+    "author": {
+      "@type": "Person",
+      "name": post.author || "Bill Brown",
+      "url": "https://servicetitanhacks.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ServiceTitan Hacks",
+      "url": "https://servicetitanhacks.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://servicetitanhacks.com/og-home.png"
+      }
+    },
+    "datePublished": post.date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://servicetitanhacks.com/blog/${post.slug}`
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
@@ -2498,6 +2525,7 @@ export default function BlogPost() {
         canonicalUrl={`https://servicetitanhacks.com/blog/${post.slug}`}
         ogImage={ogImageUrl}
         ogType="article"
+        schemaData={articleSchema}
       />
       <Header />
       <main className="flex-1">

@@ -2700,40 +2700,66 @@ Use 75-200 words. Format with HTML: <b> for headings, <br> for line breaks, <ul>
     });
   });
 
+  // Redirect legacy /pricebook-optimizer to canonical /pricebook-overhaul-tool
+  app.get("/pricebook-optimizer", (req, res) => {
+    res.redirect(301, "/pricebook-overhaul-tool");
+  });
+
   // Sitemap XML for SEO
   app.get("/sitemap.xml", (req, res) => {
     const baseUrl = "https://servicetitanhacks.com";
     const currentDate = new Date().toISOString().split('T')[0];
     
     const staticPages = [
+      // Core pages
       { url: "/", priority: "1.0", changefreq: "daily" },
       { url: "/events", priority: "0.9", changefreq: "weekly" },
       { url: "/blog", priority: "0.9", changefreq: "daily" },
       { url: "/courses", priority: "0.9", changefreq: "weekly" },
       { url: "/all-access", priority: "0.9", changefreq: "weekly" },
-      { url: "/partners", priority: "0.8", changefreq: "weekly" },
-      { url: "/apps", priority: "0.8", changefreq: "weekly" },
-      { url: "/pricebook-optimizer", priority: "0.8", changefreq: "weekly" },
+      { url: "/pricebook-overhaul-tool", priority: "0.9", changefreq: "weekly" },
+      { url: "/pricebook-overhaul", priority: "0.8", changefreq: "monthly" },
+      // Service/product pages
+      { url: "/servicetitan-automation-services", priority: "0.8", changefreq: "monthly" },
       { url: "/purchasing-platform", priority: "0.8", changefreq: "weekly" },
+      { url: "/partners", priority: "0.8", changefreq: "weekly" },
+      { url: "/partners/smartac", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/wink-toolbox", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/contractor-commerce", priority: "0.7", changefreq: "monthly" },
+      { url: "/apps", priority: "0.8", changefreq: "weekly" },
+      // Courses
       { url: "/dashboard-course", priority: "0.8", changefreq: "monthly" },
       { url: "/fix-ugly-forms-course", priority: "0.8", changefreq: "monthly" },
-      { url: "/webinar/stop-spreadsheet-payroll", priority: "0.8", changefreq: "weekly" },
-      { url: "/webinar/referral-gap", priority: "0.8", changefreq: "weekly" },
-      { url: "/resources", priority: "0.7", changefreq: "weekly" },
-      { url: "/podcast", priority: "0.7", changefreq: "weekly" },
+      { url: "/company-app-course", priority: "0.7", changefreq: "monthly" },
+      { url: "/make-integration-course", priority: "0.7", changefreq: "monthly" },
+      { url: "/zapier-integration-course", priority: "0.7", changefreq: "monthly" },
+      { url: "/job-summary-course", priority: "0.7", changefreq: "monthly" },
+      // Webinars (live pages only — redirected webinars excluded)
+      { url: "/webinar/stop-spreadsheet-payroll", priority: "0.7", changefreq: "monthly" },
+      { url: "/webinar/referral-gap", priority: "0.7", changefreq: "monthly" },
+      { url: "/webinar/incentive-plan-problem", priority: "0.7", changefreq: "monthly" },
+      { url: "/webinar/phonetap", priority: "0.7", changefreq: "monthly" },
+      // Tools / calculators
       { url: "/smartac-roi-calculator", priority: "0.7", changefreq: "monthly" },
       { url: "/wink-roi-calculator", priority: "0.7", changefreq: "monthly" },
       { url: "/hiring-roi-calculator", priority: "0.7", changefreq: "monthly" },
       { url: "/truck-roll-calculator", priority: "0.7", changefreq: "monthly" },
-      { url: "/about", priority: "0.7", changefreq: "monthly" },
-      { url: "/contact", priority: "0.7", changefreq: "monthly" },
-      { url: "/giveaway", priority: "0.6", changefreq: "monthly" },
+      // Resources
+      { url: "/resources", priority: "0.7", changefreq: "weekly" },
+      { url: "/podcast", priority: "0.7", changefreq: "weekly" },
+      // Info pages
+      { url: "/about", priority: "0.6", changefreq: "monthly" },
+      { url: "/contact", priority: "0.6", changefreq: "monthly" },
       { url: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
-      { url: "/sms-privacy-policy", priority: "0.3", changefreq: "yearly" },
-      { url: "/sms-terms-conditions", priority: "0.3", changefreq: "yearly" },
     ];
 
     const blogPosts = [
+      { slug: "why-phonetap-exists", date: "2025-04-01" },
+      { slug: "diy-ai-sales-coach", date: "2025-03-15" },
+      { slug: "4-ways-top-companies-control-schedule", date: "2025-02-20" },
+      { slug: "stop-treating-dashboard-like-spreadsheet", date: "2025-02-10" },
+      { slug: "selling-hvac-systems-to-millennials-online-pricing", date: "2025-02-01" },
+      { slug: "how-to-sell-saas-to-home-service-contractors", date: "2025-01-28" },
       { slug: "stop-selling-other-peoples-equipment-build-your-brand", date: "2025-01-22" },
       { slug: "dmaic-process-improvement-framework", date: "2025-01-20" },
       { slug: "should-i-switch-to-servicetitan", date: "2025-01-18" },

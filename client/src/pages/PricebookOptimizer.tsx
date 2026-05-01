@@ -226,6 +226,21 @@ export default function PricebookOptimizer() {
         canonicalUrl="https://servicetitanhacks.com/pricebook-overhaul-tool"
         ogImage="https://servicetitanhacks.com/images/pricebook-tool-social-horizontal.png"
         ogImageAlt="Service tech using technical jargon while homeowner stares back confused like a deer in headlights"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Pricebook Rewrite Tool",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "AI rewrites your ServiceTitan pricebook descriptions into homeowner-friendly language. Free, no signup required.",
+          "url": "https://servicetitanhacks.com/pricebook-overhaul-tool",
+          "publisher": {
+            "@type": "Organization",
+            "name": "ServiceTitan Hacks",
+            "url": "https://servicetitanhacks.com"
+          }
+        }}
       />
       <Header />
 

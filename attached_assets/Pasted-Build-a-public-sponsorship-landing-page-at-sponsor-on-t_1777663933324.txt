@@ -1,0 +1,190 @@
+Build a public sponsorship landing page at /sponsor on the existing servicetitanhacks.com site. The page is for cold inbound prospects who haven't had a discovery call yet. Goal: convince them to book a strategy call. No pricing on this page.
+
+DESIGN SYSTEM
+- Background: black (#0A0A0A)
+- Primary text: white
+- Accent color: crimson red (#DC143C) for CTAs, headings, and active states
+- Font: keep the existing ServiceTitan Hacks site font stack
+- Layout: max-width 1200px, centered, generous vertical spacing between sections (96px desktop, 48px mobile)
+- All section padding: 24px on mobile, 48px on desktop
+- No gradients, no drop shadows, no glow effects
+- Mobile responsive: single column under 768px
+
+PAGE STRUCTURE (top to bottom)
+
+SECTION 1: HERO
+- Full viewport height on desktop, auto on mobile
+- Background: black
+- Centered content
+- Eyebrow text (small, crimson, uppercase): "Sponsorship"
+- H1 (white, 48px desktop, 32px mobile, weight 500): "Direct access to 10,700 ServiceTitan contractors"
+- Subhead (white, 18px, weight 400): "The largest community of active ServiceTitan users. Verified contractors. Real decision-makers. Trackable results."
+- Primary CTA button (crimson background, white text, 14px padding): "Book a strategy call"
+- Button links to: https://scheduler.zoom.us/bill-brown-7cynuw/30-min
+- Below CTA, small text: "20-minute call. No pitch."
+
+SECTION 2: AUDIENCE SNAPSHOT
+- H2 (white, 32px): "The audience"
+- Eyebrow (crimson, uppercase): "Verified data"
+- 5 stat cards in a grid (3 columns desktop, 1 column mobile):
+  Card 1: 10,700 / Total members
+  Card 2: 1,800 / Email subscribers (45% open rate)
+  Card 3: 63,000 / YouTube views to date
+  Card 4: 22,000 / Monthly website visitors
+  Card 5: 93% / Active contractors using ServiceTitan
+- Each card: dark gray background (#1A1A1A), white number (40px, weight 500), gray label (14px, color #888), 24px padding, no border radius
+
+SECTION 3: WHY THIS WORKS
+- H2 (white, 32px): "Why community sponsorship beats cold ads"
+- 3-column grid (1 column mobile):
+  Column 1: 
+    - Heading: "Trust transfers"
+    - Body: "Members already trust the community. Sponsorship inherits that trust. Cold ads start from zero."
+  Column 2:
+    - Heading: "Verified contractors only"
+    - Body: "Every member is screened. No agencies, no software vendors, no tire-kickers. Just operators running ServiceTitan."
+  Column 3:
+    - Heading: "Compounding visibility"
+    - Body: "Sponsors show up across Facebook, email, podcast, YouTube, and webinars. Every touch reinforces the last."
+- Each column: heading (crimson, 18px, weight 500), body (white, 16px, line-height 1.6)
+
+SECTION 4: MEMBERSHIP BREAKDOWN
+- H2: "Who's in the community"
+- Subhead: "Distribution by trade"
+- Horizontal bar chart or table showing:
+  HVAC: 4,001
+  Plumbing: 2,579
+  Electrical: 1,090
+  Garage Doors: 297
+  Roofing: 176
+- Visual style: clean horizontal bars, crimson fill, dark gray track, numbers right-aligned
+- Below chart: "Average company size in the group: $7M to $10M annual revenue. Decision-makers ages 35 to 54: business owners, ops managers, service leaders."
+
+SECTION 5: WEBINAR ENGINE (the differentiator)
+- H2: "How one webinar becomes 30 days of content"
+- Subhead: "Sponsorship isn't a logo placement. It's a content engine."
+- Visual flow diagram (left to right on desktop, top to bottom on mobile):
+  Step 1: "1 co-hosted webinar"
+  arrow
+  Step 2: "Repurposed as 1 podcast episode"
+  arrow
+  Step 3: "6+ Shorts clipped for FB, YouTube, LinkedIn"
+  arrow
+  Step 4: "Email and Facebook group promotion across the audience"
+- Each step: small card with crimson border-left (4px), white text, dark background
+- Below diagram, body text: "Most communities sell you a single ad placement. We build a full content campaign around your message and distribute it across every channel we own. The webinar is the anchor. Everything else multiplies its reach."
+
+SECTION 6: TIER COMPARISON
+- H2: "Sponsorship tiers"
+- Subhead: "Four levels of partnership. Pricing discussed on the strategy call."
+- 4-column grid (Diamond, Elite, Featured, Community), 2x2 grid on tablet, single column on mobile
+- Each tier card:
+  - Tier name as header (white, 24px, weight 500)
+  - Crimson divider line below name
+  - "Best for" tagline: 
+    Diamond: "Vendors prioritizing maximum visibility and lead volume"
+    Elite: "Vendors who want consistent presence and one annual flagship event"
+    Featured: "Brand awareness with steady cross-channel exposure"
+    Community: "Entry-level brand presence in the community"
+  - Bulleted list of deliverables (use checkmarks):
+    Diamond:
+    - 3 dedicated co-hosted webinars per year
+    - Webinars repurposed as podcast episodes and Shorts
+    - Weekly Facebook posts plus monthly pinned post
+    - Logo in Facebook group header
+    - Monthly dedicated email send
+    - Logo in email header
+    - Homepage logo and featured listing
+    - Meta and YouTube retargeting (setup and management)
+    - Monthly performance dashboard
+    - Monthly strategy call
+    - Category exclusivity
+    Elite:
+    - 1 co-hosted webinar per year
+    - Webinar repurposed as podcast episode and Shorts
+    - 3 Facebook posts per month
+    - Logo in Facebook group header
+    - Monthly dedicated email send
+    - Logo in email header
+    - Sponsor page placement and tracked CTA
+    - Monthly report
+    - Monthly strategy call
+    - Category exclusivity
+    Featured:
+    - 1 cross-channel Short feature per quarter
+    - 2 Facebook posts per month
+    - Email inclusion every 2 months
+    - Sponsor page listing
+    - Quarterly report
+    - Quarterly strategy call
+    Community:
+    - 1 Facebook post per month
+    - Email inclusion once per quarter
+    - Shared sponsor section on website
+    - Quarterly summary
+    - Quarterly strategy call
+- Diamond card has crimson border (2px) and small "Most popular" badge top-right
+- Below the grid, single sentence: "Pricing, slot availability, and category exclusivity are reviewed on the strategy call."
+
+SECTION 7: PROOF
+- H2: "What happens when sponsors show up"
+- Subhead: "Real results from real campaigns."
+- Stack of testimonial/case study cards (3 cards, single column, full-width):
+
+  Card 1 (the verified one):
+  - Sponsor: ShareWillow
+  - Headline: "2 sales in 72 hours"
+  - Body: "ShareWillow ran a co-hosted webinar with ServiceTitan Hacks on April 21, 2026 about contractor incentive plans. Within 72 hours, ShareWillow had closed 2 new ServiceTitan customers from the webinar audience."
+  - Quote: "Btw, 2 sales already from webinar. It's been super great." - Ryan Shank, Founder, ShareWillow
+
+  Card 2 (PLACEHOLDER - Bill to fill in):
+  - Sponsor: [TO FILL]
+  - Headline: [outcome metric]
+  - Body: [context]
+  - Quote: [if available]
+
+  Card 3 (PLACEHOLDER - Bill to fill in):
+  - Sponsor: [TO FILL]
+  - Headline: [outcome metric]
+  - Body: [context]
+  - Quote: [if available]
+
+- Each card: dark gray background, crimson left border (4px), white headline (28px), gray body (16px), italic quote at bottom
+
+SECTION 8: SPONSOR WALL
+- H2: "Current sponsors"
+- Subhead: "A select group of category leaders. Limited slots per category."
+- Grid of 4 logos (PhoneTap, Wink Toolbox, smartAC, Contractor Commerce)
+- Each logo: white, 120px wide, centered in a dark card, no category labels next to them
+- Below grid: "Spots are capped per category to protect visibility. Many categories are open. A few are not. The strategy call will tell you which is which for your space."
+
+SECTION 9: FINAL CTA
+- Black background, full-width, 200px tall
+- Centered content
+- H2: "See if there's a fit"
+- Body: "20-minute call. We review your goals, the audience match, and which tier makes sense. If it's not a fit, we say so."
+- Primary CTA button (same styling as hero): "Book a strategy call"
+- Same link: https://scheduler.zoom.us/bill-brown-7cynuw/30-min
+
+SECTION 10: FOOTER
+- Standard ServiceTitan Hacks site footer
+
+ANALYTICS
+Add tracking for these events to whatever analytics layer the main site uses (Google Analytics, PostHog, or equivalent):
+- sponsor_page_viewed (on mount)
+- sponsor_section_viewed (use IntersectionObserver, fire when each section enters viewport)
+- sponsor_cta_clicked (with property: which CTA, hero or final)
+- sponsor_tier_card_clicked (with property: which tier, if cards are clickable)
+
+SEO
+- Page title: "Sponsorship - ServiceTitan Hacks"
+- Meta description: "Direct sponsorship access to 10,700 ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community."
+- Open Graph image: use the ST Hacks brand image
+- Canonical URL: https://servicetitanhacks.com/sponsor
+
+CONTENT TO LEAVE OUT (deliberate)
+- No prices anywhere on the page
+- No "15+ leads/month" or any lead-volume guarantees
+- No multiplier claims like "5x more qualified" or "3 to 5x better ROI"
+- No ROI calculator (that lives only on prospect-specific pages)
+- No registration form or email capture (page is fully public)

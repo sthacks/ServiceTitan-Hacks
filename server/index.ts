@@ -11,6 +11,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Redirect www to non-www
+app.use((req, res, next) => {
+  const host = req.headers.host || '';
+  if (host.startsWith('www.')) {
+    return res.redirect(301, `https://servicetitanhacks.com${req.url}`);
+  }
+  next();
+});
+
 // Prevent caching issues with Facebook's in-app browser
 // This middleware adds headers that help with WebView browsers
 app.use((req, res, next) => {

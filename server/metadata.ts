@@ -95,6 +95,11 @@ export const metadata: Record<string, PageMetadata> = {
   },
   
   // Main Pages
+  "/events": {
+    title: "Events & Webinars | ServiceTitan Hacks",
+    description: "Join live webinars and training events for home service contractors. Learn AI, automation, hiring, and ServiceTitan optimization strategies.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
+  },
   "/about": {
     title: "About Us | The Mission Behind ServiceTitan Hacks",
     description: "We help contractors scale by mastering the tools they already use. Learn about our story and mission to revolutionize the trades.",
@@ -190,6 +195,16 @@ export const metadata: Record<string, PageMetadata> = {
     title: "SmartAC ROI Calculator for HVAC Contractors",
     description: "Calculate potential profit growth, truck roll savings and membership revenue improvements using SmartAC for your HVAC business. Free ROI tool.",
     ogImage: "https://servicetitanhacks.com/og-smartac-calculator.png",
+  },
+  "/wink-roi-calculator": {
+    title: "Wink Toolbox ROI Calculator — AI Invoicing Savings | ServiceTitan Hacks",
+    description: "Calculate how much time and money you can save by automating your invoicing with Wink Toolbox. Get instant ROI analysis with time savings, mistake reduction, and 5-year projections.",
+    ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
+  },
+  "/hiring-roi-calculator": {
+    title: "Hiring ROI Calculator | ServiceTitan Hacks",
+    description: "Calculate the true cost of leaving a technician role unfilled. Estimate lost revenue, hidden labor costs, and ramp-up drag with our free calculator.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
   },
   "/truck-roll-calculator": {
     title: "HVAC Truck Roll Cost Calculator",
