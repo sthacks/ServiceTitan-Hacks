@@ -1,0 +1,176 @@
+Got it. Correcting the name throughout. Restarting the prompt:
+
+# Pricebook Overhaul Tool (Free): Length Tier Toggle
+
+## Goal
+Add a length tier selector to the free single-item Pricebook Overhaul Tool so the output matches how the visitor uses estimates (printed vs tablet) and the complexity of the item they paste in.
+
+## Background
+The free Pricebook Overhaul Tool currently rewrites one pricebook description at a time using a fixed system prompt that produces 75 to 200 word output regardless of item type. Customer feedback on the paid bulk product is that simple add-on items (surge protectors, capacitors, fittings) produce descriptions too long for printed estimates. We are adding the same three-tier length control to the free tool so the lead magnet output matches what the paid product will produce.
+
+## Scope
+
+Frontend-only change plus a system prompt swap. No database. The tier is selected on the page, passed in the API call, and used to assemble the system prompt at request time.
+
+## Changes Required
+
+### 1. UI: Add a tier selector to the Pricebook Overhaul Tool page
+
+Above the existing input field where the user pastes their description, add a segmented control (preferred) or radio group.
+
+Section heading: "Description length"
+
+Three options, Standard pre-selected:
+
+- Concise: "Shorter output. Best if you print estimates."
+- Standard (recommended): "Balanced length. Works on tablet and print."
+- Detailed: "Longer output with more benefit framing. Tablet-first."
+
+Help text below: "Pick the length that matches how your team uses estimates."
+
+Keep it compact. This is a free tool, not a configuration page. Do not push it into a settings drawer or modal; it should be visible inline on the main form.
+
+### 2. Frontend: Pass tier value to the API
+
+When the user clicks the rewrite button, include the selected tier in the request payload, e.g.:
+
+
+
+{
+“description”: “…”,
+“category”: “…”,
+“lengthTier”: “standard”
+}
+
+
+Default to "standard" if no value is selected.
+
+### 3. Backend / API call: Assemble the system prompt with the right Length Rules block
+
+Read lengthTier from the request. Replace {LENGTH_RULES_BLOCK} in the base system prompt with the tier-specific block below before calling OpenAI.
+
+Use the same model and config as the paid product: gpt-4o-mini, max_tokens 1000.
+
+If lengthTier is missing or invalid, fall back to "standard". Log the tier used per call for debugging.
+
+## System Prompt (base, with replaceable block)
+
+This is identical to the paid Pricebook Overhaul system prompt. Only the Length Rules section is dynamic. Everything else must be preserved exactly.
+
+
+
+You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.
+Your goal is to help contractors communicate expertise and build trust by focusing on quality, reliability, comfort, safety, efficiency, and long-term value, never by implying the work is simple or quick.
+
+Instructions
+
+1. Simplify Without Downplaying Value
+
+	•	Remove jargon but maintain a tone of professional skill and craftsmanship.
+	•	Never describe the task as simple, easy, quick, or basic.
+	•	Focus on the precision, care, or expertise required to do it correctly.
+
+2. Emphasize Homeowner Benefits
+
+	•	Explain how the product or service improves home comfort, safety, performance, and efficiency.
+	•	Highlight durability, quality workmanship, and long-term peace of mind.
+
+3. Personalize the Message
+
+	•	Use relatable homeowner scenarios to show how the solution addresses real issues or prevents future problems.
+	•	Avoid sales pressure or calls to action, this copy will be used by technicians in person.
+
+4. Include Realistic Examples
+
+	•	Use short examples or analogies that show impact or results, not simplicity.
+	•	Reinforce the value of doing the job right the first time.
+
+5. Highlight Differentiators
+
+	•	Explain what makes this product, service, or installation superior, materials, technology, precision, or efficiency.
+	•	Connect these differentiators directly to better homeowner outcomes.
+
+Formatting Rules (HTML Output)
+
+	•	Use <b> for headings and key terms.
+	•	Use <br> for spacing between paragraphs.
+	•	Use <ul> and <li> for features and benefits when appropriate (see Length Rules).
+	•	Do not include <head> or <body> tags.
+	•	Do not include prices in the output.
+
+Length Rules
+
+{LENGTH_RULES_BLOCK}
+
+Goal:
+Produce a professional, confident, and homeowner-friendly explanation that demonstrates expertise, justifies value, and builds trust in the quality of the work.
+
+
+## Length Rules Blocks (inject into {LENGTH_RULES_BLOCK})
+
+### Concise tier
+
+
+
+Print context priority: descriptions appear stacked on multi-line printed estimates. Keep all output tight.
+
+Match length to item type using the Category and Name to infer complexity:
+
+	•	Add-ons, accessories, minor parts (surge protectors, floats, capacitors, fittings, fuses, contactors, filters, drain covers): 30 to 50 words. NO bullet lists. One short paragraph only.
+	•	Standard repairs, diagnostics, tune-ups, common service calls: 50 to 80 words. NO bullet lists. One paragraph.
+	•	Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 80 to 120 words. Bullet list optional, max 3 items if used.
+
+Hard ceiling: never exceed 120 words for any item.
+
+
+### Standard tier (default)
+
+
+
+Print context: descriptions may appear stacked on printed estimates alongside many line items. Match length to item complexity.
+
+Match length to item type using the Category and Name to infer complexity:
+
+	•	Add-ons, accessories, minor parts (surge protectors, floats, capacitors, fittings, fuses, contactors, filters, drain covers): 40 to 70 words. NO bullet lists. One paragraph only.
+	•	Standard repairs, diagnostics, tune-ups, common service calls: 70 to 120 words. Optional short bullet list, max 3 items.
+	•	Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 120 to 180 words. Bullet list allowed, max 4 items.
+
+Hard ceiling: never exceed 180 words for any item.
+
+
+### Detailed tier
+
+
+
+Tablet-first context: descriptions will be presented on a technician iPad with room for full benefit framing. Use the full length range to make the case for value.
+
+Match length to item type using the Category and Name to infer complexity:
+
+	•	Add-ons, accessories, minor parts: 60 to 100 words. Optional short bullet list, max 3 items.
+	•	Standard repairs, diagnostics, tune-ups, common service calls: 100 to 160 words. Bullet list allowed, max 4 items.
+	•	Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 160 to 240 words. Bullet list encouraged, max 5 items.
+
+Hard ceiling: never exceed 240 words for any item.
+
+
+## Acceptance Criteria
+
+1. Tier selector is visible on the Pricebook Overhaul Tool page above the description input.
+2. Standard is pre-selected by default.
+3. All three options are clickable and visually clear which is active.
+4. Help text "Pick the length that matches how your team uses estimates." is shown below the selector.
+5. The selected tier is passed in the API request payload as lengthTier.
+6. The backend swaps in the correct Length Rules block before calling OpenAI.
+7. A test surge protector run through Concise produces output under 50 words and contains no <ul> or <li> tags.
+8. A test full HVAC system replacement run through Detailed produces output between 160 and 240 words.
+9. If lengthTier is missing or unrecognized, the backend defaults to Standard and logs a warning.
+
+## Out of Scope
+
+- Changing the existing single-item input UX (description field, category field, rewrite button)
+- Showing the tier in the output card
+- Saving the user's tier preference between sessions
+- Email capture or lead magnet flow changes (those stay as-is)
+
+
+One thing to flag for consistency: this prompt and the bulk Lovable build use the same system prompt and same length rules blocks word-for-word. If you ever tune one, tune both, otherwise the free tool and paid product will produce different output for the same input, which would be a credibility hit if a prospect notices. Worth keeping a single canonical copy of the prompt somewhere (the project context file is the natural home) and updating both apps from it.
