@@ -1834,7 +1834,9 @@ Bill Brown`;
       let lengthTier: LengthTier = "standard";
       if (VALID_TIERS.includes(rawTier)) {
         lengthTier = rawTier as LengthTier;
-      } else if (rawTier) {
+      } else if (rawTier == null || rawTier === "") {
+        console.warn(`[pricebook-tool] lengthTier missing from request, defaulting to "standard"`);
+      } else {
         console.warn(`[pricebook-tool] unrecognised lengthTier "${rawTier}", defaulting to "standard"`);
       }
       console.log(`[pricebook-tool] rewrite called — trade="${trade}" tier="${lengthTier}" inputType="${inputType ?? "unknown"}"`);
