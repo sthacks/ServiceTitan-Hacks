@@ -1821,7 +1821,7 @@ Bill Brown`;
   // Only requires email + trade + description (no name fields)
   app.post("/api/pricebook-tool/rewrite", async (req, res) => {
     try {
-      const { trade, description, inputType } = req.body;
+      const { trade, description, inputType, lengthTier: rawTier } = req.body;
       if (!trade || !description) {
         return res.status(400).json({ error: "Missing required fields" });
       }
@@ -1829,31 +1829,104 @@ Bill Brown`;
         return res.status(400).json({ error: "Description too short" });
       }
 
+      const VALID_TIERS = ["concise", "standard", "detailed"] as const;
+      type LengthTier = typeof VALID_TIERS[number];
+      let lengthTier: LengthTier = "standard";
+      if (VALID_TIERS.includes(rawTier)) {
+        lengthTier = rawTier as LengthTier;
+      } else if (rawTier) {
+        console.warn(`[pricebook-tool] unrecognised lengthTier "${rawTier}", defaulting to "standard"`);
+      }
+      console.log(`[pricebook-tool] rewrite called — trade="${trade}" tier="${lengthTier}" inputType="${inputType ?? "unknown"}"`);
+
+      const LENGTH_RULES: Record<LengthTier, string> = {
+        concise: `Print context priority: descriptions appear stacked on multi-line printed estimates. Keep all output tight.
+
+Match length to item type using the Category and Name to infer complexity:
+- Add-ons, accessories, minor parts (surge protectors, floats, capacitors, fittings, fuses, contactors, filters, drain covers): 30 to 50 words. NO bullet lists. One short paragraph only.
+- Standard repairs, diagnostics, tune-ups, common service calls: 50 to 80 words. NO bullet lists. One paragraph.
+- Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 80 to 120 words. Bullet list optional, max 3 items if used.
+
+Hard ceiling: never exceed 120 words for any item.`,
+
+        standard: `Print context: descriptions may appear stacked on printed estimates alongside many line items. Match length to item complexity.
+
+Match length to item type using the Category and Name to infer complexity:
+- Add-ons, accessories, minor parts (surge protectors, floats, capacitors, fittings, fuses, contactors, filters, drain covers): 40 to 70 words. NO bullet lists. One paragraph only.
+- Standard repairs, diagnostics, tune-ups, common service calls: 70 to 120 words. Optional short bullet list, max 3 items.
+- Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 120 to 180 words. Bullet list allowed, max 4 items.
+
+Hard ceiling: never exceed 180 words for any item.`,
+
+        detailed: `Tablet-first context: descriptions will be presented on a technician iPad with room for full benefit framing. Use the full length range to make the case for value.
+
+Match length to item type using the Category and Name to infer complexity:
+- Add-ons, accessories, minor parts: 60 to 100 words. Optional short bullet list, max 3 items.
+- Standard repairs, diagnostics, tune-ups, common service calls: 100 to 160 words. Bullet list allowed, max 4 items.
+- Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 160 to 240 words. Bullet list encouraged, max 5 items.
+
+Hard ceiling: never exceed 240 words for any item.`,
+      };
+
+      const systemPrompt = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.
+Your goal is to help contractors communicate expertise and build trust by focusing on quality, reliability, comfort, safety, efficiency, and long-term value, never by implying the work is simple or quick.
+
+Instructions
+
+1. Simplify Without Downplaying Value
+   - Remove jargon but maintain a tone of professional skill and craftsmanship.
+   - Never describe the task as simple, easy, quick, or basic.
+   - Focus on the precision, care, or expertise required to do it correctly.
+
+2. Emphasize Homeowner Benefits
+   - Explain how the product or service improves home comfort, safety, performance, and efficiency.
+   - Highlight durability, quality workmanship, and long-term peace of mind.
+
+3. Personalize the Message
+   - Use relatable homeowner scenarios to show how the solution addresses real issues or prevents future problems.
+   - Avoid sales pressure or calls to action, this copy will be used by technicians in person.
+
+4. Include Realistic Examples
+   - Use short examples or analogies that show impact or results, not simplicity.
+   - Reinforce the value of doing the job right the first time.
+
+5. Highlight Differentiators
+   - Explain what makes this product, service, or installation superior, materials, technology, precision, or efficiency.
+   - Connect these differentiators directly to better homeowner outcomes.
+
+Formatting Rules (HTML Output)
+   - Use <b> for headings and key terms.
+   - Use <br> for spacing between paragraphs.
+   - Use <ul> and <li> for features and benefits when appropriate (see Length Rules).
+   - Do not include <head> or <body> tags.
+   - Do not include prices in the output.
+
+Length Rules
+
+${LENGTH_RULES[lengthTier]}
+
+Goal:
+Produce a professional, confident, and homeowner-friendly explanation that demonstrates expertise, justifies value, and builds trust in the quality of the work.`;
+
+      const userPrompt = `Trade: ${trade}
+
+Original description: ${description}
+
+Rewrite this description following the instructions and length rules above.`;
+
       const openai = new OpenAI({
         baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
         apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
       });
 
-      const systemPrompt = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.`;
-      const userPrompt = `Trade: ${trade}
-
-Original description: ${description}
-
-Rewrite this in homeowner-friendly language. Structure the response as:
-1. An opening sentence describing what we do in plain homeowner language (no jargon)
-2. A "What's included:" section with a bulleted list of 3-5 items that explain what actually happens and why it matters
-3. One optional closing "Why it matters" sentence focused on comfort, safety, reliability, or long-term value
-
-Use 75-200 words. Format with HTML: <b> for headings, <br> for line breaks, <ul><li> for bullets. Do not include prices. Focus on quality, reliability, comfort, safety, and long-term value.`;
-
       const completion = await openai.chat.completions.create({
-        model: "gpt-4o",
+        model: "gpt-4o-mini",
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt },
         ],
         temperature: 0.7,
-        max_tokens: 500,
+        max_tokens: 1000,
       });
 
       const optimizedDescription = completion.choices[0]?.message?.content || "";

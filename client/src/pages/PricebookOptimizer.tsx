@@ -91,6 +91,7 @@ export default function PricebookOptimizer() {
   useEffect(() => { logEvent("page_view"); }, []);
 
   const [trade, setTrade] = useState("");
+  const [lengthTier, setLengthTier] = useState<"concise" | "standard" | "detailed">("standard");
   const [mode, setMode] = useState<"sample" | "custom" | null>(null);
   const [selectedSampleIdx, setSelectedSampleIdx] = useState<number | null>(null);
   const [customDescription, setCustomDescription] = useState("");
@@ -143,6 +144,7 @@ export default function PricebookOptimizer() {
           trade,
           description: inputDescription,
           inputType: mode,
+          lengthTier,
         }),
       });
 
@@ -328,6 +330,47 @@ export default function PricebookOptimizer() {
                       </p>
                     </button>
                   </div>
+                </div>
+              )}
+
+              {/* Step 2.5 — Length tier */}
+              {mode && (
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Description length</p>
+                  <div className="grid grid-cols-3 gap-2">
+                    {(
+                      [
+                        { value: "concise",  label: "Concise",            sub: "Shorter output. Best if you print estimates." },
+                        { value: "standard", label: "Standard",           sub: "Balanced length. Works on tablet and print." },
+                        { value: "detailed", label: "Detailed",           sub: "Longer output with more benefit framing. Tablet-first." },
+                      ] as const
+                    ).map(({ value, label, sub }) => (
+                      <button
+                        key={value}
+                        type="button"
+                        data-testid={`radio-tier-${value}`}
+                        onClick={() => setLengthTier(value)}
+                        aria-pressed={lengthTier === value}
+                        className={cn(
+                          "rounded-md border p-3 text-left transition-colors hover-elevate",
+                          lengthTier === value
+                            ? "border-primary bg-primary/5"
+                            : "border-border bg-card"
+                        )}
+                      >
+                        <p className="text-sm font-semibold leading-tight">
+                          {label}
+                          {value === "standard" && (
+                            <span className="ml-1.5 text-xs font-normal text-muted-foreground">(recommended)</span>
+                          )}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1 leading-snug">{sub}</p>
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Pick the length that matches how your team uses estimates.
+                  </p>
                 </div>
               )}
 
