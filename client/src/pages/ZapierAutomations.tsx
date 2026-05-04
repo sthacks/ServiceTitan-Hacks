@@ -179,7 +179,6 @@ const interestOptions = [
   "Lead routing to ServiceTitan",
   "Google Sheets reporting automations",
   "Notification and follow-up automations",
-  "Custom Dashboards",
   "Ongoing support and optimization",
 ];
 
