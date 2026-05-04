@@ -1817,32 +1817,12 @@ Bill Brown`;
     }
   });
 
-  // Lightweight rewrite endpoint for the new pricebook-overhaul-tool flow
-  // Only requires email + trade + description (no name fields)
-  app.post("/api/pricebook-tool/rewrite", async (req, res) => {
-    try {
-      const { trade, description, inputType, lengthTier: rawTier } = req.body;
-      if (!trade || !description) {
-        return res.status(400).json({ error: "Missing required fields" });
-      }
-      if (description.trim().length < 5) {
-        return res.status(400).json({ error: "Description too short" });
-      }
+  // ─── Shared helpers for pricebook rewrite prompts ─────────────────────────
+  type PricebookLengthTier = "concise" | "standard" | "detailed";
+  const PRICEBOOK_VALID_TIERS = ["concise", "standard", "detailed"] as const;
 
-      const VALID_TIERS = ["concise", "standard", "detailed"] as const;
-      type LengthTier = typeof VALID_TIERS[number];
-      let lengthTier: LengthTier = "standard";
-      if (VALID_TIERS.includes(rawTier)) {
-        lengthTier = rawTier as LengthTier;
-      } else if (rawTier == null || rawTier === "") {
-        console.warn(`[pricebook-tool] lengthTier missing from request, defaulting to "standard"`);
-      } else {
-        console.warn(`[pricebook-tool] unrecognised lengthTier "${rawTier}", defaulting to "standard"`);
-      }
-      console.log(`[pricebook-tool] rewrite called — trade="${trade}" tier="${lengthTier}" inputType="${inputType ?? "unknown"}"`);
-
-      const LENGTH_RULES: Record<LengthTier, string> = {
-        concise: `Print context priority: descriptions appear stacked on multi-line printed estimates. Keep all output tight.
+  const PRICEBOOK_LENGTH_RULES: Record<PricebookLengthTier, string> = {
+    concise: `Print context priority: descriptions appear stacked on multi-line printed estimates. Keep all output tight.
 
 Match length to item type using the Category and Name to infer complexity:
 - Add-ons, accessories, minor parts (surge protectors, floats, capacitors, fittings, fuses, contactors, filters, drain covers): 30 to 50 words. NO bullet lists. One short paragraph only.
@@ -1851,7 +1831,7 @@ Match length to item type using the Category and Name to infer complexity:
 
 Hard ceiling: never exceed 120 words for any item.`,
 
-        standard: `Print context: descriptions may appear stacked on printed estimates alongside many line items. Match length to item complexity.
+    standard: `Print context: descriptions may appear stacked on printed estimates alongside many line items. Match length to item complexity.
 
 Match length to item type using the Category and Name to infer complexity:
 - Add-ons, accessories, minor parts (surge protectors, floats, capacitors, fittings, fuses, contactors, filters, drain covers): 40 to 70 words. NO bullet lists. One paragraph only.
@@ -1860,7 +1840,7 @@ Match length to item type using the Category and Name to infer complexity:
 
 Hard ceiling: never exceed 180 words for any item.`,
 
-        detailed: `Tablet-first context: descriptions will be presented on a technician iPad with room for full benefit framing. Use the full length range to make the case for value.
+    detailed: `Tablet-first context: descriptions will be presented on a technician iPad with room for full benefit framing. Use the full length range to make the case for value.
 
 Match length to item type using the Category and Name to infer complexity:
 - Add-ons, accessories, minor parts: 60 to 100 words. Optional short bullet list, max 3 items.
@@ -1868,9 +1848,9 @@ Match length to item type using the Category and Name to infer complexity:
 - Major installations (full system replacements, repipes, panel changes, water heater installs, full duct work): 160 to 240 words. Bullet list encouraged, max 5 items.
 
 Hard ceiling: never exceed 240 words for any item.`,
-      };
+  };
 
-      const systemPrompt = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.
+  const PRICEBOOK_BASE_SYSTEM_PROMPT = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.
 Your goal is to help contractors communicate expertise and build trust by focusing on quality, reliability, comfort, safety, efficiency, and long-term value, never by implying the work is simple or quick.
 
 Instructions
@@ -1905,16 +1885,47 @@ Formatting Rules (HTML Output)
 
 Length Rules
 
-${LENGTH_RULES[lengthTier]}
+`;
+
+  const PRICEBOOK_SYSTEM_PROMPT_GOAL = `
 
 Goal:
 Produce a professional, confident, and homeowner-friendly explanation that demonstrates expertise, justifies value, and builds trust in the quality of the work.`;
 
-      const userPrompt = `Trade: ${trade}
+  function buildPricebookSystemPrompt(tier: PricebookLengthTier): string {
+    return PRICEBOOK_BASE_SYSTEM_PROMPT + PRICEBOOK_LENGTH_RULES[tier] + PRICEBOOK_SYSTEM_PROMPT_GOAL;
+  }
+
+  function buildPricebookUserPrompt(trade: string, description: string): string {
+    return `Trade: ${trade}
 
 Original description: ${description}
 
 Rewrite this description following the instructions and length rules above.`;
+  }
+  // ───────────────────────────────────────────────────────────────────────────
+
+  // Lightweight rewrite endpoint for the new pricebook-overhaul-tool flow
+  // Only requires email + trade + description (no name fields)
+  app.post("/api/pricebook-tool/rewrite", async (req, res) => {
+    try {
+      const { trade, description, inputType, lengthTier: rawTier } = req.body;
+      if (!trade || !description) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+      if (description.trim().length < 5) {
+        return res.status(400).json({ error: "Description too short" });
+      }
+
+      let lengthTier: PricebookLengthTier = "standard";
+      if (PRICEBOOK_VALID_TIERS.includes(rawTier)) {
+        lengthTier = rawTier as PricebookLengthTier;
+      } else if (rawTier == null || rawTier === "") {
+        console.warn(`[pricebook-tool] lengthTier missing from request, defaulting to "standard"`);
+      } else {
+        console.warn(`[pricebook-tool] unrecognised lengthTier "${rawTier}", defaulting to "standard"`);
+      }
+      console.log(`[pricebook-tool] rewrite called — trade="${trade}" tier="${lengthTier}" inputType="${inputType ?? "unknown"}"`);
 
       const openai = new OpenAI({
         baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
@@ -1924,8 +1935,8 @@ Rewrite this description following the instructions and length rules above.`;
       const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt },
+          { role: "system", content: buildPricebookSystemPrompt(lengthTier) },
+          { role: "user", content: buildPricebookUserPrompt(trade, description) },
         ],
         temperature: 0.7,
         max_tokens: 1000,
@@ -1936,6 +1947,55 @@ Rewrite this description following the instructions and length rules above.`;
     } catch (error: any) {
       console.error("[pricebook-tool] rewrite error:", error);
       return res.status(500).json({ error: "Failed to generate rewrite. Please try again." });
+    }
+  });
+
+  // Rewrite all three tiers in parallel for side-by-side comparison
+  app.post("/api/pricebook-tool/rewrite-all", async (req, res) => {
+    try {
+      const { trade, description, inputType } = req.body;
+      if (!trade || !description) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+      if (description.trim().length < 5) {
+        return res.status(400).json({ error: "Description too short" });
+      }
+
+      console.log(`[pricebook-tool] rewrite-all called — trade="${trade}" inputType="${inputType ?? "unknown"}"`);
+
+      const openai = new OpenAI({
+        baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+        apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+      });
+
+      const userPrompt = buildPricebookUserPrompt(trade, description);
+
+      const tiers: PricebookLengthTier[] = ["concise", "standard", "detailed"];
+
+      const tieredResults = await Promise.all(
+        tiers.map(async (tier) => {
+          const completion = await openai.chat.completions.create({
+            model: "gpt-4o-mini",
+            messages: [
+              { role: "system", content: buildPricebookSystemPrompt(tier) },
+              { role: "user", content: userPrompt },
+            ],
+            temperature: 0.7,
+            max_tokens: 1000,
+          });
+          return { tier, optimizedDescription: completion.choices[0]?.message?.content || "" };
+        })
+      );
+
+      const results: Record<string, string> = {};
+      for (const r of tieredResults) {
+        results[r.tier] = r.optimizedDescription;
+      }
+
+      return res.json({ results, original: description });
+    } catch (error: any) {
+      console.error("[pricebook-tool] rewrite-all error:", error);
+      return res.status(500).json({ error: "Failed to generate rewrites. Please try again." });
     }
   });
 

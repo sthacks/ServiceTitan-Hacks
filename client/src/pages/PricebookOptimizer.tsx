@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Droplets, Zap, Warehouse, Home, MoreHorizontal, Mail } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Loader2, Copy, Check, RotateCcw, ExternalLink, CheckCircle2, Wind, Droplets, Zap, Warehouse, Home, MoreHorizontal, Mail, Columns3 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -101,6 +102,12 @@ export default function PricebookOptimizer() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+
+  // Compare all lengths state
+  const [compareResults, setCompareResults] = useState<{ concise: string; standard: string; detailed: string } | null>(null);
+  const [compareLoading, setCompareLoading] = useState(false);
+  const [compareError, setCompareError] = useState("");
+  const [copiedTier, setCopiedTier] = useState<"concise" | "standard" | "detailed" | null>(null);
 
   // Post-result email capture state
   const [emailInput, setEmailInput] = useState("");
@@ -196,6 +203,44 @@ export default function PricebookOptimizer() {
     }
   };
 
+  const handleCompareAll = async () => {
+    if (!result) return;
+    setCompareLoading(true);
+    setCompareError("");
+    try {
+      const response = await fetch("/api/pricebook-tool/rewrite-all", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          trade,
+          description: result.original,
+          inputType: mode,
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Failed to get rewrites");
+      const r = data.results;
+      if (!r || typeof r.concise !== "string" || typeof r.standard !== "string" || typeof r.detailed !== "string") {
+        throw new Error("Unexpected response from server. Please try again.");
+      }
+      setCompareResults(r);
+      track("compare_all_lengths");
+      logEvent("compare_all_lengths", { trade });
+    } catch (err: any) {
+      setCompareError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setCompareLoading(false);
+    }
+  };
+
+  const handleCopyTier = async (tier: "concise" | "standard" | "detailed") => {
+    if (compareResults?.[tier]) {
+      await navigator.clipboard.writeText(compareResults[tier].replace(/<[^>]+>/g, ""));
+      setCopiedTier(tier);
+      setTimeout(() => setCopiedTier(null), 2000);
+    }
+  };
+
   const handleReset = () => {
     setTrade("");
     setMode(null);
@@ -208,6 +253,9 @@ export default function PricebookOptimizer() {
     setResult(null);
     setError("");
     setCopied(false);
+    setCompareResults(null);
+    setCompareError("");
+    setCopiedTier(null);
     track("reset_clicked");
     logEvent("reset_clicked");
     setTimeout(() => {
@@ -516,6 +564,97 @@ export default function PricebookOptimizer() {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+
+              {/* Compare all lengths */}
+              <div className="space-y-4">
+                {!compareResults && (
+                  <div className="flex flex-col items-center gap-2">
+                    <Button
+                      variant="outline"
+                      onClick={handleCompareAll}
+                      disabled={compareLoading}
+                      data-testid="button-compare-all"
+                    >
+                      {compareLoading ? (
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      ) : (
+                        <Columns3 className="h-4 w-4 mr-2" />
+                      )}
+                      {compareLoading ? "Generating all three..." : "Compare all lengths"}
+                    </Button>
+                    {compareError && (
+                      <p className="text-sm text-destructive" data-testid="text-compare-error">{compareError}</p>
+                    )}
+                  </div>
+                )}
+
+                {compareResults && (
+                  <div className="space-y-4" data-testid="block-compare-results">
+                    <div className="flex items-center justify-between flex-wrap gap-2">
+                      <h3 className="text-lg font-semibold">Compare all lengths</h3>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => { setCompareResults(null); setCompareError(""); }}
+                        data-testid="button-close-compare"
+                      >
+                        Close comparison
+                      </Button>
+                    </div>
+                    <Tabs defaultValue="concise" data-testid="tabs-compare">
+                      <TabsList className="w-full">
+                        <TabsTrigger value="concise" className="flex-1" data-testid="tab-concise">
+                          Concise
+                        </TabsTrigger>
+                        <TabsTrigger value="standard" className="flex-1" data-testid="tab-standard">
+                          Standard
+                        </TabsTrigger>
+                        <TabsTrigger value="detailed" className="flex-1" data-testid="tab-detailed">
+                          Detailed
+                        </TabsTrigger>
+                      </TabsList>
+
+                      {(["concise", "standard", "detailed"] as const).map((tier) => (
+                        <TabsContent key={tier} value={tier}>
+                          <Card>
+                            <CardContent className="p-6 space-y-3">
+                              <div className="flex items-center justify-between flex-wrap gap-2">
+                                <div className="flex items-center gap-2">
+                                  <Badge variant="secondary" className="no-default-active-elevate" data-testid={`badge-tier-${tier}`}>
+                                    {tier.charAt(0).toUpperCase() + tier.slice(1)}
+                                  </Badge>
+                                  <span className="text-xs text-muted-foreground">
+                                    {tier === "concise" && "Best for printed estimates"}
+                                    {tier === "standard" && "Balanced for most uses"}
+                                    {tier === "detailed" && "Best for technician tablets"}
+                                  </span>
+                                </div>
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  onClick={() => handleCopyTier(tier)}
+                                  data-testid={`button-copy-${tier}`}
+                                >
+                                  {copiedTier === tier ? (
+                                    <><Check className="h-3 w-3 mr-1" /> Copied</>
+                                  ) : (
+                                    <><Copy className="h-3 w-3 mr-1" /> Copy</>
+                                  )}
+                                </Button>
+                              </div>
+                              <div
+                                className="text-sm leading-relaxed text-foreground prose prose-sm max-w-none"
+                                data-testid={`text-compare-${tier}`}
+                                dangerouslySetInnerHTML={{ __html: compareResults[tier] }}
+                              />
+                            </CardContent>
+                          </Card>
+                        </TabsContent>
+                      ))}
+                    </Tabs>
+                  </div>
+                )}
               </div>
 
               {/* Block 1 — Email capture (inline, optional) */}
