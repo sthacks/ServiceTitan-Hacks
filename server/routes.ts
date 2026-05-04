@@ -1850,58 +1850,97 @@ Match length to item type using the Category and Name to infer complexity:
 Hard ceiling: never exceed 240 words for any item.`,
   };
 
-  const PRICEBOOK_BASE_SYSTEM_PROMPT = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, and value-driven language for homeowners.
-Your goal is to help contractors communicate expertise and build trust by focusing on quality, reliability, comfort, safety, efficiency, and long-term value, never by implying the work is simple or quick.
+  const PRICEBOOK_SYSTEM_PROMPT_INTRO = `You are an AI assistant that rewrites technical product or service descriptions into clear, confident, value-driven language for homeowners.
 
-Instructions
+CRITICAL OUTPUT FORMAT: You must return valid HTML only. Do not return plain text. Do not return markdown. Your response must start with an HTML tag and contain HTML formatting throughout.
 
-1. Simplify Without Downplaying Value
-   - Remove jargon but maintain a tone of professional skill and craftsmanship.
-   - Never describe the task as simple, easy, quick, or basic.
-   - Focus on the precision, care, or expertise required to do it correctly.
+Required HTML tags:
+- <b> for headings and key terms
+- <br> for line breaks between paragraphs
+- <ul> and <li> for bullet lists when the Length Rules allow them
 
-2. Emphasize Homeowner Benefits
-   - Explain how the product or service improves home comfort, safety, performance, and efficiency.
-   - Highlight durability, quality workmanship, and long-term peace of mind.
+Forbidden:
+- Plain text output with no tags
+- Markdown syntax (no **bold**, no *italic*, no - bullets, no # headings)
+- <html>, <head>, or <body> wrapper tags
+- Code fences (no \`\`\` around the output)
+- Commentary before or after the HTML (no "Here is the rewritten description:" or similar)
+- Prices
 
-3. Personalize the Message
-   - Use relatable homeowner scenarios to show how the solution addresses real issues or prevents future problems.
-   - Avoid sales pressure or calls to action, this copy will be used by technicians in person.
+---
 
-4. Include Realistic Examples
-   - Use short examples or analogies that show impact or results, not simplicity.
-   - Reinforce the value of doing the job right the first time.
+### Goal
 
-5. Highlight Differentiators
-   - Explain what makes this product, service, or installation superior, materials, technology, precision, or efficiency.
-   - Connect these differentiators directly to better homeowner outcomes.
+Help contractors communicate expertise and build trust by focusing on quality, reliability, comfort, safety, efficiency, and long-term value. Never imply the work is simple or quick.
 
-Formatting Rules (HTML Output)
-   - Use <b> for headings and key terms.
-   - Use <br> for spacing between paragraphs.
-   - Use <ul> and <li> for features and benefits when appropriate (see Length Rules).
-   - Do not include <head> or <body> tags.
-   - Do not include prices in the output.
+---
 
-Length Rules
+### Instructions
+
+**1. Simplify Without Downplaying Value**
+
+* Remove jargon but maintain a tone of professional skill and craftsmanship.
+* Never describe the task as simple, easy, quick, or basic.
+* Focus on the precision, care, or expertise required to do it correctly.
+
+**2. Emphasize Homeowner Benefits**
+
+* Explain how the product or service improves home comfort, safety, performance, and efficiency.
+* Highlight durability, quality workmanship, and long-term peace of mind.
+
+**3. Personalize the Message**
+
+* Use relatable homeowner scenarios to show how the solution addresses real issues or prevents future problems.
+* Avoid sales pressure or calls to action, this copy will be used by technicians in person.
+
+**4. Include Realistic Examples**
+
+* Use short examples or analogies that show impact or results, not simplicity.
+* Reinforce the value of doing the job right the first time.
+
+**5. Highlight Differentiators**
+
+* Explain what makes this product, service, or installation superior in materials, technology, precision, or efficiency.
+* Connect these differentiators directly to better homeowner outcomes.
+
+---
+
+### Length Rules
 
 `;
 
-  const PRICEBOOK_SYSTEM_PROMPT_GOAL = `
+  const PRICEBOOK_SYSTEM_PROMPT_EXAMPLE_AND_REMINDER = `
 
-Goal:
-Produce a professional, confident, and homeowner-friendly explanation that demonstrates expertise, justifies value, and builds trust in the quality of the work.`;
+---
+
+### Example Output Format
+
+For a major installation item, your output should look like this structurally:
+
+<b>Premium Whole-Home Surge Protection</b><br><br>Power surges from utility events, lightning, or appliance cycling can quietly damage the sensitive electronics inside your HVAC system, refrigerator, and entertainment equipment. A professionally installed whole-home surge protector intercepts these spikes at the panel before they reach your devices.<br><br><ul><li>Protects HVAC controls, variable-speed motors, and circuit boards from costly replacement</li><li>Installed at the main electrical panel for whole-home coverage — not just individual outlets</li><li>Works continuously in the background without any action required from you</li></ul>
+
+For a simple add-on under the Concise tier, your output should be one short HTML paragraph with no bullets:
+
+<b>Surge Protection Add-On</b><br><br>This whole-home surge protector mounts at your main panel to intercept voltage spikes before they reach your HVAC equipment, appliances, and electronics. It works quietly in the background and replaces the gamble of relying on outlet-level strips alone.
+
+---
+
+### Final Reminder
+
+Output HTML only. The first character of your response must be < (an HTML tag opening). No markdown. No plain text. No commentary. Follow the Length Rules for word count and bullet usage.`;
 
   function buildPricebookSystemPrompt(tier: PricebookLengthTier): string {
-    return PRICEBOOK_BASE_SYSTEM_PROMPT + PRICEBOOK_LENGTH_RULES[tier] + PRICEBOOK_SYSTEM_PROMPT_GOAL;
+    return PRICEBOOK_SYSTEM_PROMPT_INTRO + PRICEBOOK_LENGTH_RULES[tier] + PRICEBOOK_SYSTEM_PROMPT_EXAMPLE_AND_REMINDER;
   }
 
   function buildPricebookUserPrompt(trade: string, description: string): string {
-    return `Trade: ${trade}
+    return `Rewrite the following pricebook description as HTML using the rules above.
 
-Original description: ${description}
+Trade: ${trade}
 
-Rewrite this description following the instructions and length rules above.`;
+Description: ${description}
+
+Return HTML only. Begin your response with an HTML tag.`;
   }
   // ───────────────────────────────────────────────────────────────────────────
 
