@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -96,6 +97,7 @@ export default function PricebookOptimizer() {
   const [selectedSampleIdx, setSelectedSampleIdx] = useState<number | null>(null);
   const [customDescription, setCustomDescription] = useState("");
   const [result, setResult] = useState<{ optimized: string; original: string } | null>(null);
+  const [resultTier, setResultTier] = useState<"concise" | "standard" | "detailed" | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
@@ -152,6 +154,7 @@ export default function PricebookOptimizer() {
       if (!response.ok) throw new Error(data.error || "Failed to get rewrite");
 
       setResult({ optimized: data.optimizedDescription, original: inputDescription });
+      setResultTier(lengthTier);
       track("rewrite_generated");
       logEvent("rewrite_generated", { trade, inputType: mode ?? undefined });
 
@@ -482,9 +485,16 @@ export default function PricebookOptimizer() {
                   <Card className="border-primary/30 bg-primary/5">
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                          After
-                        </p>
+                        <div className="flex items-center gap-2">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                            After
+                          </p>
+                          {resultTier && (
+                            <Badge variant="secondary" className="no-default-active-elevate" data-testid="badge-result-tier">
+                              {resultTier.charAt(0).toUpperCase() + resultTier.slice(1)}
+                            </Badge>
+                          )}
+                        </div>
                         <Button
                           size="sm"
                           variant="ghost"
