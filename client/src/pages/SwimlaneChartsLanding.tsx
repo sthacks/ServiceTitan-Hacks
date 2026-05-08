@@ -13,8 +13,9 @@ import { apiRequest } from "@/lib/queryClient";
 import swimlaneChartImage from "@assets/Tech Turnover Swimlane Chart_1762542649074.png";
 
 export default function SwimlaneChartsLanding() {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
+  const params = new URLSearchParams(window.location.search);
+  const [firstName, setFirstName] = useState(params.get("firstName") ?? params.get("first_name") ?? "");
+  const [email, setEmail] = useState(params.get("email") ?? "");
   const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
