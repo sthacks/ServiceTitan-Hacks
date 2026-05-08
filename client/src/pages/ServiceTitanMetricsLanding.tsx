@@ -13,8 +13,9 @@ import { apiRequest } from "@/lib/queryClient";
 import metricsGuideImage from "@assets/generated_images/ServiceTitan_metrics_guide_cover_0b043d1e.png";
 
 export default function ServiceTitanMetricsLanding() {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
+  const params = new URLSearchParams(window.location.search);
+  const [firstName, setFirstName] = useState(params.get("firstName") ?? params.get("first_name") ?? "");
+  const [email, setEmail] = useState(params.get("email") ?? "");
   const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
