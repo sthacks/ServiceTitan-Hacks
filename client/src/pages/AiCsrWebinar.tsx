@@ -144,9 +144,10 @@ export default function AiCsrWebinar() {
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       <SEO
         title="How Contractors Are Handling More Calls Without Hiring More CSRs | ServiceTitan Hacks"
-        description="A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses. Free live webinar."
+        description="A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses. Free live webinar — Tuesday, May 19, 2026 at 2:00 PM EST."
         keywords="ServiceTitan AI, CSR automation, after-hours calls, home service AI, contractor operations, speed-to-lead"
         canonicalUrl={`https://servicetitanhacks.com${config.path}`}
+        ogImage="https://servicetitanhacks.com/og-ai-csr-webinar.png"
       />
 
       {/* Sticky Header */}
