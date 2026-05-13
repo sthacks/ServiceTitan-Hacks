@@ -39,6 +39,20 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "8",
+    title: "How Contractors Are Handling More Calls Without Hiring More CSRs",
+    description: "A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses. Featuring Bill Brown, Quinn Litherland (Revin.ai), and Britiny Leung (Director of Operations, Action Furnace Inc.).",
+    date: "Monday, May 19, 2026",
+    eventDateTime: new Date("2026-05-19T18:00:00-04:00"),
+    time: "6:00 PM",
+    timezone: "ET",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinar/ai-csr",
+    status: "upcoming",
+    hosts: ["Bill Brown", "Quinn Litherland", "Britiny Leung"]
+  },
+  {
     id: "1",
     title: "How to Find and Recruit A-Player Technicians Not On Job Boards",
     description: "Live training showing actionable methods any service business can implement this week. Learn the TradeRunner method for finding technicians who aren't on Indeed.",
