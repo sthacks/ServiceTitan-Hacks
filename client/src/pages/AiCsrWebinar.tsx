@@ -18,6 +18,8 @@ import {
 import SEO from "@/components/SEO";
 import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224442.png";
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
+import quinnImage from "@assets/1771211003572_1778696049154.jpeg";
+import britinyImage from "@assets/1710448174241_1778696049153.jpeg";
 
 const config = {
   webinarTitle: "How Contractors Are Handling More Calls Without Hiring More CSRs",
@@ -101,14 +103,14 @@ const speakers = [
     name: "Quinn Litherland",
     title: "Co-Founder, Revin.ai",
     bio: "Helping home service businesses improve speed-to-lead, automate workflows, and scale operations using AI-assisted communication systems.",
-    image: null,
+    image: quinnImage,
     initials: "QL",
   },
   {
     name: "Britiny Leung",
     title: "Director of Operations, Action Furnace Inc.",
     bio: "Call center and operations leader at Action Furnace, one of Canada's leading HVAC companies. Extensive experience managing high-volume customer communication, office operations, staffing, and AI-assisted systems inside a large home service business.",
-    image: null,
+    image: britinyImage,
     initials: "BL",
   },
 ];
