@@ -321,6 +321,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Watch the replay: Membership retention strategies that keep members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
     ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
+  "/webinar/ai-csr": {
+    title: "How Contractors Are Handling More Calls Without Hiring More CSRs | ServiceTitan Hacks",
+    description: "A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses. Free live webinar.",
+    ogImage: "https://servicetitanhacks.com/og-ai-csr-webinar.png",
+  },
   "/webinar/phonetap": {
     title: "What Your Missed Calls Are Actually Costing You | PhoneTap Live Webinar",
     description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Live demo April 8, 2026.",

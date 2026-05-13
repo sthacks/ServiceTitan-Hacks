@@ -68,6 +68,7 @@ import WinkPayrollWebinar from "@/pages/WinkPayrollWebinar";
 import ReferralGapWebinar from "@/pages/ReferralGapWebinar";
 import IncentivePlanWebinar from "@/pages/IncentivePlanWebinar";
 import PhoneTapWebinar from "@/pages/PhoneTapWebinar";
+import AiCsrWebinar from "@/pages/AiCsrWebinar";
 import Events from "@/pages/Events";
 import BillLanding from "@/pages/BillLanding";
 import ServiceTitanAutomationServices from "@/pages/ServiceTitanAutomationServices";
@@ -150,6 +151,7 @@ function Router() {
       <Route path="/webinar/referral-gap" component={ReferralGapWebinar} />
       <Route path="/webinar/incentive-plan-problem" component={IncentivePlanWebinar} />
       <Route path="/webinar/phonetap" component={PhoneTapWebinar} />
+      <Route path="/webinar/ai-csr" component={AiCsrWebinar} />
       <Route path="/webinar/price-conversation"><Redirect to="/events" /></Route>
       <Route path="/webinar/membership-retention"><Redirect to="/events" /></Route>
       <Route path="/webinar/equipment-pricing"><Redirect to="/events" /></Route>

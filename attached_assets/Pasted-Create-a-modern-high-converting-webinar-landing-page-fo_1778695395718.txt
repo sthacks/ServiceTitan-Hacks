@@ -1,0 +1,277 @@
+Create a modern, high-converting webinar landing page for ServiceTitan Hacks.
+
+Brand Style:
+- Dark modern SaaS design
+- Black / dark charcoal background
+- Accent color: #ec164d
+- Clean contractor-focused aesthetic
+- Font similar to Oxygen or Inter
+- Premium but practical feel
+- Desktop and mobile responsive
+- Subtle animations and hover effects
+- Strong spacing and readability
+- Use cards/sections with subtle borders and soft glow effects
+
+Primary Goal:
+Drive webinar registrations for HVAC, plumbing, and electrical contractors using ServiceTitan.
+
+Overall Tone:
+- Practical
+- Operational
+- Contractor-focused
+- Non-salesy
+- Fireside chat feel
+- Real-world business discussion
+
+Page Width:
+Centered layout with maximum width around 1200px.
+
+--------------------------------------------------
+HERO SECTION
+--------------------------------------------------
+
+Large headline:
+
+"How Contractors Are Handling More Calls Without Hiring More CSRs"
+
+Subheadline:
+
+"A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses."
+
+Add:
+- "Free Live Webinar"
+- Webinar date/time placeholder
+- Hosted by ServiceTitan Hacks
+- Large CTA button:
+"Reserve My Spot"
+
+Hero Layout:
+- Left side = text and CTA
+- Right side = modern webinar mockup illustration
+
+The right-side illustration should visually represent:
+- AI-assisted office operations
+- ServiceTitan-style workflows
+- call center operations
+- messaging automation
+- after-hours handling
+- HVAC/plumbing/electrical business operations
+
+Include subtle floating UI cards around the hero image:
+- "After-Hours Calls"
+- "Overflow Handling"
+- "Lead Follow-Up"
+- "Membership Workflows"
+- "Speed-To-Lead"
+
+Use subtle motion animations.
+
+--------------------------------------------------
+SOCIAL PROOF BAR
+--------------------------------------------------
+
+Dark horizontal section with:
+- "10,000+ ServiceTitan Professionals"
+- "Trusted by Contractors Across HVAC, Plumbing & Electrical"
+- "Real Operational Conversations. Not Sales Pitches."
+
+--------------------------------------------------
+WHY THIS WEBINAR MATTERS SECTION
+--------------------------------------------------
+
+Headline:
+
+"Most Contractors Do Not Have a Lead Problem"
+
+Large supporting text:
+
+"They have a response-time problem."
+
+Then explain operational pain points:
+- phones ringing off the hook during peak season
+- after-hours opportunities being missed
+- overwhelmed office staff
+- estimates sitting untouched
+- inconsistent follow-up
+- customers expecting immediate responses
+- difficulty scaling without endlessly adding payroll
+
+Use a 3-column card layout with modern icons.
+
+--------------------------------------------------
+KEY DISCUSSION TOPICS SECTION
+--------------------------------------------------
+
+Headline:
+
+"What We'll Be Discussing"
+
+Use modern animated cards with icons.
+
+Topics:
+- Handling after-hours calls without adding headcount
+- Reducing office overload during peak season
+- Using AI alongside your existing CSR team
+- Improving speed-to-lead
+- Membership and recurring service workflows
+- Estimate follow-up automation
+- What contractors are automating first
+- Where human interaction still matters
+
+--------------------------------------------------
+IMPORTANT POSITIONING SECTION
+--------------------------------------------------
+
+Create a visually strong highlighted quote section.
+
+Centered large quote:
+
+"This webinar is not about replacing your office staff. It's about helping your existing team handle more volume, more consistently, without burnout."
+
+Below quote add smaller supporting copy:
+
+"The best operational results happen when AI and your team work together."
+
+This should feel emotionally grounded and trustworthy.
+
+--------------------------------------------------
+MEET THE SPEAKERS SECTION
+--------------------------------------------------
+
+Create premium speaker cards with:
+- circular headshot placeholders
+- company logos if possible
+- modern hover effects
+- dark glassmorphism style
+
+Speakers:
+
+1. Bill Brown
+Title:
+Founder of ServiceTitan Hacks
+
+Bio:
+"Former HVAC business owner who scaled a company to over $3M in revenue before exiting. Bill now helps contractors improve operations through AI, automation, and ServiceTitan workflows."
+
+2. Quinn Litherland
+Title:
+Co-Founder of Revin.ai
+
+Bio:
+"Helping home service businesses improve speed-to-lead, automate workflows, and scale operations using AI-assisted communication systems."
+
+3. Britiny Leung
+Title:
+Director of Operations - Action Furnace Inc.
+
+Bio:
+"Britiny Leung is a call center and operations leader at Action Furnace, one of Canada's leading HVAC companies. She has extensive experience managing high-volume customer communication workflows, office operations, staffing, and implementing AI-assisted systems inside a large home service business."
+
+Additional information from her background:
+- Action Furnace Inc.
+- Calgary, Alberta, Canada
+- Director of Operations
+- Previously Director of Office Operations
+- Long-term operational leadership experience inside a major HVAC company
+
+The speaker section should feel polished and credible.
+
+--------------------------------------------------
+FIRESIDE CHAT FLOW SECTION
+--------------------------------------------------
+
+Create a modern timeline section.
+
+Headline:
+
+"Fireside Chat Topics"
+
+Timeline items:
+- After-hours call handling
+- Overflow during busy season
+- Speed-to-lead
+- Membership follow-up
+- Unsold estimates
+- AI + human teamwork
+- Scaling operations without burnout
+- What contractors are automating first
+
+--------------------------------------------------
+WHY THIS TOPIC MATTERS RIGHT NOW
+--------------------------------------------------
+
+Create a dedicated section explaining:
+- labor costs increasing
+- experienced CSRs are difficult to hire
+- customer expectations rising
+- contractors trying to scale smarter
+- AI becoming operationally relevant
+
+Use a modern split-layout design.
+
+--------------------------------------------------
+REGISTRATION CTA SECTION
+--------------------------------------------------
+
+Large centered CTA section.
+
+Headline:
+
+"Reserve Your Spot"
+
+Subheadline:
+
+"Free live webinar for HVAC, plumbing, and electrical contractors using ServiceTitan."
+
+Form Fields:
+- First Name
+- Last Name
+- Email
+- Company Name
+
+Large CTA button:
+"Register For The Webinar"
+
+Below button:
+"We'll also send the replay after the event."
+
+--------------------------------------------------
+FOOTER
+--------------------------------------------------
+
+Dark modern footer with:
+- ServiceTitan Hacks branding
+- subtle social icons
+- clean minimal layout
+- copyright area
+
+--------------------------------------------------
+TECHNICAL REQUIREMENTS
+--------------------------------------------------
+
+Build using:
+- React
+- Tailwind CSS
+- Framer Motion
+- Lucide React icons
+
+Requirements:
+- Fully responsive
+- Production-quality design
+- Modern SaaS visual quality
+- Fast loading
+- Strong mobile experience
+- Clean animations
+- No lorem ipsum
+- No cheesy stock-photo design
+- Prioritize conversion-focused layout
+- Include hover states throughout
+- Maintain dark premium visual aesthetic
+
+The overall page should feel like:
+- premium SaaS
+- operationally credible
+- contractor-oriented
+- modern AI tooling
+- not overly corporate
+- visually impressive but practical
