@@ -23,8 +23,8 @@ const config = {
   webinarTitle: "How Contractors Are Handling More Calls Without Hiring More CSRs",
   webinarSubtitle:
     "A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses.",
-  webinarDate: "Date & Time Coming Soon",
-  webinarDateShort: "Coming Soon",
+  webinarDate: "Tuesday, May 19, 2026 · 2:00 PM EST",
+  webinarDateShort: "May 19, 2026 · 2:00 PM EST",
   path: "/webinar/ai-csr",
 };
 
