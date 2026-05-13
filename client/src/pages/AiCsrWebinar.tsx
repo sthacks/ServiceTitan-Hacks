@@ -20,6 +20,7 @@ import serviceTitanHacksLogo from "@assets/Horizontal_White_lettering_1767654224
 import hostImage from "@assets/red_shirt_round_1767651554251.png";
 import quinnImage from "@assets/1771211003572_1778696049154.jpeg";
 import britinyImage from "@assets/1710448174241_1778696049153.jpeg";
+import revinHeroImage from "@assets/revin_1778696323692.png";
 
 const config = {
   webinarTitle: "How Contractors Are Handling More Calls Without Hiring More CSRs",
@@ -217,23 +218,15 @@ export default function AiCsrWebinar() {
               </div>
             </div>
 
-            {/* Right — StreamYard registration embed */}
+            {/* Right — promo image */}
             <div className="w-full">
               <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
-                <div style={{ width: "100%", height: "0px", position: "relative", paddingBottom: "56.25%" }}>
-                  <iframe
-                    src="https://streamyard.com/watch/7cdTGEpxbkCV?embed=true"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen"
-                    style={{ width: "100%", height: "100%", position: "absolute", left: 0, top: 0, overflow: "hidden" }}
-                    title="Webinar Registration"
-                    data-testid="iframe-registration-hero"
-                  />
-                </div>
+                <img
+                  src={revinHeroImage}
+                  alt="How Contractors Are Handling More Calls Without Hiring More CSRs — Live Fireside Chat, May 19 2026"
+                  className="w-full h-auto block"
+                />
               </div>
-              <p className="text-center text-white/35 text-xs mt-3">Register above to secure your spot</p>
             </div>
           </div>
         </div>
