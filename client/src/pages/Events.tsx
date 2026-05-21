@@ -242,7 +242,7 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
 
 export default function Events() {
   const upcomingEvents = events.filter(e => e.status === "upcoming" || e.status === "live");
-  const pastEvents = events.filter(e => e.status === "past");
+  const pastEvents = events.filter(e => e.status === "past").sort((a, b) => b.eventDateTime.getTime() - a.eventDateTime.getTime());
   const [, navigate] = useLocation();
   const { toast } = useToast();
   
