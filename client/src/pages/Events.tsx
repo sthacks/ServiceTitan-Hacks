@@ -50,7 +50,8 @@ const events: Event[] = [
     type: "webinar",
     image: revinWebinarImage,
     link: "/webinar/ai-csr",
-    status: "upcoming",
+    youtubeId: "EYRXAtqXVjI",
+    status: "past",
     hosts: ["Bill Brown", "Quinn Litherland", "Britiny Leung"]
   },
   {
