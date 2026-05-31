@@ -10,15 +10,15 @@ export default function Sponsors() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Become a Sponsor | ServiceTitan Hacks"
-        description="Sponsor ServiceTitan Hacks to reach 10,800+ verified ServiceTitan users. Access engaged contractors and decision-makers through our trusted platform."
-        keywords="ServiceTitan sponsorship, contractor marketing, HVAC advertising, plumbing marketing, home service sponsorship"
+        title="Become a Partner | ServiceTitan Hacks"
+        description="Partner with ServiceTitan Hacks to reach 10,800+ verified ServiceTitan users. Access engaged contractors and decision-makers through our trusted platform."
+        keywords="ServiceTitan partnership, contractor marketing, HVAC advertising, plumbing marketing, home service partnership"
         canonicalUrl="https://servicetitanhacks.com/sponsors"
       />
       <Header />
       <main className="flex-1">
         <Hero
-          title="Become a ServiceTitan Hacks Sponsor"
+          title="Become a ServiceTitan Hacks Partner"
           subtitle="Contractors trust people, not ads. Get direct access to verified business owners and decision-makers who already trust our platform."
           dark={true}
         />
@@ -57,7 +57,7 @@ export default function Sponsors() {
             </div>
 
             <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold font-heading mb-6 text-center">Why Sponsor ServiceTitan Hacks?</h2>
+              <h2 className="text-3xl font-bold font-heading mb-6 text-center">Why Partner With ServiceTitan Hacks?</h2>
               <div className="space-y-6">
                 <Card>
                   <CardContent className="p-6">
@@ -87,7 +87,7 @@ export default function Sponsors() {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-3">Measurable Results</h3>
                     <p className="text-muted-foreground">
-                      Track your sponsorship performance with detailed analytics. See exactly how many contractors view, engage with, and click through to your offerings.
+                      Track your partnership performance with detailed analytics. See exactly how many contractors view, engage with, and click through to your offerings.
                     </p>
                   </CardContent>
                 </Card>
@@ -95,12 +95,12 @@ export default function Sponsors() {
             </div>
 
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold font-heading mb-8 text-center">Sponsorship Tiers</h2>
+              <h2 className="text-3xl font-bold font-heading mb-8 text-center">Partnership Tiers</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <Card className="border-primary/20">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-3">💎</div>
-                    <h3 className="text-xl font-bold mb-2">Diamond Sponsor</h3>
+                    <h3 className="text-xl font-bold mb-2">Diamond Partner</h3>
                     <p className="text-muted-foreground text-sm mb-4">Full omnichannel exposure across all platforms</p>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• Featured on website homepage</li>
@@ -114,10 +114,10 @@ export default function Sponsors() {
                 <Card className="border-primary/20">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-3">🥇</div>
-                    <h3 className="text-xl font-bold mb-2">Elite Sponsor</h3>
+                    <h3 className="text-xl font-bold mb-2">Elite Partner</h3>
                     <p className="text-muted-foreground text-sm mb-4">Weekly multi-channel visibility</p>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Sponsors page feature</li>
+                      <li>• Partners page feature</li>
                       <li>• Bi-weekly Facebook posts</li>
                       <li>• Quarterly podcast mentions</li>
                       <li>• YouTube descriptions</li>
@@ -127,10 +127,10 @@ export default function Sponsors() {
                 <Card className="border-primary/20">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-3">🥈</div>
-                    <h3 className="text-xl font-bold mb-2">Featured Sponsor</h3>
+                    <h3 className="text-xl font-bold mb-2">Featured Partner</h3>
                     <p className="text-muted-foreground text-sm mb-4">Regular cross-channel features</p>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Sponsors page listing</li>
+                      <li>• Partners page listing</li>
                       <li>• Monthly Facebook features</li>
                       <li>• Email newsletter mentions</li>
                     </ul>
@@ -139,10 +139,10 @@ export default function Sponsors() {
                 <Card className="border-primary/20">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-3">🥉</div>
-                    <h3 className="text-xl font-bold mb-2">Community Sponsor</h3>
+                    <h3 className="text-xl font-bold mb-2">Community Partner</h3>
                     <p className="text-muted-foreground text-sm mb-4">Entry-level presence</p>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Sponsors page listing</li>
+                      <li>• Partners page listing</li>
                       <li>• Footer logo placement</li>
                       <li>• Periodic Facebook mentions</li>
                     </ul>
@@ -155,7 +155,7 @@ export default function Sponsors() {
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-semibold font-heading mb-4">Ready to Get Started?</h3>
                     <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                      Schedule a call to discuss which sponsorship tier is right for your business and how we can help you reach more contractors.
+                      Schedule a call to discuss which partnership tier is right for your business and how we can help you reach more contractors.
                     </p>
                     <a
                       href="https://go.st-hacks.cc/partnership-discovery"

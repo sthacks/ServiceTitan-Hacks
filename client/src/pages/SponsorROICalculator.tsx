@@ -218,14 +218,14 @@ export default function SponsorROICalculator() {
   return (
     <div className="min-h-screen bg-[#09090b]">
       <SEO 
-        title="Sponsor ROI Calculator - ServiceTitan Hacks"
-        description="Calculate sponsor ROI with verified performance metrics"
+        title="Partner ROI Calculator - ServiceTitan Hacks"
+        description="Calculate partner ROI with verified performance metrics"
         noindex={true}
       />
       
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center" style={{ fontFamily: 'Oxygen, sans-serif' }}>
-          Sponsor ROI Calculator
+          Partner ROI Calculator
         </h1>
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
           Calculate transparent, data-backed ROI projections using verified ServiceTitan Hacks performance metrics and your sales economics.
@@ -274,7 +274,7 @@ export default function SponsorROICalculator() {
                 />
               </div>
               <div>
-                <Label htmlFor="sponsor_monthly_cost" className="text-white">Sponsor Monthly Cost ($) *</Label>
+                <Label htmlFor="sponsor_monthly_cost" className="text-white">Partner Monthly Cost ($) *</Label>
                 <Input
                   id="sponsor_monthly_cost"
                   type="number"

@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
                   <ul className="space-y-2 list-disc pl-6">
                     <li><strong>Contact Information:</strong> name, email address, phone number.</li>
                     <li><strong>Business Information:</strong> company name, role, and industry.</li>
-                    <li><strong>Payment Information:</strong> if you purchase products, courses, or sponsorships.</li>
+                    <li><strong>Payment Information:</strong> if you purchase products, courses, or partnerships.</li>
                     <li><strong>Usage Information:</strong> how you interact with our website, emails, and content.</li>
                     <li><strong>Social Media/Community Data:</strong> if you join our Facebook group or other communities.</li>
                   </ul>
@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
                   <p className="mb-4">We use your information to:</p>
                   <ul className="space-y-2 list-disc pl-6">
                     <li>Provide and improve our services, courses, and community.</li>
-                    <li>Communicate with you about updates, resources, offers, and sponsorships.</li>
+                    <li>Communicate with you about updates, resources, offers, and partnerships.</li>
                     <li>Process payments and deliver products you purchase.</li>
                     <li>Analyze trends to improve user experience.</li>
                     <li>Protect against fraud, misuse, or unauthorized access.</li>
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
                   </p>
                   <ul className="space-y-2 list-disc pl-6">
                     <li><strong>With service providers</strong> who help us operate our website, email system, payment processor, or analytics tools.</li>
-                    <li><strong>With sponsors or partners</strong> only if you explicitly opt in (for example, when requesting a demo through a sponsored post).</li>
+                    <li><strong>With partners</strong> only if you explicitly opt in (for example, when requesting a demo through a partner post).</li>
                     <li><strong>As required by law</strong> to comply with legal obligations or protect our rights.</li>
                   </ul>
                 </CardContent>

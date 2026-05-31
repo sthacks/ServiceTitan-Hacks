@@ -141,22 +141,22 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-blog.png",
   },
   "/partners": {
-    title: "Our Trusted Technology Sponsors",
-    description: "Meet the best-in-class integration sponsors we trust to help you automate and optimize your ServiceTitan workflow.",
+    title: "Our Trusted Technology Partners",
+    description: "Meet the best-in-class integration partners we trust to help you automate and optimize your ServiceTitan workflow.",
     ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
   "/partners/smartac": {
-    title: "SmartAC | ServiceTitan Hacks Sponsor",
+    title: "SmartAC | ServiceTitan Hacks Partner",
     description: "SmartAC provides remote HVAC monitoring that reduces truck rolls and increases membership retention. Comfort without concern.",
     ogImage: "https://servicetitanhacks.com/og-smartac-partner.png",
   },
   "/partners/wink-toolbox": {
-    title: "Wink Toolbox | ServiceTitan Hacks Sponsor",
+    title: "Wink Toolbox | ServiceTitan Hacks Partner",
     description: "Back-office AI automation that delivers immediate, measurable returns. Stop buying hype—start building your profitability engine.",
     ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
   },
   "/partners/contractor-commerce": {
-    title: "Contractor Commerce | ServiceTitan Hacks Sponsor",
+    title: "Contractor Commerce | ServiceTitan Hacks Partner",
     description: "Built by contractors, for contractors. Online HVAC system pricing and sales tools that let homeowners shop on their terms.",
     ogImage: "https://servicetitanhacks.com/og-contractor-commerce-partner.jpg",
   },
@@ -166,10 +166,10 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-all-access.png",
   },
   
-  // Sponsorship
+  // Partnership
   "/sponsor": {
-    title: "Sponsorship — ServiceTitan Hacks",
-    description: "Direct sponsorship access to 10,800+ ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community.",
+    title: "Partnership — ServiceTitan Hacks",
+    description: "Direct partnership access to 10,800+ ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community.",
     ogImage: "https://servicetitanhacks.com/og-home.png",
   },
 

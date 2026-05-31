@@ -46,7 +46,7 @@ const stats = [
 const whyItems = [
   {
     heading: "Trust transfers",
-    body: "Members already trust the community. Sponsorship inherits that trust. Cold ads start from zero.",
+    body: "Members already trust the community. Partnership inherits that trust. Cold ads start from zero.",
   },
   {
     heading: "Verified contractors only",
@@ -54,7 +54,7 @@ const whyItems = [
   },
   {
     heading: "Compounding visibility",
-    body: "Sponsors show up across Facebook, email, podcast, YouTube, and webinars. Every touch reinforces the last.",
+    body: "Partners show up across Facebook, email, podcast, YouTube, and webinars. Every touch reinforces the last.",
   },
 ];
 
@@ -105,7 +105,7 @@ const tiers = [
       "Logo in Facebook group header",
       "Monthly dedicated email send",
       "Logo in email header",
-      "Sponsor page placement and tracked CTA",
+      "Partner page placement and tracked CTA",
       "Monthly report",
       "Monthly strategy call",
       "Category exclusivity",
@@ -120,7 +120,7 @@ const tiers = [
       "1 cross-channel Short feature per quarter",
       "2 Facebook posts per month",
       "Email inclusion every 2 months",
-      "Sponsor page listing",
+      "Partner page listing",
       "Quarterly report",
       "Quarterly strategy call",
     ],
@@ -133,7 +133,7 @@ const tiers = [
     deliverables: [
       "1 Facebook post per month",
       "Email inclusion once per quarter",
-      "Shared sponsor section on website",
+      "Shared partner section on website",
       "Quarterly summary",
       "Quarterly strategy call",
     ],
@@ -202,8 +202,8 @@ export default function Sponsor() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "#0A0A0A", color: "#fff" }}>
       <SEO
-        title="Sponsorship — ServiceTitan Hacks"
-        description="Direct sponsorship access to 10,800+ ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community."
+        title="Partnership — ServiceTitan Hacks"
+        description="Direct partnership access to 10,800+ ServiceTitan contractors. Webinars, podcast, email, and retargeting across the largest verified ServiceTitan community."
         canonicalUrl="https://servicetitanhacks.com/sponsor"
         ogImage="https://servicetitanhacks.com/og-home.png"
       />
@@ -221,7 +221,7 @@ export default function Sponsor() {
             className="text-xs font-bold tracking-widest uppercase mb-6"
             style={{ color: "#DC143C" }}
           >
-            Sponsorship
+            Partnership
           </p>
           <h1
             className="font-medium leading-tight mb-6"
@@ -303,7 +303,7 @@ export default function Sponsor() {
             className="font-medium mb-12"
             style={{ fontSize: "32px", color: "#fff" }}
           >
-            Why community sponsorship beats cold ads
+            Why community partnership beats cold ads
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {whyItems.map((item, i) => (
@@ -387,7 +387,7 @@ export default function Sponsor() {
             How one webinar becomes 30 days of content
           </h2>
           <p className="mb-14" style={{ color: "#888", fontSize: "16px" }}>
-            Sponsorship isn't a logo placement. It's a content engine.
+            Partnership isn't a logo placement. It's a content engine.
           </p>
           {/* Flow diagram */}
           <div className="flex flex-col md:flex-row items-stretch gap-0">
@@ -441,10 +441,10 @@ export default function Sponsor() {
             className="font-medium mb-3"
             style={{ fontSize: "32px", color: "#fff" }}
           >
-            Sponsorship tiers
+            Partnership tiers
           </h2>
           <p className="mb-14" style={{ color: "#888", fontSize: "16px" }}>
-            Four levels of sponsorship. Pricing discussed on the strategy call.
+            Four levels of partnership. Pricing discussed on the strategy call.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {tiers.map((tier) => (
@@ -518,7 +518,7 @@ export default function Sponsor() {
             className="font-medium mb-3"
             style={{ fontSize: "32px", color: "#fff" }}
           >
-            What happens when sponsors show up
+            What happens when partners show up
           </h2>
           <p className="mb-14" style={{ color: "#888", fontSize: "16px" }}>
             Real results from real campaigns.
@@ -538,7 +538,7 @@ export default function Sponsor() {
               >
                 {t.isPlaceholder ? (
                   <div style={{ color: "#555", fontSize: "14px" }}>
-                    Sponsor case study — coming soon
+                    Partner case study — coming soon
                   </div>
                 ) : (
                   <>
@@ -584,7 +584,7 @@ export default function Sponsor() {
             className="font-medium mb-3"
             style={{ fontSize: "32px", color: "#fff" }}
           >
-            Current sponsors
+            Current partners
           </h2>
           <p className="mb-14" style={{ color: "#888", fontSize: "16px" }}>
             A select group of category leaders. Limited slots per category.
