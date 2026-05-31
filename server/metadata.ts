@@ -150,11 +150,6 @@ export const metadata: Record<string, PageMetadata> = {
     description: "SmartAC provides remote HVAC monitoring that reduces truck rolls and increases membership retention. Comfort without concern.",
     ogImage: "https://servicetitanhacks.com/og-smartac-partner.png",
   },
-  "/partners/wink-toolbox": {
-    title: "Wink Toolbox | ServiceTitan Hacks Partner",
-    description: "Back-office AI automation that delivers immediate, measurable returns. Stop buying hype—start building your profitability engine.",
-    ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
-  },
   "/partners/contractor-commerce": {
     title: "Contractor Commerce | ServiceTitan Hacks Partner",
     description: "Built by contractors, for contractors. Online HVAC system pricing and sales tools that let homeowners shop on their terms.",

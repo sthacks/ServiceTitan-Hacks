@@ -6,7 +6,6 @@ import SEO from "@/components/SEO";
 import { Check, ArrowRight, PhoneCall } from "lucide-react";
 import smartACLogo from "@assets/logos.zip - smartac_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
-import winkLogo from "@assets/logos.zip - 6_1762019262110.png";
 
 const BOOK_CALL_URL = "https://scheduler.zoom.us/bill-brown-7cynuw/30-min";
 
@@ -605,18 +604,6 @@ export default function Sponsor() {
                   PhoneTap
                 </span>
               </div>
-            </div>
-            {/* Wink Toolbox */}
-            <div
-              className="flex items-center justify-center p-8"
-              style={{ background: "#1A1A1A", borderRadius: 0, minHeight: "100px" }}
-              data-testid="logo-wink"
-            >
-              <img
-                src={winkLogo}
-                alt="Wink Toolbox"
-                style={{ width: "120px", objectFit: "contain", filter: "brightness(0) invert(1)" }}
-              />
             </div>
             {/* smartAC */}
             <div
