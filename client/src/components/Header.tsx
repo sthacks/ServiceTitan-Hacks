@@ -14,7 +14,6 @@ const resourcesLinks = [
   { path: "/blog", label: "Blog" },
   { path: "/podcast", label: "Podcast" },
   { path: "/events", label: "Events" },
-  { path: "/partners", label: "Partners" },
   { path: "/purchasing-platform", label: "HVAC Equipment Purchasing Platform" },
 ];
 
@@ -127,20 +126,19 @@ export default function Header() {
             </Link>
 
             <DropdownMenu label="Apps & Tools" links={appsAndToolsLinks} currentPath={location} />
-            <DropdownMenu label="Resources" links={resourcesLinks} currentPath={location} />
 
-            <a
-              href="https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="/partners">
               <span
-                className="px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer text-white hover:text-gray-300"
-                data-testid="link-nav-all-access-pass"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
+                  location === "/partners" ? "text-primary" : "text-white hover:text-gray-300"
+                }`}
+                data-testid="link-nav-partners"
               >
-                All-Access Pass
+                Partners
               </span>
-            </a>
+            </Link>
+
+            <DropdownMenu label="Resources" links={resourcesLinks} currentPath={location} />
 
             <a
               href="https://www.facebook.com/groups/servicetitanhacks"
@@ -265,6 +263,20 @@ export default function Header() {
                 </div>
               )}
 
+              <Link href="/partners">
+                <span
+                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer ${
+                    location === "/partners"
+                      ? "text-primary bg-white/10"
+                      : "text-white hover:bg-white/10"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  data-testid="link-mobile-partners"
+                >
+                  Partners
+                </span>
+              </Link>
+
               {/* Resources accordion */}
               <button
                 className="flex items-center justify-between w-full px-3 py-2 text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors"
@@ -293,20 +305,6 @@ export default function Header() {
                   ))}
                 </div>
               )}
-
-              <a
-                href="https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span
-                  className="block px-3 py-2 text-base font-medium rounded-md transition-colors cursor-pointer text-white hover:bg-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="link-mobile-all-access-pass"
-                >
-                  All-Access Pass
-                </span>
-              </a>
 
               <a
                 href="https://www.facebook.com/groups/servicetitanhacks"
