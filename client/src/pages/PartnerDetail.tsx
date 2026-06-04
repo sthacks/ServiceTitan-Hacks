@@ -37,6 +37,7 @@ import winkCoachBadge from "@assets/Certified Provider Coach Badge-1_17631457512
 import winkCustomerLogos from "@assets/wink-customer-logos.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import dataturkLogo from "@assets/logo-21b053a2661df6e0f2bed3fa3d77630731d6a715ed24b52912e636d38_1765216543435.png";
+import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 
 interface Partner {
   name: string;
@@ -606,6 +607,13 @@ export default function PartnerDetail() {
       logo: contractorCommerceLogo,
       description: "E-commerce and online sales solutions tailored specifically for home service contractors and ServiceTitan users.",
       url: "https://go.st-hacks.cc/contractor-commerce",
+    },
+    {
+      name: "Broccoli AI",
+      slug: "broccoli-ai",
+      logo: broccoliLogo,
+      description: "AI voice agents built for home service contractors using ServiceTitan.",
+      url: "https://go.st-hacks.cc/broccoli-ai",
     },
     {
       name: "LiveSwitch",
@@ -1785,6 +1793,126 @@ export default function PartnerDetail() {
             </form>
           </DialogContent>
         </Dialog>
+      </div>
+    );
+  }
+
+  // Render Broccoli AI page
+  if (partner.slug === "broccoli-ai") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title="Broccoli AI Partner | ServiceTitan Hacks"
+          description="Broccoli AI helps ServiceTitan contractors answer calls, improve booking consistency, and reduce pressure on busy CSR teams with AI voice agents."
+          keywords="Broccoli AI, ServiceTitan partner, AI voice agent, contractor call handling, CSR automation"
+          canonicalUrl="https://servicetitanhacks.com/partners/broccoli-ai"
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={broccoliLogo}
+                    alt="Broccoli AI logo"
+                    className="object-contain max-h-16 w-auto"
+                    data-testid="img-partner-logo"
+                  />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  Broccoli AI
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  AI voice agents built for home service contractors using ServiceTitan.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-4xl px-6">
+              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+                Broccoli helps contractors answer calls, book more jobs, and reduce pressure on busy CSR teams without adding headcount.
+              </p>
+
+              <div className="space-y-6 mb-12">
+                <Card className="bg-card border-0" data-testid="card-feature-call-flows">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      AI voice agents for real contractor call flows
+                    </h3>
+                    <p className="text-foreground">
+                      Broccoli answers inbound calls, talks with customers naturally, qualifies the opportunity, and helps move the call toward the right next step.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-booking">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Built around booking and speed-to-lead
+                    </h3>
+                    <p className="text-foreground">
+                      When calls come in after hours, during lunch, or while your CSR team is overloaded, Broccoli helps protect revenue that would normally slip through the cracks.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-servicetitan">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Designed for ServiceTitan contractors
+                    </h3>
+                    <p className="text-foreground">
+                      Broccoli works with home service operators who need better call handling, stronger customer experience, and more consistent booking outcomes.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center space-y-4">
+                <a
+                  href="https://go.st-hacks.cc/broccoli-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-book-demo"
+                >
+                  <Button size="lg">
+                    Book a Demo
+                  </Button>
+                </a>
+                <div>
+                  <a
+                    href="https://go.st-hacks.cc/broccoli-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="link-learn-more"
+                  >
+                    <Button size="lg" variant="outline" className="gap-2">
+                      Learn More <ExternalLink className="h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
       </div>
     );
   }

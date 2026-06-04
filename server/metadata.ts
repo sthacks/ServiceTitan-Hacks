@@ -155,6 +155,10 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Built by contractors, for contractors. Online HVAC system pricing and sales tools that let homeowners shop on their terms.",
     ogImage: "https://servicetitanhacks.com/og-contractor-commerce-partner.jpg",
   },
+  "/partners/broccoli-ai": {
+    title: "Broccoli AI Partner | ServiceTitan Hacks",
+    description: "Broccoli AI helps ServiceTitan contractors answer calls, improve booking consistency, and reduce pressure on busy CSR teams with AI voice agents.",
+  },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
     description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",

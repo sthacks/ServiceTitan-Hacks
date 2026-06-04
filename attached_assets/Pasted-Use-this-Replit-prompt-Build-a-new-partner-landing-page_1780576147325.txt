@@ -1,0 +1,104 @@
+Use this Replit prompt:
+
+Build a new partner landing page for Broccoli AI on the ServiceTitan Hacks website.
+
+Use the existing Contractor Commerce partner page as the visual and structural reference:
+
+* URL pattern: /partners/broccoli-ai
+* Match the same general layout as the Contractor Commerce page:
+
+  * Top navigation/header
+  * Back to Partners link
+  * Centered partner logo
+  * Partner name headline
+  * Short one-sentence positioning statement
+  * Light gray content section
+  * Centered intro paragraph
+  * Three stacked feature cards
+  * Primary CTA button
+  * Secondary "Learn More" button if needed
+  * Existing footer and partner logo section
+
+The Contractor Commerce page uses a clean centered layout with the partner logo at the top, headline underneath, a short description, then three simple value cards and a CTA section. Keep that same structure. Reference screenshot: Contractor Commerce partner page attached. 
+
+Create the Broccoli AI page with this copy:
+
+Hero logo:
+Use Broccoli AI logo placeholder for now:
+[ADD BROCCOLI LOGO URL HERE]
+
+Hero headline:
+Broccoli AI
+
+Hero subheadline:
+AI voice agents built for home service contractors using ServiceTitan.
+
+Intro paragraph:
+Broccoli helps contractors answer calls, book more jobs, and reduce pressure on busy CSR teams without adding headcount.
+
+Feature card 1:
+AI voice agents for real contractor call flows
+
+Body:
+Broccoli answers inbound calls, talks with customers naturally, qualifies the opportunity, and helps move the call toward the right next step.
+
+Feature card 2:
+Built around booking and speed-to-lead
+
+Body:
+When calls come in after hours, during lunch, or while your CSR team is overloaded, Broccoli helps protect revenue that would normally slip through the cracks.
+
+Feature card 3:
+Designed for ServiceTitan contractors
+
+Body:
+Broccoli works with home service operators who need better call handling, stronger customer experience, and more consistent booking outcomes.
+
+Primary CTA button:
+Book a Demo
+
+Primary CTA URL:
+[ADD BROCCOLI TRACKING / BOOKING LINK HERE]
+
+Secondary CTA button:
+Learn More
+
+Secondary CTA URL:
+[ADD BROCCOLI WEBSITE OR PARTNER TRACKING LINK HERE]
+
+Design requirements:
+
+* Match the existing ServiceTitan Hacks site styling.
+* Use the same header and footer components used on the Contractor Commerce partner page.
+* Keep the page clean and simple.
+* Use ServiceTitan Hacks brand colors:
+
+  * #000000
+  * #ec164d
+  * #c20f3d
+  * #7c7c7c
+  * #6c6c6c
+* Use Oxygen font if available.
+* Use a white background for the main hero area.
+* Use a light gray background section for the feature cards.
+* CTA button should use #ec164d with white text.
+* Keep the content centered with a max width similar to the Contractor Commerce page.
+* Make the page fully responsive on mobile.
+
+SEO:
+Page title:
+Broccoli AI Partner | ServiceTitan Hacks
+
+Meta description:
+Broccoli AI helps ServiceTitan contractors answer calls, improve booking consistency, and reduce pressure on busy CSR teams with AI voice agents.
+
+Slug:
+partners/broccoli-ai
+
+After building the page, make sure:
+
+* The page is linked from the Partners page.
+* The logo displays correctly.
+* Buttons work.
+* Mobile layout is clean.
+* Existing site navigation and footer are preserved.

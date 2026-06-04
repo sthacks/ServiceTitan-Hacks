@@ -11,6 +11,7 @@ import liveswitchLogo from "@assets/logos.zip - liveswitch_1762019262110.png";
 import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
+import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 
 export default function Partners() {
   const [, setLocation] = useLocation();
@@ -29,6 +30,13 @@ export default function Partners() {
       logo: contractorCommerceLogo,
       description: "E-commerce and online sales solutions tailored specifically for home service contractors and ServiceTitan users.",
       url: "https://go.st-hacks.cc/contractor-commerce",
+    },
+    {
+      name: "Broccoli AI",
+      slug: "broccoli-ai",
+      logo: broccoliLogo,
+      description: "AI voice agents that help ServiceTitan contractors answer calls, book more jobs, and reduce pressure on busy CSR teams.",
+      url: "https://go.st-hacks.cc/broccoli-ai",
     },
     {
       name: "LiveSwitch",
