@@ -5,6 +5,7 @@ import smartACLogo from "@assets/logos.zip - smartac_1762023015702.png";
 import liveswitchLogo from "@assets/logos.zip - liveswitch_1762022633613.png";
 import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
+import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
 
 export default function Footer() {
@@ -30,6 +31,7 @@ export default function Footer() {
   const partners = [
     { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
+    { name: "Broccoli AI", logo: broccoliLogo, slug: "broccoli-ai" },
     { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
     { name: "Polycam", logo: polycamLogo, slug: "polycam" },
     { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },
