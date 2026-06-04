@@ -33,7 +33,7 @@ export default function Footer() {
     { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
     { name: "Broccoli AI", logo: broccoliLogo, slug: "broccoli-ai" },
-    { name: "PhoneTap", logo: phonetapLogo, externalUrl: "https://phonetap.ai/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" },
+    { name: "PhoneTap", logo: phonetapLogo, slug: "phonetap" },
     { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
     { name: "Polycam", logo: polycamLogo, slug: "polycam" },
     { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },

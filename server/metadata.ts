@@ -159,6 +159,10 @@ export const metadata: Record<string, PageMetadata> = {
     title: "Broccoli AI Partner | ServiceTitan Hacks",
     description: "Broccoli AI helps ServiceTitan contractors answer calls, improve booking consistency, and reduce pressure on busy CSR teams with AI voice agents.",
   },
+  "/partners/phonetap": {
+    title: "PhoneTap | ServiceTitan Hacks Partner",
+    description: "PhoneTap helps ServiceTitan contractors analyze calls, find missed revenue, fix bad call data, and give CSR managers clearer daily insights.",
+  },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
     description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",

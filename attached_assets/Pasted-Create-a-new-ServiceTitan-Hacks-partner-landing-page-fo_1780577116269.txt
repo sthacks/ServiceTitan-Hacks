@@ -1,0 +1,77 @@
+Create a new ServiceTitan Hacks partner landing page for PhoneTap.
+
+Use the existing partner page design and layout style from the Contractor Commerce partner page as the model.
+
+Page URL:
+`/partners/phonetap`
+
+Overall design requirements:
+
+* Match the existing ServiceTitan Hacks site styling.
+* Keep the same header/navigation and footer.
+* Use a clean, simple partner-page layout.
+* White hero section.
+* Light gray content section.
+* Centered logo, headline, subtitle, and CTA buttons.
+* Use simple, direct copy at an 8th-9th grade reading level.
+* Do not make the page text-heavy.
+* Keep the page visually consistent with the current partner pages.
+
+Hero section:
+
+* Add a small "Back to Partners" link above the logo.
+* Center the PhoneTap logo.
+* Main headline: `PhoneTap`
+* Subtitle: `AI call intelligence for ServiceTitan contractors.`
+* Short supporting line: `PhoneTap helps home service companies find missed calls, fix bad call data, and understand what is really happening on the phones.`
+
+Main content section:
+Use a light gray background section similar to the existing partner page.
+
+Intro copy, centered:
+`PhoneTap reviews your calls, classifies what happened, and gives managers a clear picture of booking performance, missed revenue, and CSR opportunities.`
+
+Add three stacked white feature cards:
+
+Card 1:
+Title: `Fix bad call data in ServiceTitan`
+Body:
+`PhoneTap analyzes inbound calls and helps identify when call types, booking outcomes, or missed-call data are wrong. This gives managers cleaner reporting and a more accurate view of the business.`
+
+Card 2:
+Title: `Find missed revenue opportunities`
+Body:
+`PhoneTap helps surface calls that were missed, mishandled, or not booked correctly, so your team can follow up before the opportunity is lost.`
+
+Card 3:
+Title: `Give CSR managers a clearer daily view`
+Body:
+`PhoneTap turns call activity into simple insights managers can use, including answered calls, booked calls, unbooked calls, missed calls, and calls that need attention.`
+
+CTA buttons:
+Primary button:
+Text: `Book a Demo`
+Link: `[INSERT PHONETAP DEMO LINK]`
+
+Secondary button:
+Text: `Learn More`
+Link: `[INSERT PHONETAP WEBSITE OR INFO LINK]`
+
+Footer partner logo area:
+
+* Add PhoneTap to the "Our Partners" logo row if that partner logo section is controlled by this page/template.
+* Make sure the logo size matches the other partner logos.
+
+SEO/meta:
+Page title:
+`PhoneTap | ServiceTitan Hacks Partner`
+
+Meta description:
+`PhoneTap helps ServiceTitan contractors analyze calls, find missed revenue, fix bad call data, and give CSR managers clearer daily insights.`
+
+Important:
+
+* Do not redesign the entire site.
+* Do not change global navigation unless required to add the partner page.
+* Reuse existing components, spacing, button styles, typography, and footer wherever possible.
+* Keep the layout simple and close to the current Contractor Commerce partner page.

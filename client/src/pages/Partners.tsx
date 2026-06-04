@@ -12,6 +12,7 @@ import polycamLogo from "@assets/logos.zip - polycam_1762019262110.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762019262110.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
+import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 
 export default function Partners() {
   const [, setLocation] = useLocation();
@@ -37,6 +38,13 @@ export default function Partners() {
       logo: broccoliLogo,
       description: "AI voice agents that help ServiceTitan contractors answer calls, book more jobs, and reduce pressure on busy CSR teams.",
       url: "https://go.st-hacks.cc/broccoli-ai",
+    },
+    {
+      name: "PhoneTap",
+      slug: "phonetap",
+      logo: phonetapLogo,
+      description: "AI call intelligence that helps ServiceTitan contractors find missed calls, fix bad call data, and understand what's really happening on the phones.",
+      url: "https://phonetap.ai/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page",
     },
     {
       name: "LiveSwitch",

@@ -38,6 +38,7 @@ import winkCustomerLogos from "@assets/wink-customer-logos.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import dataturkLogo from "@assets/logo-21b053a2661df6e0f2bed3fa3d77630731d6a715ed24b52912e636d38_1765216543435.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
+import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 
 interface Partner {
   name: string;
@@ -614,6 +615,13 @@ export default function PartnerDetail() {
       logo: broccoliLogo,
       description: "AI voice agents built for home service contractors using ServiceTitan.",
       url: "https://go.st-hacks.cc/broccoli-ai",
+    },
+    {
+      name: "PhoneTap",
+      slug: "phonetap",
+      logo: phonetapLogo,
+      description: "AI call intelligence for ServiceTitan contractors.",
+      url: "https://phonetap.ai/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page",
     },
     {
       name: "LiveSwitch",
@@ -1896,6 +1904,130 @@ export default function PartnerDetail() {
                     Book a Demo
                   </Button>
                 </a>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Render PhoneTap page
+  if (partner.slug === "phonetap") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title="PhoneTap | ServiceTitan Hacks Partner"
+          description="PhoneTap helps ServiceTitan contractors analyze calls, find missed revenue, fix bad call data, and give CSR managers clearer daily insights."
+          keywords="PhoneTap, ServiceTitan partner, call intelligence, AI call analytics, CSR performance, missed revenue"
+          canonicalUrl="https://servicetitanhacks.com/partners/phonetap"
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={phonetapLogo}
+                    alt="PhoneTap logo"
+                    className="object-contain max-h-16 w-auto"
+                    data-testid="img-partner-logo"
+                  />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  PhoneTap
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  AI call intelligence for ServiceTitan contractors.
+                </p>
+
+                <p className="text-base text-muted-foreground mb-12 max-w-2xl mx-auto">
+                  PhoneTap helps home service companies find missed calls, fix bad call data, and understand what is really happening on the phones.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-4xl px-6">
+              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+                PhoneTap reviews your calls, classifies what happened, and gives managers a clear picture of booking performance, missed revenue, and CSR opportunities.
+              </p>
+
+              <div className="space-y-6 mb-12">
+                <Card className="bg-card border-0" data-testid="card-feature-call-data">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Fix bad call data in ServiceTitan
+                    </h3>
+                    <p className="text-foreground">
+                      PhoneTap analyzes inbound calls and helps identify when call types, booking outcomes, or missed-call data are wrong. This gives managers cleaner reporting and a more accurate view of the business.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-missed-revenue">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Find missed revenue opportunities
+                    </h3>
+                    <p className="text-foreground">
+                      PhoneTap helps surface calls that were missed, mishandled, or not booked correctly, so your team can follow up before the opportunity is lost.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-csr-view">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Give CSR managers a clearer daily view
+                    </h3>
+                    <p className="text-foreground">
+                      PhoneTap turns call activity into simple insights managers can use, including answered calls, booked calls, unbooked calls, missed calls, and calls that need attention.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center space-y-4">
+                <a
+                  href="https://phonetap.ai/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-book-demo"
+                >
+                  <Button size="lg">
+                    Book a Demo
+                  </Button>
+                </a>
+                <div>
+                  <a
+                    href="https://phonetap.ai?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="link-learn-more"
+                  >
+                    <Button size="lg" variant="outline" className="gap-2">
+                      Learn More <ExternalLink className="h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </section>
