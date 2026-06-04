@@ -1887,7 +1887,7 @@ export default function PartnerDetail() {
 
               <div className="text-center space-y-4">
                 <a
-                  href="https://go.st-hacks.cc/broccoli-ai"
+                  href="https://www.broccoli.com/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-book-demo"
