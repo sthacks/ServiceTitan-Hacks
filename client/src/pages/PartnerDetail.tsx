@@ -2016,18 +2016,6 @@ export default function PartnerDetail() {
                     Book a Demo
                   </Button>
                 </a>
-                <div>
-                  <a
-                    href="https://phonetap.ai?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="link-learn-more"
-                  >
-                    <Button size="lg" variant="outline" className="gap-2">
-                      Learn More <ExternalLink className="h-5 w-5" />
-                    </Button>
-                  </a>
-                </div>
               </div>
             </div>
           </section>
