@@ -1896,18 +1896,6 @@ export default function PartnerDetail() {
                     Book a Demo
                   </Button>
                 </a>
-                <div>
-                  <a
-                    href="https://go.st-hacks.cc/broccoli-ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="link-learn-more"
-                  >
-                    <Button size="lg" variant="outline" className="gap-2">
-                      Learn More <ExternalLink className="h-5 w-5" />
-                    </Button>
-                  </a>
-                </div>
               </div>
             </div>
           </section>
