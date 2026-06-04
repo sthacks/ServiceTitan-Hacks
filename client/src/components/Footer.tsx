@@ -6,6 +6,7 @@ import liveswitchLogo from "@assets/logos.zip - liveswitch_1762022633613.png";
 import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
+import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
 
 export default function Footer() {
@@ -32,6 +33,7 @@ export default function Footer() {
     { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
     { name: "Broccoli AI", logo: broccoliLogo, slug: "broccoli-ai" },
+    { name: "PhoneTap", logo: phonetapLogo, externalUrl: "https://phonetap.ai/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" },
     { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
     { name: "Polycam", logo: polycamLogo, slug: "polycam" },
     { name: "Service Crucible", logo: serviceCrucibleLogo, slug: "service-crucible" },
@@ -122,24 +124,41 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-6 text-center">Our Partners</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center justify-center mb-8">
-            {partners.map((partner, index) => (
-              <Link
-                key={index}
-                href={`/partners/${partner.slug}`}
-              >
-                <span
-                  className="hover-elevate transition-all flex items-center justify-center cursor-pointer"
-                  data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-16' : 'h-12'}`}
-                    loading="lazy"
-                  />
-                </span>
-              </Link>
-            ))}
+            {partners.map((partner, index) => {
+              const imgEl = (
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className={`w-auto object-contain ${partner.name === 'SmartAC' || partner.name === 'Contractor Commerce' ? 'h-16' : 'h-12'}`}
+                  loading="lazy"
+                />
+              );
+              const testId = `link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`;
+              if ('externalUrl' in partner && partner.externalUrl) {
+                return (
+                  <a
+                    key={index}
+                    href={partner.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover-elevate transition-all flex items-center justify-center cursor-pointer"
+                    data-testid={testId}
+                  >
+                    {imgEl}
+                  </a>
+                );
+              }
+              return (
+                <Link key={index} href={`/partners/${partner.slug}`}>
+                  <span
+                    className="hover-elevate transition-all flex items-center justify-center cursor-pointer"
+                    data-testid={testId}
+                  >
+                    {imgEl}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
