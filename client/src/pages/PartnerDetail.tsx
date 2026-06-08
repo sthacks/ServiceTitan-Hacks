@@ -1947,17 +1947,6 @@ export default function PartnerDetail() {
               </Button>
 
               <div className="text-center">
-                <div className="mb-8 flex items-center justify-center">
-                  <div className="bg-gray-900 rounded-lg px-8 py-5 inline-flex items-center justify-center">
-                    <img
-                      src={sharewillowLogo}
-                      alt="ShareWillow logo"
-                      className="object-contain max-h-12 w-auto"
-                      data-testid="img-partner-logo"
-                    />
-                  </div>
-                </div>
-
                 <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
                   ShareWillow
                 </h1>
