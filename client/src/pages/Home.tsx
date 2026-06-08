@@ -5,13 +5,14 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import EmailCapture from "@/components/EmailCapture";
-import { BookOpen, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText, Settings, FileSpreadsheet } from "lucide-react";
+import { BookOpen, Gift, Key, ExternalLink, ArrowRight, Headphones, ShoppingCart, FileText, Settings, FileSpreadsheet, Handshake } from "lucide-react";
 import heroImage from "@assets/Untitled design_1760804581569.png";
 import podcastImage from "@assets/podcast_1760814740328.png";
 import buyingGroupImage from "@assets/$ (1)_1761314542186.png";
 import servicesImage from "@assets/1072722_custom_site_themes_id_wPQ226FHSzWW8kg7Kz2o_31639583-3__1775564469964.jpg";
 import blogImage from "@assets/32563772-1_1762708907799.jpg";
 import pricebookAfterImg from "@assets/before_(5)_1777407931071.png";
+import partnersImage from "@assets/ChatGPT_Image_Jun_8,_2026,_11_38_58_AM_1780933151888.png";
 
 export default function Home() {
   const organizationSchema = {
@@ -51,13 +52,13 @@ export default function Home() {
       cta: "Claim a Founder Spot",
     },
     {
-      title: "Automations",
-      description: "Done-for-you ServiceTitan automations: lead routing, dispatch dashboards, custom workflows, and reporting systems built for your shop.",
-      icon: Settings,
-      link: "/servicetitan-automation-services",
-      image: servicesImage,
-      alt: "ServiceTitan automation services - done-for-you workflow and forms implementation",
-      cta: "Explore Automations",
+      title: "Partners",
+      description: "Vetted tools and services built for ServiceTitan contractors. Our partners help you book more jobs, automate your shop, and grow faster.",
+      icon: Handshake,
+      link: "/partners",
+      image: partnersImage,
+      alt: "ServiceTitan Hacks partners - vetted tools and services for contractors",
+      cta: "Browse Partners",
     },
     {
       title: "Courses",
