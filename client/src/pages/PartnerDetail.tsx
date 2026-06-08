@@ -39,7 +39,7 @@ import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import dataturkLogo from "@assets/logo-21b053a2661df6e0f2bed3fa3d77630731d6a715ed24b52912e636d38_1765216543435.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
-import sharewillowLogo from "@assets/sharewillow_1780931883497.png";
+import sharewillowLogo from "@assets/sharewillow_1780932326327.png";
 
 interface Partner {
   name: string;
