@@ -1247,7 +1247,7 @@ const blogPostContent: Record<string, JSX.Element> = {
           Titan Dashboards gives you a simple, beautiful 3-day capacity view—synced directly with ServiceTitan. No spreadsheets. No noise. Just clarity.
         </p>
         <a 
-          href="https://titandashboards.com" 
+          href="https://titandashboards.com?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-block bg-[#ED254E] hover:bg-[#C1121F] text-white font-bold py-3 px-6 rounded-lg transition-colors"
@@ -1381,7 +1381,7 @@ const blogPostContent: Record<string, JSX.Element> = {
           The Titan Call Board gives you a simple, beautiful view of your next 3 days—synced directly with ServiceTitan. No spreadsheets. No noise. Just clarity.
         </p>
         <a 
-          href="https://titandashboards.com" 
+          href="https://titandashboards.com?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-6 py-3 rounded-md transition-colors"
@@ -1519,7 +1519,7 @@ const blogPostContent: Record<string, JSX.Element> = {
       </ul>
 
       <p>
-        These tools increase trust and dramatically improve lead volume. Platforms like <a href="https://go.st-hacks.cc/contractor-commerce" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-1">Contractor Commerce</a> enable HVAC contractors to offer instant online pricing for system replacements, allowing homeowners to configure and price their system without requiring a phone call.
+        These tools increase trust and dramatically improve lead volume. Platforms like <a href="https://go.st-hacks.cc/contractor-commerce?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-contractor-commerce-1">Contractor Commerce</a> enable HVAC contractors to offer instant online pricing for system replacements, allowing homeowners to configure and price their system without requiring a phone call.
       </p>
 
       <p className="font-semibold">Fact:</p>
@@ -1587,7 +1587,7 @@ const blogPostContent: Record<string, JSX.Element> = {
           Learn how Contractor Commerce enables HVAC contractors to offer transparent online pricing that builds trust with Millennial homeowners, increases lead volume, and gives you the early-adopter advantage.
         </p>
         <a 
-          href="https://go.st-hacks.cc/contractor-commerce" 
+          href="https://go.st-hacks.cc/contractor-commerce?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[#ED254E] hover:bg-[#C1121F] text-white font-semibold px-6 py-3 rounded-md transition-colors"
@@ -2621,7 +2621,7 @@ export default function BlogPost() {
               <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
                 Learn how PhoneTap uses AI to classify every call, uncover lost revenue, and give your team the accurate data they need.
               </p>
-              <a href="https://phonetap.ai" target="_blank" rel="noopener noreferrer">
+              <a href="https://phonetap.ai?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" data-testid="button-phonetap-learn-more">
                   Learn More at PhoneTap.ai
                 </Button>

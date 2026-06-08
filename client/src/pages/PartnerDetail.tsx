@@ -753,7 +753,7 @@ export default function PartnerDetail() {
                     <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
                       <span className="text-primary">1.</span>
                       <a 
-                        href="https://go.st-hacks.cc/wink-ocr"
+                        href="https://go.st-hacks.cc/wink-ocr?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline"
@@ -772,7 +772,7 @@ export default function PartnerDetail() {
                     <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
                       <span className="text-primary">2.</span>
                       <a 
-                        href="https://go.st-hacks.cc/wink"
+                        href="https://go.st-hacks.cc/wink?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline"
@@ -791,7 +791,7 @@ export default function PartnerDetail() {
                     <h3 className="text-xl font-bold mb-3 flex items-start gap-2">
                       <span className="text-primary">3.</span>
                       Smart <a 
-                        href="https://go.st-hacks.cc/wink"
+                        href="https://go.st-hacks.cc/wink?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline"
@@ -1666,7 +1666,7 @@ export default function PartnerDetail() {
                 </Button>
                 <div>
                   <a
-                    href="https://go.st-hacks.cc/contractor-commerce"
+                    href="https://go.st-hacks.cc/contractor-commerce?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="link-learn-more"
@@ -2013,7 +2013,7 @@ export default function PartnerDetail() {
 
               <div className="text-center">
                 <a
-                  href="https://lp.sharewillow.com/industries/construction"
+                  href="https://lp.sharewillow.com/industries/construction?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-book-strategy-audit"
@@ -2188,7 +2188,7 @@ export default function PartnerDetail() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                   <a
-                    href="https://app.dataturk.ai/public/samples/funnel_report_card"
+                    href="https://app.dataturk.ai/public/samples/funnel_report_card?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="link-view-sample"
@@ -2475,7 +2475,7 @@ export default function PartnerDetail() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="https://app.dataturk.ai/public/samples/funnel_report_card"
+                  href="https://app.dataturk.ai/public/samples/funnel_report_card?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-view-sample-cta"
