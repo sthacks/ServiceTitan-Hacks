@@ -163,6 +163,10 @@ export const metadata: Record<string, PageMetadata> = {
     title: "PhoneTap | ServiceTitan Hacks Partner",
     description: "PhoneTap helps ServiceTitan contractors analyze calls, find missed revenue, fix bad call data, and give CSR managers clearer daily insights.",
   },
+  "/partners/sharewillow": {
+    title: "ShareWillow | ServiceTitan Hacks Partner",
+    description: "ShareWillow helps home service contractors create performance-pay, bonus, and incentive plans that motivate employees, protect margins, and reward measurable results.",
+  },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
     description: "Unlock every course, every tool, and exclusive live Q&A sessions. The ultimate membership for ServiceTitan power users.",

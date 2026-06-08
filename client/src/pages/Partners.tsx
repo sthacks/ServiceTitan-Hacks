@@ -13,6 +13,7 @@ import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
+import sharewillowLogo from "@assets/sharewillow_1780931883497.png";
 
 export default function Partners() {
   const [, setLocation] = useLocation();
@@ -38,6 +39,13 @@ export default function Partners() {
       logo: broccoliLogo,
       description: "AI voice agents that help ServiceTitan contractors answer calls, book more jobs, and reduce pressure on busy CSR teams.",
       url: "https://go.st-hacks.cc/broccoli-ai",
+    },
+    {
+      name: "ShareWillow",
+      slug: "sharewillow",
+      logo: sharewillowLogo,
+      description: "Performance pay and incentive plans for home service contractors using ServiceTitan.",
+      url: "https://lp.sharewillow.com/industries/construction",
     },
     {
       name: "PhoneTap",

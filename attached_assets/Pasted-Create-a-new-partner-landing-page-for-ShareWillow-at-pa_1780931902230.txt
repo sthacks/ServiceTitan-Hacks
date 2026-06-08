@@ -1,0 +1,89 @@
+Create a new partner landing page for ShareWillow at:
+
+/partners/sharewillow
+
+Use the existing Broccoli AI partner page as the design and layout reference. Match the same page structure, spacing, typography, mobile responsiveness, header, footer, button style, and overall visual simplicity.
+
+Do not redesign the website. Reuse existing components, global styles, nav, footer, partner-page layout patterns, and button styles wherever possible.
+
+PAGE CONTENT
+
+Partner name:
+ShareWillow
+
+Logo URL:
+https://mcusercontent.com/7c8acd5aa7cce9bcad7301481/images/e93aebbb-1d2c-dda6-574d-b428ef46e9d7.png
+
+Hero headline:
+ShareWillow
+
+Hero subheadline:
+Performance pay and incentive plans for home service contractors using ServiceTitan.
+
+Intro copy:
+ShareWillow helps contractors design, launch, and manage incentive plans that motivate employees to think like owners, protect margins, and reward the behaviors that actually grow the business.
+
+Feature card 1:
+Title:
+Incentive plans that align your team
+
+Body:
+Create performance-pay, bonus, and profit-sharing plans that connect employee rewards to company goals, department KPIs, and real business outcomes.
+
+Feature card 2:
+Title:
+Transparent tracking for employees
+
+Body:
+Give team members visibility into their goals, progress, and potential payouts so they understand how their work impacts the company.
+
+Feature card 3:
+Title:
+Built for trades and service businesses
+
+Body:
+ShareWillow is designed for businesses that rely on field teams, managers, and office staff to deliver profitable work, reduce waste, and improve performance.
+
+CTA button text:
+Book a Free Strategy Audit
+
+CTA URL:
+First search the existing codebase for any existing ShareWillow or ST Hacks tracking link. If one exists, use that. If not, use:
+https://lp.sharewillow.com/industries/construction
+
+SEO SETTINGS
+
+Page title:
+ShareWillow | ServiceTitan Hacks Partner
+
+Meta description:
+ShareWillow helps home service contractors create performance-pay, bonus, and incentive plans that motivate employees, protect margins, and reward measurable results.
+
+DESIGN REQUIREMENTS
+
+1. Match the Broccoli AI partner page layout exactly:
+   - Back to Partners link near the top
+   - Centered logo
+   - Centered partner name
+   - Centered short subheadline
+   - Light gray content section
+   - Three clean white feature cards
+   - Pink CTA button centered below cards
+   - Existing black footer
+
+2. Keep the page clean and not overly salesy.
+
+3. Use the ShareWillow logo at a similar visual size to the Broccoli logo on its partner page.
+
+4. Make sure the page looks good on desktop and mobile.
+
+5. Add ShareWillow to any partner listing page, partner logo grid, or footer partner logo row if those are managed in the codebase.
+
+6. Do not break existing partner pages.
+
+7. After implementation, confirm:
+   - /partners/sharewillow loads correctly
+   - CTA button works
+   - logo displays correctly
+   - mobile view is clean
+   - nav and footer are unchanged

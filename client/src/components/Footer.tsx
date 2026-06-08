@@ -7,6 +7,7 @@ import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
+import sharewillowLogo from "@assets/sharewillow_1780931883497.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
 
 export default function Footer() {
@@ -33,6 +34,7 @@ export default function Footer() {
     { name: "SmartAC", logo: smartACLogo, slug: "smartac" },
     { name: "Contractor Commerce", logo: contractorCommerceLogo, slug: "contractor-commerce" },
     { name: "Broccoli AI", logo: broccoliLogo, slug: "broccoli-ai" },
+    { name: "ShareWillow", logo: sharewillowLogo, slug: "sharewillow" },
     { name: "PhoneTap", logo: phonetapLogo, slug: "phonetap" },
     { name: "LiveSwitch", logo: liveswitchLogo, slug: "liveswitch" },
     { name: "Polycam", logo: polycamLogo, slug: "polycam" },

@@ -39,6 +39,7 @@ import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import dataturkLogo from "@assets/logo-21b053a2661df6e0f2bed3fa3d77630731d6a715ed24b52912e636d38_1765216543435.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
+import sharewillowLogo from "@assets/sharewillow_1780931883497.png";
 
 interface Partner {
   name: string;
@@ -615,6 +616,13 @@ export default function PartnerDetail() {
       logo: broccoliLogo,
       description: "AI voice agents built for home service contractors using ServiceTitan.",
       url: "https://go.st-hacks.cc/broccoli-ai",
+    },
+    {
+      name: "ShareWillow",
+      slug: "sharewillow",
+      logo: sharewillowLogo,
+      description: "Performance pay and incentive plans for home service contractors.",
+      url: "https://lp.sharewillow.com/industries/construction",
     },
     {
       name: "PhoneTap",
@@ -1902,6 +1910,116 @@ export default function PartnerDetail() {
                 >
                   <Button size="lg">
                     Book a Demo
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Render ShareWillow page
+  if (partner.slug === "sharewillow") {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO
+          title="ShareWillow | ServiceTitan Hacks Partner"
+          description="ShareWillow helps home service contractors create performance-pay, bonus, and incentive plans that motivate employees, protect margins, and reward measurable results."
+          keywords="ShareWillow, ServiceTitan partner, performance pay, incentive plans, employee bonuses, profit sharing"
+          canonicalUrl="https://servicetitanhacks.com/partners/sharewillow"
+        />
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="py-16 bg-background">
+            <div className="mx-auto max-w-6xl px-6">
+              <Button
+                variant="ghost"
+                onClick={() => setLocation("/partners")}
+                className="mb-8"
+                data-testid="button-back-to-partners"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Partners
+              </Button>
+
+              <div className="text-center">
+                <div className="mb-8 flex items-center justify-center">
+                  <div className="bg-gray-900 rounded-lg px-8 py-5 inline-flex items-center justify-center">
+                    <img
+                      src={sharewillowLogo}
+                      alt="ShareWillow logo"
+                      className="object-contain max-h-12 w-auto"
+                      data-testid="img-partner-logo"
+                    />
+                  </div>
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
+                  ShareWillow
+                </h1>
+
+                <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto" data-testid="text-partner-description">
+                  Performance pay and incentive plans for home service contractors using ServiceTitan.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="py-16 bg-muted/30">
+            <div className="mx-auto max-w-4xl px-6">
+              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
+                ShareWillow helps contractors design, launch, and manage incentive plans that motivate employees to think like owners, protect margins, and reward the behaviors that actually grow the business.
+              </p>
+
+              <div className="space-y-6 mb-12">
+                <Card className="bg-card border-0" data-testid="card-feature-align">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Incentive plans that align your team
+                    </h3>
+                    <p className="text-foreground">
+                      Create performance-pay, bonus, and profit-sharing plans that connect employee rewards to company goals, department KPIs, and real business outcomes.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-transparency">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Transparent tracking for employees
+                    </h3>
+                    <p className="text-foreground">
+                      Give team members visibility into their goals, progress, and potential payouts so they understand how their work impacts the company.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-0" data-testid="card-feature-trades">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold mb-3">
+                      Built for trades and service businesses
+                    </h3>
+                    <p className="text-foreground">
+                      ShareWillow is designed for businesses that rely on field teams, managers, and office staff to deliver profitable work, reduce waste, and improve performance.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="https://lp.sharewillow.com/industries/construction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-book-strategy-audit"
+                >
+                  <Button size="lg">
+                    Book a Free Strategy Audit
                   </Button>
                 </a>
               </div>
