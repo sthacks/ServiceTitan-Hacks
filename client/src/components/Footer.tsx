@@ -7,7 +7,7 @@ import polycamLogo from "@assets/polycam_1762023015702.png";
 import contractorCommerceLogo from "@assets/logos.zip - contractor commerce_1762022633613.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
-import sharewillowLogo from "@assets/sharewillow_1780931883497.png";
+import sharewillowLogo from "@assets/sharewillow_(1)_1780931972354.png";
 import serviceCrucibleLogo from "@assets/logos.zip - 5_1762022633613.png";
 
 export default function Footer() {
