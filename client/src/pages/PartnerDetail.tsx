@@ -1951,7 +1951,7 @@ export default function PartnerDetail() {
                   <img
                     src={sharewillowLogo}
                     alt="ShareWillow"
-                    className="object-contain max-h-16 w-auto dark:invert"
+                    className="object-contain max-h-24 w-auto dark:invert"
                     data-testid="text-partner-name"
                   />
                 </div>
