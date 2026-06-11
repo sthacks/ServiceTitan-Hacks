@@ -1947,9 +1947,14 @@ export default function PartnerDetail() {
               </Button>
 
               <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
-                  ShareWillow
-                </h1>
+                <div className="mb-8 flex items-center justify-center">
+                  <img
+                    src={sharewillowLogo}
+                    alt="ShareWillow"
+                    className="object-contain max-h-16 w-auto dark:invert"
+                    data-testid="text-partner-name"
+                  />
+                </div>
 
                 <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto" data-testid="text-partner-description">
                   Performance pay and incentive plans for home service contractors using ServiceTitan.
