@@ -1546,6 +1546,49 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // ShareWillow demo request
+  app.post("/api/sharewillow-demo", async (req, res) => {
+    try {
+      const { name, email, company, techs, onST } = req.body;
+
+      if (!name || !email) {
+        return res.status(400).json({ message: "Name and email are required." });
+      }
+
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+
+        const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
+          url_source: "SHAREWILLOW_DEMO",
+          formName: "ShareWillow Demo Request",
+          firstName: name || "",
+          lastName: "",
+          phoneNumber: "",
+          email: email || "",
+          company: company || "",
+          numberOfTechs: techs || "",
+          onServiceTitan: onST || "",
+          submittedAt: new Date().toISOString(),
+        };
+
+        await client.emails.send({
+          from: fromEmail,
+          to: "bill@st-hacks.com",
+          subject: "New ShareWillow Demo Request",
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send ShareWillow demo email:", emailError);
+      }
+
+      res.status(201).json({ message: "Demo request submitted successfully." });
+    } catch (error) {
+      console.error("ShareWillow demo submission error:", error);
+      res.status(500).json({ message: "Failed to submit demo request. Please try again." });
+    }
+  });
+
   // Webinar registration webhook endpoint
   app.post("/api/webinar-registration", async (req, res) => {
     try {

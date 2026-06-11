@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart } from "lucide-react";
+import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart, ArrowRight, Play, Calendar, Check, TrendingUp, Smartphone, Database, ClipboardList } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -85,6 +85,10 @@ export default function PartnerDetail() {
   const [numberOfTechs, setNumberOfTechs] = useState("");
   const [cellPhone, setCellPhone] = useState("");
 
+  // ShareWillow demo form
+  const [swForm, setSwForm] = useState({ name: "", email: "", company: "", techs: "", onST: "yes" });
+  const [swSubmitted, setSwSubmitted] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [partnerSlug]);
@@ -127,6 +131,23 @@ export default function PartnerDetail() {
     mutationFn: async (data: { email: string }) => {
       const response = await apiRequest("POST", "/api/wink-demo/abandoned", data);
       return response.json();
+    },
+  });
+
+  const sharewillowDemoMutation = useMutation({
+    mutationFn: async (data: { name: string; email: string; company: string; techs: string; onST: string }) => {
+      const response = await apiRequest("POST", "/api/sharewillow-demo", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      setSwSubmitted(true);
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit. Please try again.",
+        variant: "destructive",
+      });
     },
   });
 
@@ -1923,102 +1944,400 @@ export default function PartnerDetail() {
 
   // Render ShareWillow page
   if (partner.slug === "sharewillow") {
+    const SW = {
+      cream: "#FAF7EC",
+      ink: "#1C2B1C",
+      yellow: "#F7EC6A",
+      white: "#FFFFFF",
+      pink: "#EC1B52",
+    };
+    const serif = { fontFamily: "Georgia, 'Times New Roman', serif" };
+
+    const swStats = [
+      { value: "$800 to $1,500+", label: "Average ticket before vs after switching to performance pay at Ron Williams' shops" },
+      { value: "18%", label: "Target labor rate Ron's plumbing division runs on ShareWillow" },
+      { value: "2 months", label: "From rollout to techs tracking their own numbers daily" },
+    ];
+
+    const swFeatures = [
+      {
+        icon: ClipboardList,
+        title: "Plan design, done with you",
+        body: "You don't start from a blank page. ShareWillow's incentive specialists build the plan around your numbers: the labor rate you can live with and the upside that gets techs excited.",
+      },
+      {
+        icon: TrendingUp,
+        title: "Shadow payroll takes the fear out",
+        body: "The scariest sentence a tech can hear is 'we're changing how you get paid.' ShareWillow runs your real jobs through the new plan first, so every tech sees what they would have earned before anything changes.",
+      },
+      {
+        icon: Database,
+        title: "Official ServiceTitan partner",
+        body: "ShareWillow pulls your ServiceTitan data directly. Before you spend a dollar, they can show you where your labor rate is bleeding and what the plan pays out on your actual jobs, not sample data.",
+      },
+      {
+        icon: Smartphone,
+        title: "Techs see it in real time",
+        body: "A mobile app shows every tech where they stand today: one more five-star review, one more on-time arrival, and what it pays. Quarterly bonuses get treated like gifts. Real-time pay changes behavior.",
+      },
+    ];
+
+    const swSteps = [
+      { n: "1", title: "Determine your cadence", body: "Weekly, biweekly, or monthly payouts. Most contractors start quarterly and tighten the feedback loop from there." },
+      { n: "2", title: "Set up thresholds", body: "Company goals that have to be hit before the plan pays out, so payouts only happen when you can afford them." },
+      { n: "3", title: "Establish formulas", body: "Different formulas by role: techs, installers, apprentices, office. Tenure minimums, splits, whatever fits your shop." },
+      { n: "4", title: "Launch and share", body: "Invite your team into ShareWillow so they can see their calculations, goals, and payouts on one dashboard." },
+    ];
+
+    const swFaqs = [
+      {
+        q: "Will my techs quit if I change how they're paid?",
+        a: "This is the #1 fear, and it's why ShareWillow built shadow payroll. Run both systems side by side and show each tech what they would have made. When Bill switched his own company, he paid whichever number was higher for 90 days. Performance pay won almost every week, and the team asked to switch.",
+      },
+      {
+        q: "Is this just commission with extra steps?",
+        a: "No. Commission pays for selling. Performance pay can reward whatever drives your business: on-time arrivals, five-star reviews, callback rates, job efficiency, revenue. You pick the metrics, ShareWillow handles the math and the transparency.",
+      },
+      {
+        q: "When is the right time to switch?",
+        a: "Most owners can't touch process changes mid-season. The playbook: get your plan designed now, run shadow payroll during the busy season, and flip the switch in the shoulder season when you have bandwidth. That conversation starts with a demo.",
+      },
+      {
+        q: "What does it cost?",
+        a: "Simple subscription priced on active participants, with an optional one-time plan design engagement. Get exact numbers on the demo; they'll model it against your headcount on the call.",
+      },
+    ];
+
+    const handleSwChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+      setSwForm({ ...swForm, [e.target.name]: e.target.value });
+
+    const handleSwSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      sharewillowDemoMutation.mutate(swForm);
+    };
+
     return (
       <div className="min-h-screen flex flex-col">
         <SEO
-          title="ShareWillow | ServiceTitan Hacks Partner"
-          description="ShareWillow helps home service contractors create performance-pay, bonus, and incentive plans that motivate employees, protect margins, and reward measurable results."
+          title="ShareWillow | Performance Pay for ServiceTitan Contractors"
+          description="ShareWillow helps home service contractors on ServiceTitan design, launch, and manage performance pay plans that get technicians thinking like owners."
           keywords="ShareWillow, ServiceTitan partner, performance pay, incentive plans, employee bonuses, profit sharing"
           canonicalUrl="https://servicetitanhacks.com/partners/sharewillow"
         />
         <Header />
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="py-16 bg-background">
-            <div className="mx-auto max-w-6xl px-6">
-              <Button
-                variant="ghost"
-                onClick={() => setLocation("/partners")}
-                className="mb-8"
-                data-testid="button-back-to-partners"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Partners
-              </Button>
+        <main className="flex-1" style={{ backgroundColor: SW.cream, color: SW.ink }}>
 
-              <div className="text-center">
-                <div className="mb-8 flex items-center justify-center">
-                  <img
-                    src={sharewillowLogo}
-                    alt="ShareWillow"
-                    className="object-contain max-h-24 w-auto dark:invert"
-                    data-testid="text-partner-name"
-                  />
-                </div>
+          {/* Back button */}
+          <div className="px-6 pt-8 max-w-6xl mx-auto">
+            <Button
+              variant="ghost"
+              onClick={() => setLocation("/partners")}
+              data-testid="button-back-to-partners"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Partners
+            </Button>
+          </div>
 
-                <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto" data-testid="text-partner-description">
-                  Performance pay and incentive plans for home service contractors using ServiceTitan.
+          {/* HERO */}
+          <section className="px-6 pt-10 pb-20 text-center max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <span className="font-bold tracking-tight text-lg">ServiceTitan <span style={{ color: SW.pink }}>HACKS</span></span>
+              <span className="text-2xl font-light" style={{ opacity: 0.4 }}>×</span>
+              <img src={sharewillowLogo} alt="ShareWillow" className="h-7 w-auto dark:invert" />
+            </div>
+
+            <div className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-8"
+                 style={{ backgroundColor: SW.yellow, color: SW.ink }}>
+              OUR EXCLUSIVE PERFORMANCE PAY PARTNER
+            </div>
+
+            <h1 className="text-5xl md:text-6xl leading-tight mb-6" style={serif}>
+              Stop buying hours.<br />
+              Start paying for <em>results</em>.
+            </h1>
+
+            <p className="text-lg max-w-2xl mx-auto mb-10" style={{ opacity: 0.8 }}>
+              ShareWillow helps contractors on ServiceTitan design, launch, and manage
+              performance pay plans that get technicians thinking like owners. Vetted by
+              this community, used by your peers, and the only incentive pay software we
+              put our name behind.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#demo"
+                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base"
+                 style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                Book a Demo <ArrowRight size={18} />
+              </a>
+              <a href="https://www.youtube.com/@servicetitanhacks"
+                 target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2"
+                 style={{ borderColor: SW.ink, color: SW.ink }}>
+                <Play size={18} /> Watch the Free Webinar
+              </a>
+            </div>
+          </section>
+
+          {/* BILL'S NOTE */}
+          <section style={{ backgroundColor: SW.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: SW.pink }}>
+                WHY THIS PARTNERSHIP EXISTS
+              </p>
+              <h2 className="text-3xl md:text-4xl mb-8" style={serif}>
+                A note from Bill
+              </h2>
+              <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
+                <p>
+                  When I ran Paramount Heating &amp; Air, the hardest conversation I ever had
+                  with my team was telling them we were changing how they got paid. The most
+                  fear you will ever see on a technician's face is in that moment. It feels
+                  like you're telling them they might get fired.
                 </p>
+                <p>
+                  So here's what I did: for 90 days I ran payroll both ways, hourly and
+                  performance, and paid every tech whichever number was higher. Performance
+                  pay won almost every single week. After that, nobody wanted to go back.
+                  I have never met a contractor who switched to performance pay and regretted it.
+                </p>
+                <p>
+                  The problem was never whether performance pay works. It's that designing the
+                  plan, running the math, and showing techs their numbers in real time used to
+                  take spreadsheets and a prayer. ShareWillow is the first tool I've seen that
+                  handles all of it, and they're an official ServiceTitan partner, so it runs
+                  on your real data.
+                </p>
+                <p>
+                  That's why they're our exclusive partner in this category. I don't put this
+                  community's name on tools I wouldn't have used in my own shop.
+                </p>
+              </div>
+              <p className="mt-8 font-semibold" style={serif}>
+                Bill Brown<span className="font-normal" style={{ opacity: 0.6 }}> · Founder, ServiceTitan Hacks · Built and sold Paramount Heating &amp; Air</span>
+              </p>
+              <p className="mt-4 text-xs" style={{ opacity: 0.5 }}>
+                Transparency: ShareWillow is a paid sponsor of ServiceTitan Hacks. We only
+                accept sponsors whose products we've vetted with real contractors in this community.
+              </p>
+            </div>
+          </section>
+
+          {/* RESULTS BAND */}
+          <section style={{ backgroundColor: SW.yellow }} className="px-6 py-16">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-xs font-semibold tracking-widest mb-3" style={{ opacity: 0.6 }}>
+                FROM OUR LIVE WEBINAR
+              </p>
+              <h2 className="text-3xl md:text-4xl mb-10 max-w-2xl" style={serif}>
+                Real numbers from a $5M shop that made the switch
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                {swStats.map((s) => (
+                  <div key={s.value} className="rounded-2xl p-6" style={{ backgroundColor: SW.cream }}>
+                    <p className="text-3xl font-bold mb-2" style={serif}>{s.value}</p>
+                    <p className="text-sm" style={{ opacity: 0.75 }}>{s.label}</p>
+                  </div>
+                ))}
+              </div>
+              <blockquote className="rounded-2xl p-8" style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                <p className="text-lg leading-relaxed mb-4" style={serif}>
+                  "I've been beating my head against the table for a long time trying to figure
+                  out what to do, from commission to performance to new comp. ShareWillow made
+                  it a lot easier for us. My plumbers are watching their numbers day in and day
+                  out more than I ever could."
+                </p>
+                <footer className="text-sm" style={{ opacity: 0.7 }}>
+                  Ron Williams · Benjamin Franklin Plumbing &amp; One Hour · Ocean City, MD
+                </footer>
+              </blockquote>
+            </div>
+          </section>
+
+          {/* FEATURES */}
+          <section style={{ backgroundColor: SW.cream }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl mb-12 text-center" style={serif}>
+                What ShareWillow actually <em>does</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {swFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="rounded-2xl p-8" style={{ backgroundColor: SW.white }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
+                           style={{ backgroundColor: SW.yellow }}>
+                        <Icon size={22} style={{ color: SW.ink }} />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3" style={serif}>{f.title}</h3>
+                      <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{f.body}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
 
-          {/* Features Section */}
-          <section className="py-16 bg-muted/30">
-            <div className="mx-auto max-w-4xl px-6">
-              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
-                ShareWillow helps contractors design, launch, and manage incentive plans that motivate employees to think like owners, protect margins, and reward the behaviors that actually grow the business.
-              </p>
-
-              <div className="space-y-6 mb-12">
-                <Card className="bg-card border-0" data-testid="card-feature-align">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Incentive plans that align your team
-                    </h3>
-                    <p className="text-foreground">
-                      Create performance-pay, bonus, and profit-sharing plans that connect employee rewards to company goals, department KPIs, and real business outcomes.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-0" data-testid="card-feature-transparency">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Transparent tracking for employees
-                    </h3>
-                    <p className="text-foreground">
-                      Give team members visibility into their goals, progress, and potential payouts so they understand how their work impacts the company.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-0" data-testid="card-feature-trades">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Built for trades and service businesses
-                    </h3>
-                    <p className="text-foreground">
-                      ShareWillow is designed for businesses that rely on field teams, managers, and office staff to deliver profitable work, reduce waste, and improve performance.
-                    </p>
-                  </CardContent>
-                </Card>
+          {/* HOW IT WORKS */}
+          <section style={{ backgroundColor: SW.white }} className="px-6 py-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl mb-12" style={serif}>
+                From hourly to performance pay in a <em>few easy steps</em>
+              </h2>
+              <div className="space-y-8">
+                {swSteps.map((s) => (
+                  <div key={s.n} className="flex gap-6 items-start">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0"
+                         style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                      {s.n}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1" style={serif}>{s.title}</h3>
+                      <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{s.body}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
+          </section>
 
-              <div className="text-center">
-                <a
-                  href="https://lp.sharewillow.com/industries/construction?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-book-strategy-audit"
-                >
-                  <Button size="lg">
-                    Book a Free Strategy Audit
-                  </Button>
+          {/* WEBINAR */}
+          <section style={{ backgroundColor: SW.ink, color: SW.cream }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(250,247,236,0.07)" }}>
+                <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: SW.yellow }}>
+                  WATCH NOW · FREE REPLAY
+                </p>
+                <h3 className="text-2xl mb-4" style={serif}>
+                  The Incentive Plan Problem: Why Most Contractor Bonus Plans Fail
+                </h3>
+                <p className="text-sm leading-relaxed mb-6" style={{ opacity: 0.7 }}>
+                  Bill, Ron Williams, and ShareWillow founder Ryan Shank break down why
+                  quarterly bonuses get treated like gifts, what an 18% labor rate plan
+                  looks like, and how Ron's average ticket nearly doubled.
+                </p>
+                <a href="https://www.youtube.com/@servicetitanhacks"
+                   target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
+                   style={{ backgroundColor: SW.yellow, color: SW.ink }}>
+                  <Play size={16} /> Watch the Replay
+                </a>
+              </div>
+              <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(250,247,236,0.07)" }}>
+                <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: SW.yellow }}>
+                  NEXT LIVE WEBINAR
+                </p>
+                <h3 className="text-2xl mb-4" style={serif}>
+                  How to Switch to Performance Pay Without Losing a Single Tech
+                </h3>
+                <p className="text-sm leading-relaxed mb-6" style={{ opacity: 0.7 }}>
+                  <Calendar size={14} className="inline mr-1" />
+                  Wednesday, August 26 · 2 PM Eastern. Live with a contractor who recently
+                  made the switch, plus open Q&amp;A. Registration opens soon; replay sent
+                  to all registrants.
+                </p>
+                <a href="#demo"
+                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2"
+                   style={{ borderColor: SW.cream, color: SW.cream }}>
+                  Get Notified <ArrowRight size={16} />
                 </a>
               </div>
             </div>
           </section>
+
+          {/* FAQ */}
+          <section style={{ backgroundColor: SW.cream }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl mb-10" style={serif}>
+                The questions every owner asks
+              </h2>
+              <div className="space-y-6">
+                {swFaqs.map((f) => (
+                  <div key={f.q} className="rounded-2xl p-7" style={{ backgroundColor: SW.white }}>
+                    <h3 className="text-lg font-semibold mb-2" style={serif}>{f.q}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* DEMO FORM */}
+          <section id="demo" style={{ backgroundColor: SW.yellow }} className="px-6 py-20">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl mb-4" style={serif}>
+                See your numbers, not sample data
+              </h2>
+              <p className="text-base mb-10 max-w-xl mx-auto" style={{ opacity: 0.75 }}>
+                Book a demo and ShareWillow will pull your ServiceTitan data live on the
+                call: where your labor rate stands, and what a plan would have paid out on
+                your actual jobs. Coming from ServiceTitan Hacks means you skip the line.
+              </p>
+
+              {swSubmitted ? (
+                <div className="rounded-2xl p-10" style={{ backgroundColor: SW.cream }}>
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
+                       style={{ backgroundColor: SW.ink }}>
+                    <Check size={26} style={{ color: SW.yellow }} />
+                  </div>
+                  <h3 className="text-2xl mb-2" style={serif}>You're in.</h3>
+                  <p className="text-sm" style={{ opacity: 0.75 }}>
+                    ShareWillow will reach out within one business day. Bill gets a copy of
+                    every request from this page, so it won't fall through the cracks.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSwSubmit} className="rounded-2xl p-8 text-left space-y-4"
+                      style={{ backgroundColor: SW.cream }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold mb-1.5">Name</label>
+                      <input name="name" required value={swForm.name} onChange={handleSwChange}
+                             className="w-full px-4 py-3 rounded-xl border text-sm"
+                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold mb-1.5">Email</label>
+                      <input name="email" type="email" required value={swForm.email} onChange={handleSwChange}
+                             className="w-full px-4 py-3 rounded-xl border text-sm"
+                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold mb-1.5">Company</label>
+                      <input name="company" required value={swForm.company} onChange={handleSwChange}
+                             className="w-full px-4 py-3 rounded-xl border text-sm"
+                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold mb-1.5">Number of techs</label>
+                      <input name="techs" value={swForm.techs} onChange={handleSwChange}
+                             className="w-full px-4 py-3 rounded-xl border text-sm"
+                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold mb-1.5">On ServiceTitan?</label>
+                    <select name="onST" value={swForm.onST} onChange={handleSwChange}
+                            className="w-full px-4 py-3 rounded-xl border text-sm"
+                            style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }}>
+                      <option value="yes">Yes</option>
+                      <option value="no">Not yet</option>
+                    </select>
+                  </div>
+                  <button type="submit"
+                          disabled={sharewillowDemoMutation.isPending}
+                          className="w-full py-4 rounded-full font-semibold text-base inline-flex items-center justify-center gap-2"
+                          style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                    {sharewillowDemoMutation.isPending ? "Sending…" : <><span>Book My Demo</span><ArrowRight size={18} /></>}
+                  </button>
+                  <p className="text-xs text-center" style={{ opacity: 0.5 }}>
+                    No spam, no list-selling. Your info goes to ShareWillow's team and to Bill. That's it.
+                  </p>
+                </form>
+              )}
+            </div>
+          </section>
+
         </main>
         <Footer />
       </div>
