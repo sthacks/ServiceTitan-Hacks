@@ -1,0 +1,40 @@
+Copy this into Replit Agent, and attach BroccoliPartnerPage.jsx from your Broccoli folder so it has the exact copy and structure:
+
+```
+Rebuild the partner detail page at /partners/broccoli-ai. I have attached BroccoliPartnerPage.jsx as the exact spec for structure, copy, and styling. Match it as closely as the existing stack allows. Do not change any other page.
+
+BRAND TOKENS
+- ST Hacks red: #ec164d (webinar CTA, eyebrow labels, free tools strip, footer accent)
+- Broccoli purple: #7c3aed (italic highlight words in headlines, stat numbers, step badges, icons)
+- Deep purple: #5b21b6 (cards inside dark section), dark purple: #3b1a6e (dark section background)
+- Lavender backgrounds: #f4f0fc and #ede9fe
+- Green accent: #4ade80 (only inside the dark section: highlight word, play icon, progress bar, confirmation)
+- Badge cream: #fdf3d4 with #ecdfae border
+- Near-black: #111111 for primary pill buttons, #1a1a1a body text
+- Font: Oxygen, fallback Arial, sans-serif. No serif fonts anywhere.
+
+PAGE SECTIONS, IN ORDER (copy verbatim from the attached file)
+1. Existing site nav stays as is.
+2. Hero on lavender: co-brand lockup (ServiceTitan HACKS x Broccoli), cream badge "Our exclusive AI Voice / AI CSR partner - Fully integrates with ServiceTitan", extrabold headline "Your phones, covered. Your evenings, back." with "back" in italic purple, subhead, two pill buttons: black "Have the AI Call You", red "Save a Webinar Seat - Aug 12".
+3. "A note from Bill" on white: red eyebrow "WHY THIS PARTNERSHIP EXISTS", headshot placeholder, four paragraphs, signature line, transparency disclosure in small gray text.
+4. "Numbers we verified before publishing" on lavender: three white rounded stat cards (26 calls, 23 locations, 100%) with purple numbers, then a dark purple quote card with placeholder.
+5. "What Broccoli actually does" on white: four rounded cards with lavender icon circles, purple icons, small gray pill chips, body copy.
+6. "From skeptic to covered in 4 steps" on lavender: four white cards with purple numbered circles.
+7. Dark purple section "Hear it before you believe it" ("Hear it" in green): two deep-purple cards. Left: audio player placeholder with green play icon and progress bar, plus a working name/phone form with rounded white inputs and a black "Call me now!" button that swaps to a green confirmation "Dane is calling you within 60 seconds." Right: Aug 12 webinar card with red "Save My Seat" button.
+8. FAQ on white: four lavender rounded cards.
+9. Free tools strip: two cards with red 2px borders on #fff5f8 (Found Money Calculator, AI Voice Vendor Scorecard), red link text.
+10. Final CTA on lavender: "Ready to hear your calls handled?" with "your" in italic purple, black pill "Book My Demo", small print about ST Hacks member tagging.
+11. Existing site footer stays as is.
+
+FUNCTIONAL REQUIREMENTS
+- All buttons need real hrefs or handlers. Use placeholder hrefs I will swap later: the AI callback form should POST to a placeholder endpoint /api/broccoli-callback (stub it), webinar buttons link to PLACEHOLDER_WEBINAR_URL, demo button links to PLACEHOLDER_DEMO_URL, calculator and scorecard link to PLACEHOLDER_TOOL_URLs. Put all placeholder URLs in one constants block at the top so I can edit them in one place.
+- Add UTM parameters to every outbound placeholder link: utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli.
+- The callback form must validate that name and phone are filled before showing the confirmation state.
+- Fully responsive; stack all grids to one column on mobile.
+- Keep bracketed placeholders like [pending sign-off] in the copy exactly as written. They are intentional and will be removed when sign-offs land.
+- Load the Oxygen font from Google Fonts if not already loaded.
+
+Do not invent new copy, stats, or testimonials. Everything visible must come from the attached file.
+```
+
+Two things before you ship it: the bracketed placeholders ([pending sign-off], quote placeholder, pricing language) will be publicly visible if you publish before Erin's sign-offs land, so either hold the publish or have Replit hide those elements behind a flag. And the /api/broccoli-callback stub needs to be wired to Broccoli's actual callback trigger plus your HubSpot capture before launch, since that form is the page's main lead capture.
