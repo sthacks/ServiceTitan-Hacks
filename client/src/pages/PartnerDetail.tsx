@@ -41,6 +41,8 @@ import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 import sharewillowLogo from "@assets/sharewillow_1780932326327.png";
 import billHeadshot from "@assets/pro_headshot_(8)_1781285653008.png";
+import sthacksHorizLogo from "@assets/new_horz_logo_transparent.png";
+import sharewillowNewLogo from "@assets/sharewillow_new_transparent.png";
 
 interface Partner {
   name: string;
@@ -2044,11 +2046,9 @@ export default function PartnerDetail() {
           {/* HERO */}
           <section className="px-6 pt-10 pb-20 text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <span className="font-bold tracking-tight text-lg">ServiceTitan <span style={{ color: SW.pink }}>HACKS</span></span>
+              <img src={sthacksHorizLogo} alt="ServiceTitan Hacks" style={{ height: 32, width: "auto" }} />
               <span className="text-2xl font-light" style={{ opacity: 0.4 }}>x</span>
-              <div style={{ height: 28, width: 140, backgroundColor: "#E8E3D5", border: "1px dashed #9B9484", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ fontSize: 10, color: "#9B9484", fontFamily: "monospace" }}>ShareWillow logo</span>
-              </div>
+              <img src={sharewillowNewLogo} alt="ShareWillow" style={{ height: 28, width: "auto" }} />
             </div>
 
             <div className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-8"
