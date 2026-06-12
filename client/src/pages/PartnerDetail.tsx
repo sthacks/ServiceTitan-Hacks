@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart, ArrowRight, Play, Calendar, Check, TrendingUp, Smartphone, Database, ClipboardList } from "lucide-react";
+import { ExternalLink, ArrowLeft, CheckCircle2, BarChart3, Zap, Users, ClipboardCheck, Cog, DollarSign, Heart, ArrowRight, Play, Calendar, Check, TrendingUp, Smartphone, Database, ClipboardList, Phone, Clock, Shield, PhoneCall, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -92,6 +92,10 @@ export default function PartnerDetail() {
   const [swForm, setSwForm] = useState({ name: "", email: "", company: "", techs: "", onST: "yes" });
   const [swSubmitted, setSwSubmitted] = useState(false);
 
+  // Broccoli AI callback form
+  const [broccoliCallForm, setBroccoliCallForm] = useState({ name: "", phone: "" });
+  const [broccoliCallConfirmed, setBroccoliCallConfirmed] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [partnerSlug]);
@@ -134,6 +138,23 @@ export default function PartnerDetail() {
     mutationFn: async (data: { email: string }) => {
       const response = await apiRequest("POST", "/api/wink-demo/abandoned", data);
       return response.json();
+    },
+  });
+
+  const broccoliCallbackMutation = useMutation({
+    mutationFn: async (data: { name: string; phone: string }) => {
+      const response = await apiRequest("POST", "/api/broccoli-callback", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      setBroccoliCallConfirmed(true);
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit. Please try again.",
+        variant: "destructive",
+      });
     },
   });
 
@@ -1839,106 +1860,434 @@ export default function PartnerDetail() {
 
   // Render Broccoli AI page
   if (partner.slug === "broccoli-ai") {
+    // ── PLACEHOLDER URLS – edit here before launch ──────────────────────────
+    const WEBINAR_URL = "PLACEHOLDER_WEBINAR_URL?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
+    const DEMO_URL    = "PLACEHOLDER_DEMO_URL?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
+    const FOUND_MONEY_URL  = "PLACEHOLDER_TOOL_URL_FOUND_MONEY?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
+    const SCORECARD_URL    = "PLACEHOLDER_TOOL_URL_SCORECARD?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
+    // ────────────────────────────────────────────────────────────────────────
+
+    const BL = {
+      purple: "#7c3aed",
+      deepPurple: "#5b21b6",
+      darkPurple: "#3b1a6e",
+      lavender: "#f4f0fc",
+      lavenderDark: "#ede9fe",
+      green: "#4ade80",
+      badgeCream: "#fdf3d4",
+      badgeBorder: "#ecdfae",
+      red: "#ec164d",
+      nearBlack: "#111111",
+      body: "#1a1a1a",
+      white: "#ffffff",
+    };
+    const font = { fontFamily: "Oxygen, Arial, sans-serif", color: BL.body };
+
+    const blFeatures = [
+      {
+        icon: Phone,
+        title: "Answers every call, even yours",
+        chips: ["Inbound", "Overflow", "After-hours"],
+        body: "Your AI CSR, Dane, picks up every call — whether it's 2 PM Tuesday or 11 PM Friday. Homeowners get a real conversation. Your team gets their evenings back.",
+      },
+      {
+        icon: Calendar,
+        title: "Books directly into ServiceTitan",
+        chips: ["Native integration", "Live calendar", "Real bookings"],
+        body: "Broccoli has direct access to your dispatch calendar. It checks availability, picks the right job type, and creates the booking in ServiceTitan without a human touching anything.",
+      },
+      {
+        icon: ClipboardCheck,
+        title: "Qualifies before it books",
+        chips: ["Job type", "Service area", "Urgency"],
+        body: "Not every call should be booked. Broccoli qualifies the opportunity — checks service area, captures the right job type, and routes calls that need a human to a human.",
+      },
+      {
+        icon: PhoneCall,
+        title: "Escalates when it needs to",
+        chips: ["Live transfer", "Voicemail", "Follow-up"],
+        body: "When Broccoli hits a situation it can't handle, it escalates cleanly: live transfer to an on-call CSR, or a structured voicemail that gets worked the next morning.",
+      },
+    ];
+
+    const blSteps = [
+      { n: "1", title: "Audit your call data", body: "Broccoli pulls your last 90 days of call data and maps exactly where bookings are leaking — missed calls, mishandled calls, after-hours gaps." },
+      { n: "2", title: "Configure your AI", body: "Setup covers your service area, job types, dispatch calendar, and the voice and tone you want representing your brand." },
+      { n: "3", title: "Run shadow calls", body: "Before Broccoli goes live, you hear it handle real call scenarios against your actual jobs. You approve the go-live." },
+      { n: "4", title: "Go live and monitor", body: "Flip the switch. Every call, booking, and escalation is visible in a live dashboard. Your CSR team focuses on the calls that actually need them." },
+    ];
+
+    const blFaqs = [
+      {
+        q: "Will customers know they're talking to an AI?",
+        a: "Broccoli is transparent by design. Dane identifies as an AI at the start of every call. What surprises most contractors is how often homeowners don't care — because the call flows naturally and the booking happens fast.",
+      },
+      {
+        q: "What if a customer asks something Broccoli can't handle?",
+        a: "Broccoli escalates. It can transfer live to an on-call CSR, capture a structured voicemail, or schedule a callback. You define the escalation rules during setup. No call falls through without a next step.",
+      },
+      {
+        q: "How does the ServiceTitan integration actually work?",
+        a: "Broccoli is an official ServiceTitan technology partner. It connects to your ST account directly via API — reads your calendar, writes bookings, captures customer data. No middleware, no manual syncing.",
+      },
+      {
+        q: "What does it cost?",
+        a: "Pricing is based on call volume and scales with your business. Broccoli will model it against your actual inbound call data on the demo so you see the ROI before you sign anything. [Pricing detail pending sign-off]",
+      },
+    ];
+
+    const handleBroccoliCallChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+      setBroccoliCallForm({ ...broccoliCallForm, [e.target.name]: e.target.value });
+
+    const handleBroccoliCallSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!broccoliCallForm.name.trim() || !broccoliCallForm.phone.trim()) {
+        toast({ title: "Please fill in your name and phone number.", variant: "destructive" });
+        return;
+      }
+      broccoliCallbackMutation.mutate(broccoliCallForm);
+    };
+
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col" style={font}>
         <SEO
-          title="Broccoli AI Partner | ServiceTitan Hacks"
-          description="Broccoli AI helps ServiceTitan contractors answer calls, improve booking consistency, and reduce pressure on busy CSR teams with AI voice agents."
-          keywords="Broccoli AI, ServiceTitan partner, AI voice agent, contractor call handling, CSR automation"
+          title="Broccoli AI | AI Voice and CSR Partner | ServiceTitan Hacks"
+          description="Broccoli AI answers every call, books jobs directly in ServiceTitan, and gives your team their evenings back. Our exclusive AI Voice and AI CSR partner."
+          keywords="Broccoli AI, ServiceTitan partner, AI voice agent, AI CSR, contractor call handling, after-hours answering"
           canonicalUrl="https://servicetitanhacks.com/partners/broccoli-ai"
         />
         <Header />
         <main className="flex-1">
-          {/* Hero Section */}
-          <section className="py-16 bg-background">
-            <div className="mx-auto max-w-6xl px-6">
-              <Button
-                variant="ghost"
-                onClick={() => setLocation("/partners")}
-                className="mb-8"
-                data-testid="button-back-to-partners"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Partners
-              </Button>
 
-              <div className="text-center">
-                <div className="mb-8 flex items-center justify-center">
-                  <img
-                    src={broccoliLogo}
-                    alt="Broccoli AI logo"
-                    className="object-contain max-h-16 w-auto"
-                    data-testid="img-partner-logo"
-                  />
-                </div>
+          {/* Back button */}
+          <div className="px-6 pt-8 max-w-6xl mx-auto" style={{ backgroundColor: BL.lavender }}>
+            <Button variant="ghost" onClick={() => setLocation("/partners")} data-testid="button-back-to-partners">
+              <ArrowLeft className="h-4 w-4 mr-2" /> Back to Partners
+            </Button>
+          </div>
 
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
-                  Broccoli AI
-                </h1>
-
-                <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
-                  AI voice agents built for home service contractors using ServiceTitan.
-                </p>
+          {/* ── 1. HERO ────────────────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.lavender }} className="px-6 pb-20 pt-10 text-center">
+            <div className="max-w-4xl mx-auto">
+              {/* Co-brand lockup */}
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <img src={sthacksHorizLogo} alt="ServiceTitan Hacks" style={{ height: 30, width: "auto" }} />
+                <span className="text-2xl font-light" style={{ opacity: 0.4 }}>x</span>
+                <img src={broccoliLogo} alt="Broccoli AI" style={{ height: 30, width: "auto" }} />
               </div>
-            </div>
-          </section>
 
-          {/* Features Section */}
-          <section className="py-16 bg-muted/30">
-            <div className="mx-auto max-w-4xl px-6">
-              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
-                Broccoli helps contractors answer calls, book more jobs, and reduce pressure on busy CSR teams without adding headcount.
+              {/* Badge */}
+              <div className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-8"
+                   style={{ backgroundColor: BL.badgeCream, border: `1px solid ${BL.badgeBorder}`, color: BL.body }}>
+                OUR EXCLUSIVE AI VOICE / AI CSR PARTNER &nbsp;·&nbsp; FULLY INTEGRATES WITH SERVICETITAN
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6" style={{ color: BL.body }}>
+                Your phones, covered.<br />
+                Your evenings, <em style={{ color: BL.purple, fontStyle: "italic" }}>back</em>.
+              </h1>
+
+              <p className="text-lg max-w-2xl mx-auto mb-10" style={{ opacity: 0.75 }}>
+                Broccoli's AI voice agent answers every call, books jobs in ServiceTitan, and handles
+                after-hours overflow — so your team isn't the bottleneck between a homeowner and a
+                booked appointment.
               </p>
 
-              <div className="space-y-6 mb-12">
-                <Card className="bg-card border-0" data-testid="card-feature-call-flows">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      AI voice agents for real contractor call flows
-                    </h3>
-                    <p className="text-foreground">
-                      Broccoli answers inbound calls, talks with customers naturally, qualifies the opportunity, and helps move the call toward the right next step.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-0" data-testid="card-feature-booking">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Built around booking and speed-to-lead
-                    </h3>
-                    <p className="text-foreground">
-                      When calls come in after hours, during lunch, or while your CSR team is overloaded, Broccoli helps protect revenue that would normally slip through the cracks.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-0" data-testid="card-feature-servicetitan">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Designed for ServiceTitan contractors
-                    </h3>
-                    <p className="text-foreground">
-                      Broccoli works with home service operators who need better call handling, stronger customer experience, and more consistent booking outcomes.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="text-center space-y-4">
-                <a
-                  href="https://www.broccoli.com/demo?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-book-demo"
-                >
-                  <Button size="lg">
-                    Book a Demo
-                  </Button>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#ai-callback"
+                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                   style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
+                  <Phone size={18} /> Have the AI Call You
+                </a>
+                <a href={WEBINAR_URL} target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                   style={{ backgroundColor: BL.red, color: BL.white }}>
+                  <Calendar size={18} /> Save a Webinar Seat &ndash; Aug 12
                 </a>
               </div>
             </div>
           </section>
+
+          {/* ── 2. BILL'S NOTE ────────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-5" style={{ color: BL.red }}>
+                WHY THIS PARTNERSHIP EXISTS
+              </p>
+              <div className="flex items-center gap-5 mb-8">
+                <img src={billHeadshot} alt="Bill Brown" style={{ width: 88, height: 88, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+                <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: BL.body }}>A note from Bill</h2>
+              </div>
+              <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
+                <p>Every contractor I talk to in this community has the same problem: good CSRs are impossible to find, expensive to keep, and impossible to clone. Meanwhile, every missed call is a job your competitor is booking.</p>
+                <p>I spent time watching Broccoli before putting this partnership together. The thing that convinced me wasn't the demo. It was listening to real calls — calls where homeowners had no idea they were talking to an AI. The booking happened. The job got scheduled. Nobody had to chase a voicemail.</p>
+                <p>Broccoli integrates directly with ServiceTitan. That's not marketing language — it means the AI has access to your actual dispatch calendar, your actual job types, and your actual service areas. The booking is real. The data lands in ST automatically.</p>
+                <p>I only partner with tools I would have used at Paramount. Broccoli is one of them.</p>
+              </div>
+              <p className="mt-8 font-bold text-base">
+                Bill Brown <span className="font-normal" style={{ opacity: 0.55 }}>· Founder, ServiceTitan Hacks · Built and sold Paramount Heating &amp; Air</span>
+              </p>
+              <p className="mt-4 text-xs" style={{ opacity: 0.45 }}>
+                Transparency: Broccoli AI is a paid sponsor of ServiceTitan Hacks. We only accept sponsors whose products we have vetted with real contractors in this community.
+              </p>
+            </div>
+          </section>
+
+          {/* ── 3. STATS ──────────────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.lavender }} className="px-6 py-16">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-3" style={{ opacity: 0.5 }}>
+                NUMBERS WE VERIFIED BEFORE PUBLISHING
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 max-w-2xl" style={{ color: BL.body }}>
+                Numbers from real contractor locations
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  { value: "26", label: "Average inbound calls handled per day per active location" },
+                  { value: "23", label: "ServiceTitan contractor locations currently live on Broccoli" },
+                  { value: "100%", label: "Of bookings land directly in ServiceTitan — no manual data entry [pending sign-off]" },
+                ].map((s) => (
+                  <div key={s.value} className="rounded-2xl p-6" style={{ backgroundColor: BL.white }}>
+                    <p className="text-4xl font-extrabold mb-2" style={{ color: BL.purple }}>{s.value}</p>
+                    <p className="text-sm" style={{ opacity: 0.7 }}>{s.label}</p>
+                  </div>
+                ))}
+              </div>
+              {/* Quote card */}
+              <div className="rounded-2xl p-8" style={{ backgroundColor: BL.darkPurple, color: BL.white }}>
+                <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
+                  [Quote pending sign-off — a contractor customer will share their experience here.]
+                </p>
+                <footer className="text-sm" style={{ opacity: 0.55 }}>[Contractor name, company — location]</footer>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 4. FEATURES ───────────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-center" style={{ color: BL.body }}>
+                What Broccoli actually <em style={{ color: BL.purple }}>does</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {blFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="rounded-2xl p-8" style={{ backgroundColor: BL.lavender }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
+                           style={{ backgroundColor: BL.lavenderDark }}>
+                        <Icon size={22} style={{ color: BL.purple }} />
+                      </div>
+                      <h3 className="text-lg font-bold mb-2" style={{ color: BL.body }}>{f.title}</h3>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {f.chips.map((c) => (
+                          <span key={c} className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                                style={{ backgroundColor: BL.white, color: BL.purple, border: `1px solid ${BL.lavenderDark}` }}>
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{f.body}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 5. HOW IT WORKS ───────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.lavender }} className="px-6 py-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-12" style={{ color: BL.body }}>
+                From skeptic to covered in <em style={{ color: BL.purple }}>4 steps</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {blSteps.map((s) => (
+                  <div key={s.n} className="rounded-2xl p-7" style={{ backgroundColor: BL.white }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-base mb-4"
+                         style={{ backgroundColor: BL.purple, color: BL.white }}>
+                      {s.n}
+                    </div>
+                    <h3 className="text-base font-bold mb-2" style={{ color: BL.body }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.7 }}>{s.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 6. DARK SECTION: AUDIO + CALLBACK + WEBINAR ───────────── */}
+          <section id="ai-callback" style={{ backgroundColor: BL.darkPurple, color: BL.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">
+                <em style={{ color: BL.green, fontStyle: "italic" }}>Hear it</em> before you believe it
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                {/* Left: audio + callback form */}
+                <div className="rounded-2xl p-8 flex flex-col gap-6" style={{ backgroundColor: BL.deepPurple }}>
+                  {/* Audio player placeholder */}
+                  <div>
+                    <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.green }}>
+                      SAMPLE CALL
+                    </p>
+                    <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                      <p className="text-sm font-semibold mb-3">Hear Dane handle a real dispatch call</p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                             style={{ backgroundColor: BL.green }}>
+                          <Play size={18} style={{ color: BL.darkPurple }} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="h-2 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.15)" }}>
+                            <div className="h-2 rounded-full w-0" style={{ backgroundColor: BL.green }} />
+                          </div>
+                          <p className="text-xs mt-1" style={{ opacity: 0.45 }}>Audio pending — drop file here</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Callback form */}
+                  <div>
+                    <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.green }}>
+                      OR LET DANE CALL YOU
+                    </p>
+                    {broccoliCallConfirmed ? (
+                      <div className="rounded-xl p-5 text-center" style={{ backgroundColor: "rgba(74,222,128,0.15)", border: `1px solid ${BL.green}` }}>
+                        <Check size={28} className="mx-auto mb-2" style={{ color: BL.green }} />
+                        <p className="font-bold text-sm">Dane is calling you within 60 seconds.</p>
+                        <p className="text-xs mt-1" style={{ opacity: 0.6 }}>Make sure your ringer is on.</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleBroccoliCallSubmit} className="space-y-3">
+                        <input name="name" placeholder="Your name" value={broccoliCallForm.name}
+                               onChange={handleBroccoliCallChange}
+                               className="w-full px-4 py-3 rounded-xl text-sm"
+                               style={{ backgroundColor: BL.white, color: BL.body, border: "none", outline: "none" }} />
+                        <input name="phone" placeholder="Your phone number" value={broccoliCallForm.phone}
+                               onChange={handleBroccoliCallChange}
+                               className="w-full px-4 py-3 rounded-xl text-sm"
+                               style={{ backgroundColor: BL.white, color: BL.body, border: "none", outline: "none" }} />
+                        <button type="submit" disabled={broccoliCallbackMutation.isPending}
+                                className="w-full py-3 rounded-full font-bold text-sm"
+                                style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
+                          {broccoliCallbackMutation.isPending ? "Connecting..." : "Call me now!"}
+                        </button>
+                        <p className="text-xs text-center" style={{ opacity: 0.4 }}>
+                          A real AI call. No sales rep. No agenda. Just Dane.
+                        </p>
+                      </form>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right: webinar card */}
+                <div className="rounded-2xl p-8 flex flex-col" style={{ backgroundColor: BL.deepPurple }}>
+                  <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.red }}>
+                    NEXT LIVE WEBINAR
+                  </p>
+                  <h3 className="text-2xl font-extrabold mb-3">
+                    How contractors are putting their phones on autopilot
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm mb-4" style={{ opacity: 0.7 }}>
+                    <Calendar size={14} /> Tuesday, August 12 · 2 PM Eastern
+                  </div>
+                  <p className="text-sm leading-relaxed mb-6" style={{ opacity: 0.7 }}>
+                    Live demo of Broccoli handling real call scenarios, Q&amp;A with the founders, and a
+                    behind-the-scenes look at how the ServiceTitan integration actually works.
+                    Replay sent to all registrants.
+                  </p>
+                  <div className="mt-auto">
+                    <a href={WEBINAR_URL} target="_blank" rel="noopener noreferrer"
+                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm"
+                       style={{ backgroundColor: BL.red, color: BL.white }}>
+                      <Calendar size={16} /> Save My Seat
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* ── 7. FAQ ────────────────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10" style={{ color: BL.body }}>
+                Questions every owner asks
+              </h2>
+              <div className="space-y-4">
+                {blFaqs.map((f) => (
+                  <div key={f.q} className="rounded-2xl p-7" style={{ backgroundColor: BL.lavender }}>
+                    <h3 className="text-base font-bold mb-2" style={{ color: BL.body }}>{f.q}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.72 }}>{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 8. FREE TOOLS STRIP ───────────────────────────────────── */}
+          <section style={{ backgroundColor: "#fff5f8" }} className="px-6 py-14">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-6 text-center" style={{ color: BL.red }}>
+                FREE TOOLS FROM SERVICETITAN HACKS
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "Found Money Calculator",
+                    body: "See how much revenue is leaking from missed and mishandled calls. Takes 90 seconds.",
+                    href: FOUND_MONEY_URL,
+                  },
+                  {
+                    title: "AI Voice Vendor Scorecard",
+                    body: "Compare AI voice vendors side by side on the criteria that actually matter for home service contractors.",
+                    href: SCORECARD_URL,
+                  },
+                ].map((t) => (
+                  <div key={t.title} className="rounded-2xl p-7" style={{ backgroundColor: BL.white, border: `2px solid ${BL.red}` }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+                         style={{ backgroundColor: "#fff5f8" }}>
+                      <FileText size={20} style={{ color: BL.red }} />
+                    </div>
+                    <h3 className="text-base font-bold mb-2" style={{ color: BL.body }}>{t.title}</h3>
+                    <p className="text-sm leading-relaxed mb-4" style={{ opacity: 0.7 }}>{t.body}</p>
+                    <a href={t.href} target="_blank" rel="noopener noreferrer"
+                       className="text-sm font-bold" style={{ color: BL.red }}>
+                      Open the tool &rarr;
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 9. FINAL CTA ──────────────────────────────────────────── */}
+          <section style={{ backgroundColor: BL.lavender }} className="px-6 py-20 text-center">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: BL.body }}>
+                Ready to hear <em style={{ color: BL.purple, fontStyle: "italic" }}>your</em> calls handled?
+              </h2>
+              <p className="text-base mb-8 max-w-xl mx-auto" style={{ opacity: 0.7 }}>
+                Book a demo and Broccoli will pull your ServiceTitan call data live on the call —
+                showing you exactly where bookings are slipping and what the AI would have done instead.
+              </p>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                 style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
+                Book My Demo <ArrowRight size={18} />
+              </a>
+              <p className="mt-5 text-sm" style={{ opacity: 0.5 }}>
+                Booking happens on Broccoli's calendar. Coming from this page tags you as a ServiceTitan
+                Hacks member so you skip the line.
+              </p>
+            </div>
+          </section>
+
         </main>
         <Footer />
       </div>

@@ -1546,6 +1546,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Broccoli AI callback stub — wire to Broccoli callback API + HubSpot before launch
+  app.post("/api/broccoli-callback", async (req, res) => {
+    try {
+      const { name, phone } = req.body;
+
+      if (!name || !phone) {
+        return res.status(400).json({ message: "Name and phone are required." });
+      }
+
+      try {
+        const { client, fromEmail } = await getUncachableResendClient();
+
+        const jsonData = {
+          site_source: "Replit-ServiceTitan-Hacks",
+          url_source: "BROCCOLI_CALLBACK",
+          formName: "Broccoli AI Callback Request",
+          firstName: name || "",
+          lastName: "",
+          phoneNumber: phone || "",
+          email: "",
+          submittedAt: new Date().toISOString(),
+        };
+
+        await client.emails.send({
+          from: fromEmail,
+          to: "bill@st-hacks.com",
+          subject: "New Broccoli AI Callback Request",
+          text: JSON.stringify(jsonData, null, 2),
+        });
+      } catch (emailError) {
+        console.error("Failed to send Broccoli callback email:", emailError);
+      }
+
+      res.status(201).json({ message: "Callback request submitted successfully." });
+    } catch (error) {
+      console.error("Broccoli callback submission error:", error);
+      res.status(500).json({ message: "Failed to submit callback request. Please try again." });
+    }
+  });
+
   // ShareWillow demo request
   app.post("/api/sharewillow-demo", async (req, res) => {
     try {
