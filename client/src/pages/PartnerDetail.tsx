@@ -42,6 +42,7 @@ import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 import sharewillowLogo from "@assets/sharewillow_1780932326327.png";
 import billHeadshot from "@assets/pro_headshot_(8)_1781285653008.png";
 import sthacksHorizLogo from "@assets/new_horz_logo_transparent.png";
+import sthacksNavLogo from "@assets/secondary logo_1760895642629.png";
 import sharewillowNewLogo from "@assets/sharewillow_new_transparent.png";
 
 interface Partner {
@@ -1957,22 +1958,28 @@ export default function PartnerDetail() {
           canonicalUrl="https://servicetitanhacks.com/partners/broccoli-ai"
         />
         <Header />
-        <main className="flex-1">
+        <main className="flex-1" style={{ backgroundColor: BL.lavender, color: BL.body }}>
 
-          {/* Back button */}
-          <div className="px-6 pt-8 max-w-6xl mx-auto" style={{ backgroundColor: BL.lavender }}>
-            <Button variant="ghost" onClick={() => setLocation("/partners")} data-testid="button-back-to-partners">
-              <ArrowLeft className="h-4 w-4 mr-2" /> Back to Partners
-            </Button>
+          {/* Back button – native element, no shadcn bg-background bleed */}
+          <div style={{ backgroundColor: BL.lavender, padding: "28px 24px 0" }}>
+            <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
+              <button onClick={() => setLocation("/partners")}
+                      data-testid="button-back-to-partners"
+                      style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "none", cursor: "pointer", color: BL.body, fontSize: 14, opacity: 0.7, padding: 0 }}>
+                <ArrowLeft size={16} /> Back to Partners
+              </button>
+            </div>
           </div>
 
           {/* ── 1. HERO ────────────────────────────────────────────────── */}
-          <section style={{ backgroundColor: BL.lavender }} className="px-6 pb-20 pt-10 text-center">
+          <section style={{ backgroundColor: BL.lavender }} className="px-6 pb-20 pt-8 text-center">
             <div className="max-w-4xl mx-auto">
               {/* Co-brand lockup */}
               <div className="flex items-center justify-center gap-4 mb-8">
-                <img src={sthacksHorizLogo} alt="ServiceTitan Hacks" style={{ height: 30, width: "auto" }} />
-                <span className="text-2xl font-light" style={{ opacity: 0.4 }}>x</span>
+                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: BL.body }}>
+                  ServiceTitan <span style={{ color: BL.red }}>HACKS</span>
+                </span>
+                <span className="text-2xl font-light" style={{ opacity: 0.4 }}>×</span>
                 <img src={broccoliLogo} alt="Broccoli AI" style={{ height: 30, width: "auto" }} />
               </div>
 
