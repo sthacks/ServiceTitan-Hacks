@@ -1976,11 +1976,11 @@ export default function PartnerDetail() {
             <div className="max-w-4xl mx-auto">
               {/* Co-brand lockup */}
               <div className="flex items-center justify-center gap-4 mb-8">
-                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: BL.body }}>
+                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 28, letterSpacing: "-0.01em", color: BL.body }}>
                   ServiceTitan <span style={{ color: BL.red }}>HACKS</span>
                 </span>
-                <span className="text-2xl font-light" style={{ opacity: 0.4 }}>×</span>
-                <img src={broccoliLogo} alt="Broccoli AI" style={{ height: 30, width: "auto" }} />
+                <span style={{ fontSize: 28, fontWeight: 300, opacity: 0.4 }}>×</span>
+                <img src={broccoliLogo} alt="Broccoli AI" style={{ height: 44, width: "auto" }} />
               </div>
 
               {/* Badge */}
@@ -2402,11 +2402,11 @@ export default function PartnerDetail() {
           {/* HERO */}
           <section className="px-6 pt-10 pb-20 text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: SW.ink }}>
+              <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 28, letterSpacing: "-0.01em", color: SW.ink }}>
                 ServiceTitan <span style={{ color: SW.pink }}>HACKS</span>
               </span>
-              <span className="text-2xl font-light" style={{ opacity: 0.4 }}>×</span>
-              <img src={sharewillowNewLogo} alt="ShareWillow" style={{ height: 28, width: "auto" }} />
+              <span style={{ fontSize: 28, fontWeight: 300, opacity: 0.4 }}>×</span>
+              <img src={sharewillowNewLogo} alt="ShareWillow" style={{ height: 44, width: "auto" }} />
             </div>
 
             <div className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-8"
