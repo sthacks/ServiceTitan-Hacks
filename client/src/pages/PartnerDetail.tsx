@@ -1975,22 +1975,24 @@ export default function PartnerDetail() {
           <section style={{ backgroundColor: BL.lavender }} className="px-6 pb-20 pt-8 text-center">
             <div className="max-w-4xl mx-auto">
               {/* Co-brand lockup */}
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 28, letterSpacing: "-0.01em", color: BL.body }}>
+              <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 24, letterSpacing: "-0.01em", color: BL.body }}>
                   ServiceTitan <span style={{ color: BL.red }}>HACKS</span>
                 </span>
-                <span style={{ fontSize: 28, fontWeight: 300, opacity: 0.4 }}>×</span>
-                <img src={broccoliLogo} alt="Broccoli AI" style={{ height: 44, width: "auto" }} />
+                <span style={{ fontSize: 24, fontWeight: 300, opacity: 0.4 }}>×</span>
+                <img src={broccoliLogo} alt="Broccoli AI" style={{ height: 40, width: "auto" }} />
               </div>
 
               {/* Badge */}
-              <div className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-8"
+              <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-0 px-4 py-2 rounded-2xl text-xs font-bold tracking-wide mb-8 text-center"
                    style={{ backgroundColor: BL.badgeCream, border: `1px solid ${BL.badgeBorder}`, color: BL.body }}>
-                OUR EXCLUSIVE AI VOICE / AI CSR PARTNER &nbsp;·&nbsp; FULLY INTEGRATES WITH SERVICETITAN
+                <span>OUR EXCLUSIVE AI VOICE / AI CSR PARTNER</span>
+                <span className="hidden sm:inline">&nbsp;·&nbsp;</span>
+                <span>FULLY INTEGRATES WITH SERVICETITAN</span>
               </div>
 
               {/* Headline */}
-              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6" style={{ color: BL.body }}>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6" style={{ color: BL.body }}>
                 Your phones, covered.<br />
                 Your evenings, <em style={{ color: BL.purple, fontStyle: "italic" }}>back</em>.
               </h1>
@@ -2003,14 +2005,14 @@ export default function PartnerDetail() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#ai-callback"
-                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                   className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
                    style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
                   <Phone size={18} /> Have the AI Call You
                 </a>
                 <a href={WEBINAR_URL} target="_blank" rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                   className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
                    style={{ backgroundColor: BL.red, color: BL.white }}>
-                  <Calendar size={18} /> Save a Webinar Seat &ndash; Aug 12
+                  <Calendar size={18} /> Save a Webinar Seat – Aug 12
                 </a>
               </div>
             </div>
@@ -2022,8 +2024,8 @@ export default function PartnerDetail() {
               <p className="text-xs font-bold tracking-widest mb-5" style={{ color: BL.red }}>
                 WHY THIS PARTNERSHIP EXISTS
               </p>
-              <div className="flex items-center gap-5 mb-8">
-                <img src={billHeadshot} alt="Bill Brown" style={{ width: 88, height: 88, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 mb-8 text-center sm:text-left">
+                <img src={billHeadshot} alt="Bill Brown" style={{ width: 80, height: 80, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
                 <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: BL.body }}>A note from Bill</h2>
               </div>
               <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
@@ -2284,7 +2286,7 @@ export default function PartnerDetail() {
                 showing you exactly where bookings are slipping and what the AI would have done instead.
               </p>
               <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
                  style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
                 Book My Demo <ArrowRight size={18} />
               </a>
