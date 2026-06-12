@@ -40,6 +40,7 @@ import dataturkLogo from "@assets/logo-21b053a2661df6e0f2bed3fa3d77630731d6a715e
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 import sharewillowLogo from "@assets/sharewillow_1780932326327.png";
+import billHeadshot from "@assets/pro_headshot_(8)_1781285653008.png";
 
 interface Partner {
   name: string;
@@ -2090,9 +2091,7 @@ export default function PartnerDetail() {
                 WHY THIS PARTNERSHIP EXISTS
               </p>
               <div className="flex items-center gap-5 mb-8">
-                <div style={{ width: 96, height: 96, borderRadius: "50%", backgroundColor: "#E8E3D5", border: "1px dashed #9B9484", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontSize: 10, color: "#9B9484", fontFamily: "monospace", textAlign: "center", padding: "0 8px" }}>Bill headshot</span>
-                </div>
+                <img src={billHeadshot} alt="Bill Brown" style={{ width: 96, height: 96, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
                 <h2 className="text-3xl md:text-4xl" style={serif}>
                   A note from Bill
                 </h2>
