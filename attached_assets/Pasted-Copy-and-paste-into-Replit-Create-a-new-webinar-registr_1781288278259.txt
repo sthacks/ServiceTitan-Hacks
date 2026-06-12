@@ -1,0 +1,95 @@
+Copy and paste into Replit:
+
+```
+Create a new webinar registration landing page at /webinars/stop-buying-hours on the
+ServiceTitan Hacks site. Use the same visual system as the existing ShareWillow partner
+page (/partners/sharewillow): cream background #FAF7EC, dark green ink #1C2B1C, yellow
+accent #F7EC6A, ST Hacks pink #EC1B52, Georgia serif for headlines with italic accent
+words, rounded pill buttons, rounded-2xl cards. Page renders inside the standard site
+header and footer. Use straight quotes only, never em-dashes or curly quotes, anywhere
+in copy or code.
+
+SECTION 1 - HERO (cream background, centered, max-w-4xl):
+- Co-brand lockup: "ServiceTitan HACKS" (HACKS in pink) x "ShareWillow" (serif)
+- Yellow pill badge: "FREE LIVE WEBINAR"
+- H1 (serif): How to Stop Buying Hours, Start Paying for Results, and Sell the Switch
+  to Your Techs (italicize the word "Results")
+- Detail row with icons: "Wednesday, July 15" | "1 PM Eastern" | "About 60 minutes + live Q&A"
+- Subhead: "If you pay your technicians by the hour, what exactly are you buying? Not
+  outcomes. Not higher tickets or five-star reviews. Time. One hour, real numbers from
+  real shops on ServiceTitan, no pitch-fest."
+- Live countdown timer to July 15, 2026 1:00 PM EDT (17:00 UTC): four dark green tiles
+  showing Days / Hours / Min / Sec, updating every second. When it reaches zero, the
+  badge text changes to "WE ARE LIVE".
+- Pink pill button "Save My Seat" that smooth-scrolls to #register
+- Small text under button: "Can't make it live? Register anyway. Every registrant gets
+  the full replay."
+
+SECTION 2 - REGISTRATION (id="register", dark green #1C2B1C background):
+- Heading (serif, cream): "Register free below"
+- Subline (cream, 60% opacity): "Live attendees get an exclusive offer we are only
+  making on this webinar."
+- Embed this exact StreamYard registration iframe inside a cream rounded-2xl wrapper
+  with 8px padding:
+<div style="width:100%;height:0px;position:relative;padding-bottom:56.25%;"><iframe src="https://streamyard.com/watch/KGMcjWmWNapZ?embed=true" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+
+SECTION 3 - WHAT WE WILL COVER (cream background, 2-column card grid, each card has a
+yellow circle with a check icon):
+1. "Why most bonus plans fail" - Quarterly bonuses get treated like gifts. Your team
+   says thanks, has no idea what behavior earned it, and changes nothing.
+2. "The real math of hourly pay" - What a 30% labor rate is costing you, and how shops
+   running performance pay get to 18%.
+3. "What a $5M shop saw after switching" - Average tickets from $800-900 to
+   $1,500-2,000, techs tracking their own numbers daily, and no more raise conversations.
+4. "How to sell the switch to your techs" - The shadow payroll method: run the new plan
+   against real jobs first so every tech sees what they would have earned before
+   anything changes.
+5. "Why A-players seek this out" - How an incentive plan becomes a recruiting weapon.
+   One shop hired its best plumber specifically because of it.
+6. "The bottom-line ROI" - Incremental ticket revenue comes with flat marketing spend,
+   so most of it lands as profit. The math at $2M, $5M, and $20M shops.
+Below the grid, centered small text: "Plus open Q&A. Bring the objections: 'My guys
+will quit.' 'It is just commission with extra steps.' 'My market is different.' We have
+heard them all, and we will answer them straight."
+
+SECTION 4 - PROOF BAND (yellow background, centered):
+- Eyebrow: "FROM OUR LAST PERFORMANCE PAY WEBINAR"
+- Three cream stat cards: "$800 to $1,500+" / "Average ticket after the switch at a $5M
+  shop"; "18%" / "Labor rate target vs the 30% hourly creep"; "0" / "Raise requests
+  since switching, per the owner"
+- Serif quote: "I've been beating my head against the table for a long time trying to
+  figure out what to do. My plumbers are watching their numbers day in and day out more
+  than I ever could." attributed to "Ron Williams - Benjamin Franklin Plumbing & One
+  Hour - Ocean City, MD"
+
+SECTION 5 - SPEAKERS (white background, 3 centered cards on cream, each with a
+placeholder circle image slot ~80px ready for headshots I will upload later):
+1. Bill Brown / "Founder, ServiceTitan Hacks" / "Grew Paramount Heating & Air to an
+   Inc. 5000 company, switched his own team to performance pay, and sold the business.
+   Runs the 10,000+ member ServiceTitan Hacks community."
+2. Contractor Guest / "Recently switched to performance pay" / "Sharing the real
+   rollout: what they feared, what they messaged to the team, and what the numbers
+   did." (mark this card with an HTML comment: guest name and headshot coming)
+3. Ryan Shank / "Founder, ShareWillow" / "Built the incentive plan platform used by
+   contractors across the trades. Official ServiceTitan partner. Answering technical
+   and plan-design questions live."
+
+SECTION 6 - FINAL CTA (cream background, centered, max-w-2xl):
+- H2 (serif): "Built for owners who pay hourly and know something is off"
+- Paragraph: "HVAC, plumbing, and electrical owners and managers on ServiceTitan who
+  pay hourly or run a bonus plan that is not changing behavior. Whether you have 3
+  techs or 230, the math works the same way."
+- Paragraph: "You have a million problems in your shop. Pay is the one that touches all
+  of them: efficiency, retention, recruiting, reviews, and profit."
+- Dark green pill button "Register Free for July 15" scrolling to #register
+- Small disclosure text: "Presented by ServiceTitan Hacks with our exclusive
+  performance pay partner, ShareWillow. Transparency: ShareWillow is a paid sponsor of
+  ServiceTitan Hacks."
+
+SEO: page title "Stop Buying Hours: Free Performance Pay Webinar | ServiceTitan Hacks",
+meta description "Free live webinar July 15 at 1 PM ET. How contractors switch to
+performance pay, sell it to their techs, and what happened when a $5M shop did it."
+Make the page mobile-responsive throughout.
+```
+
+This mirrors the WebinarRegistrationPage.jsx in your Sharewillow folder, so you can also just paste that file in if your Replit project structure supports dropping in a component directly. The prompt approach lets Replit's agent adapt it to your existing routing and header/footer instead.
