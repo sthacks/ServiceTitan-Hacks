@@ -1979,6 +1979,7 @@ export default function PartnerDetail() {
         icon: Smartphone,
         title: "Techs see it in real time",
         body: "A mobile app shows every tech where they stand today: one more five-star review, one more on-time arrival, and what it pays. Quarterly bonuses get treated like gifts. Real-time pay changes behavior.",
+        screenshot: true,
       },
     ];
 
@@ -2043,8 +2044,10 @@ export default function PartnerDetail() {
           <section className="px-6 pt-10 pb-20 text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-8">
               <span className="font-bold tracking-tight text-lg">ServiceTitan <span style={{ color: SW.pink }}>HACKS</span></span>
-              <span className="text-2xl font-light" style={{ opacity: 0.4 }}>×</span>
-              <img src={sharewillowLogo} alt="ShareWillow" className="h-7 w-auto dark:invert" />
+              <span className="text-2xl font-light" style={{ opacity: 0.4 }}>x</span>
+              <div style={{ height: 28, width: 140, backgroundColor: "#E8E3D5", border: "1px dashed #9B9484", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ fontSize: 10, color: "#9B9484", fontFamily: "monospace" }}>ShareWillow logo</span>
+              </div>
             </div>
 
             <div className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-8"
@@ -2065,12 +2068,13 @@ export default function PartnerDetail() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#demo"
+              <a href="https://lp.sharewillow.com/sthacks?utm_source=sthacks&utm_medium=partner_page"
+                 target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base"
                  style={{ backgroundColor: SW.ink, color: SW.cream }}>
                 Book a Demo <ArrowRight size={18} />
               </a>
-              <a href="https://www.youtube.com/@servicetitanhacks"
+              <a href="https://lp.sharewillow.com/sthacks-webinar?utm_source=sthacks&utm_medium=partner_page"
                  target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2"
                  style={{ borderColor: SW.ink, color: SW.ink }}>
@@ -2085,9 +2089,14 @@ export default function PartnerDetail() {
               <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: SW.pink }}>
                 WHY THIS PARTNERSHIP EXISTS
               </p>
-              <h2 className="text-3xl md:text-4xl mb-8" style={serif}>
-                A note from Bill
-              </h2>
+              <div className="flex items-center gap-5 mb-8">
+                <div style={{ width: 96, height: 96, borderRadius: "50%", backgroundColor: "#E8E3D5", border: "1px dashed #9B9484", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ fontSize: 10, color: "#9B9484", fontFamily: "monospace", textAlign: "center", padding: "0 8px" }}>Bill headshot</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl" style={serif}>
+                  A note from Bill
+                </h2>
+              </div>
               <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
                 <p>
                   When I ran Paramount Heating &amp; Air, the hardest conversation I ever had
@@ -2171,6 +2180,11 @@ export default function PartnerDetail() {
                       </div>
                       <h3 className="text-xl font-semibold mb-3" style={serif}>{f.title}</h3>
                       <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{f.body}</p>
+                      {(f as any).screenshot && (
+                        <div style={{ width: "100%", height: 160, backgroundColor: "#E8E3D5", border: "1px dashed #9B9484", borderRadius: 12, marginTop: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <span style={{ fontSize: 11, color: "#9B9484", fontFamily: "monospace" }}>product screenshot</span>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
@@ -2216,7 +2230,7 @@ export default function PartnerDetail() {
                   quarterly bonuses get treated like gifts, what an 18% labor rate plan
                   looks like, and how Ron's average ticket nearly doubled.
                 </p>
-                <a href="https://www.youtube.com/@servicetitanhacks"
+                <a href="https://lp.sharewillow.com/sthacks-webinar?utm_source=sthacks&utm_medium=partner_page"
                    target="_blank" rel="noopener noreferrer"
                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
                    style={{ backgroundColor: SW.yellow, color: SW.ink }}>
@@ -2228,15 +2242,16 @@ export default function PartnerDetail() {
                   NEXT LIVE WEBINAR
                 </p>
                 <h3 className="text-2xl mb-4" style={serif}>
-                  How to Switch to Performance Pay Without Losing a Single Tech
+                  How to Stop Buying Hours, Start Paying for Results, and Sell the Switch to Your Techs
                 </h3>
                 <p className="text-sm leading-relaxed mb-6" style={{ opacity: 0.7 }}>
                   <Calendar size={14} className="inline mr-1" />
-                  Wednesday, August 26 · 2 PM Eastern. Live with a contractor who recently
-                  made the switch, plus open Q&amp;A. Registration opens soon; replay sent
+                  Wednesday, July 15 · 1 PM Eastern. Live with a ShareWillow customer telling
+                  their rollout story, plus open Q&amp;A. Registration opens July 1; replay sent
                   to all registrants.
                 </p>
-                <a href="#demo"
+                <a href="https://lp.sharewillow.com/sthacks-webinar?utm_source=sthacks&utm_medium=partner_page"
+                   target="_blank" rel="noopener noreferrer"
                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2"
                    style={{ borderColor: SW.cream, color: SW.cream }}>
                   Get Notified <ArrowRight size={16} />
@@ -2274,67 +2289,16 @@ export default function PartnerDetail() {
                 your actual jobs. Coming from ServiceTitan Hacks means you skip the line.
               </p>
 
-              {swSubmitted ? (
-                <div className="rounded-2xl p-10" style={{ backgroundColor: SW.cream }}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
-                       style={{ backgroundColor: SW.ink }}>
-                    <Check size={26} style={{ color: SW.yellow }} />
-                  </div>
-                  <h3 className="text-2xl mb-2" style={serif}>You're in.</h3>
-                  <p className="text-sm" style={{ opacity: 0.75 }}>
-                    ShareWillow will reach out within one business day. Bill gets a copy of
-                    every request from this page, so it won't fall through the cracks.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSwSubmit} className="rounded-2xl p-8 text-left space-y-4"
-                      style={{ backgroundColor: SW.cream }}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5">Name</label>
-                      <input name="name" required value={swForm.name} onChange={handleSwChange}
-                             className="w-full px-4 py-3 rounded-xl border text-sm"
-                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5">Email</label>
-                      <input name="email" type="email" required value={swForm.email} onChange={handleSwChange}
-                             className="w-full px-4 py-3 rounded-xl border text-sm"
-                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5">Company</label>
-                      <input name="company" required value={swForm.company} onChange={handleSwChange}
-                             className="w-full px-4 py-3 rounded-xl border text-sm"
-                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5">Number of techs</label>
-                      <input name="techs" value={swForm.techs} onChange={handleSwChange}
-                             className="w-full px-4 py-3 rounded-xl border text-sm"
-                             style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }} />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold mb-1.5">On ServiceTitan?</label>
-                    <select name="onST" value={swForm.onST} onChange={handleSwChange}
-                            className="w-full px-4 py-3 rounded-xl border text-sm"
-                            style={{ borderColor: "#D8D2BC", backgroundColor: SW.white, color: SW.ink }}>
-                      <option value="yes">Yes</option>
-                      <option value="no">Not yet</option>
-                    </select>
-                  </div>
-                  <button type="submit"
-                          disabled={sharewillowDemoMutation.isPending}
-                          className="w-full py-4 rounded-full font-semibold text-base inline-flex items-center justify-center gap-2"
-                          style={{ backgroundColor: SW.ink, color: SW.cream }}>
-                    {sharewillowDemoMutation.isPending ? "Sending…" : <><span>Book My Demo</span><ArrowRight size={18} /></>}
-                  </button>
-                  <p className="text-xs text-center" style={{ opacity: 0.5 }}>
-                    No spam, no list-selling. Your info goes to ShareWillow's team and to Bill. That's it.
-                  </p>
-                </form>
-              )}
+              <a href="https://lp.sharewillow.com/sthacks?utm_source=sthacks&utm_medium=partner_page"
+                 target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base"
+                 style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                Book My Demo <ArrowRight size={18} />
+              </a>
+              <p className="mt-6 text-sm" style={{ opacity: 0.6 }}>
+                Booking happens on ShareWillow's calendar. Coming from this page tags you as a
+                ServiceTitan Hacks member, so you skip the line.
+              </p>
             </div>
           </section>
 

@@ -1,0 +1,38 @@
+Update the ShareWillow partner landing page (/partners/sharewillow). Five changes:
+
+1. WEBINAR CARD: In the "Next Live Webinar" card (dark section), change the date from
+"Wednesday, August 26 - 2 PM Eastern" to "Wednesday, July 15 - 1 PM Eastern". Change the
+card title to "How to Stop Buying Hours, Start Paying for Results, and Sell the Switch to
+Your Techs". Change the supporting line to: "Live with a ShareWillow customer telling
+their rollout story, plus open Q&A. Registration opens July 1; replay sent to all
+registrants."
+
+2. REMOVE THE DEMO FORM: Delete the entire form (Name, Email, Company, Number of techs,
+On ServiceTitan dropdown, Book My Demo submit) from the yellow "See your numbers, not
+sample data" section at the bottom. Replace it with a single centered button styled like
+the hero's primary pill button (dark green background, cream text, arrow icon) with the
+label "Book My Demo" linking to
+https://lp.sharewillow.com/sthacks?utm_source=sthacks&utm_medium=partner_page
+Keep the section heading and intro paragraph. Below the button add this small footnote
+text: "Booking happens on ShareWillow's calendar. Coming from this page tags you as a
+ServiceTitan Hacks member, so you skip the line."
+
+3. CTA LINKS: Set these exact destinations on existing buttons:
+- Hero "Book a Demo" ->
+  https://lp.sharewillow.com/sthacks?utm_source=sthacks&utm_medium=partner_page
+- Hero "Watch the Free Webinar" ->
+  https://lp.sharewillow.com/sthacks-webinar?utm_source=sthacks&utm_medium=partner_page
+- Dark section "Watch the Replay" ->
+  https://lp.sharewillow.com/sthacks-webinar?utm_source=sthacks&utm_medium=partner_page
+- Dark section "Get Notified" ->
+  https://lp.sharewillow.com/sthacks-webinar?utm_source=sthacks&utm_medium=partner_page
+All four open in a new tab (target="_blank" with rel="noopener").
+
+4. IMAGE PLACEHOLDERS: Add three image slots with neutral placeholder boxes and alt text,
+ready for files I will upload later: (a) ShareWillow logo in the hero lockup replacing the
+plain "ShareWillow" text, height ~28px; (b) a headshot, ~96px circle, left of the
+"A note from Bill" heading; (c) a product screenshot, rounded corners, inside the
+"Techs see it in real time" feature card.
+
+5. COPY RULES: Do not introduce em-dashes or curly quotes anywhere; use straight quotes
+only. Keep all other copy, colors, and layout exactly as they are.
