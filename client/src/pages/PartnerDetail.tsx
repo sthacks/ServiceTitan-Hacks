@@ -2402,8 +2402,10 @@ export default function PartnerDetail() {
           {/* HERO */}
           <section className="px-6 pt-10 pb-20 text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <img src={sthacksHorizLogo} alt="ServiceTitan Hacks" style={{ height: 32, width: "auto" }} />
-              <span className="text-2xl font-light" style={{ opacity: 0.4 }}>x</span>
+              <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: SW.ink }}>
+                ServiceTitan <span style={{ color: SW.pink }}>HACKS</span>
+              </span>
+              <span className="text-2xl font-light" style={{ opacity: 0.4 }}>×</span>
               <img src={sharewillowNewLogo} alt="ShareWillow" style={{ height: 28, width: "auto" }} />
             </div>
 
