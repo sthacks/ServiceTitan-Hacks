@@ -1952,10 +1952,12 @@ export default function PartnerDetail() {
     return (
       <div className="min-h-screen flex flex-col" style={font}>
         <SEO
-          title="Broccoli AI | AI Voice and CSR Partner | ServiceTitan Hacks"
-          description="Broccoli AI answers every call, books jobs directly in ServiceTitan, and gives your team their evenings back. Our exclusive AI Voice and AI CSR partner."
+          title="Broccoli + ServiceTitan Hacks: Your Phones, Covered"
+          description="AI CSR for ServiceTitan contractors. Broccoli answers calls, books jobs, and handles overflow so your team stops losing appointments."
           keywords="Broccoli AI, ServiceTitan partner, AI voice agent, AI CSR, contractor call handling, after-hours answering"
           canonicalUrl="https://servicetitanhacks.com/partners/broccoli-ai"
+          ogImage="https://servicetitanhacks.com/og-broccoli.png"
+          ogImageAlt="Broccoli + ServiceTitan Hacks: Your phones, covered. AI CSR + ServiceTitan integration."
         />
         <Header />
         <main className="flex-1" style={{ backgroundColor: BL.lavender, color: BL.body }}>
@@ -2381,10 +2383,12 @@ export default function PartnerDetail() {
     return (
       <div className="min-h-screen flex flex-col">
         <SEO
-          title="ShareWillow | Performance Pay for ServiceTitan Contractors"
-          description="ShareWillow helps home service contractors on ServiceTitan design, launch, and manage performance pay plans that get technicians thinking like owners."
+          title="ShareWillow + ServiceTitan Hacks: Pay for Results"
+          description="Performance pay software for ServiceTitan teams. ShareWillow helps contractors design, launch, and manage incentive plans tied to real numbers."
           keywords="ShareWillow, ServiceTitan partner, performance pay, incentive plans, employee bonuses, profit sharing"
           canonicalUrl="https://servicetitanhacks.com/partners/sharewillow"
+          ogImage="https://servicetitanhacks.com/og-sharewillow.png"
+          ogImageAlt="ShareWillow + ServiceTitan Hacks: Pay for results. Performance pay for ServiceTitan teams."
         />
         <Header />
         <main className="flex-1" style={{ backgroundColor: SW.cream, color: SW.ink }}>
