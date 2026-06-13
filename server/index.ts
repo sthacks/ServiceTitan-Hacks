@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { metaTagsMiddleware } from "./metaTagsMiddleware";
+import { isValidRoute } from "./validRoutes";
 import cron from "node-cron";
 import { syncPodcastEpisodes } from "./podcastSync";
 import path from "path";
@@ -121,9 +122,10 @@ app.use((req, res, next) => {
     // 2. Apply meta tags middleware (for HTML routes)
     app.use(metaTagsMiddleware);
 
-    // 3. Fall through to index.html if file doesn't exist
-    app.use("*", (_req, res) => {
-      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    // 3. Fall through to index.html for known routes; return 404 for unknown ones
+    app.use("*", (req, res) => {
+      const status = isValidRoute(req.path) ? 200 : 404;
+      res.status(status).setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
       res.sendFile(path.resolve(distPath, "index.html"));
     });
   }

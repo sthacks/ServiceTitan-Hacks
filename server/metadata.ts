@@ -293,40 +293,10 @@ export const metadata: Record<string, PageMetadata> = {
   },
   
   // Webinar Pages
-  "/webinar/membership-retention": {
-    title: "Stop Rebuying Your Own Customers | Replay Available | ServiceTitan Hacks",
-    description: "Watch the replay: David Hargrove grew from 500 to 2,000 memberships in 18 months at Kali Refrigeration. Learn the CSR scripts, tiered plans with PolyCredits, and SmartAC retention strategies he used.",
-    ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
-  },
-  "/webinar/price-conversation": {
-    title: "Should Contractors Put Pricing Online in 2026? Fireside Chat | ServiceTitan Hacks",
-    description: "Fireside chat with contractors and experts on online pricing, AI search, and staying in control without commoditizing your service.",
-    ogImage: "https://servicetitanhacks.com/og-price-conversation-webinar.png",
-  },
   "/webinar/stop-spreadsheet-payroll": {
     title: "Stop the Spreadsheet Payroll Nightmare | ServiceTitan Hacks Webinar",
     description: "Leave with a clear, auditable way to replace fragile commission spreadsheets with consistent rules and payroll-ready reports—without ripping out your current payroll system.",
     ogImage: "https://servicetitanhacks.com/og-spreadsheet-payroll-webinar.png",
-  },
-  "/webinar/equipment-pricing": {
-    title: "How Contractors Buy Equipment Like Private Equity | ServiceTitan Hacks Webinar",
-    description: "Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics. Free live webinar.",
-    ogImage: "https://servicetitanhacks.com/og-equipment-pricing-webinar.png",
-  },
-  "/webinar/equipment-pricing-replay": {
-    title: "How Contractors Buy Equipment Like Private Equity | Replay",
-    description: "Watch the replay: Learn how private equity gets better equipment pricing and how independent contractors can now access national-level purchasing economics.",
-    ogImage: "https://servicetitanhacks.com/og-equipment-pricing-webinar.png",
-  },
-  "/webinar/invisible-labor-market": {
-    title: "How to Find and Recruit A-Player Technicians Not On Job Boards | ServiceTitan Hacks Webinar",
-    description: "Live training showing actionable methods any service business can implement this week to find top technicians outside traditional job boards.",
-    ogImage: "https://servicetitanhacks.com/og-recruiting-webinar.png",
-  },
-  "/webinar/membership-retention-replay": {
-    title: "Stop Rebuying Your Own Customers | Replay",
-    description: "Watch the replay: Membership retention strategies that keep members renewing, booking, and referring - without rebuilding your ServiceTitan setup.",
-    ogImage: "https://servicetitanhacks.com/og-membership-retention-webinar.png",
   },
   "/webinar/ai-csr": {
     title: "How Contractors Are Handling More Calls Without Hiring More CSRs | ServiceTitan Hacks",
@@ -348,12 +318,6 @@ export const metadata: Record<string, PageMetadata> = {
     description: "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
     ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
-  "/webinar/recruiting-replay": {
-    title: "How to Find and Recruit A-Player Technicians Not On Job Boards | Replay",
-    description: "Watch the replay: Actionable methods any service business can implement to find top technicians outside traditional job boards.",
-    ogImage: "https://servicetitanhacks.com/og-recruiting-webinar.png",
-  },
-  
   // Automation Services Pages
   "/servicetitan-automation-services": {
     title: "Custom ServiceTitan Automations for Your Shop | ServiceTitan Hacks",

@@ -186,6 +186,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.redirect(301, `https://servicetitanhacks.thinkific.com/products/courses/${coursePath}`);
     }
 
+    // 301 redirects for retired webinar URLs — must be server-side so crawlers
+    // receive a real redirect signal instead of a 200 SPA document.
+    const retiredWebinarRedirects: Record<string, string> = {
+      '/webinar/invisible-labor-market': '/events',
+      '/webinar/price-conversation': '/events',
+      '/webinar/membership-retention': '/events',
+      '/webinar/equipment-pricing': '/events',
+      '/webinar/equipment-pricing-replay': '/events',
+      '/webinar/recruiting-replay': '/events',
+      '/webinar/membership-retention-replay': '/events',
+    };
+    if (retiredWebinarRedirects[req.path]) {
+      return res.redirect(301, retiredWebinarRedirects[req.path]);
+    }
+
     next();
   });
 
@@ -2997,18 +3012,41 @@ Return HTML only. Begin your response with an HTML tag.`;
       { url: "/webinar/referral-gap", priority: "0.7", changefreq: "monthly" },
       { url: "/webinar/incentive-plan-problem", priority: "0.7", changefreq: "monthly" },
       { url: "/webinar/phonetap", priority: "0.7", changefreq: "monthly" },
+      { url: "/webinar/ai-csr", priority: "0.7", changefreq: "monthly" },
+      { url: "/webinars/stop-buying-hours", priority: "0.7", changefreq: "monthly" },
       // Tools / calculators
       { url: "/smartac-roi-calculator", priority: "0.7", changefreq: "monthly" },
       { url: "/wink-roi-calculator", priority: "0.7", changefreq: "monthly" },
+      { url: "/wink-roi-saver", priority: "0.7", changefreq: "monthly" },
       { url: "/hiring-roi-calculator", priority: "0.7", changefreq: "monthly" },
       { url: "/truck-roll-calculator", priority: "0.7", changefreq: "monthly" },
+      // Landing pages
+      { url: "/automation-playbook-landing", priority: "0.7", changefreq: "monthly" },
+      { url: "/servicetitan-metrics-landing", priority: "0.7", changefreq: "monthly" },
+      { url: "/swimlane-charts-landing", priority: "0.7", changefreq: "monthly" },
+      { url: "/pricing-objections-landing", priority: "0.7", changefreq: "monthly" },
       // Resources
       { url: "/resources", priority: "0.7", changefreq: "weekly" },
       { url: "/podcast", priority: "0.7", changefreq: "weekly" },
-      // Info pages
+      // Info / misc pages
+      { url: "/sponsors", priority: "0.7", changefreq: "monthly" },
+      { url: "/giveaway", priority: "0.7", changefreq: "monthly" },
+      { url: "/bill", priority: "0.6", changefreq: "monthly" },
       { url: "/about", priority: "0.6", changefreq: "monthly" },
       { url: "/contact", priority: "0.6", changefreq: "monthly" },
       { url: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
+      // Automation services
+      { url: "/servicetitan-automation-services/zapier", priority: "0.7", changefreq: "monthly" },
+      // Pricebook overhaul
+      { url: "/pricebook-overhaul/security", priority: "0.7", changefreq: "monthly" },
+      // Partner pages — all active slugs from PartnerDetail.tsx
+      { url: "/partners/liveswitch", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/broccoli-ai", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/sharewillow", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/phonetap", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/polycam", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/service-crucible", priority: "0.7", changefreq: "monthly" },
+      { url: "/partners/dataturk", priority: "0.7", changefreq: "monthly" },
     ];
 
     const blogPosts = [

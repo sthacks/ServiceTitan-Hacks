@@ -1,22 +1,30 @@
 import { Request, Response, NextFunction } from "express";
 import { getMetadata } from "./metadata";
+import { isValidRoute } from "./validRoutes";
 import fs from "fs/promises";
 import path from "path";
+
+const NOT_FOUND_METADATA = {
+  title: "Page Not Found | ServiceTitan Hacks",
+  description: "The page you are looking for does not exist.",
+  ogImage: "https://servicetitanhacks.com/og-default.png",
+  ogType: "website",
+};
 
 /**
  * Middleware to inject page-specific meta tags into HTML responses.
  * Runs for all social/link-preview crawlers so they see correct OG tags
  * even though this is a client-side React SPA.
  */
-function injectMetaTags(html: string, reqPath: string): string {
+function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
   if (!html || !html.includes('</head>')) {
     return html;
   }
 
-  const metadata = getMetadata(reqPath);
+  const metadata = valid ? getMetadata(reqPath) : NOT_FOUND_METADATA;
   const url = `https://servicetitanhacks.com${reqPath}`;
 
-  return html
+  let result = html
     .replace(/<title>.*?<\/title>/, `<title>${metadata.title}</title>`)
     .replace(
       /<meta name="description" content=".*?" \/>/,
@@ -25,10 +33,6 @@ function injectMetaTags(html: string, reqPath: string): string {
     .replace(
       /<meta name="title" content=".*?" \/>/,
       `<meta name="title" content="${metadata.title}" />`
-    )
-    .replace(
-      /<link rel="canonical" href=".*?" \/>/,
-      `<link rel="canonical" href="${url}" />`
     )
     .replace(
       /<meta property="og:type" content=".*?" \/>/,
@@ -70,14 +74,30 @@ function injectMetaTags(html: string, reqPath: string): string {
     .replace(
       /<meta name="twitter:image" content=".*?" \/>/,
       `<meta name="twitter:image" content="${metadata.ogImage}" />`
-    )
-    // Inject og:image:alt and twitter:image:alt before </head> when provided
-    .replace(
-      '</head>',
-      metadata.ogImageAlt
-        ? `<meta property="og:image:alt" content="${metadata.ogImageAlt}" />\n<meta name="twitter:image:alt" content="${metadata.ogImageAlt}" />\n</head>`
-        : '</head>'
     );
+
+  if (valid) {
+    // Known routes: inject canonical + optional image alt tags
+    result = result
+      .replace(
+        /<link rel="canonical" href=".*?" \/>/,
+        `<link rel="canonical" href="${url}" />`
+      )
+      .replace(
+        '</head>',
+        (metadata as any).ogImageAlt
+          ? `<meta property="og:image:alt" content="${(metadata as any).ogImageAlt}" />\n<meta name="twitter:image:alt" content="${(metadata as any).ogImageAlt}" />\n</head>`
+          : '</head>'
+      );
+  } else {
+    // Unknown routes: remove canonical tag and add noindex so crawlers don't
+    // index or consolidate the unknown URL.
+    result = result
+      .replace(/<link rel="canonical" href=".*?" \/>/, '')
+      .replace('</head>', '<meta name="robots" content="noindex, nofollow" />\n</head>');
+  }
+
+  return result;
 }
 
 // Crawler / link-preview user agents that do not execute JavaScript.
@@ -107,10 +127,13 @@ export async function metaTagsMiddleware(req: Request, res: Response, next: Next
       ? path.resolve(path.dirname(new URL(import.meta.url).pathname), 'public', 'index.html')
       : path.join(process.cwd(), 'client', 'index.html');
 
+    const valid = isValidRoute(req.path);
     let html = await fs.readFile(templatePath, 'utf-8');
-    html = injectMetaTags(html, req.path);
+    html = injectMetaTags(html, req.path, valid);
 
-    res.setHeader('Content-Type', 'text/html');
+    // Unknown routes return 404 so crawlers treat them as true not-found pages.
+    const status = valid ? 200 : 404;
+    res.status(status).setHeader('Content-Type', 'text/html');
     res.send(html);
   } catch (error) {
     console.error('[metaTagsMiddleware] Error serving crawler HTML:', error);
