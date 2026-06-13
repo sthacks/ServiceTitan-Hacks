@@ -15,7 +15,7 @@ interface SEOProps {
 const SITE_NAME = "ServiceTitan Hacks";
 const DEFAULT_TITLE = "ServiceTitan Hacks - AI and Automations for Home Service Contractors";
 const DEFAULT_DESCRIPTION = "AI tools for contractors. Learn ServiceTitan automation for HVAC, plumbing businesses. Free courses, tools & community. Join 10,800+ contractors.";
-const DEFAULT_IMAGE = "https://servicetitanhacks.com/og-default.png";
+const DEFAULT_IMAGE = "https://servicetitanhacks.com/og-home.png";
 const DEFAULT_URL = "https://servicetitanhacks.com/";
 
 export default function SEO({

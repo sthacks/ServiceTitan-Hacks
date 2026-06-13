@@ -103,6 +103,8 @@ const STATIC_ROUTES = new Set<string>([
  */
 const VALID_BLOG_SLUGS = new Set<string>([
   "why-phonetap-exists",
+  "why-i-stopped-caring-about-hvac-equipment-brands",
+  "why-hvac-contractors-overvalue-new-customers",
   "diy-ai-sales-coach",
   "4-ways-top-companies-control-schedule",
   "stop-treating-dashboard-like-spreadsheet",

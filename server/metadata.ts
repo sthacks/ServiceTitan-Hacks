@@ -12,19 +12,31 @@ export const metadata: Record<string, PageMetadata> = {
   "/blog/diy-ai-sales-coach": {
     title: "How I Built a DIY 'Sales Coach' for $25/Month Using AI | ServiceTitan Hacks Blog",
     description: "I'll be honest: I am not a good salesperson. But I'm getting better—and the only reason is because I finally learned how to study my own mistakes using AI. Here's my $25/month hack.",
-    ogImage: "https://servicetitanhacks.com/og-ai-sales-coach.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/4-ways-top-companies-control-schedule": {
     title: "4 Surprising Ways Top Home Service Companies Take Control of Their Schedule | ServiceTitan Hacks",
     description: "Most companies think they have a scheduling problem. What they really have is a visibility problem. Learn four real strategies top operators use to take control of capacity.",
-    ogImage: "https://servicetitanhacks.com/3-day-call-board-blog.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/stop-treating-dashboard-like-spreadsheet": {
     title: "Dashboard Philosophy for Contractors: Why Simple Beats Complex | ServiceTitan Hacks",
     description: "Your call center dashboard should be as simple as your truck's gas gauge. Learn the 5-second rule for contractor dashboards and why I built the Titan Call Board to replace noisy spreadsheets.",
-    ogImage: "https://servicetitanhacks.com/titan-dashboards-blog.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
+    ogType: "article",
+  },
+  "/blog/why-i-stopped-caring-about-hvac-equipment-brands": {
+    title: "Why I Stopped Caring So Much About HVAC Equipment Brands | ServiceTitan Hacks Blog",
+    description: "After 25 years in HVAC—as a tech, installer, sales rep, business owner, and working manufacturer-side—I've seen how equipment is actually made. Most brands are more similar than different. Here's what really matters.",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
+    ogType: "article",
+  },
+  "/blog/why-hvac-contractors-overvalue-new-customers": {
+    title: "Why HVAC Contractors Overvalue New Customers and Undervalue Retention | ServiceTitan Hacks Blog",
+    description: "Attribution is useful, but incomplete. When contractors zoom in too far on lead sources and acquisition costs, they miss the bigger strategic question: where does revenue actually come from, and how do you keep it?",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/selling-hvac-systems-to-millennials-online-pricing": {
@@ -60,37 +72,37 @@ export const metadata: Record<string, PageMetadata> = {
   "/blog/ai-automation-contractors-where-to-start": {
     title: "AI for Contractors: Where to Start?",
     description: "Overwhelmed by AI buzz? Here are the practical, first steps to actually using automation in your service business.",
-    ogImage: "https://servicetitanhacks.com/og-ai-automation.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/double-booking-rate-better-forms": {
     title: "Double Your Booking Rate with Better Forms",
     description: "Your intake forms might be killing your conversion rate. See how small tweaks can lead to massive booking improvements.",
-    ogImage: "https://servicetitanhacks.com/og-double-booking.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/servicetitan-dashboard-metrics": {
     title: "5 ServiceTitan Metrics You Can't Ignore",
     description: "Are you tracking the right numbers? Here are the essential dashboard metrics every owner needs to watch daily.",
-    ogImage: "https://servicetitanhacks.com/og-dashboard-metrics.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/ultimate-guide-automating-follow-up-calls": {
     title: "The Ultimate Guide to Automating Follow-Ups",
     description: "The money is in the follow-up. Learn how to automate your calls so no unsold estimate ever slips through the cracks.",
-    ogImage: "https://servicetitanhacks.com/og-automating-followups.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/top-servicetitan-integrations-2025": {
     title: "Top ServiceTitan Integrations for 2025",
     description: "Upgrade your tech stack. We reviewed the top apps and integrations you need to be using this year.",
-    ogImage: "https://servicetitanhacks.com/og-top-integrations-2025.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   "/blog/convert-more-leads-better-website": {
     title: "How to Convert More Leads with Your Website",
     description: "Is your website just a brochure or a lead machine? Simple changes to turn more visitors into booked ServiceTitan jobs.",
-    ogImage: "https://servicetitanhacks.com/og-convert-leads-website.png",
+    ogImage: "https://servicetitanhacks.com/og-blog.png",
     ogType: "article",
   },
   
@@ -145,15 +157,20 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Meet the best-in-class integration partners we trust to help you automate and optimize your ServiceTitan workflow.",
     ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
+  "/partners/wink-toolbox": {
+    title: "Wink Toolbox | ServiceTitan Hacks Partner",
+    description: "Wink Toolbox connects your tech stack, automates your reporting and back-office workflows, and gives home-service companies the clarity they need to scale.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
+  },
   "/partners/smartac": {
     title: "SmartAC | ServiceTitan Hacks Partner",
     description: "SmartAC provides remote HVAC monitoring that reduces truck rolls and increases membership retention. Comfort without concern.",
-    ogImage: "https://servicetitanhacks.com/og-smartac-partner.png",
+    ogImage: "https://servicetitanhacks.com/og-smartac-calculator.png",
   },
   "/partners/contractor-commerce": {
     title: "Contractor Commerce | ServiceTitan Hacks Partner",
     description: "Built by contractors, for contractors. Online HVAC system pricing and sales tools that let homeowners shop on their terms.",
-    ogImage: "https://servicetitanhacks.com/og-contractor-commerce-partner.jpg",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
   "/partners/broccoli-ai": {
     title: "Broccoli + ServiceTitan Hacks: Your Phones, Covered",
@@ -163,11 +180,32 @@ export const metadata: Record<string, PageMetadata> = {
   "/partners/phonetap": {
     title: "PhoneTap | ServiceTitan Hacks Partner",
     description: "PhoneTap helps ServiceTitan contractors analyze calls, find missed revenue, fix bad call data, and give CSR managers clearer daily insights.",
+    ogImage: "https://servicetitanhacks.com/og-phonetap-csrs.png",
   },
   "/partners/sharewillow": {
     title: "ShareWillow + ServiceTitan Hacks: Pay for Results",
     description: "Performance pay software for ServiceTitan teams. ShareWillow helps contractors design, launch, and manage incentive plans tied to real numbers.",
     ogImage: "https://servicetitanhacks.com/og-sharewillow.png",
+  },
+  "/partners/liveswitch": {
+    title: "LiveSwitch | ServiceTitan Hacks Partner",
+    description: "Professional virtual phone solutions designed to streamline communication and enhance customer service for home service businesses.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
+  },
+  "/partners/polycam": {
+    title: "Polycam | ServiceTitan Hacks Partner",
+    description: "Advanced 3D scanning and modeling solutions for home service contractors to capture accurate property measurements and documentation.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
+  },
+  "/partners/service-crucible": {
+    title: "Service Crucible | ServiceTitan Hacks Partner",
+    description: "Service Crucible helps HVAC, plumbing, and electrical companies grow, boost profits, and build systems that run without daily chaos.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
+  },
+  "/partners/dataturk": {
+    title: "DataTurk | ServiceTitan Hacks Partner",
+    description: "AI-powered funnel analytics that grades your ServiceTitan performance from call center to close, with actionable insights to boost bookings, conversions, and revenue.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
@@ -215,7 +253,12 @@ export const metadata: Record<string, PageMetadata> = {
   "/wink-roi-calculator": {
     title: "Wink Toolbox ROI Calculator — AI Invoicing Savings | ServiceTitan Hacks",
     description: "Calculate how much time and money you can save by automating your invoicing with Wink Toolbox. Get instant ROI analysis with time savings, mistake reduction, and 5-year projections.",
-    ogImage: "https://servicetitanhacks.com/og-wink-partner.png",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
+  },
+  "/wink-roi-saver": {
+    title: "Wink ROI Saver Calculator | ServiceTitan Hacks",
+    description: "See how much your home service company can save by automating back-office tasks with Wink Toolbox. Calculate your ROI in seconds.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
   },
   "/hiring-roi-calculator": {
     title: "Hiring ROI Calculator | ServiceTitan Hacks",
@@ -298,7 +341,7 @@ export const metadata: Record<string, PageMetadata> = {
   "/webinar/stop-spreadsheet-payroll": {
     title: "Stop the Spreadsheet Payroll Nightmare | ServiceTitan Hacks Webinar",
     description: "Leave with a clear, auditable way to replace fragile commission spreadsheets with consistent rules and payroll-ready reports—without ripping out your current payroll system.",
-    ogImage: "https://servicetitanhacks.com/og-spreadsheet-payroll-webinar.png",
+    ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
   "/webinar/ai-csr": {
     title: "How Contractors Are Handling More Calls Without Hiring More CSRs | ServiceTitan Hacks",
@@ -308,7 +351,7 @@ export const metadata: Record<string, PageMetadata> = {
   "/webinar/phonetap": {
     title: "What Your Missed Calls Are Actually Costing You | PhoneTap Live Webinar",
     description: "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. Live demo April 8, 2026.",
-    ogImage: "https://servicetitanhacks.com/og-phonetap-webinar.png",
+    ogImage: "https://servicetitanhacks.com/og-phonetap-csrs.png",
   },
   "/webinar/referral-gap": {
     title: "The 83% Referral Gap | Free Live Fireside Chat",
@@ -320,6 +363,25 @@ export const metadata: Record<string, PageMetadata> = {
     description: "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
     ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
+  // Standalone Pages
+  "/sponsors": {
+    title: "Sponsor ServiceTitan Hacks | Reach 10,000+ Verified Contractors",
+    description: "Partner with ServiceTitan Hacks to reach over 10,000 verified ServiceTitan contractors. Explore webinar, podcast, email, and retargeting sponsorship opportunities.",
+    ogImage: "https://servicetitanhacks.com/og-partners.png",
+  },
+  "/bill": {
+    title: "Meet Bill Brown | Founder of ServiceTitan Hacks",
+    description: "Bill Brown grew an Inc. 5000 HVAC company, mastered ServiceTitan inside and out, and built the largest community of ServiceTitan contractors. Learn his story.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
+  },
+
+  // Webinar (stop-buying-hours uses /webinars/ not /webinar/)
+  "/webinars/stop-buying-hours": {
+    title: "Stop Buying Hours: Free Performance Pay Webinar | ServiceTitan Hacks",
+    description: "Free live webinar July 15 at 1 PM ET. How contractors switch to performance pay, sell it to their techs, and what happened when a $5M shop did it.",
+    ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
+  },
+
   // Automation Services Pages
   "/servicetitan-automation-services": {
     title: "Custom ServiceTitan Automations for Your Shop | ServiceTitan Hacks",

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar, Clock, Video, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const SW = {
   cream: "#FAF7EC",
@@ -100,10 +101,12 @@ export default function WebinarStopBuyingHours() {
 
   return (
     <>
-      <title>Stop Buying Hours: Free Performance Pay Webinar | ServiceTitan Hacks</title>
-      <meta name="description" content="Free live webinar July 15 at 1 PM ET. How contractors switch to performance pay, sell it to their techs, and what happened when a $5M shop did it." />
-      <meta property="og:title" content="Stop Buying Hours: Free Performance Pay Webinar | ServiceTitan Hacks" />
-      <meta property="og:description" content="Free live webinar July 15 at 1 PM ET. How contractors switch to performance pay, sell it to their techs, and what happened when a $5M shop did it." />
+      <SEO
+        title="Stop Buying Hours: Free Performance Pay Webinar | ServiceTitan Hacks"
+        description="Free live webinar July 15 at 1 PM ET. How contractors switch to performance pay, sell it to their techs, and what happened when a $5M shop did it."
+        ogImage="https://servicetitanhacks.com/og-incentive-plan-webinar.png"
+        canonicalUrl="https://servicetitanhacks.com/webinars/stop-buying-hours"
+      />
       <div className="min-h-screen flex flex-col" style={{ fontFamily: "Oxygen, Arial, sans-serif", color: SW.ink }}>
         <Header />
         <main className="flex-1">

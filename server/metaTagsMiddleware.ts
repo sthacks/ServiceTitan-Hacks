@@ -7,7 +7,7 @@ import path from "path";
 const NOT_FOUND_METADATA = {
   title: "Page Not Found | ServiceTitan Hacks",
   description: "The page you are looking for does not exist.",
-  ogImage: "https://servicetitanhacks.com/og-default.png",
+  ogImage: "https://servicetitanhacks.com/og-home.png",
   ogType: "website",
 };
 
