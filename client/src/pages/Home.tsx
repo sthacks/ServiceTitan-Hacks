@@ -37,7 +37,7 @@ export default function Home() {
       title: "All-Access Pass",
       description: "Get unlimited access to all ServiceTitan automation courses, exclusive AI tools, premium resources, and monthly live Q&A calls.",
       icon: Key,
-      link: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass",
+      link: "/all-access",
       image: "https://import.cdn.thinkific.com/1072722%2Fcustom_site_themes%2Fid%2FrOZRIUxmQnuM1nxHaiSi_31639845-0.jpg",
       alt: "ServiceTitan Hacks All-Access Pass - unlimited contractor courses and AI tools",
       cta: "Get All-Access Pass",
@@ -129,7 +129,7 @@ export default function Home() {
           }}
           secondaryCta={{
             label: "All-Access Pass",
-            href: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass",
+            href: "/all-access",
           }}
           backgroundImage={heroImage}
         />

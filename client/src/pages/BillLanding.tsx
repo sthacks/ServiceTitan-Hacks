@@ -36,8 +36,8 @@ const paths = [
     label: "Get All-Access",
     description: "Every course, tool, and monthly live Q&A — unlimited access for one price.",
     cta: "See All-Access Pass",
-    href: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass",
-    external: true,
+    href: "/all-access",
+    external: false,
     featured: false,
   },
 ];

@@ -40,6 +40,20 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "9",
+    title: "Stop Buying Hours: How Contractors Are Switching to Performance Pay",
+    description: "A practical conversation about switching your techs from hourly pay to performance-based pay. Bill Brown, Ryan Shank (ShareWillow), and a contractor who recently made the switch share what works, what doesn't, and how to roll it out without losing your team.",
+    date: "Tuesday, July 15, 2026",
+    eventDateTime: new Date("2026-07-15T17:00:00Z"),
+    time: "1:00 PM",
+    timezone: "EDT",
+    type: "webinar",
+    image: incentivePlanImage,
+    link: "/webinars/stop-buying-hours",
+    status: "upcoming",
+    hosts: ["Bill Brown", "Ryan Shank"]
+  },
+  {
     id: "8",
     title: "How Contractors Are Handling More Calls Without Hiring More CSRs",
     description: "A fireside chat on after-hours calls, overflow, lead follow-up, and how contractors are using AI inside real service businesses. Featuring Bill Brown, Quinn Litherland (Revin.ai), and Britiny Leung (Director of Operations, Action Furnace Inc.).",

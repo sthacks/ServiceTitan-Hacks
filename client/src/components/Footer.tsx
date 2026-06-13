@@ -19,7 +19,7 @@ export default function Footer() {
     { path: "/apps", label: "Apps" },
     { path: "/courses", label: "Courses" },
     { path: "/events", label: "Events" },
-    { path: "https://servicetitanhacks.thinkific.com/bundles/servicetitan-hacks-all-access-pass", label: "All-Access Pass", external: true },
+    { path: "/all-access", label: "All-Access Pass" },
   ];
 
   const resourceLinks = [

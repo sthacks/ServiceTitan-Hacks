@@ -250,67 +250,85 @@ export default function Resources() {
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {resources.map((resource, index) => (
-              <Card 
-                key={index} 
-                className="hover-elevate flex flex-col cursor-pointer"
-                onClick={() => {
-                  if (resource.isInternalTool) {
-                    window.location.href = resource.url;
-                  } else if (resource.isExternalTool || resource.isExternalCourse) {
-                    window.open(resource.url, '_blank');
-                  } else {
-                    handleDownloadClick(resource.title);
-                  }
-                }}
-                data-testid={`card-resource-${index}`}
-              >
-                <div className="aspect-video overflow-hidden rounded-t-lg bg-muted">
-                  <img
-                    src={resource.image}
-                    alt={resource.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <FileText className="h-5 w-5 text-primary" />
-                    <span className="text-sm font-medium text-muted-foreground">{resource.type}</span>
+            {resources.map((resource, index) => {
+              const cardInner = (
+                <Card
+                  className="hover-elevate flex flex-col h-full"
+                  data-testid={`card-resource-${index}`}
+                >
+                  <div className="aspect-video overflow-hidden rounded-t-lg bg-muted">
+                    <img
+                      src={resource.image}
+                      alt={resource.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
-                  
-                  <h3 className="text-xl font-semibold font-heading mb-3 line-clamp-2">
-                    {resource.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">
-                    {resource.description}
-                  </p>
-                  
-                  {resource.isInternalTool ? (
-                    <div className="w-full">
-                      <Button className="w-full gap-2">
-                        {resource.type === 'Tool' ? 'Use Calculator' : 'View Resource'}
-                      </Button>
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2 mb-3">
+                      <FileText className="h-5 w-5 text-primary" />
+                      <span className="text-sm font-medium text-muted-foreground">{resource.type}</span>
                     </div>
-                  ) : resource.isExternalTool || resource.isExternalCourse ? (
-                    <div className="w-full">
-                      <Button className="w-full gap-2">
-                        {resource.type === 'Course' ? 'View Course' : resource.type === 'Tool' ? 'View Calculator' : 'Get Free Resource'} <ExternalLink className="h-4 w-4" />
+
+                    <h3 className="text-xl font-semibold font-heading mb-3 line-clamp-2">
+                      {resource.title}
+                    </h3>
+
+                    <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">
+                      {resource.description}
+                    </p>
+
+                    {resource.isInternalTool ? (
+                      <div className="w-full">
+                        <Button className="w-full gap-2" tabIndex={-1}>
+                          {resource.type === 'Tool' ? 'Use Calculator' : 'View Resource'}
+                        </Button>
+                      </div>
+                    ) : resource.isExternalTool || resource.isExternalCourse ? (
+                      <div className="w-full">
+                        <Button className="w-full gap-2" tabIndex={-1}>
+                          {resource.type === 'Course' ? 'View Course' : resource.type === 'Tool' ? 'View Calculator' : 'Get Free Resource'} <ExternalLink className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    ) : (
+                      <Button
+                        className="w-full gap-2"
+                        data-testid={`button-download-${index}`}
+                        tabIndex={-1}
+                      >
+                        <Download className="h-4 w-4" />
+                        Get Free Resource
                       </Button>
-                    </div>
-                  ) : (
-                    <Button
-                      className="w-full gap-2"
-                      data-testid={`button-download-${index}`}
-                    >
-                      <Download className="h-4 w-4" />
-                      Get Free Resource
-                    </Button>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+                    )}
+                  </CardContent>
+                </Card>
+              );
+
+              if (resource.isInternalTool) {
+                return (
+                  <a key={index} href={resource.url} className="block">
+                    {cardInner}
+                  </a>
+                );
+              } else if (resource.isExternalTool || resource.isExternalCourse) {
+                return (
+                  <a key={index} href={resource.url} target="_blank" rel="noopener noreferrer" className="block">
+                    {cardInner}
+                  </a>
+                );
+              } else {
+                return (
+                  <div
+                    key={index}
+                    className="block cursor-pointer"
+                    onClick={() => handleDownloadClick(resource.title)}
+                    data-testid={`card-resource-download-${index}`}
+                  >
+                    {cardInner}
+                  </div>
+                );
+              }
+            })}
           </div>
 
           <div className="mt-16 text-center">
