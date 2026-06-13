@@ -156,16 +156,18 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-contractor-commerce-partner.jpg",
   },
   "/partners/broccoli-ai": {
-    title: "Broccoli AI Partner | ServiceTitan Hacks",
-    description: "Broccoli AI helps ServiceTitan contractors answer calls, improve booking consistency, and reduce pressure on busy CSR teams with AI voice agents.",
+    title: "Broccoli + ServiceTitan Hacks: Your Phones, Covered",
+    description: "AI CSR for ServiceTitan contractors. Broccoli answers calls, books jobs, and handles overflow so your team stops losing appointments.",
+    ogImage: "https://servicetitanhacks.com/og-broccoli.png",
   },
   "/partners/phonetap": {
     title: "PhoneTap | ServiceTitan Hacks Partner",
     description: "PhoneTap helps ServiceTitan contractors analyze calls, find missed revenue, fix bad call data, and give CSR managers clearer daily insights.",
   },
   "/partners/sharewillow": {
-    title: "ShareWillow | ServiceTitan Hacks Partner",
-    description: "ShareWillow helps home service contractors create performance-pay, bonus, and incentive plans that motivate employees, protect margins, and reward measurable results.",
+    title: "ShareWillow + ServiceTitan Hacks: Pay for Results",
+    description: "Performance pay software for ServiceTitan teams. ShareWillow helps contractors design, launch, and manage incentive plans tied to real numbers.",
+    ogImage: "https://servicetitanhacks.com/og-sharewillow.png",
   },
   "/all-access": {
     title: "Get the All-Access Pass | Unlimited Growth",
