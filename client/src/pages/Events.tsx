@@ -40,6 +40,20 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "10",
+    title: "When a Live Answering Team Beats Voicemail",
+    description: "The math behind in-house call handling versus a live answering team, for $3M+ ServiceTitan contractors. Get a three-path framework for choosing between in-house, overflow coverage, or a full live answering team — and a way to run the numbers for your own shop.",
+    date: "Wednesday, June 24, 2026",
+    eventDateTime: new Date("2026-06-24T18:00:00Z"),
+    time: "2:00 PM",
+    timezone: "EDT",
+    type: "webinar",
+    image: webinarHeroImage,
+    link: "/webinars/live-answering-team",
+    status: "upcoming",
+    hosts: ["Bill Brown", "Jill's Office"]
+  },
+  {
     id: "9",
     title: "Stop Buying Hours: How Contractors Are Switching to Performance Pay",
     description: "A practical conversation about switching your techs from hourly pay to performance-based pay. Bill Brown, Ryan Shank (ShareWillow), and a contractor who recently made the switch share what works, what doesn't, and how to roll it out without losing your team.",
