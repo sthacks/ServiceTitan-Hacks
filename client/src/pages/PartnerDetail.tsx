@@ -1921,7 +1921,7 @@ export default function PartnerDetail() {
     const blFaqs = [
       {
         q: "Will customers know they're talking to an AI?",
-        a: "Broccoli is transparent by design. Dane identifies as an AI at the start of every call. What surprises most contractors is how often homeowners don't care — because the call flows naturally and the booking happens fast.",
+        a: "Dane actually doesn't identify himself as AI unless the client has customized him to do so.",
       },
       {
         q: "What if a customer asks something Broccoli can't handle?",
@@ -2056,9 +2056,9 @@ export default function PartnerDetail() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {[
-                  { value: "26", label: "Average inbound calls handled per day per active location" },
-                  { value: "23", label: "ServiceTitan contractor locations currently live on Broccoli" },
-                  { value: "100%", label: "Of bookings land directly in ServiceTitan — no manual data entry [pending sign-off]" },
+                  { value: "10,000+", label: "On average, Broccoli handles over 10,000 calls a day" },
+                  { value: "730", label: "730 ServiceTitan contractors live on Broccoli" },
+                  { value: "3,952", label: "On average, Speed-to-Lead is catching about 3,952 leads per day" },
                 ].map((s) => (
                   <div key={s.value} className="rounded-2xl p-6" style={{ backgroundColor: BL.white }}>
                     <p className="text-4xl font-extrabold mb-2" style={{ color: BL.purple }}>{s.value}</p>

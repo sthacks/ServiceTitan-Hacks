@@ -1,0 +1,28 @@
+Update the existing Broccoli partner page at the route “/partners/broccoli-ai” (page URL: https://servicetitanhacks.com/partners/broccoli-ai). Make ONLY the two content changes described below. Keep the existing layout, components, classes, spacing, and styling. Do not refactor, do not restructure, and do not touch other sections of the page.
+CHANGE 1: Real Contractor Locations stat block
+Find the stat block on the Broccoli partner page that displays contractor location stats (it is the section currently showing the placeholder/pending figures, including the “Armstrong 26 calls” figure and the “Any Hour 23 locations” figure). Replace the three stats in that block with exactly these three, in this order, using these exact strings:
+	1.	“On average, Broccoli handles over 10,000 calls a day”
+	2.	“730 ServiceTitan contractors live on Broccoli”
+	3.	“On average, Speed-to-Lead is catching about 3,952 leads per day”
+Remove or hide any prior placeholder or “[pending sign-off]” figures in this same stat block, including the Armstrong 26-calls figure and the Any Hour 23-locations figure. If those placeholder values live in a data file, constants file, or a CMS-style JSON object, update them there. Do not leave stale or commented-out placeholder values in the rendered output.
+Keep the existing visual treatment for the stat block (same card layout, icons, typography, animation, and responsive behavior). Only the content strings change.
+CHANGE 2: “Questions Every Owner Asks” FAQ block
+Find the FAQ component titled “Questions every owner asks” on the same page. Locate the question “Will customers know they are talking to AI?” and replace its answer text with exactly this string, using straight quotes:
+“Dane actually doesn’t identify himself as AI unless the client has customized him to do so.”
+Do not change the question text. Do not change the FAQ ordering. Do not touch any other Q and A in the block.
+DO NOT CHANGE:
+	•	The Cost section. It is approved as-is. Do not modify copy, pricing language, or layout.
+	•	Brand styling, colors, logos, fonts, or graphics. A rebrand is coming in roughly 30 days and will be handled then.
+	•	Any other page section (hero, “Have the AI Call You” form, customer quote / social proof card, footer, nav, etc.).
+VERIFICATION BEFORE PUBLISHING:
+	•	Run the site locally (or in the Replit preview) and visit /partners/broccoli-ai.
+	•	Confirm the three new stat strings render exactly as written above, in the listed order, with straight quotes.
+	•	Confirm no placeholder or pending stats remain visible in that block.
+	•	Confirm the FAQ answer for “Will customers know they are talking to AI?” reads exactly as written above.
+	•	Test rendering at all three breakpoints:
+	•	Mobile (around 375px wide)
+	•	Tablet (around 768px wide)
+	•	Desktop (1280px and up)
+	•	Check that the stat block and FAQ block do not overflow, wrap awkwardly, or push other sections out of alignment at any breakpoint.
+	•	Confirm no console errors and no broken links introduced by the change.
+When the changes are in, show me a diff summary of the files you touched and confirm the three stats and the FAQ answer match the strings above character for character.
