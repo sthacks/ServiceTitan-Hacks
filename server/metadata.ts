@@ -394,7 +394,7 @@ export const metadata: Record<string, PageMetadata> = {
   "/webinars/stop-buying-hours": {
     title: "Stop Buying Hours: Free Performance Pay Webinar | ServiceTitan Hacks",
     description: "Free live webinar July 15 at 1 PM ET. How contractors switch to performance pay, sell it to their techs, and what happened when a $5M shop did it.",
-    ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
+    ogImage: "https://servicetitanhacks.com/og-stop-buying-hours-webinar.png",
   },
   "/webinars/live-answering-team": {
     title: "When a Live Answering Team Beats Voicemail: Free Webinar | ServiceTitan Hacks",
