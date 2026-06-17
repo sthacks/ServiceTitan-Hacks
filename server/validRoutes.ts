@@ -81,6 +81,7 @@ const STATIC_ROUTES = new Set<string>([
   "/webinar/equipment-pricing",
   "/webinar/price-conversation",
   "/webinars/stop-buying-hours",
+  "/webinars/live-answering-team",
 
   // Automation services
   "/servicetitan-automation-services",

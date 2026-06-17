@@ -1,0 +1,110 @@
+# Replit AI Prompt: Jill’s Office Webinar Event Page (June 24)
+
+Paste everything below into the Replit AI agent on the ServiceTitan Hacks (servicetitanhacks.com) project.
+
+-----
+
+OBJECTIVE
+Create a new webinar event and registration page on the ServiceTitan Hacks site, modeled exactly on the existing page at /webinars/stop-buying-hours. Same look, same components, same behavior. Only the route, the meta tags, and the on-page content change.
+
+HARD RULES
+
+- Clone the structure and styling of /webinars/stop-buying-hours. Reuse the existing page layout, header and nav, footer, registration form component, fonts, colors, spacing, button styles, and responsive behavior. Do not introduce new design patterns or restyle anything.
+- Keep the site-wide Google Tag Manager container (GTM-KWTT4QNW) and the Facebook Pixel (id 1358482755759272) that the other pages already load. Do not add a second copy.
+- Reuse the exact registration form component and its submission logic from the existing webinar pages so registrations flow to the same place. Do not build a new backend or change the data destination.
+- Writing rules for all visible copy: straight quotes only, no curly quotes, no em-dashes, no emoji. Do not use the words offer, pitch, guaranteed, magic, secret, or hack. The brand name ServiceTitan Hacks is fine.
+- Leave the presenter placeholders exactly as written below so they are easy to find and replace later.
+
+ROUTE
+/webinars/live-answering-team
+
+SEO AND META (set these exact values)
+
+- title and meta-title: When a Live Answering Team Beats Voicemail: Free Webinar | ServiceTitan Hacks
+- canonical: <https://servicetitanhacks.com/webinars/live-answering-team>
+- meta-description: Free live webinar, June 24 at 2 PM ET. The math behind in-house call handling versus a live answering team, for $3M+ ServiceTitan contractors.
+- meta-keywords: live answering service for contractors, call handling cost, missed calls, CSR cost, ServiceTitan, HVAC plumbing electrical, after hours calls, answering service ROI
+- og:title: When a Live Answering Team Beats Voicemail: Free Webinar | ServiceTitan Hacks
+- og:description: same as meta-description
+- og:type: website
+- og:url: <https://servicetitanhacks.com/webinars/live-answering-team>
+- og:site_name: ServiceTitan Hacks
+- og:image: <https://servicetitanhacks.com/og-live-answering-team-webinar.png>
+- og:image:width: 1200
+- og:image:height: 630
+- twitter:card: summary_large_image
+- twitter:title, twitter:description, twitter:image, twitter:url: match the og values above
+- viewport: same as the existing pages
+
+PAGE CONTENT
+
+Hero
+
+- Eyebrow label: Free Live Webinar
+- H1: When a Live Answering Team Beats Voicemail
+- Subhead: A profitability lens for $3M+ contractors. Get the math behind in-house call handling versus a live answering team, and a clear framework for deciding when an outsourced live team is the higher ROI move.
+- Event detail line: Wednesday, June 24, 2026 | 2:00 PM ET | 45 minutes | Live
+- Registration form (see form spec below)
+- Microcopy under the form: Cannot make it live? Register and we will send the replay and the decision worksheet.
+
+Section: What you will walk away with
+
+- The four cost lines that make up the fully loaded cost of handling calls in-house
+- A three signal test for spotting when call handling is quietly costing you booked jobs
+- A three path framework for choosing between in-house, a live team for overflow and after hours, or a full live answering team
+- A simple way to run the numbers for your own shop after the session
+
+Section: Who this is for
+
+- HVAC, plumbing, and electrical owners and operations leaders running ServiceTitan
+- Companies at $3M or more in annual revenue, roughly 15 to 150 employees
+- Teams that already have CSRs and are still losing calls at peak times or after hours
+
+Section: Who this is not for
+
+- Shops under $3M that are not yet staffing a dedicated CSR function
+- Anyone looking for a software demo or a sales presentation. This is a working session on the math.
+
+Section: Your presenters
+
+- Presenter 1: Bill Brown, founder of ServiceTitan Hacks. Use the standard Bill Brown headshot and bio already used elsewhere on the site.
+- Presenter 2 (placeholder from Jill’s Office, render as a visible, clearly labeled placeholder to replace later):
+  - Name: [PRESENTER NAME]
+  - Title: [PRESENTER TITLE], Jill’s Office
+  - Bio: [PRESENTER BIO, 2 to 3 sentences]
+  - Headshot: [PRESENTER HEADSHOT, 400 x 400 image placeholder]
+
+Section: Format note (small text near the body, not the hero)
+Educational and operational. No software demo. No sales presentation. Math grounded.
+
+Secondary CTA (near the bottom)
+
+- Button: Save your seat for June 24. Anchor it to the registration form at the top.
+
+Keep the existing “See all events and webinars” link to /events and the existing site footer.
+
+REGISTRATION FORM SPEC
+
+- Fields: First name, Email. Match the field set and validation used on the existing webinar pages.
+- Submit button text: Save my seat
+- On success: show the same confirmation state the other webinar pages use.
+- Submissions must flow to the same destination as the existing webinar registration forms.
+
+PLACEHOLDERS TO LEAVE FOR LATER
+
+- [PRESENTER NAME]
+- [PRESENTER TITLE]
+- [PRESENTER BIO]
+- [PRESENTER HEADSHOT]
+- The OG image file og-live-answering-team-webinar.png does not exist yet. Reference it in the meta tags now. I will upload the 1200 x 630 image to the site root.
+
+ACCEPTANCE CHECKLIST
+
+- New page renders at /webinars/live-answering-team
+- Header, nav, footer, fonts, colors, and form match /webinars/stop-buying-hours
+- All meta and OG tags set to the values above
+- GTM and Facebook Pixel fire on the new page with no duplicate tags
+- Registration form submits to the same destination as the other webinar pages
+- All copy uses straight quotes, no em-dashes, no emoji
+- Presenter 2 placeholders are visible and easy to find
+- Page is fully responsive on mobile

@@ -396,6 +396,11 @@ export const metadata: Record<string, PageMetadata> = {
     description: "Free live webinar July 15 at 1 PM ET. How contractors switch to performance pay, sell it to their techs, and what happened when a $5M shop did it.",
     ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
+  "/webinars/live-answering-team": {
+    title: "When a Live Answering Team Beats Voicemail: Free Webinar | ServiceTitan Hacks",
+    description: "Free live webinar, June 24 at 2 PM ET. The math behind in-house call handling versus a live answering team, for $3M+ ServiceTitan contractors.",
+    ogImage: "https://servicetitanhacks.com/og-live-answering-team-webinar.png",
+  },
 
   // Automation Services Pages
   "/servicetitan-automation-services": {

@@ -4,15 +4,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
-const SW = {
-  cream: "#FAF7EC",
-  ink: "#1C2B1C",
-  yellow: "#F7EC6A",
-  white: "#FFFFFF",
-  pink: "#EC1B52",
+const STH = {
+  dark: "#111111",
+  red: "#ec164d",
+  bg: "#ffffff",
+  muted: "#f5f5f5",
+  text: "#1a1a1a",
+  white: "#ffffff",
 };
-
-const serif = { fontFamily: "Georgia, 'Times New Roman', serif" };
 
 // Target: July 15, 2026 1:00 PM EDT = 17:00 UTC
 const WEBINAR_DATE = new Date("2026-07-15T17:00:00Z");
@@ -81,7 +80,6 @@ const SPEAKERS = [
     name: "Contractor Guest",
     role: "Recently switched to performance pay",
     bio: "Sharing the real rollout: what they feared, what they messaged to the team, and what the numbers did.",
-    /* guest name and headshot coming */
   },
   {
     name: "Ryan Shank",
@@ -107,44 +105,44 @@ export default function WebinarStopBuyingHours() {
         ogImage="https://servicetitanhacks.com/og-incentive-plan-webinar.png"
         canonicalUrl="https://servicetitanhacks.com/webinars/stop-buying-hours"
       />
-      <div className="min-h-screen flex flex-col" style={{ fontFamily: "Oxygen, Arial, sans-serif", color: SW.ink }}>
+      <div className="min-h-screen flex flex-col" style={{ fontFamily: "Oxygen, Arial, sans-serif", color: STH.text }}>
         <Header />
         <main className="flex-1">
 
           {/* ── SECTION 1: HERO ── */}
-          <section style={{ backgroundColor: SW.cream }} className="px-6 py-16 text-center">
+          <section style={{ backgroundColor: STH.dark }} className="px-6 py-16 text-center">
             <div className="max-w-4xl mx-auto">
 
               {/* Co-brand lockup */}
               <div className="flex items-center justify-center gap-4 mb-6 flex-wrap">
-                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 22, letterSpacing: "-0.01em", color: SW.ink }}>
-                  ServiceTitan <span style={{ color: SW.pink }}>HACKS</span>
+                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 22, letterSpacing: "-0.01em", color: STH.white }}>
+                  ServiceTitan <span style={{ color: STH.red }}>HACKS</span>
                 </span>
-                <span style={{ fontSize: 22, fontWeight: 300, opacity: 0.4 }}>x</span>
-                <span style={{ ...serif, fontWeight: 700, fontSize: 22, color: SW.ink }}>ShareWillow</span>
+                <span style={{ fontSize: 22, fontWeight: 300, opacity: 0.4, color: STH.white }}>x</span>
+                <span style={{ fontWeight: 700, fontSize: 22, color: STH.white }}>ShareWillow</span>
               </div>
 
               {/* Badge */}
               <div className="inline-block px-5 py-1.5 rounded-full text-xs font-bold tracking-widest mb-8"
-                   style={{ backgroundColor: isLive ? SW.pink : SW.yellow, color: isLive ? SW.white : SW.ink }}>
+                   style={{ backgroundColor: isLive ? STH.red : STH.red, color: STH.white }}>
                 {isLive ? "WE ARE LIVE" : "FREE LIVE WEBINAR"}
               </div>
 
               {/* H1 */}
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={serif}>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: STH.white }}>
                 How to Stop Buying Hours, Start Paying for{" "}
                 <em>Results</em>, and Sell the Switch to Your Techs
               </h1>
 
               {/* Detail row */}
-              <div className="flex items-center justify-center gap-6 text-sm mb-6 flex-wrap" style={{ color: SW.ink, opacity: 0.65 }}>
+              <div className="flex items-center justify-center gap-6 text-sm mb-6 flex-wrap" style={{ color: STH.white, opacity: 0.65 }}>
                 <span className="flex items-center gap-1.5"><Calendar size={14} /> Wednesday, July 15</span>
                 <span className="flex items-center gap-1.5"><Clock size={14} /> 1 PM Eastern</span>
                 <span className="flex items-center gap-1.5"><Video size={14} /> About 60 minutes + live Q&A</span>
               </div>
 
               {/* Subhead */}
-              <p className="text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ opacity: 0.75 }}>
+              <p className="text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: STH.white, opacity: 0.75 }}>
                 If you pay your technicians by the hour, what exactly are you buying? Not outcomes. Not higher tickets or five-star reviews. Time. One hour, real numbers from real shops on ServiceTitan, no pitch-fest.
               </p>
 
@@ -158,9 +156,9 @@ export default function WebinarStopBuyingHours() {
                 ].map((unit) => (
                   <div key={unit.label}
                        className="flex flex-col items-center rounded-xl px-5 py-3 min-w-[72px]"
-                       style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                       style={{ backgroundColor: STH.red, color: STH.white }}>
                     <span className="text-3xl font-bold leading-none tabular-nums">{unit.value}</span>
-                    <span className="text-xs mt-1 tracking-wide uppercase" style={{ opacity: 0.55 }}>{unit.label}</span>
+                    <span className="text-xs mt-1 tracking-wide uppercase" style={{ opacity: 0.75 }}>{unit.label}</span>
                   </div>
                 ))}
               </div>
@@ -169,25 +167,25 @@ export default function WebinarStopBuyingHours() {
               <a href="#register" onClick={scrollToRegister}
                  data-testid="button-save-seat-hero"
                  className="inline-block px-8 py-4 rounded-full font-bold text-base mb-4 transition-opacity hover:opacity-90"
-                 style={{ backgroundColor: SW.pink, color: SW.white }}>
+                 style={{ backgroundColor: STH.white, color: STH.dark }}>
                 Save My Seat
               </a>
-              <p className="text-sm" style={{ opacity: 0.5 }}>
+              <p className="text-sm" style={{ color: STH.white, opacity: 0.5 }}>
                 Can't make it live? Register anyway. Every registrant gets the full replay.
               </p>
             </div>
           </section>
 
           {/* ── SECTION 2: REGISTRATION ── */}
-          <section id="register" style={{ backgroundColor: SW.ink }} className="px-6 py-16">
+          <section id="register" style={{ backgroundColor: STH.muted }} className="px-6 py-16">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-3" style={{ ...serif, color: SW.cream }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-3" style={{ color: STH.dark }}>
                 Register free below
               </h2>
-              <p className="text-center text-base mb-8" style={{ color: SW.cream, opacity: 0.6 }}>
+              <p className="text-center text-base mb-8" style={{ color: STH.text, opacity: 0.6 }}>
                 Live attendees get an exclusive offer we are only making on this webinar.
               </p>
-              <div className="rounded-2xl p-2" style={{ backgroundColor: SW.cream }}>
+              <div className="rounded-2xl p-2" style={{ backgroundColor: STH.white }}>
                 <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
                   <iframe
                     src="https://streamyard.com/watch/KGMcjWmWNapZ?embed=true"
@@ -211,53 +209,53 @@ export default function WebinarStopBuyingHours() {
           </section>
 
           {/* ── SECTION 3: WHAT WE WILL COVER ── */}
-          <section style={{ backgroundColor: SW.cream }} className="px-6 py-16">
+          <section style={{ backgroundColor: STH.bg }} className="px-6 py-16">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={serif}>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: STH.dark }}>
                 What we will cover
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
                 {COVERS.map((item) => (
                   <div key={item.title}
                        className="flex gap-5 rounded-2xl p-6"
-                       style={{ backgroundColor: SW.white }}>
+                       style={{ backgroundColor: STH.muted }}>
                     <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mt-0.5"
-                         style={{ backgroundColor: SW.yellow }}>
-                      <Check size={18} style={{ color: SW.ink }} strokeWidth={2.5} />
+                         style={{ backgroundColor: STH.red }}>
+                      <Check size={18} style={{ color: STH.white }} strokeWidth={2.5} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-base mb-1" style={{ color: SW.ink }}>{item.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ opacity: 0.7 }}>{item.body}</p>
+                      <h3 className="font-bold text-base mb-1" style={{ color: STH.dark }}>{item.title}</h3>
+                      <p className="text-sm leading-relaxed" style={{ color: STH.text, opacity: 0.7 }}>{item.body}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-center text-sm max-w-2xl mx-auto" style={{ opacity: 0.55 }}>
+              <p className="text-center text-sm max-w-2xl mx-auto" style={{ color: STH.text, opacity: 0.55 }}>
                 Plus open Q&A. Bring the objections: "My guys will quit." "It is just commission with extra steps." "My market is different." We have heard them all, and we will answer them straight.
               </p>
             </div>
           </section>
 
           {/* ── SECTION 4: PROOF BAND ── */}
-          <section style={{ backgroundColor: SW.yellow }} className="px-6 py-16">
+          <section style={{ backgroundColor: STH.dark }} className="px-6 py-16">
             <div className="max-w-5xl mx-auto text-center">
-              <p className="text-xs font-bold tracking-widest mb-10" style={{ color: SW.ink, opacity: 0.5 }}>
+              <p className="text-xs font-bold tracking-widest mb-10" style={{ color: STH.white, opacity: 0.5 }}>
                 FROM OUR LAST PERFORMANCE PAY WEBINAR
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
                 {STATS.map((s) => (
-                  <div key={s.stat} className="rounded-2xl p-7" style={{ backgroundColor: SW.cream }}>
-                    <p className="text-4xl font-bold mb-2" style={{ ...serif, color: SW.ink }}>{s.stat}</p>
-                    <p className="text-sm" style={{ color: SW.ink, opacity: 0.65 }}>{s.label}</p>
+                  <div key={s.stat} className="rounded-2xl p-7" style={{ backgroundColor: "#1e1e1e" }}>
+                    <p className="text-4xl font-bold mb-2" style={{ color: STH.red }}>{s.stat}</p>
+                    <p className="text-sm" style={{ color: STH.white, opacity: 0.65 }}>{s.label}</p>
                   </div>
                 ))}
               </div>
               <blockquote className="max-w-2xl mx-auto">
                 <p className="text-lg md:text-xl leading-relaxed mb-4"
-                   style={{ ...serif, fontStyle: "italic", color: SW.ink }}>
+                   style={{ fontStyle: "italic", color: STH.white }}>
                   "I've been beating my head against the table for a long time trying to figure out what to do. My plumbers are watching their numbers day in and day out more than I ever could."
                 </p>
-                <footer className="text-sm font-semibold" style={{ color: SW.ink, opacity: 0.65 }}>
+                <footer className="text-sm font-semibold" style={{ color: STH.white, opacity: 0.65 }}>
                   Ron Williams - Benjamin Franklin Plumbing & One Hour - Ocean City, MD
                 </footer>
               </blockquote>
@@ -265,24 +263,23 @@ export default function WebinarStopBuyingHours() {
           </section>
 
           {/* ── SECTION 5: SPEAKERS ── */}
-          <section style={{ backgroundColor: SW.white }} className="px-6 py-16">
+          <section style={{ backgroundColor: STH.bg }} className="px-6 py-16">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ ...serif, color: SW.ink }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: STH.dark }}>
                 Your speakers
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {SPEAKERS.map((s) => (
                   <div key={s.name}
                        className="rounded-2xl p-7 text-center flex flex-col items-center"
-                       style={{ backgroundColor: SW.cream }}>
-                    {/* Headshot placeholder - ready for image upload */}
+                       style={{ backgroundColor: STH.muted }}>
                     <div className="w-20 h-20 rounded-full mb-4 flex items-center justify-center"
-                         style={{ backgroundColor: "#E8E2D0", border: "2px dashed #B5AD97" }}>
-                      <span style={{ fontSize: 9, color: "#B5AD97", fontFamily: "monospace", letterSpacing: 0 }}>headshot</span>
+                         style={{ backgroundColor: "#e8e8e8", border: "2px dashed #cccccc" }}>
+                      <span style={{ fontSize: 9, color: "#aaaaaa", fontFamily: "monospace" }}>headshot</span>
                     </div>
-                    <h3 className="font-bold text-base mb-1" style={{ color: SW.ink }}>{s.name}</h3>
-                    <p className="text-xs font-semibold mb-3 uppercase tracking-wide" style={{ color: SW.pink }}>{s.role}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: SW.ink, opacity: 0.7 }}>{s.bio}</p>
+                    <h3 className="font-bold text-base mb-1" style={{ color: STH.dark }}>{s.name}</h3>
+                    <p className="text-xs font-semibold mb-3 uppercase tracking-wide" style={{ color: STH.red }}>{s.role}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: STH.text, opacity: 0.7 }}>{s.bio}</p>
                   </div>
                 ))}
               </div>
@@ -290,24 +287,24 @@ export default function WebinarStopBuyingHours() {
           </section>
 
           {/* ── SECTION 6: FINAL CTA ── */}
-          <section style={{ backgroundColor: SW.cream }} className="px-6 py-20 text-center">
+          <section style={{ backgroundColor: STH.dark }} className="px-6 py-20 text-center">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ ...serif, color: SW.ink }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: STH.white }}>
                 Built for owners who pay hourly and know something is off
               </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ opacity: 0.78 }}>
+              <p className="text-base leading-relaxed mb-4" style={{ color: STH.white, opacity: 0.78 }}>
                 HVAC, plumbing, and electrical owners and managers on ServiceTitan who pay hourly or run a bonus plan that is not changing behavior. Whether you have 3 techs or 230, the math works the same way.
               </p>
-              <p className="text-base leading-relaxed mb-10" style={{ opacity: 0.78 }}>
+              <p className="text-base leading-relaxed mb-10" style={{ color: STH.white, opacity: 0.78 }}>
                 You have a million problems in your shop. Pay is the one that touches all of them: efficiency, retention, recruiting, reviews, and profit.
               </p>
               <a href="#register" onClick={scrollToRegister}
                  data-testid="button-register-final-cta"
                  className="inline-block px-8 py-4 rounded-full font-bold text-base mb-6 transition-opacity hover:opacity-90"
-                 style={{ backgroundColor: SW.ink, color: SW.cream }}>
+                 style={{ backgroundColor: STH.red, color: STH.white }}>
                 Register Free for July 15
               </a>
-              <p className="text-xs" style={{ opacity: 0.42 }}>
+              <p className="text-xs" style={{ color: STH.white, opacity: 0.42 }}>
                 Presented by ServiceTitan Hacks with our exclusive performance pay partner, ShareWillow. Transparency: ShareWillow is a paid sponsor of ServiceTitan Hacks.
               </p>
             </div>
