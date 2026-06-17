@@ -21,6 +21,7 @@ import stopBuyingHoursImage from "@assets/062C4475-E186-4088-AAAD-6CEEE00F3BCD_1
 import equipmentPricingImage from "@assets/webinar_image_1769885730082.png";
 import referProHeroImage from "@assets/ReferPro_(2)_1772815536588.png";
 import revinWebinarImage from "@assets/revin_1778696323692.png";
+import liveAnsweringTeamImage from "@assets/7A13B9C3-2AA0-4C33-B5D5-1878B40EED6F_1781733573024.png";
 
 interface Event {
   id: string;
@@ -49,7 +50,7 @@ const events: Event[] = [
     time: "2:00 PM",
     timezone: "EDT",
     type: "webinar",
-    image: webinarHeroImage,
+    image: liveAnsweringTeamImage,
     link: "/webinars/live-answering-team",
     status: "upcoming",
     hosts: ["Bill Brown", "Jill's Office"]
