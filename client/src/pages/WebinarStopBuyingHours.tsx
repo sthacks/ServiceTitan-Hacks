@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Calendar, Clock, Video, Check } from "lucide-react";
+import billHeadshot from "@assets/pro_headshot_1781732942673.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -273,10 +274,14 @@ export default function WebinarStopBuyingHours() {
                   <div key={s.name}
                        className="rounded-2xl p-7 text-center flex flex-col items-center"
                        style={{ backgroundColor: STH.muted }}>
-                    <div className="w-20 h-20 rounded-full mb-4 flex items-center justify-center"
-                         style={{ backgroundColor: "#e8e8e8", border: "2px dashed #cccccc" }}>
-                      <span style={{ fontSize: 9, color: "#aaaaaa", fontFamily: "monospace" }}>headshot</span>
-                    </div>
+                    {s.name === "Bill Brown" ? (
+                      <img src={billHeadshot} alt="Bill Brown" className="w-20 h-20 rounded-full mb-4 object-cover" />
+                    ) : (
+                      <div className="w-20 h-20 rounded-full mb-4 flex items-center justify-center"
+                           style={{ backgroundColor: "#e8e8e8", border: "2px dashed #cccccc" }}>
+                        <span style={{ fontSize: 9, color: "#aaaaaa", fontFamily: "monospace" }}>headshot</span>
+                      </div>
+                    )}
                     <h3 className="font-bold text-base mb-1" style={{ color: STH.dark }}>{s.name}</h3>
                     <p className="text-xs font-semibold mb-3 uppercase tracking-wide" style={{ color: STH.red }}>{s.role}</p>
                     <p className="text-sm leading-relaxed" style={{ color: STH.text, opacity: 0.7 }}>{s.bio}</p>
