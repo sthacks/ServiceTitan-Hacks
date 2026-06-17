@@ -63,7 +63,7 @@ const events: Event[] = [
     time: "1:00 PM",
     timezone: "EDT",
     type: "webinar",
-    image: incentivePlanImage,
+    image: stopBuyingHoursImage,
     link: "/webinars/stop-buying-hours",
     status: "upcoming",
     hosts: ["Bill Brown", "Ryan Shank"]
