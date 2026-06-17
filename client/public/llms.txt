@@ -1,0 +1,58 @@
+# ServiceTitan Hacks
+
+> AI tools, automation courses, and community for home service contractors using ServiceTitan. Trusted by 10,000+ HVAC, plumbing, and electrical companies.
+
+ServiceTitan Hacks helps contractors get more out of ServiceTitan through AI-powered tools, step-by-step automation courses, curated partner integrations, and a growing community of operators in the trades.
+
+## Key Sections
+
+- Blog: /blog — Practical articles on ServiceTitan, AI, automation, hiring, and business growth for contractors.
+- Apps & Tools: /apps — Curated apps and automation tools for ServiceTitan users, including free utilities.
+- Courses: /courses — Step-by-step video training on dashboards, forms, Zapier, Make.com, and more.
+- Resources: /resources — Free downloadable templates, calculators, SOPs, and guides for home service companies.
+- Events & Webinars: /events — Live and on-demand webinars on ServiceTitan, AI, performance pay, and sales.
+- Podcast: /podcast — Candid conversations with contractors and founders changing the trades.
+- Partners: /partners — Vetted technology partners that integrate with ServiceTitan.
+- About: /about — Mission and story behind ServiceTitan Hacks.
+- Contact: /contact — Reach the team.
+
+## Tools & Calculators
+
+- Pricebook Overhaul Tool: /pricebook-overhaul-tool — AI rewrites ServiceTitan pricebook descriptions in homeowner-friendly language.
+- Pricebook Overhaul Service: /pricebook-overhaul — Done-for-you pricebook rewrite service.
+- SmartAC ROI Calculator: /smartac-roi-calculator — Estimate truck roll savings and membership revenue from remote HVAC monitoring.
+- Wink ROI Calculator: /wink-roi-calculator — Calculate invoicing automation savings with Wink Toolbox.
+- Hiring ROI Calculator: /hiring-roi-calculator — True cost of an unfilled technician role.
+- Truck Roll Cost Calculator: /truck-roll-calculator — True cost per truck roll for HVAC companies.
+
+## Courses
+
+- Dashboard Course: /dashboard-course
+- Fix Ugly Forms Course: /fix-ugly-forms-course
+- Company App Course: /company-app-course
+- Make Integration Course: /make-integration-course
+- Zapier Integration Course: /zapier-integration-course
+- Job Summary Cleaner Course: /job-summary-course
+- All-Access Pass: /all-access
+
+## Partners
+
+- Wink Toolbox: /partners/wink-toolbox — Back-office automation and reporting for ServiceTitan.
+- SmartAC: /partners/smartac — Remote HVAC monitoring to reduce truck rolls.
+- Contractor Commerce: /partners/contractor-commerce — Online HVAC equipment pricing and sales.
+- Broccoli AI: /partners/broccoli-ai — AI CSR that answers calls and books jobs.
+- PhoneTap: /partners/phonetap — Call analytics and CSR performance for ServiceTitan.
+- ShareWillow: /partners/sharewillow — Performance pay software for ServiceTitan teams.
+- LiveSwitch: /partners/liveswitch — Virtual phone solutions for home service businesses.
+- Polycam: /partners/polycam — 3D scanning for property documentation.
+- Service Crucible: /partners/service-crucible — Growth systems for HVAC, plumbing, and electrical.
+- DataTurk: /partners/dataturk — AI funnel analytics from call center to close.
+
+## Services
+
+- ServiceTitan Automation Services: /servicetitan-automation-services — Done-for-you Zapier, Make.com, and AI automations for ServiceTitan shops.
+- Sponsorship & Partnership: /sponsor — Reach 10,000+ verified ServiceTitan contractors.
+
+## Founder
+
+- Bill Brown: /bill — Founder. Former Inc. 5000 HVAC company owner, ServiceTitan power user, and community builder.

@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { getMetadata } from "./metadata";
+import { getPageBodyHtml } from "./pageContent";
 import { isValidRoute } from "./validRoutes";
 import fs from "fs/promises";
 import path from "path";
@@ -12,14 +13,11 @@ const NOT_FOUND_METADATA = {
 };
 
 /**
- * Middleware to inject page-specific meta tags into HTML responses.
- * Runs for all social/link-preview crawlers so they see correct OG tags
- * even though this is a client-side React SPA.
+ * Injects route-specific <head> metadata (title, description, OG, Twitter,
+ * canonical) into an HTML template string.
  */
 function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
-  if (!html || !html.includes('</head>')) {
-    return html;
-  }
+  if (!html || !html.includes('</head>')) return html;
 
   const metadata = valid ? getMetadata(reqPath) : NOT_FOUND_METADATA;
   const url = `https://servicetitanhacks.com${reqPath}`;
@@ -54,7 +52,6 @@ function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
       /<meta property="og:image" content=".*?" \/>/,
       `<meta property="og:image" content="${metadata.ogImage}" />`
     )
-    // Twitter tags use name= attribute (not property=)
     .replace(
       /<meta name="twitter:card" content=".*?" \/>/,
       `<meta name="twitter:card" content="summary_large_image" />`
@@ -77,7 +74,6 @@ function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
     );
 
   if (valid) {
-    // Known routes: inject canonical + optional image alt tags
     result = result
       .replace(
         /<link rel="canonical" href=".*?" \/>/,
@@ -90,8 +86,6 @@ function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
           : '</head>'
       );
   } else {
-    // Unknown routes: remove canonical tag and add noindex so crawlers don't
-    // index or consolidate the unknown URL.
     result = result
       .replace(/<link rel="canonical" href=".*?" \/>/, '')
       .replace('</head>', '<meta name="robots" content="noindex, nofollow" />\n</head>');
@@ -100,13 +94,38 @@ function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
   return result;
 }
 
-// Crawler / link-preview user agents that do not execute JavaScript.
-// These need server-side OG tags; regular browsers get the client-side SEO component.
+/**
+ * Injects prerendered page body content into the HTML template.
+ *
+ * The content is placed inside <div id="root"> so that:
+ * - Crawlers and AI agents that don't execute JavaScript see real, route-specific
+ *   page content on the first response (headings, paragraphs, links).
+ * - Regular browser users: React's createRoot() replaces #root content on mount,
+ *   so they see the full interactive React app after JS loads. The initial
+ *   server content acts as a meaningful loading state.
+ *
+ * This is route-based prerendering — every request to a known route with
+ * registered content gets real HTML, regardless of user agent.
+ */
+function injectBodyContent(html: string, bodyHtml: string): string {
+  return html.replace(
+    '<div id="root"></div>',
+    `<div id="root">${bodyHtml}</div>`
+  );
+}
+
+/**
+ * Major crawler and link-preview user agents.
+ * Used as a FALLBACK gate for routes that don't have registered body content —
+ * those routes still get proper <head> meta tags when accessed by known bots.
+ * For routes WITH registered body content, HTML is served to ALL user agents
+ * (route-based, not UA-based).
+ */
 const CRAWLER_RE =
-  /facebookexternalhit|facebookcatalog|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|applebot|discordbot|googlebot|bingbot|yandexbot|duckduckbot|baiduspider|ia_archiver|rogerbot|showyoubot|outbrain|pinterest|vkShare|W3C_Validator|iframely/i;
+  /facebookexternalhit|facebookcatalog|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|applebot|applebot-extended|discordbot|googlebot|bingbot|yandexbot|duckduckbot|baiduspider|ia_archiver|rogerbot|showyoubot|outbrain|pinterest|vkShare|W3C_Validator|iframely|GPTBot|ChatGPT-User|ClaudeBot|Claude-Web|anthropic-ai|PerplexityBot|Perplexity-User|YouBot|cohere-ai|meta-externalagent|Amazonbot|Bytespider|DuckAssistBot|BrightBot/i;
 
 export async function metaTagsMiddleware(req: Request, res: Response, next: NextFunction) {
-  // Skip API calls and static assets
+  // Skip API calls and static assets — these should never be intercepted.
   if (
     req.path.startsWith('/api') ||
     req.path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|txt|xml|webp|avif|map)$/i)
@@ -114,29 +133,43 @@ export async function metaTagsMiddleware(req: Request, res: Response, next: Next
     return next();
   }
 
+  const valid = isValidRoute(req.path);
   const userAgent = req.get('user-agent') || '';
-  if (!CRAWLER_RE.test(userAgent)) {
-    return next();
-  }
+  const isCrawler = CRAWLER_RE.test(userAgent);
+
+  // Check whether we have prerendered body content for this route.
+  // getPageBodyHtml is route-based — it returns content for known public routes
+  // (blog posts, partner pages, key marketing pages) regardless of user agent.
+  const bodyHtml = valid ? getPageBodyHtml(req.path) : null;
+
+  // Decision:
+  // 1. If we have body content → serve to everyone (route-based prerendering).
+  // 2. If we have no body content but it's a crawler → serve head-only (fallback).
+  // 3. Otherwise → let Vite / Express continue as normal.
+  const shouldServe = !!bodyHtml || (isCrawler);
+  if (!shouldServe) return next();
 
   try {
-    // In production the built index.html lives next to the compiled server;
-    // in development use the source file.
     const isProduction = process.env.NODE_ENV === 'production';
     const templatePath = isProduction
       ? path.resolve(path.dirname(new URL(import.meta.url).pathname), 'public', 'index.html')
       : path.join(process.cwd(), 'client', 'index.html');
 
-    const valid = isValidRoute(req.path);
     let html = await fs.readFile(templatePath, 'utf-8');
+
+    // Always inject route-specific head metadata.
     html = injectMetaTags(html, req.path, valid);
 
-    // Unknown routes return 404 so crawlers treat them as true not-found pages.
+    // Inject prerendered body content when available (route-based).
+    if (bodyHtml) {
+      html = injectBodyContent(html, bodyHtml);
+    }
+
     const status = valid ? 200 : 404;
     res.status(status).setHeader('Content-Type', 'text/html');
     res.send(html);
   } catch (error) {
-    console.error('[metaTagsMiddleware] Error serving crawler HTML:', error);
+    console.error('[metaTagsMiddleware] Error serving prerendered HTML:', error);
     next();
   }
 }
