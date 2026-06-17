@@ -323,6 +323,37 @@ export default function Events() {
         description="Join live webinars and training events for home service contractors. Learn AI, automation, hiring, and ServiceTitan optimization strategies."
         keywords="HVAC webinars, contractor training, ServiceTitan events, home service workshops"
         canonicalUrl="https://servicetitanhacks.com/events"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "ServiceTitan Hacks Events & Webinars",
+          "description": "Live webinars and training events for home service contractors covering AI, automation, hiring, and ServiceTitan optimization strategies.",
+          "url": "https://servicetitanhacks.com/events",
+          "itemListElement": events.map((ev, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": ev.title,
+              "description": ev.description,
+              "startDate": ev.eventDateTime.toISOString(),
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+              "location": {
+                "@type": "VirtualLocation",
+                "url": `https://servicetitanhacks.com${ev.link}`
+              },
+              "url": `https://servicetitanhacks.com${ev.link}`,
+              "organizer": {
+                "@type": "Organization",
+                "name": "ServiceTitan Hacks",
+                "url": "https://servicetitanhacks.com"
+              },
+              "performer": ev.hosts.map(host => ({ "@type": "Person", "name": host }))
+            }
+          }))
+        }}
       />
       <Header />
       <main className="flex-1">

@@ -130,6 +130,22 @@ export default function SmartACWebinar() {
         keywords="membership retention, ServiceTitan, SmartAC, contractor marketing, HVAC membership, customer lifetime value"
         canonicalUrl="https://servicetitanhacks.com/webinar/membership-retention"
         ogImage={`${window.location.origin}${heroImage}`}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": config.webinarFullTitle,
+          "description": config.webinarSubtitle,
+          "startDate": "2026-02-11T19:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/membership-retention" },
+          "url": "https://servicetitanhacks.com/webinar/membership-retention",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [
+            { "@type": "Person", "name": config.hostName },
+            { "@type": "Person", "name": config.guestName }
+          ]
+        }}
       />
 
       <div className="bg-[#ED254E] text-white py-3 px-4">
@@ -167,6 +183,9 @@ export default function SmartACWebinar() {
             <div className="inline-block bg-[#ED254E]/20 text-[#ED254E] px-4 py-1.5 rounded-full text-sm font-medium mb-6">
               Replay Now Available
             </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Oxygen, sans-serif" }}>
+              {config.webinarTitle}
+            </h1>
             <p className="text-xl text-white/70 mb-4 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>

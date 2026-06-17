@@ -220,6 +220,24 @@ export default function ReferralGapWebinar() {
         keywords="contractor referrals, referral program, ServiceTitan referrals, HVAC referrals, ReferPro, contractor marketing"
         canonicalUrl="https://servicetitanhacks.com/webinar/referral-gap"
         ogImage="https://servicetitanhacks.com/og-referral-gap-webinar.png"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": `${config.webinarTitle}: ${config.webinarSubtitle}`,
+          "description": config.webinarSupportingLine,
+          "startDate": "2026-03-31T18:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/referral-gap" },
+          "url": "https://servicetitanhacks.com/webinar/referral-gap",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [
+            { "@type": "Person", "name": "Bill Brown" },
+            { "@type": "Person", "name": "Jonathan Brewster" },
+            { "@type": "Person", "name": "Murphy Nadauld" }
+          ],
+          "image": "https://servicetitanhacks.com/og-referral-gap-webinar.png"
+        }}
       />
 
       {/* Announcement Bar */}

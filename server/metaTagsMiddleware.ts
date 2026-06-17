@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { getMetadata } from "./metadata";
 import { getPageBodyHtml } from "./pageContent";
+import { getRouteSchema, buildPodcastSchema } from "./schemaData";
 import { isValidRoute } from "./validRoutes";
 import fs from "fs/promises";
 import path from "path";
@@ -15,8 +16,9 @@ const NOT_FOUND_METADATA = {
 /**
  * Injects route-specific <head> metadata (title, description, OG, Twitter,
  * canonical) into an HTML template string.
+ * @param schema Pre-resolved JSON-LD schema object (or null).
  */
-function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
+function injectMetaTags(html: string, reqPath: string, valid: boolean, schema: Record<string, unknown> | null = null): string {
   if (!html || !html.includes('</head>')) return html;
 
   const metadata = valid ? getMetadata(reqPath) : NOT_FOUND_METADATA;
@@ -91,6 +93,14 @@ function injectMetaTags(html: string, reqPath: string, valid: boolean): string {
       .replace('</head>', '<meta name="robots" content="noindex, nofollow" />\n</head>');
   }
 
+  // Inject per-route JSON-LD schema before </head> when available.
+  // Uses a dedicated id="route-schema" so it never overwrites the shell
+  // Organization schema defined in index.html.
+  if (valid && schema) {
+    const scriptTag = `<script type="application/ld+json" id="route-schema">\n${JSON.stringify(schema, null, 2)}\n</script>\n`;
+    result = result.replace('</head>', `${scriptTag}</head>`);
+  }
+
   return result;
 }
 
@@ -157,8 +167,19 @@ export async function metaTagsMiddleware(req: Request, res: Response, next: Next
 
     let html = await fs.readFile(templatePath, 'utf-8');
 
+    // Resolve per-route JSON-LD schema. /podcast uses an async function that
+    // pulls recent episodes from the database; all other routes use the static map.
+    let routeSchema: Record<string, unknown> | null = null;
+    if (valid) {
+      if (req.path === '/podcast') {
+        routeSchema = await buildPodcastSchema();
+      } else {
+        routeSchema = getRouteSchema(req.path);
+      }
+    }
+
     // Always inject route-specific head metadata.
-    html = injectMetaTags(html, req.path, valid);
+    html = injectMetaTags(html, req.path, valid, routeSchema);
 
     // Inject prerendered body content when available (route-based).
     if (bodyHtml) {

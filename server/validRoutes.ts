@@ -71,12 +71,15 @@ const STATIC_ROUTES = new Set<string>([
   "/partners/smartac/book-demo",
   "/partners/contractor-commerce/book-demo",
 
-  // Webinars (active only)
+  // Webinars
   "/webinar/stop-spreadsheet-payroll",
   "/webinar/referral-gap",
   "/webinar/incentive-plan-problem",
   "/webinar/phonetap",
   "/webinar/ai-csr",
+  "/webinar/membership-retention",
+  "/webinar/equipment-pricing",
+  "/webinar/price-conversation",
   "/webinars/stop-buying-hours",
 
   // Automation services

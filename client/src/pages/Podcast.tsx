@@ -31,6 +31,26 @@ export default function Podcast() {
         keywords="ServiceTitan podcast, HVAC podcast, contractor podcast, business growth"
         canonicalUrl="https://servicetitanhacks.com/podcast"
         ogImage="https://servicetitanhacks.com/og-podcast.png"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "PodcastSeries",
+          "name": "ServiceTitan Hacks Podcast",
+          "description": "Candid conversations on innovation in the trades. Host Bill Brown interviews forward-thinking contractors and software founders revolutionizing home services with AI, automation, and smart solutions.",
+          "url": "https://servicetitanhacks.com/podcast",
+          "webFeed": "https://servicetitanhacks.podbean.com/feed.xml",
+          "image": "https://servicetitanhacks.com/og-podcast.png",
+          "author": {
+            "@type": "Person",
+            "name": "Bill Brown",
+            "jobTitle": "Founder, ServiceTitan Hacks"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ServiceTitan Hacks",
+            "url": "https://servicetitanhacks.com"
+          },
+          "inLanguage": "en-US"
+        }}
       />
       <Header />
       <main className="flex-1">

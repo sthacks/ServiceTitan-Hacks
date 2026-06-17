@@ -154,6 +154,24 @@ export default function IncentivePlanWebinar() {
         keywords="contractor bonus plans, performance pay, technician incentives, ServiceTitan, profit sharing, ShareWillow"
         canonicalUrl="https://servicetitanhacks.com/webinar/incentive-plan-problem"
         ogImage="https://servicetitanhacks.com/og-incentive-plan-webinar.png"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": `${config.webinarTitle}: ${config.webinarSubtitle}`,
+          "description": config.webinarSupportingLine,
+          "startDate": "2026-04-21T18:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/incentive-plan-problem" },
+          "url": "https://servicetitanhacks.com/webinar/incentive-plan-problem",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [
+            { "@type": "Person", "name": "Bill Brown" },
+            { "@type": "Person", "name": "Ryan Shank" },
+            { "@type": "Person", "name": "Ron Williams" }
+          ],
+          "image": "https://servicetitanhacks.com/og-incentive-plan-webinar.png"
+        }}
       />
 
       {/* Announcement Bar */}

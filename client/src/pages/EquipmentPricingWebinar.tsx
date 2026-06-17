@@ -204,6 +204,22 @@ export default function EquipmentPricingWebinar() {
         keywords="equipment pricing, HVAC equipment, group purchasing, contractor purchasing, private equity pricing"
         canonicalUrl="https://servicetitanhacks.com/webinar/equipment-pricing"
         ogImage={`${window.location.origin}${heroImage}`}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": config.webinarFullTitle,
+          "description": config.webinarSubtitle,
+          "startDate": "2026-02-04T19:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/equipment-pricing" },
+          "url": "https://servicetitanhacks.com/webinar/equipment-pricing",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [
+            { "@type": "Person", "name": config.hostName },
+            { "@type": "Person", "name": config.guestName }
+          ]
+        }}
       />
 
       {/* Announcement Bar */}
@@ -238,6 +254,9 @@ export default function EquipmentPricingWebinar() {
           </div>
           
           <div className="text-center mb-12">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6" style={{ fontFamily: "Oxygen, sans-serif" }}>
+              {config.webinarTitle}
+            </h1>
             <CountdownTimer targetDate={eventDate} />
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Button

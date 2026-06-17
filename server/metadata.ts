@@ -363,6 +363,21 @@ export const metadata: Record<string, PageMetadata> = {
     description: "A practical conversation about technician incentives, performance pay, and what actually works inside a real contractor business.",
     ogImage: "https://servicetitanhacks.com/og-incentive-plan-webinar.png",
   },
+  "/webinar/membership-retention": {
+    title: "Stop Rebuying Your Own Customers | ServiceTitan Hacks Webinar",
+    description: "Watch the replay: David Hargrove grew from 500 to 2,000 memberships in 18 months. Learn the CSR scripts, tiered plans, and retention strategies he used.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
+  },
+  "/webinar/equipment-pricing": {
+    title: "How Contractors Buy Equipment Like Private Equity | ServiceTitan Hacks Webinar",
+    description: "Independent contractors are paying more for equipment than they should. Learn how private equity companies negotiate national pricing and how you can access the same economics.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
+  },
+  "/webinar/price-conversation": {
+    title: "Should Contractors Put Pricing Online in 2026? | ServiceTitan Hacks Webinar",
+    description: "Customers are asking AI what HVAC systems cost before they ever call. A candid fireside chat on whether pricing belongs online and how to stay in control without commoditizing your business.",
+    ogImage: "https://servicetitanhacks.com/og-home.png",
+  },
   // Standalone Pages
   "/sponsors": {
     title: "Sponsor ServiceTitan Hacks | Reach 10,000+ Verified Contractors",

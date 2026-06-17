@@ -148,6 +148,24 @@ export default function AiCsrWebinar() {
         keywords="ServiceTitan AI, CSR automation, after-hours calls, home service AI, contractor operations, speed-to-lead"
         canonicalUrl={`https://servicetitanhacks.com${config.path}`}
         ogImage="https://servicetitanhacks.com/og-ai-csr-webinar.png"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": config.webinarTitle,
+          "description": config.webinarSubtitle,
+          "startDate": "2026-05-19T18:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/ai-csr" },
+          "url": "https://servicetitanhacks.com/webinar/ai-csr",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [
+            { "@type": "Person", "name": "Bill Brown" },
+            { "@type": "Person", "name": "Quinn Litherland" },
+            { "@type": "Person", "name": "Britiny Leung" }
+          ],
+          "image": "https://servicetitanhacks.com/og-ai-csr-webinar.png"
+        }}
       />
 
       {/* Sticky Header */}

@@ -178,6 +178,19 @@ export default function ContractorCommerceWebinar() {
         keywords="contractor pricing, online pricing, HVAC pricing, AI search, price transparency, contractor commerce, ServiceTitan"
         canonicalUrl="https://servicetitanhacks.com/webinar/price-conversation"
         ogImage={`${window.location.origin}${heroImage}`}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": config.webinarFullTitle,
+          "description": config.webinarSubtitle,
+          "startDate": "2026-02-24T19:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/price-conversation" },
+          "url": "https://servicetitanhacks.com/webinar/price-conversation",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [{ "@type": "Person", "name": "Bill Brown" }]
+        }}
       />
 
       {/* Announcement Bar */}
@@ -213,6 +226,9 @@ export default function ContractorCommerceWebinar() {
           </div>
           
           <div className="text-center mb-12">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Oxygen, sans-serif" }}>
+              {config.webinarTitle}
+            </h1>
             <p className="text-xl text-white/70 mb-6 max-w-3xl mx-auto">
               {config.webinarSubtitle}
             </p>

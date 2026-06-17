@@ -96,18 +96,22 @@ export default function SEO({
     }
 
     if (schemaData) {
-      let script = document.querySelector('script[type="application/ld+json"]');
+      let script = document.querySelector<HTMLScriptElement>('script#route-schema');
       if (!script) {
         script = document.createElement("script");
         script.setAttribute("type", "application/ld+json");
+        script.setAttribute("id", "route-schema");
         document.head.appendChild(script);
       }
       script.textContent = JSON.stringify(schemaData);
+    } else {
+      document.querySelector('script#route-schema')?.remove();
     }
 
     return () => {
       applyMeta(DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, DEFAULT_URL, "website");
       document.querySelector('meta[name="robots"]')?.remove();
+      document.querySelector('script#route-schema')?.remove();
     };
   }, [title, description, keywords, canonicalUrl, ogImage, ogType, schemaData, noindex]);
 

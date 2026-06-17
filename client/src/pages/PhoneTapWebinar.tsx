@@ -73,6 +73,20 @@ export default function PhoneTapWebinar() {
         description="Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. See PhoneTap in action — live March 18, 2026."
         keywords="PhoneTap, ServiceTitan call analysis, missed calls, HVAC booking rate, contractor AI, call center optimization"
         canonicalUrl="https://servicetitanhacks.com/webinar/phonetap"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": config.webinarTitle,
+          "description": "Most contractors track booked jobs. Very few know how much revenue they lose from inbound calls that never turn into appointments. See PhoneTap in action with a live demo.",
+          "startDate": "2026-04-08T18:00:00Z",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "location": { "@type": "VirtualLocation", "url": "https://servicetitanhacks.com/webinar/phonetap" },
+          "url": "https://servicetitanhacks.com/webinar/phonetap",
+          "organizer": { "@type": "Organization", "name": "ServiceTitan Hacks", "url": "https://servicetitanhacks.com" },
+          "performer": [{ "@type": "Person", "name": "Bill Brown" }],
+          "image": "https://servicetitanhacks.com/og-phonetap-csrs.png"
+        }}
       />
 
       {/* Sticky Header CTA */}
