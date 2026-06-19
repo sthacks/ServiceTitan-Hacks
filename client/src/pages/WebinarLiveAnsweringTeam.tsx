@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Calendar, Clock, Video, Check, User } from "lucide-react";
 import billHeadshot from "@assets/pro_headshot_1781732942673.png";
+import nicoleHeadshot from "@assets/IMG_1013_1781886576304.jpeg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -253,11 +254,7 @@ export default function WebinarLiveAnsweringTeam() {
                 {/* Jill's Office Presenter Placeholder */}
                 <div className="rounded-2xl p-7 text-center flex flex-col items-center"
                      style={{ backgroundColor: STH.muted, border: "2px dashed #cccccc" }}>
-                  {/* [PRESENTER HEADSHOT, 400 x 400 image placeholder] */}
-                  <div className="w-20 h-20 rounded-full mb-4 flex items-center justify-center"
-                       style={{ backgroundColor: "#e8e8e8", border: "2px dashed #cccccc" }}>
-                    <User size={28} style={{ color: "#aaaaaa" }} />
-                  </div>
+                  <img src={nicoleHeadshot} alt="Nicole, Jill's Office" className="w-20 h-20 rounded-full mb-4 object-cover object-top" />
                   {/* [PRESENTER NAME] */}
                   <h3 className="font-bold text-base mb-1" style={{ color: "#aaaaaa" }}>[PRESENTER NAME]</h3>
                   {/* [PRESENTER TITLE] */}
