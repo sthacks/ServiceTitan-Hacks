@@ -1608,115 +1608,295 @@ export default function PartnerDetail() {
 
   // Render detailed Contractor Commerce page
   if (partner.slug === "contractor-commerce") {
+    const DEMO_URL = "https://go.st-hacks.cc/contractor-commerce?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page";
+
+    const CC = {
+      green: "#15442C",
+      greenMid: "#1E5C3A",
+      greenLight: "#F0F7F2",
+      greenTint: "#CCE9D9",
+      white: "#FFFFFF",
+      red: "#ec164d",
+      body: "#1a1a1a",
+    };
+    const font = { fontFamily: "Oxygen, Arial, sans-serif", color: CC.body };
+
+    const ccFeatures = [
+      {
+        icon: Clock,
+        title: "Customers buy any time, day or night",
+        chips: ["24/7 sales", "No phone tag"],
+        body: "Your store takes orders when your CSRs are off the clock. Homeowners buy equipment, plans, and filters at 10 PM if that is when they decide.",
+      },
+      {
+        icon: DollarSign,
+        title: "Sell equipment, filters, and service plans",
+        chips: ["Equipment", "Memberships", "Filters"],
+        body: "Set up your product catalog once. Customers browse, select, and pay. Your techs handle the install.",
+      },
+      {
+        icon: Zap,
+        title: "ServiceTitan-connected checkout",
+        chips: ["Native integration", "Auto-sync"],
+        body: "Every order flows into ServiceTitan automatically. No manual entry, no duplicate data, no handoff errors.",
+      },
+      {
+        icon: Heart,
+        title: "Recurring revenue without chasing renewals",
+        chips: ["Memberships", "Auto-renew"],
+        body: "Membership plans renew automatically. Your customers stay enrolled. Your recurring revenue compounds without your team lifting a finger.",
+      },
+    ];
+
+    const ccSteps = [
+      { n: "1", title: "Connect your account", body: "Contractor Commerce links to your ServiceTitan account and maps your service catalog, dispatch zones, and job types." },
+      { n: "2", title: "Build your store", body: "Add products, equipment packages, and membership plans. The Contractor Commerce team helps you price and describe every item." },
+      { n: "3", title: "Add it to your website", body: "Drop in a snippet. Your store goes live on your existing site with no redesign required." },
+      { n: "4", title: "Track the revenue", body: "Every sale, every renewal, and every new membership shows up in one dashboard alongside your ServiceTitan data." },
+    ];
+
+    const ccFaqs = [
+      { q: "Do I need a developer to set this up?", a: "No. Contractor Commerce handles the store setup and connects it to your website. Your team does not need to write any code." },
+      { q: "What can my customers actually buy?", a: "Filters shipped to their door, service memberships, equipment packages, and full system installs. You control what goes in the catalog." },
+      { q: "How does it connect to ServiceTitan?", a: "[Integration detail pending sign-off from Contractor Commerce.]" },
+      { q: "What does it cost?", a: "Pricing is based on your catalog size and order volume. Contractor Commerce will model it against your product mix on the demo. [Pricing detail pending sign-off.]" },
+      { q: "Can I control what prices are shown online?", a: "Yes. You set the pricing for every product in your catalog. Some contractors show exact prices. Others show ranges. You decide what level of transparency fits your market." },
+    ];
+
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col" style={font}>
         <SEO
-          title={`${partner.name} | ServiceTitan Hacks Partners`}
-          description={partner.description}
-          keywords={`${partner.name}, ServiceTitan partner, contractor tools, HVAC software, e-commerce, online store`}
-          canonicalUrl={`https://servicetitanhacks.com/partners/${partner.slug}`}
+          title="Contractor Commerce + ServiceTitan Hacks: Sell Online, 24/7"
+          description="Add a fully managed online store to your website. Contractor Commerce lets contractors sell equipment, filters, memberships, and service plans, all connected to ServiceTitan."
+          keywords="Contractor Commerce, ServiceTitan partner, online store, contractor e-commerce, sell equipment online, HVAC store"
+          canonicalUrl="https://servicetitanhacks.com/partners/contractor-commerce"
+          ogImage="https://servicetitanhacks.com/og-contractor-commerce.png"
         />
         <Header />
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="py-16 bg-background">
-            <div className="mx-auto max-w-6xl px-6">
-              <Button
-                variant="ghost"
-                onClick={() => setLocation("/partners")}
-                className="mb-8"
-                data-testid="button-back-to-partners"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Partners
-              </Button>
+        <main className="flex-1" style={{ backgroundColor: CC.greenLight }}>
 
-              <div className="text-center">
-                <div className="mb-8 flex items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    className="object-contain max-h-40 w-auto"
-                    data-testid="img-partner-logo"
-                  />
-                </div>
-
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6" data-testid="text-partner-name">
-                  {partner.name}
-                </h1>
-
-                <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" data-testid="text-partner-description">
-                  {partner.description}
-                </p>
-              </div>
+          {/* Back button */}
+          <div style={{ backgroundColor: CC.greenLight, padding: "28px 24px 0" }}>
+            <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
+              <button onClick={() => setLocation("/partners")}
+                      data-testid="button-back-to-partners"
+                      style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "none", cursor: "pointer", color: CC.body, fontSize: 14, opacity: 0.7, padding: 0 }}>
+                <ArrowLeft size={16} /> Back to Partners
+              </button>
             </div>
-          </section>
+          </div>
 
-          {/* What Contractor Commerce Does */}
-          <section className="py-16 bg-muted/30">
-            <div className="mx-auto max-w-4xl px-6">
-              <p className="text-lg text-foreground mb-8 text-center max-w-3xl mx-auto">
-                Contractor Commerce helps HVAC and plumbing contractors sell more online without extra headaches.
+          {/* ── 1. HERO ── */}
+          <section style={{ backgroundColor: CC.greenLight }} className="px-6 pb-20 pt-8 text-center">
+            <div className="max-w-4xl mx-auto">
+              {/* Co-brand lockup */}
+              <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+                <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 24, letterSpacing: "-0.01em", color: CC.body }}>
+                  ServiceTitan <span style={{ color: CC.red }}>HACKS</span>
+                </span>
+                <span style={{ fontSize: 24, fontWeight: 300, opacity: 0.4 }}>x</span>
+                <img src={contractorCommerceLogo} alt="Contractor Commerce" style={{ height: 40, width: "auto" }} />
+              </div>
+
+              {/* Badge */}
+              <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-0 px-4 py-2 rounded-2xl text-xs font-bold tracking-wide mb-8 text-center"
+                   style={{ backgroundColor: CC.greenTint, border: `1px solid ${CC.green}22`, color: CC.green }}>
+                <span>OUR EXCLUSIVE E-COMMERCE PARTNER</span>
+                <span className="hidden sm:inline">&nbsp;·&nbsp;</span>
+                <span>INTEGRATES WITH SERVICETITAN</span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6" style={{ color: CC.body }}>
+                Your website, working while<br />
+                your trucks are <em style={{ color: CC.green, fontStyle: "italic" }}>parked</em>.
+              </h1>
+
+              <p className="text-lg max-w-2xl mx-auto mb-10" style={{ opacity: 0.75 }}>
+                Contractor Commerce adds a fully managed online store to your website. Customers buy equipment, memberships, and service plans whenever they are ready, day or night.
               </p>
 
-              <div className="space-y-6 mb-8">
-                <Card className="bg-card border-0" data-testid="card-feature-store">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Plug-and-play online store
-                    </h3>
-                    <p className="text-foreground">
-                      When you add Contractor Commerce, your website gets a ready-to-go online shop. You sell filters, memberships, and full systems—even when your trucks are off the road.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-0" data-testid="card-feature-products">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      Products, services, and systems
-                    </h3>
-                    <p className="text-foreground">
-                      Sell air filters shipped direct to customers, purchase plans for service, or full system installs. Contractor Commerce handles stock, delivery, checkout, and your techs just do the job.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-0" data-testid="card-feature-leads">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3">
-                      More leads, more sales
-                    </h3>
-                    <p className="text-foreground">
-                      Your site becomes a sales engine. Visitors get quotes, buy services, or book installs online. You turn more traffic into paying customers.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="text-center space-y-4">
-                <Button 
-                  size="lg"
-                  onClick={() => setShowContractorCommerceDemoDialog(true)}
-                  data-testid="button-book-demo"
-                >
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onClick={() => setShowContractorCommerceDemoDialog(true)}
+                        data-testid="button-book-demo"
+                        className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
+                        style={{ backgroundColor: CC.green, color: CC.white }}>
                   Book a Demo
-                </Button>
-                <div>
-                  <a
-                    href="https://go.st-hacks.cc/contractor-commerce?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="link-learn-more"
-                  >
-                    <Button size="lg" variant="outline" className="gap-2">
-                      Learn More <ExternalLink className="h-5 w-5" />
-                    </Button>
-                  </a>
+                </button>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base border-2"
+                   style={{ borderColor: CC.green, color: CC.green }}>
+                  See the Platform
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 2. BILL'S NOTE ── */}
+          <section style={{ backgroundColor: CC.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-5" style={{ color: CC.red }}>
+                WHY THIS PARTNERSHIP EXISTS
+              </p>
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 mb-8 text-center sm:text-left">
+                <img src={billHeadshot} alt="Bill Brown" style={{ width: 80, height: 80, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+                <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: CC.body }}>A note from Bill</h2>
+              </div>
+              <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
+                <p>Every contractor has customers who were ready to buy and then disappeared into 48 hours of phone tag. You follow up on Thursday. They already called someone else on Wednesday. That revenue was yours and you lost it to friction, not competition.</p>
+                <p>Contractor Commerce puts a store on your website. Homeowners can browse your equipment options, buy a filter subscription, enroll in a membership plan, or put a deposit on a system install, all without your team picking up the phone. When they do buy, the job flows into ServiceTitan automatically.</p>
+                <p>I looked at this from the angle of a contractor. Every sale that happens online is a sale your CSRs did not have to make. That is not replacing your team, it is giving them back the time they were spending on customers who already decided.</p>
+                <p>I only partner with tools I would have used at Paramount. Contractor Commerce is one of them.</p>
+              </div>
+              <p className="mt-8 font-bold text-base">
+                Bill Brown <span className="font-normal" style={{ opacity: 0.55 }}>· Founder, ServiceTitan Hacks · Built and sold Paramount Heating and Air</span>
+              </p>
+              <p className="mt-4 text-xs" style={{ opacity: 0.45 }}>
+                Transparency: Contractor Commerce is a paid sponsor of ServiceTitan Hacks. We only accept sponsors whose products are vetted with real contractors in the community.
+              </p>
+            </div>
+          </section>
+
+          {/* ── 3. TRUST STRIP ── */}
+          <section style={{ backgroundColor: CC.greenLight }} className="px-6 py-16">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-3" style={{ opacity: 0.5 }}>
+                REAL RESULTS FROM CONTRACTOR ACCOUNTS
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 max-w-2xl" style={{ color: CC.body }}>
+                What contractors see when the store is live
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  { value: "24/7", label: "Sales happen outside business hours. Your store does not close when your office does." },
+                  { value: "Zero", label: "No developer needed. The store connects to your existing website with a single snippet." },
+                  { value: "100%", label: "Every order syncs to ServiceTitan automatically. No manual data entry required." },
+                ].map((s) => (
+                  <div key={s.value} className="rounded-2xl p-6" style={{ backgroundColor: CC.white }}>
+                    <p className="text-4xl font-extrabold mb-2" style={{ color: CC.green }}>{s.value}</p>
+                    <p className="text-sm" style={{ opacity: 0.7 }}>{s.label}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-2xl p-8" style={{ backgroundColor: CC.greenMid, color: CC.white }}>
+                <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
+                  [Quote pending sign-off. A contractor customer will share their result here.]
+                </p>
+                <footer className="text-sm" style={{ opacity: 0.55 }}>[Contractor name, company, location]</footer>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 4. FEATURES ── */}
+          <section style={{ backgroundColor: CC.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-center" style={{ color: CC.body }}>
+                What Contractor Commerce actually <em style={{ color: CC.green }}>does</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {ccFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="rounded-2xl p-8" style={{ backgroundColor: CC.greenLight }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
+                           style={{ backgroundColor: CC.greenTint }}>
+                        <Icon size={22} style={{ color: CC.green }} />
+                      </div>
+                      <h3 className="text-lg font-bold mb-2" style={{ color: CC.body }}>{f.title}</h3>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {f.chips.map((c) => (
+                          <span key={c} className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                                style={{ backgroundColor: CC.white, color: CC.green, border: `1px solid ${CC.greenTint}` }}>
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{f.body}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 5. HOW IT WORKS ── */}
+          <section style={{ backgroundColor: CC.greenLight }} className="px-6 py-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-12" style={{ color: CC.body }}>
+                Your store live in <em style={{ color: CC.green }}>4 steps</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {ccSteps.map((s) => (
+                  <div key={s.n} className="rounded-2xl p-7" style={{ backgroundColor: CC.white }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-base mb-4"
+                         style={{ backgroundColor: CC.green, color: CC.white }}>
+                      {s.n}
+                    </div>
+                    <h3 className="text-base font-bold mb-2" style={{ color: CC.body }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.7 }}>{s.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 6. TESTIMONIAL ── */}
+          <section style={{ backgroundColor: CC.greenMid, color: CC.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">
+                Hear it from a contractor
+              </h2>
+              <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                <div className="flex flex-col items-center justify-center gap-4 p-16 text-center">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center"
+                       style={{ backgroundColor: CC.green }}>
+                    <Play size={28} style={{ color: CC.white }} />
+                  </div>
+                  <p className="font-bold text-lg">[Testimonial video pending sign-off.]</p>
+                  <p className="text-xs mt-2" style={{ opacity: 0.4 }}>[Drop in the contractor testimonial URL here.]</p>
                 </div>
               </div>
             </div>
           </section>
+
+          {/* ── 7. FAQ ── */}
+          <section style={{ backgroundColor: CC.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10" style={{ color: CC.body }}>
+                Questions every owner asks
+              </h2>
+              <div className="space-y-4">
+                {ccFaqs.map((f) => (
+                  <div key={f.q} className="rounded-2xl p-7" style={{ backgroundColor: CC.greenLight }}>
+                    <h3 className="text-base font-bold mb-2" style={{ color: CC.body }}>{f.q}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.72 }}>{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 8. FINAL CTA ── */}
+          <section style={{ backgroundColor: CC.greenLight }} className="px-6 py-20 text-center">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: CC.body }}>
+                Ready to put your website <em style={{ color: CC.green, fontStyle: "italic" }}>to work</em>?
+              </h2>
+              <p className="text-base mb-8 max-w-xl mx-auto" style={{ opacity: 0.7 }}>
+                Book a demo and Contractor Commerce will show you what your store could look like with your own products, equipment packages, and membership plans.
+              </p>
+              <button onClick={() => setShowContractorCommerceDemoDialog(true)}
+                      data-testid="button-book-demo-final"
+                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
+                      style={{ backgroundColor: CC.green, color: CC.white }}>
+                Book a Demo <ArrowRight size={18} />
+              </button>
+              <p className="mt-5 text-sm" style={{ opacity: 0.5 }}>
+                Booking from this page tags you as a ServiceTitan Hacks member.
+              </p>
+            </div>
+          </section>
+
         </main>
         <Footer />
 
@@ -1726,7 +1906,7 @@ export default function PartnerDetail() {
             <DialogHeader>
               <DialogTitle>Book a Demo with Contractor Commerce</DialogTitle>
               <DialogDescription>
-                Fill out the form below and we'll be in touch to schedule your personalized demo.
+                Fill out the form below and we will be in touch to schedule your personalized demo.
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleContractorCommerceDemoSubmit} className="space-y-4">
