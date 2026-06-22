@@ -1,0 +1,43 @@
+Update the Contractor Commerce partner page only. Do not modify the global
+nav or footer components. Apply two changes: swap the green theme for the
+Contractor Commerce brand palette, and replace the placeholder copy.
+
+COLOR TOKENS (replace every green value in this page's sections with these):
+  orange      #F26F22   primary CTA buttons, stat numbers, step-number circles,
+                        italic emphasis words, hero badge text
+  orange-dark #D85F18   button hover, badge text color
+  badge-bg    #FCE6D6   hero badge pill background
+  teal        #1C8DB0   feature-card icon chips, final CTA section background
+  teal-icon-bg#E1F0F6   feature-card icon chip background
+  navy        #16212E   headings, secondary "See the Platform" outline button,
+                        the dark "Hear it from a contractor" block, quote box bg
+  light-blue  #E4F1F7   hero background
+Buttons: primary = solid orange, white text, hover orange-dark. Secondary =
+transparent with navy border + navy text, hover fills navy with white text.
+
+COPY REPLACEMENTS:
+1. In "What contractors see when the store is live," replace the placeholder
+   quote box with:
+   Quote: "Contractor Commerce has been an absolute success for us. It added
+   7.5% to our business, generated 259 submissions, and led to $450,127 in
+   revenue."
+   Attribution: Brendan Williams, Summit Heating & Cooling
+
+2. In "Hear it from a contractor," remove the pending-video placeholder and
+   replace it with a navy testimonial card:
+   Quote: "The first day our Contractor Commerce was live on our website, we
+   sold a system."
+   Attribution: Brady Jolly, Jolly Plumbing Heating & Air
+
+3. FAQ "How does it connect to ServiceTitan?" answer:
+   "Orders placed through your store flow into ServiceTitan automatically.
+   There is no manual data entry and no duplicate records. Your team works the
+   job in ServiceTitan the same way they always have."
+
+4. FAQ "What does it cost?" answer:
+   "Pricing depends on your catalog size and order volume. Contractor Commerce
+   models it against your product mix during the demo, so that is where you see
+   real numbers for your business."
+
+Keep all other copy, layout, section order, and spacing exactly as they are.
+Keep the page responsive down to mobile and keyboard focus states visible.

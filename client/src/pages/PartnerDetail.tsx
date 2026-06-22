@@ -1690,10 +1690,13 @@ export default function PartnerDetail() {
     const DEMO_URL = "https://go.st-hacks.cc/contractor-commerce?utm_source=servicetitanhacks&utm_medium=partner_page&utm_campaign=landing_page";
 
     const CC = {
-      green: "#15442C",
-      greenMid: "#1E5C3A",
-      greenLight: "#F0F7F2",
-      greenTint: "#CCE9D9",
+      orange: "#F26F22",
+      orangeDark: "#D85F18",
+      badgeBg: "#FCE6D6",
+      teal: "#1C8DB0",
+      tealIconBg: "#E1F0F6",
+      navy: "#16212E",
+      lightBlue: "#E4F1F7",
       white: "#FFFFFF",
       red: "#ec164d",
       body: "#1a1a1a",
@@ -1737,8 +1740,8 @@ export default function PartnerDetail() {
     const ccFaqs = [
       { q: "Do I need a developer to set this up?", a: "No. Contractor Commerce handles the store setup and connects it to your website. Your team does not need to write any code." },
       { q: "What can my customers actually buy?", a: "Filters shipped to their door, service memberships, equipment packages, and full system installs. You control what goes in the catalog." },
-      { q: "How does it connect to ServiceTitan?", a: "[Integration detail pending sign-off from Contractor Commerce.]" },
-      { q: "What does it cost?", a: "Pricing is based on your catalog size and order volume. Contractor Commerce will model it against your product mix on the demo. [Pricing detail pending sign-off.]" },
+      { q: "How does it connect to ServiceTitan?", a: "Orders placed through your store flow into ServiceTitan automatically. There is no manual data entry and no duplicate records. Your team works the job in ServiceTitan the same way they always have." },
+      { q: "What does it cost?", a: "Pricing depends on your catalog size and order volume. Contractor Commerce models it against your product mix during the demo, so that is where you see real numbers for your business." },
       { q: "Can I control what prices are shown online?", a: "Yes. You set the pricing for every product in your catalog. Some contractors show exact prices. Others show ranges. You decide what level of transparency fits your market." },
     ];
 
@@ -1755,7 +1758,7 @@ export default function PartnerDetail() {
         <main className="flex-1" style={{ backgroundColor: CC.greenLight }}>
 
           {/* Back button */}
-          <div style={{ backgroundColor: CC.greenLight, padding: "28px 24px 0" }}>
+          <div style={{ backgroundColor: CC.lightBlue, padding: "28px 24px 0" }}>
             <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
               <button onClick={() => setLocation("/partners")}
                       data-testid="button-back-to-partners"
@@ -1766,7 +1769,7 @@ export default function PartnerDetail() {
           </div>
 
           {/* ── 1. HERO ── */}
-          <section style={{ backgroundColor: CC.greenLight }} className="px-6 pb-20 pt-8 text-center">
+          <section style={{ backgroundColor: CC.lightBlue }} className="px-6 pb-20 pt-8 text-center">
             <div className="max-w-4xl mx-auto">
               {/* Co-brand lockup */}
               <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
@@ -1779,7 +1782,7 @@ export default function PartnerDetail() {
 
               {/* Badge */}
               <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-0 px-4 py-2 rounded-2xl text-xs font-bold tracking-wide mb-8 text-center"
-                   style={{ backgroundColor: CC.greenTint, border: `1px solid ${CC.green}22`, color: CC.green }}>
+                   style={{ backgroundColor: CC.badgeBg, border: `1px solid ${CC.orangeDark}22`, color: CC.orangeDark }}>
                 <span>OUR EXCLUSIVE E-COMMERCE PARTNER</span>
                 <span className="hidden sm:inline">&nbsp;·&nbsp;</span>
                 <span>INTEGRATES WITH SERVICETITAN</span>
@@ -1788,7 +1791,7 @@ export default function PartnerDetail() {
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6" style={{ color: CC.body }}>
                 Your website, working while<br />
-                your trucks are <em style={{ color: CC.green, fontStyle: "italic" }}>parked</em>.
+                your trucks are <em style={{ color: CC.orange, fontStyle: "italic" }}>parked</em>.
               </h1>
 
               <p className="text-lg max-w-2xl mx-auto mb-10" style={{ opacity: 0.75 }}>
@@ -1799,12 +1802,12 @@ export default function PartnerDetail() {
                 <button onClick={() => setShowContractorCommerceDemoDialog(true)}
                         data-testid="button-book-demo"
                         className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
-                        style={{ backgroundColor: CC.green, color: CC.white }}>
+                        style={{ backgroundColor: CC.orange, color: CC.white }}>
                   Book a Demo
                 </button>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base border-2"
-                   style={{ borderColor: CC.green, color: CC.green }}>
+                   style={{ borderColor: CC.navy, color: CC.navy }}>
                   See the Platform
                 </a>
               </div>
@@ -1837,7 +1840,7 @@ export default function PartnerDetail() {
           </section>
 
           {/* ── 3. TRUST STRIP ── */}
-          <section style={{ backgroundColor: CC.greenLight }} className="px-6 py-16">
+          <section style={{ backgroundColor: CC.lightBlue }} className="px-6 py-16">
             <div className="max-w-5xl mx-auto">
               <p className="text-xs font-bold tracking-widest mb-3" style={{ opacity: 0.5 }}>
                 REAL RESULTS FROM CONTRACTOR ACCOUNTS
@@ -1852,16 +1855,16 @@ export default function PartnerDetail() {
                   { value: "100%", label: "Every order syncs to ServiceTitan automatically. No manual data entry required." },
                 ].map((s) => (
                   <div key={s.value} className="rounded-2xl p-6" style={{ backgroundColor: CC.white }}>
-                    <p className="text-4xl font-extrabold mb-2" style={{ color: CC.green }}>{s.value}</p>
+                    <p className="text-4xl font-extrabold mb-2" style={{ color: CC.orange }}>{s.value}</p>
                     <p className="text-sm" style={{ opacity: 0.7 }}>{s.label}</p>
                   </div>
                 ))}
               </div>
-              <div className="rounded-2xl p-8" style={{ backgroundColor: CC.greenMid, color: CC.white }}>
+              <div className="rounded-2xl p-8" style={{ backgroundColor: CC.navy, color: CC.white }}>
                 <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
-                  [Quote pending sign-off. A contractor customer will share their result here.]
+                  "Contractor Commerce has been an absolute success for us. It added 7.5% to our business, generated 259 submissions, and led to $450,127 in revenue."
                 </p>
-                <footer className="text-sm" style={{ opacity: 0.55 }}>[Contractor name, company, location]</footer>
+                <footer className="text-sm" style={{ opacity: 0.55 }}>Brendan Williams, Summit Heating &amp; Cooling</footer>
               </div>
             </div>
           </section>
@@ -1870,22 +1873,22 @@ export default function PartnerDetail() {
           <section style={{ backgroundColor: CC.white }} className="px-6 py-20">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-center" style={{ color: CC.body }}>
-                What Contractor Commerce actually <em style={{ color: CC.green }}>does</em>
+                What Contractor Commerce actually <em style={{ color: CC.orange }}>does</em>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {ccFeatures.map((f) => {
                   const Icon = f.icon;
                   return (
-                    <div key={f.title} className="rounded-2xl p-8" style={{ backgroundColor: CC.greenLight }}>
+                    <div key={f.title} className="rounded-2xl p-8" style={{ backgroundColor: CC.lightBlue }}>
                       <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
-                           style={{ backgroundColor: CC.greenTint }}>
-                        <Icon size={22} style={{ color: CC.green }} />
+                           style={{ backgroundColor: CC.tealIconBg }}>
+                        <Icon size={22} style={{ color: CC.teal }} />
                       </div>
                       <h3 className="text-lg font-bold mb-2" style={{ color: CC.body }}>{f.title}</h3>
                       <div className="flex flex-wrap gap-2 mb-3">
                         {f.chips.map((c) => (
                           <span key={c} className="text-xs px-2 py-0.5 rounded-full font-semibold"
-                                style={{ backgroundColor: CC.white, color: CC.green, border: `1px solid ${CC.greenTint}` }}>
+                                style={{ backgroundColor: CC.tealIconBg, color: CC.teal, border: `1px solid ${CC.tealIconBg}` }}>
                             {c}
                           </span>
                         ))}
@@ -1899,16 +1902,16 @@ export default function PartnerDetail() {
           </section>
 
           {/* ── 5. HOW IT WORKS ── */}
-          <section style={{ backgroundColor: CC.greenLight }} className="px-6 py-20">
+          <section style={{ backgroundColor: CC.lightBlue }} className="px-6 py-20">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-12" style={{ color: CC.body }}>
-                Your store live in <em style={{ color: CC.green }}>4 steps</em>
+                Your store live in <em style={{ color: CC.orange }}>4 steps</em>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {ccSteps.map((s) => (
                   <div key={s.n} className="rounded-2xl p-7" style={{ backgroundColor: CC.white }}>
                     <div className="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-base mb-4"
-                         style={{ backgroundColor: CC.green, color: CC.white }}>
+                         style={{ backgroundColor: CC.orange, color: CC.white }}>
                       {s.n}
                     </div>
                     <h3 className="text-base font-bold mb-2" style={{ color: CC.body }}>{s.title}</h3>
@@ -1920,20 +1923,16 @@ export default function PartnerDetail() {
           </section>
 
           {/* ── 6. TESTIMONIAL ── */}
-          <section style={{ backgroundColor: CC.greenMid, color: CC.white }} className="px-6 py-20">
+          <section style={{ backgroundColor: CC.navy, color: CC.white }} className="px-6 py-20">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">
                 Hear it from a contractor
               </h2>
-              <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                <div className="flex flex-col items-center justify-center gap-4 p-16 text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center"
-                       style={{ backgroundColor: CC.green }}>
-                    <Play size={28} style={{ color: CC.white }} />
-                  </div>
-                  <p className="font-bold text-lg">[Testimonial video pending sign-off.]</p>
-                  <p className="text-xs mt-2" style={{ opacity: 0.4 }}>[Drop in the contractor testimonial URL here.]</p>
-                </div>
+              <div className="rounded-2xl p-10 text-center max-w-2xl mx-auto" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                <p className="text-xl leading-relaxed mb-6" style={{ fontStyle: "italic", opacity: 0.92 }}>
+                  "The first day our Contractor Commerce was live on our website, we sold a system."
+                </p>
+                <p className="text-sm font-semibold" style={{ opacity: 0.6 }}>Brady Jolly, Jolly Plumbing Heating &amp; Air</p>
               </div>
             </div>
           </section>
@@ -1946,7 +1945,7 @@ export default function PartnerDetail() {
               </h2>
               <div className="space-y-4">
                 {ccFaqs.map((f) => (
-                  <div key={f.q} className="rounded-2xl p-7" style={{ backgroundColor: CC.greenLight }}>
+                  <div key={f.q} className="rounded-2xl p-7" style={{ backgroundColor: CC.lightBlue }}>
                     <h3 className="text-base font-bold mb-2" style={{ color: CC.body }}>{f.q}</h3>
                     <p className="text-sm leading-relaxed" style={{ opacity: 0.72 }}>{f.a}</p>
                   </div>
@@ -1956,21 +1955,21 @@ export default function PartnerDetail() {
           </section>
 
           {/* ── 8. FINAL CTA ── */}
-          <section style={{ backgroundColor: CC.greenLight }} className="px-6 py-20 text-center">
+          <section style={{ backgroundColor: CC.teal }} className="px-6 py-20 text-center">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: CC.body }}>
-                Ready to put your website <em style={{ color: CC.green, fontStyle: "italic" }}>to work</em>?
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: CC.white }}>
+                Ready to put your website <em style={{ color: CC.white, fontStyle: "italic" }}>to work</em>?
               </h2>
-              <p className="text-base mb-8 max-w-xl mx-auto" style={{ opacity: 0.7 }}>
+              <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: CC.white, opacity: 0.8 }}>
                 Book a demo and Contractor Commerce will show you what your store could look like with your own products, equipment packages, and membership plans.
               </p>
               <button onClick={() => setShowContractorCommerceDemoDialog(true)}
                       data-testid="button-book-demo-final"
                       className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
-                      style={{ backgroundColor: CC.green, color: CC.white }}>
+                      style={{ backgroundColor: CC.orange, color: CC.white }}>
                 Book a Demo <ArrowRight size={18} />
               </button>
-              <p className="mt-5 text-sm" style={{ opacity: 0.5 }}>
+              <p className="mt-5 text-sm" style={{ color: CC.white, opacity: 0.7 }}>
                 Booking from this page tags you as a ServiceTitan Hacks member.
               </p>
             </div>
