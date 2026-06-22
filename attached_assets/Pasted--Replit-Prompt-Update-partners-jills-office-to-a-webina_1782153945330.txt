@@ -1,0 +1,98 @@
+# Replit Prompt: Update /partners/jills-office to a webinar registration page
+
+Paste this into the Replit AI agent for the ServiceTitanHacks.com project.
+
+---
+
+Update the existing page at the route `/partners/jills-office`. Keep the current design system, brand colors, fonts, logos, Bill's photo, nav, and footer. Make the structural and copy changes below. The page is no longer a calculator tool page. It is now a registration page for the June 24 webinar.
+
+Writing rules for all copy on this page: use straight quotes only, never curly quotes. Never use em dashes. Use commas, periods, colons, or parentheses instead. Do not add emoji.
+
+## Structural changes
+1. Remove the "Missed Call Cost Calculator" section entirely, including all inputs, benchmarks, the result panel, and the "preview, interactive version goes live June 24" badge.
+2. Remove the "What this calculator does" section (the three cards about the calculator).
+3. Add a new "What we cover" section in the same place and style as the section you just removed (three white cards on the cream background, same card styling). Content is in step 5 below.
+
+## 1. Hero badge
+Change the badge text from "Free tool, built with Jill's Office" to:
+
+Free live webinar, built with Jill's Office
+
+## 2. Hero headline
+Keep:
+
+Four ways to handle your calls. The real math on each one.
+
+## 3. Hero subhead
+Replace the current subhead with:
+
+On June 24 we walk through the four ways a growing contractor can handle call volume, and put real numbers on each one. What it costs, how fast it ramps, and whether it actually books. Plus the part most owners skip: the setup that decides whether any option returns a dollar. Built with Jill's Office, the live answering service for the trades.
+
+## 4. Hero buttons
+Remove the "Run your numbers" button (it pointed to the calculator). Keep two buttons:
+- Primary (orange): Save your seat for June 24
+- Secondary (navy): Book a 20 minute call
+
+## 5. New "What we cover" section
+Heading: What we cover
+
+Three cards, each with a short title and one supporting line:
+
+Card 1
+Title: All four options, side by side.
+Body: Hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. What each costs, how fast it ramps, and whether it actually books.
+
+Card 2
+Title: Real numbers, not opinions.
+Body: We put math on every option so you can see the tradeoffs for a shop your size, then decide with your own figures.
+
+Card 3
+Title: The part most owners skip.
+Body: The expectations and setup that decide whether any option returns a dollar. The difference between a partner that works and one you end up blaming.
+
+## 6. Live webinar block
+Title:
+
+When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors
+
+Date line: Wednesday, June 24, 2026, 2:00 PM ET
+
+Description (note: no mention of a calculator):
+
+We put real math on all four ways to handle your call volume: hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. The replay goes to everyone who registers.
+
+Keep the "Save my seat" button.
+
+## 7. About Jill's Office
+No changes. Keep the attributed paragraph as is.
+
+## 8. "Want help running your numbers?" section
+Keep the heading. Replace the body with:
+
+Book a 20 minute call with Jill's Office to walk through your real call volume and average ticket, and pressure test it against what they see across the trades.
+
+Keep the "Book a 20 minute call" button and the fine print.
+
+## 9. "A note from Bill" section
+Replace the body paragraphs with these three (the calculator paragraph is removed):
+
+Paragraph 1:
+Every contractor I talk to in this community has the same problem. Calls hit voicemail at 5:30 on a Friday, or ring out when both CSRs are already on the phone during a heat wave. Those calls do not show up in a report. They show up as booked jobs at the shop down the road that answered.
+
+Paragraph 2:
+There are four ways to handle that call volume. Hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. Each has a real cost, a real ramp, and a real booking rate, and most owners pick one under pressure without the math.
+
+Paragraph 3:
+On June 24 we put honest numbers on all four, and we talk about the part most owners skip: the expectations and the setup that decide whether any of them ever returns a dollar. Jill's Office is one of those four options, and they are the reason this session exists.
+
+Keep the signature line: Bill Brown, Founder, ServiceTitan Hacks, Built and sold Paramount Heating and Air.
+
+## 10. Footer
+No changes.
+
+## After you make the changes
+Confirm these are wired correctly and flag any placeholders:
+- "Save your seat for June 24" and "Save my seat" point to the live webinar registration URL.
+- "Book a 20 minute call" (both the hero secondary button and the section button) points to the Jill's Office booking calendar URL, with the ServiceTitan Hacks tag preserved.
+- Confirm there are no remaining links or anchors that pointed to the removed calculator.
+- Confirm the exact Jill's Office brand hex values used on the page are correct, since the orange and navy may have been approximated.
