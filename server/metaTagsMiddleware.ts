@@ -152,15 +152,21 @@ export async function metaTagsMiddleware(req: Request, res: Response, next: Next
   // (blog posts, partner pages, key marketing pages) regardless of user agent.
   const bodyHtml = valid ? getPageBodyHtml(req.path) : null;
 
+  const isProduction = process.env.NODE_ENV === 'production';
+
+  // In development, never intercept regular browser requests — Vite must handle
+  // HTML serving so it can inject its HMR client and React Fast Refresh preamble.
+  // Only intercept known crawlers in dev (they don't run JS anyway).
+  if (!isProduction && !isCrawler) return next();
+
   // Decision:
   // 1. If we have body content → serve to everyone (route-based prerendering).
   // 2. If we have no body content but it's a crawler → serve head-only (fallback).
   // 3. Otherwise → let Vite / Express continue as normal.
-  const shouldServe = !!bodyHtml || (isCrawler);
+  const shouldServe = !!bodyHtml || isCrawler;
   if (!shouldServe) return next();
 
   try {
-    const isProduction = process.env.NODE_ENV === 'production';
     const templatePath = isProduction
       ? path.resolve(path.dirname(new URL(import.meta.url).pathname), 'public', 'index.html')
       : path.join(process.cwd(), 'client', 'index.html');
