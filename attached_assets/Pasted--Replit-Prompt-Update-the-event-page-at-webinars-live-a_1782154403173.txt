@@ -1,0 +1,76 @@
+# Replit Prompt: Update the event page at /webinars/live-answering-team
+
+Paste this into the Replit AI agent for the ServiceTitanHacks.com project.
+
+---
+
+Update the existing event page at the route `/webinars/live-answering-team`. Keep the entire current design: the dark hero, the ServiceTitan Hacks pink accent, the live countdown timer, the embedded registration form, the section layout, the presenter cards, and the footer. Only change the copy and the items listed below.
+
+Writing rules for all copy on this page: use straight quotes only, never curly quotes. Never use em dashes. Use commas, periods, colons, or parentheses instead. Do not add emoji.
+
+## 1. Hero
+Keep the "Free live webinar" badge, the countdown, and the "Save My Seat" button.
+
+Replace the headline block with a main headline and a subtitle line:
+- Main headline (H1): When to Outsource Call Handling
+- Subtitle line directly under it, smaller and lighter weight: The Four Options and the Real Math for $3M+ Contractors
+
+Keep the meta line, and confirm it reads: Wednesday, June 24, 2026 | 2:00 PM ET | 45 minutes | Live
+
+Replace the hero subhead paragraph with:
+
+Your phones are ringing off the hook. We put real numbers on the four ways to handle that volume: hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. Plus the part most owners skip: the setup that decides whether any option returns a dollar.
+
+Keep the fine print under the button: Cannot make it live? Register and we will send the replay and the decision worksheet.
+
+## 2. Register section
+Keep the heading "Register free below" and the subline.
+
+Important, the registration form is an embed. Its title and date come from the registration platform, not from this page's code. In the registration platform, update:
+- The event title to: When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors
+- The displayed date and time to: June 24, 2026, 2:00 PM ET. The embed currently shows "June 24, 2026 04:00 PM," which is wrong or in the wrong timezone. Set it to 2:00 PM ET.
+
+If any title or date text is hardcoded on the page around the embed, update it to match the two values above.
+
+## 3. "What you will walk away with"
+Replace the four list items with these four:
+
+1. The four ways to handle your call volume, and the real cost, ramp time, and booking rate for each.
+2. Where each option fits your shop, and where it quietly costs you booked jobs.
+3. Why the booking rate most owners quote is softer than they think, and how to read it honestly.
+4. The owner's part: the expectations and setup that decide whether any option ever returns a dollar.
+
+## 4. "Who this is for" and "Who this is not for"
+No changes. Keep both lists exactly as they are.
+
+## 5. Your presenters
+Keep Bill Brown's card unchanged.
+
+For the second card, replace the placeholder name and title with:
+- Name: Nicole Rivera
+- Title: Director of Sales and Marketing, Jill's Office
+
+Leave the bio and the headshot as placeholders. Keep a visible note that the bio (2 to 3 sentences) and the headshot still need to come from Nicole before publishing. Do not invent a bio.
+
+Keep the caption line: Educational and operational. No software demo. No sales presentation. Math grounded.
+
+## 6. Closing CTA
+Keep the heading: The math on call handling should not be a gut call
+
+Keep the first paragraph as is.
+
+Replace the second paragraph with:
+
+Bring your actual call volume numbers. If you want, the Jill's Office team will run the comparison with you on a short call after the session.
+
+Keep the "Save your seat for June 24" button and the "See all events and webinars" link.
+
+## 7. Footer
+No changes.
+
+## After you make the changes, confirm and flag
+- The hero headline now reads "When to Outsource Call Handling" with the subtitle "The Four Options and the Real Math for $3M+ Contractors."
+- The meta line and the registration embed both show 2:00 PM ET, not 4:00 PM. Flag if the embed time cannot be changed from the page and must be fixed in the registration platform.
+- "Save My Seat" and "Save your seat for June 24" both point to the registration action or URL.
+- The second presenter shows Nicole Rivera, Director of Sales and Marketing, Jill's Office, with bio and headshot still marked as placeholders.
+- Note on the URL slug: the route is still `/webinars/live-answering-team`, which reflects the old title. Changing the slug would match the new title but will break any links already shared. Recommendation is to keep the slug for now unless no links are out yet. Flag this for a decision rather than changing it automatically.

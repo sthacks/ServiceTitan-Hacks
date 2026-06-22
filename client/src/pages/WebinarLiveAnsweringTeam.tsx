@@ -40,10 +40,10 @@ function useCountdown(target: Date) {
 }
 
 const WALKAWAY = [
-  "The four cost lines that make up the fully loaded cost of handling calls in-house",
-  "A three signal test for spotting when call handling is quietly costing you booked jobs",
-  "A three path framework for choosing between in-house, a live team for overflow and after hours, or a full live answering team",
-  "A simple way to run the numbers for your own shop after the session",
+  "The four ways to handle your call volume, and the real cost, ramp time, and booking rate for each.",
+  "Where each option fits your shop, and where it quietly costs you booked jobs.",
+  "Why the booking rate most owners quote is softer than they think, and how to read it honestly.",
+  "The owner's part: the expectations and setup that decide whether any option ever returns a dollar.",
 ];
 
 const WHO_FOR = [
@@ -69,8 +69,8 @@ export default function WebinarLiveAnsweringTeam() {
   return (
     <>
       <SEO
-        title="When a Live Answering Team Beats Voicemail: Free Webinar | ServiceTitan Hacks"
-        description="Free live webinar, June 24 at 2 PM ET. The math behind in-house call handling versus a live answering team, for $3M+ ServiceTitan contractors."
+        title="When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors | ServiceTitan Hacks"
+        description="Free live webinar, June 24 at 2 PM ET. The four ways to handle call volume, the real cost and booking rate for each, and the setup that decides whether any option returns a dollar."
         ogImage="https://servicetitanhacks.com/og-live-answering-team-webinar.png"
         canonicalUrl="https://servicetitanhacks.com/webinars/live-answering-team"
       />
@@ -89,9 +89,14 @@ export default function WebinarLiveAnsweringTeam() {
               </div>
 
               {/* H1 */}
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: STH.white }}>
-                When a Live Answering Team Beats Voicemail
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-3" style={{ color: STH.white }}>
+                When to Outsource Call Handling
               </h1>
+
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl font-normal mb-6" style={{ color: STH.white, opacity: 0.65 }}>
+                The Four Options and the Real Math for $3M+ Contractors
+              </p>
 
               {/* Detail row */}
               <div className="flex items-center justify-center gap-6 text-sm mb-6 flex-wrap" style={{ color: STH.white, opacity: 0.65 }}>
@@ -102,7 +107,7 @@ export default function WebinarLiveAnsweringTeam() {
 
               {/* Subhead */}
               <p className="text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: STH.white, opacity: 0.75 }}>
-                A profitability lens for $3M+ contractors. Get the math behind in-house call handling versus a live answering team, and a clear framework for deciding when an outsourced live team is the higher ROI move.
+                Your phones are ringing off the hook. We put real numbers on the four ways to handle that volume: hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. Plus the part most owners skip: the setup that decides whether any option returns a dollar.
               </p>
 
               {/* Countdown */}
@@ -144,6 +149,11 @@ export default function WebinarLiveAnsweringTeam() {
               <p className="text-center text-base mb-8" style={{ color: STH.text, opacity: 0.6 }}>
                 Cannot make it live? Register and we will send the replay and the decision worksheet.
               </p>
+              {/* NOTE: The event title and displayed date/time inside this embed are set in StreamYard,
+                  not in this page's code. The embed currently shows "June 24, 2026 04:00 PM" which
+                  is incorrect. The title and time must be updated in StreamYard to:
+                  Title: "When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors"
+                  Date/time: June 24, 2026, 2:00 PM ET */}
               <div className="rounded-2xl p-2" style={{ backgroundColor: STH.white }}>
                 <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
                   <iframe
@@ -251,19 +261,16 @@ export default function WebinarLiveAnsweringTeam() {
                   </p>
                 </div>
 
-                {/* Jill's Office Presenter Placeholder */}
+                {/* Nicole Rivera - bio and headshot pending */}
                 <div className="rounded-2xl p-7 text-center flex flex-col items-center"
                      style={{ backgroundColor: STH.muted, border: "2px dashed #cccccc" }}>
-                  <img src={nicoleHeadshot} alt="Nicole, Jill's Office" className="w-20 h-20 rounded-full mb-4 object-cover object-top" />
-                  {/* [PRESENTER NAME] */}
-                  <h3 className="font-bold text-base mb-1" style={{ color: "#aaaaaa" }}>[PRESENTER NAME]</h3>
-                  {/* [PRESENTER TITLE] */}
-                  <p className="text-xs font-semibold mb-3 uppercase tracking-wide" style={{ color: "#aaaaaa" }}>[PRESENTER TITLE], Jill's Office</p>
-                  {/* [PRESENTER BIO, 2 to 3 sentences] */}
+                  <img src={nicoleHeadshot} alt="Nicole Rivera, Jill's Office" className="w-20 h-20 rounded-full mb-4 object-cover object-top" />
+                  <h3 className="font-bold text-base mb-1" style={{ color: STH.dark }}>Nicole Rivera</h3>
+                  <p className="text-xs font-semibold mb-3 uppercase tracking-wide" style={{ color: STH.red }}>Director of Sales and Marketing, Jill's Office</p>
                   <p className="text-sm leading-relaxed italic" style={{ color: "#aaaaaa" }}>
-                    [PRESENTER BIO, 2 to 3 sentences]
+                    [Bio pending. 2 to 3 sentences from Nicole before publishing.]
                   </p>
-                  <p className="text-xs mt-3 font-semibold" style={{ color: STH.red }}>Placeholder — replace before publishing</p>
+                  <p className="text-xs mt-3 font-semibold" style={{ color: STH.red }}>Headshot and bio still needed from Nicole before publishing</p>
                 </div>
 
               </div>
@@ -285,7 +292,7 @@ export default function WebinarLiveAnsweringTeam() {
                 HVAC, plumbing, and electrical owners and operations leaders running ServiceTitan at $3M or more. If you are losing calls at peak times or after hours and are not sure whether the fix is more headcount or a different model, this session is the starting point.
               </p>
               <p className="text-base leading-relaxed mb-10" style={{ color: STH.white, opacity: 0.78 }}>
-                Bring your actual call volume numbers if you have them. We will show you how to run the comparison on your own shop after the session.
+                Bring your actual call volume numbers. If you want, the Jill's Office team will run the comparison with you on a short call after the session.
               </p>
               <a href="#register" onClick={scrollToRegister}
                  data-testid="button-register-final-cta"
