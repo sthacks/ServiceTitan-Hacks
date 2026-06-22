@@ -21,7 +21,7 @@ import stopBuyingHoursImage from "@assets/062C4475-E186-4088-AAAD-6CEEE00F3BCD_1
 import equipmentPricingImage from "@assets/webinar_image_1769885730082.png";
 import referProHeroImage from "@assets/ReferPro_(2)_1772815536588.png";
 import revinWebinarImage from "@assets/revin_1778696323692.png";
-import liveAnsweringTeamImage from "@assets/7A13B9C3-2AA0-4C33-B5D5-1878B40EED6F_1781733573024.png";
+import liveAnsweringTeamImage from "@assets/jills_office_webinar_1_(2)_1782157278956.png";
 
 interface Event {
   id: string;
@@ -43,17 +43,17 @@ interface Event {
 const events: Event[] = [
   {
     id: "10",
-    title: "When a Live Answering Team Beats Voicemail",
-    description: "The math behind in-house call handling versus a live answering team, for $3M+ ServiceTitan contractors. Get a three-path framework for choosing between in-house, overflow coverage, or a full live answering team — and a way to run the numbers for your own shop.",
+    title: "When to Outsource Call Handling",
+    description: "A practical conversation for $3M+ ServiceTitan contractors on the four ways to handle call volume: hiring internally, a generic answering service, an AI CSR, or a trained live team. We will cover where each option fits, what owners need to set up, and how to avoid turning any option into a dumping ground.",
     date: "Wednesday, June 24, 2026",
     eventDateTime: new Date("2026-06-24T18:00:00Z"),
     time: "2:00 PM",
-    timezone: "EDT",
+    timezone: "ET",
     type: "webinar",
     image: liveAnsweringTeamImage,
     link: "/webinars/live-answering-team",
     status: "upcoming",
-    hosts: ["Bill Brown", "Jill's Office"]
+    hosts: ["Bill Brown", "Nicole Rivera, Jill's Office"]
   },
   {
     id: "9",
