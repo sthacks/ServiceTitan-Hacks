@@ -1,0 +1,95 @@
+# Replit Prompt: Complete the SmartAC Partner Page (v2)
+
+The SmartAC partner page at `/partners/smartac` already exists. Do not rebuild it. Apply the targeted changes below. Keep the existing layout, the SmartAC navy accent, the site nav, and the site footer. Keep all copy in straight quotes with no em-dashes, and write numeric ranges with the word "to".
+
+## 1. Hero
+
+- Change the badge pill text to: `OUR EXCLUSIVE MEMBERSHIP & LOYALTY PARTNER`. Remove the "INTEGRATES WITH SERVICETITAN" phrase until that integration is confirmed.
+- Change the secondary button from `See the ServiceTitan Hacks Offer` to `Run Your ROI`. Keep the primary button as `Book My Demo`.
+- Add a small line under the buttons: `Booking from this page locks in your ServiceTitan Hacks offer.`
+- Keep the existing phone mockup and its callouts (Your logo here, 1-click scheduling, Loyalty reward shown, Built-in filter store).
+
+## 2. A note from Bill
+
+Replace the third paragraph so the named contractors match SmartAC's current homepage, and add the sensor point to paragraph two. Final copy:
+
+> Every contractor in this community knows the membership program is where the durable value lives. Recurring revenue, higher retention, and a customer base that holds up when the phone slows down. The hard part has always been the same. Getting homeowners to sign up, keeping them enrolled, and running the program without eating your team's time.
+>
+> SmartAC puts the membership in the homeowner's pocket. They book their own visits, they see their loyalty rewards, and the built-in filter store turns a one-time maintenance call into recurring revenue. Smart sensors watch the system in the background, so a breakdown shows up as a heads-up instead of a no-heat call. All of it runs under your brand, so the customer sees you, not a third party.
+>
+> The contractors already running it are not small names. Abacus, Parker & Sons, and Vines are using it in the field today. That is the kind of proof I look for before I put a partnership in front of this community.
+>
+> I only partner with tools I would have used at Paramount. SmartAC is one of them.
+
+## 3. Trust strip
+
+- Update the logo set to match SmartAC's current homepage: `Abacus`, `Uni-Serve`, `Laury`, `Parker & Sons`, `Vines`. Remove `Houston HVAC Alliance`.
+- Remove the dark placeholder quote box entirely. The trust strip is logos only.
+
+## 4. What SmartAC actually does (4 cards)
+
+Replace the four cards with these:
+
+- Card 1: `Branded homeowner app`. Tags: `White-label`, `Scheduling`. Body: `Your logo, 1-click scheduling, loyalty credits, reminders, and video tech support in an app built to capture the 80% who say no to traditional plans.`
+- Card 2: `Proactive monitoring with smart sensors`. Tags: `Breakdown risk`, `Leaks`. Body: `Sensors track system health, breakdown risk, and leaks, so problems surface before they become emergencies. Installs in minutes, no wiring.`
+- Card 3: `Built-in filter store`. Tags: `Recurring revenue`, `Filters`. Body: `Automatic filter reminders and reordering turn a one-time maintenance visit into recurring revenue you do not have to chase.`
+- Card 4: `Membership growth and retention`. Tags: `Memberships`, `Loyalty`. Body: `SmartAC drives signups and keeps members enrolled year over year, so the program builds instead of churning after the first visit.`
+
+## 5. What sets SmartAC apart (6 stat tiles)
+
+Replace the stat tiles to match SmartAC's current homepage. Keep the small line `Results reported by SmartAC across contractor accounts.`
+
+- `2x` Membership signups: `Adoption climbs from about 20% to 50% with SmartAC.`
+- `2 weeks` Quick start, zero hassle: `From setup to training, live in under two weeks.`
+- `96%` Customer retention rate: `Members stay enrolled and loyal year over year.`
+- `50%` Capacity unlocked: `Free up half your team's time for higher-value jobs.`
+- `100%+` Program scalability: `Add homes under management without adding trucks or techs.`
+- `30%` Margin improvement: `Shift time from routine maintenance to profitable replacements.`
+
+Remove the old `4x` tile and the `120 day Money-back guarantee` tile.
+
+## 6. New section: ROI upside (add after the stats section)
+
+Add a navy panel section titled `What's your SmartAC upside?`
+
+- Subtext: `Run the numbers and reveal the upside of your membership program. Example below uses SmartAC's default model. Your numbers will differ.`
+- Input chips row: `Members today: 1,500`, `New visits/yr: 2,500`, `Revenue/member: $500`, `Retention: 75%`, `Close rate: 28%`
+- Three output cards:
+  - `Current approach, year 3`: `1,012 members`
+  - `On SmartAC, year 3`: `2,923 members` with subline `+189% member growth`
+  - `Incremental annual revenue`: `$1,461,375`
+- Two buttons: `Run Your ROI` (white) and `Book a 5-year ROI Review` (outline).
+- Small line: `Free 20-minute session. SmartAC plugs in your numbers, models scenarios, and sends you the plan.`
+
+## 7. Up and running in 4 steps
+
+Update step 1 only:
+
+- Step 1: `Book your demo` - `Run your ROI and see SmartAC against your real membership numbers. Lock in the ServiceTitan Hacks offer.`
+- Steps 2, 3, 4 stay as they are, except change step 3 body to: `Install sensors in minutes and put SmartAC in front of your techs and customers.`
+
+## 8. Replace the video section with contractor testimonials
+
+Remove the video embed section entirely. No video. Replace it with a navy section titled `What contractors are saying`, subtext `SmartAC helps HVAC companies work smarter, grow faster, and keep customers longer.` Add three testimonial cards:
+
+- `"I cannot recommend this company enough. SmartAC will breathe life into your company. It has really changed our whole program and it's gotten the technicians, the office, and the clients excited. There's not many products that are able to do that just that fast."` - Jay Vanderwiel, Owner, Legacy Precision HVAC
+- `"One of the reasons we jumped on SmartAC after a little bit of research was always looking for that next step, next level. We have always been ahead of the curve in this market."` - Derek Cole, GM, Simmons One Hour Heating and Air Conditioning
+- `"We have seen an uptick in our customer maintenance plans grow tremendously. It's a no brainer for our customers to jump on board with us. The majority of our residents are seasonal, so they're not even here and they still get reports showing that everything's working properly."` - Chris Shannon, Owner, Hurricane Air Conditioning
+
+Add a small line under the cards: `Testimonials from SmartAC. Pending republish sign-off.`
+
+## 9. FAQ
+
+Replace the FAQ list with these five:
+
+- `How does SmartAC work with ServiceTitan?` - `SmartAC runs as your branded homeowner app and sensor program for ServiceTitan shops. [Integration depth pending sign-off.]`
+- `What does it cost?` - `Pricing scales with your membership base. Run your ROI or book a review and SmartAC will model it against your numbers. [Pricing detail pending sign-off.]`
+- `Who manages the membership program?` - `SmartAC runs the program in the background. Your customers see your brand, and your team stays focused on the work.`
+- `How long does setup take?` - `Under two weeks from setup to training. The sensors install in minutes with no wiring.`
+- `Do I have to install hardware?` - `Yes. SmartAC includes smart sensors that monitor system health, breakdown risk, and leaks. They install in minutes with no wiring.`
+
+Remove the `What is the 120-day guarantee?` question until the guarantee is confirmed for the ServiceTitan Hacks offer.
+
+## 10. Final CTA and footer
+
+No changes. Keep both as they are.

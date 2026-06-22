@@ -1270,53 +1270,53 @@ export default function PartnerDetail() {
 
     const saFeatures = [
       {
-        icon: Clock,
-        title: "Customers book themselves, 24/7",
-        chips: ["Self-scheduling", "After-hours"],
-        body: "Homeowners schedule their own visits in one click, day or night. No phone tag, no missed bookings, and no added load on your CSRs.",
+        icon: Smartphone,
+        title: "Branded homeowner app",
+        chips: ["White-label", "Scheduling"],
+        body: "Your logo, 1-click scheduling, loyalty credits, reminders, and video tech support in an app built to capture the 80% who say no to traditional plans.",
       },
       {
-        icon: Heart,
-        title: "Loyalty that drives retention",
-        chips: ["Memberships", "Rewards"],
-        body: "Members see their loyalty rewards in the app, which keeps them enrolled and engaged year over year instead of churning after the first visit.",
+        icon: Shield,
+        title: "Proactive monitoring with smart sensors",
+        chips: ["Breakdown risk", "Leaks"],
+        body: "Sensors track system health, breakdown risk, and leaks, so problems surface before they become emergencies. Installs in minutes, no wiring.",
       },
       {
         icon: DollarSign,
         title: "Built-in filter store",
         chips: ["Recurring revenue", "Filters"],
-        body: "Automatic filter reminders and reordering turn a single maintenance visit into recurring revenue you do not have to chase.",
+        body: "Automatic filter reminders and reordering turn a one-time maintenance visit into recurring revenue you do not have to chase.",
       },
       {
-        icon: Shield,
-        title: "Branded to your company",
-        chips: ["White-label", "Branding"],
-        body: "Your logo and your brand in every homeowner's pocket. SmartAC runs the program in the background. The customer sees you.",
+        icon: Heart,
+        title: "Membership growth and retention",
+        chips: ["Memberships", "Loyalty"],
+        body: "SmartAC drives signups and keeps members enrolled year over year, so the program builds instead of churning after the first visit.",
       },
     ];
 
     const saStats = [
-      { value: "4x", label: "Membership signups", body: "Adoption climbs from about 20% to 80% with SmartAC." },
-      { value: "120 day", label: "Money-back guarantee", body: "Backed by the industry's first performance guarantee." },
+      { value: "2x", label: "Membership signups", body: "Adoption climbs from about 20% to 50% with SmartAC." },
+      { value: "2 weeks", label: "Quick start, zero hassle", body: "From setup to training, live in under two weeks." },
       { value: "96%", label: "Customer retention rate", body: "Members stay enrolled and loyal year over year." },
       { value: "50%", label: "Capacity unlocked", body: "Free up half your team's time for higher-value jobs." },
       { value: "100%+", label: "Program scalability", body: "Add homes under management without adding trucks or techs." },
-      { value: "30%", label: "Margin improvement", body: "Shift time from routine maintenance to profitable replacements and new customer visits." },
+      { value: "30%", label: "Margin improvement", body: "Shift time from routine maintenance to profitable replacements." },
     ];
 
     const saSteps = [
-      { n: "1", title: "Book your demo", body: "See SmartAC run against your membership numbers and lock in the ServiceTitan Hacks offer." },
+      { n: "1", title: "Book your demo", body: "Run your ROI and see SmartAC against your real membership numbers. Lock in the ServiceTitan Hacks offer." },
       { n: "2", title: "Brand the app", body: "Add your logo and configure rewards, filters, and scheduling for your shop." },
-      { n: "3", title: "Roll it out", body: "Put SmartAC in front of your techs and your customers." },
+      { n: "3", title: "Roll it out", body: "Install sensors in minutes and put SmartAC in front of your techs and customers." },
       { n: "4", title: "Track the lift", body: "Watch signups, retention, and recurring filter revenue in your dashboard." },
     ];
 
     const saFaqs = [
-      { q: "How does SmartAC work with ServiceTitan?", a: "[Integration detail pending sign-off.]" },
-      { q: "What does it cost?", a: "Pricing scales with your membership base. SmartAC will model it against your numbers on the demo. [Pricing detail pending sign-off.]" },
+      { q: "How does SmartAC work with ServiceTitan?", a: "SmartAC runs as your branded homeowner app and sensor program for ServiceTitan shops. [Integration depth pending sign-off.]" },
+      { q: "What does it cost?", a: "Pricing scales with your membership base. Run your ROI or book a review and SmartAC will model it against your numbers. [Pricing detail pending sign-off.]" },
       { q: "Who manages the membership program?", a: "SmartAC runs the program in the background. Your customers see your brand, and your team stays focused on the work." },
-      { q: "What is the 120-day guarantee?", a: "SmartAC backs results with a 120-day money-back performance guarantee." },
-      { q: "How long does setup take?", a: "[Setup timeline pending sign-off.]" },
+      { q: "How long does setup take?", a: "Under two weeks from setup to training. The sensors install in minutes with no wiring." },
+      { q: "Do I have to install hardware?", a: "Yes. SmartAC includes smart sensors that monitor system health, breakdown risk, and leaks. They install in minutes with no wiring." },
     ];
 
     return (
@@ -1358,11 +1358,9 @@ export default function PartnerDetail() {
                   </div>
 
                   {/* Badge */}
-                  <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-0 px-4 py-2 rounded-2xl text-xs font-bold tracking-wide mb-8 text-center"
+                  <div className="inline-flex items-center px-4 py-2 rounded-2xl text-xs font-bold tracking-wide mb-8 text-center"
                        style={{ backgroundColor: SA.navyTint, border: `1px solid ${SA.navy}22`, color: SA.navy }}>
                     <span>OUR EXCLUSIVE MEMBERSHIP &amp; LOYALTY PARTNER</span>
-                    <span className="hidden sm:inline">&nbsp;·&nbsp;</span>
-                    <span>INTEGRATES WITH SERVICETITAN</span>
                   </div>
 
                   {/* Headline */}
@@ -1383,9 +1381,12 @@ export default function PartnerDetail() {
                     <a href="#offer"
                        className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base border-2"
                        style={{ borderColor: SA.navy, color: SA.navy }}>
-                      See the ServiceTitan Hacks Offer
+                      Run Your ROI
                     </a>
                   </div>
+                  <p className="text-sm mt-4 text-center lg:text-left" style={{ opacity: 0.5 }}>
+                    Booking from this page locks in your ServiceTitan Hacks offer.
+                  </p>
                 </div>
 
                 {/* Right: phone mockup */}
@@ -1421,8 +1422,8 @@ export default function PartnerDetail() {
               </div>
               <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
                 <p>Every contractor in this community knows the membership program is where the durable value lives. Recurring revenue, higher retention, and a customer base that holds up when the phone slows down. The hard part has always been the same. Getting homeowners to sign up, keeping them enrolled, and running the program without eating your team's time.</p>
-                <p>SmartAC puts the membership in the homeowner's pocket. They book their own visits, they see their loyalty rewards, and the built-in filter store turns a one-time maintenance call into recurring revenue. All of it runs under your brand, so the customer sees you, not a third party.</p>
-                <p>The contractors already running it are not small names. Abacus, Parker &amp; Sons, Vines, and the Houston HVAC Alliance are using it in the field today. That is the kind of proof I look for before I put a partnership in front of this community.</p>
+                <p>SmartAC puts the membership in the homeowner's pocket. They book their own visits, they see their loyalty rewards, and the built-in filter store turns a one-time maintenance call into recurring revenue. Smart sensors watch the system in the background, so a breakdown shows up as a heads-up instead of a no-heat call. All of it runs under your brand, so the customer sees you, not a third party.</p>
+                <p>The contractors already running it are not small names. Abacus, Parker &amp; Sons, and Vines are using it in the field today. That is the kind of proof I look for before I put a partnership in front of this community.</p>
                 <p>I only partner with tools I would have used at Paramount. SmartAC is one of them.</p>
               </div>
               <p className="mt-8 font-bold text-base">
@@ -1443,21 +1444,14 @@ export default function PartnerDetail() {
               <h2 className="text-3xl md:text-4xl font-extrabold mb-10 max-w-2xl" style={{ color: SA.body }}>
                 Trusted by 300+ professionals nationwide
               </h2>
-              {/* Logo row placeholders */}
-              <div className="flex flex-wrap items-center gap-6 mb-10">
-                {["Laury", "Parker & Sons", "Vines", "Houston HVAC Alliance", "Abacus"].map((name) => (
+              {/* Logo row */}
+              <div className="flex flex-wrap items-center gap-6">
+                {["Abacus", "Uni-Serve", "Laury", "Parker & Sons", "Vines"].map((name) => (
                   <div key={name} className="px-4 py-2 rounded-xl text-sm font-semibold"
                        style={{ backgroundColor: SA.navyTint, color: SA.navy }}>
                     {name}
                   </div>
                 ))}
-              </div>
-              {/* Pending quote */}
-              <div className="rounded-2xl p-8" style={{ backgroundColor: SA.navyMid, color: SA.white }}>
-                <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
-                  [Quote pending sign-off. A contractor customer will share their result here.]
-                </p>
-                <footer className="text-sm" style={{ opacity: 0.55 }}>[Contractor name, company, location]</footer>
               </div>
             </div>
           </section>
@@ -1520,6 +1514,61 @@ export default function PartnerDetail() {
             </div>
           </section>
 
+          {/* ── 5b. ROI UPSIDE PANEL ── */}
+          <section style={{ backgroundColor: SA.navy, color: SA.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-center">
+                What's your SmartAC upside?
+              </h2>
+              <p className="text-sm text-center mb-8 max-w-2xl mx-auto" style={{ opacity: 0.65 }}>
+                Run the numbers and reveal the upside of your membership program. Example below uses SmartAC's default model. Your numbers will differ.
+              </p>
+              {/* Input chips */}
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                {["Members today: 1,500", "New visits/yr: 2,500", "Revenue/member: $500", "Retention: 75%", "Close rate: 28%"].map((chip) => (
+                  <span key={chip} className="px-4 py-2 rounded-full text-sm font-semibold"
+                        style={{ backgroundColor: "rgba(255,255,255,0.12)", color: SA.white }}>
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              {/* Output cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div className="rounded-2xl p-7" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                  <p className="text-xs font-bold tracking-wide mb-3" style={{ opacity: 0.55 }}>CURRENT APPROACH, YEAR 3</p>
+                  <p className="text-4xl font-extrabold mb-1">1,012</p>
+                  <p className="text-sm" style={{ opacity: 0.65 }}>members</p>
+                </div>
+                <div className="rounded-2xl p-7" style={{ backgroundColor: "rgba(255,255,255,0.15)" }}>
+                  <p className="text-xs font-bold tracking-wide mb-3" style={{ opacity: 0.55 }}>ON SMARTAC, YEAR 3</p>
+                  <p className="text-4xl font-extrabold mb-1">2,923</p>
+                  <p className="text-sm" style={{ opacity: 0.65 }}>members</p>
+                  <p className="text-xs font-bold mt-2" style={{ color: SA.navyTint }}>+189% member growth</p>
+                </div>
+                <div className="rounded-2xl p-7" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                  <p className="text-xs font-bold tracking-wide mb-3" style={{ opacity: 0.55 }}>INCREMENTAL ANNUAL REVENUE</p>
+                  <p className="text-4xl font-extrabold mb-1">$1,461,375</p>
+                  <p className="text-sm" style={{ opacity: 0.65 }}>additional per year</p>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
+                   style={{ backgroundColor: SA.white, color: SA.navy }}>
+                  Run Your ROI
+                </a>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base border-2"
+                   style={{ borderColor: "rgba(255,255,255,0.4)", color: SA.white }}>
+                  Book a 5-year ROI Review
+                </a>
+              </div>
+              <p className="text-center text-sm" style={{ opacity: 0.45 }}>
+                Free 20-minute session. SmartAC plugs in your numbers, models scenarios, and sends you the plan.
+              </p>
+            </div>
+          </section>
+
           {/* ── 6. HOW IT WORKS ── */}
           <section style={{ backgroundColor: SA.white }} className="px-6 py-20">
             <div className="max-w-4xl mx-auto">
@@ -1541,24 +1590,47 @@ export default function PartnerDetail() {
             </div>
           </section>
 
-          {/* ── 7. CONTRACTOR TESTIMONIAL ── */}
+          {/* ── 7. TESTIMONIALS ── */}
           <section id="offer" style={{ backgroundColor: SA.navyMid, color: SA.white }} className="px-6 py-20">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">
-                Hear it from a contractor
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-center">
+                What contractors are saying
               </h2>
-              <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                {/* Video placeholder */}
-                <div className="flex flex-col items-center justify-center gap-4 p-16 text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center"
-                       style={{ backgroundColor: SA.navy }}>
-                    <Play size={28} style={{ color: SA.white }} />
+              <p className="text-center mb-10 max-w-2xl mx-auto" style={{ opacity: 0.65 }}>
+                SmartAC helps HVAC companies work smarter, grow faster, and keep customers longer.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                {[
+                  {
+                    quote: "I cannot recommend this company enough. SmartAC will breathe life into your company. It has really changed our whole program and it's gotten the technicians, the office, and the clients excited. There's not many products that are able to do that just that fast.",
+                    name: "Jay Vanderwiel",
+                    role: "Owner, Legacy Precision HVAC",
+                  },
+                  {
+                    quote: "One of the reasons we jumped on SmartAC after a little bit of research was always looking for that next step, next level. We have always been ahead of the curve in this market.",
+                    name: "Derek Cole",
+                    role: "GM, Simmons One Hour Heating and Air Conditioning",
+                  },
+                  {
+                    quote: "We have seen an uptick in our customer maintenance plans grow tremendously. It's a no brainer for our customers to jump on board with us. The majority of our residents are seasonal, so they're not even here and they still get reports showing that everything's working properly.",
+                    name: "Chris Shannon",
+                    role: "Owner, Hurricane Air Conditioning",
+                  },
+                ].map((t) => (
+                  <div key={t.name} className="rounded-2xl p-7 flex flex-col" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                    <p className="text-sm leading-relaxed mb-5 flex-1" style={{ opacity: 0.9, fontStyle: "italic" }}>
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <div>
+                      <p className="font-bold text-sm">{t.name}</p>
+                      <p className="text-xs" style={{ opacity: 0.55 }}>{t.role}</p>
+                    </div>
                   </div>
-                  <p className="font-bold text-lg">Tony Patino, President</p>
-                  <p className="text-sm" style={{ opacity: 0.65 }}>Abacus Plumbing, Air Conditioning &amp; Electrical</p>
-                  <p className="text-xs mt-2" style={{ opacity: 0.4 }}>[Video embed pending. Drop in the Tony Patino testimonial URL.]</p>
-                </div>
+                ))}
               </div>
+              <p className="text-center text-xs" style={{ opacity: 0.4 }}>
+                Testimonials from SmartAC. Pending republish sign-off.
+              </p>
             </div>
           </section>
 
