@@ -397,8 +397,8 @@ export const metadata: Record<string, PageMetadata> = {
     ogImage: "https://servicetitanhacks.com/og-stop-buying-hours-webinar.png",
   },
   "/webinars/live-answering-team": {
-    title: "When a Live Answering Team Beats Voicemail: Free Webinar | ServiceTitan Hacks",
-    description: "Free live webinar, June 24 at 2 PM ET. The math behind in-house call handling versus a live answering team, for $3M+ ServiceTitan contractors.",
+    title: "When to Outsource Call Handling | ServiceTitan Hacks x Jill's Office",
+    description: "A free ServiceTitan Hacks webinar with Jill's Office on the four ways $3M+ contractors can handle call volume: internal CSRs, generic answering services, AI CSRs, and trained live answering teams.",
     ogImage: "https://servicetitanhacks.com/og-live-answering-team-webinar.png",
   },
 
