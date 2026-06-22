@@ -1,0 +1,86 @@
+# Replit AI Prompt: Jill's Office Calculator Landing Page (Co-Branded Placeholder)
+
+Paste everything below the line into Replit AI on the ServiceTitan Hacks project.
+
+---
+
+## What to build
+
+Add a new co-branded partner landing page to this existing ServiceTitan Hacks site. Route: /partners/jills-office. This page is a placeholder. Its centerpiece is the Missed Call Cost Calculator, which is not built yet, so the calculator appears as a visual preview clearly marked as launching June 24, 2026. The purpose of the page is to show where the calculator will live and how it is co-branded with Jill's Office.
+
+## Match the existing template
+
+Use the exact same structure, layout, components, navigation bar, and footer as the existing /partners/broccoli-ai page. Reuse the existing design system, fonts, spacing, card styles, and section patterns. Do not rebuild the nav or footer. The only differences from the Broccoli page are the content and the co-brand accent color. Include the same "Back to Partners" link at the top of the hero, and make sure this page is reachable from the Partners section.
+
+## Co-branding
+
+- Co-brand lockup in the hero, matching the Broccoli treatment: "ServiceTitan HACKS x Jill's Office". Use the Jill's Office logo. I will upload the logo file. Until then, use a placeholder image named jills-office-logo.png.
+- Accent color is Jill's Office orange. Use approximately #F39200 for the primary accent and approximately #16233F navy for dark sections. These are estimated from Jill's website, so replace them with Jill's exact brand hex if provided. Set them as CSS variables, for example --accent and --accent-dark, so they are easy to swap.
+- Keep the ServiceTitan Hacks shell intact (black nav, existing footer). The accent color applies only to the co-branded sections, buttons, and highlights on this page.
+
+## Section by section
+
+### 1. Nav
+Reuse the existing site nav unchanged.
+
+### 2. Hero (light background, matching the Broccoli hero)
+- Back link: "Back to Partners"
+- Co-brand lockup: ServiceTitan HACKS x Jill's Office
+- Pill badge: "FREE TOOL, BUILT WITH JILL'S OFFICE"
+- Headline: "See what missed calls are costing your shop."
+- Subhead: "A 90 second calculator that turns your call volume, average ticket, and booking rate into a real dollar figure for the calls slipping past your team. Built with Jill's Office, the live answering service for the trades."
+- Two buttons: primary in the accent color reading "Run your numbers" that scrolls to the calculator section, and a secondary dark button reading "Save your seat for June 24" linking to the webinar registration (use # as a placeholder).
+
+### 3. Calculator preview (the centerpiece)
+A prominent panel styled as a preview. Title: "Missed Call Cost Calculator". Badge on the panel: "Preview. Interactive version goes live June 24."
+Two columns inside:
+- Left, labeled "Your numbers", with disabled placeholder input fields: Monthly inbound calls, Average booked job value, Booking rate on answered calls. Then a labeled subgroup "Benchmarks (default from Jill's Office data, adjust to your shop)" with two more fields: Missed call rate, Never call back rate.
+- Right, labeled "Your result", an output panel with a large placeholder figure styled as the headline number, labeled "Annual revenue at risk", with sample text "Your number appears here" and a smaller line reading "We show the formula so you can verify every step."
+Make the inputs visually present but non functional (disabled), since this is a placeholder.
+
+### 4. What this calculator does (three short points)
+- "Turns missed calls into a dollar figure." Plug in your real numbers and see the annual revenue at risk.
+- "Uses benchmarks from Jill's Office." The default missed call and never call back rates come from Jill's Office data, attributed, and you can replace them with your own.
+- "Shows the math." Every figure is calculated in the open so you can check it against your own reports.
+
+### 5. Webinar tie-in (card matching the Broccoli webinar card)
+- Eyebrow: "LIVE WEBINAR"
+- Title: "When a Live Answering Team Beats Voicemail: A Profitability Lens for $3M+ Contractors"
+- Date line: "Wednesday, June 24, 2026, 2:00 PM ET"
+- One line: "We build your numbers live, then send the replay and the calculator to everyone who registers."
+- Button: "Save my seat" (link placeholder #)
+
+### 6. About Jill's Office (credibility, attributed)
+Heading: "About Jill's Office". Copy: "Jill's Office is the live answering service for the trades. According to Jill's Office, the team has spent 10+ years serving trade businesses, captured more than 1.6M leads, and handles over 100K calls a month, with an Excellent rating across 249 Google reviews. Jill's Office is a ServiceTitan Certified Provider."
+Keep every figure attributed to Jill's Office. Do not present them as independent fact.
+
+### 7. Closing CTA to Jill's Office (matching the Broccoli closing CTA)
+- Heading: "Want help running your numbers?"
+- Copy: "Book a 20 minute call with Jill's Office to pressure test your figures against what they see across the trades."
+- Button: "Book a 20 minute call" (link placeholder #)
+- Small text under the button: "Booking happens on Jill's Office's calendar. Coming from this page tags you as a ServiceTitan Hacks member."
+
+### 8. A note from Bill (placeholder, matching the Broccoli "A note from Bill")
+Reuse Bill's avatar from the Broccoli page. Heading: "A note from Bill". Use this draft as placeholder copy:
+"Every contractor I talk to in this community has the same leak. Calls hit voicemail at 5:30 on a Friday, or ring out when both CSRs are already on the phone during a heat wave. Those calls do not show up in a report. They show up as booked jobs at the shop down the road that answered.
+
+This calculator does one thing. It turns that leak into a number you can see. Jill's Office gave us the benchmarks behind it, and I built it so you can check every figure against your own reports.
+
+A live answering team is one of three ways to close that gap. The calculator shows you the size of the gap. What you do about it is your call."
+Signature line: "Bill Brown, Founder, ServiceTitan Hacks, Built and sold Paramount Heating and Air"
+
+### 9. Footer
+Reuse the existing site footer unchanged.
+
+## Voice and formatting rules (apply to all copy on the page)
+- No em-dashes anywhere. Use periods, commas, or parentheses.
+- Straight quotes only, never curly quotes.
+- No emoji.
+- Write numeric ranges with "to", not a dash.
+- Keep the tone operational and math grounded. No hype.
+
+## Technical notes
+- Route: /partners/jills-office
+- Mobile responsive, matching the existing site breakpoints
+- Use placeholder # links for the webinar registration and the Jill's Office booking until real URLs are provided
+- Use a placeholder image for the Jill's Office logo until the real file is uploaded

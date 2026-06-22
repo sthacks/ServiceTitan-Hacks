@@ -14,6 +14,7 @@ import serviceCrucibleLogo from "@assets/logos.zip - 5_1762019262110.png";
 import broccoliLogo from "@assets/broccoli_logo_1780576160196.svg";
 import phonetapLogo from "@assets/phonetap-logo-BlpFkpJi_1780576726245.webp";
 import sharewillowLogo from "@assets/sharewillow_1780931883497.png";
+import jillsOfficeLogo from "@assets/Logo_Colored-Logo_1782138935300.png";
 
 export default function Partners() {
   const [, setLocation] = useLocation();
@@ -46,6 +47,13 @@ export default function Partners() {
       logo: sharewillowLogo,
       description: "Performance pay and incentive plans for home service contractors using ServiceTitan.",
       url: "https://lp.sharewillow.com/industries/construction",
+    },
+    {
+      name: "Jill's Office",
+      slug: "jills-office",
+      logo: jillsOfficeLogo,
+      description: "Live answering service for the trades. Jill's Office captures more leads and books more jobs by making sure every call gets answered by a real person.",
+      url: "https://jillsoffice.com",
     },
     {
       name: "PhoneTap",
