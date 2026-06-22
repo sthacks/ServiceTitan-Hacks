@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Calendar, Clock, Video, Check, User } from "lucide-react";
+import { Calendar, Clock, Video, Check } from "lucide-react";
 import billHeadshot from "@assets/pro_headshot_1781732942673.png";
 import nicoleHeadshot from "@assets/IMG_1013_1781886576304.jpeg";
 import Header from "@/components/Header";
@@ -40,21 +40,34 @@ function useCountdown(target: Date) {
 }
 
 const WALKAWAY = [
-  "The four ways to handle your call volume, and the real cost, ramp time, and booking rate for each.",
-  "Where each option fits your shop, and where it quietly costs you booked jobs.",
-  "Why the booking rate most owners quote is softer than they think, and how to read it honestly.",
-  "The owner's part: the expectations and setup that decide whether any option ever returns a dollar.",
+  {
+    title: "The four call-handling options",
+    body: "Hiring internally, a generic answering service, an AI CSR, and a trained live team, with the real-world tradeoffs of each.",
+  },
+  {
+    title: "Where each option fits",
+    body: "Which calls belong with your internal team, which can go to backup, where AI can help, and where trained human answering makes sense.",
+  },
+  {
+    title: "The booking rate reality",
+    body: "Why booking rate is harder to measure than most owners think, and why \"bookable\" calls need to be defined honestly.",
+  },
+  {
+    title: "The owner's part",
+    body: "The expectations, scope, scripts, and rules an owner must provide so any call-handling option can actually work.",
+  },
 ];
 
 const WHO_FOR = [
   "HVAC, plumbing, and electrical owners and operations leaders running ServiceTitan",
   "Companies at $3M or more in annual revenue, roughly 15 to 150 employees",
-  "Teams that already have CSRs and are still losing calls at peak times or after hours",
+  "Teams that already have CSRs and are still losing calls at peak times, after hours, weekends, or during overflow",
 ];
 
 const WHO_NOT_FOR = [
   "Shops under $3M that are not yet staffing a dedicated CSR function",
-  "Anyone looking for a software demo or a sales presentation. This is a working session on the math.",
+  "Anyone looking for a software demo or a sales presentation. This is a working conversation about call handling, expectations, and fit.",
+  "Owners looking for a magic fix they can dump everything on without giving the team or partner a clear process",
 ];
 
 export default function WebinarLiveAnsweringTeam() {
@@ -69,8 +82,8 @@ export default function WebinarLiveAnsweringTeam() {
   return (
     <>
       <SEO
-        title="When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors | ServiceTitan Hacks"
-        description="Free live webinar, June 24 at 2 PM ET. The four ways to handle call volume, the real cost and booking rate for each, and the setup that decides whether any option returns a dollar."
+        title="When to Outsource Call Handling | ServiceTitan Hacks x Jill's Office"
+        description="A free ServiceTitan Hacks webinar with Jill's Office on the four ways $3M+ contractors can handle call volume: internal CSRs, generic answering services, AI CSRs, and trained live answering teams."
         ogImage="https://servicetitanhacks.com/og-live-answering-team-webinar.png"
         canonicalUrl="https://servicetitanhacks.com/webinars/live-answering-team"
       />
@@ -107,7 +120,7 @@ export default function WebinarLiveAnsweringTeam() {
 
               {/* Subhead */}
               <p className="text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: STH.white, opacity: 0.75 }}>
-                Your phones are ringing off the hook. We put real numbers on the four ways to handle that volume: hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. Plus the part most owners skip: the setup that decides whether any option returns a dollar.
+                Your phones are ringing off the hook. We are walking through the four ways a growing contractor can handle call volume: hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. We will talk through the real-world tradeoffs of each one, where each fits, and what the owner has to do to make any option work.
               </p>
 
               {/* Countdown */}
@@ -135,7 +148,7 @@ export default function WebinarLiveAnsweringTeam() {
                 Save My Seat
               </a>
               <p className="text-sm" style={{ color: STH.white, opacity: 0.5 }}>
-                Cannot make it live? Register and we will send the replay and the decision worksheet.
+                Cannot make it live? Register and we will send the replay.
               </p>
             </div>
           </section>
@@ -147,13 +160,14 @@ export default function WebinarLiveAnsweringTeam() {
                 Register free below
               </h2>
               <p className="text-center text-base mb-8" style={{ color: STH.text, opacity: 0.6 }}>
-                Cannot make it live? Register and we will send the replay and the decision worksheet.
+                Cannot make it live? Register and we will send the replay.
               </p>
-              {/* NOTE: The event title and displayed date/time inside this embed are set in StreamYard,
-                  not in this page's code. The embed currently shows "June 24, 2026 04:00 PM" which
-                  is incorrect. The title and time must be updated in StreamYard to:
+              {/* TODO: Update the registration platform embed title and time to 2:00 PM ET.
+                  The embed currently shows "June 24, 2026 04:00 PM" which is incorrect.
+                  The title and time must be updated in StreamYard to:
                   Title: "When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors"
-                  Date/time: June 24, 2026, 2:00 PM ET */}
+                  Date/time: June 24, 2026, 2:00 PM ET
+                  This cannot be changed from page code — it must be set in the StreamYard platform. */}
               <div className="rounded-2xl p-2" style={{ backgroundColor: STH.white }}>
                 <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
                   <iframe
@@ -185,14 +199,17 @@ export default function WebinarLiveAnsweringTeam() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {WALKAWAY.map((item) => (
-                  <div key={item}
+                  <div key={item.title}
                        className="flex gap-5 rounded-2xl p-6"
                        style={{ backgroundColor: STH.muted }}>
                     <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mt-0.5"
                          style={{ backgroundColor: STH.red }}>
                       <Check size={18} style={{ color: STH.white }} strokeWidth={2.5} />
                     </div>
-                    <p className="text-sm leading-relaxed self-center" style={{ color: STH.text }}>{item}</p>
+                    <div className="self-center">
+                      <p className="text-sm font-bold mb-1" style={{ color: STH.text }}>{item.title}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: STH.text, opacity: 0.7 }}>{item.body}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -261,23 +278,22 @@ export default function WebinarLiveAnsweringTeam() {
                   </p>
                 </div>
 
-                {/* Nicole Rivera - bio and headshot pending */}
+                {/* TODO: Replace Nicole placeholder image with final headshot before publishing. */}
                 <div className="rounded-2xl p-7 text-center flex flex-col items-center"
-                     style={{ backgroundColor: STH.muted, border: "2px dashed #cccccc" }}>
+                     style={{ backgroundColor: STH.muted }}>
                   <img src={nicoleHeadshot} alt="Nicole Rivera, Jill's Office" className="w-20 h-20 rounded-full mb-4 object-cover object-top" />
                   <h3 className="font-bold text-base mb-1" style={{ color: STH.dark }}>Nicole Rivera</h3>
                   <p className="text-xs font-semibold mb-3 uppercase tracking-wide" style={{ color: STH.red }}>Director of Sales and Marketing, Jill's Office</p>
-                  <p className="text-sm leading-relaxed italic" style={{ color: "#aaaaaa" }}>
-                    [Bio pending. 2 to 3 sentences from Nicole before publishing.]
+                  <p className="text-sm leading-relaxed" style={{ color: STH.text, opacity: 0.7 }}>
+                    Nicole Rivera leads sales and marketing at Jill's Office, a live answering team built for home service and trade businesses. She has worked with thousands of business owners on call handling, client expectations, hiring, and what it takes to make an external answering partner successful.
                   </p>
-                  <p className="text-xs mt-3 font-semibold" style={{ color: STH.red }}>Headshot and bio still needed from Nicole before publishing</p>
                 </div>
 
               </div>
 
               {/* Format note */}
               <p className="text-center text-sm mt-10 max-w-xl mx-auto" style={{ color: STH.text, opacity: 0.5 }}>
-                Educational and operational. No software demo. No sales presentation. Math grounded.
+                Educational and operational. No software demo. No sales presentation. A practical conversation about call handling, fit, and owner accountability.
               </p>
             </div>
           </section>
@@ -289,10 +305,10 @@ export default function WebinarLiveAnsweringTeam() {
                 The math on call handling should not be a gut call
               </h2>
               <p className="text-base leading-relaxed mb-4" style={{ color: STH.white, opacity: 0.78 }}>
-                HVAC, plumbing, and electrical owners and operations leaders running ServiceTitan at $3M or more. If you are losing calls at peak times or after hours and are not sure whether the fix is more headcount or a different model, this session is the starting point.
+                HVAC, plumbing, and electrical owners running ServiceTitan at $3M or more are already feeling the pressure. Calls hit voicemail after hours, during lunch, when both CSRs are busy, or when peak season overwhelms the office.
               </p>
               <p className="text-base leading-relaxed mb-10" style={{ color: STH.white, opacity: 0.78 }}>
-                Bring your actual call volume numbers. If you want, the Jill's Office team will run the comparison with you on a short call after the session.
+                There are four ways to handle that volume: hire and train internally, use a generic answering service, use an AI CSR, or bring in a trained live team. This session helps you understand where each option fits and what you need to have in place before expecting any of them to work.
               </p>
               <a href="#register" onClick={scrollToRegister}
                  data-testid="button-register-final-cta"

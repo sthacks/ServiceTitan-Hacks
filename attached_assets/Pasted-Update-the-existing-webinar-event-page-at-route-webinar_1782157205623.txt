@@ -1,0 +1,189 @@
+Update the existing webinar event page at route `/webinars/live-answering-team`.
+
+Keep the current design, layout, dark hero, pink ServiceTitan Hacks accent, countdown timer, embedded registration form section, presenter cards, CTA section, nav, and footer. Only update the copy and content below.
+
+Important writing rules:
+
+* Use straight quotes only.
+* Do not use em dashes.
+* Do not add emoji.
+* Remove all calculator references.
+* Remove all worksheet references.
+* Do not mention PhoneTap.
+* Do not mention Broccoli.
+* Keep the AI CSR section neutral. Do not say AI is bad or inferior to human answering.
+
+# 1. Hero section
+
+Keep the badge:
+
+Free live webinar
+
+Replace the hero headline with:
+
+When to Outsource Call Handling
+
+Add subtitle directly under the headline:
+
+The Four Options and the Real Math for $3M+ Contractors
+
+Keep the event meta line, but make sure it reads exactly:
+
+Wednesday, June 24, 2026 | 2:00 PM ET | 45 minutes | Live
+
+Replace the hero paragraph with:
+
+Your phones are ringing off the hook. We are walking through the four ways a growing contractor can handle call volume: hiring and training internally, a generic answering service, an AI CSR, and a trained live team in ServiceTitan. We will talk through the real-world tradeoffs of each one, where each fits, and what the owner has to do to make any option work.
+
+Keep the main button:
+
+Save My Seat
+
+Replace the small line under the button with:
+
+Cannot make it live? Register and we will send the replay.
+
+# 2. Registration section
+
+Keep the heading:
+
+Register free below
+
+Replace the subline with:
+
+Cannot make it live? Register and we will send the replay.
+
+The registration form is embedded. If the page code controls any visible title or date around the embed, update it to:
+
+When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors
+
+Date and time:
+
+June 24, 2026, 2:00 PM ET
+
+If the embed itself still shows the old title or "04:00 PM," do not try to hardcode over it unless the embed supports it. Add a clear TODO comment in the code:
+
+TODO: Update the registration platform embed title and time to 2:00 PM ET.
+
+# 3. "What you will walk away with"
+
+Replace the four cards with these four:
+
+Card 1:
+The four call-handling options
+
+Body:
+Hiring internally, a generic answering service, an AI CSR, and a trained live team, with the real-world tradeoffs of each.
+
+Card 2:
+Where each option fits
+
+Body:
+Which calls belong with your internal team, which can go to backup, where AI can help, and where trained human answering makes sense.
+
+Card 3:
+The booking rate reality
+
+Body:
+Why booking rate is harder to measure than most owners think, and why "bookable" calls need to be defined honestly.
+
+Card 4:
+The owner's part
+
+Body:
+The expectations, scope, scripts, and rules an owner must provide so any call-handling option can actually work.
+
+# 4. "Who this is for"
+
+Keep this section, but update the bullets if needed so they read:
+
+* HVAC, plumbing, and electrical owners and operations leaders running ServiceTitan
+* Companies at $3M or more in annual revenue, roughly 15 to 150 employees
+* Teams that already have CSRs and are still losing calls at peak times, after hours, weekends, or during overflow
+
+# 5. "Who this is not for"
+
+Keep this section, but update the bullets if needed so they read:
+
+* Shops under $3M that are not yet staffing a dedicated CSR function
+* Anyone looking for a software demo or a sales presentation. This is a working conversation about call handling, expectations, and fit.
+* Owners looking for a magic fix they can dump everything on without giving the team or partner a clear process
+
+# 6. Presenter section
+
+Keep Bill Brown's card.
+
+Update the second presenter card:
+
+Name:
+Nicole Rivera
+
+Title:
+Director of Sales and Marketing, Jill's Office
+
+Bio:
+Nicole Rivera leads sales and marketing at Jill's Office, a live answering team built for home service and trade businesses. She has worked with thousands of business owners on call handling, client expectations, hiring, and what it takes to make an external answering partner successful.
+
+If Nicole's headshot is already available, use it. If not, keep the current placeholder image, but remove the public-facing "placeholder, replace before publishing" text from the card. Add a code comment instead:
+
+TODO: Replace Nicole placeholder image with final headshot before publishing.
+
+Keep the caption line under the presenter cards, but update it to:
+
+Educational and operational. No software demo. No sales presentation. A practical conversation about call handling, fit, and owner accountability.
+
+# 7. Closing CTA section
+
+Keep the heading:
+
+The math on call handling should not be a gut call
+
+Replace the body copy with:
+
+HVAC, plumbing, and electrical owners running ServiceTitan at $3M or more are already feeling the pressure. Calls hit voicemail after hours, during lunch, when both CSRs are busy, or when peak season overwhelms the office.
+
+There are four ways to handle that volume: hire and train internally, use a generic answering service, use an AI CSR, or bring in a trained live team. This session helps you understand where each option fits and what you need to have in place before expecting any of them to work.
+
+Keep the button:
+
+Save your seat for June 24
+
+Keep the "See all events and webinars" link.
+
+# 8. Remove these phrases everywhere on the page
+
+Remove any remaining references to:
+
+* calculator
+* ROI calculator
+* run your numbers
+* worksheet
+* decision worksheet
+* voicemail as the main framing
+* higher ROI move
+* live answering beats voicemail
+
+# 9. SEO and metadata
+
+Update page title/meta if present:
+
+Title:
+When to Outsource Call Handling | ServiceTitan Hacks x Jill's Office
+
+Meta description:
+A free ServiceTitan Hacks webinar with Jill's Office on the four ways $3M+ contractors can handle call volume: internal CSRs, generic answering services, AI CSRs, and trained live answering teams.
+
+# 10. Final QA after editing
+
+After making the changes, check and report back:
+
+1. Hero headline says "When to Outsource Call Handling."
+2. Subtitle says "The Four Options and the Real Math for $3M+ Contractors."
+3. Event time shows 2:00 PM ET anywhere the page controls the time.
+4. No calculator references remain.
+5. No worksheet references remain.
+6. No PhoneTap references remain.
+7. No Broccoli references remain.
+8. Nicole Rivera's presenter card is updated.
+9. Save My Seat buttons still point to the registration action or registration URL.
+10. If the embedded form still shows the old title or 04:00 PM, report that it must be fixed in the registration platform.
