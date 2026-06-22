@@ -1,0 +1,135 @@
+# Replit Prompt: SmartAC Co-Branded Partner Page
+
+Build a co-branded SmartAC partner page on the ServiceTitan Hacks site. Use the EXISTING Broccoli partner page as the exact structural and visual template, and swap in the SmartAC content below.
+
+## Context
+
+- This site is servicetitanhacks.com.
+- A partner page already exists at the route `/partners/broccoli-ai`. That page is the template.
+- Goal: create a SmartAC partner page at `/partners/smartac`.
+- If a SmartAC partner page already exists at that route, replace its contents with the structure below. If it does not exist, duplicate the Broccoli partner page component and swap the content.
+
+## Global rules (do not deviate)
+
+1. Reuse the Broccoli page layout, components, section order, spacing, card styles, button styles, and typography EXACTLY. This is a content swap, not a redesign.
+2. Keep the existing site top navigation and the existing site footer untouched.
+3. Keep the page fully responsive, matching Broccoli's breakpoints.
+4. Accent color: replace Broccoli's purple accent with SmartAC navy everywhere the template uses an accent (italic accent words, primary buttons, section backgrounds, icon tints, link color). Use SmartAC's brand navy. If the exact hex is not already in the codebase, use approximately `#0B1B3A` for deep navy and a lighter tint for section backgrounds. Pull the real hex from the SmartAC logo asset if available.
+5. Reuse existing image assets in the repo where present (SmartAC logo, partner logos, testimonial video). Only add new assets if they are missing.
+6. Add SmartAC to the partners listing/index page so the new page is linked.
+7. Do not modify any other page or route.
+8. Copy style: use commas and periods only. No em-dashes. Straight quotes only. Write numeric ranges with the word "to" (for example, "20% to 80%").
+
+## Page content, section by section
+
+### 1. Hero (matches Broccoli hero, navy accent)
+
+- Co-brand line above the headline: `ServiceTitan HACKS x smartAC`
+- Badge pill: `OUR EXCLUSIVE MEMBERSHIP & LOYALTY PARTNER - INTEGRATES WITH SERVICETITAN`
+- Headline: `Lock in loyalty with every home you visit` with the word `loyalty` in the navy accent style (same treatment as the colored italic word in the Broccoli headline).
+- Subhead: `SmartAC increases signups, boosts plan retention, and cuts the cost of managing your membership program. Book your demo to secure your ServiceTitan Hacks special offer.`
+- Two CTA buttons, same style as Broccoli:
+  - Primary (navy): `Book My Demo`
+  - Secondary: `See the ServiceTitan Hacks Offer`
+- Right side: keep the phone mockup visual with the four callout labels: `Your logo here`, `1-click scheduling`, `Loyalty reward shown`, `Built-in filter store`.
+
+### 2. A note from Bill (same component as Broccoli)
+
+- Eyebrow label: `WHY THIS PARTNERSHIP EXISTS`
+- Bill avatar + heading: `A note from Bill`
+- Body copy:
+
+> Every contractor in this community knows the membership program is where the durable value lives. Recurring revenue, higher retention, and a customer base that holds up when the phone slows down. The hard part has always been the same. Getting homeowners to sign up, keeping them enrolled, and running the program without eating your team's time.
+>
+> SmartAC puts the membership in the homeowner's pocket. They book their own visits, they see their loyalty rewards, and the built-in filter store turns a one-time maintenance call into recurring revenue. All of it runs under your brand, so the customer sees you, not a third party.
+>
+> The contractors already running it are not small names. Abacus, Parker & Sons, Vines, and the Houston HVAC Alliance are using it in the field today. That is the kind of proof I look for before I put a partnership in front of this community.
+>
+> I only partner with tools I would have used at Paramount. SmartAC is one of them.
+
+- Signature line: `Bill Brown   Founder, ServiceTitan HACKS   Built and sold Paramount Heating and Air`
+- Transparency note (small, muted, same as Broccoli): `Transparency: SmartAC is a paid sponsor of ServiceTitan Hacks. We only accept sponsors whose products are vetted with real contractors in the community.`
+
+### 3. Trust strip (replaces Broccoli's "Numbers from real contractor locations")
+
+- Eyebrow label: `TRUSTED IN THE FIELD`
+- Heading: `Trusted by 300+ professionals nationwide`
+- Logo row: Laury, Parker & Sons, Vines, Houston HVAC Alliance, Abacus. Reuse the logo assets from SmartAC's materials if present in the repo, otherwise leave styled placeholders.
+- Pending quote card (same muted style Broccoli uses): `[Quote pending sign-off. A contractor customer will share their result here.]`
+
+### 4. What SmartAC actually does (4-card grid, same layout as "What Broccoli actually does")
+
+- Card 1
+  - Title: `Customers book themselves, 24/7`
+  - Tags: `Self-scheduling`, `After-hours`
+  - Body: `Homeowners schedule their own visits in one click, day or night. No phone tag, no missed bookings, and no added load on your CSRs.`
+- Card 2
+  - Title: `Loyalty that drives retention`
+  - Tags: `Memberships`, `Rewards`
+  - Body: `Members see their loyalty rewards in the app, which keeps them enrolled and engaged year over year instead of churning after the first visit.`
+- Card 3
+  - Title: `Built-in filter store`
+  - Tags: `Recurring revenue`, `Filters`
+  - Body: `Automatic filter reminders and reordering turn a single maintenance visit into recurring revenue you do not have to chase.`
+- Card 4
+  - Title: `Branded to your company`
+  - Tags: `White-label`, `Branding`
+  - Body: `Your logo and your brand in every homeowner's pocket. SmartAC runs the program in the background. The customer sees you.`
+
+### 5. What sets SmartAC apart (6-stat grid)
+
+- Heading: `What sets SmartAC apart`
+- Subheading (attribution, keep this line): `Results reported by SmartAC across contractor accounts.`
+- Stats (same tile style as the SmartAC reference, navy accent):
+  - `4x` Membership signups: `Adoption climbs from about 20% to 80% with SmartAC.`
+  - `120 day` Money-back guarantee: `Backed by the industry's first performance guarantee.`
+  - `96%` Customer retention rate: `Members stay enrolled and loyal year over year.`
+  - `50%` Capacity unlocked: `Free up half your team's time for higher-value jobs.`
+  - `100%+` Program scalability: `Add homes under management without adding trucks or techs.`
+  - `30%` Margin improvement: `Shift time from routine maintenance to profitable replacements and new customer visits.`
+- CTA button under the grid (navy): `Book My Demo`
+
+Note on the first stat: the source page showed "2x" with a "20% to 80%" range, which is mathematically a 4x increase. This prompt uses 4x to match the range. If the correct figure is 2x, change the headline to `2x` and adjust the range text accordingly.
+
+### 6. Up and running in 4 steps (same numbered-card layout as Broccoli's "4 steps")
+
+- Step 1: `Book your demo` - `See SmartAC run against your membership numbers and lock in the ServiceTitan Hacks offer.`
+- Step 2: `Brand the app` - `Add your logo and configure rewards, filters, and scheduling for your shop.`
+- Step 3: `Roll it out` - `Put SmartAC in front of your techs and your customers.`
+- Step 4: `Track the lift` - `Watch signups, retention, and recurring filter revenue in your dashboard.`
+
+### 7. Hear it from a contractor (replaces Broccoli's "Hear it before you believe it")
+
+- Heading: `Hear it from a contractor`
+- Embed the existing testimonial video of Tony Patino, President of Abacus Plumbing, Air Conditioning & Electrical. Reuse the existing video asset and the name/title overlay style.
+
+### 8. Questions every owner asks (FAQ accordion, same component as Broccoli)
+
+- `How does SmartAC work with ServiceTitan?` - `[Integration detail pending sign-off.]`
+- `What does it cost?` - `Pricing scales with your membership base. SmartAC will model it against your numbers on the demo. [Pricing detail pending sign-off.]`
+- `Who manages the membership program?` - `SmartAC runs the program in the background. Your customers see your brand, and your team stays focused on the work.`
+- `What is the 120-day guarantee?` - `SmartAC backs results with a 120-day money-back performance guarantee.`
+- `How long does setup take?` - `[Setup timeline pending sign-off.]`
+
+### 9. Free tools from ServiceTitan Hacks (optional)
+
+Keep this section only if a membership-focused tool exists in the repo. Otherwise omit it. If kept, match Broccoli's two-card layout and link to the relevant tool.
+
+### 10. Final CTA (same component as Broccoli)
+
+- Heading: `Ready to lock in loyalty on every visit?` with `loyalty` in the navy accent.
+- Subhead: `Book a demo and SmartAC will model the membership lift against your own numbers, then show you the ServiceTitan Hacks offer.`
+- Button (navy): `Book My Demo`
+- Small muted line under the button: `Booking from this page tags you as a ServiceTitan Hacks member so you get the offer.`
+
+### Footer
+
+Use the existing site footer. No changes.
+
+## Deliverables checklist
+
+- New route `/partners/smartac` rendering all sections above.
+- Navy accent applied consistently in place of Broccoli purple.
+- SmartAC added to the partners listing page.
+- Fully responsive, matching Broccoli's behavior.
+- No other pages or routes modified.

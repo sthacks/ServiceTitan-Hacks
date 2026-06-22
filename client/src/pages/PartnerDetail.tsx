@@ -1255,16 +1255,352 @@ export default function PartnerDetail() {
 
   // Render detailed SmartAC page
   if (partner.slug === "smartac") {
+    const DEMO_URL = "https://hub.smartac.com/servicetitanhacks-offer?eid=xoeqYg";
+
+    const SA = {
+      navy: "#0B1B3A",
+      navyMid: "#16305C",
+      navyLight: "#EEF3FA",
+      navyTint: "#D6E4F5",
+      white: "#FFFFFF",
+      red: "#ec164d",
+      body: "#1a1a1a",
+    };
+    const font = { fontFamily: "Oxygen, Arial, sans-serif", color: SA.body };
+
+    const saFeatures = [
+      {
+        icon: Clock,
+        title: "Customers book themselves, 24/7",
+        chips: ["Self-scheduling", "After-hours"],
+        body: "Homeowners schedule their own visits in one click, day or night. No phone tag, no missed bookings, and no added load on your CSRs.",
+      },
+      {
+        icon: Heart,
+        title: "Loyalty that drives retention",
+        chips: ["Memberships", "Rewards"],
+        body: "Members see their loyalty rewards in the app, which keeps them enrolled and engaged year over year instead of churning after the first visit.",
+      },
+      {
+        icon: DollarSign,
+        title: "Built-in filter store",
+        chips: ["Recurring revenue", "Filters"],
+        body: "Automatic filter reminders and reordering turn a single maintenance visit into recurring revenue you do not have to chase.",
+      },
+      {
+        icon: Shield,
+        title: "Branded to your company",
+        chips: ["White-label", "Branding"],
+        body: "Your logo and your brand in every homeowner's pocket. SmartAC runs the program in the background. The customer sees you.",
+      },
+    ];
+
+    const saStats = [
+      { value: "4x", label: "Membership signups", body: "Adoption climbs from about 20% to 80% with SmartAC." },
+      { value: "120 day", label: "Money-back guarantee", body: "Backed by the industry's first performance guarantee." },
+      { value: "96%", label: "Customer retention rate", body: "Members stay enrolled and loyal year over year." },
+      { value: "50%", label: "Capacity unlocked", body: "Free up half your team's time for higher-value jobs." },
+      { value: "100%+", label: "Program scalability", body: "Add homes under management without adding trucks or techs." },
+      { value: "30%", label: "Margin improvement", body: "Shift time from routine maintenance to profitable replacements and new customer visits." },
+    ];
+
+    const saSteps = [
+      { n: "1", title: "Book your demo", body: "See SmartAC run against your membership numbers and lock in the ServiceTitan Hacks offer." },
+      { n: "2", title: "Brand the app", body: "Add your logo and configure rewards, filters, and scheduling for your shop." },
+      { n: "3", title: "Roll it out", body: "Put SmartAC in front of your techs and your customers." },
+      { n: "4", title: "Track the lift", body: "Watch signups, retention, and recurring filter revenue in your dashboard." },
+    ];
+
+    const saFaqs = [
+      { q: "How does SmartAC work with ServiceTitan?", a: "[Integration detail pending sign-off.]" },
+      { q: "What does it cost?", a: "Pricing scales with your membership base. SmartAC will model it against your numbers on the demo. [Pricing detail pending sign-off.]" },
+      { q: "Who manages the membership program?", a: "SmartAC runs the program in the background. Your customers see your brand, and your team stays focused on the work." },
+      { q: "What is the 120-day guarantee?", a: "SmartAC backs results with a 120-day money-back performance guarantee." },
+      { q: "How long does setup take?", a: "[Setup timeline pending sign-off.]" },
+    ];
+
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col" style={font}>
         <SEO
-          title={`${partner.name} | ServiceTitan Hacks Partners`}
-          description={partner.description}
-          keywords={`${partner.name}, ServiceTitan partner, contractor tools, HVAC software, membership programs, smart sensors`}
-          canonicalUrl={`https://servicetitanhacks.com/partners/${partner.slug}`}
+          title="SmartAC + ServiceTitan Hacks: Lock In Loyalty on Every Visit"
+          description="SmartAC increases membership signups, boosts plan retention, and cuts the cost of managing your membership program. Book your demo for the ServiceTitan Hacks special offer."
+          keywords="SmartAC, ServiceTitan partner, membership program, HVAC loyalty, contractor memberships, filter store"
+          canonicalUrl="https://servicetitanhacks.com/partners/smartac"
+          ogImage="https://servicetitanhacks.com/og-smartac.png"
         />
         <Header />
-        <main className="flex-1">
+        <main className="flex-1" style={{ backgroundColor: SA.navyLight }}>
+
+          {/* Back button */}
+          <div style={{ backgroundColor: SA.navyLight, padding: "28px 24px 0" }}>
+            <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
+              <button onClick={() => setLocation("/partners")}
+                      data-testid="button-back-to-partners"
+                      style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "none", cursor: "pointer", color: SA.body, fontSize: 14, opacity: 0.7, padding: 0 }}>
+                <ArrowLeft size={16} /> Back to Partners
+              </button>
+            </div>
+          </div>
+
+          {/* ── 1. HERO ── */}
+          <section style={{ backgroundColor: SA.navyLight }} className="px-6 pb-20 pt-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left: text */}
+                <div className="text-center lg:text-left">
+                  {/* Co-brand lockup */}
+                  <div className="flex items-center justify-center lg:justify-start gap-3 mb-8 flex-wrap">
+                    <span style={{ fontFamily: "Oxygen, Arial, sans-serif", fontWeight: 700, fontSize: 22, letterSpacing: "-0.01em", color: SA.body }}>
+                      ServiceTitan <span style={{ color: SA.red }}>HACKS</span>
+                    </span>
+                    <span style={{ fontSize: 22, fontWeight: 300, opacity: 0.4 }}>×</span>
+                    <img src={smartACLogo} alt="SmartAC" style={{ height: 36, width: "auto" }} />
+                  </div>
+
+                  {/* Badge */}
+                  <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-0 px-4 py-2 rounded-2xl text-xs font-bold tracking-wide mb-8 text-center"
+                       style={{ backgroundColor: SA.navyTint, border: `1px solid ${SA.navy}22`, color: SA.navy }}>
+                    <span>OUR EXCLUSIVE MEMBERSHIP &amp; LOYALTY PARTNER</span>
+                    <span className="hidden sm:inline">&nbsp;·&nbsp;</span>
+                    <span>INTEGRATES WITH SERVICETITAN</span>
+                  </div>
+
+                  {/* Headline */}
+                  <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6" style={{ color: SA.body }}>
+                    Lock in <em style={{ color: SA.navy, fontStyle: "italic" }}>loyalty</em> with every home you visit
+                  </h1>
+
+                  <p className="text-lg mb-10" style={{ opacity: 0.75 }}>
+                    SmartAC increases signups, boosts plan retention, and cuts the cost of managing your membership program. Book your demo to secure your ServiceTitan Hacks special offer.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                       className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
+                       style={{ backgroundColor: SA.navy, color: SA.white }}>
+                      Book My Demo
+                    </a>
+                    <a href="#offer"
+                       className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base border-2"
+                       style={{ borderColor: SA.navy, color: SA.navy }}>
+                      See the ServiceTitan Hacks Offer
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right: phone mockup */}
+                <div className="flex justify-center">
+                  <div className="relative">
+                    <img src={smartACAppMockup} alt="SmartAC homeowner app showing loyalty rewards and 1-click scheduling"
+                         className="rounded-2xl shadow-lg"
+                         style={{ maxHeight: 520, width: "auto" }} />
+                    {/* Callout labels */}
+                    <div className="absolute top-6 -left-4 px-3 py-1.5 rounded-full text-xs font-bold shadow"
+                         style={{ backgroundColor: SA.white, color: SA.navy }}>Your logo here</div>
+                    <div className="absolute top-1/4 -right-4 px-3 py-1.5 rounded-full text-xs font-bold shadow"
+                         style={{ backgroundColor: SA.navy, color: SA.white }}>1-click scheduling</div>
+                    <div className="absolute top-1/2 -left-4 px-3 py-1.5 rounded-full text-xs font-bold shadow"
+                         style={{ backgroundColor: SA.white, color: SA.navy }}>Loyalty reward shown</div>
+                    <div className="absolute bottom-6 -right-4 px-3 py-1.5 rounded-full text-xs font-bold shadow"
+                         style={{ backgroundColor: SA.navy, color: SA.white }}>Built-in filter store</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 2. BILL'S NOTE ── */}
+          <section style={{ backgroundColor: SA.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-5" style={{ color: SA.red }}>
+                WHY THIS PARTNERSHIP EXISTS
+              </p>
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 mb-8 text-center sm:text-left">
+                <img src={billHeadshot} alt="Bill Brown" style={{ width: 80, height: 80, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+                <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: SA.body }}>A note from Bill</h2>
+              </div>
+              <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
+                <p>Every contractor in this community knows the membership program is where the durable value lives. Recurring revenue, higher retention, and a customer base that holds up when the phone slows down. The hard part has always been the same. Getting homeowners to sign up, keeping them enrolled, and running the program without eating your team's time.</p>
+                <p>SmartAC puts the membership in the homeowner's pocket. They book their own visits, they see their loyalty rewards, and the built-in filter store turns a one-time maintenance call into recurring revenue. All of it runs under your brand, so the customer sees you, not a third party.</p>
+                <p>The contractors already running it are not small names. Abacus, Parker &amp; Sons, Vines, and the Houston HVAC Alliance are using it in the field today. That is the kind of proof I look for before I put a partnership in front of this community.</p>
+                <p>I only partner with tools I would have used at Paramount. SmartAC is one of them.</p>
+              </div>
+              <p className="mt-8 font-bold text-base">
+                Bill Brown <span className="font-normal" style={{ opacity: 0.55 }}>· Founder, ServiceTitan Hacks · Built and sold Paramount Heating and Air</span>
+              </p>
+              <p className="mt-4 text-xs" style={{ opacity: 0.45 }}>
+                Transparency: SmartAC is a paid sponsor of ServiceTitan Hacks. We only accept sponsors whose products are vetted with real contractors in the community.
+              </p>
+            </div>
+          </section>
+
+          {/* ── 3. TRUST STRIP ── */}
+          <section style={{ backgroundColor: SA.navyLight }} className="px-6 py-16">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-xs font-bold tracking-widest mb-3" style={{ opacity: 0.5 }}>
+                TRUSTED IN THE FIELD
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 max-w-2xl" style={{ color: SA.body }}>
+                Trusted by 300+ professionals nationwide
+              </h2>
+              {/* Logo row placeholders */}
+              <div className="flex flex-wrap items-center gap-6 mb-10">
+                {["Laury", "Parker & Sons", "Vines", "Houston HVAC Alliance", "Abacus"].map((name) => (
+                  <div key={name} className="px-4 py-2 rounded-xl text-sm font-semibold"
+                       style={{ backgroundColor: SA.navyTint, color: SA.navy }}>
+                    {name}
+                  </div>
+                ))}
+              </div>
+              {/* Pending quote */}
+              <div className="rounded-2xl p-8" style={{ backgroundColor: SA.navyMid, color: SA.white }}>
+                <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
+                  [Quote pending sign-off. A contractor customer will share their result here.]
+                </p>
+                <footer className="text-sm" style={{ opacity: 0.55 }}>[Contractor name, company, location]</footer>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 4. WHAT SMARTAC DOES ── */}
+          <section style={{ backgroundColor: SA.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-center" style={{ color: SA.body }}>
+                What SmartAC actually <em style={{ color: SA.navy }}>does</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {saFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="rounded-2xl p-8" style={{ backgroundColor: SA.navyLight }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
+                           style={{ backgroundColor: SA.navyTint }}>
+                        <Icon size={22} style={{ color: SA.navy }} />
+                      </div>
+                      <h3 className="text-lg font-bold mb-2" style={{ color: SA.body }}>{f.title}</h3>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {f.chips.map((c) => (
+                          <span key={c} className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                                style={{ backgroundColor: SA.white, color: SA.navy, border: `1px solid ${SA.navyTint}` }}>
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-sm leading-relaxed" style={{ opacity: 0.75 }}>{f.body}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 5. STATS GRID ── */}
+          <section style={{ backgroundColor: SA.navyLight }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-center" style={{ color: SA.body }}>
+                What sets SmartAC apart
+              </h2>
+              <p className="text-sm text-center mb-10" style={{ opacity: 0.55 }}>Results reported by SmartAC across contractor accounts.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                {saStats.map((s) => (
+                  <div key={s.value} className="rounded-2xl p-7" style={{ backgroundColor: SA.white }}>
+                    <p className="text-4xl font-extrabold mb-1" style={{ color: SA.navy }}>{s.value}</p>
+                    <p className="text-sm font-bold mb-2" style={{ color: SA.body }}>{s.label}</p>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.7 }}>{s.body}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center">
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                   style={{ backgroundColor: SA.navy, color: SA.white }}>
+                  Book My Demo
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 6. HOW IT WORKS ── */}
+          <section style={{ backgroundColor: SA.white }} className="px-6 py-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-12" style={{ color: SA.body }}>
+                Up and running in <em style={{ color: SA.navy }}>4 steps</em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {saSteps.map((s) => (
+                  <div key={s.n} className="rounded-2xl p-7" style={{ backgroundColor: SA.navyLight }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-base mb-4"
+                         style={{ backgroundColor: SA.navy, color: SA.white }}>
+                      {s.n}
+                    </div>
+                    <h3 className="text-base font-bold mb-2" style={{ color: SA.body }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.7 }}>{s.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 7. CONTRACTOR TESTIMONIAL ── */}
+          <section id="offer" style={{ backgroundColor: SA.navyMid, color: SA.white }} className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">
+                Hear it from a contractor
+              </h2>
+              <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                {/* Video placeholder */}
+                <div className="flex flex-col items-center justify-center gap-4 p-16 text-center">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center"
+                       style={{ backgroundColor: SA.navy }}>
+                    <Play size={28} style={{ color: SA.white }} />
+                  </div>
+                  <p className="font-bold text-lg">Tony Patino, President</p>
+                  <p className="text-sm" style={{ opacity: 0.65 }}>Abacus Plumbing, Air Conditioning &amp; Electrical</p>
+                  <p className="text-xs mt-2" style={{ opacity: 0.4 }}>[Video embed pending. Drop in the Tony Patino testimonial URL.]</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── 8. FAQ ── */}
+          <section style={{ backgroundColor: SA.white }} className="px-6 py-20">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-10" style={{ color: SA.body }}>
+                Questions every owner asks
+              </h2>
+              <div className="space-y-4">
+                {saFaqs.map((f) => (
+                  <div key={f.q} className="rounded-2xl p-7" style={{ backgroundColor: SA.navyLight }}>
+                    <h3 className="text-base font-bold mb-2" style={{ color: SA.body }}>{f.q}</h3>
+                    <p className="text-sm leading-relaxed" style={{ opacity: 0.72 }}>{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 9. FINAL CTA ── */}
+          <section style={{ backgroundColor: SA.navy, color: SA.white }} className="px-6 py-20 text-center">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                Ready to lock in <em style={{ color: SA.navyTint, fontStyle: "italic" }}>loyalty</em> on every visit?
+              </h2>
+              <p className="text-base mb-10 max-w-xl mx-auto" style={{ opacity: 0.75 }}>
+                Book a demo and SmartAC will model the membership lift against your own numbers, then show you the ServiceTitan Hacks offer.
+              </p>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base"
+                 style={{ backgroundColor: SA.white, color: SA.navy }}>
+                Book My Demo
+              </a>
+              <p className="mt-6 text-sm" style={{ opacity: 0.55 }}>
+                Booking from this page tags you as a ServiceTitan Hacks member so you get the offer.
+              </p>
+            </div>
+          </section>
+
+        </main>
+        <Footer />
           {/* Hero Section */}
           <section className="py-16 bg-gradient-to-b from-[#2970bf] to-white relative">
             <div className="mx-auto max-w-6xl px-6 relative z-10">
@@ -1393,231 +1729,8 @@ export default function PartnerDetail() {
           </section>
         </main>
         <Footer />
+        {/* ── end SmartAC page ── */}
 
-        {/* SmartAC Demo Dialog */}
-        <Dialog open={showSmartACDemoDialog} onOpenChange={(open) => !open && handleCloseSmartACDialog()}>
-          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>Book a Demo with SmartAC</DialogTitle>
-              <DialogDescription>
-                Complete all fields below to schedule your personalized demo.
-              </DialogDescription>
-            </DialogHeader>
-            <form onSubmit={handleSmartACDemoSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="smartac-firstName">First name *</Label>
-                  <Input
-                    id="smartac-firstName"
-                    type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    data-testid="input-smartac-firstname"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="smartac-lastName">Last name *</Label>
-                  <Input
-                    id="smartac-lastName"
-                    type="text"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    data-testid="input-smartac-lastname"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="smartac-email">Email *</Label>
-                  <Input
-                    id="smartac-email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    data-testid="input-smartac-email"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="smartac-phone">Cell phone number *</Label>
-                  <Input
-                    id="smartac-phone"
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    data-testid="input-smartac-phone"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="smartac-companyName">Company name *</Label>
-                  <Input
-                    id="smartac-companyName"
-                    type="text"
-                    value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                    data-testid="input-smartac-company"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="smartac-websiteUrl">Website URL *</Label>
-                  <Input
-                    id="smartac-websiteUrl"
-                    type="url"
-                    value={websiteUrl}
-                    onChange={(e) => setWebsiteUrl(e.target.value)}
-                    data-testid="input-smartac-website"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="smartac-zipCode">Zip code *</Label>
-                  <Input
-                    id="smartac-zipCode"
-                    type="text"
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
-                    data-testid="input-smartac-zipcode"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="smartac-role">What is your role? *</Label>
-                  <Select value={role} onValueChange={setRole}>
-                    <SelectTrigger data-testid="select-smartac-role">
-                      <SelectValue placeholder="Select your role" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="owner">Owner</SelectItem>
-                      <SelectItem value="manager">Manager</SelectItem>
-                      <SelectItem value="technician">Technician</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="smartac-licensed">Are you a licensed residential HVAC contractor? *</Label>
-                <Select value={isLicensedContractor} onValueChange={setIsLicensedContractor}>
-                  <SelectTrigger data-testid="select-smartac-licensed">
-                    <SelectValue placeholder="Select" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="yes">Yes</SelectItem>
-                    <SelectItem value="no">No</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="smartac-ready">When would you be ready to grow your HVAC business with SmartAC? *</Label>
-                <Select value={readyToGrow} onValueChange={setReadyToGrow}>
-                  <SelectTrigger data-testid="select-smartac-ready">
-                    <SelectValue placeholder="Select timeframe" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="immediately">Immediately</SelectItem>
-                    <SelectItem value="1-3months">1-3 months</SelectItem>
-                    <SelectItem value="3-6months">3-6 months</SelectItem>
-                    <SelectItem value="6-12months">6-12 months</SelectItem>
-                    <SelectItem value="justexploring">Just exploring</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="smartac-memberships">How many membership agreements do you have? *</Label>
-                <Select value={membershipAgreements} onValueChange={setMembershipAgreements}>
-                  <SelectTrigger data-testid="select-smartac-memberships">
-                    <SelectValue placeholder="Select range" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="0-100">0-100</SelectItem>
-                    <SelectItem value="101-500">101-500</SelectItem>
-                    <SelectItem value="501-1000">501-1000</SelectItem>
-                    <SelectItem value="1001-2000">1001-2000</SelectItem>
-                    <SelectItem value="2000+">2000+</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label>What is your approximate annual revenue? *</Label>
-                <RadioGroup value={annualRevenue} onValueChange={setAnnualRevenue} className="space-y-2 mt-2">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="under500k" id="smartac-revenue1" data-testid="radio-smartac-revenue-under500k" />
-                    <Label htmlFor="smartac-revenue1" className="font-normal cursor-pointer">Under $500K</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="500k-3m" id="smartac-revenue2" data-testid="radio-smartac-revenue-500k-3m" />
-                    <Label htmlFor="smartac-revenue2" className="font-normal cursor-pointer">$500K - $3MM</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="3m-10m" id="smartac-revenue3" data-testid="radio-smartac-revenue-3m-10m" />
-                    <Label htmlFor="smartac-revenue3" className="font-normal cursor-pointer">$3MM - $10MM</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="10m-20m" id="smartac-revenue4" data-testid="radio-smartac-revenue-10m-20m" />
-                    <Label htmlFor="smartac-revenue4" className="font-normal cursor-pointer">$10MM - $20MM</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="20m+" id="smartac-revenue5" data-testid="radio-smartac-revenue-20m+" />
-                    <Label htmlFor="smartac-revenue5" className="font-normal cursor-pointer">$20MM+</Label>
-                  </div>
-                </RadioGroup>
-              </div>
-
-              <div>
-                <Label>Number of service trucks *</Label>
-                <RadioGroup value={serviceTrucks} onValueChange={setServiceTrucks} className="space-y-2 mt-2">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="1-4" id="smartac-trucks1" data-testid="radio-smartac-trucks-1-4" />
-                    <Label htmlFor="smartac-trucks1" className="font-normal cursor-pointer">1-4</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="5-10" id="smartac-trucks2" data-testid="radio-smartac-trucks-5-10" />
-                    <Label htmlFor="smartac-trucks2" className="font-normal cursor-pointer">5-10</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="11-20" id="smartac-trucks3" data-testid="radio-smartac-trucks-11-20" />
-                    <Label htmlFor="smartac-trucks3" className="font-normal cursor-pointer">11-20</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="21-39" id="smartac-trucks4" data-testid="radio-smartac-trucks-21-39" />
-                    <Label htmlFor="smartac-trucks4" className="font-normal cursor-pointer">21-39</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="40+" id="smartac-trucks5" data-testid="radio-smartac-trucks-40+" />
-                    <Label htmlFor="smartac-trucks5" className="font-normal cursor-pointer">40+</Label>
-                  </div>
-                </RadioGroup>
-              </div>
-
-              <input
-                type="text"
-                name="website"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                style={{ position: "absolute", left: "-9999px" }}
-                tabIndex={-1}
-                autoComplete="off"
-              />
-
-              <Button 
-                type="submit" 
-                disabled={smartACDemoMutation.isPending} 
-                className="w-full"
-                data-testid="button-submit-smartac-demo"
-              >
-                {smartACDemoMutation.isPending ? "Submitting..." : "Submit Demo Request"}
-              </Button>
-            </form>
-          </DialogContent>
-        </Dialog>
       </div>
     );
   }
