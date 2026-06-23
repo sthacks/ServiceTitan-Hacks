@@ -2404,78 +2404,61 @@ export default function PartnerDetail() {
               <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">
                 <em style={{ color: BL.green, fontStyle: "italic" }}>Hear it</em> before you believe it
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Row 1: audio player + webinar card — balanced columns */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 
-                {/* Left: audio + callback form */}
-                <div className="rounded-2xl p-8 flex flex-col gap-6" style={{ backgroundColor: BL.deepPurple }}>
-                  {/* Audio player placeholder */}
-                  <div>
-                    <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.green }}>
-                      SAMPLE CALL
-                    </p>
-                    <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                      <p className="text-sm font-semibold mb-3">Hear Dane handle a real dispatch call</p>
-                      <audio
-                        ref={daneAudioRef}
-                        src="/dane-dispatch-call.wav"
-                        onTimeUpdate={() => setDaneCurrentTime(daneAudioRef.current?.currentTime ?? 0)}
-                        onLoadedMetadata={() => setDaneDuration(daneAudioRef.current?.duration ?? 0)}
-                        onEnded={() => setDaneIsPlaying(false)}
-                        preload="metadata"
-                      />
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={toggleDaneAudio}
-                          data-testid="button-dane-audio-play"
-                          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-opacity hover:opacity-80"
-                          style={{ backgroundColor: BL.green, border: "none", cursor: "pointer" }}>
-                          {daneIsPlaying
-                            ? <span style={{ color: BL.darkPurple, fontSize: 14, fontWeight: 900, letterSpacing: "-1px" }}>&#9646;&#9646;</span>
-                            : <Play size={16} style={{ color: BL.darkPurple, marginLeft: 2 }} />}
-                        </button>
-                        <div className="flex-1">
+                {/* Audio player */}
+                <div className="rounded-2xl p-8 flex flex-col" style={{ backgroundColor: BL.deepPurple }}>
+                  <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.green }}>
+                    SAMPLE CALL
+                  </p>
+                  <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                    <p className="text-sm font-semibold mb-3">Hear Dane handle a real dispatch call</p>
+                    <audio
+                      ref={daneAudioRef}
+                      src="/dane-dispatch-call.wav"
+                      onTimeUpdate={() => setDaneCurrentTime(daneAudioRef.current?.currentTime ?? 0)}
+                      onLoadedMetadata={() => setDaneDuration(daneAudioRef.current?.duration ?? 0)}
+                      onEnded={() => setDaneIsPlaying(false)}
+                      preload="metadata"
+                    />
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={toggleDaneAudio}
+                        data-testid="button-dane-audio-play"
+                        className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-opacity hover:opacity-80"
+                        style={{ backgroundColor: BL.green, border: "none", cursor: "pointer" }}>
+                        {daneIsPlaying
+                          ? <span style={{ color: BL.darkPurple, fontSize: 14, fontWeight: 900, letterSpacing: "-1px" }}>&#9646;&#9646;</span>
+                          : <Play size={16} style={{ color: BL.darkPurple, marginLeft: 2 }} />}
+                      </button>
+                      <div className="flex-1">
+                        <div
+                          className="h-2 rounded-full cursor-pointer"
+                          style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
+                          onClick={(e) => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            const pct = (e.clientX - rect.left) / rect.width;
+                            if (daneAudioRef.current && daneDuration) {
+                              daneAudioRef.current.currentTime = pct * daneDuration;
+                              setDaneCurrentTime(pct * daneDuration);
+                            }
+                          }}>
                           <div
-                            className="h-2 rounded-full cursor-pointer"
-                            style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
-                            onClick={(e) => {
-                              const rect = e.currentTarget.getBoundingClientRect();
-                              const pct = (e.clientX - rect.left) / rect.width;
-                              if (daneAudioRef.current && daneDuration) {
-                                daneAudioRef.current.currentTime = pct * daneDuration;
-                                setDaneCurrentTime(pct * daneDuration);
-                              }
-                            }}>
-                            <div
-                              className="h-2 rounded-full transition-all"
-                              style={{ backgroundColor: BL.green, width: daneDuration ? `${(daneCurrentTime / daneDuration) * 100}%` : "0%" }}
-                            />
-                          </div>
-                          <div className="flex justify-between mt-1">
-                            <span className="text-xs" style={{ opacity: 0.45 }}>{formatAudioTime(daneCurrentTime)}</span>
-                            <span className="text-xs" style={{ opacity: 0.45 }}>{formatAudioTime(daneDuration)}</span>
-                          </div>
+                            className="h-2 rounded-full transition-all"
+                            style={{ backgroundColor: BL.green, width: daneDuration ? `${(daneCurrentTime / daneDuration) * 100}%` : "0%" }}
+                          />
+                        </div>
+                        <div className="flex justify-between mt-1">
+                          <span className="text-xs" style={{ opacity: 0.45 }}>{formatAudioTime(daneCurrentTime)}</span>
+                          <span className="text-xs" style={{ opacity: 0.45 }}>{formatAudioTime(daneDuration)}</span>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  {/* Broccoli embed */}
-                  <div>
-                    <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.green }}>
-                      OR LET DANE CALL YOU
-                    </p>
-                    <iframe
-                      src="https://www.broccoli.com/embed/try-ai?partner_key=33ab6ca93144"
-                      title="Try Broccoli AI"
-                      width="100%"
-                      height="900"
-                      style={{ border: 0, maxWidth: 800 }}
-                      loading="lazy"
-                    />
-                  </div>
                 </div>
 
-                {/* Right: webinar card */}
+                {/* Webinar card */}
                 <div className="rounded-2xl p-8 flex flex-col" style={{ backgroundColor: BL.deepPurple }}>
                   <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.red }}>
                     NEXT LIVE WEBINAR
@@ -2500,6 +2483,21 @@ export default function PartnerDetail() {
                   </div>
                 </div>
 
+              </div>
+
+              {/* Row 2: Broccoli iframe — full width */}
+              <div className="rounded-2xl p-8" style={{ backgroundColor: BL.deepPurple }}>
+                <p className="text-xs font-bold tracking-widest mb-6" style={{ color: BL.green }}>
+                  OR LET DANE CALL YOU
+                </p>
+                <iframe
+                  src="https://www.broccoli.com/embed/try-ai?partner_key=33ab6ca93144"
+                  title="Try Broccoli AI"
+                  width="100%"
+                  height="820"
+                  style={{ border: 0, display: "block" }}
+                  loading="lazy"
+                />
               </div>
             </div>
           </section>
