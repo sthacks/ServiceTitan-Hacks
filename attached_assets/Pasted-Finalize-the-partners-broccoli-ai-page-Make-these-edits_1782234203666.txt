@@ -1,0 +1,48 @@
+Finalize the /partners/broccoli-ai page. Make these edits, change nothing else.
+
+1. TESTIMONIAL (in the purple "Numbers from real contractor locations" section)
+Remove the entire quote card attributed to Marcelle Flowers, Armstrong Plumbing
+("Weekend bookings soared 900%..."). Do not display any written testimonial.
+Keep the three stat cards above it (10,000+, 730, 3,952) as is.
+
+2. FREE TOOLS SECTION (the pink "FREE TOOLS FROM SERVICETITAN HACKS" band with
+the Found Money Calculator and AI Voice Vendor Scorecard cards)
+Remove this entire section. The tools are not built yet. Remove any other link
+or button anywhere on the page that points to these two tools.
+
+3. LIVE DEMO FORM (dark "Hear it before you believe it" section, left card)
+Remove the mocked-up name/phone "Call me now!" form. In its place, under the
+"Or let Dane call you" label, embed this iframe exactly as written:
+
+<iframe
+  src="https://www.broccoli.com/embed/try-ai?partner_key=33ab6ca93144"
+  title="Try Broccoli AI"
+  width="100%"
+  height="900"
+  style="border:0; max-width:800px;"
+  loading="lazy">
+</iframe>
+
+Do not change the partner_key value; it is the PartnerStack attribution key.
+Keep the "Hear Dane handle a real dispatch call" audio player above it. If no
+audio file is loaded yet, hide the player entirely rather than showing a fake
+progress bar. I will provide the recording file.
+
+4. HERO BUTTON
+Make the hero "Have the AI Call You" button smooth-scroll to the demo section
+with the iframe.
+
+5. COST FAQ
+In the "What does it cost?" answer, delete the text "[Pricing detail pending
+sign-off]" including the brackets. The pricing language is approved as final.
+
+6. EM-DASHES (whole page)
+Replace every em-dash (the long "—" character) anywhere on the page with a
+period, comma, or parentheses as the sentence requires. There should be no
+"—" character left on the page. Also replace any curly/smart quotes with
+straight quotes.
+
+7. LINK TRACKING (confirm, do not break)
+Confirm "Book My Demo" and "Save a Webinar Seat / Save My Seat" point to live
+destinations and carry my tracking parameters. If either is a placeholder "#"
+link, tell me which.

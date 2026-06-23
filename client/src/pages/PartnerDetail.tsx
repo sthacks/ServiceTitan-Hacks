@@ -2164,7 +2164,7 @@ export default function PartnerDetail() {
         icon: Phone,
         title: "Answers every call, even yours",
         chips: ["Inbound", "Overflow", "After-hours"],
-        body: "Your AI CSR, Dane, picks up every call — whether it's 2 PM Tuesday or 11 PM Friday. Homeowners get a real conversation. Your team gets their evenings back.",
+        body: "Your AI CSR, Dane, picks up every call. Whether it's 2 PM Tuesday or 11 PM Friday, homeowners get a real conversation. Your team gets their evenings back.",
       },
       {
         icon: Calendar,
@@ -2176,7 +2176,7 @@ export default function PartnerDetail() {
         icon: ClipboardCheck,
         title: "Qualifies before it books",
         chips: ["Job type", "Service area", "Urgency"],
-        body: "Not every call should be booked. Broccoli qualifies the opportunity — checks service area, captures the right job type, and routes calls that need a human to a human.",
+        body: "Not every call should be booked. Broccoli qualifies the opportunity: checks service area, captures the right job type, and routes calls that need a human to a human.",
       },
       {
         icon: PhoneCall,
@@ -2187,7 +2187,7 @@ export default function PartnerDetail() {
     ];
 
     const blSteps = [
-      { n: "1", title: "Audit your call data", body: "Broccoli pulls your last 90 days of call data and maps exactly where bookings are leaking — missed calls, mishandled calls, after-hours gaps." },
+      { n: "1", title: "Audit your call data", body: "Broccoli pulls your last 90 days of call data and maps exactly where bookings are leaking: missed calls, mishandled calls, after-hours gaps." },
       { n: "2", title: "Configure your AI", body: "Setup covers your service area, job types, dispatch calendar, and the voice and tone you want representing your brand." },
       { n: "3", title: "Run shadow calls", body: "Before Broccoli goes live, you hear it handle real call scenarios against your actual jobs. You approve the go-live." },
       { n: "4", title: "Go live and monitor", body: "Flip the switch. Every call, booking, and escalation is visible in a live dashboard. Your CSR team focuses on the calls that actually need them." },
@@ -2204,11 +2204,11 @@ export default function PartnerDetail() {
       },
       {
         q: "How does the ServiceTitan integration actually work?",
-        a: "Broccoli is an official ServiceTitan technology partner. It connects to your ST account directly via API — reads your calendar, writes bookings, captures customer data. No middleware, no manual syncing.",
+        a: "Broccoli is an official ServiceTitan technology partner. It connects to your ST account directly via API: reads your calendar, writes bookings, captures customer data. No middleware, no manual syncing.",
       },
       {
         q: "What does it cost?",
-        a: "Pricing is based on call volume and scales with your business. Broccoli will model it against your actual inbound call data on the demo so you see the ROI before you sign anything. [Pricing detail pending sign-off]",
+        a: "Pricing is based on call volume and scales with your business. Broccoli will model it against your actual inbound call data on the demo so you see the ROI before you sign anything.",
       },
     ];
 
@@ -2276,12 +2276,13 @@ export default function PartnerDetail() {
 
               <p className="text-lg max-w-2xl mx-auto mb-10" style={{ opacity: 0.75 }}>
                 Broccoli's AI voice agent answers every call, books jobs in ServiceTitan, and handles
-                after-hours overflow — so your team isn't the bottleneck between a homeowner and a
+                after-hours overflow, so your team isn't the bottleneck between a homeowner and a
                 booked appointment.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#ai-callback"
+                   onClick={(e) => { e.preventDefault(); document.getElementById("ai-callback")?.scrollIntoView({ behavior: "smooth" }); }}
                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base"
                    style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
                   <Phone size={18} /> Have the AI Call You
@@ -2307,8 +2308,8 @@ export default function PartnerDetail() {
               </div>
               <div className="space-y-5 text-base leading-relaxed" style={{ opacity: 0.85 }}>
                 <p>Every contractor I talk to in this community has the same problem: good CSRs are impossible to find, expensive to keep, and impossible to clone. Meanwhile, every missed call is a job your competitor is booking.</p>
-                <p>I spent time watching Broccoli before putting this partnership together. The thing that convinced me wasn't the demo. It was listening to real calls — calls where homeowners had no idea they were talking to an AI. The booking happened. The job got scheduled. Nobody had to chase a voicemail.</p>
-                <p>Broccoli integrates directly with ServiceTitan. That's not marketing language — it means the AI has access to your actual dispatch calendar, your actual job types, and your actual service areas. The booking is real. The data lands in ST automatically.</p>
+                <p>I spent time watching Broccoli before putting this partnership together. The thing that convinced me wasn't the demo. It was listening to real calls: calls where homeowners had no idea they were talking to an AI. The booking happened. The job got scheduled. Nobody had to chase a voicemail.</p>
+                <p>Broccoli integrates directly with ServiceTitan. That's not marketing language. It means the AI has access to your actual dispatch calendar, your actual job types, and your actual service areas. The booking is real. The data lands in ST automatically.</p>
                 <p>I only partner with tools I would have used at Paramount. Broccoli is one of them.</p>
               </div>
               <p className="mt-8 font-bold text-base">
@@ -2340,13 +2341,6 @@ export default function PartnerDetail() {
                     <p className="text-sm" style={{ opacity: 0.7 }}>{s.label}</p>
                   </div>
                 ))}
-              </div>
-              {/* Quote card */}
-              <div className="rounded-2xl p-8" style={{ backgroundColor: BL.darkPurple, color: BL.white }}>
-                <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
-                  "Weekend bookings soared 900%, and customers enjoy seamless, frustration-free scheduling. The AI syncs perfectly with ServiceTitan. We've gone from skeptics to believers — AI has truly changed the game!"
-                </p>
-                <footer className="text-sm" style={{ opacity: 0.55 }}>Marcelle Flowers, CEO, Armstrong Plumbing</footer>
               </div>
             </div>
           </section>
@@ -2465,37 +2459,19 @@ export default function PartnerDetail() {
                     </div>
                   </div>
 
-                  {/* Callback form */}
+                  {/* Broccoli embed */}
                   <div>
                     <p className="text-xs font-bold tracking-widest mb-4" style={{ color: BL.green }}>
                       OR LET DANE CALL YOU
                     </p>
-                    {broccoliCallConfirmed ? (
-                      <div className="rounded-xl p-5 text-center" style={{ backgroundColor: "rgba(74,222,128,0.15)", border: `1px solid ${BL.green}` }}>
-                        <Check size={28} className="mx-auto mb-2" style={{ color: BL.green }} />
-                        <p className="font-bold text-sm">Dane is calling you within 60 seconds.</p>
-                        <p className="text-xs mt-1" style={{ opacity: 0.6 }}>Make sure your ringer is on.</p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleBroccoliCallSubmit} className="space-y-3">
-                        <input name="name" placeholder="Your name" value={broccoliCallForm.name}
-                               onChange={handleBroccoliCallChange}
-                               className="w-full px-4 py-3 rounded-xl text-sm"
-                               style={{ backgroundColor: BL.white, color: BL.body, border: "none", outline: "none" }} />
-                        <input name="phone" placeholder="Your phone number" value={broccoliCallForm.phone}
-                               onChange={handleBroccoliCallChange}
-                               className="w-full px-4 py-3 rounded-xl text-sm"
-                               style={{ backgroundColor: BL.white, color: BL.body, border: "none", outline: "none" }} />
-                        <button type="submit" disabled={broccoliCallbackMutation.isPending}
-                                className="w-full py-3 rounded-full font-bold text-sm"
-                                style={{ backgroundColor: BL.nearBlack, color: BL.white }}>
-                          {broccoliCallbackMutation.isPending ? "Connecting..." : "Call me now!"}
-                        </button>
-                        <p className="text-xs text-center" style={{ opacity: 0.4 }}>
-                          A real AI call. No sales rep. No agenda. Just Dane.
-                        </p>
-                      </form>
-                    )}
+                    <iframe
+                      src="https://www.broccoli.com/embed/try-ai?partner_key=33ab6ca93144"
+                      title="Try Broccoli AI"
+                      width="100%"
+                      height="900"
+                      style={{ border: 0, maxWidth: 800 }}
+                      loading="lazy"
+                    />
                   </div>
                 </div>
 
@@ -2545,42 +2521,6 @@ export default function PartnerDetail() {
             </div>
           </section>
 
-          {/* ── 8. FREE TOOLS STRIP ───────────────────────────────────── */}
-          <section style={{ backgroundColor: "#fff5f8" }} className="px-6 py-14">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-xs font-bold tracking-widest mb-6 text-center" style={{ color: BL.red }}>
-                FREE TOOLS FROM SERVICETITAN HACKS
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: "Found Money Calculator",
-                    body: "See how much revenue is leaking from missed and mishandled calls. Takes 90 seconds.",
-                    href: FOUND_MONEY_URL,
-                  },
-                  {
-                    title: "AI Voice Vendor Scorecard",
-                    body: "Compare AI voice vendors side by side on the criteria that actually matter for home service contractors.",
-                    href: SCORECARD_URL,
-                  },
-                ].map((t) => (
-                  <div key={t.title} className="rounded-2xl p-7" style={{ backgroundColor: BL.white, border: `2px solid ${BL.red}` }}>
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
-                         style={{ backgroundColor: "#fff5f8" }}>
-                      <FileText size={20} style={{ color: BL.red }} />
-                    </div>
-                    <h3 className="text-base font-bold mb-2" style={{ color: BL.body }}>{t.title}</h3>
-                    <p className="text-sm leading-relaxed mb-4" style={{ opacity: 0.7 }}>{t.body}</p>
-                    <a href={t.href} target="_blank" rel="noopener noreferrer"
-                       className="text-sm font-bold" style={{ color: BL.red }}>
-                      Open the tool &rarr;
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
           {/* ── 9. FINAL CTA ──────────────────────────────────────────── */}
           <section style={{ backgroundColor: BL.lavender }} className="px-6 py-20 text-center">
             <div className="max-w-2xl mx-auto">
@@ -2588,7 +2528,7 @@ export default function PartnerDetail() {
                 Ready to hear <em style={{ color: BL.purple, fontStyle: "italic" }}>your</em> calls handled?
               </h2>
               <p className="text-base mb-8 max-w-xl mx-auto" style={{ opacity: 0.7 }}>
-                Book a demo and Broccoli will pull your ServiceTitan call data live on the call —
+                Book a demo and Broccoli will pull your ServiceTitan call data live on the call,
                 showing you exactly where bookings are slipping and what the AI would have done instead.
               </p>
               <a href={DEMO_URL} target="_blank" rel="noopener noreferrer"
