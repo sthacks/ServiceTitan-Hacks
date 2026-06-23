@@ -2494,8 +2494,9 @@ export default function PartnerDetail() {
                   src="https://www.broccoli.com/embed/try-ai?partner_key=33ab6ca93144"
                   title="Try Broccoli AI"
                   width="100%"
-                  height="820"
-                  style={{ border: 0, display: "block" }}
+                  height="1200"
+                  scrolling="no"
+                  style={{ border: 0, display: "block", overflow: "hidden" }}
                   loading="lazy"
                 />
               </div>
