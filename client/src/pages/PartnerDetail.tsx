@@ -2344,9 +2344,9 @@ export default function PartnerDetail() {
               {/* Quote card */}
               <div className="rounded-2xl p-8" style={{ backgroundColor: BL.darkPurple, color: BL.white }}>
                 <p className="text-lg leading-relaxed mb-4" style={{ fontStyle: "italic", opacity: 0.9 }}>
-                  [Quote pending sign-off — a contractor customer will share their experience here.]
+                  "Weekend bookings soared 900%, and customers enjoy seamless, frustration-free scheduling. The AI syncs perfectly with ServiceTitan. We've gone from skeptics to believers — AI has truly changed the game!"
                 </p>
-                <footer className="text-sm" style={{ opacity: 0.55 }}>[Contractor name, company — location]</footer>
+                <footer className="text-sm" style={{ opacity: 0.55 }}>Marcelle Flowers, CEO, Armstrong Plumbing</footer>
               </div>
             </div>
           </section>
