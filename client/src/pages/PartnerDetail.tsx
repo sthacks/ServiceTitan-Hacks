@@ -98,6 +98,31 @@ export default function PartnerDetail() {
   const [broccoliCallForm, setBroccoliCallForm] = useState({ name: "", phone: "" });
   const [broccoliCallConfirmed, setBroccoliCallConfirmed] = useState(false);
 
+  // Dane audio player
+  const daneAudioRef = useRef<HTMLAudioElement | null>(null);
+  const [daneIsPlaying, setDaneIsPlaying] = useState(false);
+  const [daneCurrentTime, setDaneCurrentTime] = useState(0);
+  const [daneDuration, setDaneDuration] = useState(0);
+
+  const toggleDaneAudio = () => {
+    const audio = daneAudioRef.current;
+    if (!audio) return;
+    if (daneIsPlaying) {
+      audio.pause();
+      setDaneIsPlaying(false);
+    } else {
+      audio.play();
+      setDaneIsPlaying(true);
+    }
+  };
+
+  const formatAudioTime = (s: number) => {
+    if (!isFinite(s)) return "0:00";
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return `${m}:${sec.toString().padStart(2, "0")}`;
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [partnerSlug]);
@@ -2396,16 +2421,45 @@ export default function PartnerDetail() {
                     </p>
                     <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
                       <p className="text-sm font-semibold mb-3">Hear Dane handle a real dispatch call</p>
+                      <audio
+                        ref={daneAudioRef}
+                        src="/dane-dispatch-call.wav"
+                        onTimeUpdate={() => setDaneCurrentTime(daneAudioRef.current?.currentTime ?? 0)}
+                        onLoadedMetadata={() => setDaneDuration(daneAudioRef.current?.duration ?? 0)}
+                        onEnded={() => setDaneIsPlaying(false)}
+                        preload="metadata"
+                      />
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                             style={{ backgroundColor: BL.green }}>
-                          <Play size={18} style={{ color: BL.darkPurple }} />
-                        </div>
+                        <button
+                          onClick={toggleDaneAudio}
+                          data-testid="button-dane-audio-play"
+                          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-opacity hover:opacity-80"
+                          style={{ backgroundColor: BL.green, border: "none", cursor: "pointer" }}>
+                          {daneIsPlaying
+                            ? <span style={{ color: BL.darkPurple, fontSize: 14, fontWeight: 900, letterSpacing: "-1px" }}>&#9646;&#9646;</span>
+                            : <Play size={16} style={{ color: BL.darkPurple, marginLeft: 2 }} />}
+                        </button>
                         <div className="flex-1">
-                          <div className="h-2 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.15)" }}>
-                            <div className="h-2 rounded-full w-0" style={{ backgroundColor: BL.green }} />
+                          <div
+                            className="h-2 rounded-full cursor-pointer"
+                            style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
+                            onClick={(e) => {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              const pct = (e.clientX - rect.left) / rect.width;
+                              if (daneAudioRef.current && daneDuration) {
+                                daneAudioRef.current.currentTime = pct * daneDuration;
+                                setDaneCurrentTime(pct * daneDuration);
+                              }
+                            }}>
+                            <div
+                              className="h-2 rounded-full transition-all"
+                              style={{ backgroundColor: BL.green, width: daneDuration ? `${(daneCurrentTime / daneDuration) * 100}%` : "0%" }}
+                            />
                           </div>
-                          <p className="text-xs mt-1" style={{ opacity: 0.45 }}>Audio pending — drop file here</p>
+                          <div className="flex justify-between mt-1">
+                            <span className="text-xs" style={{ opacity: 0.45 }}>{formatAudioTime(daneCurrentTime)}</span>
+                            <span className="text-xs" style={{ opacity: 0.45 }}>{formatAudioTime(daneDuration)}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
