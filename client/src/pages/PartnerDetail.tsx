@@ -2137,7 +2137,7 @@ export default function PartnerDetail() {
   // Render Broccoli AI page
   if (partner.slug === "broccoli-ai") {
     // ── PLACEHOLDER URLS – edit here before launch ──────────────────────────
-    const WEBINAR_URL = "PLACEHOLDER_WEBINAR_URL?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
+    const WEBINAR_URL = "https://streamyard.com/watch/MJ6ErCz2C3Hx";
     const DEMO_URL    = "PLACEHOLDER_DEMO_URL?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
     const FOUND_MONEY_URL  = "PLACEHOLDER_TOOL_URL_FOUND_MONEY?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
     const SCORECARD_URL    = "PLACEHOLDER_TOOL_URL_SCORECARD?utm_source=sthacks&utm_medium=partner_page&utm_campaign=broccoli";
