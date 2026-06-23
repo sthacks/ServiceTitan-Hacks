@@ -162,16 +162,12 @@ export default function WebinarLiveAnsweringTeam() {
               <p className="text-center text-base mb-8" style={{ color: STH.text, opacity: 0.6 }}>
                 Cannot make it live? Register and we will send the replay.
               </p>
-              {/* TODO: Update the registration platform embed title and time to 2:00 PM ET.
-                  The embed currently shows "June 24, 2026 04:00 PM" which is incorrect.
-                  The title and time must be updated in StreamYard to:
-                  Title: "When to Outsource Call Handling: The Four Options and the Real Math for $3M+ Contractors"
-                  Date/time: June 24, 2026, 2:00 PM ET
-                  This cannot be changed from page code — it must be set in the StreamYard platform. */}
+              {/* StreamYard embed updated to MJ6ErCz2C3Hx (June 23, 2026).
+                  If the embed title or time still need updating, do that in StreamYard directly. */}
               <div className="rounded-2xl p-2" style={{ backgroundColor: STH.white }}>
                 <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
                   <iframe
-                    src="https://streamyard.com/watch/k9XdgUhSyfSE?embed=true"
+                    src="https://streamyard.com/watch/MJ6ErCz2C3Hx?embed=true"
                     width="100%"
                     height="100%"
                     frameBorder={0}
