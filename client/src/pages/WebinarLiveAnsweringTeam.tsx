@@ -167,7 +167,7 @@ export default function WebinarLiveAnsweringTeam() {
               <div className="rounded-2xl p-2" style={{ backgroundColor: STH.white }}>
                 <div style={{ width: "100%", height: 0, position: "relative", paddingBottom: "56.25%" }}>
                   <iframe
-                    src="https://streamyard.com/watch/MJ6ErCz2C3Hx?embed=true"
+                    src="https://streamyard.com/watch/k9XdgUhSyfSE?embed=true"
                     width="100%"
                     height="100%"
                     frameBorder={0}
