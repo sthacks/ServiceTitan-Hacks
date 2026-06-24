@@ -76,6 +76,7 @@ import ZapierAutomations from "@/pages/ZapierAutomations";
 import Sponsor from "@/pages/Sponsor";
 import WebinarStopBuyingHours from "@/pages/WebinarStopBuyingHours";
 import WebinarLiveAnsweringTeam from "@/pages/WebinarLiveAnsweringTeam";
+import WebinarLandingPage from "@/pages/WebinarLandingPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -166,6 +167,7 @@ function Router() {
       <Route path="/servicetitan-automation-services" component={ServiceTitanAutomationServices} />
       <Route path="/webinars/stop-buying-hours" component={WebinarStopBuyingHours} />
       <Route path="/webinars/live-answering-team" component={WebinarLiveAnsweringTeam} />
+      <Route path="/webinars/archive" component={WebinarLandingPage} />
       <Route component={NotFound} />
     </Switch>
   );
