@@ -262,16 +262,15 @@ export default function ReferralGapWebinar() {
       {/* Hero Section */}
       <section className="py-8 md:py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="mb-8 relative">
-            <img
-              src={heroImage}
-              alt="The 83% Referral Gap - Live Fireside Chat"
-              className="w-full h-auto rounded-lg"
-              data-testid="img-hero"
+          <div className="mb-8 relative rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%", height: 0 }}>
+            <iframe
+              src="https://www.youtube.com/embed/iNEXigMsjcQ"
+              title="The 83% Referral Gap - Live Fireside Chat"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              data-testid="video-hero"
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
             />
-            <span className="absolute top-4 left-4 bg-black/60 text-white/80 text-xs font-medium px-3 py-1 rounded-md tracking-wide">
-              Real Contractor Case Discussion
-            </span>
           </div>
 
           <div className="text-center mb-12">
