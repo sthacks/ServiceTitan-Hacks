@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-muted-foreground mb-12">
-              <strong>Effective Date:</strong> 9/9/2025
+              <strong>Effective Date:</strong> June 25, 2026
             </p>
             
             <div className="prose prose-lg max-w-none">

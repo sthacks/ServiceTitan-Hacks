@@ -23,7 +23,7 @@ export default function SMSTermsConditions() {
             </h1>
           </div>
           <p className="text-xl text-gray-300" data-testid="text-effective-date">
-            Effective Date: November 7, 2025
+            Effective Date: June 25, 2026
           </p>
         </div>
       </div>
