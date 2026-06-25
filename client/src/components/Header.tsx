@@ -95,8 +95,8 @@ export default function Header() {
               <img
                 src={logoImage}
                 alt="ServiceTitan Hacks Logo"
-                className="h-16 md:h-20"
-                style={{ paddingTop: "5px", paddingBottom: "5px" }}
+                className="h-12 md:h-16"
+                style={{ paddingTop: "4px", paddingBottom: "4px" }}
               />
             </span>
           </Link>
