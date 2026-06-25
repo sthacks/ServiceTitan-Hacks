@@ -10,10 +10,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CheckCircle, ArrowRight } from "lucide-react";
-import beforeImg from "@assets/before_1777040624999.png";
-import afterImg from "@assets/after_1777040624998.png";
-import beforeImgNew from "@assets/before_1777041107238.png";
-import afterImgNew from "@assets/after_1777041107237.png";
 import { useQuery } from "@tanstack/react-query";
 
 const CHECKOUT_URL = "https://buy.stripe.com/cNi4gy86A39aep9gCAgbm0J";
@@ -105,6 +101,69 @@ const faqs = [
   },
 ];
 
+const afterChecklist = [
+  "Correct motor, blade, and capacitor pairing",
+  "Precision balancing to reduce vibration",
+  "Sealed bearings for durability",
+  "Airflow and amp-draw verification",
+];
+
+function BeforeCard({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`rounded-xl p-6 flex flex-col gap-3 ${className}`}
+      style={{ background: "#111111", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <span
+        className="inline-block text-xs font-bold tracking-widest px-2.5 py-1 rounded w-fit"
+        style={{ background: "#2a2a2a", color: "#888" }}
+      >
+        BEFORE
+      </span>
+      <p className="text-xs font-bold tracking-wide" style={{ color: "#ec164d" }}>
+        TECHNICIAN-STYLE ENTRY
+      </p>
+      <p className="text-base font-semibold text-white">ODF Replace - Level 2</p>
+      <p className="text-sm leading-relaxed" style={{ color: "#999" }}>
+        Replace outdoor ac fan motor and fan blade.
+      </p>
+    </div>
+  );
+}
+
+function AfterCard({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`rounded-xl p-6 flex flex-col gap-3 ${className}`}
+      style={{ background: "#111111", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <span
+        className="inline-block text-xs font-bold tracking-widest px-2.5 py-1 rounded w-fit"
+        style={{ background: "rgba(34,197,94,0.12)", color: "#22c55e" }}
+      >
+        AFTER
+      </span>
+      <p className="text-xs font-bold tracking-wide" style={{ color: "#ec164d" }}>
+        HOMEOWNER-FRIENDLY
+      </p>
+      <p className="text-base font-semibold text-white">
+        Outdoor AC Fan Motor &amp; Blade Replacement
+      </p>
+      <p className="text-sm leading-relaxed" style={{ color: "#bbb" }}>
+        We replace the failing fan motor and blade with properly matched, weather-rated parts, then set rotation, balance, and clearances to factory specs. This restores airflow, protects the compressor from overheating, and improves cooling efficiency and noise levels, especially during heat waves.
+      </p>
+      <ul className="mt-1 space-y-2">
+        {afterChecklist.map((item, i) => (
+          <li key={i} className="flex items-center gap-2.5">
+            <CheckCircle className="h-4 w-4 flex-shrink-0" style={{ color: "#22c55e" }} />
+            <span className="text-sm" style={{ color: "#bbb" }}>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 interface SpotsData {
   totalSpots: number;
   spotsUsed: number;
@@ -151,25 +210,13 @@ export default function PricebookOverhaul() {
               Stop losing sales to descriptions like &quot;Capacitor 40/5 370V Replacement.&quot; We&apos;ll AI-rewrite every item in your pricebook so every word sounds like a homeowner wrote it, not a tech.
             </p>
 
-            {/* Before / After images — shown on desktop, hidden on mobile (appear in callout sections below) */}
-            <div className="hidden md:flex flex-row gap-6 justify-center mb-6">
-              <div className="flex-1 flex justify-end">
-                <img
-                  src={beforeImg}
-                  alt="Before: technical pricebook description"
-                  className="w-full max-w-[560px] rounded-xl object-contain"
-                />
-              </div>
-              <div className="flex-1 flex justify-start">
-                <img
-                  src={afterImg}
-                  alt="After: homeowner-friendly pricebook description"
-                  className="w-full max-w-[560px] rounded-xl object-contain"
-                />
-              </div>
+            {/* Before / After cards — shown on desktop, hidden on mobile */}
+            <div className="hidden md:grid grid-cols-2 gap-6 mb-6 text-left">
+              <BeforeCard />
+              <AfterCard />
             </div>
             <p className="hidden md:block text-sm text-[#737373] mb-4 italic">
-              Real ServiceTitan pricebook item. Same price. Same service. Transformed description.
+              Before and after. Same price, same service, rewritten so homeowners understand it.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
@@ -269,14 +316,10 @@ export default function PricebookOverhaul() {
           </div>
         </section>
 
-        {/* ── Before Image Callout ──────────────────────────────── */}
+        {/* ── Before Card Callout ───────────────────────────────── */}
         <section className="py-20 md:py-28 bg-[#0a0a0a]">
-          <div className="mx-auto max-w-4xl px-6 text-center">
-            <img
-              src={beforeImg}
-              alt="Before: technical pricebook description"
-              className="w-full max-w-[700px] mx-auto rounded-xl object-contain mb-5"
-            />
+          <div className="mx-auto max-w-2xl px-6 text-center">
+            <BeforeCard className="text-left mb-5" />
             <p className="text-sm text-[#a3a3a3] italic">
               This is what your technician reads aloud at the kitchen table.
             </p>
@@ -325,22 +368,8 @@ export default function PricebookOverhaul() {
               This is what your pricebook looks like to a homeowner before and after an overhaul.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex flex-col items-center gap-3">
-                <img
-                  src={beforeImgNew}
-                  alt="Before: vague, jargon-filled pricebook description"
-                  className="w-full rounded-md"
-                  data-testid="img-before"
-                />
-              </div>
-              <div className="flex flex-col items-center gap-3">
-                <img
-                  src={afterImgNew}
-                  alt="After: clear, homeowner-friendly pricebook description"
-                  className="w-full rounded-md"
-                  data-testid="img-after"
-                />
-              </div>
+              <BeforeCard data-testid="card-before" />
+              <AfterCard data-testid="card-after" />
             </div>
           </div>
         </section>
@@ -385,14 +414,10 @@ export default function PricebookOverhaul() {
           </div>
         </section>
 
-        {/* ── After Image Callout ───────────────────────────────── */}
+        {/* ── After Card Callout ────────────────────────────────── */}
         <section className="py-20 md:py-28 bg-[#0a0a0a]">
-          <div className="mx-auto max-w-4xl px-6 text-center">
-            <img
-              src={afterImg}
-              alt="After: homeowner-friendly pricebook description"
-              className="w-full max-w-[700px] mx-auto rounded-xl object-contain mb-5"
-            />
+          <div className="mx-auto max-w-2xl px-6 text-center">
+            <AfterCard className="text-left mb-5" />
             <p className="text-sm text-[#a3a3a3] italic">
               This is what your pricebook could look like in 72 hours.
             </p>

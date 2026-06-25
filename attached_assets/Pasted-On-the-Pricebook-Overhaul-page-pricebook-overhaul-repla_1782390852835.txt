@@ -1,0 +1,26 @@
+On the Pricebook Overhaul page (/pricebook-overhaul), replace EVERY before-and-after card that currently uses a ServiceTitan interface screenshot image with built HTML/CSS cards. Do not use image files for these cards. There are several instances on this page: the hero section near the top, a standalone BEFORE card mid-page, a BEFORE and AFTER pair in the "See the Difference" section, and a standalone AFTER card lower down. Find and replace all of them.
+
+Use the same before-and-after card design and styling already built on the homepage Pricebook Overhaul card, scaled appropriately for each section, so the look is consistent across the site. Dark card background, white body text, crimson red accents, a gray "BEFORE" tag and a green "AFTER" tag.
+
+Do not include any ServiceTitan logo, ServiceTitan interface elements, app chrome, screenshots, quantity fields, or price fields that imitate the ServiceTitan software screen. These are our own styled description cards, not a recreation of any software interface.
+
+Use this exact text content (straight quotes only, no curly quotes, no em-dashes):
+
+BEFORE card:
+Label: "TECHNICIAN-STYLE ENTRY"
+Title: "ODF Replace - Level 2"
+Body: "Replace outdoor ac fan motor and fan blade."
+
+AFTER card:
+Label: "HOMEOWNER-FRIENDLY"
+Title: "Outdoor AC Fan Motor & Blade Replacement"
+Body: "We replace the failing fan motor and blade with properly matched, weather-rated parts, then set rotation, balance, and clearances to factory specs. This restores airflow, protects the compressor from overheating, and improves cooling efficiency and noise levels, especially during heat waves."
+Then a checklist with green check icons:
+- Correct motor, blade, and capacitor pairing
+- Precision balancing to reduce vibration
+- Sealed bearings for durability
+- Airflow and amp-draw verification
+
+Also change the hero caption that currently reads "Real ServiceTitan pricebook item. Same price. Same service. Transformed description." to: "Before and after. Same price, same service, rewritten so homeowners understand it."
+
+Keep all other text, headings, buttons, pricing, and FAQ on the page exactly as they are. Do not change anything else.
