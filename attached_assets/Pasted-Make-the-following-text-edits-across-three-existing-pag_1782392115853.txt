@@ -1,0 +1,49 @@
+Make the following text edits across three existing pages. Use straight quotes only, never curly quotes, and never em-dashes. Change only the items listed. Do not alter layout, styling, headings, or any other text.
+
+PAGE 1: SMS Privacy Policy (/sms-privacy-policy)
+
+A. In the "Scope" section, change:
+"This policy explains how ServiceTitan Hacks ("we," "us," "ST Hacks") collects, uses, stores, shares, and protects mobile phone numbers and SMS message content when you opt in to receive text messages from us."
+to:
+"This policy explains how ST Hacks LLC, doing business as ServiceTitan Hacks ("we," "us," "ST Hacks"), collects, uses, stores, shares, and protects mobile phone numbers and SMS message content when you opt in to receive text messages from us."
+
+B. Replace the entire body text under "6. Third Parties and Service Providers" with:
+"We share your phone number and message data only with service providers that help us deliver our own messages, for example SMS gateway vendors. These providers are contractually limited to using your data solely to deliver our messages and may not use it for their own purposes."
+Keep the "SMS Number:" line that appears in that section unchanged.
+
+C. Replace the entire body text under "9. Sharing, Sale, and Marketing" with:
+"We do not sell or rent your phone number or SMS opt-in information. We do not share your mobile opt-in information or SMS consent with any third parties or affiliates for their own marketing or promotional purposes."
+
+PAGE 2: SMS Terms and Conditions (/sms-terms-conditions)
+
+D. In "1. Agreement to Terms," change:
+"By opting in to receive SMS text messages from ServiceTitan Hacks ("we," "us," "ST Hacks"), you agree to these SMS Terms and Conditions."
+to:
+"By opting in to receive SMS text messages from ST Hacks LLC, doing business as ServiceTitan Hacks ("we," "us," "ST Hacks"), you agree to these SMS Terms and Conditions."
+
+E. In "8. Supported Carriers," change the carrier list from:
+"including AT&T, T-Mobile, Verizon, Sprint, Boost, Cricket, MetroPCS, U.S. Cellular, Virgin Mobile, and others."
+to:
+"including AT&T, T-Mobile, Verizon, Boost, Cricket, MetroPCS, U.S. Cellular, and others."
+
+F. In "12. Limitation of Liability," change "SERVICETITAN HACKS SHALL NOT BE LIABLE" to "ST HACKS LLC SHALL NOT BE LIABLE."
+
+G. In "13. Indemnification," change "hold harmless ServiceTitan Hacks, its affiliates" to "hold harmless ST Hacks LLC, its affiliates."
+
+H. In "17. Contact Information," change the bold heading "ServiceTitan Hacks" to "ST Hacks LLC." Leave the Email, SMS Number, and Website lines beneath it unchanged.
+
+PAGE 3: Privacy Policy (/privacy-policy)
+
+I. In the intro paragraph, change:
+"ServiceTitan Hacks ("we," "our," "us") respects your privacy"
+to:
+"ST Hacks LLC, doing business as ServiceTitan Hacks ("we," "our," "us"), respects your privacy"
+
+J. In "10. Contact Us," change the bold heading "ServiceTitan Hacks" to "ST Hacks LLC." Leave the Email and Website lines beneath it unchanged.
+
+DO NOT CHANGE the following, they are under separate legal review:
+- The "User Consent" section wording about an automatic telephone dialing system.
+- The "Governing Law and Disputes" section.
+- Any effective dates.
+
+After making the edits, confirm each of the three pages still renders correctly and the footer disclaimer is intact on all three.

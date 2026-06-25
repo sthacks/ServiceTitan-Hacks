@@ -33,7 +33,7 @@ export default function SMSPrivacyPolicy() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-scope">Scope</h2>
             <p className="text-foreground leading-relaxed mb-6">
-              This policy explains how ServiceTitan Hacks ("we," "us," "ST Hacks") collects, uses, stores, shares, and protects mobile phone numbers and SMS message content when you opt in to receive text messages from us.
+              This policy explains how ST Hacks LLC, doing business as ServiceTitan Hacks ("we," "us," "ST Hacks"), collects, uses, stores, shares, and protects mobile phone numbers and SMS message content when you opt in to receive text messages from us.
             </p>
           </section>
 
@@ -96,7 +96,7 @@ export default function SMSPrivacyPolicy() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-third-parties">6. Third Parties and Service Providers</h2>
             <p className="text-foreground leading-relaxed mb-4">
-              We may share your phone number and message data with trusted service providers only as needed to deliver messages (for example, SMS gateway vendors). These providers are contractually obligated to protect your data and use it only for message delivery.
+              We share your phone number and message data only with service providers that help us deliver our own messages, for example SMS gateway vendors. These providers are contractually limited to using your data solely to deliver our messages and may not use it for their own purposes.
             </p>
             <p className="text-foreground leading-relaxed">
               <strong>SMS Number:</strong>{" "}
@@ -123,7 +123,7 @@ export default function SMSPrivacyPolicy() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-sharing">9. Sharing, Sale, and Marketing</h2>
             <p className="text-foreground leading-relaxed">
-              We do not sell or rent your phone number. We may share limited information with affiliates or vendors as described in this policy.
+              We do not sell or rent your phone number or SMS opt-in information. We do not share your mobile opt-in information or SMS consent with any third parties or affiliates for their own marketing or promotional purposes.
             </p>
           </section>
 

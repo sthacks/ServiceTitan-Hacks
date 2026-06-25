@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
             
             <div className="prose prose-lg max-w-none">
               <p className="text-lg mb-8">
-                ServiceTitan Hacks ("we," "our," "us") respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect, how we use it, and the choices you have.
+                ST Hacks LLC, doing business as ServiceTitan Hacks ("we," "our," "us"), respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect, how we use it, and the choices you have.
               </p>
 
               <Card className="mb-8">
@@ -135,7 +135,7 @@ export default function PrivacyPolicy() {
                   <p className="mb-4">
                     If you have any questions about this Privacy Policy, contact us at:
                   </p>
-                  <p className="font-semibold">ServiceTitan Hacks</p>
+                  <p className="font-semibold">ST Hacks LLC</p>
                   <p>
                     Email: <a href="mailto:support@st-hacks.com" className="text-primary hover:underline">support@st-hacks.com</a>
                   </p>

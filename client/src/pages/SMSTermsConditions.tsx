@@ -33,7 +33,7 @@ export default function SMSTermsConditions() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-agreement">1. Agreement to Terms</h2>
             <p className="text-foreground leading-relaxed mb-4">
-              By opting in to receive SMS text messages from ServiceTitan Hacks ("we," "us," "ST Hacks"), you agree to these SMS Terms and Conditions. If you do not agree to these terms, do not opt in to our SMS program.
+              By opting in to receive SMS text messages from ST Hacks LLC, doing business as ServiceTitan Hacks ("we," "us," "ST Hacks"), you agree to these SMS Terms and Conditions. If you do not agree to these terms, do not opt in to our SMS program.
             </p>
             <p className="text-foreground leading-relaxed">
               These terms supplement our{" "}
@@ -127,7 +127,7 @@ export default function SMSTermsConditions() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-supported-carriers">8. Supported Carriers</h2>
             <p className="text-foreground leading-relaxed mb-4">
-              Our SMS program is available on participating carriers including AT&T, T-Mobile, Verizon, Sprint, Boost, Cricket, MetroPCS, U.S. Cellular, Virgin Mobile, and others.
+              Our SMS program is available on participating carriers including AT&T, T-Mobile, Verizon, Boost, Cricket, MetroPCS, U.S. Cellular, and others.
             </p>
             <p className="text-foreground leading-relaxed">
               Service may not be available on all carriers. We are not responsible for delayed or undelivered messages due to carrier network issues.
@@ -178,7 +178,7 @@ export default function SMSTermsConditions() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-limitation-liability">12. Limitation of Liability</h2>
             <p className="text-foreground leading-relaxed mb-4">
-              TO THE MAXIMUM EXTENT PERMITTED BY LAW, SERVICETITAN HACKS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES RESULTING FROM:
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, ST HACKS LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES RESULTING FROM:
             </p>
             <ul className="list-disc pl-6 text-foreground leading-relaxed space-y-2">
               <li>Your use or inability to use the SMS service</li>
@@ -192,7 +192,7 @@ export default function SMSTermsConditions() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4" data-testid="heading-indemnification">13. Indemnification</h2>
             <p className="text-foreground leading-relaxed">
-              You agree to indemnify, defend, and hold harmless ServiceTitan Hacks, its affiliates, and their respective officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the SMS service or violation of these terms.
+              You agree to indemnify, defend, and hold harmless ST Hacks LLC, its affiliates, and their respective officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the SMS service or violation of these terms.
             </p>
           </section>
 
@@ -226,7 +226,7 @@ export default function SMSTermsConditions() {
               For questions, support, or to exercise your rights regarding our SMS service:
             </p>
             <p className="text-foreground leading-relaxed">
-              <strong>ServiceTitan Hacks</strong><br />
+              <strong>ST Hacks LLC</strong><br />
               Email:{" "}
               <a href="mailto:support@st-hacks.com" className="text-primary hover:underline" data-testid="link-contact-email">
                 support@st-hacks.com
