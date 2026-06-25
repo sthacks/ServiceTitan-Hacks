@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, LogIn, LogOut, Shield, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/fb_cover_photo_6-2026_(6)_1782389101451.png";
+import logoImage from "@assets/Horizontal_Logo_(4)_1782390044642.png";
 import { useAuth } from "@/hooks/useAuth";
 
 const appsAndToolsLinks = [
