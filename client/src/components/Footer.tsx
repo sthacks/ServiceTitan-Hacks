@@ -165,6 +165,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800">
+          <p className="text-xs text-gray-600 leading-relaxed mb-4">
+            ServiceTitan is a trademark of its respective owner, used here only to identify the software this community discusses. ST Hacks LLC is independent and is not operated, endorsed, or sponsored by ServiceTitan, Inc.
+          </p>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
               &copy; {currentYear} ST Hacks LLC. All rights reserved.
