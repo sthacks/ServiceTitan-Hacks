@@ -32,7 +32,26 @@ export default function Home() {
       "url": "https://servicetitanhacks.com/contact"
     }
   };
-  const mainSections = [
+  const pricebookBeforeAfter = (
+    <div className="w-full h-full flex" style={{ background: "#111111", minHeight: 220 }}>
+      {/* BEFORE */}
+      <div className="flex-1 flex flex-col p-5 border-r border-white/10">
+        <span className="inline-block text-xs font-bold tracking-widest px-2 py-0.5 rounded mb-3 w-fit" style={{ background: "#333", color: "#aaa" }}>BEFORE</span>
+        <p className="text-xs font-bold tracking-wide mb-2" style={{ color: "#ec164d" }}>TECHNICIAN-STYLE ENTRY</p>
+        <p className="text-sm font-semibold text-white mb-2">ODF Replace - Level 2</p>
+        <p className="text-xs leading-relaxed" style={{ color: "#999" }}>Replace outdoor fan motor and fan blade.</p>
+      </div>
+      {/* AFTER */}
+      <div className="flex-1 flex flex-col p-5">
+        <span className="inline-block text-xs font-bold tracking-widest px-2 py-0.5 rounded mb-3 w-fit" style={{ background: "rgba(34,197,94,0.15)", color: "#22c55e" }}>AFTER</span>
+        <p className="text-xs font-bold tracking-wide mb-2" style={{ color: "#ec164d" }}>HOMEOWNER-FRIENDLY</p>
+        <p className="text-sm font-semibold text-white mb-2">Outdoor AC Fan Motor &amp; Blade Replacement</p>
+        <p className="text-xs leading-relaxed" style={{ color: "#bbb" }}>Replace the failing fan motor and blade with a properly matched, weather-rated part, then set, balance, and verify operation so the system runs quietly and cools reliably, especially during the hottest months.</p>
+      </div>
+    </div>
+  );
+
+  const mainSections: { title: string; description: string; icon: React.ElementType; link: string; image?: string; alt?: string; cta: string; customVisual?: React.ReactNode }[] = [
     {
       title: "All-Access Pass",
       description: "Get unlimited access to all ServiceTitan automation courses, exclusive AI tools, premium resources, and monthly live Q&A calls.",
@@ -50,6 +69,7 @@ export default function Home() {
       image: pricebookAfterImg,
       alt: "ServiceTitan Pricebook Overhaul - AI-rewritten homeowner-friendly descriptions",
       cta: "Claim a Founder Spot",
+      customVisual: pricebookBeforeAfter,
     },
     {
       title: "Partners",
@@ -149,13 +169,15 @@ export default function Home() {
                 >
                   <Card className="hover-elevate overflow-hidden h-full">
                     <div className="aspect-video overflow-hidden">
-                      <img
-                        src={section.image}
-                        alt={section.alt}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      {section.customVisual ? section.customVisual : (
+                        <img
+                          src={section.image}
+                          alt={section.alt}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )}
                     </div>
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-3">
