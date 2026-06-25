@@ -167,7 +167,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              &copy; {currentYear} ServiceTitan Hacks. All rights reserved.
+              &copy; {currentYear} ST Hacks LLC. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy-policy">
